@@ -75,7 +75,11 @@ class ResultUtils:
         preprocessed_answer = llm_answer
         try:
             if '\n' in preprocessed_answer or len(preprocessed_answer) > 10:
-                preprocessed_answer = llm_answer.split('\n')[-1]
+                lines = llm_answer.split('\n')
+                if len(lines) > 1 and not re.search(r'[a-zA-Z]', lines[-1]):
+                    preprocessed_answer = lines[-2]
+                else:
+                    preprocessed_answer = lines[-1]
             preprocessed_answer = preprocessed_answer.lower()
             if answer_type == AnswerType.MULTIPLE_CHOICE.value:
                 if len(preprocessed_answer) > 1:
