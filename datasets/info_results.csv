@@ -173,3 +173,23 @@ Choices:
 ```
 MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
 ",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+35,27-02-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_2_27-02-2025_data_normalized_test.csv,A_N_SAMPLING,True,100,0.85,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{row['choices']}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+36,27-02-2025,MMLU,../datasets/MMLU/results/a_2_27-02-2025_data_normalized_college_mathematics.csv,A_N_SAMPLING,True,100,0.71,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{row['choices']}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini

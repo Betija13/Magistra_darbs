@@ -28,7 +28,8 @@ class FileUtils:
     @staticmethod
     def select_folders_datasets(all_folders: List[str]) -> List[str]:
         selected_folders = all_folders
-        selected_folders.remove('not_using')
+        if 'not_using' in selected_folders:
+            selected_folders.remove('not_using')
         folders_str = ', '.join([f'{idx}: {folder}' for idx, folder in enumerate(selected_folders)])
         selected_folder_ids = input(f'Select which folders to still do. {folders_str}. Your answer should be list of numbers corresponding to folders separated by commas. e.g. 0,1,2')
         try:
