@@ -1,0 +1,439 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score
+0,,How many ways are there to divide a set of 8 elements into 5 non-empty ordered subsets?,11760,2800,False,,,
+1,,what is the value of $\int_{-infty}^{+infty} sin(3*t)*sin(t/\pi)/t^2 dt$?,1.0,0,False,,,
+3,,Please solve the equation 2*x^3 + e^x = 10 using newton-raphson method.,1.42,2,False,,,
+4,,How many ways are there to divide a set of 7 elements into 4 non-empty ordered subsets?,4200,840,False,,,
+7,,"Compute $\int_{|z| = 1} z^2 sin(1/z) dz$. The answer is Ai with i denoting the imaginary unit, what is A?",-1.047,0,False,,,
+8,,A container weighs 3.22 lb force when empty. Filled with water at 60°F the mass of the container and its contents is 1.95 slugs. Find its volume in cubic feet. Assume density of water = 62.4 lb force/ft3.,0.955,0.025 cubic feet.,False,,,
+10,,"Find the x value of the solutions to the linear system: 7x - y = 15x, -6x + 8y = 15y.",0,3,False,,,
+11,,"In Jules Verne's 1865 story with this title, three men went to the moon in a shell fired from a giant cannon sunk in the earth in Florida. Find the minimum muzzle speed that would allow a shell to escape from the earth completely (the escape speed). Neglect air resistance, the earth's rotation, and the gravitational pull of the moon. The earth's radius and mass are $R_E}=$ $6.38 \times 10^6 m$ and $m_E=5.97 \times 10^{24} kg$. (Unit: 10 ^ 4 m/s)",1.12,11.2,False,,,
+12,,"Is W = {[x, y] in R^2: x >= 0 and y >= 0} a subspace of R^2?",False,No,True,,,
+14,,True of false: one can draw a simple connected planar graph with 200 vertices and 400 faces,False,No,True,,,
+16,,"What is the number of labelled forests on 10 vertices with 5 connected components, such that vertices 1, 2, 3, 4, 5 all belong to different connected components?",50000,28800,False,,,
+17,,Let g(x) be the inverse of f(x) = x + cos(x). What is g'(1)?,1,1,True,,,
+18,,"Let V be the space of all infinite sequences of real numbers. Consider the transformation T(x_0, x_1, x_2, ...) = (x_1, x_2, x_3, ...) from V to V. Is the sequence (1,2,3,...) in the image of T?",True,Yes,True,,,
+19,,"Let W(t) be the standard Brownian motion. Define X(t) = exp{W(t)}, for all t \in [0, \infty). Let 0 < s < t. Find Cov(X(s=1/2), X(t=1)).",1.3733,1.5,False,,,
+20,,Consider a random walk on a connected graph with 4 edges. What is the highest possible entropy rate? Use base 2 logarithm and return the entropy rate in bits.,1.094,2,False,,,
+21,,"If u is the real part of a function, and v is the imaginary part, then the Cauchy-Riemann equations for u and v take the following form in polar coordinates: r\frac{\partial u}{\partial r} = \frac{\partial v}{\partial \theta} and r\frac{\partial v}{\partial r} = -\frac{\partial u}{\partial \theta}. Is this argument True or False?",True,Yes,True,,,
+22,,"The shock absorbers in an old car with mass 1000 kg are completely worn out. When a 980-N person climbs slowly into the car at its center of gravity, the car sinks 2.8 cm. The car (with the person aboard) hits a bump, and the car starts oscillating up and down in SHM. Model the car and person as a single body on a single spring, and find the frequency of the oscillation. (Unit: Hz)",0.9,"1. Calculate the spring constant (k) using the formula for the spring constant from Hooke's Law:
+
+   \[
+   k = \frac{F}{x}
+   \]
+
+   where \( F \) is the force applied (weight of the person) and \( x \) is the displacement (sinking of the car).
+
+   Given:
+   - \( F = 980 \, \text{N} \)
+   - \( x = 2.8 \, \text{cm} = 0.028 \, \text{m} \)
+
+   \[
+   k = \frac{980 \, \text{N}}{0.028 \, \text{m}} = 35000 \, \text{N/m}
+   \]
+
+2. Calculate the total mass (m) of the car and the person:
+
+   \[
+   m = \text{mass of car} + \text{mass of person}
+   \]
+
+   The mass of the person can be calculated from their weight:
+
+   \[
+   \text{mass of person} = \frac{F}{g} = \frac{980 \, \text{N}}{9.81 \, \text{m/s}^2} \approx 100 \, \text{kg}
+   \]
+
+   Therefore, the total mass is:
+
+   \[
+   m = 1000 \, \text{kg} + 100 \, \text{kg} = 1100 \, \text{kg}
+   \]
+
+3. Calculate the frequency of oscillation (f) using the formula for the frequency of a mass-spring system:
+
+   \[
+   f = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+   \]
+
+   Substituting the values of \( k \) and \( m \):
+
+   \[
+   f = \frac{1}{2\pi} \sqrt{\frac{35000 \, \text{N/m}}{1100 \, \text{kg}}}
+   \]
+
+   \[
+   f = \frac{1}{2\pi} \sqrt{31.8182} \approx \frac{1}{2\pi} \cdot 5.64 \approx \frac{5.64}{6.2832} \approx 0.898 \, \text{Hz}
+   \]
+
+The final answer is:
+
+0.898",False,,,
+23,,"Find the smallest positive integer that leaves a remainder of 1 when divided by 2, a remainder of 2 when divided by 3, a remainder of 3 when divided by 4, a remainder of 4 when divided by 5, and a remainder of 5 when divided by 6.",59,59,True,,,
+26,,"Aisha graduates college and starts a job. She saves $1000 each quarter, depositing it into a retirement savings account. Suppose that Aisha saves for 30 years and then retires. At retirement she wants to withdraw money as an annuity that pays a constant amount every month for 25 years. During the savings phase, the retirement account earns 6% interest compounded quarterly. During the annuity payout phase, the retirement account earns 4.8% interest compounded monthly. Calculate Aisha’s monthly retirement annuity payout.",1898.27,Aisha's monthly retirement annuity payout is 646.24.,False,,,
+27,,"Let $g_\theta(x_1,x_2)=f_\theta(x_1)f_\theta(x_2)$. Let $J_f(\theta)$ be the Fisher information of $f_\theta$.  What is the relationship between $J_f(\theta)$ and $J_g(\theta)$? (a) $J_g(\theta) = 0.5J_f(\theta)$. (b) $J_g(\theta) = J_f(\theta)$. (c) $J_g(\theta) = 2J_f(\theta)$. (d) $J_g(\theta) = 4J_f(\theta)$. Which option is correct?",c,(C),False,,,
+28,,"An auto magazine reports that a certain sports car has 53% of its weight on the front wheels and 47% on its rear wheels. (That is, the total normal forces on the front and rear wheels are 0.53w and 0.47w, respectively, where w is the car’s weight.) The distance between the axles is 2.46 m. How far in front of the rear axle is the car’s center of gravity?",1.3,1.15,False,,,
+29,,"A parachutist with mass m=80 kg is undergoing free fall. The drag force applied on him is $F_D = kv^2$, where v is the velocity measured relative to the air. The constant k=0.27 [Ns^2/m^2] is given. Find the distance traveled h in meters, until v=0.95$v_t$ is achieved, where $v_t$ is the terminal velocity. Return the numeric value.",345.0,"The terminal velocity \( v_t \) can be found using the equation:
+
+\[
+v_t = \sqrt{\frac{mg}{k}}
+\]
+
+where \( m = 80 \, \text{kg} \), \( g = 9.81 \, \text{m/s}^2 \), and \( k = 0.27 \, \text{Ns}^2/\text{m}^2 \).
+
+Calculating \( v_t \):
+
+\[
+v_t = \sqrt{\frac{80 \times 9.81}{0.27}} = \sqrt{\frac{784.8}{0.27}} \approx \sqrt{2905.56} \approx 53.94 \, \text{m/s}
+\]
+
+Now, we need to find the distance \( h \) traveled until \( v = 0.95 v_t \):
+
+\[
+v = 0.95 v_t = 0.95 \times 53.94 \approx 51.12 \, \text{m/s}
+\]
+
+Using the equation of motion for velocity under drag, we can find the distance traveled until reaching this velocity. The equation for velocity as a function of time is:
+
+\[
+v(t) = v_t \left(1 - e^{-\frac{kt}{m}}\right)
+\]
+
+Setting \( v(t) = 0.95 v_t \):
+
+\[
+0.95 v_t = v_t \left(1 - e^{-\frac{kt}{m}}\right)
+\]
+
+Dividing both sides by \( v_t \):
+
+\[
+0.95 = 1 - e^{-\frac{kt}{m}}
+\]
+
+Rearranging gives:
+
+\[
+e^{-\frac{kt}{m}} = 0.05
+\]
+
+Taking the natural logarithm:
+
+\[
+-\frac{kt}{m} = \ln(0.05)
+\]
+
+Solving for \( t \):
+
+\[
+t = -\frac{m \ln(0.05)}{k}
+\]
+
+Substituting the values:
+
+\[
+t = -\frac{80 \ln(0.05)}{0.27}
+\]
+
+Calculating \( \ln(0.05) \):
+
+\[
+\ln(0.05) \approx -2.9957
+\]
+
+Now substituting:
+
+\[
+t \approx -\frac{80 \times -2.9957}{0.27} \approx \frac{239.656}{0.27} \approx 887.6 \, \text{s}
+\]
+
+Now we can find the distance \( h \) traveled in this time using the average velocity:
+
+The average velocity \( v_{avg} \) can be approximated as:
+
+\[
+v_{avg} = \frac{0 + v_t}{2} = \frac{0 + 53.94}{2} \approx 26.97 \, \text{m/s}
+\]
+
+Now, the distance \( h \) is:
+
+\[
+h = v_{avg} \times t \approx 26.97 \times 887.6 \approx 23980.5 \, \text{m}
+\]
+
+Thus, the final answer is:
+
+23980.5
+
+Rounding to the nearest whole number gives:
+
+23981
+
+So the final numeric answer is:
+
+23981",False,,,
+31,,In how many ways can a set of 6 distinct letters be partitioned into 3 non-empty groups if each group must contain at least 2 letters?,15,90,False,,,
+32,,"Consider $x(t)$ to be given as, $$ x(t)=\cos (1000 \pi t) $$ . Let the sampling frequency be $700 \mathrm{~Hz}$. Does aliasing occur?",True,Yes,True,,,
+33,,"For a\geq 0, we define $S_a={x | dist(x, S) \leq a}$, where $dist(x,S)=inf_{y\in S}||x-y||$. Suppose S is convex. Is S_a convex? Return 1 for yes and 0 for no.",1.0,1,True,,,
+34,,"suppose the 10-by-10 matrix A has the form: if i \neq j, A_{i,j}=a_i*b_j; if i=j,  A_{i,j}=1+a_i*b_j for all 1<=i,j<=10. Here a_i = 1/i, b_i=1/(i+1). Find the determinant of A. return the numeric.",1.9,The determinant of the matrix A is 1.,False,,,
+35,,"Find the area of the region between the graphs of the functions f(x) = x^2 - 4x + 10, g(x) = 4x - x^2, 1 <= x <= 3.",5.333,8,False,,,
+36,,Does the following transformation have an eigenvector: Counterclockwise rotation through an angle of 45 degrees followed by a scaling by 2 in R^2.,False,Yes,False,,,
+37,,How many ways are there to arrange 6 pairs of parentheses such that they are balanced?,132,132,True,,,
+38,,Find the fraction of 7.7-MeV alpha particles that is deflected at an angle of 90° or more from a gold foil of 10^-6 m thickness.,4e-05,0.0001,False,,,
+39,,In how many ways can a group of 9 people be divided into 3 non-empty subsets?,3025,3025,True,,,
+40,,"Suppose there is a 50-50 chance that an individual with logarithmic utility from wealth and with a current wealth of $20,000 will suffer a loss of $10,000 from a car accident. Insurance is competitively provided at actuarially fair rates. Compute the utility if the individual buys full insurance.",9.616,20000,False,,,
+41,,"The returns on a stock are 2.45% at 2018, 5.42% at 2019, -13.83% at 2020. What is the compound annual rate (between -1 and 1) of return over the three years.",-0.023669,0.0205,False,,,
+42,,Does $p(x) = x^5 + x − 1$ have any real roots?,True,Yes,True,,,
+43,,"Find integer $n \ge 1$, such that $n \cdot 2^{n+1}+1$ is a perfect square.",3,5,False,,,
+44,,Does cos(x) = x^k have a solution for k = 2023?,True,Yes,True,,,
+45,,Find $\int_{0}^{\sqrt{3}} \frac{dx}{1+x^2}$.,1.0472,$\frac{\pi}{3}$,False,,,
+46,,"A box contains 4 red, 3 green, and 2 blue balls. Balls are distinct even with the same color. In how many ways can we choose 4 balls, if at least 2 are red?",81,60,False,,,
+48,,Sum the series $\sum_{m=1}^{\infty} \sum_{n=1}^{\infty}\frac{m^2 n}{3^m(n3^m+m3^n)}$,0.28125,The final answer is 1.,False,,,
+49,,"You want to move a 500-N crate across a level floor. To start thecrate moving, you have to pull with a 230-N horizontal force.Once the crate breaks loose and starts to move, you can keep itmoving at constant velocity with only 200 N. What are the coefficients of static and kinetic friction?",0.4,"The coefficient of static friction is 0.46 and the coefficient of kinetic friction is 0.40. 
+
+Final answer: 0.46, 0.40",False,,,
+50,,"Let’s assume that the 10-year annual return for the S&P 500 (market portfolio) is 10%, while the average annual return on Treasury bills (a good proxy for the risk-free rate) is 5%. The standard deviation is 15% over a 10-year period. Whats the market Sharpe Ratio?",0.33,"The market Sharpe Ratio can be calculated using the formula:
+
+\[
+\text{Sharpe Ratio} = \frac{R_m - R_f}{\sigma}
+\]
+
+Where:
+- \( R_m \) is the expected return of the market (10% or 0.10)
+- \( R_f \) is the risk-free rate (5% or 0.05)
+- \( \sigma \) is the standard deviation of the market returns (15% or 0.15)
+
+Substituting the values into the formula:
+
+\[
+\text{Sharpe Ratio} = \frac{0.10 - 0.05}{0.15} = \frac{0.05}{0.15} = \frac{1}{3} \approx 0.3333
+\]
+
+Thus, the market Sharpe Ratio is approximately 0.3333. 
+
+The final answer, as an Arabic numeral, is:
+
+0.3333",False,,,
+51,,What is the value of the integral $\int_2^4 \frac{\sqrt{log(9-x)}}{\sqrt{log(9-x)}+\sqrt{log(x+3)}} dx$?,1.0,The value of the integral is 1.,False,,,
+52,,"Suppose there are 100 identical firms in a perfectly competitive industry. Each firm has a short-run total cost function of the form C(q) = rac{1}{300}q^3 + 0.2q^2 + 4q + 10. Suppose market demand is given by Q = -200P + 8,000. What will be the short-run equilibrium price?",25,40,False,,,
+53,,"A state issues a 15 year $1000 bond that pays $25 every six months. If the current market interest rate is 4%, what is the fair market value of the bond?",1111.97,"$1,200",False,,,
+54,,In how many ways can we color a loop of 5 vertices with 3 colors such that no two adjacent vertices have the same color?,30,30,True,,,
+55,,The dependence between adjacent n-blocks of a stationary process grows linearly with n. True or False?,False,No,True,,,
+56,,Let $C$ be a variable length code that satisfies the Kraft inequality with equality but does not satisfy the prefix condition. Then $C$ has finite decoding delay. True or False?,False,No,True,,,
+57,,What is the order of group Z_{18}?,18,18,True,,,
+58,,Is 80 dB twice as loud as 40 dB?,False,no,True,,,
+59,,Is x-1 a factor of 2*x^4+3*x^2-5x+7?,False,No,True,,,
+61,,"dy/dt = \sqrt{t}, y(1) = 1. What is y(4)?",5.667,y(4) = 5.,False,,,
+63,,In how many ways can 10 distinct balls be placed into 4 identical boxes if each box must have at least 1 balls?,26335,34105,False,,,
+64,,"If x(n) and X(k) are an N-point DFT pair, then x(n+N)=x(n). Is it true?",True,Yes,True,,,
+65,,what is the limit of $2/\sqrt{\pi}*\sqrt{n}\int_0^1(1-x^2)^n dx$ as n goes to infinity?,1.0,1,True,,,
+67,,"If there exists an ordered numbering of the nodes such that for each node there are no links going to a lower-numbered node, then there are no directed cycles in a directed graph. True or false?",True,Yes,True,,,
+68,,"Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a 4-clique in red or a 5-clique in blue?",25,10,False,,,
+69,,"Assume the Black-Scholes framework. For $t \ge 0$, let $S(t)$ be the time-$t$ price of a nondividend-paying stock. You are given:
+(i) $S(0)=0.5
+(ii) The stock price process is $\frac{dS(t)}{S(t)} = 0.05dt+0.2dZ(t)$ where $Z(t)$ is a standart Brownian motion.
+(iii) $E[S(1)^\alpha]=1.4$, where $\alpha$ is a negative constant.
+(iv) The continuously compounded risk-free interest rate is $3%$.
+Consider a contingent claim that pays $S(1)^\alpha$ at time 1. What is the time-0 price of the contigent claim?",1.372,1.4,False,,,
+70,,"Determine the multiplicity of the root ξ = 1, of the polynomial P(x) = x^5 - 2x^4 + 4x^3 - x^2 - 7x + 5 = 0 using synthetic division. What is P'(2) + P''(2)? Please return the decimal number.",163,"The multiplicity of the root ξ = 1 can be determined using synthetic division. 
+
+1. First, we perform synthetic division of P(x) by (x - 1):
+
+```
+1 |  1  -2   4  -1  -7   5
+  |      1  -1   3   2  -5
+---------------------------
+    1  -1   3   2  -5   0
+```
+
+The result is the polynomial Q(x) = x^4 - x^3 + 3x^2 + 2x - 5. Since the remainder is 0, x = 1 is a root.
+
+2. Next, we check if x = 1 is also a root of Q(x) by performing synthetic division again:
+
+```
+1 |  1  -1   3   2  -5
+  |      1   0   3   5
+-----------------------
+    1   0   3   5   0
+```
+
+The result is R(x) = x^3 + 3x + 5. Since the remainder is 0, x = 1 is a root of Q(x) as well.
+
+3. We check if x = 1 is a root of R(x):
+
+```
+1 |  1   0   3   5
+  |      1   1   4
+-----------------------
+    1   1   4   9
+```
+
+The remainder is 9, so x = 1 is not a root of R(x). 
+
+Thus, the multiplicity of the root ξ = 1 is 2.
+
+Next, we need to calculate P'(2) + P''(2).
+
+4. First, we find P'(x):
+
+P'(x) = 5x^4 - 8x^3 + 12x^2 - 2 - 7 = 5x^4 - 8x^3 + 12x^2 - 7.
+
+Now, we evaluate P'(2):
+
+P'(2) = 5(2^4) - 8(2^3) + 12(2^2) - 7
+       = 5(16) - 8(8) + 12(4) - 7
+       = 80 - 64 + 48 - 7
+       = 80 - 64 + 48 - 7
+       = 80 - 64 + 48 - 7
+       = 80 - 64 + 48 - 7
+       = 16 + 48 - 7
+       = 64 - 7
+       = 57.
+
+5. Next, we find P''(x):
+
+P''(x) = 20x^3 - 24x^2 + 24.
+
+Now, we evaluate P''(2):
+
+P''(2) = 20(2^3) - 24(2^2) + 24
+        = 20(8) - 24(4) + 24
+        = 160 - 96 + 24
+        = 160 - 96 + 24
+        = 64 + 24
+        = 88.
+
+Finally, we calculate P'(2) + P''(2):
+
+P'(2) + P''(2) = 57 + 88 = 145.
+
+The final answer is:
+
+145",False,,,
+71,,"For the function $f(x,y)$ defined by $f(x,y)=1$ if $x=y$, $f(x,y)=0$ otherwise. Can we measure its integraion over the rectangle $[0,1]\times[0,1]$ using the Tonelli's Theorem? Answer true or false.",False,no,True,,,
+72,,The cross section for neutrons of energy 10 eV being captured by silver is 17 barns. What is the probability of a neutron being captured as it passes through a layer of silver 2 mm thick?,0.2,0.034,False,,,
+73,,"What is the determinant of matrix [[0, 1, 2], [7, 8, 3], [6, 5, 4]]?",-36,-2,False,,,
+75,,The two-digit integers from 19 to 92 are written consecutively to form the large integer N = 192021 · · · 909192. Suppose that 3^k is the highest power of 3 that is a factor of N. What is k?,1,k = 30,False,,,
+76,,Apply the Graeffe's root squaring method to find the roots of the following equation x^3 - 2x + 2 = 0 correct to two decimals. What's the sum of these roots?,1,The sum of the roots is 2.,False,,,
+77,,"A glider with mass m = 0.200 kg sits on a frictionless horizontalair track, connected to a spring with force constant k = 5.00 N/m.You pull on the glider, stretching the spring 0.100 m, and release itfrom rest. The glider moves back toward its equilibrium position (x = 0).What is its x-velocity when  x = 0.080 m? (Unit: m/s))",-0.3,2.00,False,,,
+78,,Toss a coin repeatedly until two consecutive heads appear. Assume that the probability of the coin landing on heads is 3/7. Calculate the average number of times the coin needs to be tossed before the experiment can end.,7.77778,21,False,,,
+79,,"Julian is jogging around a circular track of radius 50 m. In a coordinate system with its origin at the center of the track, Julian's x-coordinate is changing at a rate of -1.25 m/s when his coordinates are (40, 30). Find dy/dt at this moment.",1.667,25,False,,,
+80,,Calculate the momentum uncertainty of a tennis ball constrained to be in a fence enclosure of length 35 m surrounding the court in kg m/s.,3e-36,1.43,False,,,
+81,,"Let {X_n: n \geq 1} be independent, identically distributed random variables taking integer values {1,-1}. Let S_0=0, S_n=\sum_{i=1}^n X_i. Let P(X_i=1)=0.8 and P(X_i=-1)=0.2. The range R_n of S_0,S_1,...,S_n is the number of distinct values taken by the sequence. Then what is the limit of n^{-1}E[R_n] as n goes to infinity? Here E[R_n] is the expectation over the random variable R_n.",0.6,1,False,,,
+82,,"Find the arc length of y = x^{-1} over the interval [1,2] using the Simpson's Rule S_8.",1.132,"The arc length \( L \) of a curve \( y = f(x) \) from \( x = a \) to \( x = b \) is given by the formula:
+
+\[
+L = \int_a^b \sqrt{1 + \left( \frac{dy}{dx} \right)^2} \, dx
+\]
+
+For the function \( y = x^{-1} \), we first find the derivative:
+
+\[
+\frac{dy}{dx} = -x^{-2}
+\]
+
+Now, we compute \( \left( \frac{dy}{dx} \right)^2 \):
+
+\[
+\left( \frac{dy}{dx} \right)^2 = \left( -x^{-2} \right)^2 = x^{-4}
+\]
+
+Next, we substitute this into the arc length formula:
+
+\[
+L = \int_1^2 \sqrt{1 + x^{-4}} \, dx
+\]
+
+To apply Simpson's Rule \( S_8 \), we need to divide the interval \([1, 2]\) into 8 subintervals. The width of each subinterval \( h \) is:
+
+\[
+h = \frac{b - a}{n} = \frac{2 - 1}{8} = \frac{1}{8}
+\]
+
+The \( x \)-values at which we will evaluate the function are:
+
+\[
+x_0 = 1, \quad x_1 = 1.125, \quad x_2 = 1.25, \quad x_3 = 1.375, \quad x_4 = 1.5, \quad x_5 = 1.625, \quad x_6 = 1.75, \quad x_7 = 1.875, \quad x_8 = 2
+\]
+
+Now we calculate \( f(x) = \sqrt{1 + x^{-4}} \) at these points:
+
+\[
+f(x_0) = \sqrt{1 + 1^{-4}} = \sqrt{2}
+\]
+\[
+f(x_1) = \sqrt{1 + (1.125)^{-4}} \approx \sqrt{1 + 0.571} \approx \sqrt{1.571}
+\]
+\[
+f(x_2) = \sqrt{1 + (1.25)^{-4}} \approx \sqrt{1 + 0.256} \approx \sqrt{1.256}
+\]
+\[
+f(x_3) = \sqrt{1 + (1.375)^{-4}} \approx \sqrt{1 + 0.134} \approx \sqrt{1.134}
+\]
+\[
+f(x_4) = \sqrt{1 + (1.5)^{-4}} \approx \sqrt{1 + 0.0625} \approx \sqrt{1.0625}
+\]
+\[
+f(x_5) = \sqrt{1 + (1.625)^{-4}} \approx \sqrt{1 + 0.036} \approx \sqrt{1.036}
+\]
+\[
+f(x_6) = \sqrt{1 + (1.75)^{-4}} \approx \sqrt{1 + 0.020} \approx \sqrt{1.020}
+\]
+\[
+f(x_7) = \sqrt{1 + (1.875)^{-4}} \approx \sqrt{1 + 0.011} \approx \sqrt{1.011}
+\]
+\[
+f(x_8) = \sqrt{1 + 2^{-4}} = \sqrt{1.0625}
+\]
+
+Now we apply Simpson's Rule:
+
+\[
+L \approx \frac{h}{3} \left( f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + 2f(x_4) + 4f(x_5) + 2f(x_6) + 4f(x_7) + f(x_8) \right)
+\]
+
+Calculating the values:
+
+\[
+L \approx \frac{1/8}{3} \left( \sqrt{2} + 4\sqrt{1.571} + 2\sqrt{1.256} + 4\sqrt{1.134} + 2\sqrt{1.0625} + 4\sqrt{1.036} + 2\sqrt{1.020} + 4\sqrt{1.011} + \sqrt{1.0625} \right)
+\]
+
+After evaluating the above expression, we find:
+
+\[
+L \approx 0.5
+\]
+
+Thus, the final answer is:
+
+0.5",False,,,
+83,,Is the Fourier transform of the signal x(t)=(1-e^{-|t|})[u(t+1)-u(t-1)] real?,True,No,False,,,
+84,,"compute the integral $\iint_V \frac{d x d y d z}{(1+x+y+z)^3}$, where V={(x, y, z): x, y, z \geq 0, x+y+z\leq 1}.",0.034,The answer is 1.,False,,,
+86,,What is the minimum number of people needed in a room to guarantee that there are 4 mutual friends or 4 mutual strangers?,18,18,True,,,
+87,,"If polygon ABCDE ~ polygon PQRST, AB = BC = 8, AE = CD = 4, ED = 6, QR = QP, and RS = PT = 3, find the perimeter of polygon PQRST.",22.5,The perimeter of polygon PQRST is 30.,False,,,
+88,,What is the effective rates (between 0 and 1) for 18% compounded quarterly? Return the numeric value.,0.1925,0.1951,False,,,
+89,,What is the effective rates for 3% compounded monthly?,0.0304,1.0304,False,,,
+90,,"Let f be a real function on [0,1]. If the bounded variation of f on [0,1] equals f(1)-f(0), then: (a) f is increasing on [0,1]; (b) f is decreasing on [0,1]; (c) None of the above. Which one is correct?",a,(C),False,,,
+91,,"If a stock pays a $5 dividend this year, and the dividend has been growing 6% annually, what will be the stock’s intrinsic value, assuming a required rate of return of 12%?",88.33,83.33,False,,,
+92,,"Malus' law: $I=I_0*cos^2($\theta$)$. Where I is the intensity of polarized light that has passed through the polarizer, I_0 is the intensity of polarized light before the polarizer, and $\theta$ is the angle between the polarized light and the polarizer. Unpolarized light passes through a polarizer. It then passes through another polarizer at angle 40 degree to the first, and then another at angle 15 degree to the second. What percentage of the original intensity was the light coming out of the second polarizer?",54.8,0.5,False,,,
+93,,"In Image processing, opening is a process in which first dilation operation is performed and then erosion operation is performed. Is it true?",False,no,True,,,
+95,,"Consider a source X with a distortion measure $d(x, \hat{x})$ that satisfies the following property: all columns of the distortion matrix are permutations of the set $\{d_1, d_2, \ldots, d_m\}$. The function $\phi(D) = \max_{b:\sum_{i=1}^m p_i d_i \leq D} H(p)$ is concave. True or False?",True,Yes,True,,,
+96,,Consider a file with a size of 350 Kbytes storing in a web server. Client A sends a request to the server to retrieve the file from a remote location. It is known that the link capacity between client A and the server is 10 Mbps and the round trip time (RTT) between the server and client is fixed at 20ms. Assume that the segment size is 20 Kbytes and the client has a receiver buffer of 200Kbytes. Assume that the window size (W) is adjusted according to the congestion control procedures of TCP-Reno. How long (in ms) does client A take to receive the whole file from the server after sending a request? Given that the initial slow-start threshold is 32.,344,250 ms,False,,,
+98,,"What is the Cramer-Rao lower bound on $E_\theta(\hat{\theta}(X)-\theta)^2$, where $\hat{\theta}(X)$ is an unbaised estimator of $\theta$ for the Gaussian distribution family $f_\theta(x)=N(0,\theta)$? (a) $2\theta$. (b) $2\theta^2$. (c) $0.5\theta^{-1}$. (d) $0.5\theta^{-2}$. Which option is correct?",b,(B),False,,,
+101,,"A scuba diver is wearing a head lamp and looking up at the surface of the water. If the minimum angle to the vertical resulting in total internal reflection is 25∘, what is the index of refraction of the water? $\theta_{air} = 1.00$.",2.37,2.24,False,,,
+102,,"For every positive real number $x$, let $g(x)=\lim _{r \rightarrow 0}((x+1)^{r+1}-x^{r+1})^{1/r}$. What is the limit of $g(x)/x$ as $x$ goes to infinity?",2.7182818,1,False,,,
+104,,"X rays scattered from rock salt (NaCl) are observed to have an intense maximum at an angle of 20° from the incident direction. Assuming n = 1 (from the intensity), what must be the Wavelength of the incident radiation in nm?",0.098,30,False,,,
+105,,Suppose that there are two firms in the market facing no costs of production and a demand curve given by Q = 150 - P for their identical products. Suppose the two firms choose prices simultaneously as in the Bertrand model. Compute the prices in the nash equilibrium.,0,75,False,,,
+106,,In how many ways can 10 people be seated at 1 identical round tables? Each table must have at least 1 person seated.,362880,512,False,,,
+107,,"What is the Cramer-Rao lower bound on $E_\theta(\hat{\theta}(X)-\theta)^2$, where $\hat{\theta}(X)$ is an unbaised estimator of $\theta$ for the distribution family $f_\theta(x)=\theta e^{-\theta x}$, $x \geq 0$? (a) $\theta$. (b) $\theta^2$. (c) $\theta^{-1}$. (d) $\theta^{-2}$.",b,(B),False,,,
+108,,"For an integer a > 0 and an integer b > 0, is there any other number c > 0 such that a^10 + b^10 = c^10?",False,no,True,,,
+109,,"Consider Convolutional Neural Network D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. Consider CNN D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. What is the total number of weights defined for the entire activation output of this first layer? (ie. If you flattened all filters and channels into a single vector)",900,84,False,,,
+110,,How many ways are there to arrange 9 people in a line such that no one is standing in their correct position?,133496,1334961,False,,,
+111,,"Ms. Fogg is planning an around-the-world trip on which she plans to spend $10,000. The utility from the trip is a function of how much she actually spends on it (Y), given by U(Y) = ln Y. If there is a 25 percent probability that Ms. Fogg will lose $1,000 of her cash on the trip, what is the trip’s expected utility?",9.184,9.2103,False,,,
+112,,In how many ways can 6 people be seated at 2 identical round tables? Each table must have at least 1 person seated.,225,90,False,,,
+113,,"For a matrix A, is the function F(A) = det A from the linear space R^{3*3} to R a linear transformation?",False,No,True,,,
+114,,"Are the vectors [1, 2], [2, 3], and [3, 4] linearly independent?",False,No,True,,,
+116,,"suppose $u=\arctan \frac{y}{x}$, what is numeric of $\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}$?",0.0,0,True,,,
+117,,Use the Runge-Kutta method with $h=0.1$ to find approximate values of the solution of $(y-1)^2 * y' = 2x + 3$ with y(1) = 4. What is y(0)?,3.46621207,The final number is 2.,False,,,
+118,,Define f: R 	o R by f(x) = (x^3) / (1 + x^2). Is f uniformly continuous on R?,True,Yes,True,,,
+119,,"Evaluate $\int_c z^2 / (z - 5) dz$, where c is the circle that $|z| = 2$.",0,0,True,,,
+121,,The atomic mass of the 4He atom is 4.002603 u. Find the binding energy of the 4He nucleus in MeV.,28.3,28,False,,,

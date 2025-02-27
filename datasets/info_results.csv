@@ -1,0 +1,155 @@
+id,date,dataset_name,result_file_name,method,finished,count,accuracy,system_prompt,human_prompt,temperature,response_count,reward_method,llm_model
+1,11/02/2025,CommonsenseQA,datasets/CommonsenseQA/results/results_train_rand_split.csv,A_ZERO_SHOT,True,100,0.77," Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E).","Question: {question}
+Choices:
+{choices}
+Answer as one letter:
+",0.3,1,,gpt-4o-mini
+2,11/02/2025,LastLetterConcat,datasets/LastLetterConcat/results/results_test.csv,A_ZERO_SHOT,True,100,0.0,Solve the problem below.,"Problem: {question}
+Answer as just the letters:
+",0.3,1,,gpt-4o-mini
+3,11/02/2025,LastLetterConcat,datasets/LastLetterConcat/results/results_test_edited.csv,A_ZERO_SHOT,True,100,0.08,Solve the problem below.,"Problem: {question}
+Answer as just the letters:
+",0.3,1,,gpt-4o-mini
+4,11/02/2025,MultiArth,datasets/MultiArth/results/results_train.csv,A_ZERO_SHOT,True,100,0.91,"Solve the math world problem, giving your answer as an arabic numeral. Answer with only the final number.","Problem: {question}
+Single numeric answer:
+",0.3,1,,gpt-4o-mini
+5,11/02/2025,StrategyQA,datasets/StrategyQA/results/results_strategyqa_train.csv,A_ZERO_SHOT,True,100,0.87,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Facts{facts}
+Answer as ""yes"" or ""no"":
+",0.3,1,,gpt-4o-mini
+6,11/02/2025,StrategyQA,datasets/StrategyQA/results/results_strategyqa_train_edited.csv,A_ZERO_SHOT,True,100,0.9,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Facts{facts}
+Answer as ""yes"" or ""no"":
+",0.3,1,,gpt-4o-mini
+7,11/02/2025,StrategyQA_2,datasets/StrategyQA_2/results/results_test.csv,A_ZERO_SHOT,True,100,0.58,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Answer as ""yes"" or ""no"":
+",0.3,1,,gpt-4o-mini
+8,11/02/2025,StrategyQA_2,datasets/StrategyQA_2/results/results_test_edited.csv,A_ZERO_SHOT,True,100,0.68,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Answer as ""yes"" or ""no"":
+",0.3,1,,gpt-4o-mini
+9,11-02-2025,CommonsenseQA,../../datasets/CommonsenseQA/results/a1_11-02-2025.csv,A_ZERO_SHOT,True,5,0.8,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E).","Problem: {question}
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.3,1,,gpt-4o-mini
+10,11-02-2025,LastLetterConcat,../../datasets/LastLetterConcat/results/a1_11-02-2025.csv,A_ZERO_SHOT,True,5,0.2,Solve the problem below.,"Problem: {question}
+Answer as just the letters:
+",0.3,1,,gpt-4o-mini
+11,11-02-2025,MultiArth,../../datasets/MultiArth/results/a1_11-02-2025.csv,A_ZERO_SHOT,True,5,0.6,"Solve the math world problem, giving your answer as an arabic numeral. Answer with only the final number.","Problem: {question}
+Single numeric answer:
+",0.3,1,,gpt-4o-mini
+12,11-02-2025,StrategyQA,../../datasets/StrategyQA/results/a1_11-02-2025.csv,A_ZERO_SHOT,True,5,0.8,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Answer as ""yes"" or ""no"":
+",0.3,1,,gpt-4o-mini
+13,11-02-2025,StrategyQA_2,../../datasets/StrategyQA_2/results/a1_11-02-2025.csv,A_ZERO_SHOT,True,5,0.4,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Answer as ""yes"" or ""no"":
+",0.3,1,,gpt-4o-mini
+14,11-02-2025,CommonsenseQA,../../datasets/CommonsenseQA/results/a_2_11-02-2025.csv,A_N_SAMPLING,True,100,0.76,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E).","Problem: {question}
+Choices:
+{row['choices']}
+Answer as one letter:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+15,11-02-2025,LastLetterConcat,../../datasets/LastLetterConcat/results/a_2_11-02-2025.csv,A_N_SAMPLING,True,100,0.07,Solve the problem below.,"Problem: {question}
+Answer as just the letters:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+16,11-02-2025,MultiArth,../../datasets/MultiArth/results/a_2_11-02-2025.csv,A_N_SAMPLING,True,100,0.88,"Solve the math world problem, giving your answer as an arabic numeral. Answer with only the final number.","Problem: {question}
+Single numeric answer:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+17,11-02-2025,StrategyQA,../../datasets/StrategyQA/results/a_2_11-02-2025.csv,A_N_SAMPLING,True,100,0.65,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Answer as ""yes"" or ""no"":
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+18,11-02-2025,StrategyQA_2,../../datasets/StrategyQA_2/results/a_2_11-02-2025.csv,A_N_SAMPLING,True,100,0.68,"Work out an answer to the commonsense reasoning question above, and then answer yes or no.","Question: {question}
+Answer as ""yes"" or ""no"":
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+19,13-02-2025,AQuA-RAT,../../datasets/AQuA-RAT/results/a1_13-02-2025.csv,A_ZERO_SHOT,True,10,0.0,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E).","Problem: {question}
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.3,1,,gpt-4o-mini
+20,24-02-2025,AQuA-RAT,../../datasets/AQuA-RAT/results/a1_24-02-2025_testing_AQUA.csv,A_ZERO_SHOT,True,10,0.2,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem:
+```
+{question}
+```
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.0,1,,gpt-4o-mini
+21,24-02-2025,AQuA-RAT,../../datasets/AQuA-RAT/results/a1_24-02-2025.csv,A_ZERO_SHOT,True,100,0.33,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem:
+```
+{question}
+```
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.0,1,,gpt-4o-mini
+22,24-02-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a1_24-02-2025.csv,A_ZERO_SHOT,True,100,0.33,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem:
+```
+{question}
+```
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.0,1,,gpt-4o-mini
+23,24-02-2025,MATHQA,../datasets/MATHQA/results/a1_24-02-2025.csv,A_ZERO_SHOT,True,100,0.34,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem:
+```
+{question}
+```
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.0,1,,gpt-4o-mini
+24,24-02-2025,MMLU,../datasets/MMLU/results/a1_24-02-2025.csv,A_ZERO_SHOT,True,100,0.47,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem:
+```
+{question}
+```
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.0,1,,gpt-4o-mini
+25,24-02-2025,RiddleSense,../datasets/RiddleSense/results/a1_24-02-2025.csv,A_ZERO_SHOT,True,100,0.81,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem:
+```
+{question}
+```
+Choices:
+{row['choices']}
+Answer as one letter:
+",0.0,1,,gpt-4o-mini
+26,24-02-2025,TheoremaQA,../datasets/TheoremaQA/results/a1_24-02-2025.csv,A_ZERO_SHOT,True,100,0.31,"Solve the math world problem, giving your answer as an arabic numeral. Answer with only the final number.","Problem:
+```
+{question}
+```
+Single numeric answer:
+",0.0,1,,gpt-4o-mini
+27,25-02-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_2_25-02-2025.csv,A_N_SAMPLING,True,100,0.29,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem: {question}
+Choices:
+{row['choices']}
+Answer as one letter:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+28,25-02-2025,MATHQA,../datasets/MATHQA/results/a_2_25-02-2025.csv,A_N_SAMPLING,True,100,0.29,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem: {question}
+Choices:
+{row['choices']}
+Answer as one letter:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+29,25-02-2025,MMLU,../datasets/MMLU/results/a_2_25-02-2025.csv,A_N_SAMPLING,True,100,0.43,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem: {question}
+Choices:
+{row['choices']}
+Answer as one letter:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+30,25-02-2025,RiddleSense,../datasets/RiddleSense/results/a_2_25-02-2025.csv,A_N_SAMPLING,True,100,0.82,"Solve the multiple choice problem, choosing (A),(B),(C),(D) or (E). Answer with only the correct letter that corresponds to the correct answer option.'","Problem: {question}
+Choices:
+{row['choices']}
+Answer as one letter:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+31,25-02-2025,TheoremaQA,../datasets/TheoremaQA/results/a_2_25-02-2025.csv,A_N_SAMPLING,True,100,0.32,"Solve the math world problem, giving your answer as an arabic numeral. Answer with only the final number.","Problem: {question}
+Single numeric answer:
+",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+32,26-02-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_2_26-02-2025_testing_reasoning.csv,A_N_SAMPLING,True,100,0.94,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{row['choices']}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",1.0,3,MAJOR_ANSWER,o3-mini

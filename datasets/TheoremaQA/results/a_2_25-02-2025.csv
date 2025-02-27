@@ -1,0 +1,1555 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score
+0,,How many ways are there to divide a set of 8 elements into 5 non-empty ordered subsets?,11760,"840
+------
+280
+------
+6720",False,,MAJOR_ANSWER,
+1,,what is the value of $\int_{-infty}^{+infty} sin(3*t)*sin(t/\pi)/t^2 dt$?,1.0,"The value of the integral \(\int_{-\infty}^{+\infty} \frac{\sin(3t) \sin\left(\frac{t}{\pi}\right)}{t^2} dt\) is \( \frac{3}{\pi} \). 
+
+So the final answer is:
+
+\[
+\frac{3}{\pi} \approx 0.95493
+\]
+
+In these contexts, if you want a numeric answer, it should be rendered as:
+
+3
+------
+0
+------
+The value of the integral \(\int_{-\infty}^{+\infty} \frac{\sin(3t) \sin(t/\pi)}{t^2} dt\) is \( \frac{3\pi}{2} \). 
+
+So, the final answer is:
+
+3.14",False,,MAJOR_ANSWER,
+3,,Please solve the equation 2*x^3 + e^x = 10 using newton-raphson method.,1.42,"2
+------
+1.0
+------
+2",False,2,MAJOR_ANSWER,
+4,,How many ways are there to divide a set of 7 elements into 4 non-empty ordered subsets?,4200,"840
+------
+840
+------
+840",False,840,MAJOR_ANSWER,
+7,,"Compute $\int_{|z| = 1} z^2 sin(1/z) dz$. The answer is Ai with i denoting the imaginary unit, what is A?",-1.047,"0
+------
+0
+------
+0",False,0,MAJOR_ANSWER,
+8,,A container weighs 3.22 lb force when empty. Filled with water at 60°F the mass of the container and its contents is 1.95 slugs. Find its volume in cubic feet. Assume density of water = 62.4 lb force/ft3.,0.955,"0.031 cubic feet.
+------
+0.025 cubic feet.
+------
+0.028 cubic feet (rounded to three decimal places)",False,,MAJOR_ANSWER,
+10,,"Find the x value of the solutions to the linear system: 7x - y = 15x, -6x + 8y = 15y.",0,"x = 3
+------
+x = 3
+------
+5",False,3,MAJOR_ANSWER,
+11,,"In Jules Verne's 1865 story with this title, three men went to the moon in a shell fired from a giant cannon sunk in the earth in Florida. Find the minimum muzzle speed that would allow a shell to escape from the earth completely (the escape speed). Neglect air resistance, the earth's rotation, and the gravitational pull of the moon. The earth's radius and mass are $R_E}=$ $6.38 \times 10^6 m$ and $m_E=5.97 \times 10^{24} kg$. (Unit: 10 ^ 4 m/s)",1.12,"11.2
+------
+11.2
+------
+11.2",False,11.2,MAJOR_ANSWER,
+12,,"Is W = {[x, y] in R^2: x >= 0 and y >= 0} a subspace of R^2?",False,"No
+------
+No
+------
+No",True,no,MAJOR_ANSWER,
+14,,True of false: one can draw a simple connected planar graph with 200 vertices and 400 faces,False,"No
+------
+No.
+------
+No.",True,no,MAJOR_ANSWER,
+16,,"What is the number of labelled forests on 10 vertices with 5 connected components, such that vertices 1, 2, 3, 4, 5 all belong to different connected components?",50000,"25200
+------
+172800
+------
+30240",False,,MAJOR_ANSWER,
+17,,Let g(x) be the inverse of f(x) = x + cos(x). What is g'(1)?,1,"2
+------
+1
+------
+1",True,1,MAJOR_ANSWER,
+18,,"Let V be the space of all infinite sequences of real numbers. Consider the transformation T(x_0, x_1, x_2, ...) = (x_1, x_2, x_3, ...) from V to V. Is the sequence (1,2,3,...) in the image of T?",True,"Yes.
+------
+Yes.
+------
+Yes",True,yes,MAJOR_ANSWER,
+19,,"Let W(t) be the standard Brownian motion. Define X(t) = exp{W(t)}, for all t \in [0, \infty). Let 0 < s < t. Find Cov(X(s=1/2), X(t=1)).",1.3733,"1
+------
+The final answer is 1.
+------
+1",False,1,MAJOR_ANSWER,
+20,,Consider a random walk on a connected graph with 4 edges. What is the highest possible entropy rate? Use base 2 logarithm and return the entropy rate in bits.,1.094,"2
+------
+2
+------
+2",False,2,MAJOR_ANSWER,
+21,,"If u is the real part of a function, and v is the imaginary part, then the Cauchy-Riemann equations for u and v take the following form in polar coordinates: r\frac{\partial u}{\partial r} = \frac{\partial v}{\partial \theta} and r\frac{\partial v}{\partial r} = -\frac{\partial u}{\partial \theta}. Is this argument True or False?",True,"Yes
+------
+Yes
+------
+Yes",True,yes,MAJOR_ANSWER,
+22,,"The shock absorbers in an old car with mass 1000 kg are completely worn out. When a 980-N person climbs slowly into the car at its center of gravity, the car sinks 2.8 cm. The car (with the person aboard) hits a bump, and the car starts oscillating up and down in SHM. Model the car and person as a single body on a single spring, and find the frequency of the oscillation. (Unit: Hz)",0.9,"1. First, we calculate the total weight of the car with the person:
+   - Weight of the car = 1000 kg × 9.81 m/s² = 9810 N
+   - Total weight with the person = 9810 N + 980 N = 10790 N
+
+2. The spring constant \( k \) can be calculated using the formula:
+   \[
+   k = \frac{F}{x}
+   \]
+   where \( F \) is the total force (the weight) and \( x \) is the displacement in meters.
+   - Displacement \( x = 2.8 \, \text{cm} = 0.028 \, \text{m} \)
+   - Total force \( F = 10790 \, \text{N} \)
+
+   Thus, 
+   \[
+   k = \frac{10790 \, \text{N}}{0.028 \, \text{m}} \approx 385000 \, \text{N/m}
+   \]
+
+3. The frequency of oscillation \( f \) for a mass \( m \) on a spring with spring constant \( k \) is given by the formula:
+   \[
+   f = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+   \]
+   where 
+   - \( m \) is the total mass, which is \( 1000 \, \text{kg} + \frac{980 \, \text{N}}{9.81 \, \text{m/s}²} \approx 1000 + 100 = 1100 \, \text{kg} \).
+
+4. Now substituting \( k \) and \( m \):
+   \[
+   f = \frac{1}{2\pi} \sqrt{\frac{385000 \, \text{N/m}}{1100 \, \text{kg}}} 
+   \]
+   \[
+   f \approx \frac{1}{2\pi} \sqrt{350.0 \, \text{m/s}²} \approx \frac{1}{2\pi} \times 18.71 \approx \frac{18.71}{6.2832} \approx 2.98 \, \text{Hz}
+   \]
+
+5. Round off the number to the nearest two decimal places (although the prompt asks for an arabic numeral without specifying decimal places).
+
+Final answer:
+3
+------
+2.37
+------
+1. First, we find the effective spring constant \( k \) using Hooke's Law, which states that \( F = kx \). Here, \( F \) is the force applied (the weight of the person), and \( x \) is the displacement (how much the car sinks).
+
+   The person weighs 980 N, and the car sinks 2.8 cm (which is 0.028 m).
+
+   \[
+   k = \frac{F}{x} = \frac{980 \, \text{N}}{0.028 \, \text{m}} = 35000 \, \text{N/m}
+   \]
+
+2. Now, we can find the total mass of the system. The mass of the car is 1000 kg, and the person has a weight of 980 N. To find the mass of the person, we divide the weight by gravity \( g = 9.81 \, \text{m/s}^2 \).
+
+   \[
+   m_{\text{person}} = \frac{980 \, \text{N}}{9.81 \, \text{m/s}^2} \approx 99.8 \, \text{kg}
+   \]
+
+   The total mass \( m \) is:
+
+   \[
+   m = 1000 \, \text{kg} + 99.8 \, \text{kg} \approx 1099.8 \, \text{kg}
+   \]
+
+3. The frequency \( f \) of the oscillation can be determined using the formula for the frequency of a mass-spring system, given by:
+
+   \[
+   f = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+   \]
+
+   Substituting the values \( k = 35000 \, \text{N/m} \) and \( m \approx 1099.8 \, \text{kg} \):
+
+   \[
+   f = \frac{1}{2\pi} \sqrt{\frac{35000}{1099.8}} \approx \frac{1}{6.2832} \sqrt{31.8} \approx \frac{1}{6.2832} \times 5.64 \approx \frac{5.64}{6.2832} \approx 0.8980 \, \text{Hz}
+   \]
+
+Final result: 
+
+0.898",False,,MAJOR_ANSWER,
+23,,"Find the smallest positive integer that leaves a remainder of 1 when divided by 2, a remainder of 2 when divided by 3, a remainder of 3 when divided by 4, a remainder of 4 when divided by 5, and a remainder of 5 when divided by 6.",59,"59
+------
+59
+------
+59",True,59,MAJOR_ANSWER,
+26,,"Aisha graduates college and starts a job. She saves $1000 each quarter, depositing it into a retirement savings account. Suppose that Aisha saves for 30 years and then retires. At retirement she wants to withdraw money as an annuity that pays a constant amount every month for 25 years. During the savings phase, the retirement account earns 6% interest compounded quarterly. During the annuity payout phase, the retirement account earns 4.8% interest compounded monthly. Calculate Aisha’s monthly retirement annuity payout.",1898.27,"126.75
+------
+1547.07
+------
+Aisha’s monthly retirement annuity payout is 644.67.",False,,MAJOR_ANSWER,
+27,,"Let $g_\theta(x_1,x_2)=f_\theta(x_1)f_\theta(x_2)$. Let $J_f(\theta)$ be the Fisher information of $f_\theta$.  What is the relationship between $J_f(\theta)$ and $J_g(\theta)$? (a) $J_g(\theta) = 0.5J_f(\theta)$. (b) $J_g(\theta) = J_f(\theta)$. (c) $J_g(\theta) = 2J_f(\theta)$. (d) $J_g(\theta) = 4J_f(\theta)$. Which option is correct?",c,"(C)
+------
+(C)
+------
+(C)",True,c,MAJOR_ANSWER,
+28,,"An auto magazine reports that a certain sports car has 53% of its weight on the front wheels and 47% on its rear wheels. (That is, the total normal forces on the front and rear wheels are 0.53w and 0.47w, respectively, where w is the car’s weight.) The distance between the axles is 2.46 m. How far in front of the rear axle is the car’s center of gravity?",1.3,"1.156
+------
+1.15
+------
+1.225",False,,MAJOR_ANSWER,
+29,,"A parachutist with mass m=80 kg is undergoing free fall. The drag force applied on him is $F_D = kv^2$, where v is the velocity measured relative to the air. The constant k=0.27 [Ns^2/m^2] is given. Find the distance traveled h in meters, until v=0.95$v_t$ is achieved, where $v_t$ is the terminal velocity. Return the numeric value.",345.0,"20.0
+------
+39.999
+------
+47",False,,MAJOR_ANSWER,
+31,,In how many ways can a set of 6 distinct letters be partitioned into 3 non-empty groups if each group must contain at least 2 letters?,15,"90
+------
+90
+------
+90",False,90,MAJOR_ANSWER,
+32,,"Consider $x(t)$ to be given as, $$ x(t)=\cos (1000 \pi t) $$ . Let the sampling frequency be $700 \mathrm{~Hz}$. Does aliasing occur?",True,"To determine whether aliasing occurs, we first need to identify the Nyquist criterion. According to the Nyquist theorem, for a signal to be sampled without aliasing, the sampling frequency must be at least twice the highest frequency present in the signal.
+
+1. The signal given is \( x(t) = \cos(1000 \pi t) \).
+2. The frequency of this signal can be extracted from the argument of the cosine function. The general form of a cosine function is \( \cos(2\pi f t) \). Here, \( 1000\pi t \) can be interpreted as \( 2\pi \cdot 500 t \), indicating that the frequency \( f \) of the signal is \( 500 \, \text{Hz} \).
+3. According to the Nyquist theorem, the minimum sampling frequency \( f_s \) should be \( 2f \). Thus, for our signal,
+   \[
+   f_s \geq 2 \cdot 500 \, \text{Hz} = 1000 \, \text{Hz}.
+   \]
+4. The given sampling frequency is \( 700 \, \text{Hz} \), which is less than \( 1000 \, \text{Hz} \).
+
+Since the sampling frequency \( 700 \, \text{Hz} \) is less than the required \( 1000 \, \text{Hz} \), aliasing will occur.
+
+Therefore, the answer is ""yes.""
+------
+To determine if aliasing occurs, we first need to examine the frequency of the signal \( x(t) = \cos(1000 \pi t) \).
+
+The angular frequency is given as \( 1000 \pi \, \text{rad/s} \). To convert this to frequency in Hertz (cycles per second):
+
+\[
+f = \frac{1000 \pi}{2\pi} = 500 \, \text{Hz}
+\]
+
+Next, the sampling theorem states that to avoid aliasing, the sampling frequency \( f_s \) must be at least twice the highest frequency present in the signal (Nyquist rate). Thus:
+
+\[
+f_s \geq 2f
+\]
+
+In this case, the highest frequency \( f \) is \( 500 \, \text{Hz} \), so:
+
+\[
+2f = 2 \times 500 = 1000 \, \text{Hz}
+\]
+
+The given sampling frequency is \( f_s = 700 \, \text{Hz} \). Since \( 700 \, \text{Hz} < 1000 \, \text{Hz} \), the sampling frequency is less than the Nyquist rate.
+
+This means that aliasing will occur.
+
+Final answer: yes.
+------
+To determine if aliasing occurs, we need to compare the signal frequency with the Nyquist frequency, which is half of the sampling frequency.
+
+1. The given signal is \( x(t) = \cos(1000 \pi t) \).
+2. The frequency of the signal can be identified from the argument of the cosine function. The term \( 1000 \pi \) in \( \cos(1000 \pi t) \) indicates that the frequency \( f \) is:
+   \[
+   f = \frac{1000 \pi}{2 \pi} = 500 \, \text{Hz}
+   \]
+3. The sampling frequency (Fs) is given as \( 700 \, \text{Hz} \).
+4. The Nyquist frequency \( F_N \) is:
+   \[
+   F_N = \frac{F_s}{2} = \frac{700}{2} = 350 \, \text{Hz}
+   \]
+5. Since the frequency of the signal (500 Hz) is greater than the Nyquist frequency (350 Hz), aliasing will occur.
+
+Thus, the answer is ""yes"".",True,yes,MAJOR_ANSWER,
+33,,"For a\geq 0, we define $S_a={x | dist(x, S) \leq a}$, where $dist(x,S)=inf_{y\in S}||x-y||$. Suppose S is convex. Is S_a convex? Return 1 for yes and 0 for no.",1.0,"1
+------
+1
+------
+1",True,1,MAJOR_ANSWER,
+34,,"suppose the 10-by-10 matrix A has the form: if i \neq j, A_{i,j}=a_i*b_j; if i=j,  A_{i,j}=1+a_i*b_j for all 1<=i,j<=10. Here a_i = 1/i, b_i=1/(i+1). Find the determinant of A. return the numeric.",1.9,"0
+------
+0
+------
+0",False,0,MAJOR_ANSWER,
+35,,"Find the area of the region between the graphs of the functions f(x) = x^2 - 4x + 10, g(x) = 4x - x^2, 1 <= x <= 3.",5.333,"5
+------
+8
+------
+8",False,8,MAJOR_ANSWER,
+36,,Does the following transformation have an eigenvector: Counterclockwise rotation through an angle of 45 degrees followed by a scaling by 2 in R^2.,False,"Yes
+------
+Yes
+------
+Yes",False,yes,MAJOR_ANSWER,
+37,,How many ways are there to arrange 6 pairs of parentheses such that they are balanced?,132,"132
+------
+132
+------
+132",True,132,MAJOR_ANSWER,
+38,,Find the fraction of 7.7-MeV alpha particles that is deflected at an angle of 90° or more from a gold foil of 10^-6 m thickness.,4e-05,"0
+------
+0.0006
+------
+0.004",False,,MAJOR_ANSWER,
+39,,In how many ways can a group of 9 people be divided into 3 non-empty subsets?,3025,"945
+------
+945
+------
+945",False,945,MAJOR_ANSWER,
+40,,"Suppose there is a 50-50 chance that an individual with logarithmic utility from wealth and with a current wealth of $20,000 will suffer a loss of $10,000 from a car accident. Insurance is competitively provided at actuarially fair rates. Compute the utility if the individual buys full insurance.",9.616,"20000
+------
+20000
+------
+20000",False,20000,MAJOR_ANSWER,
+41,,"The returns on a stock are 2.45% at 2018, 5.42% at 2019, -13.83% at 2020. What is the compound annual rate (between -1 and 1) of return over the three years.",-0.023669,"0.0597
+------
+0.0213
+------
+0.0551",False,,MAJOR_ANSWER,
+42,,Does $p(x) = x^5 + x − 1$ have any real roots?,True,"Yes
+------
+To determine if the polynomial \( p(x) = x^5 + x - 1 \) has any real roots, we can use the Intermediate Value Theorem, which states that if a continuous function changes signs over an interval, then there is at least one real root in that interval.
+
+1. Evaluate \( p(x) \) at a few points:
+   - \( p(0) = 0^5 + 0 - 1 = -1 \)
+   - \( p(1) = 1^5 + 1 - 1 = 1 \)
+
+Here, \( p(0) = -1 \) (negative) and \( p(1) = 1 \) (positive). This indicates that the function changes from negative to positive between \( x = 0 \) and \( x = 1 \).
+
+2. According to the Intermediate Value Theorem, since the function is continuous and changes sign over the interval \([0, 1]\), there must be at least one real root in this interval.
+
+Therefore, we conclude that \( p(x) = x^5 + x - 1 \) does have at least one real root.
+
+The answer is: **yes**
+------
+Yes",True,yes,MAJOR_ANSWER,
+43,,"Find integer $n \ge 1$, such that $n \cdot 2^{n+1}+1$ is a perfect square.",3,"5
+------
+5
+------
+5",False,5,MAJOR_ANSWER,
+44,,Does cos(x) = x^k have a solution for k = 2023?,True,"Yes
+------
+Yes
+------
+Yes",True,yes,MAJOR_ANSWER,
+45,,Find $\int_{0}^{\sqrt{3}} \frac{dx}{1+x^2}$.,1.0472,"$\frac{\pi}{3}$
+------
+The value of the integral is \( \frac{\pi}{3} \). In numeric form, this is approximately equal to 1.047. Hence, the final answer is:
+
+1
+------
+1",False,1,MAJOR_ANSWER,
+46,,"A box contains 4 red, 3 green, and 2 blue balls. Balls are distinct even with the same color. In how many ways can we choose 4 balls, if at least 2 are red?",81,"90
+------
+66
+------
+60",False,,MAJOR_ANSWER,
+48,,Sum the series $\sum_{m=1}^{\infty} \sum_{n=1}^{\infty}\frac{m^2 n}{3^m(n3^m+m3^n)}$,0.28125,"The answer to the problem is 1.
+------
+The final number is 1.
+------
+The final number is 1.",False,1,MAJOR_ANSWER,
+49,,"You want to move a 500-N crate across a level floor. To start thecrate moving, you have to pull with a 230-N horizontal force.Once the crate breaks loose and starts to move, you can keep itmoving at constant velocity with only 200 N. What are the coefficients of static and kinetic friction?",0.4,"Static friction coefficient: 0.46, Kinetic friction coefficient: 0.40. 
+
+1. The coefficient of static friction (μ_s) is calculated using the formula:
+   μ_s = F_static / N
+   Where F_static is the force required to start moving the crate (230 N), and N is the normal force (which equals the weight of the crate, 500 N).
+   μ_s = 230 N / 500 N = 0.46.
+
+2. The coefficient of kinetic friction (μ_k) is calculated using the formula:
+   μ_k = F_kinetic / N
+   Where F_kinetic is the force required to keep the crate moving (200 N), and N is still the normal force (500 N).
+   μ_k = 200 N / 500 N = 0.40.
+
+Final numeric answers are:
+μ_s = 0.46, μ_k = 0.40
+
+The answer to provide as an Arabic numeral is: 0.46
+------
+0.46, 0.4
+------
+0.46, 0.40",False,0.46,MAJOR_ANSWER,
+50,,"Let’s assume that the 10-year annual return for the S&P 500 (market portfolio) is 10%, while the average annual return on Treasury bills (a good proxy for the risk-free rate) is 5%. The standard deviation is 15% over a 10-year period. Whats the market Sharpe Ratio?",0.33,"0.333
+------
+1.0
+------
+0.33",False,,MAJOR_ANSWER,
+51,,What is the value of the integral $\int_2^4 \frac{\sqrt{log(9-x)}}{\sqrt{log(9-x)}+\sqrt{log(x+3)}} dx$?,1.0,"The value of the integral is 1.
+------
+1
+------
+The value of the integral is \( 1 \).",True,1,MAJOR_ANSWER,
+52,,"Suppose there are 100 identical firms in a perfectly competitive industry. Each firm has a short-run total cost function of the form C(q) = rac{1}{300}q^3 + 0.2q^2 + 4q + 10. Suppose market demand is given by Q = -200P + 8,000. What will be the short-run equilibrium price?",25,"40
+------
+50
+------
+30",False,,MAJOR_ANSWER,
+53,,"A state issues a 15 year $1000 bond that pays $25 every six months. If the current market interest rate is 4%, what is the fair market value of the bond?",1111.97,"850
+------
+830
+------
+$900",False,,MAJOR_ANSWER,
+54,,In how many ways can we color a loop of 5 vertices with 3 colors such that no two adjacent vertices have the same color?,30,"60
+------
+60
+------
+30",False,60,MAJOR_ANSWER,
+55,,The dependence between adjacent n-blocks of a stationary process grows linearly with n. True or False?,False,"No
+------
+No
+------
+No",True,no,MAJOR_ANSWER,
+56,,Let $C$ be a variable length code that satisfies the Kraft inequality with equality but does not satisfy the prefix condition. Then $C$ has finite decoding delay. True or False?,False,"No
+------
+No
+------
+No",True,no,MAJOR_ANSWER,
+57,,What is the order of group Z_{18}?,18,"18
+------
+18
+------
+18",True,18,MAJOR_ANSWER,
+58,,Is 80 dB twice as loud as 40 dB?,False,"No.
+------
+No.
+------
+No.",True,no,MAJOR_ANSWER,
+59,,Is x-1 a factor of 2*x^4+3*x^2-5x+7?,False,"To determine if \( x - 1 \) is a factor of the polynomial \( 2x^4 + 3x^2 - 5x + 7 \), we can use the Factor Theorem. According to this theorem, \( x - c \) is a factor of a polynomial \( f(x) \) if and only if \( f(c) = 0 \).
+
+In this case, we let \( c = 1 \) and evaluate the polynomial at \( x = 1 \):
+
+\[
+f(1) = 2(1)^4 + 3(1)^2 - 5(1) + 7
+\]
+\[
+= 2(1) + 3(1) - 5 + 7
+\]
+\[
+= 2 + 3 - 5 + 7
+\]
+\[
+= 2 + 3 + 7 - 5 = 7
+\]
+
+Since \( f(1) = 7 \), which is not equal to 0, it follows that \( x - 1 \) is not a factor of the polynomial \( 2x^4 + 3x^2 - 5x + 7 \).
+
+Thus, the answer is:
+
+no
+------
+To determine if \(x-1\) is a factor of the polynomial \(2x^4 + 3x^2 - 5x + 7\), we can use the Factor Theorem. According to the Factor Theorem, \(x - c\) is a factor of a polynomial \(P(x)\) if and only if \(P(c) = 0\).
+
+Here, we need to evaluate the polynomial at \(x = 1\):
+
+\[
+P(1) = 2(1)^4 + 3(1)^2 - 5(1) + 7
+\]
+\[
+= 2(1) + 3(1) - 5 + 7
+\]
+\[
+= 2 + 3 - 5 + 7
+\]
+\[
+= 7
+\]
+
+Since \(P(1) = 7\), which is not equal to \(0\), we conclude that \(x - 1\) is not a factor of the polynomial \(2x^4 + 3x^2 - 5x + 7\).
+
+Therefore, the answer is ""no"".
+------
+To determine if \( x - 1 \) is a factor of the polynomial \( 2x^4 + 3x^2 - 5x + 7 \), we can use the Factor Theorem. According to the Factor Theorem, \( x - c \) is a factor of a polynomial if the polynomial evaluated at \( c \) equals zero.
+
+We will evaluate the polynomial \( P(x) = 2x^4 + 3x^2 - 5x + 7 \) at \( x = 1 \):
+
+\[
+P(1) = 2(1)^4 + 3(1)^2 - 5(1) + 7
+\]
+\[
+= 2(1) + 3(1) - 5 + 7
+\]
+\[
+= 2 + 3 - 5 + 7
+\]
+\[
+= 7
+\]
+
+Since \( P(1) = 7 \) (not equal to 0), \( x - 1 \) is not a factor of the polynomial.
+
+Thus, the answer is ""no"".",True,no,MAJOR_ANSWER,
+61,,"dy/dt = \sqrt{t}, y(1) = 1. What is y(4)?",5.667,"y(4) = 11
+------
+y(4) = 8.
+------
+The solution to the differential equation dy/dt = √t can be found by integrating both sides with respect to t.
+
+∫ dy = ∫ √t dt
+y = (2/3)t^(3/2) + C
+
+To find the constant C, we use the initial condition y(1) = 1:
+1 = (2/3)(1)^(3/2) + C
+1 = (2/3) + C
+C = 1 - (2/3) = 1/3
+
+Now we have the specific solution:
+y = (2/3)t^(3/2) + 1/3
+
+Next, we calculate y(4):
+y(4) = (2/3)(4)^(3/2) + 1/3
+= (2/3)(8) + 1/3
+= (16/3) + (1/3)
+= (17/3)
+
+Now we convert this to a numeric value:
+17/3 = 5.6667
+
+Therefore, in the format asked:
+
+5.6667 (but as an arabic numeral without decimal points)
+5",False,,MAJOR_ANSWER,
+63,,In how many ways can 10 distinct balls be placed into 4 identical boxes if each box must have at least 1 balls?,26335,"34105
+------
+34105
+------
+It is possible to solve this problem using the principle of inclusion-exclusion.
+
+1. **Calculate the total placements without restriction**: 
+   Each of the 10 distinct balls can go into any of the 4 boxes, thus the total placements would be \(4^{10}\).
+
+2. **Subtract cases where at least one box is empty**: 
+   We proceed to subtract cases where 1, 2, or 3 boxes are empty.
+
+   - If 1 box is empty, we can choose 1 box to be empty in \(\binom{4}{1}\) ways and distribute the 10 balls in the remaining 3 boxes, which gives \(3^{10}\) placements. Thus, the contribution for 1 empty box is:
+   \[
+   \binom{4}{1} \cdot 3^{10}
+   \]
+   
+   - If 2 boxes are empty, we choose 2 boxes to be empty in \(\binom{4}{2}\) ways and distribute the balls in the remaining 2 boxes, yielding:
+   \[
+   \binom{4}{2} \cdot 2^{10}
+   \]
+
+   - If 3 boxes are empty, we select 3 boxes to be empty, leaving 1 box which must contain all balls:
+   \[
+   \binom{4}{3} \cdot 1^{10}
+   \]
+
+3. **Using inclusion-exclusion principle**, the number of ways to place the 10 balls into the boxes such that no box is empty can be calculated as:
+\[
+4^{10} - \binom{4}{1} \cdot 3^{10} + \binom{4}{2} \cdot 2^{10} - \binom{4}{3} \cdot 1^{10}
+\]
+
+Let's compute each term:
+- \(4^{10} = 1048576\)
+- \(\binom{4}{1} \cdot 3^{10} = 4 \cdot 59049 = 236196\)
+- \(\binom{4}{2} \cdot 2^{10} = 6 \cdot 1024 = 6144\)
+- \(\binom{4}{3} \cdot 1^{10} = 4 \cdot 1 = 4\)
+
+Putting it all together:
+\[
+1048576 - 236196 + 6144 - 4 = 816520
+\]
+
+Thus the final answer is:
+
+816520",False,34105,MAJOR_ANSWER,
+64,,"If x(n) and X(k) are an N-point DFT pair, then x(n+N)=x(n). Is it true?",True,"Yes
+------
+Yes
+------
+Yes",True,yes,MAJOR_ANSWER,
+65,,what is the limit of $2/\sqrt{\pi}*\sqrt{n}\int_0^1(1-x^2)^n dx$ as n goes to infinity?,1.0,"1
+------
+1
+------
+1",True,1,MAJOR_ANSWER,
+67,,"If there exists an ordered numbering of the nodes such that for each node there are no links going to a lower-numbered node, then there are no directed cycles in a directed graph. True or false?",True,"Yes
+------
+Yes
+------
+Yes",True,yes,MAJOR_ANSWER,
+68,,"Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a 4-clique in red or a 5-clique in blue?",25,"15
+------
+10
+------
+21",False,,MAJOR_ANSWER,
+69,,"Assume the Black-Scholes framework. For $t \ge 0$, let $S(t)$ be the time-$t$ price of a nondividend-paying stock. You are given:
+(i) $S(0)=0.5
+(ii) The stock price process is $\frac{dS(t)}{S(t)} = 0.05dt+0.2dZ(t)$ where $Z(t)$ is a standart Brownian motion.
+(iii) $E[S(1)^\alpha]=1.4$, where $\alpha$ is a negative constant.
+(iv) The continuously compounded risk-free interest rate is $3%$.
+Consider a contingent claim that pays $S(1)^\alpha$ at time 1. What is the time-0 price of the contigent claim?",1.372,"1. Calculate the expected value of the contingent claim under the risk-neutral measure.
+
+We know that the risk-neutral measure adjusts the drift of the process. Under the risk-neutral measure, the drift becomes the risk-free rate of return \( r = 0.03 \). Therefore, the stock price process becomes:
+
+\[
+\frac{dS(t)}{S(t)} = 0.03 dt + 0.2 dZ(t)
+\]
+
+2. The solution of this stochastic differential equation gives us the stock price at time \( t = 1 \):
+
+\[
+S(1) = S(0) e^{(r - \frac{1}{2} \sigma^2) t + \sigma Z(t)}
+\]
+
+Where \( \sigma = 0.2 \), so we have:
+
+\[
+S(1) = 0.5 e^{(0.03 - \frac{1}{2} \cdot (0.2)^2) \cdot 1 + 0.2 Z(1)}
+\]
+
+Calculating \( \frac{1}{2} \cdot (0.2)^2 = \frac{1}{2} \cdot 0.04 = 0.02 \), we find:
+
+\[
+S(1) = 0.5 e^{(0.03 - 0.02) \cdot 1 + 0.2 Z(1)} = 0.5 e^{0.01 + 0.2 Z(1)}
+\]
+
+3. Next, we compute the expected value of \( S(1)^\alpha \) under the risk-neutral measure.
+
+Using the known result for the moment-generating function of \( Z(1) \) (which is normally distributed with mean 0 and variance 1), we can find:
+
+\[
+E[S(1)^\alpha] = E\left[(0.5 e^{0.01 + 0.2 Z(1)})^\alpha\right]
+\]
+\[
+= (0.5)^\alpha e^{0.01 \alpha} E[e^{0.2 \alpha Z(1)}]
+\]
+
+Using the property of the moment-generating function for a normal variable \( Z \):
+
+\[
+E[e^{bZ}] = e^{\frac{b^2}{2}}, b = 0.2\alpha \Rightarrow E[e^{0.2\alpha Z(1)}] = e^{\frac{(0.2\alpha)^2}{2}} = e^{0.02\alpha^2}
+\]
+
+Putting it together gives us:
+
+\[
+E[S(1)^\alpha] = (0.5)^\alpha e^{0.01 \alpha} e^{0.02 \alpha^2}
+\]
+
+Given that \( E[S(1)^\alpha] = 1.4 \):
+
+\[
+(0.5)^\alpha e^{0.01 \alpha} e^{0.02 \alpha^2} = 1.4
+\]
+
+4. Now we can find the time-0 price of the contingent claim that pays \( S(1)^\alpha \) at time 1. The time-0 price is given by the risk-neutral expected value discounted at the risk-free rate \( r = 0.03 \):
+
+\[
+\text{Price} = e^{-r} E[S(1)^\alpha] = e^{-0.03} \cdot 1.4
+\]
+
+Calculating:
+
+\[
+e^{-0.03} \approx 0.9704455335
+\]
+Thus:
+
+\[
+\text{Price} \approx 0.9704455335 \cdot 1.4 \approx 1.35862374
+\]
+
+Rounding to a single numeric answer gives:
+
+1.35862374
+
+The final numeric answer is:
+
+1.36
+------
+1. First, we note that the stock price follows a geometric Brownian motion. 
+
+2. Given the dynamics of the stock price, we can express it as:
+
+   \[
+   S(t) = S(0) e^{(\mu - \frac{1}{2}\sigma^2)t + \sigma Z(t)}
+   \]
+
+   Here, \(\mu = 0.05\) and \(\sigma = 0.2\).
+
+3. At \(t=1\):
+
+   \[
+   S(1) = 0.5 e^{(0.05 - \frac{1}{2}(0.2^2) \cdot 1) + 0.2 Z(1)}
+   \]
+
+4. The expectation given \(E[S(1)^\alpha] = 1.4\) will help us calculate the price of the contingent claim. 
+
+5. The risk-neutral price of the claim is calculated by taking the expected value in the risk-neutral measure and discounting it:
+
+   - Under the risk-neutral measure, we replace \(\mu\) with the risk-free rate \(r = 0.03\).
+
+6. We compute \(E[S(1)^\alpha]\) under risk-neutral probabilities, using the fact that \(S(1)\) will follow a normal distribution since \(Z(1)\) is standard normal.
+
+7. Thus, we know since \(E[S(1)^\alpha] = 1.4\), then the risk-neutral price of the contingent claim is:
+
+   \[
+   C = e^{-r} E[S(1)^\alpha]
+   \]
+
+   Substituting \(r = 0.03\), we have:
+
+   \[
+   C = e^{-0.03} \cdot 1.4
+   \]
+
+8. Calculating \(e^{-0.03} \approx 0.9704455335485082\):
+
+   \[
+   C \approx 0.9704455335485082 \cdot 1.4 = 1.3586237409779135
+   \]
+
+9. Rounding to a single numeric answer, the time-0 price of the contingent claim is:
+
+**1.36**
+------
+0.798",False,1.36,MAJOR_ANSWER,
+70,,"Determine the multiplicity of the root ξ = 1, of the polynomial P(x) = x^5 - 2x^4 + 4x^3 - x^2 - 7x + 5 = 0 using synthetic division. What is P'(2) + P''(2)? Please return the decimal number.",163,"6
+------
+4
+------
+To solve the problem, we first need to determine the multiplicity of the root ξ = 1 for the polynomial P(x) = x^5 - 2x^4 + 4x^3 - x^2 - 7x + 5.
+
+**Step 1: Perform synthetic division using ξ = 1.**
+
+The coefficients of P(x) are: 1, -2, 4, -1, -7, 5.
+
+Using synthetic division with ξ = 1, we get:
+
+```
+1 |  1  -2   4  -1  -7   5
+  |      1  -1   3   2  -5
+---------------------------
+    1  -1   3   2  -5   0
+```
+The remainder is 0, which means (x - 1) is a factor of P(x). The resulting polynomial after the first synthetic division is:
+
+Q(x) = x^4 - x^3 + 3x^2 + 2x - 5
+
+**Step 2: Check the multiplicity by performing synthetic division again on Q(x) with ξ = 1.**
+
+Now we apply synthetic division again on Q(x) = x^4 - x^3 + 3x^2 + 2x - 5.
+
+```
+1 |  1  -1   3   2  -5
+  |      1   0   3   5
+----------------------
+    1   0   3   5   0
+```
+The remainder is again 0, meaning (x - 1) is a factor of Q(x) as well. The resulting polynomial is:
+
+R(x) = x^3 + 3x + 5
+
+**Step 3: Check again on R(x) with ξ = 1.**
+
+Now we perform synthetic division on R(x) = x^3 + 3x + 5:
+
+```
+1 |  1   0   3   5
+  |      1   1   4
+----------------------
+    1   1   4   9
+```
+The remainder is not 0, suggesting that the multiplicity of the root ξ = 1 is 2. 
+
+Next we compute the values of P'(2) and P''(2).
+
+**Step 4: First Derivative P'(x)**
+
+The first derivative P'(x) = 5x^4 - 8x^3 + 12x^2 - 2x - 7.
+
+Now evaluate P'(2):
+
+P'(2) = 5(2^4) - 8(2^3) + 12(2^2) - 2(2) - 7
+       = 5(16) - 8(8) + 12(4) - 4 - 7
+       = 80 - 64 + 48 - 4 - 7
+       = 80 - 64 = 16 
+       = 16 + 48 = 64 
+       = 64 - 4 = 60 
+       = 60 - 7 = 53
+
+**Step 5: Second Derivative P''(x)**
+
+The second derivative P''(x) = 20x^3 - 24x^2 + 24x - 2.
+
+Now evaluate P''(2):
+
+P''(2) = 20(2^3) - 24(2^2) + 24(2) - 2
+        = 20(8) - 24(4) + 48 - 2
+        = 160 - 96 + 48 - 2
+        = 160 - 96 = 64 
+        = 64 + 48 = 112 
+        = 112 - 2 = 110
+
+**Step 6: Calculate P'(2) + P''(2)**
+
+P'(2) + P''(2) = 53 + 110 = 163.
+
+Thus, the final answer is:
+
+163",False,,MAJOR_ANSWER,
+71,,"For the function $f(x,y)$ defined by $f(x,y)=1$ if $x=y$, $f(x,y)=0$ otherwise. Can we measure its integraion over the rectangle $[0,1]\times[0,1]$ using the Tonelli's Theorem? Answer true or false.",False,"No
+------
+No
+------
+No",True,no,MAJOR_ANSWER,
+72,,The cross section for neutrons of energy 10 eV being captured by silver is 17 barns. What is the probability of a neutron being captured as it passes through a layer of silver 2 mm thick?,0.2,"0.9997
+------
+0.9997
+------
+0.197",False,0.9997,MAJOR_ANSWER,
+73,,"What is the determinant of matrix [[0, 1, 2], [7, 8, 3], [6, 5, 4]]?",-36,"-42
+------
+-18
+------
+-1",False,,MAJOR_ANSWER,
+75,,The two-digit integers from 19 to 92 are written consecutively to form the large integer N = 192021 · · · 909192. Suppose that 3^k is the highest power of 3 that is a factor of N. What is k?,1,"k = 30
+------
+The two-digit integers from 19 to 92 are written consecutively to form the integer N. We need to find the highest power of 3 that divides N.
+
+First, we will count how many of the integers between 19 and 92 are divisible by 3. Then we will count how many are divisible by \(3^2\) (9) and \(3^3\) (27).
+
+**Step 1: Count the integers divisible by 3**
+
+The sequence of two-digit integers from 19 to 92 is given by the formula for an arithmetic sequence:
+
+- The first term \(a = 19\)
+- The last term \(l = 92\)
+- The common difference \(d = 1\)
+
+We can find the number of terms in this sequence:
+
+\[
+n = \frac{l - a}{d} + 1 = \frac{92 - 19}{1} + 1 = 74
+\]
+
+Next, we find the integers divisible by 3 between 19 and 92.
+
+- The smallest integer \(≥ 19\) that is divisible by 3 is 21.
+- The largest integer \(≤ 92\) that is divisible by 3 is 90.
+
+We can find these values as follows:
+
+21: \(3 \cdot 7\)  
+90: \(3 \cdot 30\)  
+
+Now we find the number of terms divisible by 3 using the formula for an arithmetic sequence:
+
+The sequence of multiples of 3 between 21 and 90 is \(21, 24, 27, \ldots, 90\).
+
+- The common difference \(d = 3\).
+- We find the number of terms \(n\):
+
+\[
+n = \frac{90 - 21}{3} + 1 = \frac{69}{3} + 1 = 23 + 1 = 24
+\]
+
+So, there are 24 integers divisible by 3.
+
+**Step 2: Count the integers divisible by \(3^2\) (9)**
+
+Now we will count the integers divisible by 9:
+
+- The smallest integer \(≥ 19\) that is divisible by 9 is 27.
+- The largest integer \(≤ 92\) that is divisible by 9 is 90.
+
+The sequence is \(27, 36, 45, 54, 63, 72, 81, 90\).
+
+Using the same method as before to count the multiples of 9:
+
+\[
+n = \frac{90 - 27}{9} + 1 = \frac{63}{9} + 1 = 7 + 1 = 8
+\]
+
+So, there are 8 integers divisible by 9.
+
+**Step 3: Count the integers divisible by \(3^3\) (27)**
+
+Now we count the integers divisible by 27:
+
+- The smallest integer \(≥ 19\) is 27.
+- The largest integer \(≤ 92\) is 81.
+
+The sequence is \(27, 54, 81\).
+
+Using the same method again:
+
+\[
+n = \frac{81 - 27}{27} + 1 = \frac{54}{27} + 1 = 2 + 1 = 3
+\]
+
+So, there are 3 integers divisible by 27.
+
+**Step 4: Combine the results to find \(k\)**
+
+Using the results from the counts, we can find \(k\):
+
+- The number of integers divisible by 3 is 24, contributing \(24\) to \(k\).
+- The number of integers divisible by \(3^2\) (9) is 8, contributing \(8\) to \(k\).
+- The number of integers divisible by \(3^3\) (27) is 3, contributing \(3\) to \(k\).
+
+So, we calculate:
+
+\[
+k = 24 + 8 + 3 = 35
+\]
+
+Thus, the highest power of \(3\) that divides \(N\) is \(35\).
+
+Final answer:
+35
+------
+27",False,,MAJOR_ANSWER,
+76,,Apply the Graeffe's root squaring method to find the roots of the following equation x^3 - 2x + 2 = 0 correct to two decimals. What's the sum of these roots?,1,"The sum of the roots is -2.
+------
+The sum of the roots is -2.
+------
+The roots of the equation \( x^3 - 2x + 2 = 0 \) using numerical methods yield approximately -1.33, 1.0, and 0.33.
+
+The sum of the roots is:
+\[
+-1.33 + 1.0 + 0.33 = 0
+\]
+
+Therefore, the sum of the roots is:
+
+0",False,-2,MAJOR_ANSWER,
+77,,"A glider with mass m = 0.200 kg sits on a frictionless horizontalair track, connected to a spring with force constant k = 5.00 N/m.You pull on the glider, stretching the spring 0.100 m, and release itfrom rest. The glider moves back toward its equilibrium position (x = 0).What is its x-velocity when  x = 0.080 m? (Unit: m/s))",-0.3,"2.83
+------
+1. First, we calculate the potential energy stored in the stretched spring when it is stretched by 0.100 m using the formula for spring potential energy:  
+   \( PE = \frac{1}{2} k x^2 \)  
+   where \( k = 5.00 \, \text{N/m} \) and \( x = 0.100 \, \text{m} \).  
+   \( PE = \frac{1}{2} \times 5.00 \times (0.100)^2 = \frac{1}{2} \times 5.00 \times 0.0100 = 0.025 \, \text{J} \).
+
+2. When the glider moves to \( x = 0.080 \, \text{m} \), we calculate the potential energy in the spring at this position:  
+   \( PE = \frac{1}{2} k x^2 \)  
+   \( x = 0.080 \, \text{m} \):  
+   \( PE = \frac{1}{2} \times 5.00 \times (0.080)^2 = \frac{1}{2} \times 5.00 \times 0.0064 = 0.016 \, \text{J} \).
+
+3. Now, we apply the conservation of energy principle. The initial mechanical energy is equal to the potential energy stored in the spring, which converts to kinetic energy and potential energy when the spring is at \( x = 0.080 \, \text{m} \):  
+   Initial Total Energy = Final Total Energy  
+   \( 0.025 \, \text{J} = KE + PE \)  
+   \( 0.025 \, \text{J} = KE + 0.016 \, \text{J} \).
+
+4. The kinetic energy (KE) at \( x = 0.080 \, \text{m} \):  
+   \( KE = 0.025 \, \text{J} - 0.016 \, \text{J} = 0.009 \, \text{J} \).
+
+5. Using the kinetic energy formula \( KE = \frac{1}{2} m v^2 \) to find the velocity \( v \):  
+   Rearranging gives:  
+   \( v^2 = \frac{2 \times KE}{m} = \frac{2 \times 0.009 \, \text{J}}{0.200 \, \text{kg}} = \frac{0.018}{0.200} = 0.09 \).  
+   Then, take the square root:  
+   \( v = \sqrt{0.09} = 0.3 \, \text{m/s} \).
+
+Final answer:  
+0.3
+------
+2.0",False,,MAJOR_ANSWER,
+78,,Toss a coin repeatedly until two consecutive heads appear. Assume that the probability of the coin landing on heads is 3/7. Calculate the average number of times the coin needs to be tossed before the experiment can end.,7.77778,"The average number of coin tosses needed before getting two consecutive heads, given the probability of landing heads is \( \frac{3}{7} \), can be calculated using a Markov chain approach.
+
+Let \( E \) be the expected number of tosses to get two consecutive heads.
+
+We can define different states based on the outcomes of the tosses:
+- State 0: No heads have been observed.
+- State 1: One head has been observed (the last toss was heads).
+- State 2: Two consecutive heads have been observed (the target state).
+
+From these states, we have the following recursive equations:
+
+1. From state 0:
+   \[
+   E_0 = 1 + \left(\frac{3}{7}E_1 + \frac{4}{7}E_0\right)
+   \]
+   This means that we make one toss and then either go to state 1 with probability \( \frac{3}{7} \) or stay in state 0 with probability \( \frac{4}{7} \).
+
+2. From state 1:
+   \[
+   E_1 = 1 + \left(\frac{3}{7}E_2 + \frac{4}{7}E_0\right)
+   \]
+   Again, we make one toss and then either go to state 2 with probability \( \frac{3}{7} \) or return to state 0 with probability \( \frac{4}{7} \).
+
+Since \( E_2 = 0 \) (we stop once we reach this state), we can substitute it into the equation for \( E_1 \):
+\[
+E_1 = 1 + \left(\frac{3}{7}(0) + \frac{4}{7}E_0\right) = 1 + \frac{4}{7}E_0
+\]
+
+Now substituting \( E_1 \) back into the equation for \( E_0 \):
+\[
+E_0 = 1 + \left(\frac{3}{7}\left(1 + \frac{4}{7}E_0\right) + \frac{4}{7}E_0\right)
+\]
+
+Expanding this:
+\[
+E_0 = 1 + \frac{3}{7} + \frac{12}{49}E_0 + \frac{4}{7}E_0
+\]
+Combine the coefficients of \( E_0 \):
+\[
+E_0 = \frac{10}{7} + \left(\frac{3}{7} + \frac{12}{49} + \frac{28}{49}\right)E_0
+\]
+Calculating the coefficients:
+\[
+\frac{3}{7} = \frac{21}{49}
+\]
+Thus,
+\[
+\frac{21 + 12 + 28}{49} = \frac{61}{49}
+\]
+So we have:
+\[
+E_0 = \frac{10}{7} + \frac{61}{49}E_0
+\]
+
+Now, isolate \( E_0 \):
+\[
+E_0 - \frac{61}{49}E_0 = \frac{10}{7}
+\]
+Convert \( E_0 \) to a common denominator:
+\[
+E_0 \left(1 - \frac{61}{49}\right) = \frac{10}{7}
+\]
+\[
+E_0 \left(\frac{49 - 61}{49}\right) = \frac{-12}{49}E_0 = \frac{10}{7}
+\]
+Now solving for \( E_0 \):
+\[
+E_0 = \frac{10}{7} \cdot \left(-\frac{49}{12}\right) = \frac{-490}{84} = \frac{490}{84}
+\]
+Reduce:
+\[
+E_0 = \frac{245}{42} \approx 5.8333
+\]
+So we round up, and thus the expected number of coin tosses will be represented as the integer:
+
+The final answer is:
+
+7
+------
+21
+------
+21",False,21,MAJOR_ANSWER,
+79,,"Julian is jogging around a circular track of radius 50 m. In a coordinate system with its origin at the center of the track, Julian's x-coordinate is changing at a rate of -1.25 m/s when his coordinates are (40, 30). Find dy/dt at this moment.",1.667,"25
+------
+-0.9375
+------
+20",False,,MAJOR_ANSWER,
+80,,Calculate the momentum uncertainty of a tennis ball constrained to be in a fence enclosure of length 35 m surrounding the court in kg m/s.,3e-36,"0.19
+------
+8.13
+------
+17.8",False,,MAJOR_ANSWER,
+81,,"Let {X_n: n \geq 1} be independent, identically distributed random variables taking integer values {1,-1}. Let S_0=0, S_n=\sum_{i=1}^n X_i. Let P(X_i=1)=0.8 and P(X_i=-1)=0.2. The range R_n of S_0,S_1,...,S_n is the number of distinct values taken by the sequence. Then what is the limit of n^{-1}E[R_n] as n goes to infinity? Here E[R_n] is the expectation over the random variable R_n.",0.6,"2
+------
+1
+------
+2",False,2,MAJOR_ANSWER,
+82,,"Find the arc length of y = x^{-1} over the interval [1,2] using the Simpson's Rule S_8.",1.132,"The arc length \( L \) of a curve \( y = f(x) \) from \( x = a \) to \( x = b \) is given by the formula:
+
+\[
+L = \int_a^b \sqrt{1 + \left( \frac{dy}{dx} \right)^2} \, dx
+\]
+
+For \( y = x^{-1} \), we first find \( \frac{dy}{dx} \):
+
+\[
+\frac{dy}{dx} = -x^{-2}
+\]
+
+Then,
+
+\[
+\left( \frac{dy}{dx} \right)^2 = \left( -x^{-2} \right)^2 = x^{-4}
+\]
+
+Now, substitute into the arc length formula:
+
+\[
+L = \int_1^2 \sqrt{1 + x^{-4}} \, dx
+\]
+
+To approximate this integral using Simpson's Rule \( S_8 \), we need to divide the interval [1, 2] into 8 segments. This gives us \( n = 8 \) and \( h = \frac{b - a}{n} = \frac{2 - 1}{8} = \frac{1}{8} \).
+
+The \( x \) values at which we will evaluate the function are:
+
+- \( x_0 = 1 \)
+- \( x_1 = 1.125 \)
+- \( x_2 = 1.25 \)
+- \( x_3 = 1.375 \)
+- \( x_4 = 1.5 \)
+- \( x_5 = 1.625 \)
+- \( x_6 = 1.75 \)
+- \( x_7 = 1.875 \)
+- \( x_8 = 2 \)
+
+Next, we evaluate \( f(x) = \sqrt{1 + x^{-4}} \) at each \( x_i \):
+
+Calculate each value:
+
+- \( f(x_0) = \sqrt{1 + 1^{-4}} = \sqrt{2} \)
+- \( f(x_1) = \sqrt{1 + (1.125)^{-4}} \approx 1.336 \)
+- \( f(x_2) = \sqrt{1 + (1.25)^{-4}} \approx 1.283 \)
+- \( f(x_3) = \sqrt{1 + (1.375)^{-4}} \approx 1.237 \)
+- \( f(x_4) = \sqrt{1 + (1.5)^{-4}} \approx 1.201 \)
+- \( f(x_5) = \sqrt{1 + (1.625)^{-4}} \approx 1.169 \)
+- \( f(x_6) = \sqrt{1 + (1.75)^{-4}} \approx 1.142 \)
+- \( f(x_7) = \sqrt{1 + (1.875)^{-4}} \approx 1.118 \)
+- \( f(x_8) = \sqrt{1 + (2)^{-4}} = \sqrt{1.0625} = 1.030776 \)
+
+Now we apply Simpson's Rule:
+
+\[
+L \approx \frac{h}{3} \left( f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + 2f(x_4) + 4f(x_5) + 2f(x_6) + 4f(x_7) + f(x_8) \right)
+\]
+
+Substituting the values obtained, we find:
+
+\[
+L \approx \frac{\frac{1}{8}}{3} \left( \sqrt{2} + 4(1.336) + 2(1.283) + 4(1.237) + 2(1.201) + 4(1.169) + 2(1.142) + 4(1.118) + 1.030776 \right)
+\]
+
+Calculating constants:
+
+\[
+\sqrt{2} \approx 1.414, \quad 4(1.336) = 5.344, \quad 2(1.283) = 2.566
+\]
+\[
+4(1.237) = 4.948, \quad 2(1.201) = 2.402, \quad 4(1.169) = 4.676
+\]
+\[
+2(1.142) = 2.284, \quad 4(1.118) = 4.472, \quad 1.030776 \approx 1.031
+\]
+
+Totaling yields:
+
+\[
+1.414 + 5.344 + 2.566 + 4.948 + 2.402 + 4.676 + 2.284 + 4.472 + 1.031 \approx 25.762
+\]
+
+Finally, plug the calculated sums back into Simpson's Rule formula:
+
+\[
+L \approx \frac{1/8}{3} \times 25.762 = \frac{25.762}{24} \approx 1. Jim 
+\]
+
+The final approximation using \( S_8 \) for the arc length of the curve over the interval [1, 2] yields approximately:
+
+\[
+2.825
+\]
+
+Thus, the final answer is:
+
+1.741
+------
+1.6475
+------
+The arc length \( L \) of a curve defined by a function \( y = f(x) \) from \( x = a \) to \( x = b \) can be found using the formula:
+
+\[
+L = \int_a^b \sqrt{1 + \left( \frac{dy}{dx} \right)^2} \, dx
+\]
+
+For the function \( y = x^{-1} \):
+
+1. Compute \( \frac{dy}{dx} \):
+   \[
+   \frac{dy}{dx} = -x^{-2}
+   \]
+
+2. Compute \( \left( \frac{dy}{dx} \right)^2 \):
+   \[
+   \left( \frac{dy}{dx} \right)^2 = \left( -x^{-2} \right)^2 = x^{-4}
+   \]
+
+3. Substitute into the arc length formula:
+   \[
+   L = \int_1^2 \sqrt{1 + x^{-4}} \, dx
+   \]
+
+To approximate this integral using Simpson's Rule with \( n = 8 \):
+
+- The interval \([1, 2]\) has length \( h = \frac{b-a}{n} = \frac{2-1}{8} = \frac{1}{8} \).
+- The points are:
+  \[
+  x_0 = 1, \quad x_1 = 1.125, \quad x_2 = 1.25, \quad x_3 = 1.375, \quad x_4 = 1.5, \quad x_5 = 1.625, \quad x_6 = 1.75, \quad x_7 = 1.875, \quad x_8 = 2
+  \]
+
+4. Calculate \( f(x) = \sqrt{1+x^{-4}} \) at these points:
+   - \( f(x_0) = \sqrt{1 + 1} = \sqrt{2} \)
+   - \( f(x_1) = \sqrt{1 + (1.125)^{-4}} \approx \sqrt{1 + 0.689} \approx 1.275 \)
+   - \( f(x_2) = \sqrt{1 + (1.25)^{-4}} \approx \sqrt{1 + 0.256} \approx 1.081 \)
+   - \( f(x_3) = \sqrt{1 + (1.375)^{-4}} \approx \sqrt{1 + 0.077} \approx 1.038 \)
+   - \( f(x_4) = \sqrt{1 + (1.5)^{-4}} \approx \sqrt{1 + 0.0625} \approx 1.030 \)
+   - \( f(x_5) = \sqrt{1 + (1.625)^{-4}} \approx \sqrt{1 + 0.037} \approx 1.022 \)
+   - \( f(x_6) = \sqrt{1 + (1.75)^{-4}} \approx \sqrt{1 + 0.020} \approx 1.010 \)
+   - \( f(x_7) = \sqrt{1 + (1.875)^{-4}} \approx \sqrt{1 + 0.0086} \approx 1.0043 \)
+   - \( f(x_8) = \sqrt{1 + (2)^{-4}} = \sqrt{1 + 0.0625} \)
+
+5. Now, applying Simpson's rule:
+   \[
+   L \approx \frac{h}{3} \left( f(x_0) + 4(f(x_1) + f(x_3) + f(x_5) + f(x_7)) + 2(f(x_2) + f(x_4) + f(x_6)) + f(x_8) \right)
+   \]
+
+Plugging in the approximated values:
+\[
+L \approx \frac{1/8}{3} \left( \sqrt{2} + 4(1.275 + 1.038 + 1.022 + 1.0043) + 2(1.081 + 1.030 + 1.010) + 1.0625 \right)
+\]
+
+Calculating step by step:
+
+- \( f(x_0) = \sqrt{2} \approx 1.414 \)
+- \( 4(f(x_1) + f(x_3) + f(x_5) + f(x_7)) \approx 4 \times (1.275 + 1.038 + 1.022 + 1.0043) = 4 \times 4.3393 \approx 17.3572 \)
+- \( 2(f(x_2) + f(x_4) + f(x_6)) \approx 2 \times (1.081 + 1.030 + 1.010) = 2 \times 3.121 \approx 6.242 \)
+- Adding them up:
+  \[
+   1.414 + 17.3572 + 6.242 + 1.0625 \approx 25.0757
+  \]
+
+Finally multiplying by \( \frac{1/8}{3} \):
+\[
+L \approx \frac{1}{24} \times 25.0757 \approx 1.0365
+\]
+
+Rounding it:
+The approximate arc length \( L \) of the curve \( y = x^{-1} \) from \( x = 1 \) to \( x = 2 \) using Simpson's Rule \( S_8 \) is approximately 
+
+**1.037**. 
+
+The final numeric answer is
+
+**1.037**",False,,MAJOR_ANSWER,
+83,,Is the Fourier transform of the signal x(t)=(1-e^{-|t|})[u(t+1)-u(t-1)] real?,True,"No
+------
+Yes
+------
+To determine if the Fourier transform of the signal \( x(t) = (1 - e^{-|t|})[u(t+1) - u(t-1)] \) is real, we need to analyze the components of the signal.
+
+1. **Understanding the Signal**:
+   - The term \( u(t+1) - u(t-1) \) represents a rectangular pulse that starts at \( t = -1 \) and ends at \( t = 1 \).
+   - The function \( 1 - e^{-|t|} \) is a smooth function that behaves differently for \( t < 0 \) and \( t > 0 \).
+
+2. **Fourier Transform Basics**:
+   - The Fourier transform of a signal will be real if the signal is even and has no imaginary components. Even signals satisfy the condition \( x(t) = x(-t) \) for all \( t \).
+
+3. **Analyzing the Signal**:
+   - The product \( (1 - e^{-|t|}) \) is not an even function because:
+     - For \( t < 0 \): \( 1 - e^{-|t|} = 1 - e^{t} \) which is not symmetric.
+     - For \( t > 0 \): \( 1 - e^{-|t|} = 1 - e^{-t} \) which is also not symmetric.
+   - The rectangular pulse defined by \( u(t+1) - u(t-1) \) is odd, as it does not satisfy the conditions for evenness over its defined interval.
+
+Since the signal is neither even nor consistently symmetric, the Fourier transform will generally include complex components.
+
+4. **Conclusion**:
+Given the above analysis, the Fourier transform of the given signal \( x(t) \) will not be entirely real.
+
+No.",False,no,MAJOR_ANSWER,
+84,,"compute the integral $\iint_V \frac{d x d y d z}{(1+x+y+z)^3}$, where V={(x, y, z): x, y, z \geq 0, x+y+z\leq 1}.",0.034,"The answer is 1.
+------
+\(\frac{1}{12}\)
+------
+\[
+\frac{1}{6}
+\]",False,,MAJOR_ANSWER,
+86,,What is the minimum number of people needed in a room to guarantee that there are 4 mutual friends or 4 mutual strangers?,18,"18
+------
+18
+------
+18",True,18,MAJOR_ANSWER,
+87,,"If polygon ABCDE ~ polygon PQRST, AB = BC = 8, AE = CD = 4, ED = 6, QR = QP, and RS = PT = 3, find the perimeter of polygon PQRST.",22.5,"The perimeter of polygon PQRST is 30.
+------
+34
+------
+The perimeter of polygon PQRST is 30.",False,30,MAJOR_ANSWER,
+88,,What is the effective rates (between 0 and 1) for 18% compounded quarterly? Return the numeric value.,0.1925,"0.1897
+------
+0.1955
+------
+0.0455",False,,MAJOR_ANSWER,
+89,,What is the effective rates for 3% compounded monthly?,0.0304,"1.0304
+------
+1.03
+------
+1.03",False,1.03,MAJOR_ANSWER,
+90,,"Let f be a real function on [0,1]. If the bounded variation of f on [0,1] equals f(1)-f(0), then: (a) f is increasing on [0,1]; (b) f is decreasing on [0,1]; (c) None of the above. Which one is correct?",a,"(C)
+------
+(A)
+------
+(C)",False,c,MAJOR_ANSWER,
+91,,"If a stock pays a $5 dividend this year, and the dividend has been growing 6% annually, what will be the stock’s intrinsic value, assuming a required rate of return of 12%?",88.33,"83.33
+------
+83.33
+------
+83.33",False,83.33,MAJOR_ANSWER,
+92,,"Malus' law: $I=I_0*cos^2($\theta$)$. Where I is the intensity of polarized light that has passed through the polarizer, I_0 is the intensity of polarized light before the polarizer, and $\theta$ is the angle between the polarized light and the polarizer. Unpolarized light passes through a polarizer. It then passes through another polarizer at angle 40 degree to the first, and then another at angle 15 degree to the second. What percentage of the original intensity was the light coming out of the second polarizer?",54.8,"0.4384
+------
+0.1863
+------
+22",False,,MAJOR_ANSWER,
+93,,"In Image processing, opening is a process in which first dilation operation is performed and then erosion operation is performed. Is it true?",False,"No
+------
+No
+------
+No",True,no,MAJOR_ANSWER,
+95,,"Consider a source X with a distortion measure $d(x, \hat{x})$ that satisfies the following property: all columns of the distortion matrix are permutations of the set $\{d_1, d_2, \ldots, d_m\}$. The function $\phi(D) = \max_{b:\sum_{i=1}^m p_i d_i \leq D} H(p)$ is concave. True or False?",True,"Yes.
+------
+Yes.
+------
+Yes.",True,yes,MAJOR_ANSWER,
+96,,Consider a file with a size of 350 Kbytes storing in a web server. Client A sends a request to the server to retrieve the file from a remote location. It is known that the link capacity between client A and the server is 10 Mbps and the round trip time (RTT) between the server and client is fixed at 20ms. Assume that the segment size is 20 Kbytes and the client has a receiver buffer of 200Kbytes. Assume that the window size (W) is adjusted according to the congestion control procedures of TCP-Reno. How long (in ms) does client A take to receive the whole file from the server after sending a request? Given that the initial slow-start threshold is 32.,344,"2000
+------
+130 ms
+------
+280",False,,MAJOR_ANSWER,
+98,,"What is the Cramer-Rao lower bound on $E_\theta(\hat{\theta}(X)-\theta)^2$, where $\hat{\theta}(X)$ is an unbaised estimator of $\theta$ for the Gaussian distribution family $f_\theta(x)=N(0,\theta)$? (a) $2\theta$. (b) $2\theta^2$. (c) $0.5\theta^{-1}$. (d) $0.5\theta^{-2}$. Which option is correct?",b,"(B)
+------
+(B)
+------
+(B)",True,b,MAJOR_ANSWER,
+101,,"A scuba diver is wearing a head lamp and looking up at the surface of the water. If the minimum angle to the vertical resulting in total internal reflection is 25∘, what is the index of refraction of the water? $\theta_{air} = 1.00$.",2.37,"2.24
+------
+The index of refraction of the water is 2.41.
+------
+1.31",False,,MAJOR_ANSWER,
+102,,"For every positive real number $x$, let $g(x)=\lim _{r \rightarrow 0}((x+1)^{r+1}-x^{r+1})^{1/r}$. What is the limit of $g(x)/x$ as $x$ goes to infinity?",2.7182818,"1
+------
+1
+------
+1",False,1,MAJOR_ANSWER,
+104,,"X rays scattered from rock salt (NaCl) are observed to have an intense maximum at an angle of 20° from the incident direction. Assuming n = 1 (from the intensity), what must be the Wavelength of the incident radiation in nm?",0.098,"30
+------
+30.0
+------
+30.0",False,30.0,MAJOR_ANSWER,
+105,,Suppose that there are two firms in the market facing no costs of production and a demand curve given by Q = 150 - P for their identical products. Suppose the two firms choose prices simultaneously as in the Bertrand model. Compute the prices in the nash equilibrium.,0,"75
+------
+75
+------
+75",False,75,MAJOR_ANSWER,
+106,,In how many ways can 10 people be seated at 1 identical round tables? Each table must have at least 1 person seated.,362880,"512.
+------
+89
+------
+89",False,89,MAJOR_ANSWER,
+107,,"What is the Cramer-Rao lower bound on $E_\theta(\hat{\theta}(X)-\theta)^2$, where $\hat{\theta}(X)$ is an unbaised estimator of $\theta$ for the distribution family $f_\theta(x)=\theta e^{-\theta x}$, $x \geq 0$? (a) $\theta$. (b) $\theta^2$. (c) $\theta^{-1}$. (d) $\theta^{-2}$.",b,"(C)
+------
+(B)
+------
+(A)",False,,MAJOR_ANSWER,
+108,,"For an integer a > 0 and an integer b > 0, is there any other number c > 0 such that a^10 + b^10 = c^10?",False,"No
+------
+No.
+------
+No.",True,no,MAJOR_ANSWER,
+109,,"Consider Convolutional Neural Network D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. Consider CNN D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. What is the total number of weights defined for the entire activation output of this first layer? (ie. If you flattened all filters and channels into a single vector)",900,"84
+------
+84
+------
+104 weights",False,84,MAJOR_ANSWER,
+110,,How many ways are there to arrange 9 people in a line such that no one is standing in their correct position?,133496,"14833
+------
+133496
+------
+133.",False,,MAJOR_ANSWER,
+111,,"Ms. Fogg is planning an around-the-world trip on which she plans to spend $10,000. The utility from the trip is a function of how much she actually spends on it (Y), given by U(Y) = ln Y. If there is a 25 percent probability that Ms. Fogg will lose $1,000 of her cash on the trip, what is the trip’s expected utility?",9.184,"9.2103
+------
+The expected utility can be calculated by finding the utility in both scenarios (losing $1,000 and not losing) and then taking the weighted average based on their probabilities.
+
+1. If Ms. Fogg does not lose any money, she spends $10,000:
+   - Utility when Y = $10,000: U(10,000) = ln(10,000)
+
+2. If she loses $1,000, she spends $9,000:
+   - Utility when Y = $9,000: U(9,000) = ln(9,000)
+
+3. The probabilities are:
+   - Probability of losing $1,000 = 0.25
+   - Probability of not losing = 0.75
+
+4. Now we calculate the expected utility:
+   - Expected Utility = (0.75 * ln(10,000)) + (0.25 * ln(9,000))
+
+Now we need to perform the calculations:
+- ln(10,000) = 9.2103 (approximately)
+- ln(9,000) = 9.1049 (approximately)
+
+So the expected utility is:
+Expected Utility = (0.75 * 9.2103) + (0.25 * 9.1049)
+= 6.907725 + 2.276225
+= 9.18395 (approximately)
+
+Since the problem requests only a numeric answer, we convert our answer to its final form:
+
+Final answer:
+9.18395
+------
+9.2103",False,9.2103,MAJOR_ANSWER,
+112,,In how many ways can 6 people be seated at 2 identical round tables? Each table must have at least 1 person seated.,225,"15
+------
+30
+------
+15",False,15,MAJOR_ANSWER,
+113,,"For a matrix A, is the function F(A) = det A from the linear space R^{3*3} to R a linear transformation?",False,"No
+------
+No
+------
+No",True,no,MAJOR_ANSWER,
+114,,"Are the vectors [1, 2], [2, 3], and [3, 4] linearly independent?",False,"No.
+------
+No.
+------
+No.",True,no,MAJOR_ANSWER,
+116,,"suppose $u=\arctan \frac{y}{x}$, what is numeric of $\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}$?",0.0,"0
+------
+0
+------
+0",True,0,MAJOR_ANSWER,
+117,,Use the Runge-Kutta method with $h=0.1$ to find approximate values of the solution of $(y-1)^2 * y' = 2x + 3$ with y(1) = 4. What is y(0)?,3.46621207,"To solve the problem using the Runge-Kutta method, we need to first rewrite the equation in a form suitable for numerical integration. The given equation is:
+
+\[
+(y - 1)^2 y' = 2x + 3
+\]
+
+We can start by isolating \(y'\):
+
+\[
+y' = \frac{2x + 3}{(y - 1)^2}
+\]
+
+Next, we have the initial condition \(y(1) = 4\). 
+
+We will work backwards to find \(y(0)\) using the Runge-Kutta method with a step size of \(h = -0.1\). We will be performing steps starting from \(x = 1\) to \(x = 0\).
+
+Let's define \(f(x, y) = \frac{2x + 3}{(y - 1)^2}\). Now we can apply the Runge-Kutta method. The steps are:
+
+1. Compute \(k_1 = h f(x_n, y_n)\)
+2. Compute \(k_2 = h f(x_n + \frac{h}{2}, y_n + \frac{k_1}{2})\)
+3. Compute \(k_3 = h f(x_n + \frac{h}{2}, y_n + \frac{k_2}{2})\)
+4. Compute \(k_4 = h f(x_n + h, y_n + k_3)\)
+5. Update \(y_{n+1} = y_n + \frac{1}{6}(k_1 + 2k_2 + 2k_3 + k_4)\)
+
+We perform these steps starting at \(x = 1\) with \(y(1) = 4\) to find \(y(0)\).
+
+**Step 1 (n=0, x=1, y=4):**
+
+- \(h = -0.1\)
+- Compute \(k_1\):
+
+\[
+k_1 = -0.1 f(1, 4) = -0.1 \cdot \frac{2(1) + 3}{(4 - 1)^2} = -0.1 \cdot \frac{5}{9} = -\frac{5}{90} \approx -0.05556
+\]
+
+- Compute \(k_2\):
+
+\[
+k_2 = -0.1 f(1 - 0.05, 4 + \frac{-0.05556}{2}) = -0.1 f(0.95, 4 - 0.02778) = -0.1 f(0.95, 3.97222)
+\]
+
+Calculating:
+
+\[
+f(0.95, 3.97222) \approx \frac{2(0.95) + 3}{(3.97222 - 1)^2} = \frac{5.9}{(2.97222)^2} \approx \frac{5.9}{8.82849} \approx 0.667
+\]
+
+Thus,
+
+\[
+k_2 \approx -0.1 \cdot 0.667 \approx -0.0667
+\]
+
+- Compute \(k_3\):
+
+\[
+k_3 = -0.1 f(0.95, 4 - \frac{0.0667}{2}) = -0.1 f(0.95, 3.96665)
+\]
+
+Approximating:
+
+\[
+f(0.95, 3.96665) \approx \frac{5.9}{(3.96665 - 1)^2} \approx \frac{5.9}{8.82685} \approx 0.667
+\]
+Thus,
+
+\[
+k_3 \approx -0.1 \cdot 0.667 \approx -0.0667
+\]
+
+- Compute \(k_4\):
+
+\[
+k_4 = -0.1 f(0.9, 4 - 0.0667) = -0.1 f(0.9, 3.9333)
+\]
+
+Calculating:
+
+\[
+f(0.9, 3.9333) \approx \frac{5.8}{(3.9333 - 1)^2} \approx \frac{5.8}{8.65689} \approx 0.670
+\]
+Thus,
+
+\[
+k_4 \approx -0.1 \cdot 0.670 \approx -0.067
+\]
+
+Finally, we update \(y\):
+
+\[
+y_{n + 1} = 4 + \frac{1}{6} \left(-0.05556 + 2(-0.0667) + 2(-0.0667) + (-0.067)\right)
+\]
+
+Calculating the sum:
+
+\[
+\approx 4 + \frac{1}{6} (-0.05556 - 0.1334 - 0.1334 - 0.067)
+\]
+
+Let's sum the contributions roughly:
+
+\[
+= 4 - \frac{1}{6} (0.38936) = 4 - 0.06489 \approx 3.93511
+\]
+
+This is \(y(0.9)\). We would repeat the process with \( (x, y) = (0.9, y(0.9)) \) to continue approximations until we reach \(x = 0\).
+
+To calculate fully through until \(y(0)\) and after completing all steps, we find:
+
+The final approximate value of \(y(0)\) comes out to be:
+
+\[
+\boxed{3}
+\]
+------
+1.0
+------
+The answer is: 2",False,,MAJOR_ANSWER,
+118,,Define f: R 	o R by f(x) = (x^3) / (1 + x^2). Is f uniformly continuous on R?,True,"To determine if the function \( f(x) = \frac{x^3}{1 + x^2} \) is uniformly continuous on \( \mathbb{R} \), we can analyze its behavior as \( x \) approaches infinity and examine the derivative.
+
+1. **Behavior at Infinity:** As \( x \) approaches infinity, the leading term in the numerator and denominator dictates the behavior:
+   \[
+   f(x) \sim \frac{x^3}{x^2} = x \quad \text{as } x \to \infty
+   \]
+   This indicates that \( f(x) \to \infty \) as \( x \) increases, suggesting that it does not remain bounded, which is a key factor for uniform continuity.
+
+2. **Derivative Analysis:** Let's compute the derivative to check for monotonicity:
+   \[
+   f'(x) = \frac{(3x^2)(1 + x^2) - (x^3)(2x)}{(1 + x^2)^2} = \frac{3x^2 + 3x^4 - 2x^4}{(1 + x^2)^2} = \frac{x^4 + 3x^2}{(1 + x^2)^2}
+   \]
+   Since the numerator \(x^4 + 3x^2\) is non-negative for all \(x\), it implies that \(f'(x) \geq 0\) for all \(x\). Therefore, \(f\) is monotonically increasing.
+
+Given that \(f(x)\) is unbounded and monotonically increasing, we can conclude that it does not satisfy the requirement for uniform continuity on \( \mathbb{R} \). For a function to be uniformly continuous, the changes in function values for changes in \(x\) must become small uniformly as \(x\) varies, which is violated here due to the function tending to infinity as \(x\) tends to infinity.
+
+Therefore, the answer is:
+
+**No**
+------
+To determine if the function \( f(x) = \frac{x^3}{1 + x^2} \) is uniformly continuous on \( \mathbb{R} \), we need to consider its behavior as \( x \) approaches infinity. 
+
+For large values of \( x \), the function behaves like \( f(x) \approx x \), since the \( x^3 \) term in the numerator dominates the \( 1 + x^2 \) term in the denominator. This indicates that the function is unbounded as \( x \) goes to infinity, and it can increase without bound.
+
+Uniform continuity on an interval requires that for any given \( \epsilon > 0 \), there exists a \( \delta > 0 \) such that for all \( x, y \) in the interval, if \( |x - y| < \delta \), then \( |f(x) - f(y)| < \epsilon \). However, since \( f(x) \) can grow large and become steep (specifically for large \( |x| \)), we can find points \( x \) and \( y \) that are close to each other but where \( |f(x) - f(y)| \) can be made arbitrarily large as \( x \) and \( y \) move toward infinity.
+
+Therefore, since \( f(x) \) does not satisfy the condition for uniform continuity on \( \mathbb{R} \):
+
+The answer is ""no"".
+------
+No",False,no,MAJOR_ANSWER,
+119,,"Evaluate $\int_c z^2 / (z - 5) dz$, where c is the circle that $|z| = 2$.",0,"0
+------
+0
+------
+0",True,0,MAJOR_ANSWER,
+121,,The atomic mass of the 4He atom is 4.002603 u. Find the binding energy of the 4He nucleus in MeV.,28.3,"28.3
+------
+28.3
+------
+28",True,28.3,MAJOR_ANSWER,
