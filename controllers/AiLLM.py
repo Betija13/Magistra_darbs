@@ -35,8 +35,6 @@ from models.DataClass.LLMModel import LLMModel
 from dotenv import dotenv_values
 from loguru import logger
 
-GPT_VERSION_FAST = "gpt-3.5-turbo"
-GPT_4_TURBO = 'gpt-4-turbo'
 env_path = '.env'
 if os.path.exists("../.env"):
     env_path = "../.env"
@@ -55,14 +53,14 @@ LLM_MAIN_API_KEY = config.get('LLM_MAIN_API_KEY')
 class ControllerAiLLM:
     def __init__(self):
         self.model: LLMModel = LLMModel(
-            name=LLM_MAIN_MODEL,
+            name='gpt-4o', #LLM_MAIN_MODEL,
             api_key=LLM_MAIN_API_KEY
         )
 
     def __prompt_internal(
             self,
-            system_prompt: str,
             human_prompt: str,
+            system_prompt: str | None = None,
             response_count: int = 1,
             temperature: float = 0.3,
             model_name: str | None = None,
@@ -70,11 +68,15 @@ class ControllerAiLLM:
     ) -> List[str]:
         result = []
         try:
+            if system_prompt is None:
+                messages = [{"role": "user", "content": human_prompt}]
+            else:
+                messages = [{"role": "system", "content": system_prompt},
+                            {"role": "user", "content": human_prompt}]
             client = OpenAI(api_key=self.model.api_key)
             response = client.chat.completions.create(
                 model=self.model.name if model_name is None else model_name,
-                messages=[{"role": "system", "content": system_prompt},
-                          {"role": "user", "content": human_prompt}],
+                messages=messages,
                 n=response_count,
                 temperature=temperature,
                 max_tokens=max_tokens,
@@ -82,7 +84,7 @@ class ControllerAiLLM:
             )
             if response.choices[0].finish_reason != 'stop':
                 logger.error("!!! GPT was stopped because of: ")
-                logger.error(json.dumps(response, indent=4))
+                logger.error(response.choices[0].finish_reason)
                 if response.choices[0].finish_reason == 'length':
                     prompt_tokens = response.usage.prompt_tokens
                     completion_tokens = response.usage.completion_tokens
@@ -99,8 +101,8 @@ class ControllerAiLLM:
 
     def get_llm_api_response_with_backup_special(
             self,
-            system_prompt: str,
             prompt: str,
+            system_prompt: str | None = None,
             model_name: str | None = None,
             response_count: int = 1,
             temperature: float | None = None,
@@ -132,4 +134,7 @@ class ControllerAiLLM:
             logger.error(e)
 
         return result
+
+    def get_structured_output(self):
+        pass #TODO
 

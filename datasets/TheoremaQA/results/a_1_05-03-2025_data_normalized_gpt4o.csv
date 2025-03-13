@@ -1,0 +1,421 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score
+0,,How many ways are there to divide a set of 8 elements into 5 non-empty ordered subsets?,11760,34105,False,,,
+1,,what is the value of $\int_{-infty}^{+infty} sin(3*t)*sin(t/\pi)/t^2 dt$?,1.0,0,False,,,
+3,,Please solve the equation 2*x^3 + e^x = 10 using newton-raphson method.,1.42,2,False,,,
+4,,How many ways are there to divide a set of 7 elements into 4 non-empty ordered subsets?,4200,350,False,,,
+7,,"Compute $\int_{|z| = 1} z^2 sin(1/z) dz$. The answer is Ai with i denoting the imaginary unit, what is A?",-1.047,0,False,,,
+8,,A container weighs 3.22 lb force when empty. Filled with water at 60°F the mass of the container and its contents is 1.95 slugs. Find its volume in cubic feet. Assume density of water = 62.4 lb force/ft3.,0.955,0.028,False,,,
+10,,"Find the x value of the solutions to the linear system: 7x - y = 15x, -6x + 8y = 15y.",0,0,True,,,
+11,,"In Jules Verne's 1865 story with this title, three men went to the moon in a shell fired from a giant cannon sunk in the earth in Florida. Find the minimum muzzle speed that would allow a shell to escape from the earth completely (the escape speed). Neglect air resistance, the earth's rotation, and the gravitational pull of the moon. The earth's radius and mass are $R_E}=$ $6.38 \times 10^6 m$ and $m_E=5.97 \times 10^{24} kg$. (Unit: 10 ^ 4 m/s)",1.12,11,False,,,
+12,,"Is W = {[x, y] in R^2: x >= 0 and y >= 0} a subspace of R^2?",False,"To determine if W is a subspace of \( \mathbb{R}^2 \), we need to check if it satisfies the three conditions for being a subspace:
+
+1. **Contains the zero vector**: The zero vector in \( \mathbb{R}^2 \) is \([0, 0]\). Since \(0 \geq 0\) and \(0 \geq 0\), the zero vector is in W.
+
+2. **Closed under addition**: For W to be closed under addition, if \([x_1, y_1]\) and \([x_2, y_2]\) are in W, then \([x_1 + x_2, y_1 + y_2]\) must also be in W. Consider \([x_1, y_1] = [1, 0]\) and \([x_2, y_2] = [0, 1]\), both of which are in W. Their sum is \([1 + 0, 0 + 1] = [1, 1]\), which is in W. However, consider \([x_1, y_1] = [1, 0]\) and \([x_2, y_2] = [-1, 0]\). Both vectors satisfy the condition \(x \geq 0\) and \(y \geq 0\) individually, but their sum \([1 + (-1), 0 + 0] = [0, 0]\) is in W, but if we consider \([1, 1]\) and \([-1, -1]\), their sum \([0, 0]\) is in W, but \([-1, -1]\) is not in W. This shows that W is not closed under addition.
+
+3. **Closed under scalar multiplication**: For W to be closed under scalar multiplication, if \([x, y]\) is in W and \(c\) is any scalar, then \([cx, cy]\) must also be in W. Consider \([x, y] = [1, 1]\) which is in W. If we take \(c = -1\), then \([-1 \cdot 1, -1 \cdot 1] = [-1, -1]\), which is not in W because \(-1\) is not greater than or equal to 0.
+
+Since W fails the closure under addition and scalar multiplication, it is not a subspace of \( \mathbb{R}^2 \).
+
+Answer: no",True,,,
+14,,True of false: one can draw a simple connected planar graph with 200 vertices and 400 faces,False,"To determine whether it is possible to draw a simple connected planar graph with 200 vertices and 400 faces, we can use Euler's formula for planar graphs. Euler's formula states that for any connected planar graph with \( V \) vertices, \( E \) edges, and \( F \) faces, the following relationship holds:
+
+\[ V - E + F = 2 \]
+
+In this problem, we are given:
+- \( V = 200 \) vertices
+- \( F = 400 \) faces
+
+We need to find out if there exists a number of edges \( E \) such that the graph satisfies Euler's formula. Plugging the given values into Euler's formula, we have:
+
+\[ 200 - E + 400 = 2 \]
+
+Simplifying this equation:
+
+\[ 600 - E = 2 \]
+
+\[ E = 598 \]
+
+Now, we need to check if a simple connected planar graph can have 200 vertices and 598 edges. For a simple connected planar graph, there is an additional constraint given by the inequality:
+
+\[ E \leq 3V - 6 \]
+
+Substituting \( V = 200 \) into this inequality:
+
+\[ E \leq 3(200) - 6 \]
+
+\[ E \leq 600 - 6 \]
+
+\[ E \leq 594 \]
+
+However, we found that \( E = 598 \) is required to satisfy Euler's formula, which exceeds the maximum allowable number of edges for a simple connected planar graph with 200 vertices. Therefore, it is not possible to draw such a graph.
+
+The answer is: no.",True,,,
+16,,"What is the number of labelled forests on 10 vertices with 5 connected components, such that vertices 1, 2, 3, 4, 5 all belong to different connected components?",50000,9450,False,,,
+17,,Let g(x) be the inverse of f(x) = x + cos(x). What is g'(1)?,1,1,True,,,
+18,,"Let V be the space of all infinite sequences of real numbers. Consider the transformation T(x_0, x_1, x_2, ...) = (x_1, x_2, x_3, ...) from V to V. Is the sequence (1,2,3,...) in the image of T?",True,Yes.,True,,,
+19,,"Let W(t) be the standard Brownian motion. Define X(t) = exp{W(t)}, for all t \in [0, \infty). Let 0 < s < t. Find Cov(X(s=1/2), X(t=1)).",1.3733,0,False,,,
+20,,Consider a random walk on a connected graph with 4 edges. What is the highest possible entropy rate? Use base 2 logarithm and return the entropy rate in bits.,1.094,2,False,,,
+21,,"If u is the real part of a function, and v is the imaginary part, then the Cauchy-Riemann equations for u and v take the following form in polar coordinates: r\frac{\partial u}{\partial r} = \frac{\partial v}{\partial \theta} and r\frac{\partial v}{\partial r} = -\frac{\partial u}{\partial \theta}. Is this argument True or False?",True,Yes.,True,,,
+22,,"The shock absorbers in an old car with mass 1000 kg are completely worn out. When a 980-N person climbs slowly into the car at its center of gravity, the car sinks 2.8 cm. The car (with the person aboard) hits a bump, and the car starts oscillating up and down in SHM. Model the car and person as a single body on a single spring, and find the frequency of the oscillation. (Unit: Hz)",0.9,0.88,False,,,
+23,,"Find the smallest positive integer that leaves a remainder of 1 when divided by 2, a remainder of 2 when divided by 3, a remainder of 3 when divided by 4, a remainder of 4 when divided by 5, and a remainder of 5 when divided by 6.",59,59,True,,,
+26,,"Aisha graduates college and starts a job. She saves $1000 each quarter, depositing it into a retirement savings account. Suppose that Aisha saves for 30 years and then retires. At retirement she wants to withdraw money as an annuity that pays a constant amount every month for 25 years. During the savings phase, the retirement account earns 6% interest compounded quarterly. During the annuity payout phase, the retirement account earns 4.8% interest compounded monthly. Calculate Aisha’s monthly retirement annuity payout.",1898.27,2089,False,,,
+27,,"Let $g_\theta(x_1,x_2)=f_\theta(x_1)f_\theta(x_2)$. Let $J_f(\theta)$ be the Fisher information of $f_\theta$.  What is the relationship between $J_f(\theta)$ and $J_g(\theta)$? (a) $J_g(\theta) = 0.5J_f(\theta)$. (b) $J_g(\theta) = J_f(\theta)$. (c) $J_g(\theta) = 2J_f(\theta)$. (d) $J_g(\theta) = 4J_f(\theta)$. Which option is correct?",c,"To solve this problem, we need to understand the relationship between the Fisher information of a product of independent random variables and the Fisher information of each individual random variable.
+
+Given:
+- \( g_\theta(x_1, x_2) = f_\theta(x_1) f_\theta(x_2) \)
+
+Assuming \( x_1 \) and \( x_2 \) are independent, the joint probability density function is the product of their individual densities.
+
+The Fisher information for a single random variable with density \( f_\theta(x) \) is given by:
+\[ J_f(\theta) = \mathbb{E} \left[ \left( \frac{\partial}{\partial \theta} \log f_\theta(x) \right)^2 \right] \]
+
+For the joint density \( g_\theta(x_1, x_2) = f_\theta(x_1) f_\theta(x_2) \), the log-likelihood is:
+\[ \log g_\theta(x_1, x_2) = \log f_\theta(x_1) + \log f_\theta(x_2) \]
+
+The derivative with respect to \(\theta\) is:
+\[ \frac{\partial}{\partial \theta} \log g_\theta(x_1, x_2) = \frac{\partial}{\partial \theta} \log f_\theta(x_1) + \frac{\partial}{\partial \theta} \log f_\theta(x_2) \]
+
+The Fisher information for \( g_\theta \) is:
+\[ J_g(\theta) = \mathbb{E} \left[ \left( \frac{\partial}{\partial \theta} \log g_\theta(x_1, x_2) \right)^2 \right] \]
+
+Substituting the derivative:
+\[ J_g(\theta) = \mathbb{E} \left[ \left( \frac{\partial}{\partial \theta} \log f_\theta(x_1) + \frac{\partial}{\partial \theta} \log f_\theta(x_2) \right)^2 \right] \]
+
+Expanding the square:
+\[ J_g(\theta) = \mathbb{E} \left[ \left( \frac{\partial}{\partial \theta} \log f_\theta(x_1) \right)^2 + 2 \frac{\partial}{\partial \theta} \log f_\theta(x_1) \frac{\partial}{\partial \theta} \log f_\theta(x_2) + \left( \frac{\partial}{\partial \theta} \log f_\theta(x_2) \right)^2 \right] \]
+
+Since \( x_1 \) and \( x_2 \) are independent, the cross term expectation is zero:
+\[ \mathbb{E} \left[ \frac{\partial}{\partial \theta} \log f_\theta(x_1) \frac{\partial}{\partial \theta} \log f_\theta(x_2) \right] = 0 \]
+
+Thus:
+\[ J_g(\theta) = \mathbb{E} \left[ \left( \frac{\partial}{\partial \theta} \log f_\theta(x_1) \right)^2 \right] + \mathbb{E} \left[ \left( \frac{\partial}{\partial \theta} \log f_\theta(x_2) \right)^2 \right] \]
+
+Since both expectations are equal to \( J_f(\theta) \), we have:
+\[ J_g(\theta) = J_f(\theta) + J_f(\theta) = 2J_f(\theta) \]
+
+Therefore, the correct relationship is:
+\[ J_g(\theta) = 2J_f(\theta) \]
+
+The correct option is (c) \( J_g(\theta) = 2J_f(\theta) \).",True,,,
+28,,"An auto magazine reports that a certain sports car has 53% of its weight on the front wheels and 47% on its rear wheels. (That is, the total normal forces on the front and rear wheels are 0.53w and 0.47w, respectively, where w is the car’s weight.) The distance between the axles is 2.46 m. How far in front of the rear axle is the car’s center of gravity?",1.3,1.304,False,,,
+29,,"A parachutist with mass m=80 kg is undergoing free fall. The drag force applied on him is $F_D = kv^2$, where v is the velocity measured relative to the air. The constant k=0.27 [Ns^2/m^2] is given. Find the distance traveled h in meters, until v=0.95$v_t$ is achieved, where $v_t$ is the terminal velocity. Return the numeric value.",345.0,116.,False,,,
+31,,In how many ways can a set of 6 distinct letters be partitioned into 3 non-empty groups if each group must contain at least 2 letters?,15,90,False,,,
+32,,"Consider $x(t)$ to be given as, $$ x(t)=\cos (1000 \pi t) $$ . Let the sampling frequency be $700 \mathrm{~Hz}$. Does aliasing occur?",True,"To determine if aliasing occurs, we need to compare the sampling frequency with the Nyquist frequency of the signal. The Nyquist frequency is twice the highest frequency present in the signal.
+
+The given signal is:
+\[ x(t) = \cos(1000 \pi t) \]
+
+The angular frequency \(\omega\) of the cosine function is given by:
+\[ \omega = 1000 \pi \]
+
+The frequency \(f\) in hertz is:
+\[ f = \frac{\omega}{2\pi} = \frac{1000 \pi}{2\pi} = 500 \text{ Hz} \]
+
+The Nyquist frequency is twice the signal frequency:
+\[ f_{\text{Nyquist}} = 2 \times 500 \text{ Hz} = 1000 \text{ Hz} \]
+
+The sampling frequency given is:
+\[ f_s = 700 \text{ Hz} \]
+
+For aliasing to be avoided, the sampling frequency must be at least the Nyquist frequency:
+\[ f_s \geq f_{\text{Nyquist}} \]
+
+In this case:
+\[ 700 \text{ Hz} < 1000 \text{ Hz} \]
+
+Since the sampling frequency is less than the Nyquist frequency, aliasing will occur.
+
+Therefore, the answer is ""yes"".",True,,,
+33,,"For a\geq 0, we define $S_a={x | dist(x, S) \leq a}$, where $dist(x,S)=inf_{y\in S}||x-y||$. Suppose S is convex. Is S_a convex? Return 1 for yes and 0 for no.",1.0,1,True,,,
+34,,"suppose the 10-by-10 matrix A has the form: if i \neq j, A_{i,j}=a_i*b_j; if i=j,  A_{i,j}=1+a_i*b_j for all 1<=i,j<=10. Here a_i = 1/i, b_i=1/(i+1). Find the determinant of A. return the numeric.",1.9,1,False,,,
+35,,"Find the area of the region between the graphs of the functions f(x) = x^2 - 4x + 10, g(x) = 4x - x^2, 1 <= x <= 3.",5.333,8,False,,,
+36,,Does the following transformation have an eigenvector: Counterclockwise rotation through an angle of 45 degrees followed by a scaling by 2 in R^2.,False,No.,True,,,
+37,,How many ways are there to arrange 6 pairs of parentheses such that they are balanced?,132,132,True,,,
+38,,Find the fraction of 7.7-MeV alpha particles that is deflected at an angle of 90° or more from a gold foil of 10^-6 m thickness.,4e-05,0,False,,,
+39,,In how many ways can a group of 9 people be divided into 3 non-empty subsets?,3025,3025,True,,,
+40,,"Suppose there is a 50-50 chance that an individual with logarithmic utility from wealth and with a current wealth of $20,000 will suffer a loss of $10,000 from a car accident. Insurance is competitively provided at actuarially fair rates. Compute the utility if the individual buys full insurance.",9.616,9.903487553,False,,,
+41,,"The returns on a stock are 2.45% at 2018, 5.42% at 2019, -13.83% at 2020. What is the compound annual rate (between -1 and 1) of return over the three years.",-0.023669,-0.0221,False,,,
+42,,Does $p(x) = x^5 + x − 1$ have any real roots?,True,"To determine if the polynomial \( p(x) = x^5 + x - 1 \) has any real roots, we can apply the Intermediate Value Theorem, which states that if a continuous function changes sign over an interval, then it has at least one root in that interval.
+
+1. Evaluate \( p(x) \) at some points to check for a sign change:
+   - Calculate \( p(0) \):
+     \[
+     p(0) = 0^5 + 0 - 1 = -1
+     \]
+   - Calculate \( p(1) \):
+     \[
+     p(1) = 1^5 + 1 - 1 = 1
+     \]
+
+2. Since \( p(0) = -1 \) and \( p(1) = 1 \), the function changes sign between \( x = 0 \) and \( x = 1 \).
+
+3. By the Intermediate Value Theorem, because \( p(x) \) is continuous (as it is a polynomial) and changes sign between \( x = 0 \) and \( x = 1 \), there must be at least one real root in the interval \( (0, 1) \).
+
+Therefore, the polynomial \( p(x) = x^5 + x - 1 \) does have at least one real root.
+
+Answer: yes",True,,,
+43,,"Find integer $n \ge 1$, such that $n \cdot 2^{n+1}+1$ is a perfect square.",3,15,False,,,
+44,,Does cos(x) = x^k have a solution for k = 2023?,True,"To determine if the equation \(\cos(x) = x^{2023}\) has a solution, we need to analyze the behavior of both sides of the equation.
+
+1. **Behavior of \(\cos(x)\):**
+   - The function \(\cos(x)\) oscillates between -1 and 1 for all real \(x\).
+
+2. **Behavior of \(x^{2023}\):**
+   - Since 2023 is an odd integer, \(x^{2023}\) is an odd function.
+   - As \(x \to 0\), \(x^{2023} \to 0\).
+   - As \(x \to \infty\), \(x^{2023} \to \infty\).
+   - As \(x \to -\infty\), \(x^{2023} \to -\infty\).
+
+3. **Existence of a Solution:**
+   - At \(x = 0\), \(\cos(0) = 1\) and \(0^{2023} = 0\). So, they are not equal at \(x = 0\).
+   - For small positive \(x\), \(\cos(x) \approx 1\) and \(x^{2023}\) is a very small positive number. As \(x\) increases, \(\cos(x)\) decreases and \(x^{2023}\) increases.
+   - For small negative \(x\), \(\cos(x) \approx 1\) and \(x^{2023}\) is a very small negative number. As \(x\) becomes more negative, \(\cos(x)\) decreases and \(x^{2023}\) becomes more negative.
+
+4. **Intermediate Value Theorem:**
+   - Consider the interval \([-1, 1]\). At \(x = 0\), \(\cos(0) = 1\) and \(0^{2023} = 0\).
+   - At \(x = 1\), \(\cos(1) < 1\) and \(1^{2023} = 1\).
+   - At \(x = -1\), \(\cos(-1) < 1\) and \((-1)^{2023} = -1\).
+
+   Since \(\cos(x)\) is continuous and \(x^{2023}\) is continuous, and \(\cos(x)\) takes values from 1 to -1 while \(x^{2023}\) takes values from 0 to 1 (for positive \(x\)) and 0 to -1 (for negative \(x\)), by the Intermediate Value Theorem, there must be some \(x\) in \([-1, 1]\) where \(\cos(x) = x^{2023}\).
+
+Therefore, the equation \(\cos(x) = x^{2023}\) does have a solution.
+
+**Answer: Yes**",True,,,
+45,,Find $\int_{0}^{\sqrt{3}} \frac{dx}{1+x^2}$.,1.0472,1,False,,,
+46,,"A box contains 4 red, 3 green, and 2 blue balls. Balls are distinct even with the same color. In how many ways can we choose 4 balls, if at least 2 are red?",81,45,False,,,
+48,,Sum the series $\sum_{m=1}^{\infty} \sum_{n=1}^{\infty}\frac{m^2 n}{3^m(n3^m+m3^n)}$,0.28125,1,False,,,
+49,,"You want to move a 500-N crate across a level floor. To start thecrate moving, you have to pull with a 230-N horizontal force.Once the crate breaks loose and starts to move, you can keep itmoving at constant velocity with only 200 N. What are the coefficients of static and kinetic friction?",0.4,0.4,True,,,
+50,,"Let’s assume that the 10-year annual return for the S&P 500 (market portfolio) is 10%, while the average annual return on Treasury bills (a good proxy for the risk-free rate) is 5%. The standard deviation is 15% over a 10-year period. Whats the market Sharpe Ratio?",0.33,0.3333,False,,,
+51,,What is the value of the integral $\int_2^4 \frac{\sqrt{log(9-x)}}{\sqrt{log(9-x)}+\sqrt{log(x+3)}} dx$?,1.0,2,False,,,
+52,,"Suppose there are 100 identical firms in a perfectly competitive industry. Each firm has a short-run total cost function of the form C(q) = rac{1}{300}q^3 + 0.2q^2 + 4q + 10. Suppose market demand is given by Q = -200P + 8,000. What will be the short-run equilibrium price?",25,20,False,,,
+53,,"A state issues a 15 year $1000 bond that pays $25 every six months. If the current market interest rate is 4%, what is the fair market value of the bond?",1111.97,1134.20,False,,,
+54,,In how many ways can we color a loop of 5 vertices with 3 colors such that no two adjacent vertices have the same color?,30,48,False,,,
+55,,The dependence between adjacent n-blocks of a stationary process grows linearly with n. True or False?,False,No.,True,,,
+56,,Let $C$ be a variable length code that satisfies the Kraft inequality with equality but does not satisfy the prefix condition. Then $C$ has finite decoding delay. True or False?,False,No.,True,,,
+57,,What is the order of group Z_{18}?,18,18,True,,,
+58,,Is 80 dB twice as loud as 40 dB?,False,"No. 
+
+The decibel (dB) scale is logarithmic, not linear. An increase of 10 dB represents a tenfold increase in intensity, and an increase of 20 dB represents a hundredfold increase in intensity. Therefore, 80 dB is not twice as loud as 40 dB; it is much more than that.",True,,,
+59,,Is x-1 a factor of 2*x^4+3*x^2-5x+7?,False,"To determine if \( x-1 \) is a factor of the polynomial \( 2x^4 + 3x^2 - 5x + 7 \), we can use the Factor Theorem. The Factor Theorem states that \( x-c \) is a factor of a polynomial \( f(x) \) if and only if \( f(c) = 0 \).
+
+In this case, we need to evaluate the polynomial at \( x = 1 \):
+
+\[
+f(x) = 2x^4 + 3x^2 - 5x + 7
+\]
+
+Substitute \( x = 1 \) into the polynomial:
+
+\[
+f(1) = 2(1)^4 + 3(1)^2 - 5(1) + 7
+\]
+
+Calculate each term:
+
+\[
+= 2(1) + 3(1) - 5 + 7
+\]
+
+\[
+= 2 + 3 - 5 + 7
+\]
+
+\[
+= 7
+\]
+
+Since \( f(1) = 7 \neq 0 \), \( x-1 \) is not a factor of the polynomial \( 2x^4 + 3x^2 - 5x + 7 \).
+
+Therefore, the answer is ""no"".",True,,,
+61,,"dy/dt = \sqrt{t}, y(1) = 1. What is y(4)?",5.667,4,False,,,
+63,,In how many ways can 10 distinct balls be placed into 4 identical boxes if each box must have at least 1 balls?,26335,5040,False,,,
+64,,"If x(n) and X(k) are an N-point DFT pair, then x(n+N)=x(n). Is it true?",True,Yes.,True,,,
+65,,what is the limit of $2/\sqrt{\pi}*\sqrt{n}\int_0^1(1-x^2)^n dx$ as n goes to infinity?,1.0,1,True,,,
+67,,"If there exists an ordered numbering of the nodes such that for each node there are no links going to a lower-numbered node, then there are no directed cycles in a directed graph. True or false?",True,Yes.,True,,,
+68,,"Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a 4-clique in red or a 5-clique in blue?",25,14,False,,,
+69,,"Assume the Black-Scholes framework. For $t \ge 0$, let $S(t)$ be the time-$t$ price of a nondividend-paying stock. You are given:
+(i) $S(0)=0.5
+(ii) The stock price process is $\frac{dS(t)}{S(t)} = 0.05dt+0.2dZ(t)$ where $Z(t)$ is a standart Brownian motion.
+(iii) $E[S(1)^\alpha]=1.4$, where $\alpha$ is a negative constant.
+(iv) The continuously compounded risk-free interest rate is $3%$.
+Consider a contingent claim that pays $S(1)^\alpha$ at time 1. What is the time-0 price of the contigent claim?",1.372,0.8,False,,,
+70,,"Determine the multiplicity of the root ξ = 1, of the polynomial P(x) = x^5 - 2x^4 + 4x^3 - x^2 - 7x + 5 = 0 using synthetic division. What is P'(2) + P''(2)? Please return the decimal number.",163,19,False,,,
+71,,"For the function $f(x,y)$ defined by $f(x,y)=1$ if $x=y$, $f(x,y)=0$ otherwise. Can we measure its integraion over the rectangle $[0,1]\times[0,1]$ using the Tonelli's Theorem? Answer true or false.",False,No.,True,,,
+72,,The cross section for neutrons of energy 10 eV being captured by silver is 17 barns. What is the probability of a neutron being captured as it passes through a layer of silver 2 mm thick?,0.2,0.034,False,,,
+73,,"What is the determinant of matrix [[0, 1, 2], [7, 8, 3], [6, 5, 4]]?",-36,99,False,,,
+75,,The two-digit integers from 19 to 92 are written consecutively to form the large integer N = 192021 · · · 909192. Suppose that 3^k is the highest power of 3 that is a factor of N. What is k?,1,12,False,,,
+76,,Apply the Graeffe's root squaring method to find the roots of the following equation x^3 - 2x + 2 = 0 correct to two decimals. What's the sum of these roots?,1,2,False,,,
+77,,"A glider with mass m = 0.200 kg sits on a frictionless horizontalair track, connected to a spring with force constant k = 5.00 N/m.You pull on the glider, stretching the spring 0.100 m, and release itfrom rest. The glider moves back toward its equilibrium position (x = 0).What is its x-velocity when  x = 0.080 m? (Unit: m/s))",-0.3,0.6324555320336759,False,,,
+78,,Toss a coin repeatedly until two consecutive heads appear. Assume that the probability of the coin landing on heads is 3/7. Calculate the average number of times the coin needs to be tossed before the experiment can end.,7.77778,\(\frac{49}{9}\),False,,,
+79,,"Julian is jogging around a circular track of radius 50 m. In a coordinate system with its origin at the center of the track, Julian's x-coordinate is changing at a rate of -1.25 m/s when his coordinates are (40, 30). Find dy/dt at this moment.",1.667,1.67,False,,,
+80,,Calculate the momentum uncertainty of a tennis ball constrained to be in a fence enclosure of length 35 m surrounding the court in kg m/s.,3e-36,9.43e-35,False,,,
+81,,"Let {X_n: n \geq 1} be independent, identically distributed random variables taking integer values {1,-1}. Let S_0=0, S_n=\sum_{i=1}^n X_i. Let P(X_i=1)=0.8 and P(X_i=-1)=0.2. The range R_n of S_0,S_1,...,S_n is the number of distinct values taken by the sequence. Then what is the limit of n^{-1}E[R_n] as n goes to infinity? Here E[R_n] is the expectation over the random variable R_n.",0.6,1,False,,,
+82,,"Find the arc length of y = x^{-1} over the interval [1,2] using the Simpson's Rule S_8.",1.132,0.693,False,,,
+83,,Is the Fourier transform of the signal x(t)=(1-e^{-|t|})[u(t+1)-u(t-1)] real?,True,"To determine if the Fourier transform of the signal \( x(t) = (1 - e^{-|t|})[u(t+1) - u(t-1)] \) is real, we need to analyze the properties of the signal.
+
+1. **Signal Analysis**:
+   - The term \( (1 - e^{-|t|}) \) is an even function because \( e^{-|t|} \) is even.
+   - The term \( [u(t+1) - u(t-1)] \) is a rectangular window function that is non-zero only in the interval \(-1 < t < 1\).
+
+2. **Overall Signal**:
+   - The product \( x(t) = (1 - e^{-|t|})[u(t+1) - u(t-1)] \) is non-zero only in the interval \(-1 < t < 1\).
+   - Within this interval, \( x(t) = 1 - e^{-|t|} \), which is an even function.
+
+3. **Fourier Transform of an Even Function**:
+   - The Fourier transform of a real and even function is real and even. This is a property of the Fourier transform.
+
+Since \( x(t) \) is real and even, its Fourier transform will also be real.
+
+Therefore, the Fourier transform of the signal \( x(t) \) is real.
+
+Answer: yes",True,,,
+84,,"compute the integral $\iint_V \frac{d x d y d z}{(1+x+y+z)^3}$, where V={(x, y, z): x, y, z \geq 0, x+y+z\leq 1}.",0.034,1,False,,,
+86,,What is the minimum number of people needed in a room to guarantee that there are 4 mutual friends or 4 mutual strangers?,18,18,True,,,
+87,,"If polygon ABCDE ~ polygon PQRST, AB = BC = 8, AE = CD = 4, ED = 6, QR = QP, and RS = PT = 3, find the perimeter of polygon PQRST.",22.5,20,False,,,
+88,,What is the effective rates (between 0 and 1) for 18% compounded quarterly? Return the numeric value.,0.1925,0.1944,False,,,
+89,,What is the effective rates for 3% compounded monthly?,0.0304,3.04,False,,,
+90,,"Let f be a real function on [0,1]. If the bounded variation of f on [0,1] equals f(1)-f(0), then: (a) f is increasing on [0,1]; (b) f is decreasing on [0,1]; (c) None of the above. Which one is correct?",a,"To solve this problem, we need to understand the concept of bounded variation. A function \( f \) on an interval \([a, b]\) is said to have bounded variation if the total variation of \( f \) on \([a, b]\) is finite. The total variation \( V_a^b(f) \) of \( f \) on \([a, b]\) is defined as:
+
+\[
+V_a^b(f) = \sup \sum_{i=1}^{n} |f(x_i) - f(x_{i-1})|
+\]
+
+where the supremum is taken over all partitions \( a = x_0 < x_1 < \cdots < x_n = b \).
+
+In this problem, we are given that the bounded variation of \( f \) on \([0, 1]\) equals \( f(1) - f(0) \). This implies:
+
+\[
+V_0^1(f) = f(1) - f(0)
+\]
+
+For a function \( f \) to have its total variation equal to \( f(1) - f(0) \), it must be a monotonic function. This is because if \( f \) is not monotonic, there would be additional variation due to the function increasing and decreasing, which would add to the total variation, making it greater than \( f(1) - f(0) \).
+
+Now, let's consider the two types of monotonic functions:
+
+1. **Increasing function**: If \( f \) is increasing on \([0, 1]\), then \( f(x_i) \geq f(x_{i-1}) \) for all \( i \), and the total variation is exactly \( f(1) - f(0) \).
+
+2. **Decreasing function**: If \( f \) is decreasing on \([0, 1]\), then \( f(x_i) \leq f(x_{i-1}) \) for all \( i \), and the total variation is also exactly \( f(0) - f(1) \), which is negative unless \( f(0) = f(1) \).
+
+Since the problem states that the total variation equals \( f(1) - f(0) \), this matches the case where \( f \) is increasing. If \( f \) were decreasing, the total variation would be \( f(0) - f(1) \), which is not the case here unless \( f(0) = f(1) \), which would make the function constant and trivially increasing.
+
+Therefore, the correct choice is:
+
+(a) \( f \) is increasing on \([0, 1]\).",True,,,
+91,,"If a stock pays a $5 dividend this year, and the dividend has been growing 6% annually, what will be the stock’s intrinsic value, assuming a required rate of return of 12%?",88.33,88,False,,,
+92,,"Malus' law: $I=I_0*cos^2($\theta$)$. Where I is the intensity of polarized light that has passed through the polarizer, I_0 is the intensity of polarized light before the polarizer, and $\theta$ is the angle between the polarized light and the polarizer. Unpolarized light passes through a polarizer. It then passes through another polarizer at angle 40 degree to the first, and then another at angle 15 degree to the second. What percentage of the original intensity was the light coming out of the second polarizer?",54.8,14,False,,,
+93,,"In Image processing, opening is a process in which first dilation operation is performed and then erosion operation is performed. Is it true?",False,No.,True,,,
+95,,"Consider a source X with a distortion measure $d(x, \hat{x})$ that satisfies the following property: all columns of the distortion matrix are permutations of the set $\{d_1, d_2, \ldots, d_m\}$. The function $\phi(D) = \max_{b:\sum_{i=1}^m p_i d_i \leq D} H(p)$ is concave. True or False?",True,Yes.,True,,,
+96,,Consider a file with a size of 350 Kbytes storing in a web server. Client A sends a request to the server to retrieve the file from a remote location. It is known that the link capacity between client A and the server is 10 Mbps and the round trip time (RTT) between the server and client is fixed at 20ms. Assume that the segment size is 20 Kbytes and the client has a receiver buffer of 200Kbytes. Assume that the window size (W) is adjusted according to the congestion control procedures of TCP-Reno. How long (in ms) does client A take to receive the whole file from the server after sending a request? Given that the initial slow-start threshold is 32.,344,80,False,,,
+98,,"What is the Cramer-Rao lower bound on $E_\theta(\hat{\theta}(X)-\theta)^2$, where $\hat{\theta}(X)$ is an unbaised estimator of $\theta$ for the Gaussian distribution family $f_\theta(x)=N(0,\theta)$? (a) $2\theta$. (b) $2\theta^2$. (c) $0.5\theta^{-1}$. (d) $0.5\theta^{-2}$. Which option is correct?",b,"To find the Cramer-Rao lower bound for an unbiased estimator of \(\theta\) in the Gaussian distribution family \(f_\theta(x) = N(0, \theta)\), we need to calculate the Fisher Information \(I(\theta)\) and then use it to find the bound.
+
+The probability density function for a Gaussian distribution \(N(0, \theta)\) is given by:
+\[
+f(x; \theta) = \frac{1}{\sqrt{2\pi\theta}} \exp\left(-\frac{x^2}{2\theta}\right)
+\]
+
+The log-likelihood function is:
+\[
+\log f(x; \theta) = -\frac{1}{2} \log(2\pi\theta) - \frac{x^2}{2\theta}
+\]
+
+The derivative of the log-likelihood with respect to \(\theta\) is:
+\[
+\frac{\partial}{\partial \theta} \log f(x; \theta) = -\frac{1}{2\theta} + \frac{x^2}{2\theta^2}
+\]
+
+The Fisher Information \(I(\theta)\) is the expected value of the negative second derivative of the log-likelihood:
+\[
+I(\theta) = -E\left[\frac{\partial^2}{\partial \theta^2} \log f(x; \theta)\right]
+\]
+
+First, compute the second derivative:
+\[
+\frac{\partial^2}{\partial \theta^2} \log f(x; \theta) = \frac{1}{2\theta^2} - \frac{x^2}{\theta^3}
+\]
+
+The expected value of the second derivative is:
+\[
+E\left[\frac{1}{2\theta^2} - \frac{x^2}{\theta^3}\right] = \frac{1}{2\theta^2} - \frac{1}{\theta^3} E[x^2]
+\]
+
+Since \(x \sim N(0, \theta)\), we have \(E[x^2] = \theta\). Therefore:
+\[
+E\left[\frac{1}{2\theta^2} - \frac{x^2}{\theta^3}\right] = \frac{1}{2\theta^2} - \frac{\theta}{\theta^3} = \frac{1}{2\theta^2} - \frac{1}{\theta^2} = -\frac{1}{2\theta^2}
+\]
+
+Thus, the Fisher Information is:
+\[
+I(\theta) = -\left(-\frac{1}{2\theta^2}\right) = \frac{1}{2\theta^2}
+\]
+
+The Cramer-Rao lower bound for the variance of an unbiased estimator is given by:
+\[
+\text{Var}(\hat{\theta}(X)) \geq \frac{1}{I(\theta)} = \frac{1}{\frac{1}{2\theta^2}} = 2\theta^2
+\]
+
+Therefore, the correct option is (b) \(2\theta^2\).",True,,,
+101,,"A scuba diver is wearing a head lamp and looking up at the surface of the water. If the minimum angle to the vertical resulting in total internal reflection is 25∘, what is the index of refraction of the water? $\theta_{air} = 1.00$.",2.37,1.42,False,,,
+102,,"For every positive real number $x$, let $g(x)=\lim _{r \rightarrow 0}((x+1)^{r+1}-x^{r+1})^{1/r}$. What is the limit of $g(x)/x$ as $x$ goes to infinity?",2.7182818,1,False,,,
+104,,"X rays scattered from rock salt (NaCl) are observed to have an intense maximum at an angle of 20° from the incident direction. Assuming n = 1 (from the intensity), what must be the Wavelength of the incident radiation in nm?",0.098,0.154,False,,,
+105,,Suppose that there are two firms in the market facing no costs of production and a demand curve given by Q = 150 - P for their identical products. Suppose the two firms choose prices simultaneously as in the Bertrand model. Compute the prices in the nash equilibrium.,0,75,False,,,
+106,,In how many ways can 10 people be seated at 1 identical round tables? Each table must have at least 1 person seated.,362880,3628800,False,,,
+107,,"What is the Cramer-Rao lower bound on $E_\theta(\hat{\theta}(X)-\theta)^2$, where $\hat{\theta}(X)$ is an unbaised estimator of $\theta$ for the distribution family $f_\theta(x)=\theta e^{-\theta x}$, $x \geq 0$? (a) $\theta$. (b) $\theta^2$. (c) $\theta^{-1}$. (d) $\theta^{-2}$.",b,"To find the Cramer-Rao lower bound for the variance of an unbiased estimator of \(\theta\), we need to compute the Fisher information for the given family of distributions.
+
+The probability density function is given by:
+\[ f_\theta(x) = \theta e^{-\theta x}, \quad x \geq 0. \]
+
+The Fisher information \( I(\theta) \) is defined as:
+\[ I(\theta) = E_\theta \left[ \left( \frac{\partial}{\partial \theta} \log f_\theta(X) \right)^2 \right]. \]
+
+First, compute the log-likelihood:
+\[ \log f_\theta(x) = \log \theta - \theta x. \]
+
+Differentiate with respect to \(\theta\):
+\[ \frac{\partial}{\partial \theta} \log f_\theta(x) = \frac{1}{\theta} - x. \]
+
+Now, compute the Fisher information:
+\[ I(\theta) = E_\theta \left[ \left( \frac{1}{\theta} - X \right)^2 \right]. \]
+
+Expand the square:
+\[ I(\theta) = E_\theta \left[ \left( \frac{1}{\theta^2} - \frac{2X}{\theta} + X^2 \right) \right]. \]
+
+Since \(X\) follows an exponential distribution with parameter \(\theta\), we have:
+- \(E_\theta[X] = \frac{1}{\theta}\),
+- \(E_\theta[X^2] = \frac{2}{\theta^2}\).
+
+Substitute these into the expression for \(I(\theta)\):
+\[ I(\theta) = \frac{1}{\theta^2} - \frac{2}{\theta^2} + \frac{2}{\theta^2} = \frac{1}{\theta^2}. \]
+
+The Cramer-Rao lower bound for the variance of any unbiased estimator \(\hat{\theta}(X)\) of \(\theta\) is given by:
+\[ \text{Var}(\hat{\theta}(X)) \geq \frac{1}{I(\theta)} = \theta^2. \]
+
+Thus, the Cramer-Rao lower bound is \(\theta^2\).
+
+The correct answer is (b) \(\theta^2\).",True,,,
+108,,"For an integer a > 0 and an integer b > 0, is there any other number c > 0 such that a^10 + b^10 = c^10?",False,No.,True,,,
+109,,"Consider Convolutional Neural Network D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. Consider CNN D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. What is the total number of weights defined for the entire activation output of this first layer? (ie. If you flattened all filters and channels into a single vector)",900,104,False,,,
+110,,How many ways are there to arrange 9 people in a line such that no one is standing in their correct position?,133496,133496,True,,,
+111,,"Ms. Fogg is planning an around-the-world trip on which she plans to spend $10,000. The utility from the trip is a function of how much she actually spends on it (Y), given by U(Y) = ln Y. If there is a 25 percent probability that Ms. Fogg will lose $1,000 of her cash on the trip, what is the trip’s expected utility?",9.184,9.21034,False,,,
+112,,In how many ways can 6 people be seated at 2 identical round tables? Each table must have at least 1 person seated.,225,90,False,,,
+113,,"For a matrix A, is the function F(A) = det A from the linear space R^{3*3} to R a linear transformation?",False,No.,True,,,
+114,,"Are the vectors [1, 2], [2, 3], and [3, 4] linearly independent?",False,No.,True,,,
+116,,"suppose $u=\arctan \frac{y}{x}$, what is numeric of $\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}$?",0.0,0,True,,,
+117,,Use the Runge-Kutta method with $h=0.1$ to find approximate values of the solution of $(y-1)^2 * y' = 2x + 3$ with y(1) = 4. What is y(0)?,3.46621207,4,False,,,
+118,,Define f: R 	o R by f(x) = (x^3) / (1 + x^2). Is f uniformly continuous on R?,True,"No.
+
+To determine whether the function \( f(x) = \frac{x^3}{1 + x^2} \) is uniformly continuous on \( \mathbb{R} \), we need to consider the behavior of the function as \( x \) approaches infinity and whether the function satisfies the definition of uniform continuity.
+
+A function \( f: \mathbb{R} \to \mathbb{R} \) is uniformly continuous on \( \mathbb{R} \) if for every \( \epsilon > 0 \), there exists a \( \delta > 0 \) such that for all \( x, y \in \mathbb{R} \), if \( |x - y| < \delta \), then \( |f(x) - f(y)| < \epsilon \).
+
+Let's analyze the behavior of \( f(x) \) as \( x \to \infty \) and \( x \to -\infty \):
+
+1. As \( x \to \infty \), the function \( f(x) = \frac{x^3}{1 + x^2} \) behaves like \( x \) because the highest power of \( x \) in the numerator dominates. Specifically, \( f(x) \approx x \).
+
+2. Similarly, as \( x \to -\infty \), \( f(x) \approx x \).
+
+The function \( f(x) \) is not bounded as \( x \to \pm \infty \), and it behaves like a linear function with a slope of 1. Linear functions with non-zero slopes are not uniformly continuous on unbounded intervals because the difference \( |f(x) - f(y)| \) can become arbitrarily large as \( x \) and \( y \) become large, even if \( |x - y| \) is small.
+
+Therefore, \( f(x) = \frac{x^3}{1 + x^2} \) is not uniformly continuous on \( \mathbb{R} \). The answer is no.",False,,,
+119,,"Evaluate $\int_c z^2 / (z - 5) dz$, where c is the circle that $|z| = 2$.",0,0,True,,,
+121,,The atomic mass of the 4He atom is 4.002603 u. Find the binding energy of the 4He nucleus in MeV.,28.3,28.3,True,,,

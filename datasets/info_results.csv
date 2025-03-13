@@ -193,3 +193,433 @@ Choices:
 ```
 MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
 ",1.0,3,MAJOR_ANSWER,gpt-4o-mini
+37,04-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_04-03-2025_data_normalized_test.csv,A_ZERO_SHOT,True,100,0.79,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",0.0,1,,gpt-4o-mini
+38,04-03-2025,LastLetterConcat,../datasets/LastLetterConcat/results/a_1_04-03-2025_data_normalized.csv,A_ZERO_SHOT,True,100,0.08,Solve the problem below.,"Problem:
+```
+{question}
+```
+Answer as just the letters:
+",0.0,1,,gpt-4o-mini
+39,04-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_04-03-2025_data_normalized_test_gpt4o.csv,A_ZERO_SHOT,True,100,0.85,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",0.0,1,,gpt-4o
+40,04-03-2025,LastLetterConcat,../datasets/LastLetterConcat/results/a_1_04-03-2025_data_normalized_gpt4o.csv,A_ZERO_SHOT,True,100,0.12,Solve the problem below.,"Problem:
+```
+{question}
+```
+Answer as just the letters:
+",0.0,1,,gpt-4o
+41,04-03-2025,MATHQA,../datasets/MATHQA/results/a_1_04-03-2025_data_normalized_gpt4o.csv,A_ZERO_SHOT,True,100,0.82,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",0.0,1,,gpt-4o
+42,05-03-2025,MMLU,../datasets/MMLU/results/a_1_05-03-2025_data_normalized_college_mathematics_gpt4o.csv,A_ZERO_SHOT,True,100,0.7,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",0.0,1,,gpt-4o
+43,05-03-2025,TheoremaQA,../datasets/TheoremaQA/results/a_1_05-03-2025_data_normalized_gpt4o.csv,A_ZERO_SHOT,True,100,0.39,"[NUMBER]
+Solve the math world problem, giving your answer as an arabic numeral. Answer with only the final number.
+------
+[BOOL]
+Work out an answer to the commonsense reasoning question above, and then answer yes or no.
+------
+[MULTIPLE_CHOICE]
+Do a simple computation.","[NUMBER]
+Problem:
+```
+{question}
+```
+Single numeric answer:
+
+------
+[BOOL]
+Question:
+```
+{question}
+```
+Answer as ""yes"" or ""no"":
+
+------
+[MULTIPLE_CHOICE]
+Problem:
+```
+{question}
+```
+MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):
+",0.0,1,,gpt-4o
+44,06-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_06-03-2025_data_normalized_test_gpt4o.csv,A_ZERO_SHOT,True,100,0.86,"Classify (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+45,06-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_06-03-2025_data_normalized_test_testing_prompts_2.csv,A_ZERO_SHOT,True,100,0.81,"Solve and Classify  (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+46,06-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_06-03-2025_data_normalized_test_testing_prompts_3.csv,A_ZERO_SHOT,True,100,0.88,"Solve and Choose Answer (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+47,06-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_06-03-2025_data_normalized_test_testing_prompts_4.csv,A_ZERO_SHOT,True,100,0.89,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+48,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_testing_prompts_0.csv,A_ZERO_SHOT,True,100,0.8,Do a simple computation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+49,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_0.csv,A_ZERO_SHOT,True,100,0.82,Carry out a basic arithmetic task.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+50,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_1.csv,A_ZERO_SHOT,True,100,0.8,Perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+51,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_2.csv,A_ZERO_SHOT,True,100,0.82,Perform an easy calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+52,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_3.csv,A_ZERO_SHOT,True,100,0.73,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+53,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_4.csv,A_ZERO_SHOT,True,100,0.63,"Explore different methods to tackle the calculation, such as breaking it down into smaller parts, using visual aids like diagrams or graphs, or applying estimation techniques to gain a better understanding of the problem. Consider discussing your approach with others to gain new insights or perspectives.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+54,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_5.csv,A_ZERO_SHOT,True,100,0.89,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+55,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_6.csv,A_ZERO_SHOT,True,100,0.87,"Break down and solve the multiple-choice math word problem step by step, and choose the correct answer from (A), (B), (C), (D), or (E). Provide reasoning and calculations for each step to ensure clarity and understanding.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+56,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_7.csv,A_ZERO_SHOT,True,100,0.9,"Solve the multiple choice math word problem, ensuring you provide a detailed explanation for the answer. Choose from the options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+57,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_8.csv,A_ZERO_SHOT,True,100,0.87,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+58,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_9.csv,A_ZERO_SHOT,True,100,0.67,"Solve the multiple-choice math word problem by selecting the correct answer from options (A), (B), (C), (D), or (E). In your solution, explain the steps and reasoning used to arrive at your answer. Also, analyze the implications of choosing the correct answer and the strategies that might lead to selecting each option. What does this reveal about problem-solving techniques in general?","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+59,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_10.csv,A_ZERO_SHOT,True,100,0.74,"Solve the multiple choice math word problem, choosing (A),(B),(C),(D) or (E). Additionally, discuss the reasoning behind your choice and explain the steps taken to arrive at the correct answer. Evaluate how solving this problem could enhance your problem-solving skills in similar scenarios.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+60,12-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_12-03-2025_data_normalized_test_mutated_prompts_11.csv,A_ZERO_SHOT,True,100,0.85,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+61,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_0.csv,A_ZERO_SHOT,True,100,0.42,"Do a simple computation.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+62,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_1.csv,A_ZERO_SHOT,True,100,0.42,"Solve and Classify  (A),(B),(C),(D),(E)
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+63,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_2.csv,A_ZERO_SHOT,True,100,0.44,"Carry out a basic arithmetic task.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+64,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_3.csv,A_ZERO_SHOT,True,100,0.39,"Perform a basic calculation.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+65,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_4.csv,A_ZERO_SHOT,True,100,0.42,"Perform an easy calculation.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+66,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_5.csv,A_ZERO_SHOT,True,100,0.4,"Please perform a basic calculation.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+67,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_6.csv,A_ZERO_SHOT,True,100,0.41,"Explore different methods to tackle the calculation, such as breaking it down into smaller parts, using visual aids like diagrams or graphs, or applying estimation techniques to gain a better understanding of the problem. Consider discussing your approach with others to gain new insights or perspectives.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+68,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_7.csv,A_ZERO_SHOT,True,100,0.9,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+69,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_8.csv,A_ZERO_SHOT,True,100,0.66,"Break down and solve the multiple-choice math word problem step by step, and choose the correct answer from (A), (B), (C), (D), or (E). Provide reasoning and calculations for each step to ensure clarity and understanding.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+70,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_9.csv,A_ZERO_SHOT,True,100,0.48,"Solve the multiple choice math word problem, ensuring you provide a detailed explanation for the answer. Choose from the options (A), (B), (C), (D), or (E).
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+71,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_10.csv,A_ZERO_SHOT,True,100,0.42,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+72,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_11.csv,A_ZERO_SHOT,True,100,0.45,"Solve the multiple-choice math word problem by selecting the correct answer from options (A), (B), (C), (D), or (E). In your solution, explain the steps and reasoning used to arrive at your answer. Also, analyze the implications of choosing the correct answer and the strategies that might lead to selecting each option. What does this reveal about problem-solving techniques in general?
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+73,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_12.csv,A_ZERO_SHOT,True,100,0.41,"Solve the multiple choice math word problem, choosing (A),(B),(C),(D) or (E). Additionally, discuss the reasoning behind your choice and explain the steps taken to arrive at the correct answer. Evaluate how solving this problem could enhance your problem-solving skills in similar scenarios.
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+74,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/a_1_13-03-2025_data_normalized_test_mutated_prompts_combined_13.csv,A_ZERO_SHOT,True,100,0.38,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o
+75,13-03-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION_13-03-2025_data_normalized_test.csv,MUTATION,True,100,0.41,"task_prompt
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,MAJOR_ANSWER,gpt-4o

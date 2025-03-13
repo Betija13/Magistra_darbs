@@ -98,7 +98,7 @@ for folder in all_dataset_folders:
                     start_human_prompt = f'Question:\n```\n{question}\n```\n' if 'question' in system_prompt.lower() else f'Problem:\n```\n{question}\n```\n'
                     human_prompt = f"{start_human_prompt}{choices_str}{facts_str}{end_human_prompt}"
                     answer_llm = controller_ai.get_llm_api_response_with_backup_special(
-                        system_prompt, human_prompt, response_count=1, temperature=TEMPERATURE,
+                        system_prompt=system_prompt, prompt=human_prompt, response_count=1, temperature=TEMPERATURE,
                         get_multiple_answers=False, model_name=MODEL_NAME
                     )
                     correct = ResultUtils.check_corrct_answer(

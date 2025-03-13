@@ -1,0 +1,3583 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score
+0,,"A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower. The top of the tower is observed from the car and, in the process, it takes 10 minutes for the angle of elevation to change from 45° to 60°. After how much more time will this car reach the base of the tower?
+A)5(√3 + 1)
+B)6(√3 + √2)
+C)7(√3 – 1)
+D)8(√3 – 2)
+E)None of these",A,"To solve this problem, we need to use trigonometry and the concept of relative speed. Let's denote the following:
+
+- Let \( h \) be the height of the tower.
+- Let \( x_1 \) be the initial distance of the car from the base of the tower when the angle of elevation is 45°.
+- Let \( x_2 \) be the distance of the car from the base of the tower when the angle of elevation is 60°.
+- Let \( v \) be the speed of the car.
+
+From the problem, we know that it takes 10 minutes for the angle of elevation to change from 45° to 60°.
+
+Using the tangent of the angles, we have:
+1. \( \tan(45°) = \frac{h}{x_1} = 1 \) which implies \( x_1 = h \).
+2. \( \tan(60°) = \frac{h}{x_2} = \sqrt{3} \) which implies \( x_2 = \frac{h}{\sqrt{3}} \).
+
+The car travels from \( x_1 \) to \( x_2 \) in 10 minutes, so the distance covered is:
+\[ x_1 - x_2 = h - \frac{h}{\sqrt{3}} = h \left(1 - \frac{1}{\sqrt{3}}\right) = h \left(\frac{\sqrt{3} - 1}{\sqrt{3}}\right) \]
+
+The speed of the car \( v \) is:
+\[ v = \frac{x_1 - x_2}{10} = \frac{h \left(\frac{\sqrt{3} - 1}{\sqrt{3}}\right)}{10} = \frac{h(\sqrt{3} - 1)}{10\sqrt{3}} \]
+
+Now, we need to find the time \( t \) it takes for the car to travel from \( x_2 \) to the base of the tower (distance \( x_2 = \frac{h}{\sqrt{3}} \)).
+
+Using the speed \( v \), we have:
+\[ t = \frac{x_2}{v} = \frac{\frac{h}{\sqrt{3}}}{\frac{h(\sqrt{3} - 1)}{10\sqrt{3}}} = \frac{\frac{h}{\sqrt{3}} \cdot 10\sqrt{3}}{h(\sqrt{3} - 1)} = \frac{10h}{h(\sqrt{3} - 1)} = \frac{10}{\sqrt{3} - 1} \]
+
+To simplify \( \frac{10}{\sqrt{3} - 1} \), we multiply the numerator and the denominator by the conjugate of the denominator:
+\[ \frac{10}{\sqrt{3} - 1} \cdot \frac{\sqrt{3} + 1}{\sqrt{3} + 1} = \frac{10(\sqrt{3} + 1)}{(\sqrt{3} - 1)(\sqrt{3} + 1)} = \frac{10(\sqrt{3} + 1)}{3 - 1} = 5(\sqrt{3} + 1) \]
+
+Therefore, the time it takes for the car to reach the base of the tower is \( 5(\sqrt{3} + 1) \) minutes.
+
+The correct answer is:
+A) 5(√3 + 1)",True,,,
+1,,"The original price of an item is discounted 22%. A customer buys the item at this discounted price using a $20-off coupon. There is no tax on the item, and this was the only item the customer bought. If the customer paid $1.90 more than half the original price of the item, what was the original price of the item?
+A)$61
+B)$65
+C)$67.40
+D)$70
+E)$78.20",E,"To solve this problem, let's denote the original price of the item as \( x \).
+
+1. The item is discounted by 22%, so the discounted price is:
+   \[
+   x - 0.22x = 0.78x
+   \]
+
+2. The customer uses a $20-off coupon, so the price the customer pays is:
+   \[
+   0.78x - 20
+   \]
+
+3. According to the problem, the customer paid $1.90 more than half the original price. Therefore, we have:
+   \[
+   0.78x - 20 = \frac{x}{2} + 1.90
+   \]
+
+4. Solve the equation for \( x \):
+   \[
+   0.78x - 20 = \frac{x}{2} + 1.90
+   \]
+
+   First, eliminate the fraction by multiplying the entire equation by 2:
+   \[
+   2(0.78x - 20) = 2\left(\frac{x}{2} + 1.90\right)
+   \]
+   \[
+   1.56x - 40 = x + 3.80
+   \]
+
+5. Rearrange the equation to isolate \( x \):
+   \[
+   1.56x - x = 3.80 + 40
+   \]
+   \[
+   0.56x = 43.80
+   \]
+
+6. Solve for \( x \):
+   \[
+   x = \frac{43.80}{0.56}
+   \]
+   \[
+   x = 78.2142857
+   \]
+
+Rounding to the nearest cent, the original price of the item is approximately $78.20.
+
+Therefore, the correct answer is \(\boxed{E}\).",True,,,
+2,,"Find out which of the following values is the multiple of X, if it is divisible by 9 and 12?
+A)36
+B)15
+C)17
+D)5
+E)7",A,"To determine which of the given values is a multiple of X, where X is a number divisible by both 9 and 12, we first need to find the least common multiple (LCM) of 9 and 12.
+
+The prime factorization of 9 is \(3^2\), and the prime factorization of 12 is \(2^2 \times 3\). The LCM is found by taking the highest power of each prime that appears in the factorizations:
+
+- The highest power of 2 is \(2^2\).
+- The highest power of 3 is \(3^2\).
+
+Thus, the LCM of 9 and 12 is \(2^2 \times 3^2 = 4 \times 9 = 36\).
+
+Now, we need to check which of the given choices is a multiple of 36:
+
+- A) 36: \(36 \div 36 = 1\), so 36 is a multiple of 36.
+- B) 15: \(15 \div 36\) is not an integer, so 15 is not a multiple of 36.
+- C) 17: \(17 \div 36\) is not an integer, so 17 is not a multiple of 36.
+- D) 5: \(5 \div 36\) is not an integer, so 5 is not a multiple of 36.
+- E) 7: \(7 \div 36\) is not an integer, so 7 is not a multiple of 36.
+
+Therefore, the value that is a multiple of X (where X is divisible by both 9 and 12) is:
+
+A) 36",True,,,
+3,,"If the probability that Stock A will increase in value during the next month is 0.56, and the probability that Stock B will increase in value during the next month is 0.74. What is the greatest value for the probability that neither of these two events will occur?
+A)0.22
+B)0.26
+C)0.37
+D)0.46
+E)0.63",B,"To solve this problem, we need to find the greatest value for the probability that neither Stock A nor Stock B will increase in value during the next month.
+
+Let's denote:
+- \( P(A) \) as the probability that Stock A will increase in value, which is 0.56.
+- \( P(B) \) as the probability that Stock B will increase in value, which is 0.74.
+
+The probability that neither Stock A nor Stock B will increase in value is the complement of the probability that at least one of them will increase in value. 
+
+The probability that at least one of them will increase in value is given by the formula for the union of two events:
+\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
+
+The probability that neither will increase is:
+\[ P(\text{neither A nor B}) = 1 - P(A \cup B) \]
+
+To maximize \( P(\text{neither A nor B}) \), we need to minimize \( P(A \cup B) \). The minimum value of \( P(A \cup B) \) occurs when \( P(A \cap B) \) is maximized. The maximum value of \( P(A \cap B) \) is the minimum of \( P(A) \) and \( P(B) \), which is 0.56.
+
+Thus, the minimum value of \( P(A \cup B) \) is:
+\[ P(A \cup B) = 0.56 + 0.74 - 0.56 = 0.74 \]
+
+Therefore, the greatest value for the probability that neither event occurs is:
+\[ P(\text{neither A nor B}) = 1 - 0.74 = 0.26 \]
+
+The correct answer is:
+```
+B) 0.26
+```",True,,,
+4,,"A trader sold an article at a profit of 20% for Rs.360. What is the cost price of the article?
+A)270
+B)300
+C)280
+D)320
+E)315",B,"To find the cost price of the article, we can use the formula for profit:
+
+Profit Percentage = (Selling Price - Cost Price) / Cost Price * 100
+
+Given that the profit percentage is 20% and the selling price is Rs. 360, we can set up the equation:
+
+20 = (360 - Cost Price) / Cost Price * 100
+
+First, divide both sides by 100 to simplify:
+
+0.20 = (360 - Cost Price) / Cost Price
+
+Now, let Cost Price = x. Then the equation becomes:
+
+0.20 = (360 - x) / x
+
+Multiply both sides by x to eliminate the fraction:
+
+0.20x = 360 - x
+
+Add x to both sides to get:
+
+0.20x + x = 360
+
+Combine like terms:
+
+1.20x = 360
+
+Now, divide both sides by 1.20 to solve for x:
+
+x = 360 / 1.20
+
+x = 300
+
+Therefore, the cost price of the article is Rs. 300.
+
+The correct choice is:
+
+B) 300",True,,,
+5,,"20 marbles were pulled out of a bag of only white marbles, painted black, and then put back in. Then, another 20 marbles were pulled out, of which 1 was black, after which they were all returned to the bag. If the percentage of black marbles pulled out the second time represents their percentage in the bag, how many marbles in total Q does the bag currently hold?
+A)40
+B)200
+C)380
+D)400
+E)3200",D,"To solve this problem, we need to determine the total number of marbles in the bag, denoted as \( Q \).
+
+Initially, all marbles in the bag are white. We paint 20 marbles black and return them to the bag. Therefore, there are now 20 black marbles in the bag.
+
+When we pull out another 20 marbles, 1 of them is black. The problem states that the percentage of black marbles pulled out (1 out of 20) represents their percentage in the bag. This means that the ratio of black marbles to the total number of marbles in the bag is the same as the ratio of black marbles pulled out to the total marbles pulled out.
+
+The percentage of black marbles pulled out is:
+\[
+\frac{1}{20} = 0.05 = 5\%
+\]
+
+This implies that 5% of the marbles in the bag are black. Since there are 20 black marbles in the bag, we can set up the equation:
+\[
+0.05 \times Q = 20
+\]
+
+Solving for \( Q \), we divide both sides by 0.05:
+\[
+Q = \frac{20}{0.05} = 400
+\]
+
+Thus, the total number of marbles in the bag is \( Q = 400 \).
+
+The correct answer is:
+```
+D)400
+```",True,,,
+6,,"Find the total no. of distinct bike no.'s that can beformed using 2 letters followed by 2 no.'s. How many letters need to be distinct?
+A)74453
+B)64543
+C)74325
+D)65000
+E)97656",D,"To solve this problem, we need to calculate the total number of distinct bike numbers that can be formed using 2 letters followed by 2 numbers. 
+
+1. **Letters**: 
+   - There are 26 letters in the English alphabet.
+   - Since the problem does not specify that the letters need to be distinct, we assume they can be repeated.
+   - Therefore, the number of ways to choose 2 letters is \(26 \times 26 = 676\).
+
+2. **Numbers**:
+   - There are 10 digits (0 through 9).
+   - Similarly, since the problem does not specify that the numbers need to be distinct, they can be repeated.
+   - Therefore, the number of ways to choose 2 numbers is \(10 \times 10 = 100\).
+
+3. **Total combinations**:
+   - The total number of distinct bike numbers is the product of the combinations of letters and numbers.
+   - Total = \(676 \times 100 = 67600\).
+
+The problem also asks how many letters need to be distinct. Since we assumed that letters can be repeated, the number of distinct letters needed is not specified in the problem, and it is not necessary for the calculation.
+
+Therefore, the closest choice to our calculated total of 67600 is:
+
+D) 65000",True,,,
+7,,"A train running at a speed of 100 miles/hour, takes 10 hours to reach its destination. After covering quarter of the distance, it starts raining and the train has to be slowed to speed of 75 miles/hour. What is the total journey duration?
+A)10
+B)11.5
+C)12.5
+D)13.5
+E)15",C,"To solve this problem, we need to calculate the total journey duration considering the change in speed after covering a quarter of the distance.
+
+1. **Calculate the total distance:**
+   - The train travels at 100 miles/hour for 10 hours, so the total distance is:
+     \[
+     \text{Total Distance} = 100 \, \text{miles/hour} \times 10 \, \text{hours} = 1000 \, \text{miles}
+     \]
+
+2. **Calculate the distance covered before it starts raining:**
+   - The train covers a quarter of the total distance before it starts raining:
+     \[
+     \text{Distance before rain} = \frac{1}{4} \times 1000 \, \text{miles} = 250 \, \text{miles}
+     \]
+
+3. **Calculate the time taken to cover the distance before it starts raining:**
+   - At 100 miles/hour, the time taken to cover 250 miles is:
+     \[
+     \text{Time before rain} = \frac{250 \, \text{miles}}{100 \, \text{miles/hour}} = 2.5 \, \text{hours}
+     \]
+
+4. **Calculate the remaining distance after it starts raining:**
+   - The remaining distance to be covered after it starts raining is:
+     \[
+     \text{Remaining Distance} = 1000 \, \text{miles} - 250 \, \text{miles} = 750 \, \text{miles}
+     \]
+
+5. **Calculate the time taken to cover the remaining distance at the reduced speed:**
+   - At 75 miles/hour, the time taken to cover 750 miles is:
+     \[
+     \text{Time after rain} = \frac{750 \, \text{miles}}{75 \, \text{miles/hour}} = 10 \, \text{hours}
+     \]
+
+6. **Calculate the total journey duration:**
+   - The total journey duration is the sum of the time before and after it starts raining:
+     \[
+     \text{Total Journey Duration} = 2.5 \, \text{hours} + 10 \, \text{hours} = 12.5 \, \text{hours}
+     \]
+
+Therefore, the total journey duration is 12.5 hours. The correct choice is:
+
+C) 12.5",True,,,
+8,,"Of the 200 students in a school, at least 45% attended the prom night and at least 35% took part in the debating session. What is the maximum number of students who could have neither attended the prom night nor the debating session?
+A)27
+B)81
+C)90
+D)99
+E)110",E,"To solve this problem, we need to determine the maximum number of students who could have neither attended the prom night nor the debating session.
+
+Let's denote:
+- \( P \) as the number of students who attended the prom night.
+- \( D \) as the number of students who took part in the debating session.
+- \( N \) as the number of students who attended neither.
+
+According to the problem:
+- At least 45% of the students attended the prom night, so \( P \geq 0.45 \times 200 = 90 \).
+- At least 35% of the students took part in the debating session, so \( D \geq 0.35 \times 200 = 70 \).
+
+We want to maximize \( N \), the number of students who attended neither. Using the principle of inclusion-exclusion, we have:
+\[ P + D - (P \cap D) \leq 200 \]
+
+Rearranging gives:
+\[ N = 200 - (P + D - (P \cap D)) \]
+
+To maximize \( N \), we need to minimize \( P + D - (P \cap D) \). The minimum value of \( P + D \) occurs when \( P = 90 \) and \( D = 70 \), giving \( P + D = 160 \).
+
+The minimum value of \( P \cap D \) is 0 (if no student attended both events), so:
+\[ P + D - (P \cap D) = 160 - 0 = 160 \]
+
+Thus, the maximum value of \( N \) is:
+\[ N = 200 - 160 = 40 \]
+
+However, this calculation seems incorrect as it doesn't match any of the given choices. Let's re-evaluate:
+
+To maximize \( N \), we should consider the scenario where the overlap \( P \cap D \) is maximized, which minimizes the total number of students attending at least one event. The maximum overlap occurs when the total number of students attending at least one event is minimized.
+
+If \( P = 90 \) and \( D = 70 \), the maximum overlap \( P \cap D \) is:
+\[ P \cap D = P + D - 200 = 90 + 70 - 200 = -40 \]
+
+This is not possible, indicating a mistake in the overlap calculation. Let's correct it:
+
+The correct approach is to consider the minimum number of students attending at least one event:
+\[ P + D - (P \cap D) = 200 - N \]
+
+To maximize \( N \), we need to minimize \( P + D - (P \cap D) \). The minimum value of \( P + D \) is 160, and the maximum overlap \( P \cap D \) is 60 (since \( P = 90 \) and \( D = 70 \), the overlap can be at most 60).
+
+Thus, the minimum number of students attending at least one event is:
+\[ P + D - (P \cap D) = 160 - 60 = 100 \]
+
+Therefore, the maximum number of students who attended neither is:
+\[ N = 200 - 100 = 100 \]
+
+This matches the choice \( D) 99 \), which is the closest to 100.
+
+Therefore, the correct answer is:
+```
+D) 99
+```",False,,,
+9,,"A sales person gets a 10% commission on each sale he makes. How many sales of $250 each must he make in order to reach a salary of at least $1000?
+A)15
+B)24
+C)25
+D)40
+E)52",D,"To solve this problem, we need to determine how many sales of $250 each are required for the salesperson to earn at least $1000 in commission.
+
+1. Calculate the commission per sale:
+   - The commission rate is 10%.
+   - For a sale of $250, the commission is 10% of $250.
+   - Commission per sale = 0.10 * $250 = $25.
+
+2. Determine the number of sales needed to earn at least $1000:
+   - Let \( n \) be the number of sales.
+   - The total commission for \( n \) sales is \( 25n \).
+   - We need \( 25n \geq 1000 \).
+
+3. Solve the inequality:
+   - \( 25n \geq 1000 \)
+   - Divide both sides by 25: \( n \geq \frac{1000}{25} \)
+   - \( n \geq 40 \)
+
+Therefore, the salesperson must make at least 40 sales to earn a commission of at least $1000.
+
+The correct choice is:
+```
+D)40
+```",True,,,
+10,,"A company produces 420 units of a particular computer component every month, at a production cost to the company of $110 per component, and sells all of the components by the end of each month. What is the minimum selling price per component that will guarantee that the yearly profit (revenue from sales minus production costs) will be at least $626,400 ?
+A)226
+B)230
+C)240
+D)260
+E)280",B,"To solve this problem, we need to determine the minimum selling price per component that will ensure the company's yearly profit is at least $626,400.
+
+First, calculate the total production cost for a year:
+- The company produces 420 units per month.
+- There are 12 months in a year.
+- The production cost per component is $110.
+
+Total production cost for a year = 420 units/month * 12 months * $110/unit = $554,400.
+
+Next, let \( p \) be the selling price per component. The revenue from selling all components in a year is:
+- Revenue = 420 units/month * 12 months * \( p \).
+
+The profit for the year is the revenue minus the production cost:
+- Profit = Revenue - Total production cost
+- Profit = (420 * 12 * \( p \)) - $554,400.
+
+We want the profit to be at least $626,400:
+- (420 * 12 * \( p \)) - $554,400 ≥ $626,400.
+
+Simplify the inequality:
+- 420 * 12 * \( p \) ≥ $626,400 + $554,400
+- 420 * 12 * \( p \) ≥ $1,080,800.
+
+Calculate 420 * 12:
+- 420 * 12 = 5,040.
+
+Now, solve for \( p \):
+- 5,040 * \( p \) ≥ $1,080,800
+- \( p \) ≥ $1,080,800 / 5,040
+- \( p \) ≥ $214.29.
+
+The minimum selling price per component that meets this requirement is the smallest whole number greater than $214.29, which is $215. However, we need to choose from the given options.
+
+The smallest option greater than $215 is $226.
+
+Therefore, the minimum selling price per component that will guarantee the yearly profit is at least $626,400 is:
+
+A) 226",False,,,
+11,,"At a certain factory, 10 percent of the staplers produced on Monday were defective and 2 percent of the non-defective staplers were rejected by mistake. If 72 of the non-defective staplers were rejected, what was the number of staplers produced that day?
+A)4,000
+B)4,200
+C)4,500
+D)4,800
+E)5,000",A,"To solve this problem, we need to set up equations based on the information given.
+
+Let's denote the total number of staplers produced on Monday as \( x \).
+
+1. **Defective Staplers:**
+   - 10% of the staplers were defective.
+   - Therefore, the number of defective staplers is \( 0.1x \).
+
+2. **Non-defective Staplers:**
+   - The remaining staplers are non-defective, which is \( x - 0.1x = 0.9x \).
+
+3. **Rejected Non-defective Staplers:**
+   - 2% of the non-defective staplers were rejected by mistake.
+   - Therefore, the number of rejected non-defective staplers is \( 0.02 \times 0.9x = 0.018x \).
+
+According to the problem, 72 of the non-defective staplers were rejected. Therefore, we have the equation:
+\[ 0.018x = 72 \]
+
+Now, solve for \( x \):
+\[ x = \frac{72}{0.018} \]
+\[ x = 4000 \]
+
+Thus, the total number of staplers produced that day was 4,000.
+
+The correct answer is \( \boxed{A) 4,000} \).",True,,,
+12,,"Machine A puts out a yo-yo every 6 minutes. Machine B puts out a yo-yo every 9 minutes. After how many minutes will they have produced 10 yo-yos?
+A)24 minutes
+B)32 minutes
+C)36 minutes
+D)64 minutes
+E)72 minutes",C,"To solve this problem, we need to determine how long it will take for both machines together to produce a total of 10 yo-yos.
+
+Machine A produces a yo-yo every 6 minutes, so in 1 minute, it produces 1/6 of a yo-yo.
+Machine B produces a yo-yo every 9 minutes, so in 1 minute, it produces 1/9 of a yo-yo.
+
+Together, in 1 minute, both machines produce:
+1/6 + 1/9 = 3/18 + 2/18 = 5/18 of a yo-yo.
+
+We want to find out how many minutes it takes to produce 10 yo-yos. Let x be the number of minutes needed.
+
+(5/18) * x = 10
+
+To solve for x, multiply both sides by 18/5:
+
+x = 10 * (18/5)
+x = 36
+
+Therefore, it will take 36 minutes for both machines to produce 10 yo-yos.
+
+The correct answer is (C) 36 minutes.",True,,,
+13,,"Add: +45 and -30
+A)-30
+B)+30
+C)0
+D)15
+E)-15",D,"The problem is asking to add +45 and -30. 
+
+To solve this, we perform the addition:
+
++45 + (-30) = 45 - 30 = 15
+
+Therefore, the correct answer is:
+
+D) 15",True,,,
+14,,"In how many ways can the letters of the word ""PROBLEC"" be rearranged to make 7 letter words such that none of the letters repeat?
+A)2!
+B)3!
+C)7!
+D)8!
+E)9!",C,"To solve this problem, we need to determine the number of ways to rearrange the letters of the word ""PROBLEC"" to form 7-letter words with no repeating letters.
+
+The word ""PROBLEC"" consists of 7 distinct letters: P, R, O, B, L, E, C.
+
+Since we are using all 7 letters and none of them repeat, the number of ways to arrange these 7 letters is simply the number of permutations of 7 distinct items, which is calculated as 7 factorial (7!).
+
+Therefore, the number of ways to rearrange the letters is:
+
+7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040
+
+Thus, the correct answer is:
+
+C) 7!",True,,,
+15,,"Let A and B be independent events with P (A) = 0.2 and P(B) = 0.8. Find P(A/B)?
+A)0.2
+B)0.4
+C)0.6
+D)1.2
+E)1.5",A,"To solve this problem, we need to find the conditional probability P(A/B), which is the probability of event A occurring given that event B has occurred. 
+
+Since A and B are independent events, the occurrence of B does not affect the probability of A. Therefore, the conditional probability P(A/B) is simply equal to the probability of A, which is P(A).
+
+Given:
+P(A) = 0.2
+P(B) = 0.8
+
+Since A and B are independent:
+P(A/B) = P(A) = 0.2
+
+Therefore, the correct choice is:
+
+A) 0.2",True,,,
+16,,"Consider there is an staircase elevator and you are coming down. If you walk 20 steps and stop, then you reach bottom in 10 minutes. If you walk 10 steps and stop, you reach to the ground in 20 minutes. What is the speed of the elevator?
+A)1 step/minute
+B)2 step/minute
+C)3 step/minute
+D)4 step/minute
+E)None of the above",A,"To solve this problem, we need to determine the speed of the elevator in steps per minute.
+
+Let's denote:
+- \( v \) as the speed of the elevator in steps per minute.
+- \( n \) as the total number of steps in the staircase.
+
+From the problem, we have two scenarios:
+
+1. Walking 20 steps and stopping:
+   - You reach the bottom in 10 minutes.
+   - In these 10 minutes, the elevator covers \( n - 20 \) steps.
+   - Therefore, \( n - 20 = 10v \).
+
+2. Walking 10 steps and stopping:
+   - You reach the bottom in 20 minutes.
+   - In these 20 minutes, the elevator covers \( n - 10 \) steps.
+   - Therefore, \( n - 10 = 20v \).
+
+We now have two equations:
+1. \( n - 20 = 10v \)
+2. \( n - 10 = 20v \)
+
+Subtract the first equation from the second:
+\[
+(n - 10) - (n - 20) = 20v - 10v
+\]
+\[
+10 = 10v
+\]
+\[
+v = 1
+\]
+
+Thus, the speed of the elevator is 1 step per minute.
+
+The correct choice is:
+A) 1 step/minute",True,,,
+17,,"Last year, a Home Appliance Store sold an average(arithmetic mean) of 42 microwave ovens per month. In the first 10 months of this year,the store has sold an average(arithmetic mean) of only 20 microwave ovens per month. What was the average number of microwave ovens sold per month during the entire 22 months period ?
+A)21
+B)30
+C)31
+D)32
+E)None of the above",D,"To find the average number of microwave ovens sold per month during the entire 22-month period, we need to calculate the total number of microwave ovens sold over the 22 months and then divide by 22.
+
+1. Calculate the total number of microwave ovens sold last year:
+   - Last year, the store sold an average of 42 microwave ovens per month for 12 months.
+   - Total sold last year = 42 ovens/month * 12 months = 504 ovens.
+
+2. Calculate the total number of microwave ovens sold in the first 10 months of this year:
+   - This year, the store sold an average of 20 microwave ovens per month for 10 months.
+   - Total sold in the first 10 months of this year = 20 ovens/month * 10 months = 200 ovens.
+
+3. Calculate the total number of microwave ovens sold over the entire 22-month period:
+   - Total sold over 22 months = Total sold last year + Total sold in the first 10 months of this year
+   - Total sold over 22 months = 504 ovens + 200 ovens = 704 ovens.
+
+4. Calculate the average number of microwave ovens sold per month over the 22-month period:
+   - Average = Total sold over 22 months / 22 months
+   - Average = 704 ovens / 22 months = 32 ovens/month.
+
+Therefore, the average number of microwave ovens sold per month during the entire 22-month period is 32.
+
+The correct choice is:
+```
+D)32
+```",True,,,
+18,,"An exam is given in a certain class. The average (arithmetic mean) of the highest score and the lowest score is equal to x. If the average score for the entire class is equal to y and there are z students in the class, where z > 5, then in terms of x, y, and z, what is the average score for the class excluding the highest and lowest scorers?
+A)(zy – 2x)/z
+B)(zy – 2)/z
+C)(zx – y)/(z – 2)
+D)(zy – 2x)/(z -2)
+E)(zy – x)/(z + 2)",D,"To solve this problem, we need to find the average score for the class excluding the highest and lowest scorers, in terms of x, y, and z.
+
+Let's denote:
+- H as the highest score
+- L as the lowest score
+
+According to the problem, the average of the highest and lowest scores is x:
+\[
+\frac{H + L}{2} = x \implies H + L = 2x
+\]
+
+The average score for the entire class is y, and there are z students in the class:
+\[
+\frac{\text{Total score of all students}}{z} = y \implies \text{Total score of all students} = zy
+\]
+
+The total score of all students can also be expressed as the sum of the highest score, the lowest score, and the scores of the remaining z - 2 students:
+\[
+H + L + \text{Sum of scores of remaining } (z - 2) \text{ students} = zy
+\]
+
+Substituting \(H + L = 2x\) into the equation:
+\[
+2x + \text{Sum of scores of remaining } (z - 2) \text{ students} = zy
+\]
+
+The sum of the scores of the remaining z - 2 students is:
+\[
+\text{Sum of scores of remaining } (z - 2) \text{ students} = zy - 2x
+\]
+
+The average score of the remaining z - 2 students is:
+\[
+\frac{\text{Sum of scores of remaining } (z - 2) \text{ students}}{z - 2} = \frac{zy - 2x}{z - 2}
+\]
+
+Thus, the average score for the class excluding the highest and lowest scorers is:
+\[
+\frac{zy - 2x}{z - 2}
+\]
+
+Therefore, the correct choice is:
+\[
+\boxed{D}
+\]",True,,,
+19,,"[5 + ? × 19 - 15 - 7]/[13 × 13 - 156] = 6
+A)4
+B)4.5
+C)5
+D)5.5
+E)6.5",C,"To solve the given equation:
+
+\[
+\frac{5 + ? \times 19 - 15 - 7}{13 \times 13 - 156} = 6
+\]
+
+First, simplify the denominator:
+
+\[
+13 \times 13 = 169
+\]
+
+\[
+169 - 156 = 13
+\]
+
+Now, substitute back into the equation:
+
+\[
+\frac{5 + ? \times 19 - 15 - 7}{13} = 6
+\]
+
+Multiply both sides by 13 to eliminate the fraction:
+
+\[
+5 + ? \times 19 - 15 - 7 = 78
+\]
+
+Simplify the left side:
+
+\[
+5 - 15 - 7 = -17
+\]
+
+So the equation becomes:
+
+\[
+? \times 19 - 17 = 78
+\]
+
+Add 17 to both sides:
+
+\[
+? \times 19 = 95
+\]
+
+Divide both sides by 19 to solve for ?:
+
+\[
+? = \frac{95}{19} = 5
+\]
+
+Thus, the correct answer is:
+
+C) 5",True,,,
+20,,"A grocer makes a 25% profit on the selling price for each bag of flour it sells. If he sells each bag for $100 and makes $3,000 in profit, how many bags did he sell?
+A)12
+B)16
+C)24
+D)30
+E)40",C,"To solve this problem, we need to determine how many bags of flour the grocer sold to make a $3,000 profit, given that he makes a 25% profit on the selling price of each bag, which is $100.
+
+First, let's calculate the profit made on each bag. Since the profit is 25% of the selling price, we have:
+
+Profit per bag = 25% of $100 = 0.25 * $100 = $25
+
+Next, we need to find out how many bags were sold to make a total profit of $3,000. We can do this by dividing the total profit by the profit per bag:
+
+Number of bags sold = Total profit / Profit per bag
+Number of bags sold = $3,000 / $25
+Number of bags sold = 120
+
+Therefore, the grocer sold 120 bags of flour to make a $3,000 profit. However, this number is not among the given choices. It seems there might be a misunderstanding in the problem statement or the choices provided. Based on the calculations, the correct answer should be 120, but since it's not listed, none of the given choices (A, B, C, D, E) are correct.",False,,,
+21,,"Alex and Jacob works at a toy shop that make toys. Alex takes 7 hours to make a toy, and Jacob takes 9 hours to make a toy. During a month, both of them makes 35 toys in total. If both of them have worked for almost similar number of hours how many toys have been prepared by Jacob?
+A)15
+B)16
+C)17
+D)18
+E)19",A,"To solve this problem, we need to determine how many toys Jacob made, given that both Alex and Jacob worked for almost the same number of hours and together they made 35 toys.
+
+Let's denote:
+- \( x \) as the number of toys made by Alex.
+- \( y \) as the number of toys made by Jacob.
+
+From the problem, we have the following equations:
+1. \( x + y = 35 \) (since together they made 35 toys).
+2. \( 7x \approx 9y \) (since they worked for almost the same number of hours).
+
+From equation 1, we can express \( x \) in terms of \( y \):
+\[ x = 35 - y \]
+
+Substitute \( x = 35 - y \) into equation 2:
+\[ 7(35 - y) \approx 9y \]
+
+Expanding and simplifying:
+\[ 245 - 7y \approx 9y \]
+\[ 245 \approx 16y \]
+\[ y \approx \frac{245}{16} \]
+\[ y \approx 15.3125 \]
+
+Since \( y \) must be an integer (as it represents the number of toys), we round 15.3125 to the nearest integer, which is 15.
+
+Therefore, Jacob made approximately 15 toys.
+
+The correct answer is:
+A) 15",True,,,
+22,,"John likes to have lightly flavored tea every evening. In a 50% strong milk tea, he replaces 15% of it with milk twice. Then, he replaces 10 percent of the resultant solution with more milk.
+What is the final concentration of tea John drinks?
+A)15.38%
+B)42%
+C)39.86%
+D)22.35%
+E)32.51%",E,"To solve this problem, we need to track the concentration of tea throughout the process of replacing parts of the solution with milk.
+
+1. **Initial Solution:**
+   - The initial solution is 50% strong milk tea. Let's assume we have 100 units of this solution for simplicity.
+   - Therefore, initially, we have 50 units of tea and 50 units of milk.
+
+2. **First Replacement:**
+   - John replaces 15% of the solution with milk. 15% of 100 units is 15 units.
+   - The 15 units removed contain 7.5 units of tea and 7.5 units of milk (since the solution is 50% tea).
+   - After removing 15 units, we have 42.5 units of tea and 42.5 units of milk left.
+   - We add 15 units of milk, so now we have 42.5 units of tea and 57.5 units of milk.
+
+3. **Second Replacement:**
+   - Again, John replaces 15% of the new solution (which is still 100 units) with milk.
+   - 15% of 100 units is again 15 units.
+   - The 15 units removed now contain 6.375 units of tea and 8.625 units of milk (since the concentration of tea is now 42.5%).
+   - After removing 15 units, we have 36.125 units of tea and 48.875 units of milk left.
+   - We add 15 units of milk, so now we have 36.125 units of tea and 63.875 units of milk.
+
+4. **Third Replacement:**
+   - John replaces 10% of the resultant solution with milk.
+   - 10% of 100 units is 10 units.
+   - The 10 units removed contain 3.6125 units of tea and 6.3875 units of milk (since the concentration of tea is now 36.125%).
+   - After removing 10 units, we have 32.5125 units of tea and 57.4875 units of milk left.
+   - We add 10 units of milk, so now we have 32.5125 units of tea and 67.4875 units of milk.
+
+5. **Final Concentration:**
+   - The final solution still has a total of 100 units.
+   - The concentration of tea is 32.5125 units out of 100 units, which is 32.5125%.
+
+Therefore, the final concentration of tea John drinks is approximately 32.51%.
+
+The correct answer is:
+```
+E)32.51%
+```",True,,,
+23,,"In a class 1/16 of the students study math, 1/10 of the students study bio, 1/8 of the students study english. The total number of students is a 4 digit number. Find the diffrence between maximum number of students and minimum number of students.
+A)8880
+B)8870
+C)8890
+D)7890
+E)6780",A,"To solve this problem, we need to find the total number of students, which is a 4-digit number, that satisfies the given conditions. We are given fractions of the total number of students who study different subjects:
+
+- 1/16 of the students study math
+- 1/10 of the students study bio
+- 1/8 of the students study English
+
+The total number of students, denoted as \( N \), must be a multiple of the least common multiple (LCM) of the denominators of these fractions (16, 10, and 8) to ensure that each fraction results in an integer number of students.
+
+First, we find the LCM of 16, 10, and 8:
+
+- The prime factorization of 16 is \( 2^4 \).
+- The prime factorization of 10 is \( 2 \times 5 \).
+- The prime factorization of 8 is \( 2^3 \).
+
+The LCM is found by taking the highest power of each prime that appears in the factorizations:
+
+- The highest power of 2 is \( 2^4 \).
+- The highest power of 5 is \( 5^1 \).
+
+Thus, the LCM is \( 2^4 \times 5 = 16 \times 5 = 80 \).
+
+Therefore, \( N \) must be a multiple of 80. Since \( N \) is a 4-digit number, it must be between 1000 and 9999.
+
+To find the minimum 4-digit number that is a multiple of 80, we start from 1000 and find the first multiple of 80:
+
+- \( 1000 \div 80 = 12.5 \), so the first multiple of 80 is \( 80 \times 13 = 1040 \).
+
+To find the maximum 4-digit number that is a multiple of 80, we start from 9999 and find the largest multiple of 80:
+
+- \( 9999 \div 80 = 124.9875 \), so the largest multiple of 80 is \( 80 \times 124 = 9920 \).
+
+The difference between the maximum and minimum number of students is:
+
+\[ 9920 - 1040 = 8880 \]
+
+Therefore, the correct answer is:
+
+A) 8880",True,,,
+24,,"On a normal day Bill usually averages about 15 mph when riding his bicycle. On a windy day, his speed is reduced by 4 mph. How far can Bill travel on a windy day in 21 minutes? Round to the nearest hundredth.
+A)2 miles
+B)2.25 miles
+C)3.25 miles
+D)3.85 miles
+E)2.85 miles",D,"To solve this problem, we need to determine how far Bill can travel on a windy day in 21 minutes, given that his speed is reduced by 4 mph from his usual speed of 15 mph.
+
+1. **Calculate Bill's speed on a windy day:**
+   - Normal speed = 15 mph
+   - Speed reduction on a windy day = 4 mph
+   - Windy day speed = 15 mph - 4 mph = 11 mph
+
+2. **Convert 21 minutes to hours:**
+   - 21 minutes = 21/60 hours = 0.35 hours
+
+3. **Calculate the distance traveled in 0.35 hours at 11 mph:**
+   - Distance = Speed × Time
+   - Distance = 11 mph × 0.35 hours = 3.85 miles
+
+Therefore, Bill can travel 3.85 miles on a windy day in 21 minutes.
+
+The correct choice is:
+```
+D) 3.85 miles
+```",True,,,
+25,,"A retailer sold an appliance for 40 percent above cost, which represented a gross profit of $20.00. For what price did the retailer sell the appliance?
+A)$27.30
+B)$51.00
+C)$63.00
+D)$70.00
+E)$91.00",D,"To solve this problem, we need to determine the selling price of the appliance based on the given information.
+
+Let's denote the cost price of the appliance as \( C \).
+
+According to the problem, the retailer sold the appliance for 40 percent above cost. This means the selling price \( S \) is given by:
+
+\[ S = C + 0.4C = 1.4C \]
+
+We are also told that this selling price represents a gross profit of $20.00. The gross profit is the difference between the selling price and the cost price:
+
+\[ \text{Gross Profit} = S - C = 1.4C - C = 0.4C \]
+
+We know from the problem that the gross profit is $20.00, so:
+
+\[ 0.4C = 20 \]
+
+To find the cost price \( C \), we solve the equation:
+
+\[ C = \frac{20}{0.4} = 50 \]
+
+Now that we have the cost price, we can find the selling price \( S \):
+
+\[ S = 1.4C = 1.4 \times 50 = 70 \]
+
+Therefore, the retailer sold the appliance for $70.00.
+
+The correct answer is:
+
+```
+D)$70.00
+```",True,,,
+26,,"At 6% per annum simple interest, Rahul borrowed Rs. 500. What amount will he pay to clear the debt after 4 years
+A)750
+B)700
+C)620
+D)600
+E)None of these",C,"To solve this problem, we need to calculate the total amount Rahul will pay after 4 years, including the simple interest.
+
+The formula for simple interest is:
+\[ \text{Simple Interest (SI)} = \frac{P \times R \times T}{100} \]
+
+Where:
+- \( P \) is the principal amount (Rs. 500)
+- \( R \) is the rate of interest per annum (6%)
+- \( T \) is the time period in years (4 years)
+
+Substituting the given values into the formula:
+\[ \text{SI} = \frac{500 \times 6 \times 4}{100} \]
+\[ \text{SI} = \frac{12000}{100} \]
+\[ \text{SI} = 120 \]
+
+The total amount Rahul will pay is the sum of the principal and the simple interest:
+\[ \text{Total Amount} = P + \text{SI} \]
+\[ \text{Total Amount} = 500 + 120 \]
+\[ \text{Total Amount} = 620 \]
+
+Therefore, the correct answer is:
+```
+C)620
+```",True,,,
+27,,"A computer routine was developed to generate two numbers (x,y) the first being a random number between 0 and 100 inclusive, and the second being less than or equal to the square root of the first. Each of the following pair satisfies the routine except
+A)(99,10)
+B)(85,9)
+C)(50,7)
+D)(1,1)
+E)(1,0)",A,"To determine which pair does not satisfy the routine, we need to check if the second number \( y \) is less than or equal to the square root of the first number \( x \) for each pair.
+
+Let's evaluate each choice:
+
+(A) \( (99, 10) \)
+- The square root of 99 is approximately 9.95.
+- Since 10 is greater than 9.95, this pair does not satisfy the condition.
+
+(B) \( (85, 9) \)
+- The square root of 85 is approximately 9.22.
+- Since 9 is less than 9.22, this pair satisfies the condition.
+
+(C) \( (50, 7) \)
+- The square root of 50 is approximately 7.07.
+- Since 7 is less than 7.07, this pair satisfies the condition.
+
+(D) \( (1, 1) \)
+- The square root of 1 is 1.
+- Since 1 is equal to 1, this pair satisfies the condition.
+
+(E) \( (1, 0) \)
+- The square root of 1 is 1.
+- Since 0 is less than 1, this pair satisfies the condition.
+
+The pair that does not satisfy the routine is (A) \( (99, 10) \).",True,,,
+28,,"A jeep travels a certain distance taking 6 hours in the forward journey. During the return journey, it increased its speed by 12km/hr and took 4 hours. What is the distance travelled by the jeep?
+A)126km
+B)144km
+C)127km
+D)228km
+E)128km",B,"To solve this problem, we need to find the distance traveled by the jeep. Let's denote the distance as \( D \) kilometers.
+
+1. **Forward Journey:**
+   - Time taken = 6 hours
+   - Let the speed during the forward journey be \( v \) km/hr.
+   - Therefore, the distance \( D = v \times 6 \).
+
+2. **Return Journey:**
+   - Time taken = 4 hours
+   - Speed during the return journey = \( v + 12 \) km/hr.
+   - Therefore, the distance \( D = (v + 12) \times 4 \).
+
+Since the distance traveled in both journeys is the same, we can set up the equation:
+\[ 6v = 4(v + 12) \]
+
+Now, solve for \( v \):
+\[ 6v = 4v + 48 \]
+\[ 6v - 4v = 48 \]
+\[ 2v = 48 \]
+\[ v = 24 \]
+
+Now that we have the speed of the forward journey, we can find the distance:
+\[ D = 6v = 6 \times 24 = 144 \]
+
+Therefore, the distance traveled by the jeep is 144 km.
+
+The correct choice is:
+B) 144km",True,,,
+29,,"When I was 2 years old, my brother was half my age. Now I am 60 years old, how old is my brother?
+A)A)59
+B)B)69
+C)C)79
+D)D)89
+E)E)99",A,"The problem is a classic age-related riddle. Let's break it down:
+
+- When you were 2 years old, your brother was half your age, which means he was 1 year old.
+- The age difference between you and your brother is 1 year.
+- Now, you are 60 years old.
+- Therefore, your brother is 60 - 1 = 59 years old.
+
+The correct answer is (A) 59.",True,,,
+30,,"The original retail price of an appliance was 60 percent more than its wholesale cost. If the appliance was actually sold for 20 percent less than the original retail price, then it was sold for what percent more than its wholesale cost?
+A)20%
+B)28%
+C)36%
+D)40%
+E)42%",B,"To solve this problem, let's define the wholesale cost of the appliance as \( W \).
+
+1. **Calculate the original retail price:**
+   The original retail price is 60% more than the wholesale cost. Therefore, the original retail price \( R \) is:
+   \[
+   R = W + 0.6W = 1.6W
+   \]
+
+2. **Calculate the sale price:**
+   The appliance was sold for 20% less than the original retail price. Therefore, the sale price \( S \) is:
+   \[
+   S = R - 0.2R = 0.8R
+   \]
+   Substituting the expression for \( R \):
+   \[
+   S = 0.8 \times 1.6W = 1.28W
+   \]
+
+3. **Calculate the percent more than the wholesale cost:**
+   The sale price is \( 1.28W \), which is \( 0.28W \) more than the wholesale cost \( W \). To find the percentage more than the wholesale cost, we calculate:
+   \[
+   \text{Percent more} = \left(\frac{1.28W - W}{W}\right) \times 100\% = \left(\frac{0.28W}{W}\right) \times 100\% = 28\%
+   \]
+
+Therefore, the appliance was sold for 28% more than its wholesale cost. The correct answer is:
+
+```
+B)28%
+```",True,,,
+31,,"On a map, the length of the road from Town F to Town G is measured to be 20 inches. On this map, 1/4 inch represents an actual distance of 10 miles. What is the actual distance, in miles, from Town F to Town G along this road?
+A)800
+B)720
+C)960
+D)1140
+E)1160",A,"To find the actual distance from Town F to Town G, we need to use the scale given on the map. The scale is 1/4 inch represents 10 miles.
+
+First, we determine how many 1/4 inches are in 20 inches:
+
+\[
+\text{Number of } \frac{1}{4} \text{ inches in 20 inches} = \frac{20}{\frac{1}{4}} = 20 \times 4 = 80
+\]
+
+Since each 1/4 inch represents 10 miles, we multiply the number of 1/4 inches by 10 miles:
+
+\[
+\text{Actual distance in miles} = 80 \times 10 = 800
+\]
+
+Therefore, the actual distance from Town F to Town G is 800 miles.
+
+The correct answer is \(\boxed{A}\).",True,,,
+32,,"When folded into two equal halves a rectangular sheet had a perimeter of 48cm for each part folded along one set of sides and the same is 66cm when folded along the other set of sides. Find the area of the sheet.
+A)1584
+B)1120
+C)792
+D)1320
+E)1200",B,"To solve this problem, we need to understand the folding process and how it affects the dimensions of the rectangular sheet.
+
+Let's denote the original dimensions of the rectangular sheet as length \( l \) and width \( w \).
+
+1. **First Fold:**
+   - When the sheet is folded into two equal halves along one set of sides, the perimeter of each part is 48 cm.
+   - This means the fold is along the length, so each part has dimensions \( \frac{l}{2} \) and \( w \).
+   - The perimeter of each part is given by:
+     \[
+     2 \left( \frac{l}{2} + w \right) = 48
+     \]
+   - Simplifying, we get:
+     \[
+     l + 2w = 48 \quad \text{(Equation 1)}
+     \]
+
+2. **Second Fold:**
+   - When the sheet is folded along the other set of sides, the perimeter of each part is 66 cm.
+   - This means the fold is along the width, so each part has dimensions \( l \) and \( \frac{w}{2} \).
+   - The perimeter of each part is given by:
+     \[
+     2 \left( l + \frac{w}{2} \right) = 66
+     \]
+   - Simplifying, we get:
+     \[
+     2l + w = 66 \quad \text{(Equation 2)}
+     \]
+
+Now, we have a system of two equations:
+1. \( l + 2w = 48 \)
+2. \( 2l + w = 66 \)
+
+We can solve these equations simultaneously to find \( l \) and \( w \).
+
+From Equation 1:
+\[ l = 48 - 2w \]
+
+Substitute \( l = 48 - 2w \) into Equation 2:
+\[ 2(48 - 2w) + w = 66 \]
+\[ 96 - 4w + w = 66 \]
+\[ 96 - 3w = 66 \]
+\[ 3w = 96 - 66 \]
+\[ 3w = 30 \]
+\[ w = 10 \]
+
+Substitute \( w = 10 \) back into Equation 1:
+\[ l + 2(10) = 48 \]
+\[ l + 20 = 48 \]
+\[ l = 48 - 20 \]
+\[ l = 28 \]
+
+Now, we have the dimensions of the original sheet: \( l = 28 \) cm and \( w = 10 \) cm.
+
+The area of the sheet is:
+\[ \text{Area} = l \times w = 28 \times 10 = 280 \, \text{cm}^2 \]
+
+However, it seems there is a mistake in the calculation or understanding of the problem, as the area calculated does not match any of the given choices. Let's re-evaluate the problem:
+
+Upon re-evaluation, it seems there was a misunderstanding in the interpretation of the problem. The correct approach should have been:
+
+1. **First Fold:**
+   - Fold along the length: \( \frac{l}{2} \) and \( w \), perimeter = 48
+   - \( l + 2w = 48 \)
+
+2. **Second Fold:**
+   - Fold along the width: \( l \) and \( \frac{w}{2} \), perimeter = 66
+   - \( 2l + w = 66 \)
+
+Solving these equations again:
+
+From Equation 1:
+\[ l = 48 - 2w \]
+
+Substitute into Equation 2:
+\[ 2(48 - 2w) + w = 66 \]
+\[ 96 - 4w + w = 66 \]
+\[ 96 - 3w = 66 \]
+\[ 3w = 30 \]
+\[ w = 10 \]
+
+Substitute \( w = 10 \) back into Equation 1:
+\[ l + 20 = 48 \]
+\[ l = 28 \]
+
+The area of the sheet is:
+\[ \text{Area} = l \times w = 28 \times 10 = 280 \, \text{cm}^2 \]
+
+It seems there is a discrepancy in the problem statement or choices, as the calculated area does not match any of the given options. The correct area based on the given conditions should be 280 cm², but this is not listed among the choices. Therefore, there might be an error in the problem statement or the choices provided.
+
+Given the choices and the calculations, none of the options match the calculated area. However, if we consider a potential error in the problem or choices, the closest logical step would be to re-evaluate the problem setup or consider a potential misprint in the options.
+
+Therefore, based on the calculations and the given options, the problem might have an error, and none of the choices match the calculated area of 280 cm².",False,,,
+33,,"Suppose you can travel from a place M to a place N by 3 buses, from place N to place O by 4 buses, from place O to place P by 1 buses and from place P to place Q by 3 buses. In how many ways can you travel from M to Q ?
+A)24
+B)36
+C)72
+D)84
+E)None",B,"To find the total number of ways to travel from place M to place Q, we need to consider the number of bus options available for each segment of the journey and multiply them together.
+
+1. From M to N, there are 3 bus options.
+2. From N to O, there are 4 bus options.
+3. From O to P, there is 1 bus option.
+4. From P to Q, there are 3 bus options.
+
+The total number of ways to travel from M to Q is the product of the number of options for each segment:
+
+Total ways = (Number of ways from M to N) × (Number of ways from N to O) × (Number of ways from O to P) × (Number of ways from P to Q)
+
+Total ways = 3 × 4 × 1 × 3 = 36
+
+Therefore, the correct answer is:
+
+B) 36",True,,,
+34,,"A rectangular solid, 3 x 4 x 15, is inscribed in a sphere, so that all eight of its vertices are on the sphere. What is the diameter of the sphere?
+A) 13.3542
+B) 15.8113
+C) 18.3451
+D) 19.5667
+E) 20.8888",B,"To solve this problem, we need to find the diameter of the sphere in which a rectangular solid with dimensions 3 x 4 x 15 is inscribed. The key to solving this is to recognize that the diameter of the sphere is equal to the space diagonal of the rectangular solid.
+
+The space diagonal \(d\) of a rectangular solid with dimensions \(a\), \(b\), and \(c\) is given by the formula:
+
+\[
+d = \sqrt{a^2 + b^2 + c^2}
+\]
+
+For this problem, the dimensions of the rectangular solid are \(a = 3\), \(b = 4\), and \(c = 15\). Plugging these values into the formula, we get:
+
+\[
+d = \sqrt{3^2 + 4^2 + 15^2} = \sqrt{9 + 16 + 225} = \sqrt{250}
+\]
+
+Calculating \(\sqrt{250}\), we find:
+
+\[
+\sqrt{250} = \sqrt{25 \times 10} = 5\sqrt{10}
+\]
+
+Approximating \(\sqrt{10} \approx 3.1623\), we have:
+
+\[
+5\sqrt{10} \approx 5 \times 3.1623 = 15.8115
+\]
+
+Thus, the diameter of the sphere is approximately 15.8115. Comparing this with the given choices, the closest match is:
+
+\[
+\boxed{B) 15.8113}
+\]",True,,,
+35,,"A starts travel towards south 3km, then travel 5 km towards east, and again travels 3 km to north, and finally travels 2km towards west. In the end how far from is A from home?
+A)3km
+B)2km
+C)4km
+D)5km
+E)6km",A,"To solve this problem, we need to track the movements of A step by step and determine the final position relative to the starting point (home).
+
+1. A starts at home and travels 3 km south. This means A is now 3 km south of the starting point.
+
+2. A then travels 5 km east. From the current position (3 km south), moving 5 km east means A is now 5 km east and 3 km south of the starting point.
+
+3. A travels 3 km north. Moving 3 km north from the current position (5 km east, 3 km south) cancels out the 3 km south movement, so A is now 5 km east of the starting point.
+
+4. Finally, A travels 2 km west. From the current position (5 km east), moving 2 km west means A is now 3 km east of the starting point.
+
+The final position of A is 3 km east of the starting point. Therefore, the distance from home is 3 km.
+
+The correct answer is:
+A) 3km",True,,,
+36,,"While selling a watch, a shopkeeper gives a discount of 5%. If he gives a discount of 7%, he earns Rs. 15 less as profit. The marked price of the watch is:
+A)Rs. 697.50
+B)Rs. 712.50
+C)Rs. 787.50
+D)Rs. 750
+E)Rs. 780",D,"To solve this problem, we need to understand the relationship between the discount given and the profit earned by the shopkeeper.
+
+Let's denote:
+- \( M \) as the marked price of the watch.
+- \( C \) as the cost price of the watch.
+- \( P_1 \) as the profit when a 5% discount is given.
+- \( P_2 \) as the profit when a 7% discount is given.
+
+The selling price when a 5% discount is given is \( 0.95M \).
+The selling price when a 7% discount is given is \( 0.93M \).
+
+The profit in each case is given by the selling price minus the cost price:
+- \( P_1 = 0.95M - C \)
+- \( P_2 = 0.93M - C \)
+
+According to the problem, the difference in profit between the two scenarios is Rs. 15:
+\[ P_1 - P_2 = 15 \]
+
+Substituting the expressions for \( P_1 \) and \( P_2 \):
+\[ (0.95M - C) - (0.93M - C) = 15 \]
+
+Simplifying the equation:
+\[ 0.95M - 0.93M = 15 \]
+\[ 0.02M = 15 \]
+
+Solving for \( M \):
+\[ M = \frac{15}{0.02} \]
+\[ M = 750 \]
+
+Therefore, the marked price of the watch is Rs. 750.
+
+The correct choice is:
+```
+D) Rs. 750
+```",True,,,
+37,,"A student instead of finding the value of 7/8 of a number, found the value of 7/18 of the number. If his answer differed from the actual one by 770, find the that number.
+A)1584
+B)2520
+C)1728
+D)1656
+E)None",A,"To solve this problem, let's denote the number as \( x \).
+
+The student was supposed to find \( \frac{7}{8} \) of the number, which is \( \frac{7}{8}x \).
+
+Instead, the student found \( \frac{7}{18} \) of the number, which is \( \frac{7}{18}x \).
+
+According to the problem, the difference between the correct answer and the student's answer is 770. Therefore, we can set up the equation:
+
+\[
+\frac{7}{8}x - \frac{7}{18}x = 770
+\]
+
+To solve for \( x \), first find a common denominator for the fractions. The least common multiple of 8 and 18 is 72. Rewrite the fractions with this common denominator:
+
+\[
+\frac{7}{8}x = \frac{63}{72}x
+\]
+\[
+\frac{7}{18}x = \frac{28}{72}x
+\]
+
+Substitute these into the equation:
+
+\[
+\frac{63}{72}x - \frac{28}{72}x = 770
+\]
+
+Combine the fractions:
+
+\[
+\frac{63 - 28}{72}x = 770
+\]
+\[
+\frac{35}{72}x = 770
+\]
+
+To solve for \( x \), multiply both sides by the reciprocal of \( \frac{35}{72} \):
+
+\[
+x = 770 \times \frac{72}{35}
+\]
+
+Calculate the right side:
+
+\[
+x = 770 \times \frac{72}{35} = 770 \times \frac{72}{35} = 770 \times 2.05714285714 \approx 1584
+\]
+
+Therefore, the number is \( 1584 \).
+
+The correct choice is:
+
+A) 1584",True,,,
+38,,"The monthly salary S of a shop assistant is the sum of a fixed salary of $500 plus 5% of all monthly sales. What should the monthly sales be so that her monthly salary reaches $1500?
+A)$50000
+B)$40000
+C)$30000
+D)$20000
+E)None of these",D,"To solve this problem, we need to determine the monthly sales required for the shop assistant's salary to reach $1500.
+
+The salary S is given by the formula:
+\[ S = 500 + 0.05 \times \text{Sales} \]
+
+We want the salary S to be $1500:
+\[ 1500 = 500 + 0.05 \times \text{Sales} \]
+
+Subtract $500 from both sides to isolate the sales term:
+\[ 1500 - 500 = 0.05 \times \text{Sales} \]
+\[ 1000 = 0.05 \times \text{Sales} \]
+
+Now, solve for Sales by dividing both sides by 0.05:
+\[ \text{Sales} = \frac{1000}{0.05} \]
+\[ \text{Sales} = 20000 \]
+
+Therefore, the monthly sales should be $20000 for the shop assistant's salary to reach $1500.
+
+The correct choice is:
+```
+D)$20000
+```",True,,,
+39,,"An aeroplane flies along the four sides of a square at the speeds of 200, 400, 600 and 800km/hr. Find the average speed of the plane around the field?
+A)384
+B)562
+C)458
+D)156
+E)452",A,"To find the average speed of the plane around the field, we need to calculate the total distance traveled and the total time taken.
+
+Let's assume the side of the square is \( s \) km.
+
+1. **Total Distance**: The plane flies around a square, so the total distance is the perimeter of the square, which is \( 4s \).
+
+2. **Total Time**: 
+   - Time taken to fly the first side at 200 km/hr = \( \frac{s}{200} \) hours
+   - Time taken to fly the second side at 400 km/hr = \( \frac{s}{400} \) hours
+   - Time taken to fly the third side at 600 km/hr = \( \frac{s}{600} \) hours
+   - Time taken to fly the fourth side at 800 km/hr = \( \frac{s}{800} \) hours
+
+   Total time taken = \( \frac{s}{200} + \frac{s}{400} + \frac{s}{600} + \frac{s}{800} \)
+
+   To simplify, find a common denominator for the fractions: 2400.
+
+   - \( \frac{s}{200} = \frac{12s}{2400} \)
+   - \( \frac{s}{400} = \frac{6s}{2400} \)
+   - \( \frac{s}{600} = \frac{4s}{2400} \)
+   - \( \frac{s}{800} = \frac{3s}{2400} \)
+
+   Total time = \( \frac{12s + 6s + 4s + 3s}{2400} = \frac{25s}{2400} \)
+
+3. **Average Speed**: 
+   Average speed = Total distance / Total time
+
+   \[
+   \text{Average speed} = \frac{4s}{\frac{25s}{2400}} = \frac{4s \times 2400}{25s} = \frac{9600s}{25s} = 384 \text{ km/hr}
+   \]
+
+Thus, the average speed of the plane around the field is 384 km/hr.
+
+The correct choice is:
+```
+A) 384
+```",True,,,
+40,,"Jack buys 18 sharpeners (white and brown) for rs. 100. If he pays 1 rupee more for each white than brown sharpeners. How many of white and how many brown sharpeners did he buy?
+A)10,8
+B)9,8
+C)7,8
+D)5,6
+E)11,12",A,"To solve this problem, we need to set up a system of equations based on the information given.
+
+Let's denote:
+- \( x \) as the number of white sharpeners.
+- \( y \) as the number of brown sharpeners.
+
+From the problem, we have the following information:
+1. Jack buys a total of 18 sharpeners, so:
+   \[
+   x + y = 18
+   \]
+
+2. The cost of each white sharpener is 1 rupee more than each brown sharpener. Let's denote the cost of each brown sharpener as \( b \) rupees. Then, the cost of each white sharpener is \( b + 1 \) rupees.
+
+3. The total cost for all sharpeners is 100 rupees, so:
+   \[
+   x(b + 1) + yb = 100
+   \]
+
+Now, we have two equations:
+1. \( x + y = 18 \)
+2. \( xb + x + yb = 100 \)
+
+Substitute \( y = 18 - x \) from the first equation into the second equation:
+\[
+x(b + 1) + (18 - x)b = 100
+\]
+
+Simplify the equation:
+\[
+xb + x + 18b - xb = 100
+\]
+\[
+x + 18b = 100
+\]
+
+Now, solve for \( x \):
+\[
+x = 100 - 18b
+\]
+
+Since \( x \) and \( y \) are integers, \( 100 - 18b \) must be a non-negative integer. Also, \( x \) must be less than or equal to 18 because \( x + y = 18 \).
+
+Let's test the choices given:
+
+- **Choice A: \( x = 10, y = 8 \)**
+  - \( x + y = 10 + 8 = 18 \) (satisfies the first equation)
+  - Substitute into the cost equation:
+    \[
+    10(b + 1) + 8b = 100
+    \]
+    \[
+    10b + 10 + 8b = 100
+    \]
+    \[
+    18b + 10 = 100
+    \]
+    \[
+    18b = 90
+    \]
+    \[
+    b = 5
+    \]
+  - This is a valid solution because \( b \) is an integer.
+
+- **Choice B: \( x = 9, y = 8 \)**
+  - \( x + y = 9 + 8 = 17 \) (does not satisfy the first equation)
+
+- **Choice C: \( x = 7, y = 8 \)**
+  - \( x + y = 7 + 8 = 15 \) (does not satisfy the first equation)
+
+- **Choice D: \( x = 5, y = 6 \)**
+  - \( x + y = 5 + 6 = 11 \) (does not satisfy the first equation)
+
+- **Choice E: \( x = 11, y = 12 \)**
+  - \( x + y = 11 + 12 = 23 \) (does not satisfy the first equation)
+
+The only choice that satisfies both the total number of sharpeners and the cost equation is Choice A.
+
+Therefore, the correct answer is:
+A) 10, 8",True,,,
+41,,"Hoses A and B spout water at different constant rates, and hose A can fill a certain pool in 8 hours. Hose A filled the pool alone for the first 2 hours and the two hoses, working together, then finished filling the pool in another 3 hours. How many hours would it have taken hose B, working alone, to fill the entire pool?
+A)8
+B)15
+C)12
+D)6
+E)3",A,"To solve this problem, we need to determine the rate at which each hose fills the pool and then find out how long it would take hose B to fill the pool alone.
+
+1. **Determine the rate of hose A:**
+   - Hose A can fill the pool in 8 hours. Therefore, the rate of hose A is 1 pool per 8 hours, or \( \frac{1}{8} \) of the pool per hour.
+
+2. **Calculate the amount of pool filled by hose A in the first 2 hours:**
+   - In 2 hours, hose A fills \( 2 \times \frac{1}{8} = \frac{1}{4} \) of the pool.
+
+3. **Determine the remaining part of the pool to be filled:**
+   - After 2 hours, \( 1 - \frac{1}{4} = \frac{3}{4} \) of the pool is left to be filled.
+
+4. **Calculate the combined rate of hoses A and B:**
+   - Hose A and hose B together fill the remaining \( \frac{3}{4} \) of the pool in 3 hours.
+   - Therefore, their combined rate is \( \frac{3}{4} \) of the pool in 3 hours, or \( \frac{3}{4} \div 3 = \frac{1}{4} \) of the pool per hour.
+
+5. **Determine the rate of hose B:**
+   - The rate of hose A is \( \frac{1}{8} \) of the pool per hour.
+   - The combined rate of hoses A and B is \( \frac{1}{4} \) of the pool per hour.
+   - Therefore, the rate of hose B is \( \frac{1}{4} - \frac{1}{8} = \frac{2}{8} - \frac{1}{8} = \frac{1}{8} \) of the pool per hour.
+
+6. **Calculate the time it takes for hose B to fill the pool alone:**
+   - Since hose B fills \( \frac{1}{8} \) of the pool per hour, it would take hose B 8 hours to fill the entire pool alone.
+
+Thus, the answer is:
+
+A) 8",True,,,
+42,,"If 120 is reduced to 96, what is the reduction percent?
+A)30%
+B)40%
+C)20%
+D)10%
+E)5%",C,"To find the reduction percent, we need to calculate the percentage decrease from 120 to 96.
+
+1. Find the amount of decrease:
+   \[
+   \text{Decrease} = 120 - 96 = 24
+   \]
+
+2. Calculate the reduction percent:
+   \[
+   \text{Reduction Percent} = \left(\frac{\text{Decrease}}{\text{Original Amount}}\right) \times 100 = \left(\frac{24}{120}\right) \times 100
+   \]
+
+3. Simplify the fraction:
+   \[
+   \frac{24}{120} = \frac{1}{5} = 0.2
+   \]
+
+4. Convert to percentage:
+   \[
+   0.2 \times 100 = 20\%
+   \]
+
+Therefore, the reduction percent is 20%. The correct choice is:
+
+C) 20%",True,,,
+43,,"I know a 5 digit number having a property that with a 1 after it, it is three times as large as it would be with a 1 before it.
+What is that number?
+A)42857
+B)32456
+C)76523
+D)24567
+E)43566",A,"To solve this problem, let's denote the 5-digit number as \( x \).
+
+According to the problem, when a 1 is placed after the number, it becomes three times as large as when a 1 is placed before it.
+
+Placing a 1 after the number \( x \) gives us the number \( 10x + 1 \).
+
+Placing a 1 before the number \( x \) gives us the number \( 100000 + x \).
+
+The problem states that:
+\[ 10x + 1 = 3(100000 + x) \]
+
+Let's solve this equation for \( x \):
+
+1. Expand the right side:
+   \[ 10x + 1 = 300000 + 3x \]
+
+2. Subtract \( 3x \) from both sides:
+   \[ 10x - 3x + 1 = 300000 \]
+   \[ 7x + 1 = 300000 \]
+
+3. Subtract 1 from both sides:
+   \[ 7x = 299999 \]
+
+4. Divide both sides by 7:
+   \[ x = \frac{299999}{7} \]
+
+Calculating the division:
+\[ x = 42857 \]
+
+Therefore, the 5-digit number is 42857.
+
+The correct choice is:
+A) 42857",True,,,
+44,,"At Daifu university, 24% of all students are members of both a chess club and a swim team. If 20% of members of the swim team are not members of the chess club, what percentage of all Daifu students are members of the swim team?
+A)20%
+B)30%
+C)40%
+D)50%
+E)60%",B,"To solve this problem, we need to determine the percentage of all Daifu students who are members of the swim team.
+
+Let's define:
+- \( S \) as the percentage of all students who are members of the swim team.
+- \( C \) as the percentage of all students who are members of the chess club.
+- \( SC \) as the percentage of all students who are members of both the swim team and the chess club.
+
+From the problem, we know:
+- \( SC = 24\% \) (24% of all students are members of both the chess club and the swim team).
+- 20% of the swim team members are not members of the chess club.
+
+The 20% of swim team members who are not members of the chess club can be expressed as:
+\[ 0.2 \times S \]
+
+The remaining 80% of swim team members are members of both the swim team and the chess club, which is given by:
+\[ 0.8 \times S = SC = 24\% \]
+
+Now, we can solve for \( S \):
+\[ 0.8 \times S = 24\% \]
+\[ S = \frac{24\%}{0.8} \]
+\[ S = 30\% \]
+
+Therefore, the percentage of all Daifu students who are members of the swim team is 30%.
+
+The correct answer is:
+```
+B)30%
+```",True,,,
+45,,"If the population of a city increases by 5 % annually, what will be the population of the city in 2 years time if its current population is 78000?
+A)81900
+B)85995
+C)85800
+D)90000
+E)None of these",B,"To solve this problem, we need to calculate the population of the city after 2 years, given that it increases by 5% annually. The current population is 78,000.
+
+The formula to calculate the future population after a certain number of years with a constant percentage increase is:
+
+Future Population = Current Population * (1 + Growth Rate)^Number of Years
+
+In this case:
+- Current Population = 78,000
+- Growth Rate = 5% = 0.05
+- Number of Years = 2
+
+Plug these values into the formula:
+
+Future Population = 78,000 * (1 + 0.05)^2
+                  = 78,000 * (1.05)^2
+                  = 78,000 * 1.1025
+                  = 86,995
+
+Therefore, the population of the city in 2 years will be 86,995.
+
+Now, let's compare this result with the given choices:
+
+A) 81,900
+B) 85,995
+C) 85,800
+D) 90,000
+E) None of these
+
+The calculated future population (86,995) does not match any of the given choices. Therefore, the correct answer is:
+
+E) None of these",False,,,
+46,,"Two cars start at the same time from opposite ends of a highway that is 50 miles long. One car is riding at 12 mph and the second car is riding at 13 mph. How long after they begin will they meet?
+A) 1
+B) 1.25
+C) 1.50
+D) 1.75
+E) 2",E,"To solve this problem, we need to determine how long it will take for the two cars to meet. Since they are traveling towards each other, we can add their speeds to find the rate at which the distance between them is decreasing.
+
+The first car is traveling at 12 mph, and the second car is traveling at 13 mph. Therefore, the combined speed at which they are approaching each other is:
+
+12 mph + 13 mph = 25 mph
+
+The total distance between them initially is 50 miles. To find the time it takes for them to meet, we use the formula:
+
+Time = Distance / Speed
+
+Substituting the known values:
+
+Time = 50 miles / 25 mph = 2 hours
+
+Therefore, the two cars will meet after 2 hours.
+
+The correct choice is:
+
+E) 2",True,,,
+47,,"A shopkeeper employed a servant at a monthly salary of 1500. In addition to it, he agreed to pay him a commission of 15% on the monthly sale. How much sale in Rupees should the servant do if he wants his monthly income as 6000?
+A)30000
+B)415000
+C)31500
+D)50000
+E)None of these",A,"To solve this problem, we need to calculate the amount of sales the servant needs to make in order to achieve a total monthly income of 6000 Rupees.
+
+The servant's monthly income consists of a fixed salary and a commission based on sales. The fixed salary is 1500 Rupees, and the commission is 15% of the sales.
+
+Let's denote the sales amount as \( S \).
+
+The total income from the commission is 15% of \( S \), which is \( 0.15 \times S \).
+
+The total monthly income is the sum of the fixed salary and the commission:
+\[ 1500 + 0.15 \times S = 6000 \]
+
+To find \( S \), we solve the equation:
+\[ 0.15 \times S = 6000 - 1500 \]
+\[ 0.15 \times S = 4500 \]
+
+Now, divide both sides by 0.15 to solve for \( S \):
+\[ S = \frac{4500}{0.15} \]
+\[ S = 30000 \]
+
+Therefore, the servant needs to make sales of 30000 Rupees to achieve a monthly income of 6000 Rupees.
+
+The correct choice is:
+A) 30000",True,,,
+48,,"A man borrows Rs.360 If he pays it back in 12 monthly installments of Rs.31.50, what is his interest rate?
+A)1.5%
+B)4.5%
+C)10%
+D)5%
+E)12%",D,"To solve this problem, we need to determine the interest rate on the borrowed amount. The man borrows Rs.360 and pays it back in 12 monthly installments of Rs.31.50 each. 
+
+First, calculate the total amount paid over the 12 months:
+Total amount paid = 12 installments × Rs.31.50 per installment = Rs.378
+
+The interest paid is the total amount paid minus the principal amount borrowed:
+Interest paid = Total amount paid - Principal = Rs.378 - Rs.360 = Rs.18
+
+Now, we need to find the interest rate. The interest rate is typically calculated on an annual basis, so we need to find the annual interest rate that would result in Rs.18 interest over one year.
+
+The formula for simple interest is:
+Interest = Principal × Rate × Time
+
+Where:
+- Interest is Rs.18
+- Principal is Rs.360
+- Time is 1 year
+
+Rearranging the formula to solve for the Rate gives us:
+Rate = Interest / (Principal × Time)
+
+Substitute the known values into the formula:
+Rate = Rs.18 / (Rs.360 × 1) = 0.05
+
+To express this as a percentage, multiply by 100:
+Rate = 0.05 × 100 = 5%
+
+Therefore, the interest rate is 5%.
+
+The correct choice is:
+```
+D)5%
+```",True,,,
+49,,"The price of a product is reduced by 30% . By what percentage should it be increased to make it 100%
+A)41.86%
+B)42.86%
+C)43.86%
+D)44.86%
+E)45.86%",B,"To solve this problem, we need to determine the percentage increase required to bring the price back to its original value after a 30% reduction.
+
+Let's assume the original price of the product is $100.
+
+1. After a 30% reduction, the price becomes:
+   \[
+   100 - 30\% \text{ of } 100 = 100 - 30 = 70
+   \]
+
+2. We need to find the percentage increase required to bring the price from $70 back to $100.
+
+3. The increase needed is:
+   \[
+   100 - 70 = 30
+   \]
+
+4. The percentage increase is calculated as:
+   \[
+   \left(\frac{\text{Increase}}{\text{Reduced Price}}\right) \times 100 = \left(\frac{30}{70}\right) \times 100
+   \]
+
+5. Simplifying the calculation:
+   \[
+   \frac{30}{70} = \frac{3}{7} \approx 0.4286
+   \]
+
+6. Converting to a percentage:
+   \[
+   0.4286 \times 100 \approx 42.86\%
+   \]
+
+Therefore, the price should be increased by approximately 42.86% to return to the original price.
+
+The correct answer is (B) 42.86%.",True,,,
+50,,"I have a money pouch containing Rs. 700. There are equal number of 25 paise coins, 50 paise coins and one rupee coins.
+How many of each are there?
+A)453
+B)651
+C)400
+D)487
+E)286",C,"To solve this problem, we need to determine the number of each type of coin in the money pouch. Let's denote the number of each type of coin as \( x \).
+
+The value of the coins can be expressed as follows:
+- The value of 25 paise coins is \( 0.25x \) rupees.
+- The value of 50 paise coins is \( 0.50x \) rupees.
+- The value of 1 rupee coins is \( 1.00x \) rupees.
+
+The total value of the coins is given as Rs. 700. Therefore, we can set up the equation:
+\[
+0.25x + 0.50x + 1.00x = 700
+\]
+
+Simplifying the equation, we get:
+\[
+1.75x = 700
+\]
+
+Solving for \( x \), we divide both sides by 1.75:
+\[
+x = \frac{700}{1.75} = 400
+\]
+
+Therefore, there are 400 of each type of coin. The correct choice is:
+
+C) 400",True,,,
+51,,"A man spends Rs. 3500 per month and saves 12 1/2% of his income. His monthly income is ?
+A)Rs. 4400
+B)Rs. 4270
+C)Rs. 4000
+D)Rs. 3937.50
+E)None of these",C,"To solve this problem, we need to determine the man's monthly income based on his spending and savings rate.
+
+Given:
+- The man spends Rs. 3500 per month.
+- He saves 12.5% of his income.
+
+Let's denote his monthly income as \( x \).
+
+According to the problem, the man saves 12.5% of his income, which means he spends the remaining 87.5% of his income. Therefore, we can set up the following equation:
+
+\[ 0.875x = 3500 \]
+
+To find \( x \), we solve the equation:
+
+\[ x = \frac{3500}{0.875} \]
+
+\[ x = 4000 \]
+
+Therefore, the man's monthly income is Rs. 4000.
+
+The correct choice is:
+
+C) Rs. 4000",True,,,
+52,,"Five dozen toys are packed in a box and 98 boxes are kept in a tempo. How many tempos can lift 29400 toys in one round ?
+A)4
+B)5
+C)7
+D)6
+E)8",B,"To solve this problem, we need to determine how many tempos are required to lift 29,400 toys in one round.
+
+First, let's calculate how many toys are in one box:
+- A dozen is 12, so five dozen toys are 5 * 12 = 60 toys per box.
+
+Next, calculate how many toys are in one tempo:
+- There are 98 boxes in one tempo, and each box contains 60 toys.
+- Therefore, one tempo contains 98 * 60 = 5,880 toys.
+
+Now, we need to find out how many tempos are needed to lift 29,400 toys:
+- Divide the total number of toys (29,400) by the number of toys one tempo can carry (5,880).
+- 29,400 / 5,880 = 5.
+
+Therefore, 5 tempos are needed to lift 29,400 toys in one round.
+
+The correct answer is:
+B) 5",True,,,
+53,,"There are 10 oranges in a basket. Find the no. of ways in which 2 oranges are chosen from the basket?
+A)45
+B)90
+C)120
+D)150
+E)180",A,"To solve this problem, we need to find the number of ways to choose 2 oranges from a basket of 10 oranges. This is a combination problem, where order does not matter.
+
+The formula for combinations is given by:
+
+\[
+C(n, r) = \frac{n!}{r!(n-r)!}
+\]
+
+where \( n \) is the total number of items to choose from, \( r \) is the number of items to choose, and \( ! \) denotes factorial.
+
+In this problem, \( n = 10 \) and \( r = 2 \). Plugging these values into the formula gives:
+
+\[
+C(10, 2) = \frac{10!}{2!(10-2)!} = \frac{10 \times 9}{2 \times 1} = 45
+\]
+
+Therefore, the number of ways to choose 2 oranges from 10 is 45.
+
+The correct answer is:
+
+A) 45",True,,,
+54,,"A company contracts to paint 3 houses. Mr.Brown can paint a house in 6 days while Mr.Black would take 8 days and Mr.Blue 12 days. After 8 days Mr.Brown goes on vacation and Mr. Black begins to work for a period of 6 days. How many days will it take Mr.Blue to complete the contract?
+A)7
+B)8
+C)10
+D)11
+E)12",D,"To solve this problem, we need to determine how much work each painter completes and how much work remains for Mr. Blue to finish.
+
+1. **Calculate the work done by Mr. Brown in 8 days:**
+   - Mr. Brown can paint 1 house in 6 days, so his rate is \( \frac{1}{6} \) house per day.
+   - In 8 days, Mr. Brown paints \( 8 \times \frac{1}{6} = \frac{8}{6} = \frac{4}{3} \) houses.
+
+2. **Calculate the work done by Mr. Black in 6 days:**
+   - Mr. Black can paint 1 house in 8 days, so his rate is \( \frac{1}{8} \) house per day.
+   - In 6 days, Mr. Black paints \( 6 \times \frac{1}{8} = \frac{6}{8} = \frac{3}{4} \) houses.
+
+3. **Total work done by Mr. Brown and Mr. Black:**
+   - Combined, they have painted \( \frac{4}{3} + \frac{3}{4} \) houses.
+   - To add these fractions, find a common denominator: \( \frac{4}{3} = \frac{16}{12} \) and \( \frac{3}{4} = \frac{9}{12} \).
+   - Total work done = \( \frac{16}{12} + \frac{9}{12} = \frac{25}{12} \) houses.
+
+4. **Determine the remaining work:**
+   - The contract is for 3 houses, so the remaining work is \( 3 - \frac{25}{12} \).
+   - Convert 3 to a fraction with a denominator of 12: \( 3 = \frac{36}{12} \).
+   - Remaining work = \( \frac{36}{12} - \frac{25}{12} = \frac{11}{12} \) houses.
+
+5. **Calculate the time for Mr. Blue to complete the remaining work:**
+   - Mr. Blue can paint 1 house in 12 days, so his rate is \( \frac{1}{12} \) house per day.
+   - To paint \( \frac{11}{12} \) houses, it will take him \( \frac{11}{12} \div \frac{1}{12} = 11 \) days.
+
+Therefore, it will take Mr. Blue 11 days to complete the contract.
+
+The correct answer is (D) 11.",True,,,
+55,,"Train A leaves a station every 16 minutes and Train B leaves every 17 minutes. If both trains just left the station simultaneously, how long until they do so again?
+A)272 minutes
+B)304 minutes
+C)190 minutes
+D)70 minutes
+E)35 minutes",A,"To solve this problem, we need to find the least common multiple (LCM) of the two intervals at which the trains leave the station. Train A leaves every 16 minutes, and Train B leaves every 17 minutes. 
+
+The LCM of two numbers is the smallest number that is a multiple of both numbers. 
+
+Since 16 and 17 are coprime (they have no common factors other than 1), the LCM is simply their product:
+
+LCM(16, 17) = 16 * 17 = 272
+
+Therefore, both trains will leave the station simultaneously again after 272 minutes.
+
+The correct answer is:
+
+A) 272 minutes",True,,,
+56,,"A hollow cube of size 5cm is taken, with the thickness of 1cm. It is made of smaller cubes of size 1cm .If the outer surface of the cube is painted how many faces of the smaller cubes remain unpainted?
+A)438
+B)550
+C)500
+D)450
+E)498",A,"To solve this problem, we need to determine how many faces of the smaller cubes remain unpainted when the outer surface of a hollow cube is painted.
+
+1. **Understanding the Structure:**
+   - The hollow cube has an outer size of 5 cm and a thickness of 1 cm.
+   - This means the inner cube (the hollow part) has a size of 3 cm (since 5 cm - 2*1 cm = 3 cm).
+
+2. **Number of Smaller Cubes:**
+   - The outer cube (5 cm) is made up of smaller cubes of size 1 cm, so it contains \(5 \times 5 \times 5 = 125\) smaller cubes.
+   - The inner hollow part (3 cm) is also made up of smaller cubes of size 1 cm, so it contains \(3 \times 3 \times 3 = 27\) smaller cubes.
+
+3. **Cubes in the Hollow Shell:**
+   - The hollow shell is the difference between the outer cube and the inner hollow part.
+   - Therefore, the number of smaller cubes in the hollow shell is \(125 - 27 = 98\).
+
+4. **Painting the Outer Surface:**
+   - When the outer surface is painted, only the cubes on the outermost layer are affected.
+   - The outermost layer of the hollow shell is a 5 cm cube minus the 3 cm cube, which is a 1 cm thick layer on all sides.
+
+5. **Unpainted Faces:**
+   - Each smaller cube in the hollow shell has 6 faces.
+   - When the outer surface is painted, only the outer faces of the outermost layer are painted.
+   - The inner faces of the hollow shell (facing the hollow part) remain unpainted.
+
+6. **Calculating Unpainted Faces:**
+   - Each of the 98 smaller cubes in the hollow shell has 1 face that is part of the inner surface of the hollow cube.
+   - Therefore, the number of unpainted faces is equal to the number of smaller cubes in the hollow shell.
+
+Thus, the number of faces of the smaller cubes that remain unpainted is 98.
+
+However, the problem asks for the number of unpainted faces, not the number of unpainted cubes. Since each cube in the hollow shell has 1 unpainted face (the one facing the hollow part), the total number of unpainted faces is:
+
+\[ 98 \times 1 = 98 \]
+
+But this seems incorrect based on the choices given. Let's re-evaluate:
+
+- The outermost layer of the hollow shell has 5x5 = 25 cubes on each face.
+- There are 6 faces, so 6x25 = 150 cubes on the outermost layer.
+- Each of these cubes has 1 face painted, so 150 faces are painted.
+- The total number of faces for all cubes is 6x98 = 588.
+- Therefore, the number of unpainted faces is 588 - 150 = 438.
+
+Therefore, the correct answer is:
+
+A) 438",True,,,
+57,,"In a chocolate store, all chocolates are either vanilla or cocoa flavored only. 10% of the chocolates are cocoa flavored, 90% of the rest are squashed. What percentage of the chocolates are both vanilla flavored and not squashed?
+A)1%
+B)2%
+C)5%
+D)9%
+E)10%",D,"To solve this problem, we need to determine the percentage of chocolates that are both vanilla flavored and not squashed.
+
+1. **Identify the percentage of cocoa flavored chocolates:**
+   - 10% of the chocolates are cocoa flavored.
+
+2. **Determine the percentage of vanilla flavored chocolates:**
+   - Since 10% are cocoa flavored, the remaining 90% must be vanilla flavored.
+
+3. **Calculate the percentage of squashed vanilla chocolates:**
+   - 90% of the vanilla chocolates are squashed.
+
+4. **Calculate the percentage of vanilla chocolates that are not squashed:**
+   - If 90% of the vanilla chocolates are squashed, then 10% of the vanilla chocolates are not squashed.
+
+5. **Calculate the percentage of total chocolates that are vanilla and not squashed:**
+   - Since 90% of the total chocolates are vanilla, and 10% of these are not squashed, the percentage of total chocolates that are vanilla and not squashed is:
+     \[
+     90\% \times 10\% = 9\%
+     \]
+
+Therefore, the percentage of chocolates that are both vanilla flavored and not squashed is 9%.
+
+The correct answer is (D) 9%.",True,,,
+58,,"There is well of depth 30m and frog is at bottom of the well. He jumps 3m up one day and falls back 2m down the same day. How many days will it take for the frog to come out of the well?
+A)25 days
+B)26 days
+C)27 days
+D)28 days
+E)29 days",D,"To solve this problem, we need to calculate how many days it will take for the frog to climb out of the well given its daily progress.
+
+Each day, the frog jumps up 3 meters and then falls back 2 meters. Therefore, the net progress the frog makes each day is:
+
+3 meters (up) - 2 meters (down) = 1 meter per day
+
+However, on the last day, the frog will not fall back after reaching the top of the well. We need to account for this in our calculation.
+
+Let's break it down:
+
+1. After 27 days, the frog will have climbed 27 meters (since it makes a net progress of 1 meter per day).
+2. On the 28th day, the frog will jump up 3 meters from the 27-meter mark, reaching the 30-meter mark, and will not fall back since it has exited the well.
+
+Therefore, it will take the frog 28 days to climb out of the well.
+
+The correct answer is:
+
+D) 28 days",True,,,
+59,,"The sum of the 5 consecutive two digit odd numbers when divided by 10 becomes a perfect square, which of the following can be one of these 5 numbers?
+A)47
+B)91
+C)41
+D)67
+E)44",C,,False,,,
+60,,"In a class, 8% of total students are interested in Football. 4/5 of total students are interested in Cricket. 10% of total students are interested in Basketball and remaining 20 students are not interested in any games. How many students are there in the class?
+A)850
+B)800
+C)900
+D)950
+E)1000",E,"To solve this problem, we need to find the total number of students in the class. Let's denote the total number of students as \( x \).
+
+According to the problem:
+- 8% of the students are interested in Football, which is \( 0.08x \).
+- 4/5 of the students are interested in Cricket, which is \( \frac{4}{5}x \).
+- 10% of the students are interested in Basketball, which is \( 0.10x \).
+- 20 students are not interested in any games.
+
+The sum of students interested in Football, Cricket, and Basketball, plus those not interested in any games, should equal the total number of students:
+
+\[
+0.08x + \frac{4}{5}x + 0.10x + 20 = x
+\]
+
+First, convert \(\frac{4}{5}\) to a decimal:
+
+\[
+\frac{4}{5} = 0.80
+\]
+
+Now substitute back into the equation:
+
+\[
+0.08x + 0.80x + 0.10x + 20 = x
+\]
+
+Combine the terms involving \( x \):
+
+\[
+0.98x + 20 = x
+\]
+
+Subtract \( 0.98x \) from both sides:
+
+\[
+20 = x - 0.98x
+\]
+
+\[
+20 = 0.02x
+\]
+
+Now, solve for \( x \) by dividing both sides by 0.02:
+
+\[
+x = \frac{20}{0.02} = 1000
+\]
+
+Therefore, the total number of students in the class is 1000. The correct choice is:
+
+E) 1000",True,,,
+61,,"Q is as much younger than R as he is older than T. If the sum of the ages of R and T is 50 years. What is definitely the difference between R and Q's age?
+A)22
+B)27
+C)29
+D)Cannot be determined
+E)None of the above",D,"To solve this problem, we need to set up equations based on the information given:
+
+1. Let the age of Q be \( q \), the age of R be \( r \), and the age of T be \( t \).
+
+2. According to the problem, Q is as much younger than R as he is older than T. This can be expressed as:
+   \[
+   r - q = q - t
+   \]
+
+3. Simplifying the equation above, we get:
+   \[
+   r + t = 2q
+   \]
+
+4. We are also given that the sum of the ages of R and T is 50 years:
+   \[
+   r + t = 50
+   \]
+
+5. From equations (3) and (4), we have:
+   \[
+   2q = 50
+   \]
+
+6. Solving for \( q \), we find:
+   \[
+   q = 25
+   \]
+
+7. We need to find the difference between R and Q's age, which is \( r - q \).
+
+8. From equation (4), we know:
+   \[
+   r + t = 50
+   \]
+
+9. Substituting \( t = 50 - r \) into equation (2), we have:
+   \[
+   r - q = q - (50 - r)
+   \]
+
+10. Simplifying, we get:
+    \[
+    r - 25 = 25 - 50 + r
+    \]
+
+11. Further simplification gives:
+    \[
+    r - 25 = r - 25
+    \]
+
+12. This equation is always true, which means the difference \( r - q \) is consistent with the given conditions.
+
+13. Since \( r + t = 50 \) and \( 2q = 50 \), the difference \( r - q \) is:
+    \[
+    r - q = 25 - t
+    \]
+
+14. However, without specific values for \( r \) and \( t \), we cannot determine a unique value for \( r - q \).
+
+Therefore, the answer is:
+
+```
+D) Cannot be determined
+```",True,,,
+62,,"Calculate the maximum distance you can travel with $8.50 on a cab which charges $3.50 for the first quarter-mile and 10 cents for each additional quarter mile.
+A)11.75 miles
+B)12.75 miles
+C)17.75 miles
+D)14.75 miles
+E)10.75 miles",B,"To solve this problem, we need to determine how far you can travel with $8.50 given the cab's pricing structure.
+
+1. **Initial Cost**: The first quarter-mile costs $3.50. 
+
+2. **Remaining Money**: After the first quarter-mile, you have $8.50 - $3.50 = $5.00 left.
+
+3. **Cost per Additional Quarter-Mile**: Each additional quarter-mile costs $0.10.
+
+4. **Calculate Additional Distance**:
+   - With $5.00, you can pay for $5.00 / $0.10 = 50 additional quarter-miles.
+
+5. **Total Distance**:
+   - The first quarter-mile is already covered by the initial $3.50.
+   - You can travel 50 additional quarter-miles with the remaining $5.00.
+   - Total quarter-miles = 1 (initial) + 50 (additional) = 51 quarter-miles.
+
+6. **Convert to Miles**:
+   - Since there are 4 quarter-miles in a mile, the total distance in miles is 51 / 4 = 12.75 miles.
+
+Therefore, the maximum distance you can travel with $8.50 is 12.75 miles.
+
+The correct choice is:
+```
+B) 12.75 miles
+```",True,,,
+63,,"In IPL season, Sachin current batting average is 51. In the finals, he scores 78 runs, then is batting average will be 54. Find out the total number of matches played by Sachin in this season.
+A)6
+B)8
+C)9
+D)10
+E)11",C,"To solve this problem, we need to use the formula for batting average:
+
+Batting Average = Total Runs Scored / Total Matches Played
+
+Let's denote:
+- \( x \) as the total number of matches played by Sachin before the finals.
+- \( y \) as the total runs scored by Sachin before the finals.
+
+According to the problem, Sachin's current batting average is 51. Therefore, we have:
+
+\[ \frac{y}{x} = 51 \]
+\[ y = 51x \]  (Equation 1)
+
+In the finals, Sachin scores 78 runs, and his new batting average becomes 54. Therefore, the total number of matches becomes \( x + 1 \), and the total runs become \( y + 78 \). So, we have:
+
+\[ \frac{y + 78}{x + 1} = 54 \]
+\[ y + 78 = 54(x + 1) \]
+\[ y + 78 = 54x + 54 \]
+\[ y = 54x + 54 - 78 \]
+\[ y = 54x - 24 \]  (Equation 2)
+
+Now, we have two equations:
+1. \( y = 51x \)
+2. \( y = 54x - 24 \)
+
+We can set these two equations equal to each other to solve for \( x \):
+
+\[ 51x = 54x - 24 \]
+\[ 54x - 51x = 24 \]
+\[ 3x = 24 \]
+\[ x = 8 \]
+
+So, the total number of matches played by Sachin before the finals is 8. Including the finals, the total number of matches played is \( x + 1 = 8 + 1 = 9 \).
+
+Therefore, the total number of matches played by Sachin in this season is 9.
+
+The correct choice is:
+
+C) 9",True,,,
+64,,"Amy is organizing her bookshelves and finds that she has 10 different types of books. She then codes each book with either a single letter or a pair of two different letters. If each type of book is uniquely represented by either a single letter or pair of letters, what is the smallest number of letters Amy will need to create the codes for all 10 types of books? (Assume the order of letters in a pair does not matter.)
+A)3
+B)4
+C)5
+D)10
+E)20",D,"To solve this problem, we need to determine the smallest number of letters required to create unique codes for 10 different types of books, where each code is either a single letter or a pair of two different letters.
+
+Let's denote the number of letters as \( n \).
+
+1. **Single Letter Codes**: There are \( n \) possible single letter codes.
+
+2. **Pair of Letters Codes**: Since the order of letters in a pair does not matter, the number of different pairs of letters is given by the combination formula \( \binom{n}{2} = \frac{n(n-1)}{2} \).
+
+The total number of unique codes (single letters and pairs) is:
+\[
+n + \binom{n}{2} = n + \frac{n(n-1)}{2}
+\]
+
+We need this total to be at least 10, as there are 10 types of books. Therefore, we solve:
+\[
+n + \frac{n(n-1)}{2} \geq 10
+\]
+
+Let's test small values of \( n \):
+
+- For \( n = 3 \):
+  \[
+  3 + \frac{3 \times 2}{2} = 3 + 3 = 6
+  \]
+  This is not enough.
+
+- For \( n = 4 \):
+  \[
+  4 + \frac{4 \times 3}{2} = 4 + 6 = 10
+  \]
+  This is exactly 10, which is sufficient.
+
+Thus, the smallest number of letters needed is \( n = 4 \).
+
+Therefore, the answer is \(\boxed{4}\).",False,,,
+65,,"A rectangular piece of 150 sq m has a length which is 1m more than the 4 times the breadth. What is the perimeter of the piece?
+A)60 m
+B)61 m
+C)62 m
+D)63 m
+E)64 m",C,"To solve this problem, we need to find the dimensions of the rectangle and then calculate its perimeter.
+
+Let's denote the breadth of the rectangle as \( b \) meters. According to the problem, the length \( l \) is 1 meter more than 4 times the breadth. Therefore, we can express the length as:
+\[ l = 4b + 1 \]
+
+The area of the rectangle is given as 150 square meters. The area of a rectangle is calculated as:
+\[ \text{Area} = \text{length} \times \text{breadth} \]
+Substituting the given area and the expression for the length, we have:
+\[ (4b + 1) \times b = 150 \]
+
+Expanding this equation, we get:
+\[ 4b^2 + b = 150 \]
+
+Rearranging the terms, we have a quadratic equation:
+\[ 4b^2 + b - 150 = 0 \]
+
+To solve this quadratic equation, we can use the quadratic formula:
+\[ b = \frac{-B \pm \sqrt{B^2 - 4AC}}{2A} \]
+where \( A = 4 \), \( B = 1 \), and \( C = -150 \).
+
+Calculating the discriminant:
+\[ B^2 - 4AC = 1^2 - 4 \times 4 \times (-150) = 1 + 2400 = 2401 \]
+
+The square root of 2401 is 49. Therefore, the solutions for \( b \) are:
+\[ b = \frac{-1 \pm 49}{8} \]
+
+This gives us two possible solutions:
+1. \( b = \frac{-1 + 49}{8} = \frac{48}{8} = 6 \)
+2. \( b = \frac{-1 - 49}{8} = \frac{-50}{8} = -6.25 \)
+
+Since a negative breadth does not make sense in this context, we take \( b = 6 \).
+
+Now, substituting \( b = 6 \) back into the expression for the length:
+\[ l = 4b + 1 = 4 \times 6 + 1 = 24 + 1 = 25 \]
+
+The perimeter of a rectangle is given by:
+\[ \text{Perimeter} = 2(\text{length} + \text{breadth}) \]
+Substituting the values of length and breadth:
+\[ \text{Perimeter} = 2(25 + 6) = 2 \times 31 = 62 \]
+
+Therefore, the perimeter of the rectangle is 62 meters.
+
+The correct choice is:
+```
+C)62 m
+```",True,,,
+66,,"One gram of a certain health food contains 9 percent of the minimum daily requirement of vitamin E and 8 percent of the minimum daily requirement of vitamin A. If vitamins E and A are to be obtained from no other source, how many grams of the health food must be eaten daily to provide at least the minimum daily requirement of both vitamins?
+A)8.5
+B)10.5
+C)12.5
+D)14.5
+E)16.5",C,"To solve this problem, we need to determine how many grams of the health food are required to meet at least 100% of the minimum daily requirement for both vitamin E and vitamin A.
+
+Let's break it down:
+
+1. **Vitamin E Requirement:**
+   - 1 gram of the health food provides 9% of the daily requirement of vitamin E.
+   - To meet 100% of the daily requirement, we need:
+     \[
+     \frac{100}{9} \approx 11.11 \text{ grams}
+     \]
+
+2. **Vitamin A Requirement:**
+   - 1 gram of the health food provides 8% of the daily requirement of vitamin A.
+   - To meet 100% of the daily requirement, we need:
+     \[
+     \frac{100}{8} = 12.5 \text{ grams}
+     \]
+
+To satisfy both requirements, we need to take the maximum of the two values calculated above, because we need to meet at least 100% of both vitamins.
+
+- For vitamin E, we need approximately 11.11 grams.
+- For vitamin A, we need 12.5 grams.
+
+Therefore, to meet the minimum daily requirement for both vitamins, we need to consume at least 12.5 grams of the health food.
+
+The correct answer is:
+```
+C) 12.5
+```",True,,,
+67,,"Assistants are needed to prepare for preparation. Each helper can make either 2 large cakes or 35 small cakes/hr. The kitchen is available for 3 hours and 20 large cakes & 700 small cakes are needed. How many helpers are required?
+A)8
+B)10
+C)12
+D)15
+E)19",B,,False,,,
+68,,"R, S, T, and U are points on a line, and U is the midpoint of line segment ST. If the lengths of line segments RS, RT, and ST are 5, 17, and 22, respectively. What is the length of line segment RU?
+A)6
+B)7
+C)8
+D)9
+E)10",A,,False,,,
+69,,"Six pita breads contain the same amount of falafel as do two rolls. Three rolls contain the same amount of falafel as five baguettes do. Two baguettes contain the same amount of falafel as how many pita breads?
+A)12/25
+B)3/2
+C)3
+D)2
+E)25/3",C,"To solve this problem, we need to establish relationships between the different types of bread in terms of the amount of falafel they contain.
+
+Let's denote:
+- The amount of falafel in one pita bread as \( P \).
+- The amount of falafel in one roll as \( R \).
+- The amount of falafel in one baguette as \( B \).
+
+From the problem, we have the following relationships:
+1. Six pita breads contain the same amount of falafel as two rolls:
+   \[
+   6P = 2R \quad \Rightarrow \quad R = 3P
+   \]
+
+2. Three rolls contain the same amount of falafel as five baguettes:
+   \[
+   3R = 5B
+   \]
+
+3. We need to find how many pita breads contain the same amount of falafel as two baguettes:
+   \[
+   2B = xP
+   \]
+
+First, let's express \( B \) in terms of \( P \) using the relationships we have:
+
+From \( R = 3P \), substitute into the second equation:
+\[
+3(3P) = 5B \quad \Rightarrow \quad 9P = 5B \quad \Rightarrow \quad B = \frac{9}{5}P
+\]
+
+Now, substitute \( B = \frac{9}{5}P \) into the equation \( 2B = xP \):
+\[
+2\left(\frac{9}{5}P\right) = xP \quad \Rightarrow \quad \frac{18}{5}P = xP
+\]
+
+Divide both sides by \( P \) (assuming \( P \neq 0 \)):
+\[
+x = \frac{18}{5}
+\]
+
+Thus, two baguettes contain the same amount of falafel as \(\frac{18}{5}\) pita breads.
+
+The correct choice is not listed among the options provided, but the closest match to the calculated value is:
+\[
+E) \frac{25}{3} \quad \text{(which is incorrect)}
+\]
+
+The correct answer should be \(\frac{18}{5}\), but since it's not listed, the problem might have an error in the options. However, based on the calculation, the answer is \(\frac{18}{5}\).
+
+Therefore, the classification of the problem is:
+(E) 25/3 (closest incorrect option)",False,,,
+70,,"A shopkeeper in order to promote his new shop put a discount of 20% on all the items for one day. Now he must sell the items at original price the other day. By what percentage must he increase the price to original?
+A)21%
+B)20%
+C)25%
+D)33%
+E)18%",C,"To solve this problem, we need to determine the percentage increase required to return the discounted price back to the original price.
+
+Let's assume the original price of an item is $100.
+
+After a 20% discount, the price of the item becomes:
+\[ 100 - (20\% \text{ of } 100) = 100 - 20 = 80 \]
+
+Now, we need to find the percentage increase required to bring the price from $80 back to $100.
+
+Let the required percentage increase be \( x\% \).
+
+The equation to find \( x \) is:
+\[ 80 + (x\% \text{ of } 80) = 100 \]
+
+This can be written as:
+\[ 80 + \frac{x}{100} \times 80 = 100 \]
+
+Simplifying, we get:
+\[ \frac{x}{100} \times 80 = 100 - 80 \]
+\[ \frac{x}{100} \times 80 = 20 \]
+
+Solving for \( x \):
+\[ x = \frac{20 \times 100}{80} \]
+\[ x = \frac{2000}{80} \]
+\[ x = 25 \]
+
+Therefore, the price must be increased by 25% to return to the original price.
+
+The correct answer is (C) 25%.",True,,,
+71,,"The bus fare for two persons for travelling between Agra and Aligarh id four-thirds the train fare between the same places for one person. The total fare paid by 6 persons travelling by bus and 8 persons travelling by train between the two places is Rs.1512. Find the train fare between the two places for one person?
+A)126
+B)77
+C)88
+D)66
+E)54",A,"To solve this problem, let's define the variables:
+
+Let the train fare for one person be \( x \).
+
+According to the problem, the bus fare for two persons is four-thirds the train fare for one person. Therefore, the bus fare for one person is:
+
+\[
+\text{Bus fare for one person} = \frac{4}{3} \times \frac{x}{2} = \frac{2x}{3}
+\]
+
+Now, we have 6 persons traveling by bus and 8 persons traveling by train. The total fare paid is Rs. 1512.
+
+The total bus fare for 6 persons is:
+
+\[
+6 \times \frac{2x}{3} = 4x
+\]
+
+The total train fare for 8 persons is:
+
+\[
+8 \times x = 8x
+\]
+
+The total fare paid by both groups is:
+
+\[
+4x + 8x = 12x
+\]
+
+We know that the total fare is Rs. 1512, so:
+
+\[
+12x = 1512
+\]
+
+Solving for \( x \):
+
+\[
+x = \frac{1512}{12} = 126
+\]
+
+Therefore, the train fare between the two places for one person is Rs. 126.
+
+The correct choice is:
+
+A) 126",True,,,
+72,,"A rectangle has a length of 8 centimeters and a width of 3 centimeters. Find the perimeter.
+A)18cm
+B)22cm
+C)20cm
+D)30cm
+E)28cm",B,"To find the perimeter of a rectangle, you use the formula:
+
+\[ \text{Perimeter} = 2 \times (\text{Length} + \text{Width}) \]
+
+Given that the length is 8 centimeters and the width is 3 centimeters, we can substitute these values into the formula:
+
+\[ \text{Perimeter} = 2 \times (8 \, \text{cm} + 3 \, \text{cm}) \]
+\[ \text{Perimeter} = 2 \times 11 \, \text{cm} \]
+\[ \text{Perimeter} = 22 \, \text{cm} \]
+
+Therefore, the correct choice is:
+
+B) 22cm",True,,,
+73,,"Suppose you want to arrange your English, Hindi, Mathematics, History, Geography and Science books on a shelf. In how many ways can you do it ?
+A)520
+B)720
+C)920
+D)None
+E)Cannot be determined",B,"To solve this problem, we need to determine the number of ways to arrange 6 different books on a shelf. This is a permutation problem where we are arranging all 6 books.
+
+The formula for permutations of n distinct items is n!, which is the factorial of n.
+
+Here, n = 6 (since there are 6 books: English, Hindi, Mathematics, History, Geography, and Science).
+
+So, the number of ways to arrange the books is:
+
+6! = 6 × 5 × 4 × 3 × 2 × 1 = 720
+
+Therefore, the correct answer is:
+
+B) 720",True,,,
+74,,"A straight picket fence is composed of x pickets each of which is 1/2 inch wide. If there are 6 inches of space between each pair of pickets, which of the following represents the length of fence in feet?
+A)13x/2
+B)13x/2 - 6
+C)13x/24
+D)(13x+1)/24
+E)(13x-12)/24",E,"To solve this problem, we need to calculate the total length of the fence in feet, given that each picket is 1/2 inch wide and there are 6 inches of space between each pair of pickets.
+
+1. **Calculate the total width of the pickets:**
+   - Each picket is 1/2 inch wide.
+   - For x pickets, the total width of the pickets is \( \frac{x}{2} \) inches.
+
+2. **Calculate the total space between the pickets:**
+   - There are x pickets, which means there are \( x - 1 \) spaces between them.
+   - Each space is 6 inches wide.
+   - The total space between the pickets is \( 6(x - 1) \) inches.
+
+3. **Calculate the total length of the fence in inches:**
+   - The total length of the fence is the sum of the total width of the pickets and the total space between them.
+   - Total length in inches = \( \frac{x}{2} + 6(x - 1) \).
+
+4. **Simplify the expression:**
+   - \( \frac{x}{2} + 6(x - 1) = \frac{x}{2} + 6x - 6 \).
+   - Combine like terms: \( \frac{x}{2} + 6x - 6 = \frac{x + 12x - 12}{2} = \frac{13x - 12}{2} \).
+
+5. **Convert the total length from inches to feet:**
+   - There are 12 inches in a foot.
+   - Convert the total length to feet: \( \frac{13x - 12}{2} \div 12 = \frac{13x - 12}{24} \).
+
+Therefore, the length of the fence in feet is represented by the expression \(\frac{13x - 12}{24}\).
+
+The correct choice is:
+```
+E)(13x-12)/24
+```",True,,,
+75,,"A ship went on a voyage. After it had traveled 180 miles a plane started with 10 times the speed of the ship. Find the distance when they meet from starting point.
+A)238
+B)289
+C)200
+D)287
+E)187",C,"To solve this problem, we need to determine the distance from the starting point where the ship and the plane meet.
+
+Let's denote:
+- \( s \) as the speed of the ship in miles per hour.
+- \( 10s \) as the speed of the plane in miles per hour (since the plane travels 10 times faster than the ship).
+
+The ship has already traveled 180 miles when the plane starts. We need to find the time it takes for the plane to catch up with the ship.
+
+Let \( t \) be the time in hours it takes for the plane to catch up with the ship after the plane starts.
+
+In time \( t \), the ship travels an additional distance of \( s \times t \) miles, and the plane travels a distance of \( 10s \times t \) miles.
+
+Since the plane catches up with the ship, the total distance traveled by the ship is equal to the distance traveled by the plane:
+
+\[ 180 + s \times t = 10s \times t \]
+
+Solving for \( t \):
+
+\[ 180 = 10s \times t - s \times t \]
+\[ 180 = 9s \times t \]
+\[ t = \frac{180}{9s} \]
+\[ t = \frac{20}{s} \]
+
+Now, we find the total distance from the starting point when they meet. The ship travels for a total time of \( t + \frac{180}{s} \) hours:
+
+\[ \text{Total distance} = s \times \left(\frac{180}{s} + \frac{20}{s}\right) \]
+\[ \text{Total distance} = s \times \left(\frac{200}{s}\right) \]
+\[ \text{Total distance} = 200 \]
+
+Therefore, the distance from the starting point when they meet is 200 miles.
+
+The correct choice is:
+```
+C) 200
+```",True,,,
+76,,"In a large forest, 300 deer were caught, tagged, and returned during 2001. During 2002, 500 deer were caught at random, of which only 20 had tags from the previous year. If the percent of deer in the forest that had tags during the second year and were caught in the 500 deer sample is representative of the percent of the total deer population in the forest with tags, what is the total deer population in the forest (assuming no change in population between 2001 and 2002)?
+A)300
+B)500
+C)5000
+D)6000
+E)7500",E,"To solve this problem, we can use the concept of proportions. We know that 300 deer were tagged in 2001. In 2002, 500 deer were caught, and 20 of them had tags. We assume that the proportion of tagged deer in the sample is representative of the proportion of tagged deer in the entire population.
+
+Let's denote the total deer population in the forest as \( N \).
+
+The proportion of tagged deer in the sample is:
+\[
+\frac{20}{500} = \frac{1}{25}
+\]
+
+This proportion should be equal to the proportion of tagged deer in the entire population:
+\[
+\frac{300}{N} = \frac{1}{25}
+\]
+
+Now, we solve for \( N \):
+\[
+300 = \frac{N}{25}
+\]
+
+Multiplying both sides by 25 gives:
+\[
+N = 300 \times 25 = 7500
+\]
+
+Therefore, the total deer population in the forest is 7500.
+
+The correct choice is:
+```
+E)7500
+```",True,,,
+77,,"In a railway station, there are two trains going. One in the harbor line and one in the main line, each having a frequency of 10 minutes. The main line service starts at 5 o'clock and the harbor line starts at 5.02 A.M. A man goes to the station every day to catch the first train that comes. What is the probability of the man catching the first train?
+A)0.9
+B)0.8
+C)0.6
+D)0.65
+E)1.5",B,"To solve this problem, we need to determine the probability of the man catching the first train that arrives at the station. 
+
+The main line train arrives every 10 minutes starting at 5:00 AM, so the arrival times are 5:00, 5:10, 5:20, and so on. 
+
+The harbor line train arrives every 10 minutes starting at 5:02 AM, so the arrival times are 5:02, 5:12, 5:22, and so on.
+
+The man arrives at the station at a random time between 5:00 and 5:10. We need to find the probability that the first train he catches is the main line train.
+
+- If the man arrives between 5:00 and 5:02, he will catch the main line train at 5:00.
+- If the man arrives between 5:02 and 5:10, he will catch the harbor line train at 5:02.
+
+The time interval from 5:00 to 5:02 is 2 minutes, and the time interval from 5:02 to 5:10 is 8 minutes. 
+
+Therefore, the probability that the man catches the main line train is the ratio of the time interval for the main line train to the total time interval:
+
+Probability = (Time interval for main line train) / (Total time interval)
+             = 2 / 10
+             = 0.2
+
+Thus, the probability of the man catching the first train (main line train) is 0.2.
+
+None of the given choices (A, B, C, D, E) match this probability. However, the closest choice to the correct probability is not available. Therefore, the problem might have an error in the choices provided.
+
+The correct answer should be 0.2, but since it's not listed, none of the choices are correct.",False,,,
+78,,"The average (arithmetic mean) of the weight of 10 vehicles is 12.2 tons. The average weight of the group of vehicles increased by 2.6 tons after a new heavy duty truck was added to the group? What is the weight in tons of the heavy duty truck?
+A)40.8
+B)41.6
+C)42.2
+D)43.5
+E)44.8",A,"To solve this problem, we need to find the weight of the heavy duty truck that was added to the group of vehicles.
+
+1. First, calculate the total weight of the original 10 vehicles. Since the average weight is 12.2 tons, the total weight is:
+   \[
+   10 \times 12.2 = 122 \text{ tons}
+   \]
+
+2. After adding the heavy duty truck, the average weight of the 11 vehicles becomes 12.2 + 2.6 = 14.8 tons.
+
+3. Calculate the total weight of the 11 vehicles with the new average:
+   \[
+   11 \times 14.8 = 162.8 \text{ tons}
+   \]
+
+4. The weight of the heavy duty truck is the difference between the total weight of the 11 vehicles and the total weight of the original 10 vehicles:
+   \[
+   162.8 - 122 = 40.8 \text{ tons}
+   \]
+
+Therefore, the weight of the heavy duty truck is 40.8 tons.
+
+The correct answer is (A) 40.8.",True,,,
+79,,"Boomtown urban planners expect the city’s population to increase by 10% per year over the next two years. If that projection were to come true, the population two years from now would be exactly double the population of one year ago. Which of the following is closest to the percent population increase in Boomtown over the last year?
+A)20%
+B)40%
+C)50%
+D)65%
+E)75%",D,"To solve this problem, we need to understand the relationship between the population growth rates over the years.
+
+Let's denote the population one year ago as \( P \).
+
+According to the problem, the population is expected to increase by 10% per year for the next two years. Therefore, the population two years from now can be expressed as:
+\[ P \times 1.1 \times 1.1 = P \times 1.21 \]
+
+The problem states that this future population is exactly double the population of one year ago. Therefore, we have:
+\[ P \times 1.21 = 2P \]
+
+This implies that the population one year ago was half of what it will be two years from now. Now, we need to find the percent increase in population over the last year.
+
+Let the population last year be \( P_0 \). The population one year ago is \( P \), and we know:
+\[ P = P_0 \times (1 + r) \]
+where \( r \) is the rate of increase over the last year.
+
+We also know:
+\[ 2P = P_0 \times (1 + r) \times 1.21 \]
+
+Since \( 2P = 2 \times P_0 \times (1 + r) \), we equate:
+\[ 2 \times P_0 \times (1 + r) = P_0 \times (1 + r) \times 1.21 \]
+
+Canceling \( P_0 \times (1 + r) \) from both sides (assuming \( P_0 \times (1 + r) \neq 0 \)), we get:
+\[ 2 = 1.21 \]
+
+This is incorrect, indicating a misunderstanding. Let's re-evaluate:
+
+The correct approach is to find the value of \( r \) such that:
+\[ P \times 1.21 = 2 \times P_0 \]
+
+Given:
+\[ P = P_0 \times (1 + r) \]
+
+Substitute:
+\[ P_0 \times (1 + r) \times 1.21 = 2 \times P_0 \]
+
+Cancel \( P_0 \) from both sides:
+\[ (1 + r) \times 1.21 = 2 \]
+
+Solve for \( r \):
+\[ 1 + r = \frac{2}{1.21} \]
+
+Calculate:
+\[ 1 + r \approx 1.6529 \]
+
+Thus:
+\[ r \approx 0.6529 \]
+
+Convert to percentage:
+\[ r \approx 65.29\% \]
+
+Therefore, the closest percent population increase in Boomtown over the last year is approximately 65%.
+
+The correct answer is:
+```
+D)65%
+```",True,,,
+80,,"Arjun and Sajal are friends, each has some money. If Arun gives $30 to Sajal, the Sajal will have twice the money left with Arjun. But, if Sajal gives $10 to Arjun, Arjun will have thrice as much as is left with Sajal. How much money does each have?
+A)62, 35
+B)62, 34
+C)34, 62
+D)42, 62
+E)62, 42",B,"To solve this problem, let's denote the amount of money Arjun has as \( A \) and the amount Sajal has as \( S \).
+
+According to the problem, we have two conditions:
+
+1. If Arjun gives $30 to Sajal, then Sajal will have twice the money left with Arjun.
+   - After giving $30, Arjun will have \( A - 30 \) and Sajal will have \( S + 30 \).
+   - The condition becomes: \( S + 30 = 2(A - 30) \).
+
+2. If Sajal gives $10 to Arjun, then Arjun will have thrice as much as is left with Sajal.
+   - After giving $10, Sajal will have \( S - 10 \) and Arjun will have \( A + 10 \).
+   - The condition becomes: \( A + 10 = 3(S - 10) \).
+
+Now, let's solve these equations:
+
+From the first condition:
+\[ S + 30 = 2(A - 30) \]
+\[ S + 30 = 2A - 60 \]
+\[ S = 2A - 90 \]  (Equation 1)
+
+From the second condition:
+\[ A + 10 = 3(S - 10) \]
+\[ A + 10 = 3S - 30 \]
+\[ A = 3S - 40 \]  (Equation 2)
+
+Substitute Equation 1 into Equation 2:
+\[ A = 3(2A - 90) - 40 \]
+\[ A = 6A - 270 - 40 \]
+\[ A = 6A - 310 \]
+\[ 310 = 6A - A \]
+\[ 310 = 5A \]
+\[ A = 62 \]
+
+Now, substitute \( A = 62 \) back into Equation 1:
+\[ S = 2(62) - 90 \]
+\[ S = 124 - 90 \]
+\[ S = 34 \]
+
+So, Arjun has $62 and Sajal has $34.
+
+The correct choice is:
+B) 62, 34",True,,,
+81,,"Julie’s yard is rectangular. One side of the yard is 100 feet wide. The total area of the yard is 3,000 square feet. What is the length of the other side of the yard?
+A)30 feet
+B)20 feet
+C)10 feet
+D)50 feet
+E)60 feet",A,"To find the length of the other side of the yard, we can use the formula for the area of a rectangle, which is:
+
+Area = length × width
+
+We are given that the area of the yard is 3,000 square feet and one side (width) is 100 feet. Let's denote the length of the other side as L. Therefore, we have:
+
+3,000 = 100 × L
+
+To find L, we divide both sides of the equation by 100:
+
+L = 3,000 / 100
+L = 30
+
+Therefore, the length of the other side of the yard is 30 feet.
+
+The correct choice is:
+A) 30 feet",True,,,
+82,,"The greatest common factor of two positive integers is 11. The least common multiple of these two integers is 7700. If one of the integers is 350, what is the other?
+A)242
+B)308
+C)352
+D)412
+E)456",A,"To solve this problem, we need to use the relationship between the greatest common factor (GCF), least common multiple (LCM), and the two integers. The relationship is given by:
+
+\[
+\text{GCF}(a, b) \times \text{LCM}(a, b) = a \times b
+\]
+
+We are given:
+- GCF = 11
+- LCM = 7700
+- One of the integers, say \( a = 350 \)
+
+We need to find the other integer, \( b \).
+
+Substitute the known values into the equation:
+
+\[
+11 \times 7700 = 350 \times b
+\]
+
+Calculate \( 11 \times 7700 \):
+
+\[
+11 \times 7700 = 84700
+\]
+
+Now, solve for \( b \):
+
+\[
+84700 = 350 \times b
+\]
+
+Divide both sides by 350 to find \( b \):
+
+\[
+b = \frac{84700}{350}
+\]
+
+Calculate the division:
+
+\[
+b = 242
+\]
+
+Thus, the other integer is 242. Therefore, the correct answer is:
+
+A) 242",True,,,
+83,,"A square piece of cloth is trimmed by 4 feet on one edge to form a rectangular piece, which is then cut diagonally in half to create two triangles. If the area of each of triangle is 70 square feet, what was the perimeter (in feet) of the original piece of square cloth?
+A)56
+B)58
+C)60
+D)62
+E)64",A,"To solve this problem, we need to determine the side length of the original square piece of cloth and then calculate its perimeter.
+
+1. **Understanding the Problem:**
+   - We start with a square piece of cloth.
+   - One edge is trimmed by 4 feet to form a rectangle.
+   - This rectangle is then cut diagonally to form two triangles, each with an area of 70 square feet.
+
+2. **Setting Up the Equations:**
+   - Let the side length of the original square be \( s \).
+   - After trimming 4 feet from one edge, the dimensions of the rectangle become \( s \) by \( s - 4 \).
+   - The area of the rectangle is \( s(s - 4) \).
+
+3. **Area of the Triangles:**
+   - The rectangle is cut diagonally into two right triangles.
+   - The area of each triangle is half the area of the rectangle.
+   - Therefore, the area of each triangle is \( \frac{1}{2} \times s(s - 4) = 70 \).
+
+4. **Solving for \( s \):**
+   - Set up the equation: \( \frac{1}{2} \times s(s - 4) = 70 \).
+   - Simplify: \( s(s - 4) = 140 \).
+   - Expand: \( s^2 - 4s = 140 \).
+   - Rearrange: \( s^2 - 4s - 140 = 0 \).
+
+5. **Using the Quadratic Formula:**
+   - The quadratic formula is \( s = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \).
+   - Here, \( a = 1 \), \( b = -4 \), and \( c = -140 \).
+   - Calculate the discriminant: \( b^2 - 4ac = (-4)^2 - 4 \times 1 \times (-140) = 16 + 560 = 576 \).
+   - The square root of 576 is 24.
+   - Solve for \( s \): \( s = \frac{4 \pm 24}{2} \).
+
+6. **Finding the Positive Solution:**
+   - The solutions are \( s = \frac{28}{2} = 14 \) and \( s = \frac{-20}{2} = -10 \).
+   - Since a side length cannot be negative, \( s = 14 \).
+
+7. **Calculating the Perimeter:**
+   - The perimeter of the original square is \( 4 \times s = 4 \times 14 = 56 \) feet.
+
+Therefore, the perimeter of the original piece of square cloth is 56 feet.
+
+The correct answer is \( \boxed{56} \).",False,,,
+84,,"The length of the ribbon was originally 30 cm. It was reduced in the ratio 5 : 3. What is its length now?
+A)18
+B)30
+C)6
+D)15
+E)12",A,"To solve this problem, we need to understand that the original length of the ribbon is 30 cm, and it is reduced in the ratio 5:3. This means that the new length of the ribbon is 3 parts out of the original 5 parts.
+
+First, we find the length of one part by dividing the original length by the total number of parts in the original ratio:
+
+Original length = 30 cm
+Total parts in the original ratio = 5
+
+Length of one part = 30 cm / 5 = 6 cm
+
+Now, we calculate the new length of the ribbon, which is 3 parts:
+
+New length = 3 parts * 6 cm/part = 18 cm
+
+Therefore, the length of the ribbon now is 18 cm.
+
+The correct choice is:
+A) 18",True,,,
+85,,"M = abc is a three digit number and N = cba, if M > N and M - N + 396c = 990. Then how many values of M are more than 300.
+A)20
+B)30
+C)40
+D)200
+E)None",A,"To solve the problem, we need to analyze the given conditions:
+
+1. \( M = 100a + 10b + c \) is a three-digit number.
+2. \( N = 100c + 10b + a \) is the reverse of \( M \).
+3. \( M > N \).
+4. \( M - N + 396c = 990 \).
+
+First, let's express \( M - N \):
+
+\[
+M - N = (100a + 10b + c) - (100c + 10b + a) = 99a - 99c = 99(a - c)
+\]
+
+Substitute \( M - N = 99(a - c) \) into the equation:
+
+\[
+99(a - c) + 396c = 990
+\]
+
+Simplify the equation:
+
+\[
+99(a - c) + 396c = 990 \implies 99a - 99c + 396c = 990 \implies 99a + 297c = 990
+\]
+
+Divide the entire equation by 99:
+
+\[
+a + 3c = 10
+\]
+
+Since \( a \) and \( c \) are digits (0 to 9), we solve for possible values of \( a \) and \( c \):
+
+- If \( c = 0 \), \( a = 10 \) (not possible since \( a \) is a digit).
+- If \( c = 1 \), \( a = 10 - 3 = 7 \).
+- If \( c = 2 \), \( a = 10 - 6 = 4 \).
+- If \( c = 3 \), \( a = 10 - 9 = 1 \).
+- If \( c \geq 4 \), \( a \) would be negative or not a digit.
+
+Thus, the possible pairs \((a, c)\) are \((7, 1)\), \((4, 2)\), and \((1, 3)\).
+
+Now, calculate \( M \) for each pair:
+
+1. For \((a, c) = (7, 1)\):
+   - \( M = 100 \times 7 + 10b + 1 = 701 + 10b \)
+   - \( N = 100 \times 1 + 10b + 7 = 107 + 10b \)
+   - \( M > N \) implies \( 701 + 10b > 107 + 10b \), which is always true.
+   - \( M = 701, 711, 721, \ldots, 791 \) (9 values).
+
+2. For \((a, c) = (4, 2)\):
+   - \( M = 100 \times 4 + 10b + 2 = 402 + 10b \)
+   - \( N = 100 \times 2 + 10b + 4 = 204 + 10b \)
+   - \( M > N \) implies \( 402 + 10b > 204 + 10b \), which is always true.
+   - \( M = 402, 412, 422, \ldots, 492 \) (10 values).
+
+3. For \((a, c) = (1, 3)\):
+   - \( M = 100 \times 1 + 10b + 3 = 103 + 10b \)
+   - \( N = 100 \times 3 + 10b + 1 = 301 + 10b \)
+   - \( M > N \) implies \( 103 + 10b > 301 + 10b \), which is never true.
+
+Thus, the total number of values of \( M \) that are more than 300 is \( 9 + 10 = 19 \).
+
+Therefore, the correct answer is:
+
+```
+E) None
+```",False,,,
+86,,"there are more than 501 students in a school such that 20% of them exactly took physics and 28% of them exactly took math. What could be the least possible no of students in the school?
+A)550
+B)570
+C)600
+D)700
+E)none of these",E,"To solve this problem, we need to find the least possible number of students in the school given the percentages of students taking exactly physics and exactly math.
+
+Let's denote the total number of students in the school as \( N \).
+
+According to the problem:
+- 20% of the students took exactly physics.
+- 28% of the students took exactly math.
+
+This means:
+- The number of students who took exactly physics is \( 0.2N \).
+- The number of students who took exactly math is \( 0.28N \).
+
+Since these are the students who took exactly one subject, they do not overlap. Therefore, the total number of students who took either physics or math is \( 0.2N + 0.28N = 0.48N \).
+
+Since there are more than 501 students, we have:
+\[ N > 501 \]
+
+We need to find the smallest integer \( N \) such that \( 0.48N \) is an integer and \( N > 501 \).
+
+Let's test the given choices:
+
+A) \( N = 550 \)
+\[ 0.48 \times 550 = 264 \]
+264 is an integer, and 550 > 501. This is a valid solution.
+
+B) \( N = 570 \)
+\[ 0.48 \times 570 = 273.6 \]
+273.6 is not an integer, so this is not a valid solution.
+
+C) \( N = 600 \)
+\[ 0.48 \times 600 = 288 \]
+288 is an integer, and 600 > 501. This is a valid solution, but not the smallest.
+
+D) \( N = 700 \)
+\[ 0.48 \times 700 = 336 \]
+336 is an integer, and 700 > 501. This is a valid solution, but not the smallest.
+
+E) None of these
+
+The smallest valid solution from the choices is \( N = 550 \).
+
+Therefore, the least possible number of students in the school is:
+
+A) 550",False,,,
+87,,"If Raj was one-third as old as Rahim 5 years back and Raj is 17 years old now, How old is Rahim now?
+A)37
+B)41
+C)40
+D)42
+E)43",B,"To solve this problem, we need to determine Rahim's current age based on the information given about Raj's age.
+
+1. We know that Raj is currently 17 years old.
+2. Five years ago, Raj was 17 - 5 = 12 years old.
+3. Five years ago, Raj was one-third as old as Rahim. Let's denote Rahim's age 5 years ago as R.
+4. According to the problem, 12 = (1/3) * R.
+5. Solving for R, we multiply both sides by 3 to get R = 36.
+6. Therefore, Rahim was 36 years old five years ago.
+7. To find Rahim's current age, we add 5 years to his age 5 years ago: 36 + 5 = 41.
+
+Thus, Rahim is currently 41 years old.
+
+The correct choice is:
+```
+B)41
+```",True,,,
+88,,"A cow is tethered in the middle of a field with a 14 feet long rope. If the cow grazes 10 sq.ft. per day, then approximately what time will be taken by the cow to graze the whole field?
+A)51 days
+B)61 days
+C)71 days
+D)81 days
+E)91 days",B,"To solve this problem, we need to determine the area of the field that the cow can graze, given that it is tethered with a 14 feet long rope. The cow can graze in a circular area with a radius equal to the length of the rope.
+
+The formula for the area of a circle is:
+\[ \text{Area} = \pi \times r^2 \]
+
+Where \( r \) is the radius of the circle. In this case, the radius \( r \) is 14 feet.
+
+So, the area that the cow can graze is:
+\[ \text{Area} = \pi \times (14)^2 = \pi \times 196 \]
+
+Using the approximation \( \pi \approx 3.14 \), we calculate:
+\[ \text{Area} \approx 3.14 \times 196 \approx 615.44 \text{ square feet} \]
+
+The cow grazes 10 square feet per day. Therefore, the time taken to graze the entire area is:
+\[ \text{Time} = \frac{\text{Total Area}}{\text{Area grazed per day}} = \frac{615.44}{10} \approx 61.544 \text{ days} \]
+
+Rounding to the nearest whole number, the cow will take approximately 62 days to graze the whole field. However, since the choices provided are in whole numbers and the closest option is 61 days, we choose:
+
+B) 61 days",True,,,
+89,,"A book was sold for Rs 27.50 with a profit of 10%. If it were sold for Rs. 25.75, then would have been percentage of profit and loss ?
+A)2% Profit
+B)3% Profit
+C)2% Loss
+D)3% Loss
+E)4% Loss",B,"To solve this problem, we first need to determine the cost price of the book. We know that the book was sold for Rs 27.50 with a profit of 10%. 
+
+Let's denote the cost price as \( C \).
+
+The selling price with a 10% profit is given by:
+\[ \text{Selling Price} = C + 0.10C = 1.10C \]
+
+We know:
+\[ 1.10C = 27.50 \]
+
+Solving for \( C \):
+\[ C = \frac{27.50}{1.10} = 25 \]
+
+So, the cost price of the book is Rs 25.
+
+Now, if the book were sold for Rs 25.75, we need to calculate the profit or loss percentage.
+
+The selling price in this case is Rs 25.75, and the cost price is Rs 25.
+
+The profit is:
+\[ \text{Profit} = \text{Selling Price} - \text{Cost Price} = 25.75 - 25 = 0.75 \]
+
+The profit percentage is given by:
+\[ \text{Profit Percentage} = \left( \frac{\text{Profit}}{\text{Cost Price}} \right) \times 100 = \left( \frac{0.75}{25} \right) \times 100 = 3\% \]
+
+Therefore, if the book were sold for Rs 25.75, there would be a 3% profit.
+
+The correct choice is:
+```
+B)3% Profit
+```",True,,,
+90,,"In how many ways can a teacher in a kindergarten school arrange a group of 3 children (Susan, Tim and Zen) on 3 identical chairs in a straight line so that Susan is on the left of Tim?
+A)7
+B)3
+C)2
+D)1
+E)6",B,"To solve this problem, we need to determine the number of ways to arrange the three children (Susan, Tim, and Zen) in a line such that Susan is to the left of Tim.
+
+First, let's calculate the total number of ways to arrange the three children without any restrictions. Since there are 3 children, the total number of permutations is 3! (3 factorial), which is:
+
+3! = 3 × 2 × 1 = 6
+
+Now, we need to consider the condition that Susan must be to the left of Tim. In any arrangement of Susan, Tim, and Zen, there are two possibilities: either Susan is to the left of Tim, or Tim is to the left of Susan.
+
+Since these two possibilities are equally likely, exactly half of the total arrangements will have Susan to the left of Tim. Therefore, the number of arrangements where Susan is to the left of Tim is:
+
+(1/2) × 6 = 3
+
+Thus, there are 3 ways to arrange the children such that Susan is to the left of Tim.
+
+The correct answer is:
+
+B) 3",True,,,
+91,,"The telephone bill of a certain establishment is party fixed and partly varies as the number of calls consumed. When in a certain month 540 calls made the bill is Rs.1800. In another month 620 calls are consumed then the bill becomes Rs.2040. In another month 500 units are consumed due to more
+holidays. The bill for that month would be :
+A)Rs.1560
+B)Rs.1680
+C)Rs.1840
+D)Rs.1950
+E)Rs.1690",B,"To solve this problem, we need to determine the fixed and variable components of the telephone bill. Let's denote the fixed part of the bill as \( F \) and the variable cost per call as \( C \).
+
+From the problem, we have two scenarios:
+
+1. For 540 calls, the bill is Rs.1800:
+   \[
+   F + 540C = 1800
+   \]
+
+2. For 620 calls, the bill is Rs.2040:
+   \[
+   F + 620C = 2040
+   \]
+
+We have two equations:
+1. \( F + 540C = 1800 \)
+2. \( F + 620C = 2040 \)
+
+Subtract the first equation from the second to eliminate \( F \):
+\[
+(F + 620C) - (F + 540C) = 2040 - 1800
+\]
+\[
+620C - 540C = 240
+\]
+\[
+80C = 240
+\]
+\[
+C = \frac{240}{80} = 3
+\]
+
+Now that we have \( C = 3 \), substitute back into the first equation to find \( F \):
+\[
+F + 540 \times 3 = 1800
+\]
+\[
+F + 1620 = 1800
+\]
+\[
+F = 1800 - 1620 = 180
+\]
+
+Now we know:
+- Fixed cost \( F = 180 \)
+- Variable cost per call \( C = 3 \)
+
+For 500 calls, the bill would be:
+\[
+F + 500C = 180 + 500 \times 3
+\]
+\[
+= 180 + 1500
+\]
+\[
+= 1680
+\]
+
+Therefore, the bill for the month with 500 calls would be Rs.1680.
+
+The correct choice is:
+```
+B) Rs.1680
+```",True,,,
+92,,"Two balls A and B rotate along a circular track. Ball A makes 2 full rotations in 26 minutes. Ball B makes 5 full rotation in 35 minutes. If they start rotating now from the same point, when will they be at the same starting point again?
+A)1 hour and 31 minutes
+B)2 hour and 31 minutes
+C)3 hour and 31 minutes
+D)4 hour and 31 minutes
+E)5 hour and 31 minutes",A,"To solve this problem, we need to determine when both balls A and B will be at the starting point again after starting together. This involves finding the least common multiple (LCM) of the times it takes for each ball to complete one full rotation.
+
+1. **Calculate the time for one full rotation for each ball:**
+   - Ball A makes 2 full rotations in 26 minutes, so it takes 26/2 = 13 minutes for one full rotation.
+   - Ball B makes 5 full rotations in 35 minutes, so it takes 35/5 = 7 minutes for one full rotation.
+
+2. **Find the LCM of the rotation times:**
+   - We need to find the LCM of 13 minutes and 7 minutes.
+   - Since 13 and 7 are both prime numbers, their LCM is simply their product: 13 * 7 = 91 minutes.
+
+3. **Convert 91 minutes into hours and minutes:**
+   - 91 minutes is equal to 1 hour and 31 minutes.
+
+Therefore, both balls A and B will be at the starting point again after 1 hour and 31 minutes.
+
+The correct answer is:
+A) 1 hour and 31 minutes",True,,,
+93,,"A bookshelf contains 45 books, 30 of which are hardcover and 20 of which are fiction. What is the maximum number of books that are both hardcover and fiction?
+A)10
+B)15
+C)18
+D)20
+E)30",D,"To solve this problem, we need to determine the maximum number of books that can be both hardcover and fiction.
+
+We have the following information:
+- Total number of books = 45
+- Number of hardcover books = 30
+- Number of fiction books = 20
+
+We want to find the maximum number of books that are both hardcover and fiction. To do this, we can use the principle of inclusion-exclusion.
+
+Let's denote:
+- \( H \) as the set of hardcover books
+- \( F \) as the set of fiction books
+
+We are looking for the maximum value of \( |H \cap F| \), the number of books that are both hardcover and fiction.
+
+The principle of inclusion-exclusion gives us:
+\[ |H \cup F| = |H| + |F| - |H \cap F| \]
+
+We know:
+- \( |H \cup F| \leq 45 \) (since there are 45 books in total)
+- \( |H| = 30 \)
+- \( |F| = 20 \)
+
+Substituting these values into the inclusion-exclusion formula:
+\[ |H \cup F| = 30 + 20 - |H \cap F| \]
+
+Since \( |H \cup F| \leq 45 \), we have:
+\[ 30 + 20 - |H \cap F| \leq 45 \]
+
+Simplifying this inequality:
+\[ 50 - |H \cap F| \leq 45 \]
+
+\[ |H \cap F| \geq 50 - 45 \]
+
+\[ |H \cap F| \geq 5 \]
+
+However, we are looking for the maximum number of books that can be both hardcover and fiction. The maximum occurs when the overlap is as large as possible, given the constraints.
+
+The maximum possible overlap is limited by the smaller of the two sets, \( |F| = 20 \), because you cannot have more than 20 fiction books that are also hardcover.
+
+Therefore, the maximum number of books that are both hardcover and fiction is 20.
+
+The correct answer is:
+```
+D) 20
+```",True,,,
+94,,"A newspaper costs $4 on Sunday and $1 the rest of the days of the week. If a hotel orders twice as many papers on Sunday as it does the rest of the days of the week and pays $210 per week for newspapers, how many newspapers does it buy on Monday?
+A)15
+B)30
+C)45
+D)60
+E)75",A,"To solve this problem, we need to set up an equation based on the information given.
+
+Let \( x \) be the number of newspapers the hotel buys on a regular day (Monday through Saturday).
+
+According to the problem, the hotel buys twice as many newspapers on Sunday as it does on a regular day. Therefore, on Sunday, the hotel buys \( 2x \) newspapers.
+
+The cost of newspapers is $1 each from Monday to Saturday and $4 each on Sunday.
+
+The total cost for the week is given as $210.
+
+The cost for Monday through Saturday is:
+\[ 6x \times 1 = 6x \]
+
+The cost for Sunday is:
+\[ 2x \times 4 = 8x \]
+
+The total cost for the week is:
+\[ 6x + 8x = 14x \]
+
+We know this total cost is $210, so we set up the equation:
+\[ 14x = 210 \]
+
+Solving for \( x \):
+\[ x = \frac{210}{14} = 15 \]
+
+Therefore, the hotel buys 15 newspapers on Monday.
+
+The correct answer is:
+A) 15",True,,,
+95,,"A number of friends decided to go on a picnic and planned to spend Rs. 96 on eatables. Four of them, however, did not turn up. As a consequence, the remaining ones had to contribute Rs. 4 extra, each. The number of those who attended the picnic was
+A)8
+B)12
+C)16
+D)24
+E)25",A,"To solve this problem, we need to set up an equation based on the information given.
+
+Let's assume the original number of friends who planned to go on the picnic is \( x \).
+
+The total cost of the picnic is Rs. 96.
+
+Originally, each friend would contribute Rs. \(\frac{96}{x}\).
+
+However, 4 friends did not turn up, so the number of friends who actually attended is \( x - 4 \).
+
+Now, each of these remaining friends has to contribute Rs. \(\frac{96}{x - 4}\).
+
+According to the problem, this new contribution is Rs. 4 more than the original contribution. Therefore, we can set up the equation:
+
+\[
+\frac{96}{x - 4} = \frac{96}{x} + 4
+\]
+
+To solve this equation, we first clear the fractions by multiplying through by \( x(x - 4) \):
+
+\[
+96x = 96(x - 4) + 4x(x - 4)
+\]
+
+Simplifying the right side:
+
+\[
+96x = 96x - 384 + 4x^2 - 16x
+\]
+
+Cancel \( 96x \) from both sides:
+
+\[
+0 = 4x^2 - 16x - 384
+\]
+
+Divide the entire equation by 4 to simplify:
+
+\[
+0 = x^2 - 4x - 96
+\]
+
+Now, we solve this quadratic equation using the quadratic formula, where \( a = 1 \), \( b = -4 \), and \( c = -96 \):
+
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+
+\[
+x = \frac{-(-4) \pm \sqrt{(-4)^2 - 4 \cdot 1 \cdot (-96)}}{2 \cdot 1}
+\]
+
+\[
+x = \frac{4 \pm \sqrt{16 + 384}}{2}
+\]
+
+\[
+x = \frac{4 \pm \sqrt{400}}{2}
+\]
+
+\[
+x = \frac{4 \pm 20}{2}
+\]
+
+This gives us two potential solutions:
+
+\[
+x = \frac{24}{2} = 12
+\]
+
+\[
+x = \frac{-16}{2} = -8
+\]
+
+Since the number of friends cannot be negative, we discard \( x = -8 \).
+
+Thus, the original number of friends is 12. Since 4 did not turn up, the number of friends who attended the picnic is:
+
+\[
+12 - 4 = 8
+\]
+
+Therefore, the number of those who attended the picnic is \( \boxed{8} \).
+
+The correct choice is (A) 8.",True,,,
+96,,"A wire in the shape of rectangle of length 27 cm and breadth 17 cm is rebent to form a square. What will be the measure of each side?
+A)9
+B)11
+C)22
+D)25
+E)31",C,"To solve this problem, we need to first determine the total length of the wire, which is initially in the shape of a rectangle. The perimeter of a rectangle is given by the formula:
+
+Perimeter = 2 * (length + breadth)
+
+For the given rectangle with length 27 cm and breadth 17 cm, the perimeter (and thus the length of the wire) is:
+
+Perimeter = 2 * (27 + 17) = 2 * 44 = 88 cm
+
+This wire is then rebent to form a square. The perimeter of a square is given by:
+
+Perimeter = 4 * side
+
+Since the length of the wire remains the same when it is reshaped into a square, the perimeter of the square is also 88 cm. Therefore, we have:
+
+4 * side = 88
+
+To find the length of each side of the square, we divide the total perimeter by 4:
+
+side = 88 / 4 = 22 cm
+
+Thus, the measure of each side of the square is 22 cm.
+
+The correct choice is:
+
+C) 22",True,,,
+97,,"A man divides Rs 8600 among 5 sons, 4 daughters and 2 nephews. If each daughter receives four times as much as each nephew, and each son receives five as much as each nephew. How much does each daughter receive ?
+A)Rs 400
+B)Rs 500
+C)Rs 600
+D)Rs 700
+E)Rs 800",E,"To solve this problem, we need to set up equations based on the information given.
+
+Let's denote the amount each nephew receives as \( x \).
+
+According to the problem:
+- Each daughter receives four times as much as each nephew, so each daughter receives \( 4x \).
+- Each son receives five times as much as each nephew, so each son receives \( 5x \).
+
+The total amount of money distributed is Rs 8600, and it is divided among 5 sons, 4 daughters, and 2 nephews.
+
+The total amount received by all sons is \( 5 \times 5x = 25x \).
+The total amount received by all daughters is \( 4 \times 4x = 16x \).
+The total amount received by all nephews is \( 2 \times x = 2x \).
+
+Adding these amounts gives the total distribution:
+\[ 25x + 16x + 2x = 8600 \]
+
+Simplifying the equation:
+\[ 43x = 8600 \]
+
+Solving for \( x \):
+\[ x = \frac{8600}{43} = 200 \]
+
+Now, we find the amount each daughter receives:
+Each daughter receives \( 4x = 4 \times 200 = 800 \).
+
+Therefore, each daughter receives Rs 800.
+
+The correct choice is:
+E) Rs 800",True,,,
+98,,"Silu and Meenu were walking on the road.
+Silu said, ""I weigh 51 Kgs. How much do you weigh?""
+Meenu replied that she wouldn't reveal her weight directly as she is overweight.
+But she said, ""I weigh 29 Kgs plus half of my weight. ""How much does Meenu weigh?
+A)12
+B)28
+C)27
+D)58
+E)91",D,"To solve the problem, we need to find Meenu's weight based on the information given.
+
+Meenu says, ""I weigh 29 Kgs plus half of my weight."" Let's denote Meenu's weight as \( x \).
+
+According to the problem, we can set up the equation:
+\[ x = 29 + \frac{x}{2} \]
+
+To solve for \( x \), first eliminate the fraction by multiplying the entire equation by 2:
+\[ 2x = 58 + x \]
+
+Next, subtract \( x \) from both sides to isolate \( x \):
+\[ 2x - x = 58 \]
+\[ x = 58 \]
+
+Therefore, Meenu weighs 58 Kgs.
+
+The correct choice is:
+```
+D) 58
+```",True,,,
+99,,"Roy was suffering from severe headaches. He went to see his doctor and the doctor gave him 5 tablets asking him to take one tablet every 15 minutes.
+How much time will it take Roy to consume all the 5 tablets?
+A)45 Min
+B)75 Min
+C)90 Min
+D)120 Min
+E)60 Min",E,"The correct answer is (E) 60 Min.
+
+Explanation:
+Roy takes the first tablet immediately, and then takes one tablet every 15 minutes for the remaining 4 tablets. Therefore, the time taken to consume all 5 tablets is:
+
+- 0 minutes for the first tablet
+- 15 minutes for the second tablet
+- 15 minutes for the third tablet
+- 15 minutes for the fourth tablet
+- 15 minutes for the fifth tablet
+
+Total time = 0 + 15 + 15 + 15 + 15 = 60 minutes.",True,,,
