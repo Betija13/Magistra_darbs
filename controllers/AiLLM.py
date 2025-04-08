@@ -31,7 +31,9 @@ from iso639 import Lang
 import os
 from typing import Dict
 from models.DataClass.LLMModel import LLMModel
-
+from models.DataClass.StructuredOutput import StructuredOutput, StructuredOutputModelMultipleChoice, \
+    StructuredOutputModelMultipleChoiceOnlyChoice, StructuredOutputModelNumber, StructuredOutputModelNumberOnlyNumber
+from models.Enums.AnswerType import AnswerType
 from dotenv import dotenv_values
 from loguru import logger
 
@@ -74,29 +76,44 @@ class ControllerAiLLM:
                 messages = [{"role": "system", "content": system_prompt},
                             {"role": "user", "content": human_prompt}]
             client = OpenAI(api_key=self.model.api_key)
-            response = client.chat.completions.create(
-                model=self.model.name if model_name is None else model_name,
-                messages=messages,
-                n=response_count,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                # reasoning_effort="medium"  # Can be "low", "medium", or "high"
-            )
+            if model_name is not None and 'o3' in model_name:
+                response = client.chat.completions.create(
+                    model=self.model.name if model_name is None else model_name,
+                    messages=messages,
+                    n=response_count,
+                    max_completion_tokens=max_tokens if max_tokens is None else max_tokens,
+                    timeout=300,
+                    reasoning_effort="low"  # Can be "low", "medium", or "high"
+                )
+            else:
+                response = client.chat.completions.create(
+                    model=self.model.name if model_name is None else model_name,
+                    messages=messages,
+                    n=response_count,
+                    temperature=temperature,
+                    max_tokens=max_tokens if max_tokens is None else max_tokens,
+                    timeout=120
+                )
             if response.choices[0].finish_reason != 'stop':
                 logger.error("!!! GPT was stopped because of: ")
                 logger.error(response.choices[0].finish_reason)
+                logger.warning("Adding incomplete answer to result")
+                for choice in response.choices:
+                    answer = choice.message.content
+                    result.append(answer)
                 if response.choices[0].finish_reason == 'length':
                     prompt_tokens = response.usage.prompt_tokens
                     completion_tokens = response.usage.completion_tokens
                     total_tokens = response.usage.total_tokens
                     raise Exception(f"maximum context length exceeded: {prompt_tokens + completion_tokens} "
                                     f"{total_tokens}")
+
             else:
                 for choice in response.choices:
                     answer = choice.message.content
                     result.append(answer)
         except Exception as exc:
-            logger.exception(exc)
+            logger.error(exc)
         return result
 
     def get_llm_api_response_with_backup_special(
@@ -135,6 +152,62 @@ class ControllerAiLLM:
 
         return result
 
-    def get_structured_output(self):
-        pass #TODO
+    def get_structured_output_multiple_choice(
+            self,
+            human_prompt: str,
+            answer_type: str,
+            system_prompt: str | None = None,
+            model_name: str | None = None,
+            response_count: int = 1,
+            temperature: float = 0.0,
+            only_answer: bool = False
+    ):
+        result: List[StructuredOutput] = []
+
+        try:
+            client = OpenAI(api_key=self.model.api_key)
+            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+                response_format = StructuredOutputModelMultipleChoiceOnlyChoice if only_answer else StructuredOutputModelMultipleChoice
+            elif answer_type == AnswerType.NUMBER.value:
+                response_format = StructuredOutputModelNumberOnlyNumber if only_answer else StructuredOutputModelNumber
+            else:
+                raise Exception(f"Answer type {answer_type} is not yet implemented.")
+            if system_prompt is None:
+                messages = [{"role": "user", "content": human_prompt}]
+            else:
+                messages = [{"role": "system", "content": system_prompt},
+                            {"role": "user", "content": human_prompt}]
+            response = client.beta.chat.completions.parse(
+                model=self.model.name if model_name is None else model_name,
+                messages=messages,
+                n=response_count,
+                temperature=temperature,
+                response_format=response_format,
+                timeout=120
+            )
+            if response.choices[0].finish_reason != 'stop':
+                logger.error("!!! GPT was stopped because of: ")
+                logger.error(response.choices[0].finish_reason) # TODO save unfinished answer?
+                if response.choices[0].finish_reason == 'length':
+                    prompt_tokens = response.usage.prompt_tokens
+                    completion_tokens = response.usage.completion_tokens
+                    total_tokens = response.usage.total_tokens
+                    raise Exception(f"maximum context length exceeded: {prompt_tokens + completion_tokens} "
+                                    f"{total_tokens}")
+            else:
+                for choice in response.choices:
+                    answer_raw = choice.message.parsed
+                    answer_obj = StructuredOutput(
+                        solution_explanation=answer_raw.solution_explanation if not only_answer else "",
+                        answer_as_letter=answer_raw.answer_as_letter if answer_type == AnswerType.MULTIPLE_CHOICE.value else "",
+                        answer_as_number=answer_raw.answer_as_number if answer_type == AnswerType.NUMBER.value else 0.0,
+                    )
+                    result.append(answer_obj)
+
+        except Exception as exc:
+            logger.error(exc)
+        return result
+
+
+    # TODO max tokens maybe makes answer not be infinite?
 

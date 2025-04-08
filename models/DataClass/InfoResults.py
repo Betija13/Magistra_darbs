@@ -19,3 +19,4 @@ class InfoResults:
     response_count: int = 1
     reward_method: str | None = None
     llm_model: str = ""
+    percentage_of_short_answers: float | None = None

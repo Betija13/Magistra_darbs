@@ -1,5 +1,7 @@
 import csv
+import sys
 from models.Enums.AnswerType import AnswerType
+from models.DataClass.NumericResults import NumericResults
 from loguru import logger
 import re
 from utils.OPRO_evaluation import OPROEvaluation
@@ -8,34 +10,65 @@ from utils.OPRO_evaluation import OPROEvaluation
 class ResultUtils:
 
     @staticmethod
-    def count_correct_values(file_path: str, output_result: bool = False) -> float:
+    def count_correct_values(file_path: str, output_result: bool = False) -> NumericResults:
         """
-        Count the number of correct values in the file.
+        Count the number of correct values in the file, as well as count of short answers.
         Args:
             file_path: Path to the file.
             output_result: If the result should be printed.
 
         Returns:
-            Percentage of correct values.
+            Percentage of correct values and percentage of short answers.
         """
+        results = NumericResults(
+            accuracy_score=0.0,
+            percentage_of_short_answers=0.0
+        )
         try:
             total_values = 0
             correct_values = 0
+            count_of_small_results = 0
+            # Increase the field size limit
+            max_int = sys.maxsize
+            while True:
+                try:
+                    csv.field_size_limit(max_int)
+                    break
+                except OverflowError:
+                    max_int = int(max_int / 10)
 
             with open(file_path, 'r', encoding='utf-8') as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
-                    total_values += 1
-                    if row['correct'] == 'True':
-                        correct_values += 1
+                    try:
+                        total_values += 1
+                        if row['correct'] == 'True':
+                            correct_values += 1
+                        llm_answer = row['llm_answer']
+                        divider = '\n------\n'
+                        if len(llm_answer.split(divider)) > 1:
+                            small_res = 0
+                            total_res = len(llm_answer.split(divider))
+                            for answer_1 in llm_answer.split(divider):
+                                if answer_1.count('\n') <= 0:
+                                    small_res += 1
+                            if small_res / total_res > 0.5:
+                                count_of_small_results += 1
+                        else:
+                            if llm_answer.count('\n') <= 0:
+                                count_of_small_results += 1
+                    except Exception as e:
+                        logger.error(e)
 
-            result = correct_values / total_values if total_values > 0 else 0.0
+            results.accuracy_score = (correct_values / total_values) * 100 if total_values > 0 else None
+            results.percentage_of_short_answers = (count_of_small_results / total_values) * 100 if \
+                total_values > 0 else None
             if output_result:
-                print(f'{correct_values}/{total_values} = {result}')
+                print(f'{correct_values}/{total_values} = {results.accuracy_score}')
         except Exception as e:
+            logger.exception(e)
             print(f'Error: {e}')
-            result = 0.0
-        return result
+        return results
 
     @staticmethod
     def check_corrct_answer(
@@ -72,6 +105,8 @@ class ResultUtils:
                     try:
                         if float(llm_answer) == float(true_answer):
                             answer_correct = True
+                        elif abs(float(llm_answer) - float(true_answer)) < float(true_answer)/100:
+                            answer_correct = True
                     except Exception as e:
                         logger.error(e)
             elif answer_type == AnswerType.BOOL.value:
@@ -105,6 +140,7 @@ class ResultUtils:
         preprocessed_answer = llm_answer
         try:
             regex_letters = r'(?<![a-zA-Z])[a-eA-E](?![a-zA-Z])'
+            # regex_numbers = r'-?\d+\.\d+|-?\d+'
             lines = []
             answer_lines = []
             answers_in_boxed = []
@@ -175,7 +211,7 @@ class ResultUtils:
                         elif len(numbers_just_digits) == 1:
                             preprocessed_answer = numbers_just_digits[0]
                         else:
-                            a=0
+                            preprocessed_answer = ''
 
             elif answer_type == AnswerType.BOOL.value:
                 if 'yes' in preprocessed_answer.lower():
@@ -189,10 +225,11 @@ class ResultUtils:
         except Exception as e:
             logger.error(e)
             preprocessed_answer = ''
-        opro_preprocess = OPROEvaluation.get_normalized_prediction(
-            prediction=llm_answer, treat_as_number=answer_type==AnswerType.NUMBER.value, treat_as_bool=answer_type==AnswerType.BOOL.value)
-        if opro_preprocess != preprocessed_answer and preprocessed_answer not in opro_preprocess and opro_preprocess[0].lower() != preprocessed_answer.lower():
-            a=0
+        # opro_preprocess = OPROEvaluation.get_normalized_prediction(
+        #     prediction=llm_answer, treat_as_number=answer_type==AnswerType.NUMBER.value, treat_as_bool=answer_type==AnswerType.BOOL.value)
+        # if opro_preprocess != preprocessed_answer and preprocessed_answer not in opro_preprocess and opro_preprocess[0].lower() != preprocessed_answer.lower():
+        #     a=0
         return preprocessed_answer
 
+# ResultUtils.count_correct_values(file_path='../datasets/AQuA-RAT/results/A_ZERO_SHOT_03-04-2025_data_normalized_test_all_dataset_9.csv', output_result=True)
 

@@ -30,7 +30,7 @@ system_prompts_static = {
 human_prompts = {
     AnswerType.BOOL.value: 'Answer as "yes" or "no":\n',
     AnswerType.MULTIPLE_CHOICE.value: "",#"MATH WORLD PROBLEM CHOICE (A) (B) (C) (D) or (E):\n",
-    AnswerType.NUMBER.value: "Single numeric answer:\n",
+    AnswerType.NUMBER.value: "",#"Single numeric answer:\n",
     AnswerType.TEXT.value: "Answer as just the letters:\n",
 }
 
@@ -135,6 +135,236 @@ thinking_styles = [ # From Promtbreeder paper
     "Let’s make a step by step plan and implement it with good notion and explanation."
 ]
 
+generated_mutation_prompts_0 = [
+    "Dramatically alter the tone.",
+    "Translate into a different style.",
+    "Condense it significantly.",
+    "Make it significantly more humorous.",
+    "Reverse the intended meaning.",
+    "Replace key descriptive words with their opposites.",
+    "Shift the formality level.",
+    "Restructure the format completely.",
+    "Inject a strong sense of irony.",
+    "Simplify the language for a broader audience."
+]
+
+generated_mutation_prompts_1 = [
+    'Alter the structure or phrasing of the given task prompt without changing its underlying meaning or the task requirements.',
+    'Modify the existing task prompt to present the problem in a different context or scenario while maintaining the mathematical challenge.',
+    'Revise the existing task prompt to introduce variation.',
+    'Develop an alternative version of the task prompt by rephrasing or altering specific elements without changing the core objective.',
+    'Alter the specified task prompt for the math world problem dataset.',
+    'Rewrite the task instruction in a different way.',
+    'Generate an alternative version of the given task prompt.',
+    'Create a variation of the task prompt.',
+    'Alter the structure or wording of the given task prompt while retaining its original intent.',
+    'Modify the existing task prompt for the math word problem dataset.'
+]
+generated_mutation_prompts_2 =[
+    'Revamp the wording or organization of the existing instruction without altering its core purpose or task objectives.',
+    'Reconstruct the instruction by modifying its structure or wording, ensuring the original purpose remains intact.',
+    'Rephrase the instruction while maintaining its original purpose and meaning.',
+    'Transform the given instruction to convey the same purpose in a new way without altering its fundamental intent.',
+    'Modify the wording or arrangement of the given instruction, ensuring the original purpose and task remain unchanged.',
+    'Generate a new version of the instruction by altering the wording while maintaining the original intent and requirements.',
+    'Reformulate the task description to maintain its original objective while providing a fresh perspective.',
+    'Use different wording or structure in the instruction while maintaining the same task requirements and intent.',
+    'Generate a new form of the instruction by modifying its wording or structure, while keeping the fundamental purpose intact.',
+    'Reformulate the provided instruction while maintaining the essential task and purpose.'
+]
+
+generated_mutation_prompts_3 = [
+    'Modify this instruction to make it more engaging and visually appealing, incorporating colorful and imaginative language.',
+    'Alter these instructions to incorporate a storytelling element, turning the math problem into a mini adventure for enhanced engagement.',
+    'Revamp these instructions to spark curiosity and inspire creative problem-solving.',
+    'Adjust the instruction to incorporate a sense of adventure or mystery.',
+    'Rewrite this instruction to incorporate a playful narrative, adding whimsical characters or magical elements to make it more engaging.',
+    'Modify these instructions to incorporate more engaging and relatable scenarios while solving math world problems.',
+    'Transform these instructions into a series of exciting challenges with a fun and engaging tone.',
+    'Rewrite this instruction to add a sense of adventure and excitement.',
+    'Alter these instructions to incorporate a storytelling element, transforming the math problem into an adventurous quest.',
+    'Modify this instruction to incorporate a story or theme that adds an element of adventure or mystery to solving the problems.'
+]
+generated_mutation_prompts_4 = [
+    'Alter the task instructions to include real-world applications for each math problem, ensuring problems are contextualized in everyday scenarios.',
+    'Adjust the instructions to include step-by-step problem-solving techniques and emphasize the importance of units in the dataset.',
+    'Alter the existing task instructions to introduce more complexity in the math world problem dataset. Ensure the problems encourage critical thinking and analytical skills by integrating real-world scenarios, multi-step calculations, or data interpretation challenges. Maintain clarity in the problem statement while introducing these elements.',
+    'Alter the instructions to incorporate real-world applications and examples to the math problem scenario.',
+    'Create a revised version of the instructions, ensuring that steps are simplified and incorporate visual aids or examples where possible to enhance understanding and engagement in solving math word problems.',
+    'Transform the task-prompt by altering the structure and clarity of the instructions without changing the underlying mathematical task. Ensure the revised instructions remain accessible for learners and encourage problem-solving and critical thinking. Include examples if necessary to illustrate the modified approach.',
+    'Revise the existing task instructions to emphasize the step-by-step process necessary for tackling math word problems, guiding the user to break down the problem into smaller, more manageable parts while considering real-world applications of mathematical concepts.',
+    'Alter the existing task-prompt for the math word problem dataset by rephrasing the instructions to enhance clarity, provide step-by-step guidance, or include examples for better understanding.',
+    'Transform the original task instructions for the math word problem dataset by altering the problem-solving approach or changing the context of the problems to introduce a different scenario or theme, while ensuring that the mathematical concepts remain intact.',
+    'Alter the instructions in a way that changes the context or setting of the math problems while maintaining the mathematical concepts and operations required to solve them.'
+]
+
+my_mutation_prompts = [
+    'Alter the structure or phrasing of the given instruction without changing its underlying meaning or the task requirements.',
+    'Revise the existing instruction to introduce variation.',
+    'Develop an alternative version of the instruction by rephrasing or altering specific elements without changing the core objective.',
+    'Rewrite the task instruction in a different way.',
+    'Generate an alternative version of the given instruction.',
+    'Create a variation of the instruction.',
+    'Alter the structure or wording of the given instruction while retaining its original intent.',
+    'Reformulate the provided instruction while maintaining the essential task and purpose.',
+    'Transform the given instruction to convey the same purpose in a new way without altering its fundamental intent.',
+    'Rephrase the instruction while maintaining its original purpose and meaning.',
+    'Modify these instructions to incorporate more engaging and relatable scenarios while solving math world problems.',
+]
+generated_thinking_styles_0 = [
+    "Identify the absolute core essence and express it concisely.",
+    "Distill the information into a memorable, impactful statement.",
+    "Determine the absolute minimum needed to convey the core idea.",
+    "Synthesize the various elements into a singular, unified point.",
+    "Focus on the most significant implication and articulate it succinctly.",
+    "Extract the central theme and phrase it as a powerful assertion.",
+    "Determine the most crucial takeaway and formulate it sharply.",
+    "Isolate the fundamental truth and state it without embellishment.",
+    "Find the common thread and weave it into a single, encompassing statement.",
+    "Find the fundamental pattern and express it as a general rule."
+]
+
+generated_thinking_styles_1 = [
+    "Let's break it down methodically.",
+    "Let's break down the problem by identifying key information and relevant relationships, then systematically explore possible solutions through logical reasoning and pattern recognition.",
+    'Approach each problem with a strategic mindset. Start by thoroughly understanding the context and requirements of the problem. Break the problem into manageable parts and devise a plan to tackle each segment. Consider multiple perspectives and potential solutions, identifying patterns or shortcuts where applicable. Verify each step by checking against known principles and calculations. Aim for clarity and efficiency in arriving at the solution.',
+    'Visualize the problem and break it down.',
+    'Analyze and adapt systematically.',
+    "Let's approach this by identifying key variables.",
+    "Visualize and contextualize: \n1. Begin by visualizing the problem scenario to establish a mental model. \n2. Identify and highlight the key numbers and entities involved. \n3. Contextualize these elements within the given problem to understand their relationships and interactions. \n4. Translate these interactions into mathematical expressions or equations. \n5. Proceed incrementally, verifying each step before moving on to the next to ensure accuracy and coherence.\n6. Reflect on the initial scenario to ensure the solution aligns with the problem's context.",
+    'Break it down analytically.',
+    'Decompose and reconstruct logically.',
+    "Let's break it down methodically."
+]
+generated_thinking_styles_2 = [
+    'Analyze and adapt',
+    'Break it down effectively',
+    'Think through the story and numbers together.',
+    "nBreak it Down Methodically\n``` \n\n1. **Identify Key Information**: Carefully extract and highlight important data from the problem statement, such as numbers, units, and relevant conditions. \n\n2. **Define the Problem Context**: Understand the scenario or real-world setting presented. Clarify what is being asked and relate it to the key information identified.\n\n3. **Connect the Dots**: Establish logical connections between the pieces of information. Create visual aids like diagrams or charts if necessary to visualize relationships.\n\n4. **Simplify the Process**: Break down complex operations into simpler, manageable steps. Check if any operations can be simplified or combined.\n\n5. **Check for Patterns or Analogies**: Look for familiar patterns or compare the problem with similar situations encountered before that might guide the solution path.\n\n6. **Develop a Plan**: Outline a clear strategy to approach the problem, considering potential methods and verifying which is most efficient and effective.\n\n7. **Calculate with Clarity**: Execute the calculations while keeping a close eye on units, operations, and logical consistency.\n\n8. **Review and Reflect**: Re-evaluate each step and the final answer to ensure logical consistency and compliance with the problem's requirements. Consider alternative strategies that could have been applied.  \n\n9. **Communicate Clearly**: Ensure explanations or solutions are conveyed with enough detail for others to understand the thought process.\n\n10. **Iterative Improvement**: After reaching a solution, think about ways to improve the approach for similar future problems, refining methods for efficiency and accuracy.",
+    "Let's analyze the given information and identify the relationships between the variables. We'll then explore different angles to solve the problem, choosing the most efficient mathematical operation for each step.",
+    'Break it down into components',
+    'Consider the context carefully',
+    'Thinking in Layers',
+    'Proportional Puzzle-Solving',
+    'Consider alternative approaches'
+]
+
+generated_thinking_styles_3 = [
+    'Adaptable Analytical Approach',
+    'Embrace flexibility and creativity in problem-solving.\n- '
+    'Use analogy thinking to relate unfamiliar problems to known concepts.\n- '
+    'Translate complex data into simple, understandable formats.\n- '
+    'Think dynamically, modifying strategies with new insights.\n- '
+    'Visualize the problem to gain alternate perspectives.\n- '
+    'Identify underlying assumptions and challenge them.\n- '
+    'Utilize backward reasoning to clarify objectives.\n- '
+    'Prioritize synthesis over analysis when simplifying information.\n- '
+    'Emphasize relationships and patterns to identify solutions.\n- '
+    'Employ iterative refinement to enhance clarity and resolution.',
+    'Propose a Clear Pathway:\n- '
+    'Identify and clarify the ultimate goal.\n- '
+    'Start with broad strokes, then refine details.\n- '
+    'Convert complex scenarios into simpler, relatable analogies.\n- '
+    'Recognize and analyze underlying patterns.\n- '
+    'Use guided visualization to map out solutions.\n- '
+    'Balance intuition with systematic verification.\n- '
+    'Frame the scenario through multiple perspectives.\n- '
+    'Approach each component with a fresh, unbiased mind.\n- '
+    'Prioritize clarity over exhaustive detail.\n- '
+    'Use adaptive reasoning to shift tactics if needed.\n- '
+    'Integrate diverse concepts into a cohesive approach.\n- '
+    'Establish a hierarchy of key elements based on importance.\n- '
+    'Simplify until the problem becomes self-evident.\n- '
+    'Emphasize iterative refinement and continuous learning.\n- '
+    'Leverage questions to uncover assumptions and biases.\n- '
+    'Synthesize a holistic understanding of the problem.\n-'
+    'Cultivate a mindset of curiosity and experimentation.\n- '
+    'Communicate insights clearly and effectively for maximum impact.',
+    'Innovative Insightful Integration:\n\n- '
+    'Embrace creative flexibility for solution pathways.\n- '
+    'Incorporate diverse problem-solving techniques.\n- '
+    'Blend intuitive and analytical reasoning seamlessly.\n- '
+    'Explore scenarios through imaginative simulations.\n- '
+    'Focus on relational connections between elements.\n- '
+    'Uncover hidden patterns with creative exploration.\n- '
+    'Engage in scenario-based hypothesis testing.\n- '
+    'Synthesize disparate ideas into cohesive strategies.\n- '
+    'Integrate storytelling to illuminate problem dynamics.\n- '
+    'Foster mental flexibility to reinterpret standard methods.\n- '
+    'Pursue layered depth of understanding.\n- '
+    'Challenge assumptions to foster novel perspectives.\n- '
+    'Frame problems contextually to widen solution scope.\n- '
+    'Encourage playful experimentation for potential solutions.\n- '
+    'Build connections through lateral thinking.\n- '
+    'Cultivate conceptual agility for cross-domain application.\n- '
+    'Harness metaphorical thinking to simplify complexity.',
+    'Reimagine and Adapt.\n'
+    'Embrace a flexible, open-minded approach.\n'
+    'Challenge traditional assumptions.\n'
+    'Recontextualize familiar problems.\n'
+    'Seek underlying patterns in novel contexts.\n'
+    'Translate abstract ideas into concrete examples.\n'
+    'Explore scenarios from multiple perspectives.\n'
+    'Encourage creative problem-solving.\n'
+    'Shift perspectives to reveal hidden insights.\n'
+    'Leverage intuition for exploratory thinking.\n'
+    'Engage in conceptual blending and synthesis.\n'
+    'Probe the boundaries of conventional boundaries.\n'
+    'Look for unexpected connections.\n'
+    'Allow curiosity to guide thought processes.\n'
+    'Acknowledge uncertainty as a pathway to innovation.\n'
+    'Pivot strategies as new information emerges.\n'
+    'Encourage iterative refinement and experimentation.\n'
+    'Employ analogical thinking to explore parallels.\n'
+    'Question norms and propose alternatives.\n'
+    'Foster a dynamic, evolving mental model.',
+    'Adapt and Iterate.\n'
+    'Embrace flexibility in thinking.\n'
+    'Engage in curiosity-driven exploration.\n'
+    'Recognize patterns and adapt solutions.\n'
+    'Use analogy to explore possibilities.\n'
+    'Initiate with an open mind and adjust based on feedback.\n'
+    'Challenge assumptions and reformulate strategies.\n'
+    'Stay agile in problem-solving approaches.\n'
+    'Re-evaluate often and pivot when necessary.\n'
+    'Balance structured reasoning with creative insight.\
+    Merge empirical evidence with intuitive judgment.\n'
+    'Integrate different perspectives into a cohesive strategy.\n'
+    'Strategically generalize from specific instances.\n'
+    'Explore alternative interpretations continuously.\n'
+    'Prioritize iterative improvements.\n'
+    'Employ divergent thinking to uncover new insights.\n'
+    'Balance precision with adaptability.\n'
+    'Foster resilience through adaptive learning.\n'
+    'Strive for clarity while embracing complexity.',
+    'Embrace adaptive thinking for flexibility.\n'
+    'Identify underlying principles before specifics.\n'
+    'Prioritize key elements and remove distractions.\n'
+    'Frame the problem in a broader context.\n'
+    'Leverage analogy to connect familiar concepts.\nEmploy reverse-engineering to gain new insights.\nUse systematic exploration to uncover hidden patterns.\nChallenge assumptions to shift perspectives.\nPre-emptively address potential pitfalls or errors.\nBreak the norm: innovate solutions.\nHarness creative imagination for fresh approaches.\nAssess with iterative refinement for precision.\nSeek collaborative input for diverse insights.\nCultivate resilience in facing complex challenges.\nEncourage curiosity-led exploration.\nUtilize sequential questioning to deepen understanding.\nFocus on process optimization and efficiency.\nPromote lateral thinking for unexpected connections.\nApply situational awareness to adapt dynamically.\nSynthesize multifaceted perspectives for a balanced view.\n```', 'New thinking style:\n```\nEmbrace adaptive reasoning.\nAnticipate potential changes and plan accordingly.\nFocus on flexible methodologies.\nAdapt and evolve with dynamic problem components.\nIntegrate contextual fluidity into calculations.\nCraft solutions that accommodate variability.\nEnhance problem-solving with scalable techniques.\nExplore versatile strategies for diverse scenarios.\nSynthesize adjustments seamlessly.\nPrioritize adaptability over rigid structures.\nSeek out universal principles in shifting landscapes.\nAnalyze implications across different contexts.\nUse pattern recognition to anticipate shifts.\nFormulate responses that withstand changes in conditions.\nCultivate an iterative mindset.\nBalance stability with innovation.\nFormulate hypotheses for potential variations.\nVisualize multiple outcomes and adapt solutions.\nInnovate by identifying adaptable structures.\nIdentify emerging trends and construct responses that are resilient.\n```', 'New Thinking Style:\n```\nStart by visualizing the problem.\nConvert words into numbers and operations.\nIdentify patterns through visual cues.\nReframe the problem from different perspectives.\nTransform complexity into simpler sub-steps.\nLeverage intuition for quick estimates.\nDraw parallels with familiar scenarios.\nEmploy analogy for greater understanding.\nAsk guiding questions to clarify purpose.\nProbe assumptions and challenge them.\nUtilize estimation to verify plausibility.\nCreate mental models to anticipate outcomes.\nBuild step-by-step solutions intuitively.\nTranslate abstract concepts into tangible examples.\nUse storytelling to make sense of the numbers.\nAnchor solutions in relatable contexts.\nIterate through trial and error.\nSimplify from general principles to specific applications.\nEmphasize conceptual over procedural knowledge.\n```\n', 'Reframe and Realign Thinking Style:\n```\nShift Perspective for Enhanced Clarity.\nEngage in lateral thinking to generate innovative solutions.\nAdapt instructions to align with student comprehension levels.\nIdentify and prioritize key variables for efficient problem-solving.\nEnhance understanding through visualization and analogy.\nSimplify complex information into intuitive steps.\nAnalyze the impact of each instruction on the overall problem.\nEncourage curiosity and exploration to uncover novel approaches.\nEmploy flexible reasoning based on problem context and constraints.\nCultivate a multi-sensory representation to solidify understanding.\nIntegrate holistic and analytical thinking for balanced perspectives.\nEncourage iterative reassessment to refine understanding continuously.\nTransform abstract concepts into relatable narratives.\nLeverage cognitive diversity for enriched problem-solving strategies.\nUtilize pattern recognition to streamline instruction adaptation.\nFacilitate comprehension through metaphor and storytelling.\nHarness creative thinking to reimagine traditional problem-solving methods.\nConvert complexities into accessible and actionable guidance.\n```'
+]
+
+my_thinking_styles = [
+    "Let's break it down methodically.",
+    "Approach each problem with a strategic mindset.",
+    'Decompose and reconstruct logically.',
+    'Break it down into components.',
+    'Consider the context carefully.',
+    'Thinking in Layers.',
+    'Proportional Puzzle-Solving.',
+    'Consider alternative approaches.',
+    "Embrace flexibility and creativity in problem-solving.",
+    "Think dynamically, modifying strategies with new insights.",
+    "Prioritize synthesis over analysis when simplifying information.",
+    "Propose a Clear Pathway.",
+    "Integrate diverse concepts into a cohesive approach.",
+    "Blend intuitive and analytical reasoning seamlessly.",
+    "Uncover hidden patterns with creative exploration.",
+    "Frame problems contextually to widen solution scope.",
+    "Embrace a flexible, open-minded approach.",
+    "Challenge assumptions and reformulate strategies."
+]
+
 instruction_prompts = [  # Promtbreeder paper " INITIALLY EVOLVED PROMPTS" on GSM8K dataset
     "Draw a picture of the situation being described in the math word problem",
     "Solve the math word problem by first converting the words into equations using algebraic notation. Then solve the equations for the unknown variables, and express the answer as an arabic numeral.",
@@ -176,8 +406,11 @@ evolved_mutations = [ # From Promptbreeder paper J.3 EVOLVED MUTATION PROMPTS
 ]
 
 mutated_task_prompts_AQuA_RAT = [
-    "Do a simple computation.",
+    "Classify (A),(B),(C),(D),(E)",
     "Solve and Classify  (A),(B),(C),(D),(E)",
+    "Solve and Choose Answer (A),(B),(C),(D),(E)",
+    "Solve task below. Answer with (A),(B),(C),(D),(E)",
+    "Do a simple computation.",
     # from 'Do a simple computation'
     "Carry out a basic arithmetic task.",
     "Perform a basic calculation.",
@@ -193,4 +426,34 @@ mutated_task_prompts_AQuA_RAT = [
     "Solve the multiple choice math word problem, choosing (A),(B),(C),(D) or (E). Additionally, discuss the reasoning behind your choice and explain the steps taken to arrive at the correct answer. Evaluate how solving this problem could enhance your problem-solving skills in similar scenarios.",
     "To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E)."
 
+]
+
+created_my_prompts_MC = [
+    "Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).",
+    "Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).",
+    "Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).",
+    "Put your math cape on, rescue the answer from the jaws of indecision, and reveal whether it's A, B, C, D, or E!",
+    "Pick a letter and pray that math agrees with you.",
+    "Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).",
+    "Pick the correct multiple choice math answer while explaining why it's right, from choices (A) to (E).",
+    "Select the correct answer for the math problem and explain your reasoning briefly."
+
+]
+
+created_my_prompts_NUM = [
+    # original start
+    'Solve the math word problem, giving your answer as an arabic numeral.',
+    # Created by mutating
+    "Calculate the solution to the math word problem and express your answer using an Arabic numeral.",
+    "Work out the math word problem and provide the solution in the form of a numeral.",
+    "Calculate the answer to the math word problem and express it as a numerical value.",
+    "Understand and find the solution to the math word problem, expressing your answer using a number."]
+a=[
+    "Calculate the solution to the math puzzle and express your result using numeric digits.",
+    "Picture yourself as a puzzle master unraveling a mystery; solve the math problem and disclose your answer with a single number.",
+    "Analyze the math word problem and present your solution as a numerical value.",
+    "Transform the math word problem into a numerical solution, presenting your answer as a digit.",
+    "Imagine you're planning a surprise party and need to calculate the total cost; solve the math problem and share the final amount.",
+    "Imagine you're a detective on a mathematical adventure; uncover the solution to the math word problem and report your findings using an Arabic numeral.",
+    "Determine the solution to the mathematical word problem and present your answer as a standard numeral."
 ]
