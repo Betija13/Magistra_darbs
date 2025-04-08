@@ -1,10 +1,12 @@
 import csv
 import os
+import random
 from loguru import logger
 from typing import List
 from controllers.AiLLM import ControllerAiLLM
 from controllers.RewardMethods import RewardMethods
 from controllers.AnswerMethods import AnswerMethods
+from controllers.Mutation import Mutation
 from utils.file_utils import FileUtils
 from utils.result_utils import ResultUtils
 from models.DataClass.DataResults import DataResults
@@ -13,19 +15,21 @@ from models.Enums.AnswerType import AnswerType
 from models.Enums.Method import Method
 from models.Enums.RewardMethod import RewardMethod
 from models.Enums.Datasets import Datasets
-from models.constants import human_prompts, system_prompts
+from models.constants import human_prompts, system_prompts, system_prompts_static, system_prompts_output, system_prompts_task
 from tqdm import tqdm
 from datetime import datetime
 from dataclasses import asdict
 
 controller_answers = AnswerMethods()
-CUSTOM_NAME = 'testing_prompts_0'
+controller_mutation = Mutation()
+CUSTOM_NAME = None#'mutating_during'
 TOTAL_COUNT = 100
 TEMPERATURE = 0.0
 ANSWER_COUNT = 1
-METHOD = Method.A_1.value
-METHOD_NAME_FILE = 'a_1'
-REWARD_METHOD = None #RewardMethod.MAJOR.value
+N_SAMPLES_MUT = 5
+METHOD = Method.MUT.value
+METHOD_NAME_FILE = METHOD
+REWARD_METHOD = RewardMethod.MAJOR.value
 MODEL_NAME = 'gpt-4o' #'o3-mini', 'gpt-4o-mini', 'gpt-4o'
 PREDIFINED_DATASETS: List[str] = [Datasets.AQUA.value]
 PREDIFINED_FILES: List[str] = ['data_normalized_test.csv']
@@ -48,6 +52,7 @@ with open(file_path_info_results, 'r', encoding='utf-8') as resultsfile:
         existing_file_paths_results.add(row['result_file_name'])
 
 custom_name_str = f'_{CUSTOM_NAME}' if CUSTOM_NAME else ''
+task_system_prompts = []
 for folder in all_dataset_folders:
     # question_file = f'../datasets/{folder}/data/data_normalized.csv'
     # if not os.path.exists(question_file):
@@ -98,26 +103,16 @@ for folder in all_dataset_folders:
                         break
                     answer_type = row['answer_type']
                     system_prompt = system_prompts[answer_type]
+                    system_prompt_task = random.choice(task_system_prompts) if len(task_system_prompts) > 0 else system_prompts_task[AnswerType.MULTIPLE_CHOICE.value]
+                    system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
+                    task_system_prompts = []
                     choices_str_info = "Choices:\n```\n{choices}\n```\n" if row['choices'] else ''
                     facts_str_info = "Facts:\n```\n{facts}\n```\n" if row['facts'] else ''
                     start_human_prompt_info = 'Question:\n```\n{question}\n```\n' if 'question' in system_prompt.lower() else 'Problem:\n```\n{question}\n```\n'
                     end_human_prompt = human_prompts[answer_type]
 
-                    this_human_prompt_info = f"{start_human_prompt_info}{choices_str_info}{facts_str_info}{end_human_prompt}"
-                    if len(unique_answer_types) > 1:
-                        if human_prompt_info is None:
-                            human_prompt_info = f"[{answer_type}]\n{this_human_prompt_info}"
-                        else:
-                            if this_human_prompt_info not in human_prompt_info:
-                                human_prompt_info += f"\n------\n[{answer_type}]\n{this_human_prompt_info}"
-                        if system_prompt_info is None:
-                            system_prompt_info = f"[{answer_type}]\n{system_prompt}"
-                        else:
-                            if system_prompt not in system_prompt_info:
-                                system_prompt_info += f"\n------\n[{answer_type}]\n{system_prompt}"
-                    elif len(unique_answer_types) == 1:
-                        human_prompt_info = this_human_prompt_info
-                        system_prompt_info = system_prompt
+                    human_prompt_info = f"{start_human_prompt_info}{choices_str_info}{facts_str_info}{end_human_prompt}"
+                    system_prompt_info = f"task_prompt\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
 
                     if int(row['id']) not in existing_ids:
                         question = row['question']
@@ -136,19 +131,14 @@ for folder in all_dataset_folders:
                         facts_str = f"Facts:\n```\n{row['facts']}\n```\n" if row['facts'] else ''
                         start_human_prompt = f'Question:\n```\n{question}\n```\n' if 'question' in system_prompt.lower() else f'Problem:\n```\n{question}\n```\n'
                         human_prompt = f"{start_human_prompt}{choices_str}{facts_str}{end_human_prompt}"
-                        if METHOD == Method.A_2.value and REWARD_METHOD == RewardMethod.MAJOR.value:
-                            answer_results = controller_answers.get_n_sampling_llm_answer_majority(
-                                system_prompt=system_prompt, human_prompt=human_prompt, response_count=ANSWER_COUNT,
+                        if METHOD == Method.MUT.value and REWARD_METHOD == RewardMethod.MAJOR.value:
+                            answer_results = controller_answers.get_answer_with_mutation(
+                                system_prompt=system_prompt, human_prompt=human_prompt, n_samples=N_SAMPLES_MUT,
                                 temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
                                 ground_truth_answer=answer, ground_truth_answer_word=answer_word
                             )
-                        elif METHOD == Method.A_1.value and REWARD_METHOD is None:
-                            answer_results = controller_answers.get_zero_shot_answer(
-                                system_prompt=system_prompt, human_prompt=human_prompt,
-                                temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
-                                ground_truth_answer=answer, ground_truth_answer_word=answer_word
-                            )
-                            ANSWER_COUNT = 1
+                            if answer_results.task_prompts_majority is not None:
+                                task_system_prompts = answer_results.task_prompts_majority.split('\n------\n')
 
                         data_results = DataResults(
                             id=int(row['id']),
@@ -158,7 +148,10 @@ for folder in all_dataset_folders:
                             llm_answer=answer_results.llm_answer_unedited,
                             correct=answer_results.correct,
                             llm_answer_chosen=answer_results.chosen_answer,
-                            reward_method=REWARD_METHOD
+                            reward_method=REWARD_METHOD,
+                            task_prompt_all=answer_results.task_prompts_all,
+                            task_prompts_majority=answer_results.task_prompts_majority,
+
                         )
                         writer.writerow(asdict(data_results))
         previous_highest_id += 1
@@ -173,8 +166,7 @@ for folder in all_dataset_folders:
             temperature=TEMPERATURE,
             response_count=ANSWER_COUNT,
             reward_method=REWARD_METHOD,
-            llm_model=controller_answers.controller_ai.model.name if MODEL_NAME is None else MODEL_NAME,
-            percentage_of_short_answers=None # TODO
+            llm_model=controller_answers.controller_ai.model.name if MODEL_NAME is None else MODEL_NAME
         )
         info_result.result_file_name = resultsfile.name
         info_result.count = TOTAL_COUNT

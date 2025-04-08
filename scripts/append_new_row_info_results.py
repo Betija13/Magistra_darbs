@@ -1,7 +1,7 @@
 import csv
 import os
-new_field_name = 'llm_model'
-default_new_value_name = 'gpt-4o-mini'
+new_field_name = 'percentage_of_short_answers'
+default_new_value_name = None#'gpt-4o-mini'
 # Define the folder and file name
 folder = '../datasets'
 filename = 'info_results.csv'

@@ -170,7 +170,9 @@ for folder in all_dataset_folders:
         )
         info_result.result_file_name = resultsfile.name
         info_result.count = TOTAL_COUNT
-        info_result.accuracy = ResultUtils.count_correct_values(resultsfile.name)
+        numeric_results = ResultUtils.count_correct_values(resultsfile.name)
+        info_result.accuracy = numeric_results.accuracy_score
+        info_result.percentage_of_short_answers = numeric_results.percentage_of_short_answers
 
         # Convert the dataclass instance to a dictionary
         data_to_append = asdict(info_result)
