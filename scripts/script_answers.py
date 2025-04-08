@@ -31,7 +31,7 @@ METHOD: str = str(Method.STRUCT_MUT_M.value)
 METHOD_NAME_FILE = METHOD
 REWARD_METHOD = RewardMethod.MAJOR.value #None  # RewardMethod.MAJOR.value
 MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
-PREDIFINED_DATASETS: List[str] = [str(Datasets.THEOREMAQA.value)]
+PREDIFINED_DATASETS: List[str] | None = [str(Datasets.THEOREMAQA.value)]
 PREDIFINED_FILES: List[str] | None = None #['data_normalized_test.csv']
 USE_SYSTEM_PROMPT_STRUCTURE = False
 
@@ -341,7 +341,59 @@ class LLMRunner:
 if __name__ == "__main__":
 
     llm_runner = LLMRunner()
-    # llm_runner.output_info()
+    llm_runner.iterate_through_prompts()
+
+    # TODO (not comment) going through all dataset
+    # # TODO (not comment) Task prompt only
+    # USE_SYSTEM_PROMPT_STRUCTURE = False
+    # TEMPERATURE = 0.0
+    # ANSWER_COUNT = 1
+    # REWARD_METHOD = None
+    # METHOD = Method.A_1.value
+    # METHOD_NAME_FILE = METHOD
+    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
+
+    # TODO (not comment) Task prompt +
+    # USE_SYSTEM_PROMPT_STRUCTURE = True
+    # TEMPERATURE = 0.0
+    # ANSWER_COUNT = 1
+    # REWARD_METHOD = None
+    # CUSTOM_NAME = 'TASK_PROMPT_PLUS'
+    # METHOD = Method.A_1.value
+    # METHOD_NAME_FILE = METHOD
+    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
+
+    # # TODO (not comment) STRUCT = 'STRUCTURED_OUTPUT'  # Structured output with explanation
+    # METHOD = Method.STRUCT.value
+    # METHOD_NAME_FILE = METHOD
+    # logger.info(f"Method: {METHOD}")
+    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
+    #
+    # # TODO (not comment) STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER'
+    # METHOD = Method.STRUCT_ANS.value
+    # METHOD_NAME_FILE = METHOD
+    # logger.info(f"Method: {METHOD}")
+    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
+
+    # # TODO (not comment) Two prompts
+    # METHOD = Method.TWO_PROMPTS.value
+    # METHOD_NAME_FILE = METHOD
+    # llm_runner.iterate_through_folders()
+
+    # # TODO (not comment) Plan and solve
+    # METHOD = Method.PS.value
+    # METHOD_NAME_FILE = METHOD
+    # llm_runner.iterate_through_folders()
+
+    # # TODO (not comment) Plan and solve plus
+    # METHOD = Method.PS_PLUS.value
+    # METHOD_NAME_FILE = METHOD
+    # llm_runner.iterate_through_folders()
+
+    # # TODO (not comment) Zero shot chain of thought
+    # METHOD = Method.ZS_COT.value
+    # METHOD_NAME_FILE = METHOD
+    # llm_runner.iterate_through_folders()
 
     # TODO (not comment) MUTATION majority
     # # best task prompt
@@ -368,7 +420,6 @@ if __name__ == "__main__":
     # TODO (not comment) Mutation correct
     # METHOD = str(Method.STRUCT_MUT_C.value)
     # METHOD_NAME_FILE = METHOD
-    # llm_runner.output_info()
     # # best task prompt
     # llm_runner.custom_name_str = 'BEST_JUST_TASK'
     # start_prompt = 'Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).'
@@ -390,54 +441,3 @@ if __name__ == "__main__":
     # start_prompt = 'Pick a letter and pray that math agrees with you.'
     # llm_runner.custom_name_str = 'BEST_TWO_PROMPTS'
     # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-
-
-
-    # TODO (not comment) going through all dataset
-    # # TODO (not comment) Task prompt only
-    # USE_SYSTEM_PROMPT_STRUCTURE = False
-    # TEMPERATURE = 0.0
-    # ANSWER_COUNT = 1
-    # REWARD_METHOD = None
-    # METHOD = Method.A_1.value
-    # METHOD_NAME_FILE = METHOD
-    # llm_runner.output_info()
-    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
-
-    # TODO (not comment) Task prompt +
-    # USE_SYSTEM_PROMPT_STRUCTURE = True
-    # TEMPERATURE = 0.0
-    # ANSWER_COUNT = 1
-    # REWARD_METHOD = None
-    # CUSTOM_NAME = 'TASK_PROMPT_PLUS'
-    # METHOD = Method.A_1.value
-    # METHOD_NAME_FILE = METHOD
-    # llm_runner.output_info()
-    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
-
-    # # TODO (not comment) STRUCT = 'STRUCTURED_OUTPUT'  # Structured output with explanation
-    METHOD = Method.STRUCT.value
-    METHOD_NAME_FILE = METHOD
-    logger.info(f"Method: {METHOD}")
-    llm_runner.output_info()
-    llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
-    #
-    # # TODO (not comment) STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER'
-    METHOD = Method.STRUCT_ANS.value
-    METHOD_NAME_FILE = METHOD
-    logger.info(f"Method: {METHOD}")
-    llm_runner.output_info()
-    llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
-
-    # # TODO (not comment) Plan and solve
-    # METHOD = Method.PS.value
-    # METHOD_NAME_FILE = METHOD
-    # llm_runner.iterate_through_folders()
-    # # TODO (not comment) Plan and solve plus
-    # METHOD = Method.PS_PLUS.value
-    # METHOD_NAME_FILE = METHOD
-    # llm_runner.iterate_through_folders()
-    # # TODO (not comment) Zero shot chain of thought
-    # METHOD = Method.ZS_COT.value
-    # METHOD_NAME_FILE = METHOD
-    # llm_runner.iterate_through_folders()
