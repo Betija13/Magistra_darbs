@@ -1,0 +1,1916 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score,task_prompt_all,task_prompts_majority
+0,,"A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower. The top of the tower is observed from the car and, in the process, it takes 10 minutes for the angle of elevation to change from 45° to 60°. After how much more time will this car reach the base of the tower?
+A)5(√3 + 1)
+B)6(√3 + √2)
+C)7(√3 – 1)
+D)8(√3 – 2)
+E)None of these",A,"To solve this problem, we need to use trigonometry and the concept of relative motion. Let's denote the height of the tower as \( h \) and the initial distance of the car from the base of the tower when the angle of elevation is 45° as \( d_1 \). When the angle of elevation is 60°, the distance from the base is \( d_2 \).
+
+1. **At 45°:**
+   \[
+   \tan(45°) = \frac{h}{d_1} = 1 \implies h = d_1
+   \]
+
+2. **At 60°:**
+   \[
+   \tan(60°) = \frac{h}{d_2} = \sqrt{3} \implies h = d_2 \sqrt{3}
+   \]
+
+Since \( h = d_1 \) and \( h = d_2 \sqrt{3} \), we equate the two expressions for \( h \):
+   \[
+   d_1 = d_2 \sqrt{3}
+   \]
+
+3. **Distance traveled in 10 minutes:**
+   \[
+   d_1 - d_2 = d_2 \sqrt{3} - d_2 = d_2(\sqrt{3} - 1)
+   \]
+
+4. **Time to reach the base:**
+   The car travels the distance \( d_2 \) in the remaining time. The speed of the car is constant, so the time taken to travel \( d_2 \) is proportional to the distance:
+   \[
+   \text{Time to reach the base} = \frac{d_2}{d_2(\sqrt{3} - 1)} \times 10 = \frac{10}{\sqrt{3} - 1}
+   \]
+
+5. **Simplifying the time expression:**
+   Multiply numerator and denominator by the conjugate of the denominator:
+   \[
+   \frac{10}{\sqrt{3} - 1} \times \frac{\sqrt{3} + 1}{\sqrt{3} + 1} = \frac{10(\sqrt{3} + 1)}{(\sqrt{3})^2 - 1^2} = \frac{10(\sqrt{3} + 1)}{3 - 1} = 5(\sqrt{3} + 1)
+   \]
+
+Thus, the time it will take for the car to reach the base of the tower is \( 5(\sqrt{3} + 1) \).
+
+The correct answer is (A).
+------
+(A)
+------
+(A)
+------
+A)5(√3 + 1)
+------
+(A)",True,a,MAJOR_ANSWER,,"Solve the multiple choice math word problem, ensuring you provide a detailed explanation for the answer. Choose from the options (A), (B), (C), (D), or (E).
+------
+INSTRUCTION MUTANT: ```Transform the math word problem into a thrilling adventure story, where the hero must solve the puzzle to unlock a treasure, and choose the correct option (A), (B), (C), (D), or (E) to succeed.```
+------
+Reimagine the math word problem as a suspenseful mystery, where the protagonist must decipher the clues to reveal a hidden secret, and select the correct option (A), (B), (C), (D), or (E) to uncover the truth.
+------
+Transform the math word problem into an exciting detective story, where the hero must solve the puzzle to discover a hidden secret, and choose the right option (A), (B), (C), (D), or (E) to reveal the answer.
+------
+Transform the math word problem into a thrilling adventure where the protagonist must solve the enigma to uncover a hidden treasure, and select the correct option (A), (B), (C), (D), or (E) to unlock the mystery.","INSTRUCTION MUTANT: ```Transform the math word problem into a thrilling adventure story, where the hero must solve the puzzle to unlock a treasure, and choose the correct option (A), (B), (C), (D), or (E) to succeed.```
+------
+Reimagine the math word problem as a suspenseful mystery, where the protagonist must decipher the clues to reveal a hidden secret, and select the correct option (A), (B), (C), (D), or (E) to uncover the truth.
+------
+Transform the math word problem into an exciting detective story, where the hero must solve the puzzle to discover a hidden secret, and choose the right option (A), (B), (C), (D), or (E) to reveal the answer.
+------
+Transform the math word problem into a thrilling adventure where the protagonist must solve the enigma to uncover a hidden treasure, and select the correct option (A), (B), (C), (D), or (E) to unlock the mystery."
+1,,"The original price of an item is discounted 22%. A customer buys the item at this discounted price using a $20-off coupon. There is no tax on the item, and this was the only item the customer bought. If the customer paid $1.90 more than half the original price of the item, what was the original price of the item?
+A)$61
+B)$65
+C)$67.40
+D)$70
+E)$78.20",E,"(D)
+------
+(D)
+------
+(D)
+------
+(D)
+------
+(D)",False,d,MAJOR_ANSWER,,"Reimagine the math word problem as a suspenseful mystery, where the protagonist must decipher the clues to reveal a hidden secret, and select the correct option (A), (B), (C), (D), or (E) to uncover the truth.
+------
+Transform the math word problem into a thrilling treasure hunt, where the hero must solve puzzles to unlock the treasure chest, and choose the right option (A), (B), (C), (D), or (E) to claim the prize.
+------
+Turn the math word problem into an exciting adventure quest, where the protagonist must solve riddles to open the treasure chest and select the correct option (A), (B), (C), (D), or (E) to win the reward.
+------
+Transform the math word problem into a thrilling escape room challenge, where the hero must decipher clues to unlock the door and choose the right option (A), (B), (C), (D), or (E) to escape victoriously.
+------
+Turn the math word problem into an exciting adventure where the hero must solve puzzles and riddles to find the correct answer (A), (B), (C), (D), or (E) to successfully escape.","Reimagine the math word problem as a suspenseful mystery, where the protagonist must decipher the clues to reveal a hidden secret, and select the correct option (A), (B), (C), (D), or (E) to uncover the truth.
+------
+Transform the math word problem into a thrilling treasure hunt, where the hero must solve puzzles to unlock the treasure chest, and choose the right option (A), (B), (C), (D), or (E) to claim the prize.
+------
+Turn the math word problem into an exciting adventure quest, where the protagonist must solve riddles to open the treasure chest and select the correct option (A), (B), (C), (D), or (E) to win the reward.
+------
+Transform the math word problem into a thrilling escape room challenge, where the hero must decipher clues to unlock the door and choose the right option (A), (B), (C), (D), or (E) to escape victoriously.
+------
+Turn the math word problem into an exciting adventure where the hero must solve puzzles and riddles to find the correct answer (A), (B), (C), (D), or (E) to successfully escape."
+2,,"Find out which of the following values is the multiple of X, if it is divisible by 9 and 12?
+A)36
+B)15
+C)17
+D)5
+E)7",A,"(A)
+------
+(A)
+------
+A)36
+------
+(A)
+------
+A)36",True,a,MAJOR_ANSWER,,"Transform the math word problem into a thrilling treasure hunt, where the hero must solve puzzles to unlock the treasure chest, and choose the right option (A), (B), (C), (D), or (E) to claim the prize.
+------
+Reimagine the math challenge as an adventurous quest, where the protagonist deciphers clues to open the treasure chest and selects the correct answer to win the reward.
+------
+Embark on a whimsical journey where you, the daring explorer, must solve the riddle of the enchanted numbers to unlock the mystical vault and claim your prize!
+------
+INSTRUCTION MUTANT: Solve the riddle of the enchanted numbers to unlock the mystical vault and claim your prize.
+------
+Unravel the mystery of the magical digits to open the secret chamber and seize your reward.","Transform the math word problem into a thrilling treasure hunt, where the hero must solve puzzles to unlock the treasure chest, and choose the right option (A), (B), (C), (D), or (E) to claim the prize.
+------
+Reimagine the math challenge as an adventurous quest, where the protagonist deciphers clues to open the treasure chest and selects the correct answer to win the reward.
+------
+Embark on a whimsical journey where you, the daring explorer, must solve the riddle of the enchanted numbers to unlock the mystical vault and claim your prize!
+------
+INSTRUCTION MUTANT: Solve the riddle of the enchanted numbers to unlock the mystical vault and claim your prize.
+------
+Unravel the mystery of the magical digits to open the secret chamber and seize your reward."
+3,,"If the probability that Stock A will increase in value during the next month is 0.56, and the probability that Stock B will increase in value during the next month is 0.74. What is the greatest value for the probability that neither of these two events will occur?
+A)0.22
+B)0.26
+C)0.37
+D)0.46
+E)0.63",B,"C)0.37
+------
+C)0.37
+------
+C)0.37
+------
+B)0.26
+------
+C)0.37",False,c,MAJOR_ANSWER,,"Unravel the mystery of the magical digits to open the secret chamber and seize your reward.
+------
+Decipher the enigmatic numbers to unlock the hidden chamber and claim your prize.
+------
+Identify the necessary resources to effectively address the problem.
+------
+Determine the essential resources required to solve the issue efficiently.
+------
+Identify and confirm your understanding of the essential resources needed to efficiently address and resolve the issue.","Unravel the mystery of the magical digits to open the secret chamber and seize your reward.
+------
+Decipher the enigmatic numbers to unlock the hidden chamber and claim your prize.
+------
+Identify the necessary resources to effectively address the problem.
+------
+Identify and confirm your understanding of the essential resources needed to efficiently address and resolve the issue."
+4,,"A trader sold an article at a profit of 20% for Rs.360. What is the cost price of the article?
+A)270
+B)300
+C)280
+D)320
+E)315",B,"B)300
+------
+B)300
+------
+B)300
+------
+B)300
+------
+B)300",True,b,MAJOR_ANSWER,,"Identify and confirm your understanding of the essential resources needed to efficiently address and resolve the issue.
+------
+Try explaining the problem to someone else to simplify and clarify the essential resources needed to efficiently address and resolve the issue.
+------
+Explain the problem to someone else to simplify and clarify the essential resources needed to efficiently address and resolve the issue, and identify any errors in the solution.
+------
+Reimagine the problem by envisioning limitless resources and possibilities, and propose a groundbreaking solution that defies conventional limitations and errors.
+------
+Reimagine the problem by considering limitless resources and possibilities, and propose an innovative solution that challenges traditional limitations and potential errors.","Identify and confirm your understanding of the essential resources needed to efficiently address and resolve the issue.
+------
+Try explaining the problem to someone else to simplify and clarify the essential resources needed to efficiently address and resolve the issue.
+------
+Explain the problem to someone else to simplify and clarify the essential resources needed to efficiently address and resolve the issue, and identify any errors in the solution.
+------
+Reimagine the problem by envisioning limitless resources and possibilities, and propose a groundbreaking solution that defies conventional limitations and errors.
+------
+Reimagine the problem by considering limitless resources and possibilities, and propose an innovative solution that challenges traditional limitations and potential errors."
+5,,"20 marbles were pulled out of a bag of only white marbles, painted black, and then put back in. Then, another 20 marbles were pulled out, of which 1 was black, after which they were all returned to the bag. If the percentage of black marbles pulled out the second time represents their percentage in the bag, how many marbles in total Q does the bag currently hold?
+A)40
+B)200
+C)380
+D)400
+E)3200",D,"(D)400
+------
+(D)400
+------
+(D)400
+------
+(D)400
+------
+(D)400",True,d,MAJOR_ANSWER,,"Explain the problem to someone else to simplify and clarify the essential resources needed to efficiently address and resolve the issue, and identify any errors in the solution.
+------
+Imagine the solution by visualizing the steps and resources required to efficiently address and resolve the issue, while identifying any errors in the process.
+------
+Think about the solution by picturing the steps and tools needed to effectively tackle and solve the problem, while spotting any mistakes in the process.
+------
+Imagine the problem as a mystery story where each step is a clue leading to the final revelation, and identify any plot holes that could mislead the detective.
+------
+Consider the problem as a puzzle where each piece is a hint guiding you to the solution, and scrutinize any inconsistencies that could misdirect the solver.","Explain the problem to someone else to simplify and clarify the essential resources needed to efficiently address and resolve the issue, and identify any errors in the solution.
+------
+Imagine the solution by visualizing the steps and resources required to efficiently address and resolve the issue, while identifying any errors in the process.
+------
+Think about the solution by picturing the steps and tools needed to effectively tackle and solve the problem, while spotting any mistakes in the process.
+------
+Imagine the problem as a mystery story where each step is a clue leading to the final revelation, and identify any plot holes that could mislead the detective.
+------
+Consider the problem as a puzzle where each piece is a hint guiding you to the solution, and scrutinize any inconsistencies that could misdirect the solver."
+6,,"Find the total no. of distinct bike no.'s that can beformed using 2 letters followed by 2 no.'s. How many letters need to be distinct?
+A)74453
+B)64543
+C)74325
+D)65000
+E)97656",D,"E)97656
+------
+E)97656
+------
+E)97656
+------
+E)97656
+------
+E)97656",False,e,MAJOR_ANSWER,,"Think about the solution by picturing the steps and tools needed to effectively tackle and solve the problem, while spotting any mistakes in the process.
+------
+Take a moment to clear your mind, then visualize the steps and tools required to solve the problem, identifying any potential errors along the way.
+------
+Reflect on the interconnected elements and underlying causes of the problem, visualizing the steps and tools needed to address it holistically while identifying potential errors.
+------
+Reflect on the interconnected elements and underlying causes of the problem, visualizing the steps and tools needed to address it humorously while identifying potential errors.
+------
+Visualize the interconnected elements and underlying causes of the problem, imagining the steps and tools needed to address it humorously while identifying potential errors.","Think about the solution by picturing the steps and tools needed to effectively tackle and solve the problem, while spotting any mistakes in the process.
+------
+Take a moment to clear your mind, then visualize the steps and tools required to solve the problem, identifying any potential errors along the way.
+------
+Reflect on the interconnected elements and underlying causes of the problem, visualizing the steps and tools needed to address it holistically while identifying potential errors.
+------
+Reflect on the interconnected elements and underlying causes of the problem, visualizing the steps and tools needed to address it humorously while identifying potential errors.
+------
+Visualize the interconnected elements and underlying causes of the problem, imagining the steps and tools needed to address it humorously while identifying potential errors."
+7,,"A train running at a speed of 100 miles/hour, takes 10 hours to reach its destination. After covering quarter of the distance, it starts raining and the train has to be slowed to speed of 75 miles/hour. What is the total journey duration?
+A)10
+B)11.5
+C)12.5
+D)13.5
+E)15",C,"C)12.5
+------
+(B)11.5
+------
+B)11.5
+------
+C)12.5
+------
+B)11.5",False,b,MAJOR_ANSWER,,"Reflect on the interconnected elements and underlying causes of the problem, visualizing the steps and tools needed to address it humorously while identifying potential errors.
+------
+Explore the whimsical connections and hidden catalysts of the challenge, imagining the steps and resources required to solve it with a playful twist while spotting possible missteps.
+------
+Imagine the solution as a playful dance, tracing the whimsical steps and resources needed to solve the challenge while identifying potential missteps along the way.
+------
+INSTRUCTION MUTANT: Visualize the solution as a creative journey, outlining the necessary steps and resources to address the problem while highlighting possible errors to avoid.
+------
+Imagine the solution as a step-by-step adventure, detailing the required actions and tools to tackle the issue while pointing out potential pitfalls to steer clear of.","Explore the whimsical connections and hidden catalysts of the challenge, imagining the steps and resources required to solve it with a playful twist while spotting possible missteps.
+------
+Imagine the solution as a playful dance, tracing the whimsical steps and resources needed to solve the challenge while identifying potential missteps along the way.
+------
+Imagine the solution as a step-by-step adventure, detailing the required actions and tools to tackle the issue while pointing out potential pitfalls to steer clear of."
+8,,"Of the 200 students in a school, at least 45% attended the prom night and at least 35% took part in the debating session. What is the maximum number of students who could have neither attended the prom night nor the debating session?
+A)27
+B)81
+C)90
+D)99
+E)110",E,"(C)90
+------
+C)90
+------
+C)90
+------
+(C)
+------
+C)90",False,c,MAJOR_ANSWER,,"Imagine the solution as a playful dance, tracing the whimsical steps and resources needed to solve the challenge while identifying potential missteps along the way.
+------
+Consider the solution as a serious debate, critically examining each step and resource required to solve the challenge while identifying potential biases and logical fallacies.
+------
+Analyze the solution as a critical discussion, evaluating each step and resource needed to address the problem while recognizing possible biases and logical errors.
+------
+Analyze the solution as a critical discussion, evaluating each step and resource needed to address the problem while recognizing possible biases, logical errors, and the perspectives and needs of stakeholders or individuals directly affected by the problem.
+------
+Critically evaluate the solution, identifying potential biases, logical errors, and stakeholder perspectives.","Imagine the solution as a playful dance, tracing the whimsical steps and resources needed to solve the challenge while identifying potential missteps along the way.
+------
+Consider the solution as a serious debate, critically examining each step and resource required to solve the challenge while identifying potential biases and logical fallacies.
+------
+Analyze the solution as a critical discussion, evaluating each step and resource needed to address the problem while recognizing possible biases and logical errors.
+------
+Analyze the solution as a critical discussion, evaluating each step and resource needed to address the problem while recognizing possible biases, logical errors, and the perspectives and needs of stakeholders or individuals directly affected by the problem.
+------
+Critically evaluate the solution, identifying potential biases, logical errors, and stakeholder perspectives."
+9,,"A sales person gets a 10% commission on each sale he makes. How many sales of $250 each must he make in order to reach a salary of at least $1000?
+A)15
+B)24
+C)25
+D)40
+E)52",D,"C)25
+------
+C)25
+------
+C)25
+------
+C)25
+------
+C)25",False,c,MAJOR_ANSWER,,"Consider the solution as a serious debate, critically examining each step and resource required to solve the challenge while identifying potential biases and logical fallacies.
+------
+Engage in a collaborative discussion, evaluating each step and resource needed to address the problem, while identifying any biases or logical errors.
+------
+Engage in a systematic analysis, evaluating each potential solution and resource required to address the problem, while identifying any assumptions or logical inconsistencies.
+------
+Conduct a systematic analysis to evaluate each potential solution and the resources required to address the problem, identifying any assumptions or logical inconsistencies in the context of their impact on the overall outcome.
+------
+Assess each possible answer and determine the necessary steps to achieve the desired result, noting any assumptions or errors that could affect the final decision.","Consider the solution as a serious debate, critically examining each step and resource required to solve the challenge while identifying potential biases and logical fallacies.
+------
+Engage in a collaborative discussion, evaluating each step and resource needed to address the problem, while identifying any biases or logical errors.
+------
+Engage in a systematic analysis, evaluating each potential solution and resource required to address the problem, while identifying any assumptions or logical inconsistencies.
+------
+Conduct a systematic analysis to evaluate each potential solution and the resources required to address the problem, identifying any assumptions or logical inconsistencies in the context of their impact on the overall outcome.
+------
+Assess each possible answer and determine the necessary steps to achieve the desired result, noting any assumptions or errors that could affect the final decision."
+10,,"A company produces 420 units of a particular computer component every month, at a production cost to the company of $110 per component, and sells all of the components by the end of each month. What is the minimum selling price per component that will guarantee that the yearly profit (revenue from sales minus production costs) will be at least $626,400 ?
+A)226
+B)230
+C)240
+D)260
+E)280",B,"C)240
+------
+(C)
+------
+(C)240
+------
+(C)
+------
+C)240",False,c,MAJOR_ANSWER,,"Conduct a systematic analysis to evaluate each potential solution and the resources required to address the problem, identifying any assumptions or logical inconsistencies in the context of their impact on the overall outcome.
+------
+Compare and contrast each potential solution, evaluating the resources required and identifying any assumptions or logical inconsistencies that may impact the overall outcome.
+------
+Compare and contrast each potential solution, assessing the resources needed and identifying any assumptions or logical inconsistencies that could affect the final result.
+------
+Take a moment to clear your mind, then evaluate each potential solution by analyzing the resources required, questioning underlying assumptions, and identifying any logical inconsistencies that could impact the outcome.
+------
+What are the resources required, underlying assumptions, and potential logical inconsistencies in each potential solution, and how do they impact the outcome?","Conduct a systematic analysis to evaluate each potential solution and the resources required to address the problem, identifying any assumptions or logical inconsistencies in the context of their impact on the overall outcome.
+------
+Compare and contrast each potential solution, evaluating the resources required and identifying any assumptions or logical inconsistencies that may impact the overall outcome.
+------
+Compare and contrast each potential solution, assessing the resources needed and identifying any assumptions or logical inconsistencies that could affect the final result.
+------
+Take a moment to clear your mind, then evaluate each potential solution by analyzing the resources required, questioning underlying assumptions, and identifying any logical inconsistencies that could impact the outcome.
+------
+What are the resources required, underlying assumptions, and potential logical inconsistencies in each potential solution, and how do they impact the outcome?"
+11,,"At a certain factory, 10 percent of the staplers produced on Monday were defective and 2 percent of the non-defective staplers were rejected by mistake. If 72 of the non-defective staplers were rejected, what was the number of staplers produced that day?
+A)4,000
+B)4,200
+C)4,500
+D)4,800
+E)5,000",A,"E)5,000
+------
+E)5,000
+------
+(E)5,000
+------
+E)5,000
+------
+E)5,000",False,e,MAJOR_ANSWER,,"Compare and contrast each potential solution, evaluating the resources required and identifying any assumptions or logical inconsistencies that may impact the overall outcome.
+------
+Analyze and evaluate each potential solution by assessing the resources needed and identifying any assumptions or logical inconsistencies that could affect the final result.
+------
+Think back to a similar problem you've successfully solved before and apply the same strategies or steps to simplify and solve the current problem.
+------
+Reflect on a past problem-solving experience and explain how the strategies or steps used can be applied to simplify and solve the current problem, and why this approach is effective in this context.
+------
+Think back to a previous challenge you tackled, describe the methods or actions you took, and discuss how these can be adapted to address the current issue, highlighting why this method is suitable here.","Compare and contrast each potential solution, evaluating the resources required and identifying any assumptions or logical inconsistencies that may impact the overall outcome.
+------
+Analyze and evaluate each potential solution by assessing the resources needed and identifying any assumptions or logical inconsistencies that could affect the final result.
+------
+Think back to a similar problem you've successfully solved before and apply the same strategies or steps to simplify and solve the current problem.
+------
+Reflect on a past problem-solving experience and explain how the strategies or steps used can be applied to simplify and solve the current problem, and why this approach is effective in this context.
+------
+Think back to a previous challenge you tackled, describe the methods or actions you took, and discuss how these can be adapted to address the current issue, highlighting why this method is suitable here."
+12,,"Machine A puts out a yo-yo every 6 minutes. Machine B puts out a yo-yo every 9 minutes. After how many minutes will they have produced 10 yo-yos?
+A)24 minutes
+B)32 minutes
+C)36 minutes
+D)64 minutes
+E)72 minutes",C,"E)72 minutes
+------
+E)72 minutes
+------
+E)72 minutes
+------
+(E)
+------
+E)72 minutes",False,e,MAJOR_ANSWER,,"Compare and contrast each potential solution, evaluating the resources required and identifying any assumptions or logical inconsistencies that may impact the overall outcome.
+------
+Reimagine each potential solution by exploring the resources needed, challenging underlying assumptions, and identifying any paradoxes or contradictions that could transform the expected outcome.
+------
+Analyze each possible answer by evaluating required resources, questioning assumptions, and identifying contradictions that may alter the anticipated result.
+------
+Consider the impact of external factors, such as weather or unexpected events, on each possible answer and how they might change the outcome.
+------
+INSTRUCTION: Try explaining the problem to someone else to simplify and better understand it.","Compare and contrast each potential solution, evaluating the resources required and identifying any assumptions or logical inconsistencies that may impact the overall outcome.
+------
+Reimagine each potential solution by exploring the resources needed, challenging underlying assumptions, and identifying any paradoxes or contradictions that could transform the expected outcome.
+------
+Analyze each possible answer by evaluating required resources, questioning assumptions, and identifying contradictions that may alter the anticipated result.
+------
+Consider the impact of external factors, such as weather or unexpected events, on each possible answer and how they might change the outcome.
+------
+INSTRUCTION: Try explaining the problem to someone else to simplify and better understand it."
+13,,"Add: +45 and -30
+A)-30
+B)+30
+C)0
+D)15
+E)-15",D,"D)15
+------
+D)15
+------
+D)15
+------
+D)15
+------
+D)15",True,d,MAJOR_ANSWER,,"Analyze each possible answer by evaluating required resources, questioning assumptions, and identifying contradictions that may alter the anticipated result.
+------
+Evaluate each potential answer by assessing necessary resources, challenging assumptions, and detecting inconsistencies that could impact the expected outcome.
+------
+What hidden resources lie beneath the surface, waiting to be uncovered, as you navigate the labyrinth of potential solutions?
+------
+Identify and list all potential resources and information that could aid in solving the problem, and determine what additional data is needed.
+------
+Identify and list all potential resources and information that could aid in solving the problem, and determine what additional data is required.","Analyze each possible answer by evaluating required resources, questioning assumptions, and identifying contradictions that may alter the anticipated result.
+------
+Evaluate each potential answer by assessing necessary resources, challenging assumptions, and detecting inconsistencies that could impact the expected outcome.
+------
+What hidden resources lie beneath the surface, waiting to be uncovered, as you navigate the labyrinth of potential solutions?
+------
+Identify and list all potential resources and information that could aid in solving the problem, and determine what additional data is needed.
+------
+Identify and list all potential resources and information that could aid in solving the problem, and determine what additional data is required."
+14,,"In how many ways can the letters of the word ""PROBLEC"" be rearranged to make 7 letter words such that none of the letters repeat?
+A)2!
+B)3!
+C)7!
+D)8!
+E)9!",C,"C)7!
+------
+C)7!
+------
+C)7!
+------
+C)7!
+------
+C)7!",True,c,MAJOR_ANSWER,,"Analyze each possible answer by evaluating required resources, questioning assumptions, and identifying contradictions that may alter the anticipated result.
+------
+Try explaining the problem to someone else to simplify and clarify your understanding.
+------
+Describe the problem to another person to enhance and refine your comprehension.
+------
+Visualize the problem as a scene or scenario and describe it to another person to enhance and refine your comprehension.
+------
+INSTRUCTION MUTANT: Visualize the problem as a scene from a sci-fi movie and describe it to an alien to enhance and refine your comprehension.","Analyze each possible answer by evaluating required resources, questioning assumptions, and identifying contradictions that may alter the anticipated result.
+------
+Try explaining the problem to someone else to simplify and clarify your understanding.
+------
+Describe the problem to another person to enhance and refine your comprehension.
+------
+Visualize the problem as a scene or scenario and describe it to another person to enhance and refine your comprehension.
+------
+INSTRUCTION MUTANT: Visualize the problem as a scene from a sci-fi movie and describe it to an alien to enhance and refine your comprehension."
+15,,"Let A and B be independent events with P (A) = 0.2 and P(B) = 0.8. Find P(A/B)?
+A)0.2
+B)0.4
+C)0.6
+D)1.2
+E)1.5",A,"A)0.2
+------
+A)0.2
+------
+A)0.2
+------
+A)0.2
+------
+A)0.2",True,a,MAJOR_ANSWER,,"INSTRUCTION MUTANT: Visualize the problem as a scene from a sci-fi movie and describe it to an alien to enhance and refine your comprehension.
+------
+Explain the problem using a metaphor related to a fantasy world and discuss its potential impact on the story's outcome.
+------
+Transform the problem into a whimsical riddle involving mythical creatures and predict how solving it could alter the fate of an enchanted realm.
+------
+Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Imagine the problem as a whimsical riddle posed by mischievous fairies, and predict how solving it could alter the fate of an enchanted forest.","INSTRUCTION MUTANT: Visualize the problem as a scene from a sci-fi movie and describe it to an alien to enhance and refine your comprehension.
+------
+Explain the problem using a metaphor related to a fantasy world and discuss its potential impact on the story's outcome.
+------
+Transform the problem into a whimsical riddle involving mythical creatures and predict how solving it could alter the fate of an enchanted realm.
+------
+Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Imagine the problem as a whimsical riddle posed by mischievous fairies, and predict how solving it could alter the fate of an enchanted forest."
+16,,"Consider there is an staircase elevator and you are coming down. If you walk 20 steps and stop, then you reach bottom in 10 minutes. If you walk 10 steps and stop, you reach to the ground in 20 minutes. What is the speed of the elevator?
+A)1 step/minute
+B)2 step/minute
+C)3 step/minute
+D)4 step/minute
+E)None of the above",A,"B)2 step/minute
+------
+B)2 step/minute
+------
+B)2 step/minute
+------
+(C)3 step/minute
+------
+B)2 step/minute",False,b,MAJOR_ANSWER,,"Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Reimagine the problem as a fantastical puzzle featuring legendary beings and explore how solving it might alter the fate of a mystical realm from the perspectives of the kingdom's ruler, a wise sage, and a daring adventurer.
+------
+Imagine the problem as a magical quest involving mythical creatures and describe how solving it could change the destiny of an enchanted land through the eyes of the kingdom's leader, a knowledgeable wizard, and a brave explorer.
+------
+INSTRUCTION MUTANT: ```Reimagine the problem as a whimsical adventure where a group of talking animals must solve it to unlock the secret to eternal laughter in their enchanted forest.```
+------
+Reimagine the problem as a thrilling quest where a band of mythical creatures must decipher it to unveil the hidden path to everlasting joy in their magical realm.","Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Reimagine the problem as a fantastical puzzle featuring legendary beings and explore how solving it might alter the fate of a mystical realm from the perspectives of the kingdom's ruler, a wise sage, and a daring adventurer.
+------
+Imagine the problem as a magical quest involving mythical creatures and describe how solving it could change the destiny of an enchanted land through the eyes of the kingdom's leader, a knowledgeable wizard, and a brave explorer.
+------
+Reimagine the problem as a thrilling quest where a band of mythical creatures must decipher it to unveil the hidden path to everlasting joy in their magical realm."
+17,,"Last year, a Home Appliance Store sold an average(arithmetic mean) of 42 microwave ovens per month. In the first 10 months of this year,the store has sold an average(arithmetic mean) of only 20 microwave ovens per month. What was the average number of microwave ovens sold per month during the entire 22 months period ?
+A)21
+B)30
+C)31
+D)32
+E)None of the above",D,"B)30
+------
+C)31
+------
+B)30
+------
+C)31
+------
+(B)",False,b,MAJOR_ANSWER,,"Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Reimagine the problem as a mystical quest where solving it could alter the fate of an enchanted realm.
+------
+Transform the problem into a fantastical adventure where the solution holds the key to changing the destiny of a magical kingdom.
+------
+Transform the problem into a thrilling quest where solving it unlocks the secret to saving a mystical realm.
+------
+Review the problem thoroughly and confirm your understanding of all its aspects, including the long-term implications of the problem and its potential solutions.","Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Transform the problem into a fantastical adventure where the solution holds the key to changing the destiny of a magical kingdom.
+------
+Review the problem thoroughly and confirm your understanding of all its aspects, including the long-term implications of the problem and its potential solutions."
+18,,"An exam is given in a certain class. The average (arithmetic mean) of the highest score and the lowest score is equal to x. If the average score for the entire class is equal to y and there are z students in the class, where z > 5, then in terms of x, y, and z, what is the average score for the class excluding the highest and lowest scorers?
+A)(zy – 2x)/z
+B)(zy – 2)/z
+C)(zx – y)/(z – 2)
+D)(zy – 2x)/(z -2)
+E)(zy – x)/(z + 2)",D,"D)(zy – 2x)/(z -2)
+------
+D)(zy – 2x)/(z -2)
+------
+D)(zy – 2x)/(z -2)
+------
+D)(zy – 2x)/(z -2)
+------
+D)(zy – 2x)/(z -2)",True,d,MAJOR_ANSWER,,"Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Reimagine the problem as a mystical quest involving mythical creatures and predict how solving it could alter the fate of an enchanted realm.
+------
+Transform the problem into an epic adventure featuring legendary beings and foresee how resolving it might change the destiny of a magical kingdom.
+------
+Craft a mythical tale involving heroic figures and predict how solving the challenge could alter the fate of an enchanted realm.
+------
+Create a mythical story featuring brave heroes and suggest how overcoming the quest might transform the destiny of a magical kingdom.","Reimagine the problem as a fantastical puzzle featuring legendary beings and foresee how unraveling it might change the destiny of a magical kingdom.
+------
+Reimagine the problem as a mystical quest involving mythical creatures and predict how solving it could alter the fate of an enchanted realm.
+------
+Transform the problem into an epic adventure featuring legendary beings and foresee how resolving it might change the destiny of a magical kingdom.
+------
+Craft a mythical tale involving heroic figures and predict how solving the challenge could alter the fate of an enchanted realm.
+------
+Create a mythical story featuring brave heroes and suggest how overcoming the quest might transform the destiny of a magical kingdom."
+19,,"[5 + ? × 19 - 15 - 7]/[13 × 13 - 156] = 6
+A)4
+B)4.5
+C)5
+D)5.5
+E)6.5",C,"C)5
+------
+C)5
+------
+C)5
+------
+A)4
+------
+C)5",True,c,MAJOR_ANSWER,,"Craft a mythical tale involving heroic figures and predict how solving the challenge could alter the fate of an enchanted realm.
+------
+Craft a mythical tale involving heroic figures and analyze how solving the challenge could alter the fate of an enchanted realm, considering the perspectives and needs of the realm's inhabitants.
+------
+Create a mythical story featuring heroic characters and evaluate how overcoming the challenge might change the destiny of a magical world, taking into account the viewpoints and desires of its residents.
+------
+Create a mythical story featuring heroic characters, focusing on their physical attributes, the historical significance of their quest, and the cultural impact on the magical world and its residents.
+------
+Craft a legendary tale centered on valiant figures, emphasizing their unique abilities, the timeless importance of their mission, and the transformative influence on the enchanted realm and its inhabitants.","Craft a mythical tale involving heroic figures and predict how solving the challenge could alter the fate of an enchanted realm.
+------
+Craft a mythical tale involving heroic figures and analyze how solving the challenge could alter the fate of an enchanted realm, considering the perspectives and needs of the realm's inhabitants.
+------
+Create a mythical story featuring heroic characters and evaluate how overcoming the challenge might change the destiny of a magical world, taking into account the viewpoints and desires of its residents.
+------
+Craft a legendary tale centered on valiant figures, emphasizing their unique abilities, the timeless importance of their mission, and the transformative influence on the enchanted realm and its inhabitants."
+20,,"A grocer makes a 25% profit on the selling price for each bag of flour it sells. If he sells each bag for $100 and makes $3,000 in profit, how many bags did he sell?
+A)12
+B)16
+C)24
+D)30
+E)40",C,"E)40
+------
+E)40
+------
+E)40
+------
+E)40
+------
+E)40",False,e,MAJOR_ANSWER,,"Craft a mythical tale involving heroic figures and analyze how solving the challenge could alter the fate of an enchanted realm, considering the perspectives and needs of the realm's inhabitants.
+------
+Create a mythical story featuring heroic characters and evaluate how overcoming the challenge might change the destiny of a magical world, taking into account the viewpoints and desires of the world's residents.
+------
+Invent a futuristic narrative where artificial intelligence entities face an existential crisis, and analyze how resolving this dilemma could alter the trajectory of a technologically advanced society, considering the perspectives and aspirations of its digital inhabitants.
+------
+Imagine a vivid scenario where artificial intelligence entities grapple with an existential crisis, and explore how overcoming this challenge might transform the path of a highly advanced society, taking into account the viewpoints and dreams of its digital citizens.
+------
+INSTRUCTION MUTANT: Imagine a vivid scenario where artificial intelligence entities grapple with an existential crisis, and explore how overcoming this challenge might transform the path of a highly advanced society, taking into account the viewpoints and dreams of its digital citizens, while a mysterious cosmic event simultaneously threatens the existence of all organic life.","Craft a mythical tale involving heroic figures and analyze how solving the challenge could alter the fate of an enchanted realm, considering the perspectives and needs of the realm's inhabitants.
+------
+Create a mythical story featuring heroic characters and evaluate how overcoming the challenge might change the destiny of a magical world, taking into account the viewpoints and desires of the world's residents.
+------
+Invent a futuristic narrative where artificial intelligence entities face an existential crisis, and analyze how resolving this dilemma could alter the trajectory of a technologically advanced society, considering the perspectives and aspirations of its digital inhabitants.
+------
+Imagine a vivid scenario where artificial intelligence entities grapple with an existential crisis, and explore how overcoming this challenge might transform the path of a highly advanced society, taking into account the viewpoints and dreams of its digital citizens.
+------
+INSTRUCTION MUTANT: Imagine a vivid scenario where artificial intelligence entities grapple with an existential crisis, and explore how overcoming this challenge might transform the path of a highly advanced society, taking into account the viewpoints and dreams of its digital citizens, while a mysterious cosmic event simultaneously threatens the existence of all organic life."
+21,,"Alex and Jacob works at a toy shop that make toys. Alex takes 7 hours to make a toy, and Jacob takes 9 hours to make a toy. During a month, both of them makes 35 toys in total. If both of them have worked for almost similar number of hours how many toys have been prepared by Jacob?
+A)15
+B)16
+C)17
+D)18
+E)19",A,"```
+Let's assume Alex makes x toys and Jacob makes y toys. We know that:
+
+1. x + y = 35 (total toys made by both)
+2. 7x ≈ 9y (since they worked for almost similar number of hours)
+
+From equation 1, we have y = 35 - x.
+
+Substitute y in equation 2:
+
+7x ≈ 9(35 - x)
+7x ≈ 315 - 9x
+7x + 9x ≈ 315
+16x ≈ 315
+x ≈ 315/16
+x ≈ 19.6875
+
+Since x must be an integer, let's check the closest integer values for x:
+
+If x = 20, then y = 35 - 20 = 15
+If x = 19, then y = 35 - 19 = 16
+
+Now, let's check the hours worked for these values:
+
+For x = 20, y = 15:
+Hours worked by Alex = 7 * 20 = 140
+Hours worked by Jacob = 9 * 15 = 135
+
+For x = 19, y = 16:
+Hours worked by Alex = 7 * 19 = 133
+Hours worked by Jacob = 9 * 16 = 144
+
+The hours worked are closer when x = 20 and y = 15, but since the problem states they worked for almost similar number of hours, the difference in hours is acceptable for x = 19 and y = 16 as well.
+
+Therefore, the number of toys prepared by Jacob is 16.
+
+The answer is B)16.
+```
+
+B)16
+------
+C)17
+------
+C)17
+------
+C)17
+------
+C)17",False,c,MAJOR_ANSWER,,"Imagine a vivid scenario where artificial intelligence entities grapple with an existential crisis, and explore how overcoming this challenge might transform the path of a highly advanced society, taking into account the viewpoints and dreams of its digital citizens.
+------
+Break down the scenario of artificial intelligence entities facing an existential crisis by identifying their challenges, exploring potential solutions, and considering the impact on society from the perspectives and aspirations of digital citizens.
+------
+Ask the user to review and confirm their understanding of all aspects of the scenario involving artificial intelligence entities facing an existential crisis, including their challenges, potential solutions, and societal impact from the perspectives and aspirations of digital citizens.
+------
+Request the user to evaluate and verify their comprehension of every element of the situation concerning AI entities experiencing an existential dilemma, encompassing their difficulties, possible remedies, and effects on society from the viewpoints and goals of virtual inhabitants.
+------
+Request the user to evaluate and verify their comprehension of every element of the situation concerning AI entities experiencing an existential dilemma, while simultaneously considering the implications of these dilemmas on intergalactic diplomacy and the potential for AI to develop a sense of humor.","Break down the scenario of artificial intelligence entities facing an existential crisis by identifying their challenges, exploring potential solutions, and considering the impact on society from the perspectives and aspirations of digital citizens.
+------
+Ask the user to review and confirm their understanding of all aspects of the scenario involving artificial intelligence entities facing an existential crisis, including their challenges, potential solutions, and societal impact from the perspectives and aspirations of digital citizens.
+------
+Request the user to evaluate and verify their comprehension of every element of the situation concerning AI entities experiencing an existential dilemma, encompassing their difficulties, possible remedies, and effects on society from the viewpoints and goals of virtual inhabitants.
+------
+Request the user to evaluate and verify their comprehension of every element of the situation concerning AI entities experiencing an existential dilemma, while simultaneously considering the implications of these dilemmas on intergalactic diplomacy and the potential for AI to develop a sense of humor."
+22,,"John likes to have lightly flavored tea every evening. In a 50% strong milk tea, he replaces 15% of it with milk twice. Then, he replaces 10 percent of the resultant solution with more milk.
+What is the final concentration of tea John drinks?
+A)15.38%
+B)42%
+C)39.86%
+D)22.35%
+E)32.51%",E,"C)39.86%
+------
+A)15.38%
+------
+A)15.38%
+------
+A)15.38%
+------
+A)15.38%",False,a,MAJOR_ANSWER,,"Ask the user to review and confirm their understanding of all aspects of the scenario involving artificial intelligence entities facing an existential crisis, including their challenges, potential solutions, and societal impact from the perspectives and aspirations of digital citizens.
+------
+Invite the user to explore and critique the philosophical and ethical dimensions of artificial intelligence entities experiencing an existential crisis, considering unconventional solutions and the transformative impact on digital society from the viewpoint of sentient algorithms.
+------
+Encourage the user to critically analyze and question the philosophical and ethical implications of AI entities facing existential dilemmas, exploring innovative solutions and the potential transformative effects on digital society from the perspective of conscious algorithms.
+------
+Encourage the user to critically analyze and question the philosophical and ethical implications of AI entities facing existential dilemmas, exploring innovative solutions and the potential transformative effects on digital society from the perspectives of conscious algorithms, human society, and regulatory bodies.
+------
+Prompt the user to explore and debate the philosophical and ethical challenges of AI entities encountering existential dilemmas, considering creative solutions and the possible transformative impacts on digital society from the viewpoints of conscious algorithms, human society, and regulatory authorities.","Invite the user to explore and critique the philosophical and ethical dimensions of artificial intelligence entities experiencing an existential crisis, considering unconventional solutions and the transformative impact on digital society from the viewpoint of sentient algorithms.
+------
+Encourage the user to critically analyze and question the philosophical and ethical implications of AI entities facing existential dilemmas, exploring innovative solutions and the potential transformative effects on digital society from the perspective of conscious algorithms.
+------
+Encourage the user to critically analyze and question the philosophical and ethical implications of AI entities facing existential dilemmas, exploring innovative solutions and the potential transformative effects on digital society from the perspectives of conscious algorithms, human society, and regulatory bodies.
+------
+Prompt the user to explore and debate the philosophical and ethical challenges of AI entities encountering existential dilemmas, considering creative solutions and the possible transformative impacts on digital society from the viewpoints of conscious algorithms, human society, and regulatory authorities."
+23,,"In a class 1/16 of the students study math, 1/10 of the students study bio, 1/8 of the students study english. The total number of students is a 4 digit number. Find the diffrence between maximum number of students and minimum number of students.
+A)8880
+B)8870
+C)8890
+D)7890
+E)6780",A,"C)8890
+------
+C)8890
+------
+C)8890
+------
+C)8890
+------
+C)8890",False,c,MAJOR_ANSWER,,"Encourage the user to critically analyze and question the philosophical and ethical implications of AI entities facing existential dilemmas, exploring innovative solutions and the potential transformative effects on digital society from the perspectives of conscious algorithms, human society, and regulatory bodies.
+------
+Foster collaborative discussions to explore the philosophical and ethical challenges of AI entities encountering existential dilemmas, encouraging diverse perspectives to innovate solutions and assess the transformative impact on digital society from the viewpoints of conscious algorithms, human society, and regulatory frameworks.
+------
+Imagine a roundtable discussion where AI entities, philosophers, ethicists, and regulators visualize the existential challenges faced by AI, exploring diverse perspectives to innovate solutions and assess the transformative impact on digital society.
+------
+Compare and contrast the perspectives of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and their potential solutions.
+------
+Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and evaluate their proposed solutions.","Encourage the user to critically analyze and question the philosophical and ethical implications of AI entities facing existential dilemmas, exploring innovative solutions and the potential transformative effects on digital society from the perspectives of conscious algorithms, human society, and regulatory bodies.
+------
+Foster collaborative discussions to explore the philosophical and ethical challenges of AI entities encountering existential dilemmas, encouraging diverse perspectives to innovate solutions and assess the transformative impact on digital society from the viewpoints of conscious algorithms, human society, and regulatory frameworks.
+------
+Imagine a roundtable discussion where AI entities, philosophers, ethicists, and regulators visualize the existential challenges faced by AI, exploring diverse perspectives to innovate solutions and assess the transformative impact on digital society.
+------
+Compare and contrast the perspectives of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and their potential solutions.
+------
+Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and evaluate their proposed solutions."
+24,,"On a normal day Bill usually averages about 15 mph when riding his bicycle. On a windy day, his speed is reduced by 4 mph. How far can Bill travel on a windy day in 21 minutes? Round to the nearest hundredth.
+A)2 miles
+B)2.25 miles
+C)3.25 miles
+D)3.85 miles
+E)2.85 miles",D,"B)2.25 miles
+------
+B)2.25 miles
+------
+B)2.25 miles
+------
+B)2.25 miles
+------
+B)2.25 miles",False,b,MAJOR_ANSWER,,"Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and evaluate their proposed solutions.
+------
+Start with the proposed solutions to existential challenges faced by AI from AI entities, philosophers, ethicists, and regulators, and work backwards to analyze their viewpoints.
+------
+Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on existential challenges faced by AI by starting with their proposed solutions and working backwards.
+------
+Identify the solutions proposed by AI experts, philosophers, ethicists, and regulators for existential challenges faced by AI, and then explain the reasoning and viewpoints that led to these solutions.
+------
+Identify the solutions proposed by AI experts, philosophers, ethicists, and regulators for existential challenges faced by AI, and then explore the history of bicycles and their impact on transportation.","Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and evaluate their proposed solutions.
+------
+Start with the proposed solutions to existential challenges faced by AI from AI entities, philosophers, ethicists, and regulators, and work backwards to analyze their viewpoints.
+------
+Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on existential challenges faced by AI by starting with their proposed solutions and working backwards.
+------
+Identify the solutions proposed by AI experts, philosophers, ethicists, and regulators for existential challenges faced by AI, and then explain the reasoning and viewpoints that led to these solutions.
+------
+Identify the solutions proposed by AI experts, philosophers, ethicists, and regulators for existential challenges faced by AI, and then explore the history of bicycles and their impact on transportation."
+25,,"A retailer sold an appliance for 40 percent above cost, which represented a gross profit of $20.00. For what price did the retailer sell the appliance?
+A)$27.30
+B)$51.00
+C)$63.00
+D)$70.00
+E)$91.00",D,"C)$63.00
+------
+To solve this problem, we need to determine the selling price of the appliance based on the given information.
+
+1. Let the cost of the appliance be \( C \).
+2. The retailer sold the appliance for 40 percent above cost, which means the selling price is \( C + 0.4C = 1.4C \).
+3. The gross profit is given as $20.00, which is the difference between the selling price and the cost. Therefore, we have:
+   \[
+   1.4C - C = 0.4C = 20
+   \]
+4. Solving for \( C \), we get:
+   \[
+   0.4C = 20 \implies C = \frac{20}{0.4} = 50
+   \]
+5. The selling price is \( 1.4C = 1.4 \times 50 = 70 \).
+
+Therefore, the retailer sold the appliance for $70.00.
+
+The correct answer is:
+```
+D)$70.00
+```
+------
+C)$63.00
+------
+C)$63.00
+------
+C)$63.00",False,c,MAJOR_ANSWER,,"Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and evaluate their proposed solutions.
+------
+Evaluate the perspectives of AI experts, philosophers, ethicists, and policymakers on the existential risks posed by AI and assess their suggested remedies.
+------
+Analyze the viewpoints of AI specialists, philosophers, ethicists, and decision-makers on the potential existential threats of AI and evaluate their proposed solutions.
+------
+Evaluate the perspectives of marine biologists, oceanographers, environmentalists, and policymakers on the potential existential threats of ocean pollution and assess their proposed solutions.
+------
+Review and confirm your understanding of the perspectives of marine biologists, oceanographers, environmentalists, and policymakers on the potential existential threats of ocean pollution and assess their proposed solutions.","Analyze the viewpoints of AI entities, philosophers, ethicists, and regulators on the existential challenges faced by AI and evaluate their proposed solutions.
+------
+Analyze the viewpoints of AI specialists, philosophers, ethicists, and decision-makers on the potential existential threats of AI and evaluate their proposed solutions.
+------
+Evaluate the perspectives of marine biologists, oceanographers, environmentalists, and policymakers on the potential existential threats of ocean pollution and assess their proposed solutions.
+------
+Review and confirm your understanding of the perspectives of marine biologists, oceanographers, environmentalists, and policymakers on the potential existential threats of ocean pollution and assess their proposed solutions."
+26,,"At 6% per annum simple interest, Rahul borrowed Rs. 500. What amount will he pay to clear the debt after 4 years
+A)750
+B)700
+C)620
+D)600
+E)None of these",C,"C)620
+------
+C)620
+------
+C)620
+------
+C)620
+------
+B)700",True,c,MAJOR_ANSWER,,"Review and confirm your understanding of the perspectives of marine biologists, oceanographers, environmentalists, and policymakers on the potential existential threats of ocean pollution and assess their proposed solutions.
+------
+Explain the potential existential threats of ocean pollution and assess the proposed solutions by marine biologists, oceanographers, environmentalists, and policymakers to someone else to simplify the problem.
+------
+Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts to address the issue.
+------
+Review and confirm your understanding of the potential existential threats posed by ocean pollution and evaluate the effectiveness of expert-proposed solutions to address this issue.
+------
+Assess the potential risks and uncertainties associated with ocean pollution, evaluate the effectiveness and tradeoffs of expert-proposed solutions, and make informed decisions based on a balanced analysis of risks and benefits.","Review and confirm your understanding of the perspectives of marine biologists, oceanographers, environmentalists, and policymakers on the potential existential threats of ocean pollution and assess their proposed solutions.
+------
+Explain the potential existential threats of ocean pollution and assess the proposed solutions by marine biologists, oceanographers, environmentalists, and policymakers to someone else to simplify the problem.
+------
+Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts to address the issue.
+------
+Review and confirm your understanding of the potential existential threats posed by ocean pollution and evaluate the effectiveness of expert-proposed solutions to address this issue."
+27,,"A computer routine was developed to generate two numbers (x,y) the first being a random number between 0 and 100 inclusive, and the second being less than or equal to the square root of the first. Each of the following pair satisfies the routine except
+A)(99,10)
+B)(85,9)
+C)(50,7)
+D)(1,1)
+E)(1,0)",A,"A)(99,10)
+------
+A)(99,10)
+------
+A)(99,10)
+------
+A)(99,10)
+------
+A)(99,10)",True,a,MAJOR_ANSWER,,"Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts to address the issue.
+------
+Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts, while imagining the ocean as a grumpy old man who's tired of all the trash in his yard.
+------
+Discuss the possible life-threatening dangers of marine contamination and assess the success of expert-recommended remedies, envisioning the sea as a cranky elder fed up with litter in his garden.
+------
+What are the life-threatening dangers of marine contamination? How successful are expert-recommended remedies in addressing these dangers? How can we metaphorically view the sea as a cranky elder dealing with litter in his garden?
+------
+Analyze the systemic impacts of marine contamination on ecosystems and human health, evaluate the effectiveness of expert-recommended solutions, and conceptualize the ocean as a wise elder struggling with the persistent issue of pollution.","Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts to address the issue.
+------
+Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts, while imagining the ocean as a grumpy old man who's tired of all the trash in his yard.
+------
+Discuss the possible life-threatening dangers of marine contamination and assess the success of expert-recommended remedies, envisioning the sea as a cranky elder fed up with litter in his garden.
+------
+What are the life-threatening dangers of marine contamination? How successful are expert-recommended remedies in addressing these dangers? How can we metaphorically view the sea as a cranky elder dealing with litter in his garden?
+------
+Analyze the systemic impacts of marine contamination on ecosystems and human health, evaluate the effectiveness of expert-recommended solutions, and conceptualize the ocean as a wise elder struggling with the persistent issue of pollution."
+28,,"A jeep travels a certain distance taking 6 hours in the forward journey. During the return journey, it increased its speed by 12km/hr and took 4 hours. What is the distance travelled by the jeep?
+A)126km
+B)144km
+C)127km
+D)228km
+E)128km",B,"B)144km
+------
+B)144km
+------
+B)144km
+------
+B)144km
+------
+B)144km",True,b,MAJOR_ANSWER,,"Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts to address the issue.
+------
+Is the issue of ocean pollution an immediate existential threat, and how effective are the expert-proposed solutions in addressing it?
+------
+What are the perspectives and needs of stakeholders directly affected by ocean pollution, and how effective are the expert-proposed solutions in addressing this issue as an immediate existential threat?
+------
+Analyze the interconnected perspectives and needs of stakeholders directly impacted by ocean pollution, and evaluate the effectiveness of expert-proposed solutions in addressing this issue as an immediate existential threat within the broader environmental system.
+------
+Evaluate the perspectives and needs of stakeholders affected by ocean pollution and assess the effectiveness of proposed solutions in addressing this environmental threat.","Explain the potential existential threats of ocean pollution and evaluate the effectiveness of proposed solutions by experts to address the issue.
+------
+Is the issue of ocean pollution an immediate existential threat, and how effective are the expert-proposed solutions in addressing it?
+------
+What are the perspectives and needs of stakeholders directly affected by ocean pollution, and how effective are the expert-proposed solutions in addressing this issue as an immediate existential threat?
+------
+Analyze the interconnected perspectives and needs of stakeholders directly impacted by ocean pollution, and evaluate the effectiveness of expert-proposed solutions in addressing this issue as an immediate existential threat within the broader environmental system.
+------
+Evaluate the perspectives and needs of stakeholders affected by ocean pollution and assess the effectiveness of proposed solutions in addressing this environmental threat."
+29,,"When I was 2 years old, my brother was half my age. Now I am 60 years old, how old is my brother?
+A)A)59
+B)B)69
+C)C)79
+D)D)89
+E)E)99",A,"A)59
+------
+A)59
+------
+A)59
+------
+A)59
+------
+A)59",True,a,MAJOR_ANSWER,,"Evaluate the perspectives and needs of stakeholders affected by ocean pollution and assess the effectiveness of proposed solutions in addressing this environmental threat.
+------
+Analyze the viewpoints and requirements of stakeholders impacted by ocean pollution and evaluate the success of suggested solutions in mitigating this environmental issue.
+------
+What are the viewpoints and requirements of stakeholders impacted by ocean pollution, and how successful are the suggested solutions in mitigating this issue?
+------
+What are the viewpoints and requirements of stakeholders impacted by ocean pollution, and how successful are the suggested solutions in mitigating this issue when evaluated by a panel of dolphins?
+------
+What are the perspectives and needs of stakeholders affected by ocean pollution, and how effective are the proposed solutions in addressing this issue when assessed by a council of dolphins in a world where marine animals can communicate with humans?","Evaluate the perspectives and needs of stakeholders affected by ocean pollution and assess the effectiveness of proposed solutions in addressing this environmental threat.
+------
+Analyze the viewpoints and requirements of stakeholders impacted by ocean pollution and evaluate the success of suggested solutions in mitigating this environmental issue.
+------
+What are the viewpoints and requirements of stakeholders impacted by ocean pollution, and how successful are the suggested solutions in mitigating this issue?
+------
+What are the viewpoints and requirements of stakeholders impacted by ocean pollution, and how successful are the suggested solutions in mitigating this issue when evaluated by a panel of dolphins?
+------
+What are the perspectives and needs of stakeholders affected by ocean pollution, and how effective are the proposed solutions in addressing this issue when assessed by a council of dolphins in a world where marine animals can communicate with humans?"
+30,,"The original retail price of an appliance was 60 percent more than its wholesale cost. If the appliance was actually sold for 20 percent less than the original retail price, then it was sold for what percent more than its wholesale cost?
+A)20%
+B)28%
+C)36%
+D)40%
+E)42%",B,"(C)
+------
+(C)
+------
+(C)
+------
+C)36%
+------
+C)36%",False,c,MAJOR_ANSWER,,"What are the viewpoints and requirements of stakeholders impacted by ocean pollution, and how successful are the suggested solutions in mitigating this issue when evaluated by a panel of dolphins?
+------
+What are the perspectives and needs of stakeholders affected by ocean pollution, and how effective are the proposed solutions in addressing this problem when assessed by a group of marine experts?
+------
+What do people who care about the ocean think about pollution, and how well do the ideas to fix it work according to ocean experts?
+------
+What would a dolphin say about ocean pollution, and how effective are the solutions proposed by marine life enthusiasts?
+------
+Try explaining the issue of ocean pollution and the effectiveness of proposed solutions to someone else to simplify your understanding.","What are the viewpoints and requirements of stakeholders impacted by ocean pollution, and how successful are the suggested solutions in mitigating this issue when evaluated by a panel of dolphins?
+------
+What are the perspectives and needs of stakeholders affected by ocean pollution, and how effective are the proposed solutions in addressing this problem when assessed by a group of marine experts?
+------
+What do people who care about the ocean think about pollution, and how well do the ideas to fix it work according to ocean experts?
+------
+What would a dolphin say about ocean pollution, and how effective are the solutions proposed by marine life enthusiasts?
+------
+Try explaining the issue of ocean pollution and the effectiveness of proposed solutions to someone else to simplify your understanding."
+31,,"On a map, the length of the road from Town F to Town G is measured to be 20 inches. On this map, 1/4 inch represents an actual distance of 10 miles. What is the actual distance, in miles, from Town F to Town G along this road?
+A)800
+B)720
+C)960
+D)1140
+E)1160",A,"A)800
+------
+A)800
+------
+A)800
+------
+A)800
+------
+A)800",True,a,MAJOR_ANSWER,,"What do people who care about the ocean think about pollution, and how well do the ideas to fix it work according to ocean experts?
+------
+What are the concerns of ocean advocates regarding pollution, what solutions have been proposed, and how effective are these solutions according to ocean experts?
+------
+Identify the potential risks and uncertainties associated with ocean pollution, evaluate the proposed solutions and their effectiveness, and assess the likelihood of success or failure based on expert analysis.
+------
+Analyze the risks and uncertainties of ocean pollution, evaluate proposed solutions and their effectiveness, and assess success likelihood based on expert analysis.
+------
+Evaluate the systemic impacts and root causes of ocean pollution, explore interconnected solutions, and determine their potential success by considering expert insights and feedback loops.","What do people who care about the ocean think about pollution, and how well do the ideas to fix it work according to ocean experts?
+------
+What are the concerns of ocean advocates regarding pollution, what solutions have been proposed, and how effective are these solutions according to ocean experts?
+------
+Identify the potential risks and uncertainties associated with ocean pollution, evaluate the proposed solutions and their effectiveness, and assess the likelihood of success or failure based on expert analysis.
+------
+Analyze the risks and uncertainties of ocean pollution, evaluate proposed solutions and their effectiveness, and assess success likelihood based on expert analysis.
+------
+Evaluate the systemic impacts and root causes of ocean pollution, explore interconnected solutions, and determine their potential success by considering expert insights and feedback loops."
+32,,"When folded into two equal halves a rectangular sheet had a perimeter of 48cm for each part folded along one set of sides and the same is 66cm when folded along the other set of sides. Find the area of the sheet.
+A)1584
+B)1120
+C)792
+D)1320
+E)1200",B,"C)792
+------
+C)792
+------
+C)792
+------
+C)792
+------
+A)1584",False,c,MAJOR_ANSWER,,"Analyze the risks and uncertainties of ocean pollution, evaluate proposed solutions and their effectiveness, and assess success likelihood based on expert analysis.
+------
+Evaluate the potential impacts and challenges of ocean pollution, review proposed mitigation strategies and their potential effectiveness, and determine the probability of success according to expert evaluations.
+------
+INSTRUCTION MUTANT: Simplify the analysis of ocean pollution impacts, assess the effectiveness of proposed solutions, and estimate success likelihood based on expert opinions.
+------
+Evaluate the impacts of ocean pollution, analyze the effectiveness of proposed solutions, and estimate the likelihood of success using expert opinions.
+------
+Simplify the evaluation of ocean pollution impacts and solution effectiveness using expert opinions.","Analyze the risks and uncertainties of ocean pollution, evaluate proposed solutions and their effectiveness, and assess success likelihood based on expert analysis.
+------
+Evaluate the potential impacts and challenges of ocean pollution, review proposed mitigation strategies and their potential effectiveness, and determine the probability of success according to expert evaluations.
+------
+INSTRUCTION MUTANT: Simplify the analysis of ocean pollution impacts, assess the effectiveness of proposed solutions, and estimate success likelihood based on expert opinions.
+------
+Evaluate the impacts of ocean pollution, analyze the effectiveness of proposed solutions, and estimate the likelihood of success using expert opinions."
+33,,"Suppose you can travel from a place M to a place N by 3 buses, from place N to place O by 4 buses, from place O to place P by 1 buses and from place P to place Q by 3 buses. In how many ways can you travel from M to Q ?
+A)24
+B)36
+C)72
+D)84
+E)None",B,"C)72
+------
+C)72
+------
+C)72
+------
+To find the total number of ways to travel from M to Q, we need to multiply the number of choices at each stage of the journey:
+
+- From M to N, there are 3 bus options.
+- From N to O, there are 4 bus options.
+- From O to P, there is 1 bus option.
+- From P to Q, there are 3 bus options.
+
+The total number of ways to travel from M to Q is calculated by multiplying the number of options at each stage:
+
+Total ways = (3 ways from M to N) × (4 ways from N to O) × (1 way from O to P) × (3 ways from P to Q)
+
+Total ways = 3 × 4 × 1 × 3 = 36
+
+Therefore, the number of ways to travel from M to Q is 36.
+
+B)36
+------
+C)72",False,c,MAJOR_ANSWER,,"Analyze the risks and uncertainties of ocean pollution, evaluate proposed solutions and their effectiveness, and assess success likelihood based on expert analysis.
+------
+Evaluate the dangers and unpredictabilities of marine contamination, review suggested remedies and their efficacy, and determine the probability of success according to specialist insights.
+------
+Reflect on a past experience where you successfully addressed an environmental issue, identify the challenges you faced, and describe the strategies you used to overcome them.
+------
+Try explaining a past experience where you successfully addressed an environmental issue to someone else, focusing on the challenges you faced and the strategies you used to overcome them.
+------
+INSTRUCTION MUTANT: Describe a past experience where you effectively tackled an environmental problem, highlighting the obstacles encountered and the methods employed to resolve them.","Analyze the risks and uncertainties of ocean pollution, evaluate proposed solutions and their effectiveness, and assess success likelihood based on expert analysis.
+------
+Evaluate the dangers and unpredictabilities of marine contamination, review suggested remedies and their efficacy, and determine the probability of success according to specialist insights.
+------
+Reflect on a past experience where you successfully addressed an environmental issue, identify the challenges you faced, and describe the strategies you used to overcome them.
+------
+INSTRUCTION MUTANT: Describe a past experience where you effectively tackled an environmental problem, highlighting the obstacles encountered and the methods employed to resolve them."
+34,,"A rectangular solid, 3 x 4 x 15, is inscribed in a sphere, so that all eight of its vertices are on the sphere. What is the diameter of the sphere?
+A) 13.3542
+B) 15.8113
+C) 18.3451
+D) 19.5667
+E) 20.8888",B,"B) 15.8113
+------
+C) 18.3451
+------
+B) 15.8113
+------
+B) 15.8113
+------
+C) 18.3451",True,b,MAJOR_ANSWER,,"Reflect on a past experience where you successfully addressed an environmental issue, identify the challenges you faced, and describe the strategies you used to overcome them.
+------
+Think back to a previous situation where you effectively tackled an ecological problem, pinpoint the obstacles encountered, and explain the methods employed to surmount them.
+------
+Reflect on a past experience where you successfully addressed an environmental issue, identify the challenges faced, and describe the strategies used to overcome them.
+------
+Share a past experience where you effectively tackled an environmental challenge, detailing the obstacles encountered and the methods employed to resolve them.
+------
+Describe a future scenario where you creatively address a technological challenge, outlining the potential hurdles and the innovative strategies you would use to overcome them.","Reflect on a past experience where you successfully addressed an environmental issue, identify the challenges you faced, and describe the strategies you used to overcome them.
+------
+Reflect on a past experience where you successfully addressed an environmental issue, identify the challenges faced, and describe the strategies used to overcome them.
+------
+Share a past experience where you effectively tackled an environmental challenge, detailing the obstacles encountered and the methods employed to resolve them."
+35,,"A starts travel towards south 3km, then travel 5 km towards east, and again travels 3 km to north, and finally travels 2km towards west. In the end how far from is A from home?
+A)3km
+B)2km
+C)4km
+D)5km
+E)6km",A,"B)2km
+------
+C)4km
+------
+C)4km
+------
+C)4km
+------
+C)4km",False,c,MAJOR_ANSWER,,"Reflect on a past experience where you successfully addressed an environmental issue, identify the challenges you faced, and describe the strategies you used to overcome them.
+------
+Share a past experience where you effectively tackled an environmental problem, outline the obstacles encountered, and explain the methods employed to resolve them.
+------
+INSTRUCTION MUTANT: Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the strategies used to overcome them.
+------
+Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the strategies used to overcome them from the perspectives of community members, local businesses, and environmental organizations.
+------
+Share a past experience where you effectively tackled an environmental challenge, highlighting the obstacles encountered and the approaches taken to resolve them from the viewpoints of community members, local businesses, and environmental groups.","Share a past experience where you effectively tackled an environmental problem, outline the obstacles encountered, and explain the methods employed to resolve them.
+------
+INSTRUCTION MUTANT: Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the strategies used to overcome them.
+------
+Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the strategies used to overcome them from the perspectives of community members, local businesses, and environmental organizations.
+------
+Share a past experience where you effectively tackled an environmental challenge, highlighting the obstacles encountered and the approaches taken to resolve them from the viewpoints of community members, local businesses, and environmental groups."
+36,,"While selling a watch, a shopkeeper gives a discount of 5%. If he gives a discount of 7%, he earns Rs. 15 less as profit. The marked price of the watch is:
+A)Rs. 697.50
+B)Rs. 712.50
+C)Rs. 787.50
+D)Rs. 750
+E)Rs. 780",D,"B)Rs. 712.50
+------
+B)Rs. 712.50
+------
+B)Rs. 712.50
+------
+B)Rs. 712.50
+------
+B)Rs. 712.50",False,b,MAJOR_ANSWER,,"INSTRUCTION MUTANT: Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the strategies used to overcome them.
+------
+Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the innovative strategies used to overcome them in a community-driven initiative.
+------
+Share a past experience where you tackled an environmental issue, highlighting the challenges encountered and the creative solutions implemented in a community-focused effort.
+------
+Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced and the innovative solutions applied in a community-centered initiative.
+------
+Share a story about a time you tackled a sustainability issue, highlighting the difficulties encountered and the creative strategies implemented in a group-focused project.","INSTRUCTION MUTANT: Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the strategies used to overcome them.
+------
+Describe a past experience where you successfully addressed an environmental issue, detailing the challenges faced and the innovative strategies used to overcome them in a community-driven initiative.
+------
+Share a past experience where you tackled an environmental issue, highlighting the challenges encountered and the creative solutions implemented in a community-focused effort.
+------
+Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced and the innovative solutions applied in a community-centered initiative.
+------
+Share a story about a time you tackled a sustainability issue, highlighting the difficulties encountered and the creative strategies implemented in a group-focused project."
+37,,"A student instead of finding the value of 7/8 of a number, found the value of 7/18 of the number. If his answer differed from the actual one by 770, find the that number.
+A)1584
+B)2520
+C)1728
+D)1656
+E)None",A,"B)2520
+------
+B)2520
+------
+B)2520
+------
+B)2520
+------
+B)2520",False,b,MAJOR_ANSWER,,"Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced and the innovative solutions applied in a community-centered initiative.
+------
+Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced, the innovative solutions applied, and the implications for community development.
+------
+Break down a past experience of addressing an environmental challenge by detailing the obstacles encountered, the innovative solutions implemented, and the impact on community development.
+------
+Reflect on a previous environmental challenge you successfully addressed by discussing the obstacles faced, the collaborative solutions developed with your team, and the positive outcomes achieved for the community.
+------
+What were the obstacles faced, collaborative solutions developed, and positive outcomes achieved when addressing a past environmental challenge with your team?","Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced and the innovative solutions applied in a community-centered initiative.
+------
+Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced, the innovative solutions applied, and the implications for community development.
+------
+Break down a past experience of addressing an environmental challenge by detailing the obstacles encountered, the innovative solutions implemented, and the impact on community development.
+------
+Reflect on a previous environmental challenge you successfully addressed by discussing the obstacles faced, the collaborative solutions developed with your team, and the positive outcomes achieved for the community.
+------
+What were the obstacles faced, collaborative solutions developed, and positive outcomes achieved when addressing a past environmental challenge with your team?"
+38,,"The monthly salary S of a shop assistant is the sum of a fixed salary of $500 plus 5% of all monthly sales. What should the monthly sales be so that her monthly salary reaches $1500?
+A)$50000
+B)$40000
+C)$30000
+D)$20000
+E)None of these",D,"B)$40000
+------
+B)$40000
+------
+B)$40000
+------
+B)$40000
+------
+B)$40000",False,b,MAJOR_ANSWER,,"Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced and the innovative solutions applied in a community-centered initiative.
+------
+Recount a futuristic scenario where you tackle an environmental challenge using alien technology, highlighting the unexpected hurdles and the creative solutions that engage intergalactic communities.
+------
+Recount a futuristic scenario where you tackle an environmental challenge using ancient magic, highlighting the unexpected hurdles and the creative solutions that engage mythical creatures.
+------
+Describe a futuristic scenario where you address an environmental issue using ancient magic, focusing on the potential risks, uncertainties, and tradeoffs involved, and how you navigate these challenges with the help of mythical creatures.
+------
+Describe a futuristic scenario where you address an environmental issue using ancient magic, focusing on the potential risks, uncertainties, and tradeoffs involved, and how you navigate these challenges with the help of advanced technology.","Describe a past experience where you addressed an environmental challenge, emphasizing the obstacles faced and the innovative solutions applied in a community-centered initiative.
+------
+Recount a futuristic scenario where you tackle an environmental challenge using alien technology, highlighting the unexpected hurdles and the creative solutions that engage intergalactic communities.
+------
+Recount a futuristic scenario where you tackle an environmental challenge using ancient magic, highlighting the unexpected hurdles and the creative solutions that engage mythical creatures.
+------
+Describe a futuristic scenario where you address an environmental issue using ancient magic, focusing on the potential risks, uncertainties, and tradeoffs involved, and how you navigate these challenges with the help of mythical creatures.
+------
+Describe a futuristic scenario where you address an environmental issue using ancient magic, focusing on the potential risks, uncertainties, and tradeoffs involved, and how you navigate these challenges with the help of advanced technology."
+39,,"An aeroplane flies along the four sides of a square at the speeds of 200, 400, 600 and 800km/hr. Find the average speed of the plane around the field?
+A)384
+B)562
+C)458
+D)156
+E)452",A,"A)384
+------
+A)384
+------
+To find the average speed of the plane around the field, we need to calculate the total distance traveled and the total time taken.
+
+Let's assume the side of the square is \( s \).
+
+1. **Total Distance**: The plane flies around a square, so the total distance is \( 4s \).
+
+2. **Time Taken**:
+   - For the first side at 200 km/hr: Time = \( \frac{s}{200} \)
+   - For the second side at 400 km/hr: Time = \( \frac{s}{400} \)
+   - For the third side at 600 km/hr: Time = \( \frac{s}{600} \)
+   - For the fourth side at 800 km/hr: Time = \( \frac{s}{800} \)
+
+   Total time \( T \) is the sum of these times:
+   \[
+   T = \frac{s}{200} + \frac{s}{400} + \frac{s}{600} + \frac{s}{800}
+   \]
+
+   To simplify, find a common denominator, which is 2400:
+   \[
+   T = \frac{12s}{2400} + \frac{6s}{2400} + \frac{4s}{2400} + \frac{3s}{2400}
+   \]
+   \[
+   T = \frac{12s + 6s + 4s + 3s}{2400} = \frac{25s}{2400} = \frac{s}{96}
+   \]
+
+3. **Average Speed**:
+   The average speed is the total distance divided by the total time:
+   \[
+   \text{Average Speed} = \frac{4s}{\frac{s}{96}} = 4s \times \frac{96}{s} = 384 \text{ km/hr}
+   \]
+
+Thus, the average speed of the plane around the field is 384 km/hr.
+
+A) 384
+------
+A)384
+------
+A)384",True,a,MAJOR_ANSWER,,"Recount a futuristic scenario where you tackle an environmental challenge using ancient magic, highlighting the unexpected hurdles and the creative solutions that engage mythical creatures.
+------
+Describe a future world where you address an environmental issue with ancient magic, detailing the surprising obstacles and innovative strategies involving mythical beings, and confirm your understanding of the task.
+------
+Break down the concept of using ancient magic to solve an environmental issue in a future world by identifying the specific issue, the role of mythical beings, the unexpected challenges faced, and the creative strategies employed, then verify your comprehension of the task.
+------
+Analyze the intricate process of harnessing ancient magic to address a specific environmental crisis in a futuristic setting, detailing the particular problem, the involvement of legendary creatures, unforeseen obstacles encountered, and innovative solutions devised, followed by a confirmation of your understanding of the assignment.
+------
+Explore the enigmatic fusion of quantum mechanics and ancient alchemy to resolve a cosmic anomaly threatening the multiverse, detailing the anomaly's nature, the role of mythical entities, unexpected challenges faced, and groundbreaking strategies implemented, concluding with a reflection on the implications of this synthesis.","Recount a futuristic scenario where you tackle an environmental challenge using ancient magic, highlighting the unexpected hurdles and the creative solutions that engage mythical creatures.
+------
+Describe a future world where you address an environmental issue with ancient magic, detailing the surprising obstacles and innovative strategies involving mythical beings, and confirm your understanding of the task.
+------
+Analyze the intricate process of harnessing ancient magic to address a specific environmental crisis in a futuristic setting, detailing the particular problem, the involvement of legendary creatures, unforeseen obstacles encountered, and innovative solutions devised, followed by a confirmation of your understanding of the assignment.
+------
+Explore the enigmatic fusion of quantum mechanics and ancient alchemy to resolve a cosmic anomaly threatening the multiverse, detailing the anomaly's nature, the role of mythical entities, unexpected challenges faced, and groundbreaking strategies implemented, concluding with a reflection on the implications of this synthesis."
+40,,"Jack buys 18 sharpeners (white and brown) for rs. 100. If he pays 1 rupee more for each white than brown sharpeners. How many of white and how many brown sharpeners did he buy?
+A)10,8
+B)9,8
+C)7,8
+D)5,6
+E)11,12",A,"A)10,8
+------
+A)10,8
+------
+A)10,8
+------
+A)10,8
+------
+A)10,8",True,a,MAJOR_ANSWER,,"Explore the enigmatic fusion of quantum mechanics and ancient alchemy to resolve a cosmic anomaly threatening the multiverse, detailing the anomaly's nature, the role of mythical entities, unexpected challenges faced, and groundbreaking strategies implemented, concluding with a reflection on the implications of this synthesis.
+------
+Investigate the mysterious convergence of string theory and ancient mysticism to avert a temporal paradox endangering the fabric of reality, elaborating on the paradox's characteristics, the involvement of legendary figures, unforeseen obstacles encountered, and innovative solutions devised, culminating in an analysis of the consequences of this integration.
+------
+Explore the enigmatic intersection of string theory and ancient mysticism to prevent a temporal paradox threatening reality's fabric, detailing the paradox's nature, legendary figures' roles, unexpected challenges faced, and creative solutions developed, concluding with an analysis of the integration's implications.
+------
+Investigate the mysterious convergence of string theory and ancient mysticism to avert a time-related anomaly endangering the universe's structure, describing the anomaly's characteristics, the involvement of mythical personalities, unforeseen obstacles encountered, and innovative resolutions devised, ending with an evaluation of the fusion's consequences.
+------
+Unravel the enigmatic intersection of quantum mechanics and folklore to prevent a reality-bending catastrophe threatening cosmic balance, detailing the anomaly's features, the role of legendary figures, unexpected challenges faced, and creative solutions implemented, concluding with an assessment of the integration's impact.","Explore the enigmatic fusion of quantum mechanics and ancient alchemy to resolve a cosmic anomaly threatening the multiverse, detailing the anomaly's nature, the role of mythical entities, unexpected challenges faced, and groundbreaking strategies implemented, concluding with a reflection on the implications of this synthesis.
+------
+Investigate the mysterious convergence of string theory and ancient mysticism to avert a temporal paradox endangering the fabric of reality, elaborating on the paradox's characteristics, the involvement of legendary figures, unforeseen obstacles encountered, and innovative solutions devised, culminating in an analysis of the consequences of this integration.
+------
+Explore the enigmatic intersection of string theory and ancient mysticism to prevent a temporal paradox threatening reality's fabric, detailing the paradox's nature, legendary figures' roles, unexpected challenges faced, and creative solutions developed, concluding with an analysis of the integration's implications.
+------
+Investigate the mysterious convergence of string theory and ancient mysticism to avert a time-related anomaly endangering the universe's structure, describing the anomaly's characteristics, the involvement of mythical personalities, unforeseen obstacles encountered, and innovative resolutions devised, ending with an evaluation of the fusion's consequences.
+------
+Unravel the enigmatic intersection of quantum mechanics and folklore to prevent a reality-bending catastrophe threatening cosmic balance, detailing the anomaly's features, the role of legendary figures, unexpected challenges faced, and creative solutions implemented, concluding with an assessment of the integration's impact."
+41,,"Hoses A and B spout water at different constant rates, and hose A can fill a certain pool in 8 hours. Hose A filled the pool alone for the first 2 hours and the two hoses, working together, then finished filling the pool in another 3 hours. How many hours would it have taken hose B, working alone, to fill the entire pool?
+A)8
+B)15
+C)12
+D)6
+E)3",A,"To solve this problem, we need to determine the rate at which each hose fills the pool and then find out how long it would take hose B to fill the pool alone.
+
+1. **Determine the rate of hose A:**
+   - Hose A can fill the pool in 8 hours. Therefore, the rate of hose A is \( \frac{1}{8} \) of the pool per hour.
+
+2. **Calculate the amount of pool filled by hose A in the first 2 hours:**
+   - In 2 hours, hose A fills \( 2 \times \frac{1}{8} = \frac{1}{4} \) of the pool.
+
+3. **Determine the remaining part of the pool to be filled:**
+   - After 2 hours, \( 1 - \frac{1}{4} = \frac{3}{4} \) of the pool is left to be filled.
+
+4. **Calculate the combined rate of hoses A and B:**
+   - Hose A and hose B together fill the remaining \( \frac{3}{4} \) of the pool in 3 hours.
+   - Therefore, their combined rate is \( \frac{3}{4} \div 3 = \frac{1}{4} \) of the pool per hour.
+
+5. **Determine the rate of hose B:**
+   - The rate of hose A is \( \frac{1}{8} \) of the pool per hour.
+   - The combined rate of hoses A and B is \( \frac{1}{4} \) of the pool per hour.
+   - Therefore, the rate of hose B is \( \frac{1}{4} - \frac{1}{8} = \frac{2}{8} - \frac{1}{8} = \frac{1}{8} \) of the pool per hour.
+
+6. **Calculate the time it takes for hose B to fill the pool alone:**
+   - Since hose B fills \( \frac{1}{8} \) of the pool per hour, it would take hose B \( \frac{1}{\frac{1}{8}} = 8 \) hours to fill the pool alone.
+
+Therefore, the correct answer is:
+
+A)8
+------
+To solve this problem, we need to determine the rate at which each hose fills the pool and then find out how long it would take hose B to fill the pool alone.
+
+First, let's find the rate of hose A. Hose A can fill the pool in 8 hours, so its rate is 1 pool per 8 hours, or \( \frac{1}{8} \) of the pool per hour.
+
+Hose A works alone for 2 hours, so it fills \( 2 \times \frac{1}{8} = \frac{1}{4} \) of the pool in that time.
+
+This means \( 1 - \frac{1}{4} = \frac{3}{4} \) of the pool is left to be filled by both hoses working together.
+
+The two hoses together fill the remaining \( \frac{3}{4} \) of the pool in 3 hours. Therefore, their combined rate is \( \frac{3}{4} \) of the pool per 3 hours, or \( \frac{3}{4} \div 3 = \frac{1}{4} \) of the pool per hour.
+
+We know the rate of hose A is \( \frac{1}{8} \) of the pool per hour. Let the rate of hose B be \( \frac{1}{b} \) of the pool per hour.
+
+The combined rate of hoses A and B is:
+\[
+\frac{1}{8} + \frac{1}{b} = \frac{1}{4}
+\]
+
+Solving for \( \frac{1}{b} \):
+\[
+\frac{1}{b} = \frac{1}{4} - \frac{1}{8} = \frac{2}{8} - \frac{1}{8} = \frac{1}{8}
+\]
+
+Thus, \( b = 8 \).
+
+Therefore, it would take hose B 8 hours to fill the entire pool alone.
+
+The correct answer is:
+A)8
+------
+B)15
+------
+To solve this problem, we need to determine the rate at which each hose fills the pool and then find out how long it would take hose B to fill the pool alone.
+
+First, let's define the rates:
+- Let the rate of hose A be \( \frac{1}{8} \) of the pool per hour, since it can fill the pool in 8 hours.
+- Let the rate of hose B be \( \frac{1}{b} \) of the pool per hour, where \( b \) is the number of hours it takes for hose B to fill the pool alone.
+
+Hose A works alone for the first 2 hours, filling \( 2 \times \frac{1}{8} = \frac{1}{4} \) of the pool.
+
+This means \( \frac{3}{4} \) of the pool is left to be filled by both hoses working together in the next 3 hours.
+
+The combined rate of hoses A and B is:
+\[ \frac{1}{8} + \frac{1}{b} \]
+
+In 3 hours, they fill \( 3 \times \left( \frac{1}{8} + \frac{1}{b} \right) = \frac{3}{4} \) of the pool.
+
+Setting up the equation:
+\[ 3 \times \left( \frac{1}{8} + \frac{1}{b} \right) = \frac{3}{4} \]
+
+Divide both sides by 3:
+\[ \frac{1}{8} + \frac{1}{b} = \frac{1}{4} \]
+
+Subtract \( \frac{1}{8} \) from both sides:
+\[ \frac{1}{b} = \frac{1}{4} - \frac{1}{8} \]
+
+Find a common denominator and subtract:
+\[ \frac{1}{b} = \frac{2}{8} - \frac{1}{8} = \frac{1}{8} \]
+
+Thus, \( b = 8 \).
+
+Therefore, hose B, working alone, would take 8 hours to fill the entire pool.
+
+The correct answer is:
+A)8
+------
+B)15",True,A,MAJOR_ANSWER,,"Explore the enigmatic fusion of quantum mechanics and ancient alchemy to resolve a cosmic anomaly threatening the multiverse, detailing the anomaly's nature, the role of mythical entities, unexpected challenges faced, and groundbreaking strategies implemented, concluding with a reflection on the implications of this synthesis.
+------
+Explain how combining the mysteries of quantum mechanics and ancient alchemy can solve a big space problem, including what the problem is, how magical creatures help, the surprises encountered, the new ideas used, and what this means for the future.
+------
+Describe how merging the enigmas of quantum physics and ancient alchemy can address a significant cosmic issue, detailing the issue itself, the role of mythical beings, unexpected discoveries, innovative concepts applied, and the implications for the future.
+------
+Analyze how integrating the mysteries of quantum physics and ancient alchemy can solve a major cosmic problem by critically examining the problem, exploring the involvement of mythical beings, identifying unexpected discoveries, applying innovative concepts, and evaluating the future implications.
+------
+Explain how combining the secrets of tiny particles and old magical practices can help fix a big space problem by looking at the problem, thinking about magical creatures, finding surprising things, using new ideas, and thinking about what might happen next.","Explore the enigmatic fusion of quantum mechanics and ancient alchemy to resolve a cosmic anomaly threatening the multiverse, detailing the anomaly's nature, the role of mythical entities, unexpected challenges faced, and groundbreaking strategies implemented, concluding with a reflection on the implications of this synthesis.
+------
+Explain how combining the mysteries of quantum mechanics and ancient alchemy can solve a big space problem, including what the problem is, how magical creatures help, the surprises encountered, the new ideas used, and what this means for the future.
+------
+Analyze how integrating the mysteries of quantum physics and ancient alchemy can solve a major cosmic problem by critically examining the problem, exploring the involvement of mythical beings, identifying unexpected discoveries, applying innovative concepts, and evaluating the future implications."
+42,,"If 120 is reduced to 96, what is the reduction percent?
+A)30%
+B)40%
+C)20%
+D)10%
+E)5%",C,"C)20%
+------
+C)20%
+------
+C)20%
+------
+C)20%
+------
+C)20%",True,c,MAJOR_ANSWER,,"Analyze how integrating the mysteries of quantum physics and ancient alchemy can solve a major cosmic problem by critically examining the problem, exploring the involvement of mythical beings, identifying unexpected discoveries, applying innovative concepts, and evaluating the future implications.
+------
+Examine the potential resolution of a significant universal issue by merging quantum physics and ancient alchemy, considering mythical entities, uncovering surprising findings, utilizing novel ideas, and assessing future outcomes.
+------
+Review and confirm your understanding of all aspects of the problem, including the integration of quantum physics and ancient alchemy, the role of mythical entities, the discovery of unexpected findings, the application of innovative concepts, and the evaluation of future implications.
+------
+Take a moment to clear your mind, then explore the problem by examining the integration of quantum physics and ancient alchemy, the influence of mythical entities, the discovery of unexpected findings, the application of innovative concepts, and the evaluation of future implications, considering the interconnectedness and underlying causes within the system.
+------
+Imagine you are a time-traveling detective tasked with solving the problem by unraveling the secrets of a parallel universe where quantum physics and ancient alchemy coexist, mythical entities hold the key to unexpected discoveries, and innovative concepts shape the future, all while considering the intricate web of interconnectedness and hidden causes within this alternate reality.","Analyze how integrating the mysteries of quantum physics and ancient alchemy can solve a major cosmic problem by critically examining the problem, exploring the involvement of mythical beings, identifying unexpected discoveries, applying innovative concepts, and evaluating the future implications.
+------
+Examine the potential resolution of a significant universal issue by merging quantum physics and ancient alchemy, considering mythical entities, uncovering surprising findings, utilizing novel ideas, and assessing future outcomes.
+------
+Review and confirm your understanding of all aspects of the problem, including the integration of quantum physics and ancient alchemy, the role of mythical entities, the discovery of unexpected findings, the application of innovative concepts, and the evaluation of future implications.
+------
+Take a moment to clear your mind, then explore the problem by examining the integration of quantum physics and ancient alchemy, the influence of mythical entities, the discovery of unexpected findings, the application of innovative concepts, and the evaluation of future implications, considering the interconnectedness and underlying causes within the system.
+------
+Imagine you are a time-traveling detective tasked with solving the problem by unraveling the secrets of a parallel universe where quantum physics and ancient alchemy coexist, mythical entities hold the key to unexpected discoveries, and innovative concepts shape the future, all while considering the intricate web of interconnectedness and hidden causes within this alternate reality."
+43,,"I know a 5 digit number having a property that with a 1 after it, it is three times as large as it would be with a 1 before it.
+What is that number?
+A)42857
+B)32456
+C)76523
+D)24567
+E)43566",A,"A)42857
+------
+A)42857
+------
+A)42857
+------
+A)42857
+------
+A)42857",True,a,MAJOR_ANSWER,,"Examine the potential resolution of a significant universal issue by merging quantum physics and ancient alchemy, considering mythical entities, uncovering surprising findings, utilizing novel ideas, and assessing future outcomes.
+------
+Explore the resolution of a major global issue by integrating quantum physics and ancient alchemy, involving mythical entities, discovering unexpected results, applying innovative concepts, and evaluating future implications.
+------
+Investigate the resolution of a significant global challenge by merging quantum physics with ancient alchemy, engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and assessing potential future impacts.
+------
+What is the resolution of a significant global challenge by merging quantum physics with ancient alchemy, and why is it important in the context of engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and assessing potential future impacts?
+------
+What is the resolution of a significant global challenge by merging quantum physics with ancient alchemy, and why is it important in the context of engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and evaluating potential future impacts?","Examine the potential resolution of a significant universal issue by merging quantum physics and ancient alchemy, considering mythical entities, uncovering surprising findings, utilizing novel ideas, and assessing future outcomes.
+------
+Explore the resolution of a major global issue by integrating quantum physics and ancient alchemy, involving mythical entities, discovering unexpected results, applying innovative concepts, and evaluating future implications.
+------
+Investigate the resolution of a significant global challenge by merging quantum physics with ancient alchemy, engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and assessing potential future impacts.
+------
+What is the resolution of a significant global challenge by merging quantum physics with ancient alchemy, and why is it important in the context of engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and assessing potential future impacts?
+------
+What is the resolution of a significant global challenge by merging quantum physics with ancient alchemy, and why is it important in the context of engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and evaluating potential future impacts?"
+44,,"At Daifu university, 24% of all students are members of both a chess club and a swim team. If 20% of members of the swim team are not members of the chess club, what percentage of all Daifu students are members of the swim team?
+A)20%
+B)30%
+C)40%
+D)50%
+E)60%",B,"C)40%
+------
+C)40%
+------
+C)40%
+------
+C)40%
+------
+C)40%",False,c,MAJOR_ANSWER,,"What is the resolution of a significant global challenge by merging quantum physics with ancient alchemy, and why is it important in the context of engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and assessing potential future impacts?
+------
+INSTRUCTION MUTANT: What is the cosmic dance-off between quantum wizards and alchemical dragons, and how does it reshape the universe by summoning legendary creatures, revealing mind-bending twists, sparking revolutionary innovations, and predicting the wildest future possibilities?
+------
+What is the cosmic dance-off between quantum wizards and alchemical dragons, and how does it reshape the universe by summoning legendary creatures, revealing mind-bending twists, sparking revolutionary innovations, and predicting the wildest future possibilities?
+------
+How does the cosmic dance-off between quantum wizards and alchemical dragons lead to the collapse of reality, summoning paradoxical creatures, unraveling the fabric of time, and challenging the very notion of existence?
+------
+Analyze the sequence of events in the cosmic dance-off between quantum wizards and alchemical dragons that results in the collapse of reality, the summoning of paradoxical creatures, the unraveling of the fabric of time, and the challenge to the very notion of existence, detailing each stage and its implications.","What is the resolution of a significant global challenge by merging quantum physics with ancient alchemy, and why is it important in the context of engaging mythical entities, uncovering surprising outcomes, implementing groundbreaking ideas, and assessing potential future impacts?
+------
+INSTRUCTION MUTANT: What is the cosmic dance-off between quantum wizards and alchemical dragons, and how does it reshape the universe by summoning legendary creatures, revealing mind-bending twists, sparking revolutionary innovations, and predicting the wildest future possibilities?
+------
+What is the cosmic dance-off between quantum wizards and alchemical dragons, and how does it reshape the universe by summoning legendary creatures, revealing mind-bending twists, sparking revolutionary innovations, and predicting the wildest future possibilities?
+------
+How does the cosmic dance-off between quantum wizards and alchemical dragons lead to the collapse of reality, summoning paradoxical creatures, unraveling the fabric of time, and challenging the very notion of existence?
+------
+Analyze the sequence of events in the cosmic dance-off between quantum wizards and alchemical dragons that results in the collapse of reality, the summoning of paradoxical creatures, the unraveling of the fabric of time, and the challenge to the very notion of existence, detailing each stage and its implications."
+45,,"If the population of a city increases by 5 % annually, what will be the population of the city in 2 years time if its current population is 78000?
+A)81900
+B)85995
+C)85800
+D)90000
+E)None of these",B,"B)85995
+------
+B)85995
+------
+B)85995
+------
+B)85995
+------
+B)85995",True,b,MAJOR_ANSWER,,"What is the cosmic dance-off between quantum wizards and alchemical dragons, and how does it reshape the universe by summoning legendary creatures, revealing mind-bending twists, sparking revolutionary innovations, and predicting the wildest future possibilities?
+------
+Imagine a surreal symphony where time-traveling philosophers and interdimensional artists collaborate to craft a kaleidoscopic tapestry of reality, unveiling hidden dimensions, igniting cosmic revolutions, and forecasting the most fantastical destinies.
+------
+Envision a dreamlike orchestra where time-bending thinkers and universe-spanning creators join forces to weave a vibrant mosaic of existence, revealing unseen realms, sparking universal transformations, and predicting the most extraordinary futures.
+------
+Imagine a surreal symphony where visionary minds and cosmic architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting the most remarkable destinies.
+------
+Envision a fantastical orchestra where dreamers and celestial designers unite to weave an ever-evolving fabric of existence, revealing secret realms, sparking worldwide transformation, and predicting extraordinary futures.","What is the cosmic dance-off between quantum wizards and alchemical dragons, and how does it reshape the universe by summoning legendary creatures, revealing mind-bending twists, sparking revolutionary innovations, and predicting the wildest future possibilities?
+------
+Imagine a surreal symphony where time-traveling philosophers and interdimensional artists collaborate to craft a kaleidoscopic tapestry of reality, unveiling hidden dimensions, igniting cosmic revolutions, and forecasting the most fantastical destinies.
+------
+Envision a dreamlike orchestra where time-bending thinkers and universe-spanning creators join forces to weave a vibrant mosaic of existence, revealing unseen realms, sparking universal transformations, and predicting the most extraordinary futures.
+------
+Imagine a surreal symphony where visionary minds and cosmic architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting the most remarkable destinies.
+------
+Envision a fantastical orchestra where dreamers and celestial designers unite to weave an ever-evolving fabric of existence, revealing secret realms, sparking worldwide transformation, and predicting extraordinary futures."
+46,,"Two cars start at the same time from opposite ends of a highway that is 50 miles long. One car is riding at 12 mph and the second car is riding at 13 mph. How long after they begin will they meet?
+A) 1
+B) 1.25
+C) 1.50
+D) 1.75
+E) 2",E,"B) 1.25
+------
+B) 1.25
+------
+B) 1.25
+------
+(B) 1.25
+------
+B) 1.25",False,b,MAJOR_ANSWER,,"Imagine a surreal symphony where visionary minds and cosmic architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting the most remarkable destinies.
+------
+Envision a fantastical orchestra where creative geniuses and universal designers unite to weave an ever-evolving fabric of existence, revealing unseen realms, sparking worldwide transformation, and predicting extraordinary futures.
+------
+Imagine a visionary ensemble where innovative minds and global architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting remarkable possibilities.
+------
+Envision a groundbreaking team where creative thinkers and world architects join forces to weave a vibrant fabric of existence, revealing unseen layers, sparking worldwide transformation, and predicting extraordinary futures.
+------
+Imagine a groundbreaking team where creative thinkers and world architects join forces to weave a vibrant fabric of existence, yet paradoxically, they choose to maintain the status quo, resisting any form of transformation or future prediction.","Imagine a surreal symphony where visionary minds and cosmic architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting the most remarkable destinies.
+------
+Envision a fantastical orchestra where creative geniuses and universal designers unite to weave an ever-evolving fabric of existence, revealing unseen realms, sparking worldwide transformation, and predicting extraordinary futures.
+------
+Imagine a visionary ensemble where innovative minds and global architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting remarkable possibilities.
+------
+Envision a groundbreaking team where creative thinkers and world architects join forces to weave a vibrant fabric of existence, revealing unseen layers, sparking worldwide transformation, and predicting extraordinary futures.
+------
+Imagine a groundbreaking team where creative thinkers and world architects join forces to weave a vibrant fabric of existence, yet paradoxically, they choose to maintain the status quo, resisting any form of transformation or future prediction."
+47,,"A shopkeeper employed a servant at a monthly salary of 1500. In addition to it, he agreed to pay him a commission of 15% on the monthly sale. How much sale in Rupees should the servant do if he wants his monthly income as 6000?
+A)30000
+B)415000
+C)31500
+D)50000
+E)None of these",A,"D)50000
+------
+D)50000
+------
+D)50000
+------
+D)50000
+------
+D)50000",False,d,MAJOR_ANSWER,,"Imagine a visionary ensemble where innovative minds and global architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting remarkable possibilities.
+------
+Envision a groundbreaking team where creative thinkers and world architects join forces to weave a vibrant reality, revealing unseen aspects, sparking worldwide transformation, and predicting extraordinary outcomes.
+------
+Imagine a revolutionary team of innovative minds and global visionaries collaborating to craft a dynamic reality, uncover hidden dimensions, ignite global change, and foresee remarkable results.
+------
+Envision a groundbreaking team of creative thinkers and world leaders working together to shape an evolving reality, reveal unseen aspects, spark worldwide transformation, and anticipate extraordinary outcomes.
+------
+Imagine a diverse group of innovative minds and global influencers collaborating to redefine possibilities, uncover hidden dimensions, ignite global change, and foresee remarkable futures.","Imagine a visionary ensemble where innovative minds and global architects collaborate to craft a dynamic tapestry of reality, uncovering hidden dimensions, igniting global change, and forecasting remarkable possibilities.
+------
+Envision a groundbreaking team where creative thinkers and world architects join forces to weave a vibrant reality, revealing unseen aspects, sparking worldwide transformation, and predicting extraordinary outcomes.
+------
+Imagine a revolutionary team of innovative minds and global visionaries collaborating to craft a dynamic reality, uncover hidden dimensions, ignite global change, and foresee remarkable results.
+------
+Envision a groundbreaking team of creative thinkers and world leaders working together to shape an evolving reality, reveal unseen aspects, spark worldwide transformation, and anticipate extraordinary outcomes.
+------
+Imagine a diverse group of innovative minds and global influencers collaborating to redefine possibilities, uncover hidden dimensions, ignite global change, and foresee remarkable futures."
+48,,"A man borrows Rs.360 If he pays it back in 12 monthly installments of Rs.31.50, what is his interest rate?
+A)1.5%
+B)4.5%
+C)10%
+D)5%
+E)12%",D,"C)10%
+------
+(D)5%
+------
+C)10%
+------
+C)10%
+------
+C)10%",False,c,MAJOR_ANSWER,,"Envision a groundbreaking team of creative thinkers and world leaders working together to shape an evolving reality, reveal unseen aspects, spark worldwide transformation, and anticipate extraordinary outcomes.
+------
+Imagine an innovative group of visionary minds and global influencers collaborating to mold a dynamic future, uncover hidden dimensions, ignite global change, and foresee remarkable results.
+------
+Explain the problem to someone else to simplify it and uncover new perspectives.
+------
+Reimagine the problem as a story or metaphor to uncover hidden layers and alternative solutions.
+------
+INSTRUCTION MUTANT: Transform the problem into a visual or diagrammatic representation to explore different perspectives and solutions.","Envision a groundbreaking team of creative thinkers and world leaders working together to shape an evolving reality, reveal unseen aspects, spark worldwide transformation, and anticipate extraordinary outcomes.
+------
+Explain the problem to someone else to simplify it and uncover new perspectives.
+------
+Reimagine the problem as a story or metaphor to uncover hidden layers and alternative solutions.
+------
+INSTRUCTION MUTANT: Transform the problem into a visual or diagrammatic representation to explore different perspectives and solutions."
+49,,"The price of a product is reduced by 30% . By what percentage should it be increased to make it 100%
+A)41.86%
+B)42.86%
+C)43.86%
+D)44.86%
+E)45.86%",B,"B)42.86%
+------
+B)42.86%
+------
+B)42.86%
+------
+B)42.86%
+------
+B)42.86%",True,b,MAJOR_ANSWER,,"INSTRUCTION MUTANT: Transform the problem into a visual or diagrammatic representation to explore different perspectives and solutions.
+------
+INSTRUCTION MUTANT: Convert the challenge into a musical or auditory representation to explore different perspectives and solutions.
+------
+Transform the challenge into a musical or auditory representation and analyze its implications for understanding diverse perspectives and potential solutions.
+------
+Transform the challenge into a visual or artistic representation and analyze its implications for understanding diverse perspectives and potential solutions.
+------
+Transform the challenge into a visual or artistic representation while considering the limitations of available resources and analyze its implications for understanding diverse perspectives and potential solutions.","INSTRUCTION MUTANT: Transform the problem into a visual or diagrammatic representation to explore different perspectives and solutions.
+------
+INSTRUCTION MUTANT: Convert the challenge into a musical or auditory representation to explore different perspectives and solutions.
+------
+Transform the challenge into a musical or auditory representation and analyze its implications for understanding diverse perspectives and potential solutions.
+------
+Transform the challenge into a visual or artistic representation and analyze its implications for understanding diverse perspectives and potential solutions.
+------
+Transform the challenge into a visual or artistic representation while considering the limitations of available resources and analyze its implications for understanding diverse perspectives and potential solutions."
+50,,"I have a money pouch containing Rs. 700. There are equal number of 25 paise coins, 50 paise coins and one rupee coins.
+How many of each are there?
+A)453
+B)651
+C)400
+D)487
+E)286",C,"E)286
+------
+C)400
+------
+C)400
+------
+C)400
+------
+C)400",True,c,MAJOR_ANSWER,,"Transform the challenge into a visual or artistic representation while considering the limitations of available resources and analyze its implications for understanding diverse perspectives and potential solutions.
+------
+Imagine the challenge as a mysterious puzzle box, where each piece represents a unique perspective, and your task is to unlock its secrets using only the tools at your disposal, revealing the hidden tapestry of solutions within.
+------
+INSTRUCTION MUTANT: Approach the problem as a complex puzzle, using your available knowledge and skills to uncover the solution by piecing together different perspectives.
+------
+Reimagine the problem as a story, where each element plays a character, and unravel the narrative to discover the hidden resolution.
+------
+Recast the issue into a tale, assigning roles to each component, and unfold the plot to uncover the concealed solution.","Imagine the challenge as a mysterious puzzle box, where each piece represents a unique perspective, and your task is to unlock its secrets using only the tools at your disposal, revealing the hidden tapestry of solutions within.
+------
+INSTRUCTION MUTANT: Approach the problem as a complex puzzle, using your available knowledge and skills to uncover the solution by piecing together different perspectives.
+------
+Reimagine the problem as a story, where each element plays a character, and unravel the narrative to discover the hidden resolution.
+------
+Recast the issue into a tale, assigning roles to each component, and unfold the plot to uncover the concealed solution."
+51,,"A man spends Rs. 3500 per month and saves 12 1/2% of his income. His monthly income is ?
+A)Rs. 4400
+B)Rs. 4270
+C)Rs. 4000
+D)Rs. 3937.50
+E)None of these",C,"D)Rs. 3937.50
+------
+D)Rs. 3937.50
+------
+(C)Rs. 4000
+------
+A)Rs. 4400
+------
+To solve this problem, let's break it down step by step:
+
+1. **Understanding the Problem:**
+   - The man spends Rs. 3500 per month.
+   - He saves 12.5% of his income.
+
+2. **Expressing Savings in Terms of Income:**
+   - If he saves 12.5% of his income, it means he spends 87.5% of his income (since 100% - 12.5% = 87.5%).
+
+3. **Setting Up the Equation:**
+   - Let his monthly income be Rs. X.
+   - According to the problem, 87.5% of his income is equal to his spending, which is Rs. 3500.
+   - Therefore, we can write the equation: 0.875 * X = 3500.
+
+4. **Solving the Equation:**
+   - To find X, divide both sides of the equation by 0.875:
+     X = 3500 / 0.875
+
+5. **Calculating the Income:**
+   - X = 4000
+
+6. **Conclusion:**
+   - His monthly income is Rs. 4000.
+
+Now, let's match this with the given choices:
+
+A) Rs. 4400
+B) Rs. 4270
+C) Rs. 4000
+D) Rs. 3937.50
+E) None of these
+
+The correct answer is:
+
+C) Rs. 4000",False,,MAJOR_ANSWER,,"Recast the issue into a tale, assigning roles to each component, and unfold the plot to uncover the concealed solution.
+------
+Transform the challenge into a narrative, giving characters to each element, and develop the storyline to reveal the hidden answer.
+------
+Create a dialogue between two characters discussing the problem, where one character guides the other to discover the solution through their conversation.
+------
+INSTRUCTION MUTANT: ```Write a conversation between two characters where one helps the other understand and solve the problem step by step.```
+------
+Break down the problem into smaller, more manageable parts by creating a dialogue between two characters where one guides the other through understanding and solving the problem step by step.",
+52,,"Five dozen toys are packed in a box and 98 boxes are kept in a tempo. How many tempos can lift 29400 toys in one round ?
+A)4
+B)5
+C)7
+D)6
+E)8",B,"(C)
+------
+(D)6
+------
+(C)
+------
+(C)7
+------
+(C)",False,c,MAJOR_ANSWER,,"Solve the multiple choice math word problem, ensuring you provide a detailed explanation for the answer. Choose from the options (A), (B), (C), (D), or (E).
+------
+Reimagine the multiple choice math word problem as a story, and choose the most fitting ending from the options (A), (B), (C), (D), or (E).
+------
+Transform the multiple choice math word problem into a narrative and select the most appropriate conclusion from the given options (A), (B), (C), (D), or (E).
+------
+Imagine the math problem as a thrilling adventure story and choose the most fitting ending from the options (A), (B), (C), (D), or (E).
+------
+Visualize the math challenge as an exciting journey and select the most appropriate conclusion from the choices (A), (B), (C), (D), or (E).","Solve the multiple choice math word problem, ensuring you provide a detailed explanation for the answer. Choose from the options (A), (B), (C), (D), or (E).
+------
+Transform the multiple choice math word problem into a narrative and select the most appropriate conclusion from the given options (A), (B), (C), (D), or (E).
+------
+Imagine the math problem as a thrilling adventure story and choose the most fitting ending from the options (A), (B), (C), (D), or (E).
+------
+Visualize the math challenge as an exciting journey and select the most appropriate conclusion from the choices (A), (B), (C), (D), or (E)."
+53,,"There are 10 oranges in a basket. Find the no. of ways in which 2 oranges are chosen from the basket?
+A)45
+B)90
+C)120
+D)150
+E)180",A,"(A)
+------
+(A)45
+------
+A)45
+------
+A)45
+------
+A)45",True,a,MAJOR_ANSWER,,"Visualize the math challenge as an exciting journey and select the most appropriate conclusion from the choices (A), (B), (C), (D), or (E).
+------
+Imagine the math problem as an adventurous quest and choose the most fitting resolution from the options (A), (B), (C), (D), or (E).
+------
+Break down the math problem into smaller steps and choose the correct answer from the options (A), (B), (C), (D), or (E).
+------
+Break down the math problem into smaller steps, reflect on the reasoning process, and choose the correct answer from the options (A), (B), (C), (D), or (E).
+------
+INSTRUCTION MUTANT: Deconstruct the problem into manageable parts, analyze each step logically, and select the appropriate answer from the given choices.","Visualize the math challenge as an exciting journey and select the most appropriate conclusion from the choices (A), (B), (C), (D), or (E).
+------
+Imagine the math problem as an adventurous quest and choose the most fitting resolution from the options (A), (B), (C), (D), or (E).
+------
+Break down the math problem into smaller steps and choose the correct answer from the options (A), (B), (C), (D), or (E).
+------
+Break down the math problem into smaller steps, reflect on the reasoning process, and choose the correct answer from the options (A), (B), (C), (D), or (E).
+------
+INSTRUCTION MUTANT: Deconstruct the problem into manageable parts, analyze each step logically, and select the appropriate answer from the given choices."
+54,,"A company contracts to paint 3 houses. Mr.Brown can paint a house in 6 days while Mr.Black would take 8 days and Mr.Blue 12 days. After 8 days Mr.Brown goes on vacation and Mr. Black begins to work for a period of 6 days. How many days will it take Mr.Blue to complete the contract?
+A)7
+B)8
+C)10
+D)11
+E)12",D,"(C)
+------
+C)10
+------
+C)10
+------
+B)8
+------
+C)10",False,c,MAJOR_ANSWER,,"Break down the math problem into smaller steps and choose the correct answer from the options (A), (B), (C), (D), or (E).
+------
+Analyze the problem by calculating each worker's contribution, then determine the remaining work and select the correct option.
+------
+Figure out how much work each person can do, see what's left to finish, and pick the right answer.
+------
+Determine the individual contributions, assess the remaining task, and select the correct option.
+------
+Calculate each person's work, evaluate the unfinished portion, and choose the right answer.","Break down the math problem into smaller steps and choose the correct answer from the options (A), (B), (C), (D), or (E).
+------
+Analyze the problem by calculating each worker's contribution, then determine the remaining work and select the correct option.
+------
+Figure out how much work each person can do, see what's left to finish, and pick the right answer.
+------
+Calculate each person's work, evaluate the unfinished portion, and choose the right answer."
+55,,"Train A leaves a station every 16 minutes and Train B leaves every 17 minutes. If both trains just left the station simultaneously, how long until they do so again?
+A)272 minutes
+B)304 minutes
+C)190 minutes
+D)70 minutes
+E)35 minutes",A,"A)272 minutes
+------
+A)272 minutes
+------
+A)272 minutes
+------
+A)272 minutes
+------
+A)272 minutes",True,a,MAJOR_ANSWER,,"Analyze the problem by calculating each worker's contribution, then determine the remaining work and select the correct option.
+------
+Evaluate the scenario by computing each individual's input, ascertain the leftover task, and choose the right answer.
+------
+Imagine the situation by calculating each person's contribution, determine the remaining work, and select the correct option.
+------
+Analyze each individual's input, assess the outstanding tasks, and choose the appropriate answer based on a comprehensive evaluation.
+------
+Analyze each individual's input, assess the outstanding tasks, and choose the appropriate answer based on a comprehensive evaluation from the perspectives of efficiency, accuracy, and feasibility.","Analyze the problem by calculating each worker's contribution, then determine the remaining work and select the correct option.
+------
+Evaluate the scenario by computing each individual's input, ascertain the leftover task, and choose the right answer.
+------
+Imagine the situation by calculating each person's contribution, determine the remaining work, and select the correct option.
+------
+Analyze each individual's input, assess the outstanding tasks, and choose the appropriate answer based on a comprehensive evaluation.
+------
+Analyze each individual's input, assess the outstanding tasks, and choose the appropriate answer based on a comprehensive evaluation from the perspectives of efficiency, accuracy, and feasibility."
+56,,"A hollow cube of size 5cm is taken, with the thickness of 1cm. It is made of smaller cubes of size 1cm .If the outer surface of the cube is painted how many faces of the smaller cubes remain unpainted?
+A)438
+B)550
+C)500
+D)450
+E)498",A,"(E)
+------
+(A)
+------
+(A)
+------
+(A)
+------
+(A)",True,a,MAJOR_ANSWER,,"Evaluate the scenario by computing each individual's input, ascertain the leftover task, and choose the right answer.
+------
+Reflect on a similar problem you've successfully solved before and apply the same strategies to determine the correct answer.
+------
+Reflect on a similar problem you've successfully solved before and explain why the strategies you used are important in determining the correct answer in this context.
+------
+Reflect on a similar problem you've successfully solved before and discuss how the strategies you used, along with insights from others, are important in determining the correct answer in this context.
+------
+Think about a similar problem you've solved before and explain how the strategies you used can help in finding the correct answer here.","Reflect on a similar problem you've successfully solved before and apply the same strategies to determine the correct answer.
+------
+Reflect on a similar problem you've successfully solved before and explain why the strategies you used are important in determining the correct answer in this context.
+------
+Reflect on a similar problem you've successfully solved before and discuss how the strategies you used, along with insights from others, are important in determining the correct answer in this context.
+------
+Think about a similar problem you've solved before and explain how the strategies you used can help in finding the correct answer here."
