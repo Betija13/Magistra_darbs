@@ -2775,3 +2775,71 @@ Answer with only the final number.
 {question}
 ```
 ",0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+307,12-04-2025,LastLetterConcat,../datasets/LastLetterConcat/results/PLAN_AND_SOLVE_12-04-2025_data_normalized.csv,PLAN_AND_SOLVE,True,150,71.33333333333334,,Q: {question},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+308,12-04-2025,MMLU,../datasets/MMLU/results/PLAN_AND_SOLVE_12-04-2025_data_normalized_college_mathematics.csv,PLAN_AND_SOLVE,True,100,74.0,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+309,12-04-2025,LastLetterConcat,../datasets/LastLetterConcat/results/PLAN_AND_SOLVE_PLUS_12-04-2025_data_normalized.csv,PLAN_AND_SOLVE_PLUS,True,150,61.33333333333333,,Q: {question},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+310,12-04-2025,MMLU,../datasets/MMLU/results/PLAN_AND_SOLVE_PLUS_12-04-2025_data_normalized_college_mathematics.csv,PLAN_AND_SOLVE_PLUS,True,100,70.0,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+311,12-04-2025,LastLetterConcat,../datasets/LastLetterConcat/results/ZS_COT_12-04-2025_data_normalized.csv,ZS_COT,True,150,68.0,,Q: {question},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+312,12-04-2025,MMLU,../datasets/MMLU/results/ZS_COT_12-04-2025_data_normalized_college_mathematics.csv,ZS_COT,True,100,76.0,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+313,12-04-2025,LastLetterConcat,../datasets/LastLetterConcat/results/PLAN_AND_SOLVE_12-04-2025_data_normalized_answer_update.csv,PLAN_AND_SOLVE,True,150,95.33333333333334,,Q: {question},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+314,12-04-2025,LastLetterConcat,../datasets/LastLetterConcat/results/PLAN_AND_SOLVE_12-04-2025_data_normalized_answer_update2.csv,PLAN_AND_SOLVE,True,150,98.66666666666667,,Q: {question},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+315,12-04-2025,LastLetterConcat,../datasets/LastLetterConcat/results/PLAN_AND_SOLVE_PLUS_12-04-2025_data_normalized_answer_update2.csv,PLAN_AND_SOLVE_PLUS,True,150,98.66666666666667,,Q: {question},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+316,12-04-2025,LastLetterConcat,../datasets/LastLetterConcat/results/ZS_COT_12-04-2025_data_normalized_answer_update2.csv,ZS_COT,True,150,98.66666666666667,,Q: {question},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+317,12-04-2025,RiddleSense,../datasets/RiddleSense/results/PLAN_AND_SOLVE_12-04-2025_data_normalized_rs_dev.csv,PLAN_AND_SOLVE,True,1021,89.42213516160626,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+318,12-04-2025,RiddleSense,../datasets/RiddleSense/results/PLAN_AND_SOLVE_PLUS_12-04-2025_data_normalized_rs_dev.csv,PLAN_AND_SOLVE_PLUS,True,1021,88.050930460333,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+319,12-04-2025,RiddleSense,../datasets/RiddleSense/results/ZS_COT_12-04-2025_data_normalized_rs_dev.csv,ZS_COT,True,1021,89.32419196865817,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+320,13-04-2025,CommonsenseQA,../datasets/CommonsenseQA/results/PLAN_AND_SOLVE_13-04-2025_data_normalized_dev.csv,PLAN_AND_SOLVE,True,1221,85.91318591318591,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+321,13-04-2025,CommonsenseQA,../datasets/CommonsenseQA/results/PLAN_AND_SOLVE_PLUS_13-04-2025_data_normalized_dev.csv,PLAN_AND_SOLVE_PLUS,True,1221,85.0941850941851,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+322,13-04-2025,CommonsenseQA,../datasets/CommonsenseQA/results/ZS_COT_13-04-2025_data_normalized_dev.csv,ZS_COT,True,1221,86.8959868959869,,Q: {question} Answer Choices: {choices},0.0,1,MAJOR_ANSWER,gpt-4o,0.0
+323,13-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/STRUCTURED_MUTATION_EDIT_13-04-2025_data_normalized_test.csv,STRUCTURED_MUTATION_EDIT,True,254,98.81889763779527,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o,0.39370078740157477
+324,13-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/STRUCTURED_MUTATION_EDIT_13-04-2025_data_normalized_test_2.csv,STRUCTURED_MUTATION_EDIT,True,254,98.4251968503937,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o,0.0
+325,14-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/STRUCTURED_MUTATION_EDIT_14-04-2025_data_normalized_test_no_example_mut.csv,STRUCTURED_MUTATION_EDIT,True,254,97.24409448818898,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o,0.7874015748031495
+326,15-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/STRUCTURED_MUTATION_EDIT_15-04-2025_data_normalized_test_always_start_with_same.csv,STRUCTURED_MUTATION_EDIT,True,254,98.81889763779527,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).
+
+Answer with (A),(B),(C),(D),(E).
+
+Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,,gpt-4o,0.0
