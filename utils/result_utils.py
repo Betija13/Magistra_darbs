@@ -4,7 +4,6 @@ from models.Enums.AnswerType import AnswerType
 from models.DataClass.NumericResults import NumericResults
 from loguru import logger
 import re
-from utils.OPRO_evaluation import OPROEvaluation
 
 
 class ResultUtils:
@@ -86,7 +85,7 @@ class ResultUtils:
             other_true_answer: Word for ground truth answer (only if AnswerType.MULTIPLE_CHOICE.value).
 
         Returns:
-
+                Boolean about if the answer was correct to the true answer.
         """
         answer_correct = False
         llm_answer = ResultUtils.preprocess_answer(llm_answer, answer_type)
@@ -195,6 +194,8 @@ class ResultUtils:
                                         preprocessed_answer = ""#valid_found_letters[-1]
             elif answer_type == AnswerType.TEXT.value:
                 preprocessed_answer = llm_answer.replace(' ', '')
+                preprocessed_answer = re.sub(r'[^a-zA-Z]', '', preprocessed_answer)
+
             elif answer_type == AnswerType.NUMBER.value:
                 try:
                     answer_as_digits = float(preprocessed_answer)
