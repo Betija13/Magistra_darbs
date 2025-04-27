@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Method(str, Enum):
+class Method(str, Enum): # TODO Mutation as one method
     A_1 = 'A_ZERO_SHOT'
     A_2 = 'A_N_SAMPLING'
     MUT = 'MUTATION'
@@ -10,8 +10,10 @@ class Method(str, Enum):
     MUT_M = 'MUTATION_MAJOR'  # As next examples are given those prompts that produced major answer
     STRUCT_MUT_M = 'STRUCTURED_MUTATION_MAJOR'
     MUT_E = 'MUTATION_EDIT'  # Mutation is ongoing until the correct answer is produced or the limit is reached
+    STRUCT_MUT_E = 'STRUCTURED_MUTATION_EDIT'
     STRUCT = 'STRUCTURED_OUTPUT' # Structured output with explanation
     STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER' #Structured output with only answer
+    STRUCT_EXTRA = 'STRUCTURED_EXTRA' # Structured output with explanation and extracted variables
     PS = 'PLAN_AND_SOLVE'
     PS_PLUS = 'PLAN_AND_SOLVE_PLUS'
     ZS_COT = 'ZS_COT'

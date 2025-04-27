@@ -8,3 +8,4 @@ class Datasets(str, Enum):
     MMLU = 'MMLU'
     RIDDLESENSE = 'RiddleSense'
     THEOREMAQA = 'TheoremaQA'
+    CSQA = 'CommonsenseQA'
