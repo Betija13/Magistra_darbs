@@ -83,7 +83,7 @@ class AnswerMethods:
             temperature: float,
             model_name: str | None,
             answer_type: str,
-            reward_method: str,
+            reward_method: RewardMethod,
             output_format: OutputFormat,
             ground_truth_answer: str,
             ground_truth_answer_word: str | None = None
@@ -141,9 +141,9 @@ class AnswerMethods:
                     answers_llm_all = '\n------\n'.join(answer_strs)
                     answer_results.llm_answer_unedited = answers_llm_all
 
-            if reward_method == RewardMethod.MAJOR.value:
+            if reward_method == RewardMethod.MAJOR:
                 chosen_answer = RewardMethods.majority_element(answers_for_voting)
-            elif reward_method == RewardMethod.RERANK.value:
+            elif reward_method == RewardMethod.RERANK:
                 chosen_answer_obj = self.reward_methods_obj.get_reranking_model_best_answer(
                     question=human_prompt, answer_options=answers_for_voting
                 )
@@ -228,7 +228,7 @@ class AnswerMethods:
             answer_type: str,
             ground_truth_answer: str,
             ground_truth_answer_word: str | None = None,
-            reward_method: str = RewardMethod.MAJOR.value,
+            reward_method: RewardMethod = RewardMethod.MAJOR,
             output_format: OutputFormat = OutputFormat.NO_FORMAT
     ) -> AnswerResults:
         """
@@ -307,18 +307,18 @@ class AnswerMethods:
                 final_answers.append(processed_answer)
             answers_before_processing = '\n------\n'.join(answers_llm_unedited)
             answer_results.llm_answer_unedited = answers_before_processing
-            if reward_method == RewardMethod.MAJOR.value:
+            if reward_method == RewardMethod.MAJOR:
                 answer_llm_chosen = RewardMethods.majority_element(answer_for_voting)
-            elif reward_method == RewardMethod.RERANK.value:
+            elif reward_method == RewardMethod.RERANK:
                 chosen_answer_obj = self.reward_methods.get_reranking_model_best_answer(
                     question=human_prompt, answer_options=answer_for_voting
                 )
                 answer_llm_chosen = chosen_answer_obj.chosen_answer
                 score_answer = chosen_answer_obj.score_answer
             else:
-                raise Exception(f"Reward method {reward_method} not implemented.")
+                raise Exception(f"Reward method {reward_method.value} not implemented.")
             if answer_llm_chosen is not None:
-                if reward_method == RewardMethod.MAJOR.value:
+                if reward_method == RewardMethod.MAJOR:
                     for idx in range(n_samples):
                         if answer_for_voting[idx] == answer_llm_chosen:
                             majority_task_prompts.append(task_prompts[idx])
@@ -697,7 +697,7 @@ class AnswerMethods:
             temperature: float,
             answer_type: str,
             ground_truth_answer: str,
-            method: str,
+            method: Method,
             ground_truth_answer_word: str | None = None,
             model_name: str | None = None,
             system_prompt: str | None = None,
@@ -726,27 +726,27 @@ class AnswerMethods:
         """
         answer_results = AnswerResults()
         try:
-            if method == Method.PS.value:
+            if method == Method.PS:
                 plan_str_answer = 'PLAN'
                 plan_prompt = 'Let’s first understand the problem and devise a plan to solve the problem. ' \
                               'Then, let’s carry out the plan and solve the problem step by step.'
-            elif method == Method.PS_PLUS.value:
+            elif method == Method.PS_PLUS:
                 plan_str_answer = 'PLAN'
                 plan_prompt = 'Let’s first understand the problem, extract relevant variables and their ' \
                               'corresponding numerals, and make a complete plan.Then, let’s carry out the plan, ' \
                               'calculate intermediate variables (pay attention to correct numerical calculation and ' \
                               'commonsense), solve the problem step by step, and show the answer.'
-            elif method == Method.ZS_COT.value:
+            elif method == Method.ZS_COT:
                 plan_str_answer = 'COT'
                 plan_prompt = "Let's think step by step."
-            elif method == Method.TWO_PROMPTS.value:
+            elif method == Method.TWO_PROMPTS:
                 plan_str_answer = 'ANSWER_1'
                 plan_prompt = task_prompt if task_prompt else ""
 
             else:
-                raise Exception(f"Method {method} not yet implemented.")
+                raise Exception(f"Method {method.value} not yet implemented.")
             plan_prompt_full = f'{question_text}\n\nA: {plan_prompt}'
-            if method == Method.TWO_PROMPTS.value and task_prompt is None:
+            if method == Method.TWO_PROMPTS and task_prompt is None:
                 plan_prompt_full = question_text
             answer_llm_plan = self.controller_ai.get_llm_api_response_with_backup_special(
                 system_prompt=system_prompt, prompt=plan_prompt_full, response_count=1, temperature=temperature,
@@ -767,7 +767,7 @@ class AnswerMethods:
             else:
                 raise Exception(f"Answer extraction not yet implemented for {answer_type}")
             final_answer_prompt_full = f"{plan_prompt_full}\n{answer_llm_plan}\n{answer_prompt}"
-            if method == Method.ZS_COT.value:
+            if method == Method.ZS_COT:
                 final_answer_prompt_full = f"{question_text}\nA: {answer_llm_plan}\n{answer_prompt}"
             final_answer = self.controller_ai.get_llm_api_response_with_backup_special(
                 system_prompt=system_prompt, prompt=final_answer_prompt_full, response_count=1, temperature=temperature,
