@@ -37,11 +37,26 @@ class Mutation:
         except FileNotFoundError:
             self.bad_mutation_indexes: List[int] = [25, 49]
 
-    def save_lists_combination(self, file_name: str, object_saved: List[List[int]]):
+    def save_lists_combination(self, file_name: str, object_saved: List[List[int]]) -> None:
+        """
+       Save a list of list combinations to a JSON file.
+
+       Args:
+           file_name: The path to the file where the data will be saved.
+           object_saved: The list of list combinations to save.
+       """
         with open(file_name, 'w') as file:
             json.dump(object_saved, file)
 
-    def save_lists(self, file_name: str, object_saved: List[int]):
+    def save_lists(self, file_name: str, object_saved: List[int]) -> None:
+        """
+        Save a list of integers to a JSON file.
+
+        Args:
+            file_name: The path to the file where the data will be saved.
+            object_saved: The list of integers to save.
+
+        """
         with open(file_name, 'w') as file:
             json.dump(object_saved, file)
 
@@ -80,7 +95,7 @@ class Mutation:
             temperature=1.0, model_name='gpt-4o', get_multiple_answers=True
         )
         for idx, mutation_n in enumerate(list_of_mutations):
-            mutation_n = mutation_n.replace('INSTRUCTION MUTANT:', '').strip()
+            mutation_n = mutation_n.replace('INSTRUCTION MUTANT:', '').replace('INSTRUCTION:', '').replace('```', '').strip()
             list_of_mutations[idx] = mutation_n
         if output_results:
             for result in list_of_mutations:
@@ -107,7 +122,9 @@ class Mutation:
             output_results: bool = False,
             user_feedback: bool = False,
             output_example: str | None = None,
-            use_my_mut_think: bool = False
+            use_my_mut_think: bool = False,
+            mutation_prompt_idx: int | None = None,
+            thinking_style_idx: int | None = None,
     ) -> str:
         """
         Mutate the current prompt n_mutation times. Output is the last mutated prompt.
@@ -118,13 +135,16 @@ class Mutation:
             user_feedback: Whether to ask for user feedback about chosen prompts.
             output_example: Example of the problem and answer.
             use_my_mut_think: Boolean about whether to use my created thinking and mutation styles.
+            mutation_prompt_idx: Index of the mutation prompt.
+            thinking_style_idx: Index of the thinking style.
         Returns:
             Last mutated prompt.
         """
         for _ in range(n_mutations):
             prompt_for_mutation = self.get_pb_mutation_prompt(
                 used_problem_description=prompt_for_mutation, output_prompt=output_results,
-                output_example=output_example, use_my_mut_think=use_my_mut_think
+                output_example=output_example, use_my_mut_think=use_my_mut_think,
+                mutation_prompt_idx=mutation_prompt_idx, thinking_style_idx=thinking_style_idx
             )
             human_prompt_for_mutation = prompt_for_mutation.human_prompt
             system_prompt_for_mutation = prompt_for_mutation.system_prompt
@@ -132,7 +152,7 @@ class Mutation:
                 prompt=human_prompt_for_mutation, system_prompt=system_prompt_for_mutation, response_count=1,
                 temperature=0.0, model_name='gpt-4o', get_multiple_answers=False
             )
-            new_prompt = new_prompt.replace('INSTRUCTION MUTANT:', '').strip()
+            new_prompt = new_prompt[0].replace('INSTRUCTION MUTANT:', '').replace('INSTRUCTION:', '').replace('```', '').strip()
             if output_results:
                 logger.info(new_prompt)
                 logger.info("-------------------")
@@ -157,7 +177,9 @@ class Mutation:
             self, used_problem_description: str | None = None,
             output_prompt: bool = False,
             output_example: str | None = None,
-            use_my_mut_think: bool = False
+            use_my_mut_think: bool = False,
+            mutation_prompt_idx: int | None = None,
+            thinking_style_idx: int | None = None
     ) -> LLMPrompt:
         """
         Get the structure for prompt, that will be given for mutator as instruction.
@@ -167,6 +189,8 @@ class Mutation:
             output_prompt: Whether to output the prompt.
             output_example: Example of the problem and answer.
             use_my_mut_think: Boolean about whether to use my created thinking and mutation styles.
+            mutation_prompt_idx: Index of the mutation prompt.
+            thinking_style_idx: Index of the thinking style.
         Returns:
             Prompt for the mutator, that combines task prompt and mutation prompt.
 
@@ -176,8 +200,15 @@ class Mutation:
         if used_problem_description is None:
             used_problem_description = problem_descriptions['AQuA-RAT']
         if use_my_mut_think:
-            used_thinking_style = random.choice(my_thinking_styles)
-            used_mutation_prompt = random.choice(my_mutation_prompts)
+            if mutation_prompt_idx is not None:
+                used_mutation_prompt = my_mutation_prompts[mutation_prompt_idx]
+            else:
+                used_mutation_prompt = random.choice(my_mutation_prompts)
+            if thinking_style_idx is not None:
+                used_thinking_style = my_thinking_styles[thinking_style_idx]
+            else:
+                used_thinking_style = random.choice(my_thinking_styles)
+
         else:
             valid_thinking_style: bool = False
             while not valid_thinking_style:
@@ -206,7 +237,14 @@ class Mutation:
             logger.debug(return_prompt)
         return return_prompt
 
-    def calculate_add_bad_examples(self):
+    def calculate_add_bad_examples(self) -> None:
+        """
+        Analyze and update bad examples for thinking styles and mutation prompts based on their frequency.
+
+        This method calculates the frequency of bad and good examples for thinking styles and mutation prompts.
+        If a bad example appears more than twice and its corresponding good example appears two times or less,
+        it is added to the respective bad indexes list and saved to a JSON file.
+        """
         bad_thinking_styles, bad_mutation_prompts = zip(*self.bad_mutation_combinations)
         result_thinking_styles = dict(Counter(bad_thinking_styles))
         result_mutation_prompts = dict(Counter(bad_mutation_prompts))
