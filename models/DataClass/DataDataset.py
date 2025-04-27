@@ -13,5 +13,6 @@ class DataDataset:
     choices: str | None = None
     answer_word: str | None = None
     facts: str | None = None
+    category: str | None = None
 
 

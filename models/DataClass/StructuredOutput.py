@@ -19,6 +19,13 @@ class StructuredOutputModelMultipleChoice(BaseModel):
     answer_as_letter: LetterChoice
 
 
+class StructuredOutputModelMultipleChoiceExtra(BaseModel):
+    extracted_variables: List[str] = field(default_factory=list)  # extracted variables
+    steps_for_answer: List[str] = field(default_factory=list)  # steps for answer
+    solution_explanation: str  # think step by step, solution explanation, extract variables
+    answer_as_letter: LetterChoice
+
+
 class StructuredOutputModelMultipleChoiceOnlyChoice(BaseModel):
     answer_as_letter: LetterChoice
 
@@ -37,7 +44,9 @@ class StructuredOutputModelNumberOnlyNumber(BaseModel):
 class StructuredOutput:
     solution_explanation: str = ""  # thought process/ plan
     answer_as_letter: str = ""
-    answer_as_number: float = 0.0
-    answer_as_boolean: bool = False
+    answer_as_number: float | None = None
+    answer_as_boolean: bool | None = None
     answer_as_text: str = ""
+    extracted_variables: List[str] = field(default_factory=list)
+    steps_for_answer:  List[str] = field(default_factory=list)
 

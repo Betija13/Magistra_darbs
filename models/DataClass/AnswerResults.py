@@ -11,8 +11,8 @@ class AnswerResults:
     correct: bool = False
     chosen_answer: str | None = None
     task_prompts_all: str | None = None
-    task_prompts_majority: str | None = None
-    task_prompts_correct: str | None = None
+    task_prompts_chosen: List[str] = field(default_factory=list)
     task_system_prompts: List[str] = field(default_factory=list)
+    score_chosen: float | None = None
 
 

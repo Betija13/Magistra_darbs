@@ -13,7 +13,7 @@ class DataResults:
     correct: bool = False
     llm_answer_chosen: str | None = None
     reward_method: str | None = None
-    reward_score: str | None = None
+    reward_score: float | None = None
     task_prompt_all: str | None = None
     task_prompts_majority: str | None = None
 
