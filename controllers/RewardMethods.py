@@ -5,9 +5,12 @@ import re
 import os
 import requests
 import json
+import torch
 from dotenv import dotenv_values
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModel
 from controllers.AiLLM import ControllerAiLLM
+from models.DataClass.SplitOptions import SplitOptions
+from models.DataClass.RankingResults import RankingResults
 
 env_path = '.env'
 if os.path.exists("../.env"):
@@ -23,6 +26,7 @@ config = dotenv_values(env_path)
 FACT_RANKING_MODEL = config.get('FACT_RANKING_MODEL')
 RERANK_URL = config.get('RERANK_URL')
 
+
 class RewardMethods:
 
     def __init__(self, ai_llm: ControllerAiLLM | None = None):
@@ -32,10 +36,31 @@ class RewardMethods:
         self.rank_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
             self.reward_name), AutoTokenizer.from_pretrained(self.reward_name)
 
-    def init_reward_model(self, reward_model_name: str):
+        self.reward_name_internlm = "internlm/internlm2-1_8b-reward"  # internlm/internlm2-20b-reward
+        # https://huggingface.co/internlm/internlm2-1_8b-reward
+        # https://huggingface.co/internlm/internlm2-20b-reward
+        # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
+
+        self.reward_model_internlm = AutoModel.from_pretrained(
+            self.reward_name_internlm,
+            device_map=None,# device_map="cuda",
+            torch_dtype=torch.float16,
+            trust_remote_code=True,
+        )
+        self.tokenizer_internlm = AutoTokenizer.from_pretrained(self.reward_name_internlm, trust_remote_code=True)
+
+    def init_reward_model(self, reward_model_name: str) -> None: # TODO should turn to Enums
+        """
+        Initialize the reward model and tokenizer with the specified model name.
+
+        Args:
+            reward_model_name: The name of the reward model to load.
+
+        """
         self.reward_name = reward_model_name
         self.rank_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
             reward_model_name), AutoTokenizer.from_pretrained(reward_model_name)
+
     @staticmethod
     def majority_element(answer_options: List[str]) -> str | None:
         """
@@ -103,6 +128,15 @@ class RewardMethods:
         return result_answer
 
     def reranking_model(self, question: str, answer_options: List[str]) -> List[Dict[str, int]]: # TODO dataclass
+        """
+        Use the reranking model to evaluate the answers and return the best one.
+        Args:
+            question: Question to which the answer is being evaluated.
+            answer_options: Answer options to be evaluated.
+
+        Returns:
+            List of answer options with their scores. Best are at the start.
+        """
         rankings = []
         try:
             invoke_url = RERANK_URL
@@ -120,24 +154,115 @@ class RewardMethods:
             }
             session = requests.Session()
             response = session.post(invoke_url, headers=headers, json=payload, timeout=(30, 60))
-            logger.info(f"Ranking API response time: {response.elapsed.total_seconds()}")
             response.raise_for_status()
             rankings = json.loads(response.text).get('rankings')
+            # TODO adapt to a Dataclass
         except Exception as e:
-            logger.error("Failed to call rerank model API")
-            logger.exception(e)
+            logger.error(f"Failed to call rerank model API: {e}")
+            # logger.exception(e)
         return rankings
 
-    def get_reranking_model_score(self, question: str, answer_options: List[str]) -> str | None:
-        result_answer = None
+    def get_reranking_model_best_answer(self, question: str, answer_options: List[str]) -> RankingResults:
+        """
+        Use the reranking model to evaluate the answers and return the best one.
+        Args:
+            question: Question to which the answer is being evaluated.
+            answer_options: Answer options to be evaluated.
+
+        Returns:
+            The best answer according to the evaluation of the reranking model and the score for the best answer.
+        """
+        result_answer = RankingResults()
         try:
-            results_rerank = self.reranking_model(question, answer_options)
-            result_answer = answer_options[results_rerank[0]['index']]
+            tries_count = 0
+            successful = False
+            max_size = 1000
+            while not successful and tries_count < 5:
+                split_options = self.split_options_for_rerank(answer_options=answer_options, max_size=max_size)
+                split_options_answers = split_options.answers_split
+                answer_option_idxes = split_options.answer_idxes
+                try:
+                    results_rerank = self.reranking_model(question, split_options_answers)
+                except Exception as e:
+                    logger.error(e)
+                    results_rerank = []
+                tries_count += 1
+                if len(results_rerank) == len(split_options_answers):
+                    successful = True
+                else:
+                    max_size -= 150
+            if not successful:
+                raise Exception("Reranking model failed to return all results")
+            best_idx_split = results_rerank[0]['index']
+            result_answer.answer_score = results_rerank[0]['logit']
+            best_idx_original = answer_option_idxes[best_idx_split]
+            result_answer.chosen_answer = answer_options[best_idx_original]
         except Exception as e:
             logger.error(e)
         return result_answer
 
-    def reward_model(self, answer_options: List[str], question: str, reward_name: str | None = None) -> str | None:
+    def get_reranking_model_score(self, question: str, answer_option: str) -> float | None:
+        """
+        Get the score of the answer option using the reranking model.
+        Args:
+            question: Question that is being answered.
+            answer_option: Answer to the Question.
+
+        Returns:
+            Answer options score for the question.
+        """
+        result_answer = None
+        total_tries = 0
+        max_size = 1000
+        while result_answer is None and total_tries < 5:
+            try:
+                answer_options = self.split_options_for_rerank(answer_options=[answer_option], max_size=max_size)
+                results_rerank = self.reranking_model(question, answer_options.answers_split)
+                result_answer = results_rerank[0]['logit']
+            except Exception as e:
+                logger.error(e)
+                max_size -= 100
+        return result_answer
+
+    def split_options_for_rerank(self, answer_options: List[str], max_size: int = 1000) -> SplitOptions:
+        """
+        Split the answer options into smaller parts for reranking. Also saves the original answer idxes
+        Args:
+            answer_options: list of answer options.
+            max_size: max size of single answer option or by what amount of characters is the option being split.
+                By default, 1000.
+
+        Returns:
+            SplitOptions object that contains split answers and their idxes of original list.
+
+        """
+        split_answers = SplitOptions()
+        try:
+            answer_options_final = []
+            answer_option_idxes = []
+            for idx, answer_option in enumerate(answer_options):
+                answer_options_split = [answer_option]
+                if len(answer_option) > max_size:
+                    parts = len(answer_option) // max_size + 1
+                    len_part = len(answer_option) / parts
+                    answer_options_split = [answer_option[int(i * len_part):int((i + 1) * len_part)] for i in
+                                            range(parts)]
+                for _ in range(len(answer_options_split)):
+                    answer_option_idxes.append(idx)
+                answer_options_final.extend(answer_options_split)
+            split_answers.answers_split = answer_options_final
+            split_answers.answer_idxes = answer_option_idxes
+
+        except Exception as e:
+            logger.error(e)
+        return split_answers
+
+    def get_reward_model_best_answer(
+            self,
+            answer_options: List[str],
+            question: str,
+            reward_name: str | None = None
+    ) -> RankingResults:
         """
         Use the reward model to evaluate the answers and return the best one.
         Args:
@@ -146,10 +271,10 @@ class RewardMethods:
             reward_name: Name of the reward model.
 
         Returns:
-            The best answer according to the evaluation of the reward model.
+            The best answer according to the evaluation of the reward model amd the score for that answer.
 
         """
-        result_answer = None
+        result_answer = RankingResults()
         try:
             if reward_name and reward_name != self.reward_name:
                 self.init_reward_model(reward_name)
@@ -159,7 +284,77 @@ class RewardMethods:
                 score = self.rank_model(**inputs).logits[0].cpu().detach()
                 scores.append(float(score))
             max_score = max(scores)
-            result_answer = answer_options[scores.index(max_score)]
+            result_answer.score_answer = max_score
+            result_answer.chosen_answer = answer_options[scores.index(max_score)]
+        except Exception as e:
+            logger.error(e)
+        return result_answer
+
+    def get_reward_model_score(self, answer_option: str, question: str, reward_name: str | None = None) -> float | None:
+        """
+            Get the score of the answer option using the reward model.
+            Args:
+                question: Question to be asked.
+                answer_option: Answer option to be evaluated.
+                reward_name: Name of the reward model. (Optional, to change model)
+            Returns:
+                Score of the answer option.
+        """
+        score = None
+        try:
+            if reward_name and reward_name != self.reward_name:
+                self.init_reward_model(reward_name)
+            inputs = self.tokenizer(question, answer_option, return_tensors='pt')
+            score = self.rank_model(**inputs).logits[0].cpu().detach()
+            score = float(score[0])
+        except Exception as e:
+            logger.error(e)
+        return score
+
+    def get_reward_model_internlm_scores(self, answer_options: List[str], question: str) -> List[float] | None:
+        """
+            TODO  reward_name: str | None = None
+            Gets reward scores for each answer option
+            Args:
+                answer_options: List of answer options.
+                question: Question to be asked.
+            Returns:
+                List of scores for each answer option.
+        """
+        scores = None
+        try:
+            chats = []
+            for answer_option in answer_options:
+                chat_n = [
+                    {"role": "user", "content": question},
+                    {"role": "assistant",
+                     "content": answer_option}
+                ]
+                chats.append(chat_n)
+            scores = self.reward_model_internlm.get_scores(self.tokenizer_internlm, chats)
+        except Exception as e:
+            logger.error(e)
+        return scores
+
+    def get_reward_model_internlm_best_answer(self, answer_options: List[str], question: str) -> RankingResults:
+        """
+        TODO reward_name: str | None = None
+        Use the reward model to evaluate the answers and return the best one.
+        Args:
+            answer_options: List of answer options.
+            question: Question to be asked.
+            # reward_name: Name of the reward model.
+
+        Returns:
+            The best answer according to the evaluation of the reward model and its score.
+
+        """
+        result_answer = RankingResults()
+        try:
+            scores = self.get_reward_model_internlm_scores(answer_options=answer_options, question=question)
+            max_score = max(scores)
+            result_answer.score_answer = max_score
+            result_answer.chosen_answer = answer_options[scores.index(max_score)]
         except Exception as e:
             logger.error(e)
         return result_answer
