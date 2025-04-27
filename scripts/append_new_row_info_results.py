@@ -1,6 +1,6 @@
 import csv
 import os
-new_field_name = 'percentage_of_short_answers'
+new_field_name = 'reward_name'
 default_new_value_name = None#'gpt-4o-mini'
 # Define the folder and file name
 folder = '../datasets'
