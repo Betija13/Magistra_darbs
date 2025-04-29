@@ -1,4 +1,11 @@
-# Magistra_darbs
+# Maģistra darba kods
+
+## Setup
+
+all necessary packages are listed in requirements.txt
+
+!Note: when installing torch, go to https://pytorch.org/get-started/locally/ and select the suitable version for yourself 
+
 
 ## Running experiments
 To run experiments, run file scripts/script_answers.py
@@ -26,5 +33,4 @@ All main info about results can be found in datasets/info_results.csv
 Detailed results about each experiment can be found in datasets/<dataset_name>/results/<file_name>
 
 File name structure is as follows `<method name>_<date>_<dataset file name>_<custom name>.csv`
-
 
