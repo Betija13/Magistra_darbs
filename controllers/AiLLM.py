@@ -27,15 +27,16 @@ else:
     logger.critical("No .env file found")
 config = dotenv_values(env_path)
 
-LLM_MAIN_MODEL = config.get('LLM_MAIN_MODEL')
-LLM_MAIN_API_KEY = config.get('LLM_MAIN_API_KEY')
-
+# LLM_MAIN_MODEL = config.get('LLM_MAIN_MODEL')
+LLM_OPENAI_API_KEY = config.get('LLM_OPENAI_API_KEY')
+if LLM_OPENAI_API_KEY is None:
+    logger.critical(f"LLM_OPENAI_API_KEY is None. Please add your OpenAi key as LLM_OPENAI_API_KEY to .env file")
 
 class ControllerAiLLM:
     def __init__(self):
         self.model: LLMModel = LLMModel(
             name='gpt-4o', #LLM_MAIN_MODEL,
-            api_key=LLM_MAIN_API_KEY
+            api_key=LLM_OPENAI_API_KEY
         )
 
     def __prompt_internal(
@@ -119,7 +120,7 @@ class ControllerAiLLM:
             temperature: float | None = None,
             get_multiple_answers: bool = True,
             output_format: OutputFormat = OutputFormat.NO_FORMAT,
-            answer_type: str | None = None
+            answer_type: AnswerType | None = None
     ) -> List[str] | List[StructuredOutput]:
         """
         General function to get the response from the Openai LLM API.
@@ -173,7 +174,7 @@ class ControllerAiLLM:
     def get_structured_output(
             self,
             human_prompt: str,
-            answer_type: str,
+            answer_type: AnswerType,
             system_prompt: str | None = None,
             model_name: str | None = None,
             response_count: int = 1,
@@ -199,7 +200,7 @@ class ControllerAiLLM:
 
         try:
             client = OpenAI(api_key=self.model.api_key)
-            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
                 if output_format == OutputFormat.STRUCTURED_COT:
                     response_format = StructuredOutputModelMultipleChoice
                 elif output_format == OutputFormat.STRUCTURED_ANSWER:
@@ -208,7 +209,7 @@ class ControllerAiLLM:
                     response_format = StructuredOutputModelMultipleChoiceExtra
                 else:
                     raise Exception(f"Output format {output_format} is not yet implemented.")
-            elif answer_type == AnswerType.NUMBER.value:
+            elif answer_type == AnswerType.NUMBER:
                 if output_format == OutputFormat.STRUCTURED_COT:
                     response_format = StructuredOutputModelNumber
                 elif output_format == OutputFormat.STRUCTURED_ANSWER:
@@ -216,7 +217,7 @@ class ControllerAiLLM:
                 else:
                     raise Exception(f"Output format {output_format} is not yet implemented.")
             else:
-                raise Exception(f"Answer type {answer_type} is not yet implemented.")
+                raise Exception(f"Answer type {answer_type.value} is not yet implemented.")
             if system_prompt is None:
                 messages = [{"role": "user", "content": human_prompt}]
             else:
@@ -246,9 +247,9 @@ class ControllerAiLLM:
                         solution_explanation=answer_raw.solution_explanation if
                         output_format != OutputFormat.STRUCTURED_ANSWER else "",
                         answer_as_letter=answer_raw.answer_as_letter if
-                        answer_type == AnswerType.MULTIPLE_CHOICE.value else "",
+                        answer_type == AnswerType.MULTIPLE_CHOICE else "",
                         answer_as_number=answer_raw.answer_as_number if
-                        answer_type == AnswerType.NUMBER.value else None,
+                        answer_type == AnswerType.NUMBER else None,
                         extracted_variables=answer_raw.extracted_variables if
                         output_format == OutputFormat.STRUCTURED_EXTRA else [],
                         steps_for_answer=answer_raw.steps_for_answer if

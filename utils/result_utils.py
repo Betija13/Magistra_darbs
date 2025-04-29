@@ -73,7 +73,7 @@ class ResultUtils:
     def check_corrct_answer(
             llm_answer: str,
             true_answer: str,
-            answer_type: str,
+            answer_type: AnswerType,
             other_true_answer: str | None = None
     ) -> bool:
         """
@@ -90,14 +90,14 @@ class ResultUtils:
         answer_correct = False
         llm_answer = ResultUtils.preprocess_answer(llm_answer, answer_type)
         try:
-            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
                 if llm_answer.lower() == true_answer.lower() or \
                         (other_true_answer is not None and llm_answer.lower() == other_true_answer.lower()):
                     answer_correct = True
-            elif answer_type == AnswerType.TEXT.value:
+            elif answer_type == AnswerType.TEXT:
                 if llm_answer.lower() == true_answer.lower():
                     answer_correct = True
-            elif answer_type == AnswerType.NUMBER.value:
+            elif answer_type == AnswerType.NUMBER:
                 if llm_answer.lower() == true_answer.lower():
                     answer_correct = True
                 else:
@@ -108,7 +108,7 @@ class ResultUtils:
                             answer_correct = True
                     except Exception as e:
                         logger.error(e)
-            elif answer_type == AnswerType.BOOL.value:
+            elif answer_type == AnswerType.BOOL:
                 answer_bool: bool | None = True if llm_answer.lower() == 'yes' else (
                     False if llm_answer.lower() == 'no' else None)
                 if answer_bool is None:
@@ -117,7 +117,7 @@ class ResultUtils:
                     true_bool = true_answer == 'True'
                     answer_correct = answer_bool == true_bool
             else:
-                raise Exception(f'Answer type {answer_type} not supported')
+                raise Exception(f'Answer type {answer_type.value} not supported')
         except Exception as e:
             logger.error(e)
         return answer_correct
@@ -125,7 +125,7 @@ class ResultUtils:
     @staticmethod
     def preprocess_answer(
             llm_answer: str,
-            answer_type: str,
+            answer_type: AnswerType,
     ) -> str:
         """
         Preprocess the answer to match as much as possible to the desired answer.
@@ -150,7 +150,7 @@ class ResultUtils:
                 answers_in_boxed = [ans for ans in re.compile(r'boxed\{(.*?)\}').findall(llm_answer)]
                 # answers_in_stars = [ans for ans in re.compile(r'\*\*(.*?)\*\*').findall(llm_answer)]
             preprocessed_answer = preprocessed_answer.lower()
-            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
                 valid_lines = [line for line in lines if re.search(regex_letters, line)]
                 valid_answer_lines = [line for line in answer_lines if re.search(regex_letters, line)]
                 valid_boxed = [ans for ans in answers_in_boxed if re.search(regex_letters, ans)]
@@ -192,11 +192,11 @@ class ResultUtils:
                                         preprocessed_answer = valid_found_letters[0]
                                     else:
                                         preprocessed_answer = ""#valid_found_letters[-1]
-            elif answer_type == AnswerType.TEXT.value:
+            elif answer_type == AnswerType.TEXT:
                 preprocessed_answer = llm_answer.replace(' ', '')
                 preprocessed_answer = re.sub(r'[^a-zA-Z]', '', preprocessed_answer)
 
-            elif answer_type == AnswerType.NUMBER.value:
+            elif answer_type == AnswerType.NUMBER:
                 try:
                     answer_as_digits = float(preprocessed_answer)
                 except Exception as e:
@@ -214,7 +214,7 @@ class ResultUtils:
                         else:
                             preprocessed_answer = ''
 
-            elif answer_type == AnswerType.BOOL.value:
+            elif answer_type == AnswerType.BOOL:
                 if 'yes' in preprocessed_answer.lower():
                     preprocessed_answer = 'yes'
                 elif 'no' in preprocessed_answer.lower():
@@ -222,7 +222,7 @@ class ResultUtils:
                 else:
                     a=0
             else:
-                raise Exception(f'Answer type {answer_type} not supported')
+                raise Exception(f'Answer type {answer_type.value} not supported')
         except Exception as e:
             logger.error(e)
             preprocessed_answer = ''

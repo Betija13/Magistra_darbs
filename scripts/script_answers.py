@@ -138,7 +138,7 @@ class LLMRunner:
             self,
             human_prompt: str,
             system_prompt: str,
-            answer_type: str,
+            answer_type: AnswerType,
             answer: str,
             answer_word: str,
             result_file: str
@@ -310,20 +310,21 @@ class LLMRunner:
                     for idx, row in tqdm(enumerate(reader), total=size_iteration_objects):
                         if idx >= TOTAL_COUNT:
                             break
-                        answer_type = row['answer_type'] # TODO get it as Enum
+                        answer_type_str = row['answer_type']
+                        answer_type = AnswerType[answer_type_str]
 
                         if 'MUTATION' in METHOD_NAME_FILE:
                             system_prompt_task = random.choice(task_system_prompts) if len(task_system_prompts) > 0 else system_prompt_task_initial
                             system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
-                            if answer_type != AnswerType.MULTIPLE_CHOICE.value:
-                                raise Exception(f"Answer type {answer_type} is not currently supported for mutation "
+                            if answer_type != AnswerType.MULTIPLE_CHOICE:
+                                raise Exception(f"Answer type {answer_type.value} is not currently supported for mutation "
                                                 f"method. Only MULTIPLE_CHOICE is supported.")
                             task_system_prompts = []
 
                         choices_str_info = "Choices:\n```\n{choices}\n```\n" if row['choices'] else ''
                         facts_str_info = "Facts:\n```\n{facts}\n```\n" if row['facts'] else ''
                         start_human_prompt_info = 'Question:\n```\n{question}\n```\n' if 'question' in system_prompt.lower() else 'Problem:\n```\n{question}\n```\n'
-                        end_human_prompt = human_prompts[answer_type]
+                        end_human_prompt = human_prompts[answer_type.value]
                         human_prompt_info = f"{start_human_prompt_info}{choices_str_info}{facts_str_info}{end_human_prompt}"
                         system_prompt_info = system_prompt
 
@@ -333,7 +334,7 @@ class LLMRunner:
                             answer = row['answer']
                             answer_word = row['answer_word'] if row['answer_word'] != '' else None
                             choices_str = f"Choices:\n```\n{row['choices']}\n```\n" if row['choices'] else ''
-                            if answer_word is None and answer_type == AnswerType.MULTIPLE_CHOICE.value:
+                            if answer_word is None and answer_type == AnswerType.MULTIPLE_CHOICE:
                                 answer_choice = [ans for ans in choices_str.split('\n') if ans.startswith(answer)]
                                 if len(answer_choice) == 1:
                                     answer_word = answer_choice[0].split(f'{answer})')[-1].strip()
@@ -346,7 +347,7 @@ class LLMRunner:
                             human_prompt = f"{start_human_prompt}{choices_str}{facts_str}{end_human_prompt}"
                             if METHOD == Method.PS or METHOD == Method.PS_PLUS or \
                                     METHOD == Method.ZS_COT:# or METHOD == Method.TWO_PROMPTS:
-                                if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+                                if answer_type == AnswerType.MULTIPLE_CHOICE:
                                     choices_list = row['choices'].split('\n')
                                     human_prompt = f"Q: {question} Answer Choices: {'('+' ('.join(choices_list)}"
                                     human_prompt_info = "Q: {question} Answer Choices: {choices}"

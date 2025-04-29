@@ -39,7 +39,7 @@ class AnswerMethods:
             human_prompt: str,
             temperature: float,
             model_name: str | None,
-            answer_type: str,
+            answer_type: AnswerType,
             ground_truth_answer: str,
             ground_truth_answer_word: str | None = None
     ) -> AnswerResults:
@@ -82,7 +82,7 @@ class AnswerMethods:
             response_count: int,
             temperature: float,
             model_name: str | None,
-            answer_type: str,
+            answer_type: AnswerType,
             reward_method: RewardMethod,
             output_format: OutputFormat,
             ground_truth_answer: str,
@@ -170,7 +170,7 @@ class AnswerMethods:
             logger.error(e)
         return answer_results
 
-    def get_str_from_structure(self, answer_type: str, answer_llm_structure: StructuredOutput) -> str | None:
+    def get_str_from_structure(self, answer_type: AnswerType, answer_llm_structure: StructuredOutput) -> str | None:
         """
         Get the string from the structured output.
         Args:
@@ -178,25 +178,25 @@ class AnswerMethods:
             answer_llm_structure: Answer as StructuredOutput object.
 
         Returns:
-            string answer from SturcturedOutput object.
+            string answer from StructuredOutput object.
         """
         str_answer = None
         try:
-            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
                 final_answer = answer_llm_structure.answer_as_letter
                 final_answer_str = f"ANSWER_AS_LETTER: {final_answer}"
-            elif answer_type == AnswerType.NUMBER.value:
+            elif answer_type == AnswerType.NUMBER:
                 final_answer = answer_llm_structure.answer_as_number
                 final_answer_str = f"ANSWER_AS_NUMBER: {final_answer}"
             else:
-                raise Exception(f"Answer extraction not yet implemented for {answer_type}")
+                raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
             cot_part = answer_llm_structure.solution_explanation
             str_answer = f"SOLUTION_EXPLANATION: {cot_part}\n{final_answer_str}"
         except Exception as e:
             logger.error(e)
         return str_answer
 
-    def get_final_answer_from_structure(self, answer_type: str, answer_llm_structure: StructuredOutput) -> str | None:
+    def get_final_answer_from_structure(self, answer_type: AnswerType, answer_llm_structure: StructuredOutput) -> str | None:
         """
         Get the final answer (letter, number) from the structured output.
         Args:
@@ -208,12 +208,12 @@ class AnswerMethods:
         """
         final_answer = None
         try:
-            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
                 final_answer = answer_llm_structure.answer_as_letter
-            elif answer_type == AnswerType.NUMBER.value:
+            elif answer_type == AnswerType.NUMBER:
                 final_answer = answer_llm_structure.answer_as_number
             else:
-                raise Exception(f"Answer extraction not yet implemented for {answer_type}")
+                raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
         except Exception as e:
             logger.error(e)
         return final_answer
@@ -225,7 +225,7 @@ class AnswerMethods:
             n_samples: int,
             temperature: float,
             model_name: str | None,
-            answer_type: str,
+            answer_type: AnswerType,
             ground_truth_answer: str,
             ground_truth_answer_word: str | None = None,
             reward_method: RewardMethod = RewardMethod.MAJOR,
@@ -266,7 +266,7 @@ class AnswerMethods:
                 if task_prompt_n != "":
                     task_prompts.append(task_prompt_n)
             for task_prompt_n in task_prompts:
-                system_prompt = f"{task_prompt_n}\n\n{system_prompts_output[answer_type]}\n\n{system_prompts_static[answer_type]}"
+                system_prompt = f"{task_prompt_n}\n\n{system_prompts_output[answer_type.value]}\n\n{system_prompts_static[answer_type.value]}"
                 if output_format != OutputFormat.NO_FORMAT:
                     system_prompt = task_prompt_n
                     answer_llm_structure = self.controller_ai.get_structured_output(
@@ -353,7 +353,7 @@ class AnswerMethods:
             system_prompt: str,
             human_prompt: str,
             model_name: str | None,
-            answer_type: str,
+            answer_type: AnswerType,
             ground_truth_answer: str,
             result_file: str | None,
             ground_truth_answer_word: str | None = None,
@@ -418,7 +418,7 @@ class AnswerMethods:
                         if self.last_thinking_style_idx == start_thinking_style_idx:
                             all_combinations_reached = True
                     task_prompts.append(mutated_task_prompt)
-                    system_prompt = f"{mutated_task_prompt}\n\n{system_prompts_output[answer_type]}\n\n{system_prompts_static[answer_type]}"
+                    system_prompt = f"{mutated_task_prompt}\n\n{system_prompts_output[answer_type.value]}\n\n{system_prompts_static[answer_type.value]}"
 
                     extracted_answer = self.get_answer(
                         get_structured_output=get_structured_output, system_prompt=system_prompt, human_prompt=human_prompt,
@@ -508,7 +508,7 @@ class AnswerMethods:
             human_prompt: str,
             temperature: float,
             model_name: str | None,
-            answer_type: str,
+            answer_type: AnswerType,
             ground_truth_answer: str,
             ground_truth_answer_word: str | None = None
     ) -> AnswerExtraction:
@@ -536,14 +536,14 @@ class AnswerMethods:
                     system_prompt=system_prompt, human_prompt=human_prompt, response_count=1,
                     temperature=temperature, model_name=model_name, answer_type=answer_type
                 )
-                if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+                if answer_type == AnswerType.MULTIPLE_CHOICE:
                     final_answer = answer_llm_structure[0].answer_as_letter
                     final_answer_str = f"ANSWER_AS_LETTER: {final_answer}"
-                elif answer_type == AnswerType.NUMBER.value:
+                elif answer_type == AnswerType.NUMBER:
                     final_answer = answer_llm_structure[0].answer_as_number
                     final_answer_str = f"ANSWER_AS_NUMBER: {final_answer}"
                 else:
-                    raise Exception(f"Answer extraction not yet implemented for {answer_type}")
+                    raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
                 cot_part = answer_llm_structure[0].solution_explanation
                 answer_llm_unedited = f"SOLUTION_EXPLANATION: {cot_part}\n{final_answer_str}"
             else:
@@ -577,7 +577,7 @@ class AnswerMethods:
             human_prompt: str,
             response_count: int,
             temperature: float,
-            answer_type: str,
+            answer_type: AnswerType,
             ground_truth_answer: str,
             system_prompt: str | None = None,
             model_name: str | None = None,
@@ -617,20 +617,20 @@ class AnswerMethods:
                 steps = '\n'.join(structured_answer.steps_for_answer)
                 variables = '\n'.join(structured_answer.extracted_variables)
                 extra_str = f"EXTRACTED_VARIABLES:\n{variables}\nSTEPS_FOR_ANSWER:\n{steps}"
-            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
                 final_answer = structured_answer.answer_as_letter
                 final_answer_str = f"ANSWER_AS_LETTER: {final_answer}"
                 if len(final_answer) != 1 or not final_answer.isupper():
                     raise Exception(f"Answer as letter should be one uppercase letter.\n COT part: {cot_part}\n"
                                     f"Answer as letter: {final_answer}")
-            elif answer_type == AnswerType.NUMBER.value:
+            elif answer_type == AnswerType.NUMBER:
                 final_answer = structured_answer.answer_as_number
-                if output_format != OutputFormat.STRUCTURED_ANSWER.value and cot_part == '':
+                if output_format != OutputFormat.STRUCTURED_ANSWER and cot_part == '':
                     final_answer = ''
                 final_answer_str = f"ANSWER_AS_NUMBER: {final_answer}"
             else:
-                raise Exception(f"Answer extraction not yet implemented for {answer_type}")
-            if output_format == OutputFormat.STRUCTURED_ANSWER.value:
+                raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
+            if output_format == OutputFormat.STRUCTURED_ANSWER:
                 answer_results.llm_answer_unedited = final_answer
             else:
                 answer_results.llm_answer_unedited = f"SOLUTION_EXPLANATION: {cot_part}\n{extra_str}\n{final_answer_str}"
@@ -648,7 +648,7 @@ class AnswerMethods:
     def get_structured_output_llm(
             self,
             human_prompt: str,
-            answer_type: str,
+            answer_type: AnswerType,
             system_prompt: str | None = None,
             model_name: str | None = None,
             response_count: int = 1,
@@ -695,7 +695,7 @@ class AnswerMethods:
             self,
             question_text: str,
             temperature: float,
-            answer_type: str,
+            answer_type: AnswerType,
             ground_truth_answer: str,
             method: Method,
             ground_truth_answer_word: str | None = None,
@@ -752,20 +752,20 @@ class AnswerMethods:
                 system_prompt=system_prompt, prompt=plan_prompt_full, response_count=1, temperature=temperature,
                 get_multiple_answers=False, model_name=model_name
             )
-            if answer_type == AnswerType.MULTIPLE_CHOICE.value:
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
                 answer_final_str = 'ANSWER_AS_LETTER'
                 answer_prompt = 'Therefore, among A through D, the answer is' # TODO
-            elif answer_type == AnswerType.NUMBER.value:
+            elif answer_type == AnswerType.NUMBER:
                 answer_final_str = 'ANSWER_AS_NUMBER'
                 answer_prompt = 'The answer (arabic numerals) is'
-            elif answer_type == AnswerType.TEXT.value:
+            elif answer_type == AnswerType.TEXT:
                 answer_final_str = 'ANSWER_AS_TEXT'
                 answer_prompt = 'The answer is'
-            elif answer_type == AnswerType.BOOL.value:
+            elif answer_type == AnswerType.BOOL:
                 answer_final_str = 'ANSWER_AS_BOOL'
                 answer_prompt = 'The answer (Yes or No) is'
             else:
-                raise Exception(f"Answer extraction not yet implemented for {answer_type}")
+                raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
             final_answer_prompt_full = f"{plan_prompt_full}\n{answer_llm_plan}\n{answer_prompt}"
             if method == Method.ZS_COT:
                 final_answer_prompt_full = f"{question_text}\nA: {answer_llm_plan}\n{answer_prompt}"
