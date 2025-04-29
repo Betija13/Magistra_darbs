@@ -179,7 +179,10 @@ class ControllerAiLLM:
             model_name: str | None = None,
             response_count: int = 1,
             temperature: float = 0.0,
-            output_format: OutputFormat = OutputFormat.STRUCTURED_COT
+            output_format: OutputFormat = OutputFormat.STRUCTURED_COT,
+            max_tokens: int | None = None,
+            model_timeout: int = 120,
+            max_retries: int = 5
     ):
         """
         Gets Structured output from OpenAi LLM API.
@@ -187,75 +190,101 @@ class ControllerAiLLM:
             human_prompt: Human prompt. Has role user.
             answer_type: Answer type from AnswerType Enum.
             system_prompt: System prompt. Has role system. Treated as general instructions. Higher priority than human
-            prompt.
+                            prompt.
             model_name: Name of OpenAI model used.
             response_count: Count of responses. (Ho many responses for this one human and system prompt.)
             temperature: Temperature. Creativity and randomness of answer. (0-2)
             output_format: Output format from OutputFormat Enum.
-
+            max_tokens: An upper bound for the number of tokens that can be generated for a completion, including
+                        visible output tokens and reasoning tokens.
+            model_timeout: Max time for model to generate response. Otherwise, error.
+            max_retries: Max retries after an error.
         Returns:
             List of StructuredOutput answers in desired OutputFormat.
         """
         results: List[StructuredOutput] = []
 
         try:
-            client = OpenAI(api_key=self.model.api_key)
-            if answer_type == AnswerType.MULTIPLE_CHOICE:
-                if output_format == OutputFormat.STRUCTURED_COT:
-                    response_format = StructuredOutputModelMultipleChoice
-                elif output_format == OutputFormat.STRUCTURED_ANSWER:
-                    response_format = StructuredOutputModelMultipleChoiceOnlyChoice
-                elif output_format == OutputFormat.STRUCTURED_EXTRA:
-                    response_format = StructuredOutputModelMultipleChoiceExtra
-                else:
-                    raise Exception(f"Output format {output_format} is not yet implemented.")
-            elif answer_type == AnswerType.NUMBER:
-                if output_format == OutputFormat.STRUCTURED_COT:
-                    response_format = StructuredOutputModelNumber
-                elif output_format == OutputFormat.STRUCTURED_ANSWER:
-                    response_format = StructuredOutputModelNumberOnlyNumber
-                else:
-                    raise Exception(f"Output format {output_format} is not yet implemented.")
-            else:
-                raise Exception(f"Answer type {answer_type.value} is not yet implemented.")
-            if system_prompt is None:
-                messages = [{"role": "user", "content": human_prompt}]
-            else:
-                messages = [{"role": "system", "content": system_prompt},
-                            {"role": "user", "content": human_prompt}]
-            response = client.beta.chat.completions.parse(
-                model=self.model.name if model_name is None else model_name,
-                messages=messages,
-                n=response_count,
-                temperature=temperature,
-                response_format=response_format,
-                timeout=120
-            )
-            if response.choices[0].finish_reason != 'stop':
-                logger.error("!!! GPT was stopped because of: ")
-                logger.error(response.choices[0].finish_reason) # TODO save unfinished answer?
-                if response.choices[0].finish_reason == 'length':
-                    prompt_tokens = response.usage.prompt_tokens
-                    completion_tokens = response.usage.completion_tokens
-                    total_tokens = response.usage.total_tokens
-                    raise Exception(f"maximum context length exceeded: {prompt_tokens + completion_tokens} "
-                                    f"{total_tokens}")
-            else:
-                for choice in response.choices:
-                    answer_raw = choice.message.parsed
-                    answer_obj = StructuredOutput(
-                        solution_explanation=answer_raw.solution_explanation if
-                        output_format != OutputFormat.STRUCTURED_ANSWER else "",
-                        answer_as_letter=answer_raw.answer_as_letter if
-                        answer_type == AnswerType.MULTIPLE_CHOICE else "",
-                        answer_as_number=answer_raw.answer_as_number if
-                        answer_type == AnswerType.NUMBER else None,
-                        extracted_variables=answer_raw.extracted_variables if
-                        output_format == OutputFormat.STRUCTURED_EXTRA else [],
-                        steps_for_answer=answer_raw.steps_for_answer if
-                        output_format == OutputFormat.STRUCTURED_EXTRA else [],
+            retries_valid = True
+            retry_count = 0
+            max_tokens = min(max_tokens, 16384) if max_tokens else None
+            while retries_valid and retry_count < max_retries:
+                try:
+
+                    client = OpenAI(api_key=self.model.api_key)
+                    if answer_type == AnswerType.MULTIPLE_CHOICE:
+                        if output_format == OutputFormat.STRUCTURED_COT:
+                            response_format = StructuredOutputModelMultipleChoice
+                        elif output_format == OutputFormat.STRUCTURED_ANSWER:
+                            response_format = StructuredOutputModelMultipleChoiceOnlyChoice
+                        elif output_format == OutputFormat.STRUCTURED_EXTRA:
+                            response_format = StructuredOutputModelMultipleChoiceExtra
+                        else:
+                            raise Exception(f"Output format {output_format} is not yet implemented.")
+                    elif answer_type == AnswerType.NUMBER:
+                        if output_format == OutputFormat.STRUCTURED_COT:
+                            response_format = StructuredOutputModelNumber
+                        elif output_format == OutputFormat.STRUCTURED_ANSWER:
+                            response_format = StructuredOutputModelNumberOnlyNumber
+                        else:
+                            raise Exception(f"Output format {output_format} is not yet implemented.")
+                    else:
+                        raise Exception(f"Answer type {answer_type.value} is not yet implemented.")
+                    if system_prompt is None:
+                        messages = [{"role": "user", "content": human_prompt}]
+                    else:
+                        messages = [{"role": "system", "content": system_prompt},
+                                    {"role": "user", "content": human_prompt}]
+                    response = client.beta.chat.completions.parse(
+                        model=self.model.name if model_name is None else model_name,
+                        messages=messages,
+                        n=response_count,
+                        temperature=temperature,
+                        response_format=response_format,
+                        timeout=model_timeout,
+                        max_completion_tokens=max_tokens
                     )
-                    results.append(answer_obj)
+                    if response.choices[0].finish_reason != 'stop':
+                        logger.error("!!! GPT was stopped because of: ")
+                        logger.error(response.choices[0].finish_reason) # TODO save unfinished answer?
+                        if response.choices[0].finish_reason == 'length':
+                            prompt_tokens = response.usage.prompt_tokens
+                            completion_tokens = response.usage.completion_tokens
+                            total_tokens = response.usage.total_tokens
+                            raise Exception(f"maximum context length exceeded: {prompt_tokens + completion_tokens} "
+                                            f"{total_tokens}")
+                    else:
+                        for choice in response.choices:
+                            answer_raw = choice.message.parsed
+                            answer_obj = StructuredOutput(
+                                solution_explanation=answer_raw.solution_explanation if
+                                output_format != OutputFormat.STRUCTURED_ANSWER else "",
+                                answer_as_letter=answer_raw.answer_as_letter if
+                                answer_type == AnswerType.MULTIPLE_CHOICE else "",
+                                answer_as_number=answer_raw.answer_as_number if
+                                answer_type == AnswerType.NUMBER else None,
+                                extracted_variables=answer_raw.extracted_variables if
+                                output_format == OutputFormat.STRUCTURED_EXTRA else [],
+                                steps_for_answer=answer_raw.steps_for_answer if
+                                output_format == OutputFormat.STRUCTURED_EXTRA else [],
+                            )
+                            results.append(answer_obj)
+                            retries_valid = False
+                except Exception as exc:
+                    logger.warning(exc)
+                    retry_count += 1
+                    try:
+                        if exc.completion.choices[0].finish_reason == 'length':
+
+                            model_timeout = 60
+                            if max_tokens is not None:
+                                max_tokens -= 1000
+                                max_tokens = max(max_tokens, 1000)
+                            else:
+                                max_tokens = 10_000
+
+                    except Exception as inner_exc:
+                        logger.error(inner_exc)
 
         except Exception as exc:
             logger.error(exc) # exc.completion.choices[0].finish_reason == 'length'
@@ -263,6 +292,3 @@ class ControllerAiLLM:
 
 
     # TODO max tokens maybe makes answer not be infinite?
-
-    # TODO error handling and retries if reason is length
-
