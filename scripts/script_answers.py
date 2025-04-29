@@ -32,8 +32,8 @@ METHOD: Method = Method.STRUCT_MUT_M
 METHOD_NAME_FILE = str(METHOD)
 REWARD_METHOD: RewardMethod = RewardMethod.RERANK #None  # RewardMethod.MAJOR.value
 MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
-PREDIFINED_DATASETS: List[str] | None = [str(Datasets.AQUA.value)]
-PREDIFINED_FILES: List[str] | None = None #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
+PREDEFINED_DATASETS: List[str] | None = [str(Datasets.AQUA.value)]
+PREDEFINED_FILES: List[str] | None = None #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
 USE_SYSTEM_PROMPT_STRUCTURE = False
 OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
 REWARD_NAME = None
@@ -99,13 +99,13 @@ class LLMRunner:
         """
         all_dataset_folders = FileUtils.get_all_files_and_folders('../datasets', only_folders=True)
         all_dataset_folders = FileUtils.select_folders_datasets(all_dataset_folders,
-                                                                predifined_names=PREDIFINED_DATASETS)
+                                                                predifined_names=PREDEFINED_DATASETS)
         for folder in all_dataset_folders:
             path_to_question_file = f'../datasets/{folder}/data'
             files_in_folder = FileUtils.get_all_files_and_folders(path_to_question_file, only_folders=False)
             if len(files_in_folder) > 0:
                 if len(files_in_folder) > 1:
-                    question_files = FileUtils.select_folders_datasets(files_in_folder, predifined_names=PREDIFINED_FILES)
+                    question_files = FileUtils.select_folders_datasets(files_in_folder, predifined_names=PREDEFINED_FILES)
                 else:
                     question_files = files_in_folder
                 question_files_it = [os.path.join(path_to_question_file, q_file) for q_file in question_files]
