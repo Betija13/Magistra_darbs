@@ -3733,3 +3733,12 @@ Choices:
 {choices}
 ```
 ",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+433,26/04/2025,AQuA-RAT,../datasets/AQuA-RAT/A_N_SAMPLING_26-04-2025_data_normalized_test_REWARD_internlm.csv,A_N_SAMPLING,TRUE,254,86.22047244,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
