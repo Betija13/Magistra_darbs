@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Method(str, Enum): # TODO remove structures as there already is OutputFormat
+class Method(str, Enum):
     A_1 = 'A_ZERO_SHOT'
     A_2 = 'A_N_SAMPLING'
     MUT = 'MUTATION'
