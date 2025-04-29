@@ -26,6 +26,8 @@ config = dotenv_values(env_path)
 
 FACT_RANKING_MODEL = config.get('FACT_RANKING_MODEL')
 RERANK_URL = config.get('RERANK_URL')
+if FACT_RANKING_MODEL is None or RERANK_URL is None:
+    logger.critical(f"Missing variable in .env file. {FACT_RANKING_MODEL=}\t{RERANK_URL=}")
 
 
 class RewardMethods:
@@ -425,9 +427,4 @@ class RewardMethods:
         except Exception as e:
             logger.error(e)
         return score
-
-
-
-
-
 
