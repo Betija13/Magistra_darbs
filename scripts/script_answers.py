@@ -46,7 +46,7 @@ class LLMRunner:
         if controller_answers:
             self.controller_answers = controller_answers
         else:
-            self.controller_answers = AnswerMethods()
+            self.controller_answers = AnswerMethods(reward_name=REWARD_NAME)
         self.folder = '../datasets'
         self.filename_all_results = 'info_results.csv'
         self.file_path_info_all_results = os.path.join(self.folder, self.filename_all_results)

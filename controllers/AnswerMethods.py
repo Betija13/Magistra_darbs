@@ -20,18 +20,18 @@ from models.Enums.AnswerType import AnswerType
 from models.Enums.Method import Method
 from models.Enums.Datasets import Datasets
 from models.Enums.OutputFormat import OutputFormat
+from models.Enums.RewardModelNames import RewardModelNames
 
 
 class AnswerMethods:
-    def __init__(self):
+    def __init__(self, reward_name: RewardModelNames | None = None):
         self.controller_ai = ControllerAiLLM()
         self.controller_mutation = Mutation(controller_ai=self.controller_ai)
-        self.reward_methods = RewardMethods(ai_llm=self.controller_ai)
+        self.reward_methods = RewardMethods(ai_llm=self.controller_ai, reward_name=reward_name)
         self.last_mutation_prompt_idx: int = 0
         self.last_thinking_style_idx: int = 0
         self.max_mutation_prompt_idx: int = len(my_mutation_prompts) - 1
         self.max_thinking_style_idx: int = len(my_thinking_styles) - 1
-        self.reward_methods_obj = RewardMethods()
 
     def get_zero_shot_answer(
             self,
@@ -144,11 +144,11 @@ class AnswerMethods:
             if reward_method == RewardMethod.MAJOR:
                 chosen_answer = RewardMethods.majority_element(answers_for_voting)
             elif reward_method == RewardMethod.RERANK:
-                chosen_answer_obj = self.reward_methods_obj.get_reranking_model_best_answer(
+                chosen_answer_obj = self.reward_methods.get_reranking_model_best_answer(
                     question=human_prompt, answer_options=answers_for_voting
                 )
                 chosen_answer = chosen_answer_obj.chosen_answer
-                score_answer = chosen_answer_obj.score_answer
+                score_answer = chosen_answer_obj.answer_score
             if output_format != OutputFormat.NO_FORMAT:
                 idx_chosen = answers_for_voting.index(chosen_answer)
                 str_chosen = answer_strs[idx_chosen]
@@ -314,7 +314,13 @@ class AnswerMethods:
                     question=human_prompt, answer_options=answer_for_voting
                 )
                 answer_llm_chosen = chosen_answer_obj.chosen_answer
-                score_answer = chosen_answer_obj.score_answer
+                score_answer = chosen_answer_obj.answer_score
+            elif reward_method == RewardMethod.REWARD_M:
+                chosen_answer_obj = self.reward_methods.get_reward_model_best_answer(
+                    question=human_prompt, answer_options=answer_for_voting
+                )
+                answer_llm_chosen = chosen_answer_obj.chosen_answer
+                score_answer = chosen_answer_obj.answer_score
             else:
                 raise Exception(f"Reward method {reward_method.value} not implemented.")
             if answer_llm_chosen is not None:

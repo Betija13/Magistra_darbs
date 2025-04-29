@@ -289,7 +289,7 @@ class RewardMethods:
                 score = self.reward_model(**inputs).logits[0].cpu().detach()
                 scores.append(float(score))
             max_score = max(scores)
-            result_answer.score_answer = max_score
+            result_answer.answer_score = max_score
             result_answer.chosen_answer = answer_options[scores.index(max_score)]
         except Exception as e:
             logger.error(e)
@@ -355,7 +355,7 @@ class RewardMethods:
         try:
             scores = self.get_reward_model_internlm_scores(answer_options=answer_options, question=question)
             max_score = max(scores)
-            result_answer.score_answer = max_score
+            result_answer.answer_score = max_score
             result_answer.chosen_answer = answer_options[scores.index(max_score)]
         except Exception as e:
             logger.error(e)
