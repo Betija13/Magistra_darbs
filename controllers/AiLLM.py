@@ -181,7 +181,7 @@ class ControllerAiLLM:
             temperature: float = 0.0,
             output_format: OutputFormat = OutputFormat.STRUCTURED_COT,
             max_tokens: int | None = None,
-            model_timeout: int = 120,
+            model_timeout: int = 60,
             max_retries: int = 5
     ):
         """

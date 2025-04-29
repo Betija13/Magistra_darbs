@@ -3741,4 +3741,13 @@ Choices:
 ```
 {choices}
 ```
-",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward,
+434,29-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION_REWARD_MODEL__O-STRUCTURED_COT___I-S_29-04-2025_F-data_normalized_test.csv,MUTATION,True,254,86.61417322834646,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Question:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",0.0,1,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward

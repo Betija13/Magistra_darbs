@@ -402,6 +402,7 @@ class LLMRunner:
                 response_count=ANSWER_COUNT,
                 reward_method=REWARD_METHOD.value,
                 llm_model=self.controller_answers.controller_ai.model.name if MODEL_NAME is None else MODEL_NAME,
+                reward_name=REWARD_NAME.value if REWARD_NAME else None
             )
             info_result.result_file_name = resultsfile.name
             info_result.count = size_iteration_objects
