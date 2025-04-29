@@ -39,7 +39,7 @@ File name structure is as follows
 
 (older version) `<method name>_<date>_<dataset file name>_<custom name>.csv`
 
-(from 29/04/2025) `<method name>_<[opt]CONT-US>_<[opt]reward method>_O-<Output format>_<I-N\I-S>_<date>_<dataset file name>_<custom name>.csv`
+(from 29/04/2025) `<method name>_<[opt]CONT-US>_<[opt]reward method>_O-<Output format>_<I-N\I-S>_<date>_F-<dataset file name>_<custom name>.csv`
 
 * [optional] CONT-US is MUTATION_UNTIL_SATISFIED.
 * [optional] reward method is REWARD_METHOD if any is chosen

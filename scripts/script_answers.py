@@ -14,6 +14,7 @@ from models.Enums.Method import Method
 from models.Enums.RewardMethod import RewardMethod
 from models.Enums.Datasets import Datasets
 from models.Enums.OutputFormat import OutputFormat
+from models.Enums.RewardModelNames import RewardModelNames
 from models.constants import human_prompts, system_prompts, mutated_task_prompts_AQuA_RAT, system_prompts_output, \
     system_prompts_static, system_prompts_task, created_my_prompts_MC, created_my_prompts_NUM
 from models.DataClass.AnswerResults import AnswerResults
@@ -30,14 +31,15 @@ ANSWER_COUNT = 1
 N_SAMPLES_MUT = 5
 METHOD: Method = Method.MUT
 METHOD_NAME_FILE = str(METHOD.value)
-REWARD_METHOD: RewardMethod = RewardMethod.RERANK #None  # RewardMethod.MAJOR.value
+REWARD_METHOD: RewardMethod = RewardMethod.REWARD_M #None  # RewardMethod.MAJOR.value
+REWARD_NAME = RewardModelNames.INTERNLM_1_8_B
 MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
 PREDEFINED_DATASETS: List[str] | None = [str(Datasets.AQUA.value)]
 PREDEFINED_FILES: List[str] | None = None #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
 USE_SYSTEM_PROMPT_STRUCTURE = False
 MUTATION_UNTIL_SATISFIED = False
 OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
-REWARD_NAME = None
+
 
 class LLMRunner:
     def __init__(self, controller_answers: AnswerMethods | None = None):
@@ -285,7 +287,7 @@ class LLMRunner:
             until_satisfied_mut_str = f"_CONT-US_" if MUTATION_UNTIL_SATISFIED else ''
             input_format = '_I-N_' if USE_SYSTEM_PROMPT_STRUCTURE else '_I-S_'
             result_file = (f'../datasets/{folder}/results/{METHOD_NAME_FILE}{until_satisfied_mut_str}{reward_str}__'
-                           f'O-{OUTPUT_FORMAT.value}__{input_format}{self.current_date}_{question_filename}'
+                           f'O-{OUTPUT_FORMAT.value}__{input_format}{self.current_date}_F-{question_filename}'
                            f'{self.custom_name_str}.csv')
             self.output_info(
                 q_file=question_file, folder=folder, initial_prompt=system_prompt_task_initial, result_file=result_file
@@ -462,14 +464,14 @@ class LLMRunner:
         if METHOD == Method.A_2 and TEMPERATURE <= 0.3:
             logger.critical(f"using N_SAMPLES with low temperature [{TEMPERATURE=}]")
         if METHOD in [Method.A_2, Method.MUT] and REWARD_METHOD is None:
-            logger.critical(f"using {METHOD} with no reward method")
+            logger.critical(f"using {METHOD.value} with no reward method")
         if (METHOD in [Method.A_1, Method.PS, Method.PS_PLUS, Method.ZS_COT, Method.TWO_PROMPTS] and
                 REWARD_METHOD is not None):
             logger.critical(f"using {METHOD.value} with reward method {REWARD_METHOD.value}")
-        if (METHOD.value in [Method.MUT.value, Method.TWO_PROMPTS.value] and USE_SYSTEM_PROMPT_STRUCTURE and
+        if (METHOD in [Method.MUT, Method.TWO_PROMPTS] and USE_SYSTEM_PROMPT_STRUCTURE and
                 OUTPUT_FORMAT != OutputFormat.NO_FORMAT):
             logger.critical(f"using {METHOD.value} with system prompt structure")
-        if METHOD.value in [Method.PS.value, Method.PS_PLUS.value, Method.ZS_COT.value] and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
+        if METHOD in [Method.PS, Method.PS_PLUS, Method.ZS_COT] and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
             logger.critical(f"using {METHOD.value} with no output format")
 
 

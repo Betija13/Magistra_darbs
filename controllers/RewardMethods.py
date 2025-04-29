@@ -11,6 +11,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, Auto
 from controllers.AiLLM import ControllerAiLLM
 from models.DataClass.SplitOptions import SplitOptions
 from models.DataClass.RankingResults import RankingResults
+from models.Enums.RewardModelNames import RewardModelNames
 
 env_path = '.env'
 if os.path.exists("../.env"):
@@ -29,27 +30,17 @@ RERANK_URL = config.get('RERANK_URL')
 
 class RewardMethods:
 
-    def __init__(self, ai_llm: ControllerAiLLM | None = None):
+    def __init__(self, ai_llm: ControllerAiLLM | None = None, reward_name: RewardModelNames | None = None) -> None:
         self.ai_llm = ai_llm if ai_llm else ControllerAiLLM()
-        self.reward_name = "OpenAssistant/reward-model-deberta-v3-large-v2" # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2
-        # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large reward_name = "OpenAssistant/reward-model-deberta-v3-large"
-        self.rank_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
-            self.reward_name), AutoTokenizer.from_pretrained(self.reward_name)
+        self.reward_name = reward_name.value if reward_name else None
+        self.reward_model = None
+        self.tokenizer = None
 
-        self.reward_name_internlm = "internlm/internlm2-1_8b-reward"  # internlm/internlm2-20b-reward
-        # https://huggingface.co/internlm/internlm2-1_8b-reward
-        # https://huggingface.co/internlm/internlm2-20b-reward
-        # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
+        if self.reward_name:
+            self.init_reward_model(reward_model_name=reward_name)
 
-        self.reward_model_internlm = AutoModel.from_pretrained(
-            self.reward_name_internlm,
-            device_map=None,# device_map="cuda",
-            torch_dtype=torch.float16,
-            trust_remote_code=True,
-        )
-        self.tokenizer_internlm = AutoTokenizer.from_pretrained(self.reward_name_internlm, trust_remote_code=True)
 
-    def init_reward_model(self, reward_model_name: str) -> None: # TODO should turn to Enums
+    def init_reward_model(self, reward_model_name: RewardModelNames) -> None:
         """
         Initialize the reward model and tokenizer with the specified model name.
 
@@ -57,9 +48,27 @@ class RewardMethods:
             reward_model_name: The name of the reward model to load.
 
         """
-        self.reward_name = reward_model_name
-        self.rank_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
-            reward_model_name), AutoTokenizer.from_pretrained(reward_model_name)
+        if reward_model_name == RewardModelNames.DEBERTA_V3_2: # TODO adapt for GPU?
+            self.reward_name = "OpenAssistant/reward-model-deberta-v3-large-v2"  # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2
+            # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large reward_name = "OpenAssistant/reward-model-deberta-v3-large"
+            self.reward_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
+                self.reward_name), AutoTokenizer.from_pretrained(self.reward_name)
+        elif reward_model_name == RewardModelNames.INTERNLM_1_8_B:
+            self.reward_name = "internlm/internlm2-1_8b-reward"  # internlm/internlm2-20b-reward
+            # https://huggingface.co/internlm/internlm2-1_8b-reward
+            # https://huggingface.co/internlm/internlm2-20b-reward
+            # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
+            device_map = None
+            if torch.cuda.is_available():
+                device_map = "cuda"
+            self.reward_model = AutoModel.from_pretrained(
+                self.reward_name,
+                device_map=device_map,
+                torch_dtype=torch.float16,
+                trust_remote_code=True,
+            )
+            self.tokenizer = AutoTokenizer.from_pretrained(self.reward_name, trust_remote_code=True)
+
 
     @staticmethod
     def majority_element(answer_options: List[str]) -> str | None:
@@ -88,7 +97,7 @@ class RewardMethods:
             answer_options: List[str],
             scorer_model_name: str | None = None,
             choosing_prompt: bool = False,
-    ) -> str | None:
+    ) -> str | None: # TODO change for Gemini
         """
         Use another LLM to evaluate the answers and return the best one.
         Args:
@@ -257,11 +266,106 @@ class RewardMethods:
             logger.error(e)
         return split_answers
 
+    def get_reward_model_deberta_best_answer(
+            self,
+            answer_options: List[str],
+            question: str
+    ) -> RankingResults:
+        """
+        Use the reward model to evaluate the answers and return the best one.
+        Args:
+            answer_options: List of answer options.
+            question: Question to be asked.
+
+        Returns:
+            The best answer according to the evaluation of the reward model amd the score for that answer.
+
+        """
+        result_answer = RankingResults()
+        try:
+            scores = []
+            for answer in answer_options:
+                inputs = self.tokenizer(question, answer, return_tensors='pt')
+                score = self.reward_model(**inputs).logits[0].cpu().detach()
+                scores.append(float(score))
+            max_score = max(scores)
+            result_answer.score_answer = max_score
+            result_answer.chosen_answer = answer_options[scores.index(max_score)]
+        except Exception as e:
+            logger.error(e)
+        return result_answer
+
+    def get_reward_model_deberta_score(self, answer_option: str, question: str) -> float | None:
+        """
+            Get the score of the answer option using the reward model.
+            Args:
+                question: Question to be asked.
+                answer_option: Answer option to be evaluated.
+            Returns:
+                Score of the answer option.
+        """
+        score = None
+        try:
+            inputs = self.tokenizer(question, answer_option, return_tensors='pt')
+            score = self.reward_model(**inputs).logits[0].cpu().detach()
+            score = float(score[0])
+        except Exception as e:
+            logger.error(e)
+        return score
+
+    def get_reward_model_internlm_scores(
+            self,
+            answer_options: List[str],
+            question: str
+    ) -> List[float] | None:
+        """
+            Gets reward scores for each answer option
+            Args:
+                answer_options: List of answer options.
+                question: Question to be asked.
+                reward_name: Name of the reward model. (Optional, to change model)
+            Returns:
+                List of scores for each answer option.
+        """
+        scores = None
+        try:
+            chats = []
+            for answer_option in answer_options:
+                chat_n = [
+                    {"role": "user", "content": question},
+                    {"role": "assistant",
+                     "content": answer_option}
+                ]
+                chats.append(chat_n)
+            scores = self.reward_model.get_scores(self.tokenizer, chats)
+        except Exception as e:
+            logger.error(e)
+        return scores
+
+    def get_reward_model_internlm_best_answer(self, answer_options: List[str], question: str) -> RankingResults:
+        """
+        Use the reward model to evaluate the answers and return the best one.
+        Args:
+            answer_options: List of answer options.
+            question: Question to be asked.
+        Returns:
+            The best answer according to the evaluation of the reward model and its score.
+        """
+        result_answer = RankingResults()
+        try:
+            scores = self.get_reward_model_internlm_scores(answer_options=answer_options, question=question)
+            max_score = max(scores)
+            result_answer.score_answer = max_score
+            result_answer.chosen_answer = answer_options[scores.index(max_score)]
+        except Exception as e:
+            logger.error(e)
+        return result_answer
+
     def get_reward_model_best_answer(
             self,
             answer_options: List[str],
             question: str,
-            reward_name: str | None = None
+            reward_name: RewardModelNames | None = None
     ) -> RankingResults:
         """
         Use the reward model to evaluate the answers and return the best one.
@@ -278,21 +382,26 @@ class RewardMethods:
         try:
             if reward_name and reward_name != self.reward_name:
                 self.init_reward_model(reward_name)
-            scores = []
-            for answer in answer_options:
-                inputs = self.tokenizer(question, answer, return_tensors='pt')
-                score = self.rank_model(**inputs).logits[0].cpu().detach()
-                scores.append(float(score))
-            max_score = max(scores)
-            result_answer.score_answer = max_score
-            result_answer.chosen_answer = answer_options[scores.index(max_score)]
+            if self.reward_name is None or self.reward_model is None or self.tokenizer is None:
+                raise Exception(f"Reward model not initialized")
+            if self.reward_name in [RewardModelNames.DEBERTA_V3_2.value]:
+                result_answer = self.get_reward_model_deberta_best_answer(
+                    answer_options=answer_options, question=question
+                )
+            elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value]:
+                result_answer = self.get_reward_model_internlm_best_answer(
+                    answer_options=answer_options, question=question
+                )
+            else:
+                raise Exception(f"Unsupported self.reward_name: {self.reward_name}")
+
         except Exception as e:
             logger.error(e)
         return result_answer
 
-    def get_reward_model_score(self, answer_option: str, question: str, reward_name: str | None = None) -> float | None:
+    def get_reward_model_score(self, answer_option: str, question: str, reward_name: RewardModelNames | None = None) -> float | None:
         """
-            Get the score of the answer option using the reward model.
+            General function to get the score of the answer option using the reward model.
             Args:
                 question: Question to be asked.
                 answer_option: Answer option to be evaluated.
@@ -304,84 +413,19 @@ class RewardMethods:
         try:
             if reward_name and reward_name != self.reward_name:
                 self.init_reward_model(reward_name)
-            inputs = self.tokenizer(question, answer_option, return_tensors='pt')
-            score = self.rank_model(**inputs).logits[0].cpu().detach()
-            score = float(score[0])
+            if self.reward_name is None or self.reward_model is None or self.tokenizer is None:
+                raise Exception(f"Reward model not initialized")
+            if self.reward_name in [RewardModelNames.DEBERTA_V3_2.value]:
+                score = self.get_reward_model_deberta_score(answer_option=answer_option, question=question)
+            elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value]:
+                scores = self.get_reward_model_internlm_scores(answer_options=[answer_option], question=question)
+                score = scores[0]
+            else:
+                raise Exception(f"Unsupported self.reward_name: {self.reward_name}")
         except Exception as e:
             logger.error(e)
         return score
 
-    def get_reward_model_internlm_scores(self, answer_options: List[str], question: str) -> List[float] | None:
-        """
-            TODO  reward_name: str | None = None
-            Gets reward scores for each answer option
-            Args:
-                answer_options: List of answer options.
-                question: Question to be asked.
-            Returns:
-                List of scores for each answer option.
-        """
-        scores = None
-        try:
-            chats = []
-            for answer_option in answer_options:
-                chat_n = [
-                    {"role": "user", "content": question},
-                    {"role": "assistant",
-                     "content": answer_option}
-                ]
-                chats.append(chat_n)
-            scores = self.reward_model_internlm.get_scores(self.tokenizer_internlm, chats)
-        except Exception as e:
-            logger.error(e)
-        return scores
-
-    def get_reward_model_internlm_best_answer(self, answer_options: List[str], question: str) -> RankingResults:
-        """
-        TODO reward_name: str | None = None
-        Use the reward model to evaluate the answers and return the best one.
-        Args:
-            answer_options: List of answer options.
-            question: Question to be asked.
-            # reward_name: Name of the reward model.
-
-        Returns:
-            The best answer according to the evaluation of the reward model and its score.
-
-        """
-        result_answer = RankingResults()
-        try:
-            scores = self.get_reward_model_internlm_scores(answer_options=answer_options, question=question)
-            max_score = max(scores)
-            result_answer.score_answer = max_score
-            result_answer.chosen_answer = answer_options[scores.index(max_score)]
-        except Exception as e:
-            logger.error(e)
-        return result_answer
-
-if __name__ == "__main__":
-    reward_methods = RewardMethods()
-    start_prompt = 'Solve the multiple choice math word problem, ensuring you provide a detailed explanation for the answer. Choose from the options (A), (B), (C), (D), or (E).'
-    created_my_prompts = [
-        "Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).",
-        "Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).",
-        "Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).",
-        "Put your math cape on, rescue the answer from the jaws of indecision, and reveal whether it's A, B, C, D, or E!",
-        "Pick a letter and pray that math agrees with you.",
-        "Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).",
-        "Pick the correct multiple choice math answer while explaining why it's right, from choices (A) to (E).",
-        "Select the correct answer for the math problem and explain your reasoning briefly."
-
-    ]
-    # result = reward_methods.another_llm(created_my_prompts, choosing_prompt=True)
-    # logger.info("Result from another LLM:")
-    # logger.info(result)
-    # result2 = reward_methods.get_reranking_model_score(start_prompt, created_my_prompts)
-    # logger.info("Result from reranking model:")
-    # logger.info(result2)
-    result3 = reward_methods.reward_model(created_my_prompts, start_prompt)
-    logger.info("Result from reward model:")
-    logger.info(result3)
 
 
 
