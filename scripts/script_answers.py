@@ -29,7 +29,7 @@ TEMPERATURE = 0.0
 ANSWER_COUNT = 1
 N_SAMPLES_MUT = 5
 METHOD: Method = Method.MUT
-METHOD_NAME_FILE = str(METHOD)
+METHOD_NAME_FILE = str(METHOD.value)
 REWARD_METHOD: RewardMethod = RewardMethod.RERANK #None  # RewardMethod.MAJOR.value
 MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
 PREDEFINED_DATASETS: List[str] | None = [str(Datasets.AQUA.value)]
@@ -282,9 +282,11 @@ class LLMRunner:
             print(question_file)
             question_filename = question_file.split('/')[-1].split('\\')[-1].split('.')[0]
             reward_str = f"_{REWARD_METHOD.value}" if REWARD_METHOD else ''
-            # TODO other stuff as well
-            result_file = f'../datasets/{folder}/results/{METHOD_NAME_FILE}{reward_str}_' \
-                          f'{self.current_date}_{question_filename}{self.custom_name_str}.csv'
+            until_satisfied_mut_str = f"_CONT-US_" if MUTATION_UNTIL_SATISFIED else ''
+            input_format = '_I-N_' if USE_SYSTEM_PROMPT_STRUCTURE else '_I-S_'
+            result_file = (f'../datasets/{folder}/results/{METHOD_NAME_FILE}{until_satisfied_mut_str}{reward_str}__'
+                           f'O-{OUTPUT_FORMAT.value}__{input_format}{self.current_date}_{question_filename}'
+                           f'{self.custom_name_str}.csv')
             self.output_info(
                 q_file=question_file, folder=folder, initial_prompt=system_prompt_task_initial, result_file=result_file
             )
@@ -317,7 +319,7 @@ class LLMRunner:
                         answer_type_str = row['answer_type']
                         answer_type = AnswerType[answer_type_str]
 
-                        if 'MUTATION' in METHOD_NAME_FILE:
+                        if METHOD == Method.MUT:
                             system_prompt_task = random.choice(task_system_prompts) if len(task_system_prompts) > 0 else system_prompt_task_initial
                             system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
                             if answer_type != AnswerType.MULTIPLE_CHOICE:
@@ -384,7 +386,7 @@ class LLMRunner:
                             )
                             writer.writerow(asdict(data_results))
             current_result_id = FileUtils.get_highest_id_from_csv(self.file_path_info_all_results) + 1
-            if 'MUTATION' in METHOD_NAME_FILE:
+            if METHOD == Method.MUT:
                 system_prompt_info = system_prompt_info_start
             info_result = InfoResults(
                 id=current_result_id,
