@@ -6,3 +6,4 @@ class RewardMethod(Enum):
     RERANK = 'RERANK'
     REWARD_M = 'REWARD_MODEL'
     LLM_O = 'ANOTHER_LLM'
+    CORRECT_A = 'CORRECT_ANSWER'

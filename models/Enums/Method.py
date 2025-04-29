@@ -1,16 +1,17 @@
 from enum import Enum
 
 
-class Method(str, Enum): # TODO Mutation as one method
+class Method(str, Enum): # TODO remove structures as there already is OutputFormat
     A_1 = 'A_ZERO_SHOT'
     A_2 = 'A_N_SAMPLING'
     MUT = 'MUTATION'
-    MUT_C = 'MUTATION_CORRECT'  # As next examples are given those prompts that produced a correct answer
-    STRUCT_MUT_C = 'STRUCTURED_MUTATION_CORRECT'
-    MUT_M = 'MUTATION_MAJOR'  # As next examples are given those prompts that produced major answer
-    STRUCT_MUT_M = 'STRUCTURED_MUTATION_MAJOR'
-    MUT_E = 'MUTATION_EDIT'  # Mutation is ongoing until the correct answer is produced or the limit is reached
-    STRUCT_MUT_E = 'STRUCTURED_MUTATION_EDIT'
+
+    # MUT_C = 'MUTATION_CORRECT'  # As next examples are given those prompts that produced a correct answer
+    # STRUCT_MUT_C = 'STRUCTURED_MUTATION_CORRECT'
+    # MUT_M = 'MUTATION_MAJOR'  # As next examples are given those prompts that produced major answer
+    # STRUCT_MUT_M = 'STRUCTURED_MUTATION_MAJOR'
+    # MUT_E = 'MUTATION_EDIT'  # Mutation is ongoing until the correct answer is produced or the limit is reached
+    # STRUCT_MUT_E = 'STRUCTURED_MUTATION_EDIT'
     STRUCT = 'STRUCTURED_OUTPUT' # Structured output with explanation
     STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER' #Structured output with only answer
     STRUCT_EXTRA = 'STRUCTURED_EXTRA' # Structured output with explanation and extracted variables

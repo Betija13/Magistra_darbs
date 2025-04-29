@@ -28,13 +28,14 @@ TOTAL_COUNT = 1300
 TEMPERATURE = 0.0
 ANSWER_COUNT = 1
 N_SAMPLES_MUT = 5
-METHOD: Method = Method.STRUCT_MUT_M
+METHOD: Method = Method.MUT
 METHOD_NAME_FILE = str(METHOD)
 REWARD_METHOD: RewardMethod = RewardMethod.RERANK #None  # RewardMethod.MAJOR.value
 MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
 PREDEFINED_DATASETS: List[str] | None = [str(Datasets.AQUA.value)]
 PREDEFINED_FILES: List[str] | None = None #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
 USE_SYSTEM_PROMPT_STRUCTURE = False
+MUTATION_UNTIL_SATISFIED = False
 OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
 REWARD_NAME = None
 
@@ -181,14 +182,20 @@ class LLMRunner:
                     temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
                     ground_truth_answer=answer, ground_truth_answer_word=answer_word
                 )
-            elif (METHOD == Method.MUT_M or METHOD == Method.MUT_C or
-                  METHOD == Method.STRUCT_MUT_M or METHOD == Method.STRUCT_MUT_C):
-                answer_results = self.controller_answers.get_answer_with_mutation(
-                    system_prompt=system_prompt, human_prompt=human_prompt, n_samples=N_SAMPLES_MUT,
-                    temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
-                    ground_truth_answer=answer, ground_truth_answer_word=answer_word, reward_method=REWARD_METHOD,
-                    output_format=OUTPUT_FORMAT
-                )
+            elif METHOD == Method.MUT:
+                if MUTATION_UNTIL_SATISFIED:
+                    answer_results = self.controller_answers.get_answer_with_adaptive_mutation(
+                        system_prompt=system_prompt, human_prompt=human_prompt, model_name=MODEL_NAME,
+                        answer_type=answer_type, ground_truth_answer=answer, result_file=result_file,
+                        ground_truth_answer_word=answer_word, temperature=TEMPERATURE, get_structured_output=True
+                    )
+                else:
+                    answer_results = self.controller_answers.get_answer_with_mutation(
+                        system_prompt=system_prompt, human_prompt=human_prompt, n_samples=N_SAMPLES_MUT,
+                        temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
+                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, reward_method=REWARD_METHOD,
+                        output_format=OUTPUT_FORMAT
+                    )
                 if answer_results.task_prompts_chosen is not None:
                     answer_results.task_system_prompts = answer_results.task_prompts_chosen
                 # if answer_results.task_prompts_majority is not None and answer_results.task_prompts_majority != "" \
@@ -213,12 +220,7 @@ class LLMRunner:
                     ground_truth_answer=answer, ground_truth_answer_word=answer_word, temperature=TEMPERATURE,
                     method=METHOD, system_prompt=system_prompt
                 )
-            elif METHOD == Method.STRUCT_MUT_E:
-                answer_results = self.controller_answers.get_answer_with_adaptive_mutation(
-                    system_prompt=system_prompt, human_prompt=human_prompt, model_name=MODEL_NAME,
-                    answer_type=answer_type, ground_truth_answer=answer, result_file=result_file,
-                    ground_truth_answer_word=answer_word, temperature=TEMPERATURE, get_structured_output=True
-                )
+
             else:
                 raise Exception(f"Method not implemented. Method: {METHOD.value}; Reward method: {REWARD_METHOD.value}")
 
@@ -279,7 +281,9 @@ class LLMRunner:
 
             print(question_file)
             question_filename = question_file.split('/')[-1].split('\\')[-1].split('.')[0]
-            result_file = f'../datasets/{folder}/results/{METHOD_NAME_FILE}_' \
+            reward_str = f"_{REWARD_METHOD.value}" if REWARD_METHOD else ''
+            # TODO other stuff as well
+            result_file = f'../datasets/{folder}/results/{METHOD_NAME_FILE}{reward_str}_' \
                           f'{self.current_date}_{question_filename}{self.custom_name_str}.csv'
             self.output_info(
                 q_file=question_file, folder=folder, initial_prompt=system_prompt_task_initial, result_file=result_file
@@ -359,11 +363,7 @@ class LLMRunner:
                                 human_prompt=human_prompt, system_prompt=system_prompt, answer_type=answer_type,
                                 answer=answer, answer_word=answer_word, result_file=result_file
                             )
-                            if (METHOD == Method.MUT_M or METHOD == Method.MUT_C or
-                                METHOD == Method.STRUCT_MUT_M or METHOD == Method.STRUCT_MUT_C) and \
-                                    len(answer_results.task_system_prompts) > 0:
-                                task_system_prompts = answer_results.task_system_prompts
-                            if METHOD == Method.STRUCT_MUT_E:
+                            if METHOD == Method.MUT  and len(answer_results.task_system_prompts) > 0:
                                 task_system_prompts = answer_results.task_system_prompts
                             # task_prompts_majority_str = answer_results.task_prompts_majority if \
                             #     (METHOD == Method.MUT_Me or METHOD == Method.STRUCT_MUT_M) else \
@@ -459,17 +459,15 @@ class LLMRunner:
             logger.critical(f"using N_SAMPLES without a reward method")
         if METHOD == Method.A_2 and TEMPERATURE <= 0.3:
             logger.critical(f"using N_SAMPLES with low temperature [{TEMPERATURE=}]")
-        if METHOD in [Method.A_2, Method.MUT, Method.MUT_C, Method.STRUCT_MUT_C,
-                      Method.MUT_M, Method.STRUCT_MUT_M, Method.MUT_E, Method.STRUCT_MUT_E] \
-                and REWARD_METHOD is None:
+        if METHOD in [Method.A_2, Method.MUT] and REWARD_METHOD is None:
             logger.critical(f"using {METHOD} with no reward method")
         if METHOD in [Method.A_1, Method.STRUCT, Method.STRUCT_ANS, Method.STRUCT_EXTRA,
                       Method.PS, Method.PS_PLUS, Method.ZS_COT, Method.TWO_PROMPTS] and \
                 REWARD_METHOD is not None:
             logger.critical(f"using {METHOD.value} with reward method {REWARD_METHOD.value}")
-        if METHOD.value in [Method.STRUCT_MUT_C.value, Method.STRUCT_MUT_M.value, Method.STRUCT_MUT_E.value,
+        if METHOD.value in [Method.MUT.value,
                       Method.STRUCT.value, Method.STRUCT_ANS.value, Method.STRUCT_EXTRA.value,
-                      Method.TWO_PROMPTS.value] and USE_SYSTEM_PROMPT_STRUCTURE:
+                      Method.TWO_PROMPTS.value] and USE_SYSTEM_PROMPT_STRUCTURE and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
             logger.critical(f"using {METHOD.value} with system prompt structure")
         if METHOD.value in [Method.PS.value, Method.PS_PLUS.value, Method.ZS_COT.value] and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
             logger.critical(f"using {METHOD.value} with no output format")
