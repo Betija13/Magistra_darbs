@@ -12,9 +12,11 @@ class Method(str, Enum): # TODO remove structures as there already is OutputForm
     # STRUCT_MUT_M = 'STRUCTURED_MUTATION_MAJOR'
     # MUT_E = 'MUTATION_EDIT'  # Mutation is ongoing until the correct answer is produced or the limit is reached
     # STRUCT_MUT_E = 'STRUCTURED_MUTATION_EDIT'
-    STRUCT = 'STRUCTURED_OUTPUT' # Structured output with explanation
-    STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER' #Structured output with only answer
-    STRUCT_EXTRA = 'STRUCTURED_EXTRA' # Structured output with explanation and extracted variables
+
+    # STRUCT = 'STRUCTURED_OUTPUT' # Structured output with explanation
+    # STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER' #Structured output with only answer
+    # STRUCT_EXTRA = 'STRUCTURED_EXTRA' # Structured output with explanation and extracted variables
+
     PS = 'PLAN_AND_SOLVE'
     PS_PLUS = 'PLAN_AND_SOLVE_PLUS'
     ZS_COT = 'ZS_COT'

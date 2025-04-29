@@ -177,11 +177,18 @@ class LLMRunner:
                 else:
                     raise Exception(f"Reward method not implemented. Method: {METHOD.value}; Reward method: {REWARD_METHOD.value}")
             elif METHOD == Method.A_1 and REWARD_METHOD is None:
-                answer_results = self.controller_answers.get_zero_shot_answer(
-                    system_prompt=system_prompt, human_prompt=human_prompt,
-                    temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
-                    ground_truth_answer=answer, ground_truth_answer_word=answer_word
-                )
+                if OUTPUT_FORMAT == OutputFormat.NO_FORMAT:
+                    answer_results = self.controller_answers.get_zero_shot_answer(
+                        system_prompt=system_prompt, human_prompt=human_prompt,
+                        temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
+                        ground_truth_answer=answer, ground_truth_answer_word=answer_word
+                    )
+                else:
+                    answer_results = self.controller_answers.get_structured_output(
+                        human_prompt=human_prompt, system_prompt=system_prompt, model_name=MODEL_NAME,
+                        response_count=ANSWER_COUNT, temperature=TEMPERATURE, answer_type=answer_type,
+                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, output_format=OUTPUT_FORMAT
+                    )
             elif METHOD == Method.MUT:
                 if MUTATION_UNTIL_SATISFIED:
                     answer_results = self.controller_answers.get_answer_with_adaptive_mutation(
@@ -204,13 +211,6 @@ class LLMRunner:
                 # elif answer_results.task_prompts_correct is not None and answer_results.task_prompts_correct != "" \
                 #         and (METHOD == Method.MUT_C.value or METHOD == Method.STRUCT_MUT_C.value):
                 #     answer_results.task_system_prompts = answer_results.task_prompts_correct.split('\n------\n')
-            elif METHOD == Method.STRUCT or METHOD == Method.STRUCT_ANS or METHOD == Method.STRUCT_EXTRA:
-                # only_answer = METHOD == Method.STRUCT_ANS.value
-                answer_results = self.controller_answers.get_structured_output(
-                    human_prompt=human_prompt, system_prompt=system_prompt, model_name=MODEL_NAME,
-                    response_count=ANSWER_COUNT, temperature=TEMPERATURE, answer_type=answer_type,
-                    ground_truth_answer=answer, ground_truth_answer_word=answer_word, output_format=OUTPUT_FORMAT
-                )
             elif METHOD == Method.PS or METHOD == Method.PS_PLUS or METHOD == Method.ZS_COT \
                     or METHOD == Method.TWO_PROMPTS:
                 if METHOD == Method.PS or METHOD == Method.PS_PLUS or METHOD == Method.ZS_COT:
@@ -461,22 +461,14 @@ class LLMRunner:
             logger.critical(f"using N_SAMPLES with low temperature [{TEMPERATURE=}]")
         if METHOD in [Method.A_2, Method.MUT] and REWARD_METHOD is None:
             logger.critical(f"using {METHOD} with no reward method")
-        if METHOD in [Method.A_1, Method.STRUCT, Method.STRUCT_ANS, Method.STRUCT_EXTRA,
-                      Method.PS, Method.PS_PLUS, Method.ZS_COT, Method.TWO_PROMPTS] and \
-                REWARD_METHOD is not None:
+        if (METHOD in [Method.A_1, Method.PS, Method.PS_PLUS, Method.ZS_COT, Method.TWO_PROMPTS] and
+                REWARD_METHOD is not None):
             logger.critical(f"using {METHOD.value} with reward method {REWARD_METHOD.value}")
-        if METHOD.value in [Method.MUT.value,
-                      Method.STRUCT.value, Method.STRUCT_ANS.value, Method.STRUCT_EXTRA.value,
-                      Method.TWO_PROMPTS.value] and USE_SYSTEM_PROMPT_STRUCTURE and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
+        if (METHOD.value in [Method.MUT.value, Method.TWO_PROMPTS.value] and USE_SYSTEM_PROMPT_STRUCTURE and
+                OUTPUT_FORMAT != OutputFormat.NO_FORMAT):
             logger.critical(f"using {METHOD.value} with system prompt structure")
         if METHOD.value in [Method.PS.value, Method.PS_PLUS.value, Method.ZS_COT.value] and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
             logger.critical(f"using {METHOD.value} with no output format")
-        if METHOD.value == Method.STRUCT and OUTPUT_FORMAT != OutputFormat.STRUCTURED_COT:
-            logger.critical(f"using {METHOD.value} with {OUTPUT_FORMAT.value} output format")
-        if METHOD.value == Method.STRUCT_ANS and OUTPUT_FORMAT != OutputFormat.STRUCTURED_ANSWER:
-            logger.critical(f"using {METHOD.value} with {OUTPUT_FORMAT.value} output format")
-        if METHOD.value == Method.STRUCT_EXTRA and OUTPUT_FORMAT != OutputFormat.STRUCTURED_EXTRA:
-            logger.critical(f"using {METHOD.value} with {OUTPUT_FORMAT.value} output format")
 
 
 if __name__ == "__main__":
