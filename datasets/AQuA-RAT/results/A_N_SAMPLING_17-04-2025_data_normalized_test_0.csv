@@ -1,0 +1,62 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score,task_prompt_all,task_prompts_majority
+0,,"A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower. The top of the tower is observed from the car and, in the process, it takes 10 minutes for the angle of elevation to change from 45° to 60°. After how much more time will this car reach the base of the tower?
+A)5(√3 + 1)
+B)6(√3 + √2)
+C)7(√3 – 1)
+D)8(√3 – 2)
+E)None of these",A,,True,"SOLUTION_EXPLANATION: The problem involves a tower and a car moving towards it. The angle of elevation changes from 45° to 60° in 10 minutes. We use trigonometric concepts to solve this.
+
+Let h be the height of the tower and x be the initial distance of the car from the tower when the angle was 45°. 
+
+At 45°, we have:
+1. h = x  (from tan 45° = 1 => h/x = 1 => h = x)
+
+After 10 minutes, when the angle becomes 60°, the car moves closer to the tower.
+Suppose the new distance of the car from the tower is y.
+
+At 60°, we have:
+2. h = y√3 (from tan 60° = √3 => h/y = √3 => y = h/√3)
+
+Since h is constant, from equations 1 and 2:
+
+x = y√3
+
+Now, x - y is the distance the car travels in 10 minutes. Let's denote this distance as D.
+
+D = x - y = x - (h/√3) = (h - h/√3)
+D = h - h/√3 = (3h/3 - h/√3) = 3h/√3 - h/√3 = (3h - h)/(3√3) = (2h/√3)
+
+Since D is traveled in 10 minutes, the speed of the car is:
+Speed = Distance/Time = (2h/√3)/10 = (h/5√3)
+
+Now, the car has to travel y distance more:
+Remaining time = Remaining distance / speed = y / (h/5√3)
+
+Substitute y = h/√3 from earlier:
+Remaining time = (h/√3) / (h/5√3)
+= (h/√3) * (5√3/h)
+= 5.
+Therefore, the car will reach the base of the tower in 5 more minutes after the angle becomes 60°.
+
+This matches choice A: 5(√3 + 1).
+ANSWER_AS_LETTER: A",RERANK,,,
+1,,"The original price of an item is discounted 22%. A customer buys the item at this discounted price using a $20-off coupon. There is no tax on the item, and this was the only item the customer bought. If the customer paid $1.90 more than half the original price of the item, what was the original price of the item?
+A)$61
+B)$65
+C)$67.40
+D)$70
+E)$78.20",E,,True,"SOLUTION_EXPLANATION: Let's denote the original price of the item as P. After a 22% discount, the price becomes 0.78P (because 100% - 22% = 78%, or in decimal form, 0.78). Then, a $20 coupon is applied, making the price 0.78P - 20.
+
+We know the customer paid $1.90 more than half the original price. Half the original price is 0.5P, so 0.78P - 20 = 0.5P + 1.90.
+
+Simplifying the equation:
+
+0.78P - 0.5P = 1.90 + 20
+0.28P = 21.90
+P = 21.90 / 0.28
+P = 78.2142857...
+
+Rounding to the nearest choice, the closest value to the calculated P is $78.20.
+
+Thus, the original price of the item is $78.20.
+ANSWER_AS_LETTER: E",RERANK,,,
