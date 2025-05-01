@@ -3796,3 +3796,12 @@ Choices:
 {choices}
 ```
 ",0.0,1,ANOTHER_LLM_BEST_IDX,gpt-4o,0.39370078740157477,gemini-2.0-flash
+440,01-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_01-05-2025_data_normalized_test__TD.csv,A_N_SAMPLING,True,254,84.25196850393701,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM

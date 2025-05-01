@@ -6,6 +6,7 @@ import os
 import requests
 import json
 import torch
+import llm_blender
 from dotenv import dotenv_values
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModel
 from controllers.AiLLM import ControllerAiLLM
@@ -72,6 +73,20 @@ class RewardMethods:
                 trust_remote_code=True,
             )
             self.tokenizer = AutoTokenizer.from_pretrained(self.reward_name, trust_remote_code=True)
+
+
+        elif reward_model_name == RewardModelNames.BLENDER_PRM:
+            # https://huggingface.co/llm-blender/PairRM
+            self.reward_name = reward_model_name.value
+            self.reward_model = llm_blender.Blender()
+            self.reward_model.loadranker("llm-blender/PairRM")  # load PairRM
+
+
+
+        # https://huggingface.co/infly/INF-ORM-Llama3.1-70B
+        # Best from https://huggingface.co/spaces/allenai/reward-bench but model size aprox 170 GB
+
+
 
 
     @staticmethod
@@ -327,7 +342,6 @@ class RewardMethods:
             Args:
                 answer_options: List of answer options.
                 question: Question to be asked.
-                reward_name: Name of the reward model. (Optional, to change model)
             Returns:
                 List of scores for each answer option.
         """
@@ -346,6 +360,29 @@ class RewardMethods:
             logger.error(e)
         return scores
 
+    def get_reward_model_blender_prm_scores(
+            self,
+            answer_options: List[str],
+            question: str
+    ) -> List[float] | None:
+        """
+            Gets reward scores for each answer option
+            Args:
+                answer_options: List of answer options.
+                question: Question to be asked.
+            Returns:
+                List of scores for each answer option.
+        """
+        scores = None
+        try:
+            inputs = [question]
+            candidates_texts = [answer_options]
+            ranks = self.reward_model.rank(inputs, candidates_texts, return_scores=True, batch_size=1)
+            scores = list(ranks[0])
+        except Exception as e:
+            logger.error(e)
+        return scores
+
     def get_reward_model_internlm_best_answer(self, answer_options: List[str], question: str) -> RankingResults:
         """
         Use the reward model to evaluate the answers and return the best one.
@@ -358,6 +395,25 @@ class RewardMethods:
         result_answer = RankingResults()
         try:
             scores = self.get_reward_model_internlm_scores(answer_options=answer_options, question=question)
+            max_score = max(scores)
+            result_answer.answer_score = max_score
+            result_answer.chosen_answer = answer_options[scores.index(max_score)]
+        except Exception as e:
+            logger.error(e)
+        return result_answer
+
+    def get_reward_model_blender_prm_best_answer(self, answer_options: List[str], question: str) -> RankingResults:
+        """
+        Use the reward model to evaluate the answers and return the best one.
+        Args:
+            answer_options: List of answer options.
+            question: Question to be asked.
+        Returns:
+            The best answer according to the evaluation of the reward model and its score.
+        """
+        result_answer = RankingResults()
+        try:
+            scores = self.get_reward_model_blender_prm_scores(answer_options=answer_options, question=question)
             max_score = max(scores)
             result_answer.answer_score = max_score
             result_answer.chosen_answer = answer_options[scores.index(max_score)]
@@ -386,7 +442,7 @@ class RewardMethods:
         try:
             if reward_name and reward_name != self.reward_name:
                 self.init_reward_model(reward_name)
-            if self.reward_name is None or self.reward_model is None or self.tokenizer is None:
+            if self.reward_name is None or self.reward_model is None:
                 raise Exception(f"Reward model not initialized")
             if self.reward_name in [RewardModelNames.DEBERTA_V3_2.value]:
                 result_answer = self.get_reward_model_deberta_best_answer(
@@ -394,6 +450,10 @@ class RewardMethods:
                 )
             elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value]:
                 result_answer = self.get_reward_model_internlm_best_answer(
+                    answer_options=answer_options, question=question
+                )
+            elif self.reward_name in [RewardModelNames.BLENDER_PRM.value]:
+                result_answer = self.get_reward_model_blender_prm_best_answer(
                     answer_options=answer_options, question=question
                 )
             else:
@@ -417,12 +477,15 @@ class RewardMethods:
         try:
             if reward_name and reward_name != self.reward_name:
                 self.init_reward_model(reward_name)
-            if self.reward_name is None or self.reward_model is None or self.tokenizer is None:
+            if self.reward_name is None or self.reward_model is None:
                 raise Exception(f"Reward model not initialized")
             if self.reward_name in [RewardModelNames.DEBERTA_V3_2.value]:
                 score = self.get_reward_model_deberta_score(answer_option=answer_option, question=question)
             elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value]:
                 scores = self.get_reward_model_internlm_scores(answer_options=[answer_option], question=question)
+                score = scores[0]
+            elif self.reward_name in [RewardModelNames.BLENDER_PRM.value]:
+                scores = self.get_reward_model_blender_prm_scores(answer_options=[answer_option], question=question)
                 score = scores[0]
             else:
                 raise Exception(f"Unsupported self.reward_name: {self.reward_name}")

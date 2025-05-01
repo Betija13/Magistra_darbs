@@ -22,3 +22,4 @@ class RewardModelNames(Enum):
     DEBERTA_V3_2 = "OpenAssistant/reward-model-deberta-v3-large-v2"
     LLM_GEMINI = "gemini-2.0-flash"
     RERANK_MODEL = FACT_RANKING_MODEL
+    BLENDER_PRM = 'llm-blender/PairRM'

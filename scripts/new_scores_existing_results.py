@@ -6,16 +6,18 @@ from datetime import datetime
 from datetime import datetime
 from controllers.RewardMethods import RewardMethods
 from models.Enums.RewardMethod import RewardMethod
+from models.Enums.RewardModelNames import RewardModelNames
 from models.DataClass.DataResults import DataResults
 from models.DataClass.InfoResults import InfoResults
 from utils.file_utils import FileUtils
 from utils.result_utils import ResultUtils
-reward_methods = RewardMethods()
+reward_name_init = RewardModelNames.BLENDER_PRM
+reward_methods = RewardMethods(reward_name=reward_name_init)
 
-custom_name = '_REWARD_LLM_GEMINI_Scores'
+custom_name = ''# '_REWARD_LLM_GEMINI_Scores'
 date = datetime.now().strftime('%d-%m-%Y')
-used_reward_method = RewardMethod.LLM_O_B_I.value  # TODO change
-reward_name = 'gemini-2.0-flash'  # TODO change
+used_reward_method = RewardMethod.REWARD_M.value  # TODO change
+reward_name = reward_name_init.value  # TODO change
 
 file_path = '../datasets/AQuA-RAT/results/A_N_SAMPLING_17-04-2025_data_normalized_test.csv'
 
@@ -95,6 +97,13 @@ with open(file_path_new, 'a', newline='', encoding='utf-8') as resultsfile:
                 chosen_idx = cot_parts.index(chosen_answer)
             elif used_reward_method == RewardMethod.LLM_O_B_I.value:
                 answer_obj = reward_methods.get_llm_best_answer_best_idx(question=question, answer_options=cot_parts)
+                score = answer_obj.answer_score
+                chosen_answer = answer_obj.chosen_answer
+                chosen_idx = cot_parts.index(chosen_answer)
+            elif used_reward_method == RewardMethod.REWARD_M.value:
+                answer_obj = reward_methods.get_reward_model_best_answer(
+                    question=question, answer_options=cot_parts
+                )
                 score = answer_obj.answer_score
                 chosen_answer = answer_obj.chosen_answer
                 chosen_idx = cot_parts.index(chosen_answer)
