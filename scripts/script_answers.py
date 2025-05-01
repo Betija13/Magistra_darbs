@@ -285,7 +285,7 @@ class LLMRunner:
             question_filename = question_file.split('/')[-1].split('\\')[-1].split('.')[0]
             reward_str = f"_{REWARD_METHOD.value}" if REWARD_METHOD else ''
             until_satisfied_mut_str = f"_CONT-US_" if MUTATION_UNTIL_SATISFIED else ''
-            input_format = '_I-N_' if USE_SYSTEM_PROMPT_STRUCTURE else '_I-S_'
+            input_format = '_I-S_' if USE_SYSTEM_PROMPT_STRUCTURE else '_I-N_'
             result_file = (f'../datasets/{folder}/results/{METHOD_NAME_FILE}{until_satisfied_mut_str}{reward_str}__'
                            f'O-{OUTPUT_FORMAT.value}__{input_format}{self.current_date}_F-{question_filename}'
                            f'{self.custom_name_str}.csv')
@@ -323,7 +323,10 @@ class LLMRunner:
 
                         if METHOD == Method.MUT:
                             system_prompt_task = random.choice(task_system_prompts) if len(task_system_prompts) > 0 else system_prompt_task_initial
-                            system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
+                            if USE_SYSTEM_PROMPT_STRUCTURE:
+                                system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
+                            else:
+                                system_prompt = system_prompt_task
                             if answer_type != AnswerType.MULTIPLE_CHOICE:
                                 raise Exception(f"Answer type {answer_type.value} is not currently supported for mutation "
                                                 f"method. Only MULTIPLE_CHOICE is supported.")
@@ -353,8 +356,7 @@ class LLMRunner:
                             facts_str = f"Facts:\n```\n{row['facts']}\n```\n" if row['facts'] else ''
                             start_human_prompt = f'Problem:\n```\n{question}\n```\n' if 'problem' in system_prompt.lower() else f'Question:\n```\n{question}\n```\n'
                             human_prompt = f"{start_human_prompt}{choices_str}{facts_str}{end_human_prompt}"
-                            if METHOD == Method.PS or METHOD == Method.PS_PLUS or \
-                                    METHOD == Method.ZS_COT:# or METHOD == Method.TWO_PROMPTS:
+                            if METHOD == Method.PS or METHOD == Method.PS_PLUS or METHOD == Method.ZS_COT:# or METHOD == Method.TWO_PROMPTS:
                                 if answer_type == AnswerType.MULTIPLE_CHOICE:
                                     choices_list = row['choices'].split('\n')
                                     human_prompt = f"Q: {question} Answer Choices: {'('+' ('.join(choices_list)}"
