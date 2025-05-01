@@ -307,17 +307,33 @@ class AnswerMethods:
                 final_answers.append(processed_answer)
             answers_before_processing = '\n------\n'.join(answers_llm_unedited)
             answer_results.llm_answer_unedited = answers_before_processing
+            if answer_type == AnswerType.MULTIPLE_CHOICE:
+                question_eval = ''.join([human_prompt.split('```')[1], human_prompt.split('```')[3]]).strip()
+            else:
+                raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
             if reward_method == RewardMethod.MAJOR:
                 answer_llm_chosen = RewardMethods.majority_element(answer_for_voting)
             elif reward_method == RewardMethod.RERANK:
                 chosen_answer_obj = self.reward_methods.get_reranking_model_best_answer(
-                    question=human_prompt, answer_options=answer_for_voting
+                    question=question_eval, answer_options=answer_for_voting
                 )
                 answer_llm_chosen = chosen_answer_obj.chosen_answer
                 score_answer = chosen_answer_obj.answer_score
             elif reward_method == RewardMethod.REWARD_M:
                 chosen_answer_obj = self.reward_methods.get_reward_model_best_answer(
-                    question=human_prompt, answer_options=answer_for_voting
+                    question=question_eval, answer_options=answer_for_voting
+                )
+                answer_llm_chosen = chosen_answer_obj.chosen_answer
+                score_answer = chosen_answer_obj.answer_score
+            elif reward_method == RewardMethod.LLM_O_B_I:
+                chosen_answer_obj = self.reward_methods.get_llm_best_answer_best_idx(
+                    question=question_eval, answer_options=answer_for_voting
+                )
+                answer_llm_chosen = chosen_answer_obj.chosen_answer
+                score_answer = chosen_answer_obj.answer_score
+            elif reward_method == RewardMethod.LLM_O_R:
+                chosen_answer_obj = self.reward_methods.get_llm_best_answer_reranker(
+                    question=question_eval, answer_options=answer_for_voting
                 )
                 answer_llm_chosen = chosen_answer_obj.chosen_answer
                 score_answer = chosen_answer_obj.answer_score
@@ -335,7 +351,6 @@ class AnswerMethods:
                     final_answer_chosen = final_answers[idx_chosen]
                     full_answer_chosen = answers_llm_unedited[idx_chosen]
                     prompt_chosen = task_prompts[idx_chosen]
-
 
             answer_results.chosen_answer = full_answer_chosen
             answer_results.task_prompts_all = '\n------\n'.join(task_prompts)

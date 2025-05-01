@@ -3714,7 +3714,7 @@ Choices:
 ```
 {choices}
 ```
-",0.0,1,RERANK,gpt-4o,0.0,
+",0.0,1,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
 431,26-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_26-04-2025_data_normalized_test.csv,A_N_SAMPLING,True,254,84.25196850393701,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
 ```
 {question}
@@ -3733,7 +3733,7 @@ Choices:
 {choices}
 ```
 ",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
-433,26/04/2025,AQuA-RAT,../datasets/AQuA-RAT/A_N_SAMPLING_26-04-2025_data_normalized_test_REWARD_internlm.csv,A_N_SAMPLING,TRUE,254,86.22047244,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+433,26/04/2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_26-04-2025_data_normalized_test_REWARD_internlm.csv,A_N_SAMPLING,TRUE,254,86.22047244,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
 ```
 {question}
 ```
@@ -3741,8 +3741,17 @@ Choices:
 ```
 {choices}
 ```
-",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
-434,29-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION_REWARD_MODEL__O-STRUCTURED_COT___I-S_29-04-2025_F-data_normalized_test.csv,MUTATION,True,254,86.61417322834646,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Question:
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward1
+434,27-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_27-04-2025_data_normalized_test_REWARD_LLM_GEMINI_BestIdx.csv,A_N_SAMPLING,True,254,86.22047244094489,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM,gpt-4o,0.0,gemini-2.0-flash
+435,29-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION_REWARD_MODEL__O-STRUCTURED_COT___I-S_29-04-2025_F-data_normalized_test.csv,MUTATION,True,254,86.61417322834646,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Question:
 ```
 {question}
 ```
@@ -3751,3 +3760,21 @@ Choices:
 {choices}
 ```
 ",0.0,1,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+436,27-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_27-04-2025_data_normalized_test_REWARD_LLM_GEMINI_Scores.csv,A_N_SAMPLING,True,254,87.00787401574803,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM,gpt-4o,0.0,gemini-2.0-flash
+437,27-04-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_27-04-2025_data_normalized_test_REWARD_LLM_GEMINI_Scores2.csv,A_N_SAMPLING,True,254,87.79527559055119,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM,gpt-4o,0.0,gemini-2.0-flash

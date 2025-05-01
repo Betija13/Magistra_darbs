@@ -6,12 +6,15 @@ sys.path.append(
 )
 
 from openai import OpenAI
+from google import genai
+from google.genai import types
 import os
 from models.Enums.OutputFormat import OutputFormat
 from models.DataClass.LLMModel import LLMModel
 from models.DataClass.StructuredOutput import StructuredOutput, StructuredOutputModelMultipleChoice, \
     StructuredOutputModelMultipleChoiceOnlyChoice, StructuredOutputModelNumber, StructuredOutputModelNumberOnlyNumber, \
     StructuredOutputModelMultipleChoiceExtra
+from models.DataClass.StructuredOutputRanking import StructuredOutputRanking, OutputRankingScores, OutputRankingBestIdx
 from models.Enums.AnswerType import AnswerType
 from dotenv import dotenv_values
 from loguru import logger
@@ -29,8 +32,11 @@ config = dotenv_values(env_path)
 
 # LLM_MAIN_MODEL = config.get('LLM_MAIN_MODEL')
 LLM_OPENAI_API_KEY = config.get('LLM_OPENAI_API_KEY')
+GEMINI_KEY = config.get('GEMINI_KEY')
 if LLM_OPENAI_API_KEY is None:
     logger.critical(f"LLM_OPENAI_API_KEY is None. Please add your OpenAi key as LLM_OPENAI_API_KEY to .env file")
+if GEMINI_KEY is None:
+    logger.critical(f"GEMINI_KEY is None. Please add your Gemini key as GEMINI_KEY to .env file")
 
 class ControllerAiLLM:
     def __init__(self):
@@ -290,5 +296,54 @@ class ControllerAiLLM:
             logger.error(exc) # exc.completion.choices[0].finish_reason == 'length'
         return results
 
-
     # TODO max tokens maybe makes answer not be infinite?
+
+    def prompt_gemini_ranking(
+            self,
+            human_prompt: str,
+            output_format: [OutputRankingScores | OutputRankingBestIdx],
+            system_prompt: str | None = None,
+            model_name: str | None = None,
+            temperature: float = 0.0,
+            max_tokens: int | None = None,
+    ) -> StructuredOutputRanking:
+        """
+        Get response from Gemini LLM for ranking responses.
+        More info about API: https://ai.google.dev/gemini-api/docs/text-generation
+        Args:
+            human_prompt: Human prompt that contains question and answer options to be ranked.
+            system_prompt: System prompt that re overall instructions about ranking,
+            model_name: Name of llm model. Default is "gemini-2.0-flash".
+            temperature: Answer temperature - how random the answer is. (0-2)
+            output_format: Output format from OutputRankingScores or OutputRankingBestIdx.
+            max_tokens: Max tokens for answer.
+
+        Returns:
+            StructuredOutputRanking object that contains the best answer and its given score.
+
+        """
+        result: StructuredOutputRanking = StructuredOutputRanking()
+        try:
+            client = genai.Client(api_key=GEMINI_KEY)
+            model = "gemini-2.0-flash" if model_name is None else model_name
+            response = client.models.generate_content(
+                model=model,
+                config=types.GenerateContentConfig(
+                    max_output_tokens=max_tokens,
+                    temperature=temperature,
+                    system_instruction=system_prompt,
+                    response_mime_type='application/json',
+                    response_schema=output_format
+                ),
+                contents=human_prompt,
+            )
+            answer_raw = response.parsed
+            result = StructuredOutputRanking(
+                solution_explanation=answer_raw.chain_of_thought,
+                best_idx=answer_raw.best_idx if output_format == OutputRankingBestIdx else None,
+                answer_rankings=answer_raw.answer_scores if output_format == OutputRankingScores else [],
+                best_answer_score=answer_raw.best_answer_score if output_format == OutputRankingBestIdx else None,
+            )
+        except Exception as exc:
+            logger.error(exc)
+        return result

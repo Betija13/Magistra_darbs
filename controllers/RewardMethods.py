@@ -12,6 +12,7 @@ from controllers.AiLLM import ControllerAiLLM
 from models.DataClass.SplitOptions import SplitOptions
 from models.DataClass.RankingResults import RankingResults
 from models.Enums.RewardModelNames import RewardModelNames
+from models.DataClass.StructuredOutputRanking import StructuredOutputRanking, OutputRankingScores, OutputRankingBestIdx
 
 env_path = '.env'
 if os.path.exists("../.env"):
@@ -56,7 +57,8 @@ class RewardMethods:
             self.reward_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
                 self.reward_name), AutoTokenizer.from_pretrained(self.reward_name)
         elif reward_model_name == RewardModelNames.INTERNLM_1_8_B:
-            self.reward_name = "internlm/internlm2-1_8b-reward"  # internlm/internlm2-20b-reward
+            self.reward_name = "internlm/internlm2-1_8b-reward"
+            # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
             # https://huggingface.co/internlm/internlm2-1_8b-reward
             # https://huggingface.co/internlm/internlm2-20b-reward
             # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
@@ -280,7 +282,7 @@ class RewardMethods:
             question: Question to be asked.
 
         Returns:
-            The best answer according to the evaluation of the reward model amd the score for that answer.
+            The best answer according to the evaluation of the reward model and the score for that answer.
 
         """
         result_answer = RankingResults()
@@ -377,7 +379,7 @@ class RewardMethods:
             reward_name: Name of the reward model.
 
         Returns:
-            The best answer according to the evaluation of the reward model amd the score for that answer.
+            The best answer according to the evaluation of the reward model and the score for that answer.
 
         """
         result_answer = RankingResults()
@@ -428,3 +430,61 @@ class RewardMethods:
             logger.error(e)
         return score
 
+    def get_llm_best_answer_reranker(self, answer_options: List[str], question: str) -> RankingResults:
+        """
+        Use the LLM to evaluate the answers and return the best one. Using LLM as reranker, giving multiple
+        answer options and making it give scores for all of them.
+        Args:
+            answer_options: Answer options being evaluated.
+            question: Question for which the answers are evaluated.
+
+        Returns:
+            The best answer according to the evaluation of the LLM and the score for that answer.
+        """
+        result_answer = RankingResults()
+        try:
+            system_prompt = "Provide scores for each of answer options to the question based on your analysis. " \
+                            "Use logical reasoning and contextual understanding to determine the most appropriate " \
+                            "answer for question and give that the highest score (10). "
+            answers_str = '\n\n'.join([f"ANSWER {idx}:\n{answer}" for idx, answer in enumerate(answer_options)])
+            human_prompt = f'Question:\n```\n{question}\n```\nAnswer options:\n```\n{answers_str}\n```'
+            llm_answer_ranking = self.ai_llm.prompt_gemini_ranking(
+                system_prompt=system_prompt, human_prompt=human_prompt, output_format=OutputRankingScores
+            )
+            rankings = llm_answer_ranking.answer_rankings
+            rankings_sorted = sorted(rankings, key=lambda r: r.answer_score, reverse=True)
+            best_answer = rankings_sorted[0]
+            chosen_idx = best_answer.answer_idx
+            score = best_answer.answer_score
+            result_answer.answer_score = score
+            result_answer.chosen_answer = answer_options[chosen_idx]
+        except Exception as e:
+            logger.error(e)
+        return result_answer
+
+    def get_llm_best_answer_best_idx(self, answer_options: List[str], question: str) -> RankingResults:
+        """
+        Use the LLM to evaluate the answers and return the best one. Getting only the best answer's idx as answer.
+        Args:
+            answer_options: Answer options being evaluated.
+            question: Question for which the answers are evaluated.
+
+        Returns:
+            The best answer according to the evaluation of the LLM and the score for that answer.
+        """
+        result_answer = RankingResults()
+        try:
+            system_prompt = "Provide the index of the best answer based on your analysis. Use logical reasoning " \
+                            "and contextual understanding to determine the most appropriate answer. "
+            answers_str = '\n\n'.join([f"ANSWER {idx}:\n{answer}" for idx, answer in enumerate(answer_options)])
+            human_prompt = f'Question:\n```\n{question}\n```\nAnswer options:\n```\n{answers_str}\n```'
+            llm_answer_ranking = self.ai_llm.prompt_gemini_ranking(
+                system_prompt=system_prompt, human_prompt=human_prompt, output_format=OutputRankingBestIdx
+            )
+            chosen_idx = llm_answer_ranking.best_idx
+            score = llm_answer_ranking.best_answer_score
+            result_answer.answer_score = score
+            result_answer.chosen_answer = answer_options[chosen_idx]
+        except Exception as e:
+            logger.error(e)
+        return result_answer

@@ -31,8 +31,8 @@ ANSWER_COUNT = 1
 N_SAMPLES_MUT = 5
 METHOD: Method = Method.MUT
 METHOD_NAME_FILE = str(METHOD.value)
-REWARD_METHOD: RewardMethod = RewardMethod.REWARD_M #None  # RewardMethod.MAJOR.value
-REWARD_NAME = RewardModelNames.INTERNLM_1_8_B
+REWARD_METHOD: RewardMethod = RewardMethod.LLM_O_B_I #None  # RewardMethod.MAJOR.value
+REWARD_NAME = RewardModelNames.LLM_GEMINI
 MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
 PREDEFINED_DATASETS: List[str] | None = [str(Datasets.AQUA.value)]
 PREDEFINED_FILES: List[str] | None = None #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
@@ -367,7 +367,7 @@ class LLMRunner:
                                 human_prompt=human_prompt, system_prompt=system_prompt, answer_type=answer_type,
                                 answer=answer, answer_word=answer_word, result_file=result_file
                             )
-                            if METHOD == Method.MUT  and len(answer_results.task_system_prompts) > 0:
+                            if METHOD == Method.MUT and len(answer_results.task_system_prompts) > 0:
                                 task_system_prompts = answer_results.task_system_prompts
                             # task_prompts_majority_str = answer_results.task_prompts_majority if \
                             #     (METHOD == Method.MUT_Me or METHOD == Method.STRUCT_MUT_M) else \
@@ -460,8 +460,6 @@ class LLMRunner:
             logger.critical(f"using input prompt structure with structured output format [{USE_SYSTEM_PROMPT_STRUCTURE=}]")
         if METHOD == Method.A_2 and ANSWER_COUNT == 1:
             logger.critical(f"using N_SAMPLES with answer count = 1")
-        if METHOD == Method.A_2 and REWARD_METHOD is None:
-            logger.critical(f"using N_SAMPLES without a reward method")
         if METHOD == Method.A_2 and TEMPERATURE <= 0.3:
             logger.critical(f"using N_SAMPLES with low temperature [{TEMPERATURE=}]")
         if METHOD in [Method.A_2, Method.MUT] and REWARD_METHOD is None:
