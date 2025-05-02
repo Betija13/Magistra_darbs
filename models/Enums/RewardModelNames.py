@@ -24,3 +24,5 @@ class RewardModelNames(Enum):
     LLM_GEMINI = "gemini-2.0-flash"
     RERANK_MODEL = FACT_RANKING_MODEL
     BLENDER_PRM = 'llm-blender/PairRM'
+    SAFAIRXC = 'sfairXC/FsfairX-LLaMA3-RM-v0.1'
+    QRM = 'nicolinho/QRM-Llama3.1-8B-v2'

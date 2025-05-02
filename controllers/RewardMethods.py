@@ -8,7 +8,7 @@ import json
 import torch
 import llm_blender
 from dotenv import dotenv_values
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModel
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModel, pipeline
 from controllers.AiLLM import ControllerAiLLM
 from models.DataClass.SplitOptions import SplitOptions
 from models.DataClass.RankingResults import RankingResults
@@ -42,6 +42,7 @@ class RewardMethods:
         self.reward_name = reward_name.value if reward_name else None
         self.reward_model = None
         self.tokenizer = None
+        self.kwargs = None
 
         if self.reward_name:
             self.init_reward_model(reward_model_name=reward_name)
@@ -56,6 +57,11 @@ class RewardMethods:
 
         """
         max_memory = {0: GPU_MEM, "cpu": CPU_MEM} if (GPU_MEM and CPU_MEM) else None
+        device_map = None
+        if torch.cuda.is_available():
+            device_map = "auto"
+        else:
+            max_memory = None
         self.reward_name = reward_model_name.value
         if reward_model_name == RewardModelNames.DEBERTA_V3_2: # TODO adapt for GPU?
             # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2
@@ -67,11 +73,6 @@ class RewardMethods:
             # https://huggingface.co/internlm/internlm2-1_8b-reward
             # https://huggingface.co/internlm/internlm2-20b-reward
             # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
-            device_map = None
-            if torch.cuda.is_available():
-                device_map = "auto"
-            else:
-                max_memory = None
             self.reward_model = AutoModel.from_pretrained(
                 self.reward_name,
                 device_map=device_map,
@@ -87,6 +88,35 @@ class RewardMethods:
             self.reward_model = llm_blender.Blender()
             self.reward_model.loadranker("llm-blender/PairRM")  # load PairRM
 
+        elif reward_model_name == RewardModelNames.SAFAIRXC:
+            #https://huggingface.co/sfairXC/FsfairX-LLaMA3-RM-v0.1
+            self.tokenizer = AutoTokenizer.from_pretrained(self.reward_name)
+            model = AutoModelForSequenceClassification.from_pretrained(
+                self.reward_name,
+                device_map="auto",
+                max_memory=max_memory,
+                torch_dtype=torch.bfloat16
+            )
+
+            # Now create the pipeline with the pre-loaded model and tokenizer
+            self.reward_model = pipeline(
+                "sentiment-analysis",
+                model=model,
+                tokenizer=self.tokenizer,
+            )
+
+            self.kwargs = {
+                "return_all_scores": True,
+                "function_to_apply": "none",
+                "batch_size": 1
+            }
+        elif reward_model_name == RewardModelNames.QRM:
+            # https://huggingface.co/nicolinho/QRM-Llama3.1-8B-v2
+            self.reward_model = AutoModelForSequenceClassification.from_pretrained(
+                self.reward_name, torch_dtype=torch.bfloat16, device_map=device_map, max_memory=max_memory,
+                trust_remote_code=True
+            )
+            self.tokenizer = AutoTokenizer.from_pretrained(self.reward_name, use_fast=True)
 
 
         # https://huggingface.co/infly/INF-ORM-Llama3.1-70B
@@ -427,6 +457,109 @@ class RewardMethods:
             logger.error(e)
         return result_answer
 
+    def get_reward_model_safairxc_scores(self, answer_options: List[str], question: str) -> List[float] | None:
+        """
+            Get the score of the answer option using the reward model.
+            Args:
+                question: Question to be asked.
+                answer_options: List of answer options.
+            Returns:
+                Score of the answer option.
+        """
+        scores = None
+        try:
+            test_texts = []
+            for answer_n in answer_options:
+                chat = [
+                    {"role": "user", "content": question},
+                    {"role": "assistant", "content": answer_n}
+                ]
+
+                test_text = self.tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=False).replace(
+                        self.tokenizer.bos_token,
+                        "")
+                test_texts.append(test_text)
+            pipe_outputs = self.reward_model(test_texts, **self.kwargs)
+            scores = [output[0]["score"] for output in pipe_outputs]
+        except Exception as e:
+            logger.error(e)
+        return scores
+
+    def get_reward_model_safairxc_best_answer(
+            self,
+            answer_options: List[str],
+            question: str
+    ) -> RankingResults:
+        """
+        Use the reward model to evaluate the answers and return the best one.
+        Args:
+            answer_options: List of answer options.
+            question: Question to be asked.
+
+        Returns:
+            The best answer according to the evaluation of the reward model and the score for that answer.
+
+        """
+        result_answer = RankingResults()
+        try:
+            scores = self.get_reward_model_safairxc_scores(answer_options=answer_options, question=question)
+            max_score = max(scores)
+            result_answer.answer_score = max_score
+            result_answer.chosen_answer = answer_options[scores.index(max_score)]
+        except Exception as e:
+            logger.error(e)
+        return result_answer
+
+    def get_reward_model_qrm_score(self, answer_option: str, question: str) -> float | None:
+        """
+            Get the score of the answer option using the reward model.
+            Args:
+                question: Question to be asked.
+                answer_option: Answer option to be evaluated.
+            Returns:
+                Score of the answer option.
+        """
+        score = None
+        try:
+            messages = [{"role": "user", "content": question},
+                        {"role": "assistant", "content": answer_option}]
+            input_ids = self.tokenizer.apply_chat_template(messages, return_tensors="pt").to("cuda")
+            with torch.no_grad():
+                output = self.reward_model(input_ids)
+                reward = output.score.cpu().float()
+                score = float(reward)
+        except Exception as e:
+            logger.error(e)
+        return score
+
+    def get_reward_model_qrm_best_answer(
+            self,
+            answer_options: List[str],
+            question: str
+    ) -> RankingResults:
+        """
+        Use the reward model to evaluate the answers and return the best one.
+        Args:
+            answer_options: List of answer options.
+            question: Question to be asked.
+
+        Returns:
+            The best answer according to the evaluation of the reward model and the score for that answer.
+
+        """
+        result_answer = RankingResults()
+        try:
+            scores = []
+            for answer in answer_options:
+                score = self.get_reward_model_qrm_score(answer_option=answer, question=question)
+                scores.append(score)
+            max_score = max(scores)
+            result_answer.answer_score = max_score
+            result_answer.chosen_answer = answer_options[scores.index(max_score)]
+        except Exception as e:
+            logger.error(e)
+        return result_answer
+
     def get_reward_model_best_answer(
             self,
             answer_options: List[str],
@@ -462,6 +595,14 @@ class RewardMethods:
                 result_answer = self.get_reward_model_blender_prm_best_answer(
                     answer_options=answer_options, question=question
                 )
+            elif self.reward_name in [RewardModelNames.SAFAIRXC.value]:
+                result_answer = self.get_reward_model_safairxc_best_answer(
+                    answer_options=answer_options, question=question
+                )
+            elif self.reward_name in [RewardModelNames.QRM.value]:
+                result_answer = self.get_reward_model_qrm_best_answer(
+                    answer_options=answer_options, question=question
+                )
             else:
                 raise Exception(f"Unsupported self.reward_name: {self.reward_name}")
 
@@ -493,6 +634,11 @@ class RewardMethods:
             elif self.reward_name in [RewardModelNames.BLENDER_PRM.value]:
                 scores = self.get_reward_model_blender_prm_scores(answer_options=[answer_option], question=question)
                 score = scores[0]
+            elif self.reward_name in [RewardModelNames.SAFAIRXC.value]:
+                scores = self.get_reward_model_safairxc_scores(answer_options=[answer_option], question=question)
+                score = scores[0]
+            elif self.reward_name in [RewardModelNames.QRM.value]:
+                score = self.get_reward_model_qrm_score(answer_option=answer_option, question=question)
             else:
                 raise Exception(f"Unsupported self.reward_name: {self.reward_name}")
         except Exception as e:

@@ -3805,3 +3805,39 @@ Choices:
 {choices}
 ```
 ",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+441,02-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_02-05-2025_data_normalized_test__TD.csv,A_N_SAMPLING,True,254,74.01574803149606,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
+442,02-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING_02-05-2025_data_normalized_test__TD.csv,A_N_SAMPLING,True,254,74.01574803149606,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+443,02-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-S__02-05-2025_F-data_normalized_test.csv,A_N_SAMPLING,True,254,84.64566929133859,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+444,02-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-S__02-05-2025_F-data_normalized_test__QRM.csv,A_N_SAMPLING,True,254,85.43307086614173,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
