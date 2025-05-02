@@ -14,7 +14,7 @@ from models.DataClass.SplitOptions import SplitOptions
 from models.DataClass.RankingResults import RankingResults
 from models.Enums.RewardModelNames import RewardModelNames
 from models.DataClass.StructuredOutputRanking import StructuredOutputRanking, OutputRankingScores, OutputRankingBestIdx
-
+torch.cuda.empty_cache()
 env_path = '.env'
 if os.path.exists("../.env"):
     env_path = "../.env"
@@ -28,8 +28,11 @@ config = dotenv_values(env_path)
 
 FACT_RANKING_MODEL = config.get('FACT_RANKING_MODEL')
 RERANK_URL = config.get('RERANK_URL')
+GPU_MEM = config.get('GPU_MEM')
+CPU_MEM = config.get('CPU_MEM')
 if FACT_RANKING_MODEL is None or RERANK_URL is None:
     logger.critical(f"Missing variable in .env file. {FACT_RANKING_MODEL=}\t{RERANK_URL=}")
+
 
 
 class RewardMethods:
@@ -52,23 +55,27 @@ class RewardMethods:
             reward_model_name: The name of the reward model to load.
 
         """
+        max_memory = {0: GPU_MEM, "cpu": CPU_MEM} if (GPU_MEM and CPU_MEM) else None
+        self.reward_name = reward_model_name.value
         if reward_model_name == RewardModelNames.DEBERTA_V3_2: # TODO adapt for GPU?
-            self.reward_name = "OpenAssistant/reward-model-deberta-v3-large-v2"  # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2
+            # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2
             # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large reward_name = "OpenAssistant/reward-model-deberta-v3-large"
             self.reward_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
                 self.reward_name), AutoTokenizer.from_pretrained(self.reward_name)
-        elif reward_model_name == RewardModelNames.INTERNLM_1_8_B:
-            self.reward_name = "internlm/internlm2-1_8b-reward"
+        elif reward_model_name in [RewardModelNames.INTERNLM_1_8_B, RewardModelNames.INTERNLM_7_B]:
             # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
             # https://huggingface.co/internlm/internlm2-1_8b-reward
             # https://huggingface.co/internlm/internlm2-20b-reward
             # https://xtuner.readthedocs.io/en/latest/reward_model/overview.html
             device_map = None
             if torch.cuda.is_available():
-                device_map = "cuda"
+                device_map = "auto"
+            else:
+                max_memory = None
             self.reward_model = AutoModel.from_pretrained(
                 self.reward_name,
                 device_map=device_map,
+                max_memory=max_memory,
                 torch_dtype=torch.float16,
                 trust_remote_code=True,
             )
@@ -77,7 +84,6 @@ class RewardMethods:
 
         elif reward_model_name == RewardModelNames.BLENDER_PRM:
             # https://huggingface.co/llm-blender/PairRM
-            self.reward_name = reward_model_name.value
             self.reward_model = llm_blender.Blender()
             self.reward_model.loadranker("llm-blender/PairRM")  # load PairRM
 
@@ -448,7 +454,7 @@ class RewardMethods:
                 result_answer = self.get_reward_model_deberta_best_answer(
                     answer_options=answer_options, question=question
                 )
-            elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value]:
+            elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value, RewardModelNames.INTERNLM_7_B.value]:
                 result_answer = self.get_reward_model_internlm_best_answer(
                     answer_options=answer_options, question=question
                 )
@@ -481,7 +487,7 @@ class RewardMethods:
                 raise Exception(f"Reward model not initialized")
             if self.reward_name in [RewardModelNames.DEBERTA_V3_2.value]:
                 score = self.get_reward_model_deberta_score(answer_option=answer_option, question=question)
-            elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value]:
+            elif self.reward_name in [RewardModelNames.INTERNLM_1_8_B.value, RewardModelNames.INTERNLM_7_B.value]:
                 scores = self.get_reward_model_internlm_scores(answer_options=[answer_option], question=question)
                 score = scores[0]
             elif self.reward_name in [RewardModelNames.BLENDER_PRM.value]:

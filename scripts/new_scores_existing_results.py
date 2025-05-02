@@ -11,7 +11,7 @@ from models.DataClass.DataResults import DataResults
 from models.DataClass.InfoResults import InfoResults
 from utils.file_utils import FileUtils
 from utils.result_utils import ResultUtils
-reward_name_init = RewardModelNames.BLENDER_PRM
+reward_name_init = RewardModelNames.INTERNLM_7_B
 reward_methods = RewardMethods(reward_name=reward_name_init)
 
 custom_name = ''# '_REWARD_LLM_GEMINI_Scores'
@@ -104,9 +104,10 @@ with open(file_path_new, 'a', newline='', encoding='utf-8') as resultsfile:
                 answer_obj = reward_methods.get_reward_model_best_answer(
                     question=question, answer_options=cot_parts
                 )
-                score = answer_obj.answer_score
-                chosen_answer = answer_obj.chosen_answer
-                chosen_idx = cot_parts.index(chosen_answer)
+                if answer_obj is not None:
+                    score = answer_obj.answer_score
+                    chosen_answer = answer_obj.chosen_answer
+                    chosen_idx = cot_parts.index(chosen_answer) if chosen_answer else None
             # # system_prompt = "Provide the index of the best answer based on your analysis. Use logical reasoning " \
             # #                 "and contextual understanding to determine the most appropriate answer. "
             # system_prompt = "Provide scores for each of answer options to the question based on your analysis. Use logical reasoning " \
@@ -132,8 +133,8 @@ with open(file_path_new, 'a', newline='', encoding='utf-8') as resultsfile:
             # if final_letter_answer is not None:
             #     chosen_idx = final_answer_parts.index(final_letter_answer)
             #
-            final_str = answers_list[chosen_idx]
-            final_letter_answer = final_answer_parts[chosen_idx]
+            final_str = answers_list[chosen_idx] if chosen_idx else None
+            final_letter_answer = final_answer_parts[chosen_idx] if chosen_idx else None
             # chosen_answer = row['llm_answer_chosen']
             true_answer = row['true_answer']
             correct_answer = False
@@ -141,7 +142,7 @@ with open(file_path_new, 'a', newline='', encoding='utf-8') as resultsfile:
                 correct_answer = True
             row['llm_answer_chosen'] = final_str
             # row['llm_answer_chosen'] = final_letter_answer
-            row['reward_score'] = score
+            row['reward_score'] = score if chosen_idx else None
             row['reward_method'] = used_reward_method
             row['correct'] = correct_answer
             updated_rows.append(row)
