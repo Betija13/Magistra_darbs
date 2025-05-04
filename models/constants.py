@@ -440,6 +440,22 @@ created_my_prompts_MC = [
 
 ]
 
+mutated_task_prompts_MMLU = [
+    # Manual
+    "Classify (A),(B),(C),(D)",
+    "Solve and Classify  (A),(B),(C),(D)",
+    "Solve and Choose Answer (A),(B),(C),(D)",
+    "Solve task below. Answer with (A),(B),(C),(D)",
+    # from "Solve task below. Answer with (A),(B),(C),(D)",
+    "Complete the following task and respond with one of the options: (A), (B), (C), (D).",
+    "Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).",
+    "Select the appropriate choice from (A), (B), (C), or (D) to fulfill the task.",
+    # from "Solve and Choose Answer (A),(B),(C),(D)"
+    "Select the correct option by analyzing the choices (A), (B), (C), or (D).",
+    "Determine the solution and select the correct option from (A), (B), (C), or (D).",
+    "Imagine you're a detective solving a mystery; pick the correct answer from options (A), (B), (C), or (D) after cracking the case."
+
+]
 created_my_prompts_NUM = [
     # original start
     'Solve the math word problem, giving your answer as an arabic numeral.',

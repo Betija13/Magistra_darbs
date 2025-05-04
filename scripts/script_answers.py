@@ -16,29 +16,30 @@ from models.Enums.Datasets import Datasets
 from models.Enums.OutputFormat import OutputFormat
 from models.Enums.RewardModelNames import RewardModelNames
 from models.constants import human_prompts, system_prompts, mutated_task_prompts_AQuA_RAT, system_prompts_output, \
-    system_prompts_static, system_prompts_task, created_my_prompts_MC, created_my_prompts_NUM
+    system_prompts_static, system_prompts_task, created_my_prompts_MC, created_my_prompts_NUM, mutated_task_prompts_MMLU
 from models.DataClass.AnswerResults import AnswerResults
 from tqdm import tqdm
 from datetime import datetime
 from dataclasses import asdict
 import random
 
-
-CUSTOM_NAME = None#'structured extra'#'always_start_with_same' #None #'answer_update2'#None  # 'all_dataset'#None  # 'NO_REASONING'
+# TODO turn into Args dataclass
+CUSTOM_NAME = None
 TOTAL_COUNT = 1300
 TEMPERATURE = 0.0
 ANSWER_COUNT = 1
 N_SAMPLES_MUT = 5
 METHOD: Method = Method.MUT
 METHOD_NAME_FILE = str(METHOD.value)
-REWARD_METHOD: RewardMethod = RewardMethod.LLM_O_R #None  # RewardMethod.MAJOR.value
-REWARD_NAME = RewardModelNames.LLM_GEMINI
+REWARD_METHOD: RewardMethod | None = None# RewardMethod.LLM_O_R #None  # RewardMethod.MAJOR.value
+REWARD_NAME = None #RewardModelNames.LLM_GEMINI
 MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
-PREDEFINED_DATASETS: List[str] | None = [str(Datasets.AQUA.value)]
-PREDEFINED_FILES: List[str] | None = None #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
+PREDEFINED_DATASETS: List[str] | None = [str(Datasets.MMLU.value)]
+PREDEFINED_FILES: List[str] | None = ['data_normalized_STEM_dev.csv'] #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
 USE_SYSTEM_PROMPT_STRUCTURE = False
 MUTATION_UNTIL_SATISFIED = False
 OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
+
 
 
 class LLMRunner:
@@ -480,8 +481,35 @@ if __name__ == "__main__":
 
     llm_runner = LLMRunner()
     # llm_runner.iterate_through_prompts()
-    llm_runner.iterate_through_folders(system_prompt_task='Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).')
+    # llm_runner.iterate_through_folders(system_prompt_task='Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).')
+    chosen_task = 'iterate_all_static' # TODO Enum and from args
+    if chosen_task == 'iterate_all_static':
 
+        # only task prompt
+        METHOD = Method.A_1
+        METHOD_NAME_FILE = str(METHOD.value)
+        USE_SYSTEM_PROMPT_STRUCTURE = False
+        OUTPUT_FORMAT = OutputFormat.NO_FORMAT
+        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
+
+        # task prompt plus
+        USE_SYSTEM_PROMPT_STRUCTURE = True
+        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
+
+        # structured cot
+        OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
+        USE_SYSTEM_PROMPT_STRUCTURE = False
+        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
+
+        # structured only answer
+        OUTPUT_FORMAT = OutputFormat.STRUCTURED_ANSWER
+        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
+
+        # two prompts
+        METHOD = Method.TWO_PROMPTS
+        OUTPUT_FORMAT = OutputFormat.NO_FORMAT
+        METHOD_NAME_FILE = str(METHOD.value)
+        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
 
 
     # TODO ########################################################################################################

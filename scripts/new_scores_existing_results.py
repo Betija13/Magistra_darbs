@@ -3,7 +3,12 @@ from loguru import logger
 from dataclasses import asdict
 from tqdm import tqdm
 from datetime import datetime
-from datetime import datetime
+import sys
+import os
+import argparse
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
+)
 from controllers.RewardMethods import RewardMethods
 from models.Enums.RewardMethod import RewardMethod
 from models.Enums.RewardModelNames import RewardModelNames
@@ -11,11 +16,27 @@ from models.DataClass.DataResults import DataResults
 from models.DataClass.InfoResults import InfoResults
 from utils.file_utils import FileUtils
 from utils.result_utils import ResultUtils
-reward_name_init = RewardModelNames.QRM
-reward_methods = RewardMethods(reward_name=reward_name_init)
+reward_to_iterate = [
+    (RewardModelNames.QRM_8B_P, "QRM_8B_P"),
+    (RewardModelNames.PAIRRM_B, "PAIRRM_B"),
+    (RewardModelNames.EURUS, "EURUS")
+]
+reward_methods = RewardMethods()
 
-custom_name = '__QRM'# '_REWARD_LLM_GEMINI_Scores'
-date = datetime.now().strftime('%d-%m-%Y')
+parser = argparse.ArgumentParser()
+parser.add_argument('--r_name', type=str)
+args = parser.parse_args()
+if args.r_name:
+    reward_name_init = RewardModelNames(args.r_name)
+else:
+    reward_name_init = RewardModelNames.QRM_8B_P # TODO this is manually changed
+    logger.warning("reward_name_init not taken from args!")
+custom_name = [f"__{cname}" for r, cname in reward_to_iterate if r == reward_name_init][0]
+
+reward_methods.init_reward_model(reward_name_init)
+
+# custom_name = '__GRM'# '_REWARD_LLM_GEMINI_Scores'
+date = '03-05-2025'#datetime.now().strftime('%d-%m-%Y')
 used_reward_method = RewardMethod.REWARD_M.value  # TODO change
 reward_name = reward_name_init.value  # TODO change
 
