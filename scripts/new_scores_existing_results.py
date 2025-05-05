@@ -17,9 +17,12 @@ from models.DataClass.InfoResults import InfoResults
 from utils.file_utils import FileUtils
 from utils.result_utils import ResultUtils
 reward_to_iterate = [
-    (RewardModelNames.QRM_8B_P, "QRM_8B_P"),
-    (RewardModelNames.PAIRRM_B, "PAIRRM_B"),
-    (RewardModelNames.EURUS, "EURUS")
+    # (RewardModelNames.QRM_8B_P, "QRM_8B_P"),
+    # (RewardModelNames.PAIRRM_B, "PAIRRM_B"),
+    # (RewardModelNames.EURUS, "EURUS"),
+    (RewardModelNames.GRM_3B, "GRM_3B"),
+    (RewardModelNames.GRM_2B, "GRM_2B")
+
 ]
 reward_methods = RewardMethods()
 
@@ -29,7 +32,7 @@ args = parser.parse_args()
 if args.r_name:
     reward_name_init = RewardModelNames(args.r_name)
 else:
-    reward_name_init = RewardModelNames.QRM_8B_P # TODO this is manually changed
+    reward_name_init = RewardModelNames.PAIRRM_B # TODO this is manually changed
     logger.warning("reward_name_init not taken from args!")
 custom_name = [f"__{cname}" for r, cname in reward_to_iterate if r == reward_name_init][0]
 
@@ -126,9 +129,16 @@ with open(file_path_new, 'a', newline='', encoding='utf-8') as resultsfile:
                     question=question, answer_options=cot_parts
                 )
                 if answer_obj is not None:
-                    score = answer_obj.answer_score
-                    chosen_answer = answer_obj.chosen_answer
-                    chosen_idx = cot_parts.index(chosen_answer) if chosen_answer is not None else None
+                    try:
+                        score = answer_obj.answer_score
+                        chosen_answer = answer_obj.chosen_answer
+                        chosen_idx = cot_parts.index(chosen_answer) if chosen_answer is not None else None
+                    except Exception as e:
+                        logger.error(e)
+                        logger.exception(e)
+                        score = None
+                        chosen_answer = None
+                        chosen_idx = None
             # # system_prompt = "Provide the index of the best answer based on your analysis. Use logical reasoning " \
             # #                 "and contextual understanding to determine the most appropriate answer. "
             # system_prompt = "Provide scores for each of answer options to the question based on your analysis. Use logical reasoning " \

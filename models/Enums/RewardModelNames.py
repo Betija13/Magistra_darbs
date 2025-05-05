@@ -34,3 +34,5 @@ class RewardModelNames(Enum):
     URM = "LxzGordon/URM-LLaMa-3.1-8B"
     PAIRRM_B = "maywell/Better-PairRM"
     EURUS = "openbmb/Eurus-RM-7b"
+    GRM_3B = "Ray2333/GRM-Llama3.2-3B-rewardmodel-ft"
+    GRM_2B = "Ray2333/GRM-gemma2-2B-rewardmodel-ft"

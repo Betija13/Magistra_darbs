@@ -58,20 +58,32 @@ class RewardMethods:
             reward_model_name: The name of the reward model to load.
 
         """
-        torch.cuda.empty_cache()
         max_memory = {0: GPU_MEM, "cpu": CPU_MEM} if (GPU_MEM and CPU_MEM) else None
-        free_mem, total_mem = torch.cuda.mem_get_info(device=0)
-        free_mem_gb = free_mem / 1024**3
-        total_mem_gb = total_mem / 1024**3
-        mem = psutil.virtual_memory()
         device_map = None
+        params = None
         if torch.cuda.is_available():
+            torch.cuda.empty_cache()
             device_map = "auto"
             self.device = 'cuda:0'
-        else:
-            max_memory = None
+            if GPU_MEM and CPU_MEM and 'GiB' in GPU_MEM and 'GiB' in CPU_MEM:
+                free_mem, total_mem = torch.cuda.mem_get_info(device=0)
+                free_mem_gb = free_mem / 1024 ** 3
+                available_gpu_mem = free_mem_gb - float(GPU_MEM.split('GiB')[0])
+                if  available_gpu_mem <= 2:
+                    logger.warning(f"Available GPU mem after loading model might be less than 2 GB. [Chosen mem: {GPU_MEM}\tavaiable mem: {free_mem_gb:.4}GiB]")
+                    if available_gpu_mem < 0:
+                        logger.error(f"Available GPU mem is less than chosen GPU mem.")
+
+                mem = psutil.virtual_memory()
+                free_cpu = mem.available / 1024 ** 3
+                available_cpu_mem = free_cpu - float(CPU_MEM.split('GiB')[0])
+                if available_cpu_mem <= 2:
+                    logger.warning(f"Available CPU mem after loading model might be less than 2 GB. [Chosen mem: {CPU_MEM}\tavaiable mem: {free_cpu:.4}GiB]")
+                    if available_cpu_mem < 0:
+                        logger.error(f"Available GPU mem is less than chosen GPU mem.")
+
         self.reward_name = reward_model_name.value
-        if reward_model_name == RewardModelNames.DEBERTA_V3_2: # TODO adapt for GPU?
+        if reward_model_name == RewardModelNames.DEBERTA_V3_2:
             # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2
             # https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large reward_name = "OpenAssistant/reward-model-deberta-v3-large"
             self.reward_model, self.tokenizer = AutoModelForSequenceClassification.from_pretrained(
@@ -108,6 +120,7 @@ class RewardMethods:
                 max_memory=max_memory,
                 torch_dtype=torch.bfloat16
             )
+            params = sum(p.numel() for p in model.parameters()) / 1_000_000_000
 
             # Now create the pipeline with the pre-loaded model and tokenizer
             self.reward_model = pipeline(
@@ -142,7 +155,7 @@ class RewardMethods:
                 self.tokenizer = AutoTokenizer.from_pretrained(self.reward_name, use_fast=True)
             else:
                 self.tokenizer = AutoTokenizer.from_pretrained(self.reward_name)
-        elif reward_model_name == RewardModelNames.GRM:
+        elif reward_model_name in [RewardModelNames.GRM, RewardModelNames.GRM_3B, RewardModelNames.GRM_2B]:
             # https://huggingface.co/Ray2333/GRM-Llama3-8B-rewardmodel-ft
             self.tokenizer = AutoTokenizer.from_pretrained(self.reward_name)
             self.reward_model = AutoModelForSequenceClassification.from_pretrained(
@@ -165,9 +178,17 @@ class RewardMethods:
             self.reward_model = AutoModel.from_pretrained(
                 self.reward_name, trust_remote_code=True, max_memory=max_memory, device_map=device_map
             )
+        else:
+            logger.critical(f"Model {reward_model_name} not implemented.")
 
         # https://huggingface.co/infly/INF-ORM-Llama3.1-70B
         # Best from https://huggingface.co/spaces/allenai/reward-bench but model size aprox 145 GB
+        try:
+            if params is None:
+                params = sum(p.numel() for p in self.reward_model.parameters()) / 1_000_000_000
+            logger.debug(f"Model {self.reward_name} params: {params} B")
+        except Exception as e:
+            logger.error(e)
 
 
 
@@ -860,8 +881,9 @@ class RewardMethods:
         """
         result_answer = RankingResults()
         try:
-            answer_chosen = answer_options.pop()
-            for answer_comparing in answer_options:
+            answer_options_copy = answer_options.copy()
+            answer_chosen = answer_options_copy.pop()
+            for answer_comparing in answer_options_copy:
                 encodings = self.pairrm_tokenize_pair([question], [answer_comparing], [answer_chosen])
                 encodings = {k: v.to(self.reward_model.device) for k, v in encodings.items()}
                 outputs = self.reward_model(**encodings)
@@ -966,7 +988,7 @@ class RewardMethods:
                 result_answer = self.get_reward_model_qrm_best_answer(
                     answer_options=answer_options, question=question
                 )
-            elif self.reward_name in [RewardModelNames.GRM.value]:
+            elif self.reward_name in [RewardModelNames.GRM.value, RewardModelNames.GRM_3B.value, RewardModelNames.GRM_2B.value]:
                 result_answer = self.get_reward_model_grm_best_answer(
                     answer_options=answer_options, question=question
                 )
@@ -1027,7 +1049,7 @@ class RewardMethods:
                 score = scores[0]
             elif self.reward_name in [RewardModelNames.QRM_8B_V2.value, RewardModelNames.QRM_8B.value, RewardModelNames.QRM_8B_P.value]:
                 score = self.get_reward_model_qrm_score(answer_option=answer_option, question=question)
-            elif self.reward_name in [RewardModelNames.GRM.value]:
+            elif self.reward_name in [RewardModelNames.GRM.value, RewardModelNames.GRM_3B.value, RewardModelNames.GRM_2B.value]:
                 score = self.get_reward_model_grm_score(answer_option=answer_option, question=question)
             elif self.reward_name in [RewardModelNames.SKYWORK.value]:
                 score = self.get_reward_model_skywork_score(answer_option=answer_option, question=question)
