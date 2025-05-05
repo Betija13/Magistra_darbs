@@ -16,30 +16,35 @@ from models.Enums.Datasets import Datasets
 from models.Enums.OutputFormat import OutputFormat
 from models.Enums.RewardModelNames import RewardModelNames
 from models.constants import human_prompts, system_prompts, mutated_task_prompts_AQuA_RAT, system_prompts_output, \
-    system_prompts_static, system_prompts_task, created_my_prompts_MC, created_my_prompts_NUM, mutated_task_prompts_MMLU
+    system_prompts_static, system_prompts_task, created_my_prompts_MC, created_my_prompts_NUM, \
+    mutated_task_prompts_MMLU, best_task_prompts_MMLU
 from models.DataClass.AnswerResults import AnswerResults
 from tqdm import tqdm
 from datetime import datetime
-from dataclasses import asdict
+from dataclasses import asdict, dataclass, field
 import random
 
-# TODO turn into Args dataclass
-CUSTOM_NAME = None
-TOTAL_COUNT = 1300
-TEMPERATURE = 0.0
-ANSWER_COUNT = 1
-N_SAMPLES_MUT = 5
-METHOD: Method = Method.MUT
-METHOD_NAME_FILE = str(METHOD.value)
-REWARD_METHOD: RewardMethod | None = None# RewardMethod.LLM_O_R #None  # RewardMethod.MAJOR.value
-REWARD_NAME = None #RewardModelNames.LLM_GEMINI
-MODEL_NAME = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
-PREDEFINED_DATASETS: List[str] | None = [str(Datasets.MMLU.value)]
-PREDEFINED_FILES: List[str] | None = ['data_normalized_STEM_dev.csv'] #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
-USE_SYSTEM_PROMPT_STRUCTURE = False
-MUTATION_UNTIL_SATISFIED = False
-OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
 
+@dataclass
+class Args:
+    CUSTOM_NAME: str | None = None
+    TOTAL_COUNT: int = 1300
+    TEMPERATURE: float = 0.0
+    ANSWER_COUNT: int = 1
+    N_SAMPLES_MUT: int = 5
+    METHOD: Method = Method.MUT
+    METHOD_NAME_FILE: str = str(METHOD.value)
+    REWARD_METHOD: RewardMethod | None = None# RewardMethod.LLM_O_R #None  # RewardMethod.MAJOR.value
+    REWARD_NAME: str | None = None #RewardModelNames.LLM_GEMINI
+    MODEL_NAME: str = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
+    PREDEFINED_DATASETS: List[str] | None = field(default_factory=lambda: [str(Datasets.MMLU.value)])
+    PREDEFINED_FILES: List[str] | None = field(default_factory=lambda:['data_normalized_STEM_dev.csv']) #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
+    USE_SYSTEM_PROMPT_STRUCTURE: bool = False
+    MUTATION_UNTIL_SATISFIED: bool = False
+    OUTPUT_FORMAT: OutputFormat = OutputFormat.STRUCTURED_COT
+
+
+args = Args()
 
 
 class LLMRunner:
@@ -47,13 +52,13 @@ class LLMRunner:
         if controller_answers:
             self.controller_answers = controller_answers
         else:
-            self.controller_answers = AnswerMethods(reward_name=REWARD_NAME)
+            self.controller_answers = AnswerMethods(reward_name=args.REWARD_NAME)
         self.folder = '../datasets'
         self.filename_all_results = 'info_results.csv'
         self.file_path_info_all_results = os.path.join(self.folder, self.filename_all_results)
         self.fieldnames = [field.name for field in DataResults.__dataclass_fields__.values()]
         self.current_date = datetime.now().strftime('%d-%m-%Y')
-        self.custom_name_str = f'_{CUSTOM_NAME}' if CUSTOM_NAME else ''
+        self.custom_name_str = f'_{args.CUSTOM_NAME}' if args.CUSTOM_NAME else ''
 
     def get_existing_file_paths_results(self, file_path_info_results: str) -> Set[str]:
         """
@@ -103,13 +108,13 @@ class LLMRunner:
         """
         all_dataset_folders = FileUtils.get_all_files_and_folders('../datasets', only_folders=True)
         all_dataset_folders = FileUtils.select_folders_datasets(all_dataset_folders,
-                                                                predifined_names=PREDEFINED_DATASETS)
+                                                                predifined_names=args.PREDEFINED_DATASETS)
         for folder in all_dataset_folders:
             path_to_question_file = f'../datasets/{folder}/data'
             files_in_folder = FileUtils.get_all_files_and_folders(path_to_question_file, only_folders=False)
             if len(files_in_folder) > 0:
                 if len(files_in_folder) > 1:
-                    question_files = FileUtils.select_folders_datasets(files_in_folder, predifined_names=PREDEFINED_FILES)
+                    question_files = FileUtils.select_folders_datasets(files_in_folder, predifined_names=args.PREDEFINED_FILES)
                 else:
                     question_files = files_in_folder
                 question_files_it = [os.path.join(path_to_question_file, q_file) for q_file in question_files]
@@ -135,7 +140,7 @@ class LLMRunner:
             prompts_for_iteration = mutated_task_prompts_AQuA_RAT
         for prompt_idx, system_prompt_task in enumerate(prompts_for_iteration):
             logger.info(f'Prompt index: {prompt_idx}; Prompt: {system_prompt_task}')
-            self.custom_name_str = f'_{CUSTOM_NAME}_{prompt_idx}' if CUSTOM_NAME else f'_{prompt_idx}'
+            self.custom_name_str = f'_{args.CUSTOM_NAME}_{prompt_idx}' if args.CUSTOM_NAME else f'_{prompt_idx}'
             self.iterate_through_folders(system_prompt_task=system_prompt_task)
 
     def get_results_for_question(
@@ -169,63 +174,63 @@ class LLMRunner:
         """
         answer_results = AnswerResults()
         try:
-            if METHOD == Method.A_2:
-                if REWARD_METHOD == RewardMethod.MAJOR or REWARD_METHOD == RewardMethod.RERANK:
+            if args.METHOD == Method.A_2:
+                if args.REWARD_METHOD == RewardMethod.MAJOR or args.REWARD_METHOD == RewardMethod.RERANK:
                     answer_results = self.controller_answers.get_n_sampling_llm_answer_majority(
-                        system_prompt=system_prompt, human_prompt=human_prompt, response_count=ANSWER_COUNT,
-                        temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
-                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, reward_method=REWARD_METHOD,
-                        output_format=OUTPUT_FORMAT
+                        system_prompt=system_prompt, human_prompt=human_prompt, response_count=args.ANSWER_COUNT,
+                        temperature=args.TEMPERATURE, model_name=args.MODEL_NAME, answer_type=answer_type,
+                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, reward_method=args.REWARD_METHOD,
+                        output_format=args.OUTPUT_FORMAT
                     )
                 else:
-                    raise Exception(f"Reward method not implemented. Method: {METHOD.value}; Reward method: {REWARD_METHOD.value}")
-            elif METHOD == Method.A_1 and REWARD_METHOD is None:
-                if OUTPUT_FORMAT == OutputFormat.NO_FORMAT:
+                    raise Exception(f"Reward method not implemented. Method: {args.METHOD.value}; Reward method: {args.REWARD_METHOD.value}")
+            elif args.METHOD == Method.A_1 and args.REWARD_METHOD is None:
+                if args.OUTPUT_FORMAT == OutputFormat.NO_FORMAT:
                     answer_results = self.controller_answers.get_zero_shot_answer(
                         system_prompt=system_prompt, human_prompt=human_prompt,
-                        temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
+                        temperature=args.TEMPERATURE, model_name=args.MODEL_NAME, answer_type=answer_type,
                         ground_truth_answer=answer, ground_truth_answer_word=answer_word
                     )
                 else:
                     answer_results = self.controller_answers.get_structured_output(
-                        human_prompt=human_prompt, system_prompt=system_prompt, model_name=MODEL_NAME,
-                        response_count=ANSWER_COUNT, temperature=TEMPERATURE, answer_type=answer_type,
-                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, output_format=OUTPUT_FORMAT
+                        human_prompt=human_prompt, system_prompt=system_prompt, model_name=args.MODEL_NAME,
+                        response_count=args.ANSWER_COUNT, temperature=args.TEMPERATURE, answer_type=answer_type,
+                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, output_format=args.OUTPUT_FORMAT
                     )
-            elif METHOD == Method.MUT:
-                if MUTATION_UNTIL_SATISFIED:
+            elif args.METHOD == Method.MUT:
+                if args.MUTATION_UNTIL_SATISFIED:
                     answer_results = self.controller_answers.get_answer_with_adaptive_mutation(
-                        system_prompt=system_prompt, human_prompt=human_prompt, model_name=MODEL_NAME,
+                        system_prompt=system_prompt, human_prompt=human_prompt, model_name=args.MODEL_NAME,
                         answer_type=answer_type, ground_truth_answer=answer, result_file=result_file,
-                        ground_truth_answer_word=answer_word, temperature=TEMPERATURE, get_structured_output=True
+                        ground_truth_answer_word=answer_word, temperature=args.TEMPERATURE, get_structured_output=True
                     )
                 else:
                     answer_results = self.controller_answers.get_answer_with_mutation(
-                        system_prompt=system_prompt, human_prompt=human_prompt, n_samples=N_SAMPLES_MUT,
-                        temperature=TEMPERATURE, model_name=MODEL_NAME, answer_type=answer_type,
-                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, reward_method=REWARD_METHOD,
-                        output_format=OUTPUT_FORMAT
+                        system_prompt=system_prompt, human_prompt=human_prompt, n_samples=args.N_SAMPLES_MUT,
+                        temperature=args.TEMPERATURE, model_name=args.MODEL_NAME, answer_type=answer_type,
+                        ground_truth_answer=answer, ground_truth_answer_word=answer_word, reward_method=args.REWARD_METHOD,
+                        output_format=args.OUTPUT_FORMAT
                     )
                 if answer_results.task_prompts_chosen is not None:
                     answer_results.task_system_prompts = answer_results.task_prompts_chosen
                 # if answer_results.task_prompts_majority is not None and answer_results.task_prompts_majority != "" \
-                #         and (METHOD == Method.MUT_M.value or METHOD == Method.STRUCT_MUT_M.value):
+                #         and (args.METHOD == Method.MUT_M.value or args.METHOD == Method.STRUCT_MUT_M.value):
                 #     answer_results.task_system_prompts = answer_results.task_prompts_majority.split('\n------\n')
                 # elif answer_results.task_prompts_correct is not None and answer_results.task_prompts_correct != "" \
-                #         and (METHOD == Method.MUT_C.value or METHOD == Method.STRUCT_MUT_C.value):
+                #         and (args.METHOD == Method.MUT_C.value or args.METHOD == Method.STRUCT_MUT_C.value):
                 #     answer_results.task_system_prompts = answer_results.task_prompts_correct.split('\n------\n')
-            elif METHOD == Method.PS or METHOD == Method.PS_PLUS or METHOD == Method.ZS_COT \
-                    or METHOD == Method.TWO_PROMPTS:
-                if METHOD == Method.PS or METHOD == Method.PS_PLUS or METHOD == Method.ZS_COT:
+            elif args.METHOD == Method.PS or args.METHOD == Method.PS_PLUS or args.METHOD == Method.ZS_COT \
+                    or args.METHOD == Method.TWO_PROMPTS:
+                if args.METHOD == Method.PS or args.METHOD == Method.PS_PLUS or args.METHOD == Method.ZS_COT:
                     system_prompt = None
                 answer_results = self.controller_answers.get_two_prompts_output(
-                    question_text=human_prompt, model_name=MODEL_NAME, answer_type=answer_type,
-                    ground_truth_answer=answer, ground_truth_answer_word=answer_word, temperature=TEMPERATURE,
-                    method=METHOD, system_prompt=system_prompt
+                    question_text=human_prompt, model_name=args.MODEL_NAME, answer_type=answer_type,
+                    ground_truth_answer=answer, ground_truth_answer_word=answer_word, temperature=args.TEMPERATURE,
+                    method=args.METHOD, system_prompt=system_prompt
                 )
 
             else:
-                raise Exception(f"Method not implemented. Method: {METHOD.value}; Reward method: {REWARD_METHOD.value}")
+                raise Exception(f"Method not implemented. Method: {args.METHOD.value}; Reward method: {args.REWARD_METHOD.value}")
 
         except Exception as e:
             logger.error(e)
@@ -274,7 +279,7 @@ class LLMRunner:
                 question_file_answer_type = list(answer_types_q_file)[0]
             if system_prompt_task_initial is None:
                 system_prompt_task_initial = system_prompts_task[question_file_answer_type]
-            if USE_SYSTEM_PROMPT_STRUCTURE:
+            if args.USE_SYSTEM_PROMPT_STRUCTURE:
                 system_prompt = f"{system_prompt_task_initial}\n\n" \
                                     f"{system_prompts_output[question_file_answer_type]}\n\n" \
                                     f"{system_prompts_static[question_file_answer_type]}"
@@ -284,11 +289,11 @@ class LLMRunner:
 
             print(question_file)
             question_filename = question_file.split('/')[-1].split('\\')[-1].split('.')[0]
-            reward_str = f"_{REWARD_METHOD.value}" if REWARD_METHOD else ''
-            until_satisfied_mut_str = f"_CONT-US_" if MUTATION_UNTIL_SATISFIED else ''
-            input_format = '_I-S_' if USE_SYSTEM_PROMPT_STRUCTURE else '_I-N_'
-            result_file = (f'../datasets/{folder}/results/{METHOD_NAME_FILE}{until_satisfied_mut_str}{reward_str}__'
-                           f'O-{OUTPUT_FORMAT.value}__{input_format}{self.current_date}_F-{question_filename}'
+            reward_str = f"_{args.REWARD_METHOD.value}" if args.REWARD_METHOD else ''
+            until_satisfied_mut_str = f"_CONT-US_" if args.MUTATION_UNTIL_SATISFIED else ''
+            input_format = '_I-S_' if args.USE_SYSTEM_PROMPT_STRUCTURE else '_I-N_'
+            result_file = (f'../datasets/{folder}/results/{args.METHOD_NAME_FILE}{until_satisfied_mut_str}{reward_str}__'
+                           f'O-{args.OUTPUT_FORMAT.value}__{input_format}{self.current_date}_F-{question_filename}'
                            f'{self.custom_name_str}.csv')
             self.output_info(
                 q_file=question_file, folder=folder, initial_prompt=system_prompt_task_initial, result_file=result_file
@@ -313,18 +318,18 @@ class LLMRunner:
                 task_system_prompts = []
                 reader = csv.DictReader(csvfile)
                 size_reader = self.get_dictreader_size(question_file)
-                size_iteration_objects = size_reader if size_reader < TOTAL_COUNT else TOTAL_COUNT
+                size_iteration_objects = size_reader if size_reader < args.TOTAL_COUNT else args.TOTAL_COUNT
                 with open(result_file, 'a', newline='', encoding='utf-8') as resultsfile:
                     writer = csv.DictWriter(resultsfile, fieldnames=self.fieldnames)
                     for idx, row in tqdm(enumerate(reader), total=size_iteration_objects):
-                        if idx >= TOTAL_COUNT:
+                        if idx >= args.TOTAL_COUNT:
                             break
                         answer_type_str = row['answer_type']
                         answer_type = AnswerType[answer_type_str]
 
-                        if METHOD == Method.MUT:
+                        if args.METHOD == Method.MUT:
                             system_prompt_task = random.choice(task_system_prompts) if len(task_system_prompts) > 0 else system_prompt_task_initial
-                            if USE_SYSTEM_PROMPT_STRUCTURE:
+                            if args.USE_SYSTEM_PROMPT_STRUCTURE:
                                 system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
                             else:
                                 system_prompt = system_prompt_task
@@ -357,7 +362,7 @@ class LLMRunner:
                             facts_str = f"Facts:\n```\n{row['facts']}\n```\n" if row['facts'] else ''
                             start_human_prompt = f'Problem:\n```\n{question}\n```\n' if 'problem' in system_prompt.lower() else f'Question:\n```\n{question}\n```\n'
                             human_prompt = f"{start_human_prompt}{choices_str}{facts_str}{end_human_prompt}"
-                            if METHOD == Method.PS or METHOD == Method.PS_PLUS or METHOD == Method.ZS_COT:# or METHOD == Method.TWO_PROMPTS:
+                            if args.METHOD == Method.PS or args.METHOD == Method.PS_PLUS or args.METHOD == Method.ZS_COT:# or args.METHOD == Method.TWO_PROMPTS:
                                 if answer_type == AnswerType.MULTIPLE_CHOICE:
                                     choices_list = row['choices'].split('\n')
                                     human_prompt = f"Q: {question} Answer Choices: {'('+' ('.join(choices_list)}"
@@ -370,12 +375,12 @@ class LLMRunner:
                                 human_prompt=human_prompt, system_prompt=system_prompt, answer_type=answer_type,
                                 answer=answer, answer_word=answer_word, result_file=result_file
                             )
-                            if METHOD == Method.MUT and len(answer_results.task_system_prompts) > 0:
+                            if args.METHOD == Method.MUT and len(answer_results.task_system_prompts) > 0:
                                 task_system_prompts = answer_results.task_system_prompts
                             # task_prompts_majority_str = answer_results.task_prompts_majority if \
-                            #     (METHOD == Method.MUT_Me or METHOD == Method.STRUCT_MUT_M) else \
-                            #     (answer_results.task_prompts_correct if (METHOD == Method.MUT_C or
-                            #                                              METHOD == Method.STRUCT_MUT_C.) else None)
+                            #     (args.METHOD == Method.MUT_Me or args.METHOD == Method.STRUCT_MUT_M) else \
+                            #     (answer_results.task_prompts_correct if (args.METHOD == Method.MUT_C or
+                            #                                              args.METHOD == Method.STRUCT_MUT_C.) else None)
                             data_results = DataResults(
                                 id=int(row['id']),
                                 quid=qid,
@@ -384,28 +389,28 @@ class LLMRunner:
                                 llm_answer=answer_results.llm_answer_unedited,
                                 correct=answer_results.correct,
                                 llm_answer_chosen=answer_results.chosen_answer,
-                                reward_method=REWARD_METHOD.value,
+                                reward_method=args.REWARD_METHOD.value if args.REWARD_METHOD else None,
                                 reward_score=answer_results.score_chosen,
                                 task_prompt_all=answer_results.task_prompts_all,
                                 task_prompts_majority=str(task_system_prompts),
                             )
                             writer.writerow(asdict(data_results))
             current_result_id = FileUtils.get_highest_id_from_csv(self.file_path_info_all_results) + 1
-            if METHOD == Method.MUT:
+            if args.METHOD == Method.MUT:
                 system_prompt_info = system_prompt_info_start
             info_result = InfoResults(
                 id=current_result_id,
                 date=self.current_date,
                 dataset_name=folder,
-                method=METHOD.value,
+                method=args.METHOD.value,
                 finished=True,
                 system_prompt=system_prompt_info,
                 human_prompt=human_prompt_info,
-                temperature=TEMPERATURE,
-                response_count=ANSWER_COUNT,
-                reward_method=REWARD_METHOD.value,
-                llm_model=self.controller_answers.controller_ai.model.name if MODEL_NAME is None else MODEL_NAME,
-                reward_name=REWARD_NAME.value if REWARD_NAME else None
+                temperature=args.TEMPERATURE,
+                response_count=args.ANSWER_COUNT,
+                reward_method=args.REWARD_METHOD.value if args.REWARD_METHOD else None,
+                llm_model=self.controller_answers.controller_ai.model.name if args.MODEL_NAME is None else args.MODEL_NAME,
+                reward_name=args.REWARD_NAME.value if args.REWARD_NAME else None
             )
             info_result.result_file_name = resultsfile.name
             info_result.count = size_iteration_objects
@@ -448,146 +453,217 @@ class LLMRunner:
 
         """
         output_str = ""
-        output_str += f"\nMethod: {METHOD.value}"
-        output_str += "\t with additional instructions for task prompt" if USE_SYSTEM_PROMPT_STRUCTURE \
+        output_str += f"\nMethod: {args.METHOD.value}"
+        output_str += "\t with additional instructions for task prompt" if args.USE_SYSTEM_PROMPT_STRUCTURE \
             else "\t only task prompt"
-        output_str += f"\t\tModel name: {MODEL_NAME if MODEL_NAME else self.controller_answers.controller_ai.model.name}"
-        output_str += f"\t\tReward method: {REWARD_METHOD.value}\n" if REWARD_METHOD else "\t\tNo Reward method\n"
-        output_str += f"Temperature: {TEMPERATURE}\t\tAnswer count: {ANSWER_COUNT}\t\tSamples for mutation: " \
-                      f"{N_SAMPLES_MUT}\t\tMAX dataset size: {TOTAL_COUNT}\n"
+        output_str += f"\t\tModel name: {args.MODEL_NAME if args.MODEL_NAME else self.controller_answers.controller_ai.model.name}"
+        output_str += f"\t\tReward method: {args.REWARD_METHOD.value}\n" if args.REWARD_METHOD else "\t\tNo Reward method\n"
+        output_str += f"Temperature: {args.TEMPERATURE}\t\tAnswer count: {args.ANSWER_COUNT}\t\tSamples for mutation: " \
+                      f"{args.N_SAMPLES_MUT}\t\tMAX dataset size: {args.TOTAL_COUNT}\n"
         output_str += f"Dataset folder: {folder}\t\tQuestion file: {q_file}\t\tInitial prompt: {initial_prompt}\n"
         output_str += f"Result file: {result_file}\n"
         logger.info(output_str)
         # Some warnings, errors
-        if USE_SYSTEM_PROMPT_STRUCTURE and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
-            logger.critical(f"using input prompt structure with structured output format [{USE_SYSTEM_PROMPT_STRUCTURE=}]")
-        if METHOD == Method.A_2 and ANSWER_COUNT == 1:
+        if args.USE_SYSTEM_PROMPT_STRUCTURE and args.OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
+            logger.critical(f"using input prompt structure with structured output format [{args.USE_SYSTEM_PROMPT_STRUCTURE=}]")
+        if args.METHOD == Method.A_2 and args.ANSWER_COUNT == 1:
             logger.critical(f"using N_SAMPLES with answer count = 1")
-        if METHOD == Method.A_2 and TEMPERATURE <= 0.3:
-            logger.critical(f"using N_SAMPLES with low temperature [{TEMPERATURE=}]")
-        if METHOD in [Method.A_2, Method.MUT] and REWARD_METHOD is None:
-            logger.critical(f"using {METHOD.value} with no reward method")
-        if (METHOD in [Method.A_1, Method.PS, Method.PS_PLUS, Method.ZS_COT, Method.TWO_PROMPTS] and
-                REWARD_METHOD is not None):
-            logger.critical(f"using {METHOD.value} with reward method {REWARD_METHOD.value}")
-        if (METHOD in [Method.MUT, Method.TWO_PROMPTS] and USE_SYSTEM_PROMPT_STRUCTURE and
-                OUTPUT_FORMAT != OutputFormat.NO_FORMAT):
-            logger.critical(f"using {METHOD.value} with system prompt structure")
-        if METHOD in [Method.PS, Method.PS_PLUS, Method.ZS_COT] and OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
-            logger.critical(f"using {METHOD.value} with no output format")
+        if args.METHOD == Method.A_2 and args.TEMPERATURE <= 0.3:
+            logger.critical(f"using N_SAMPLES with low temperature [{args.TEMPERATURE=}]")
+        if args.METHOD in [Method.A_2, Method.MUT] and args.REWARD_METHOD is None:
+            logger.critical(f"using {args.METHOD.value} with no reward method")
+        if (args.METHOD in [Method.A_1, Method.PS, Method.PS_PLUS, Method.ZS_COT, Method.TWO_PROMPTS] and
+                args.REWARD_METHOD is not None):
+            logger.critical(f"using {args.METHOD.value} with reward method {args.REWARD_METHOD.value}")
+        if (args.METHOD in [Method.MUT, Method.TWO_PROMPTS] and args.USE_SYSTEM_PROMPT_STRUCTURE and
+                args.OUTPUT_FORMAT != OutputFormat.NO_FORMAT):
+            logger.critical(f"using {args.METHOD.value} with system prompt structure")
+        if args.METHOD in [Method.PS, Method.PS_PLUS, Method.ZS_COT] and args.OUTPUT_FORMAT != OutputFormat.NO_FORMAT:
+            logger.critical(f"using {args.METHOD.value} with no output format")
+
+    def go_through_all_existing(self) -> None:
+        """
+        Goes through all existing methods (Plan and solve, plan and solve plus, zero shot chain of thought).
+        """
+        args.TEMPERATURE = 0.0
+        args.ANSWER_COUNT = 1
+        args.REWARD_METHOD = None
+        args.REWARD_NAME = None
+        args.USE_SYSTEM_PROMPT_STRUCTURE = False
+        args.OUTPUT_FORMAT = OutputFormat.NO_FORMAT
+
+        args.METHOD = Method.PS
+        args.METHOD_NAME_FILE = str(args.METHOD.value)
+        llm_runner.iterate_through_folders()
+
+        args.METHOD = Method.PS_PLUS
+        args.METHOD_NAME_FILE = str(args.METHOD.value)
+        llm_runner.iterate_through_folders()
+
+        args.METHOD = Method.ZS_COT
+        args.METHOD_NAME_FILE = str(args.METHOD.value)
+        llm_runner.iterate_through_folders()
+
+    def go_through_all_static_zero_shot(self, prompts_for_iteration: List[str]) -> None:
+        """
+        Goes through all static zero-shot methods.
+        Args:
+            prompts_for_iteration: Prompts tht will be tested.
+
+        """
+        args.TEMPERATURE = 0.0
+        args.ANSWER_COUNT = 1
+        args.REWARD_METHOD = None
+        args.REWARD_NAME = None
+
+        # only task prompt
+        args.METHOD = Method.A_1
+        args.METHOD_NAME_FILE = str(args.METHOD.value)
+        args.USE_SYSTEM_PROMPT_STRUCTURE = False
+        args.OUTPUT_FORMAT = OutputFormat.NO_FORMAT
+        llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
+
+        # task prompt plus
+        args.USE_SYSTEM_PROMPT_STRUCTURE = True
+        llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
+
+        # structured cot
+        args.OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
+        args.USE_SYSTEM_PROMPT_STRUCTURE = False
+        llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
+
+        # structured only answer
+        args.OUTPUT_FORMAT = OutputFormat.STRUCTURED_ANSWER
+        llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
+
+        # two prompts
+        args.METHOD = Method.TWO_PROMPTS
+        args.OUTPUT_FORMAT = OutputFormat.NO_FORMAT
+        args.METHOD_NAME_FILE = str(args.METHOD.value)
+        llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
+
+    def go_through_static_n_shot(
+            self,
+            prompts_for_iteration: List[str],
+            temperature: float | None = None,
+            answer_count: int | None = None,
+            reward_method: RewardMethod | None = None,
+            reward_name: str | None = None
+    ) -> None:
+        """
+        Goes through static n-shot method.
+        Args:
+            prompts_for_iteration: Prompts tht will be tested.
+            temperature: Temperature for the model (0-2). For this method, recommended to be at least 0.3.
+            answer_count: Number of answers to generate (n-shot count).
+            reward_method: Reward method to use.
+            reward_name: Name of the reward model if reward method is a model.
+
+        """
+
+        args.TEMPERATURE = 1.0 if temperature is None else temperature
+        args.ANSWER_COUNT = 5 if answer_count is None else answer_count
+        args.METHOD = Method.A_2
+        args.METHOD_NAME_FILE = str(args.METHOD.value)
+        args.REWARD_METHOD = RewardMethod.MAJOR if reward_method is None else reward_method
+        args.REWARD_NAME = None if reward_name is None else reward_name
+        args.USE_SYSTEM_PROMPT_STRUCTURE = False
+        args.OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
+
+        llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
+
+    def go_through_dynamic_until_correct(self):
+        pass  # TODO
+
+    def go_through_dynamic_n_shot(self):
+        pass  # TODO
 
 
 if __name__ == "__main__":
 
     llm_runner = LLMRunner()
+    llm_runner.go_through_static_n_shot(prompts_for_iteration=best_task_prompts_MMLU)
     # llm_runner.iterate_through_prompts()
     # llm_runner.iterate_through_folders(system_prompt_task='Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).')
-    chosen_task = 'iterate_all_static' # TODO Enum and from args
-    if chosen_task == 'iterate_all_static':
 
-        # only task prompt
-        METHOD = Method.A_1
-        METHOD_NAME_FILE = str(METHOD.value)
-        USE_SYSTEM_PROMPT_STRUCTURE = False
-        OUTPUT_FORMAT = OutputFormat.NO_FORMAT
-        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
-
-        # task prompt plus
-        USE_SYSTEM_PROMPT_STRUCTURE = True
-        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
-
-        # structured cot
-        OUTPUT_FORMAT = OutputFormat.STRUCTURED_COT
-        USE_SYSTEM_PROMPT_STRUCTURE = False
-        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
-
-        # structured only answer
-        OUTPUT_FORMAT = OutputFormat.STRUCTURED_ANSWER
-        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
-
-        # two prompts
-        METHOD = Method.TWO_PROMPTS
-        OUTPUT_FORMAT = OutputFormat.NO_FORMAT
-        METHOD_NAME_FILE = str(METHOD.value)
-        llm_runner.iterate_through_prompts(prompts_for_iteration=mutated_task_prompts_MMLU)
 
 
     # TODO ########################################################################################################
 
     # TODO (not comment) going through all dataset
     # # TODO (not comment) Task prompt only
-    # USE_SYSTEM_PROMPT_STRUCTURE = False
-    # TEMPERATURE = 0.0
-    # ANSWER_COUNT = 1
-    # REWARD_METHOD = None
-    # METHOD = Method.A_1.value
-    # METHOD_NAME_FILE = METHOD
+    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
+    # args.TEMPERATURE = 0.0
+    # args.ANSWER_COUNT = 1
+    # args.REWARD_METHOD = None
+    # args.METHOD = Method.A_1.value
+    # args.METHOD_NAME_FILE = args.METHOD
     # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
 
     # TODO (not comment) Task prompt +
-    # USE_SYSTEM_PROMPT_STRUCTURE = True
-    # TEMPERATURE = 0.0
-    # ANSWER_COUNT = 1
-    # REWARD_METHOD = None
+    # args.USE_SYSTEM_PROMPT_STRUCTURE = True
+    # args.TEMPERATURE = 0.0
+    # args.ANSWER_COUNT = 1
+    # args.REWARD_METHOD = None
     # CUSTOM_NAME = 'TASK_PROMPT_PLUS'
-    # METHOD = Method.A_1.value
-    # METHOD_NAME_FILE = METHOD
+    # args.METHOD = Method.A_1.value
+    # args.METHOD_NAME_FILE = args.METHOD
     # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
 
     # # TODO (not comment) STRUCT = 'STRUCTURED_OUTPUT'  # Structured output with explanation
-    # METHOD = Method.STRUCT.value
-    # METHOD_NAME_FILE = METHOD
-    # logger.info(f"Method: {METHOD}")
-    # USE_SYSTEM_PROMPT_STRUCTURE = False
-    # TEMPERATURE = 0.0
-    # ANSWER_COUNT = 1
-    # REWARD_METHOD = None
+    # args.METHOD = Method.STRUCT.value
+    # args.METHOD_NAME_FILE = args.METHOD
+    # logger.info(f"Method: {args.METHOD}")
+    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
+    # args.TEMPERATURE = 0.0
+    # args.ANSWER_COUNT = 1
+    # args.REWARD_METHOD = None
     # prompts_for_iteration = mutated_task_prompts_AQuA_RAT + created_my_prompts_MC
     # llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
     #
     # # # TODO (not comment) STRUCT_EXTRA = 'STRUCTURED_EXTRA'  # Structured output with explanation and extra
-    # METHOD = Method.STRUCT_EXTRA.value
-    # METHOD_NAME_FILE = METHOD
-    # logger.info(f"Method: {METHOD}")
-    # USE_SYSTEM_PROMPT_STRUCTURE = False
-    # TEMPERATURE = 0.0
-    # ANSWER_COUNT = 1
-    # REWARD_METHOD = None
-    # OUTPUT_FORMAT = OutputFormat.STRUCTURED_EXTRA
+    # args.METHOD = Method.STRUCT_EXTRA.value
+    # args.METHOD_NAME_FILE = args.METHOD
+    # logger.info(f"Method: {args.METHOD}")
+    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
+    # args.TEMPERATURE = 0.0
+    # args.ANSWER_COUNT = 1
+    # args.REWARD_METHOD = None
+    # args.OUTPUT_FORMAT = OutputFormat.STRUCTURED_EXTRA
     # CUSTOM_NAME = 'RETRY_F'
     # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_MC)
     #
     # # # TODO (not comment) STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER'
-    # METHOD = Method.STRUCT_ANS.value
+    # args.METHOD = Method.STRUCT_ANS.value
     # CUSTOM_NAME = None
-    # METHOD_NAME_FILE = METHOD
-    # logger.info(f"Method: {METHOD}")
-    # USE_SYSTEM_PROMPT_STRUCTURE = False
-    # TEMPERATURE = 0.0
-    # ANSWER_COUNT = 1
-    # REWARD_METHOD = None
-    # OUTPUT_FORMAT = OutputFormat.STRUCTURED_ANSWER
+    # args.METHOD_NAME_FILE = args.METHOD
+    # logger.info(f"Method: {args.METHOD}")
+    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
+    # args.TEMPERATURE = 0.0
+    # args.ANSWER_COUNT = 1
+    # args.REWARD_METHOD = None
+    # args.OUTPUT_FORMAT = OutputFormat.STRUCTURED_ANSWER
     # prompts_for_iteration = mutated_task_prompts_AQuA_RAT + created_my_prompts_MC
     # llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
 
     # # TODO (not comment) Two prompts
-    # METHOD = Method.TWO_PROMPTS.value
-    # METHOD_NAME_FILE = METHOD
+    # args.METHOD = Method.TWO_PROMPTS.value
+    # args.METHOD_NAME_FILE = args.METHOD
     # llm_runner.iterate_through_folders()
 
     # # TODO (not comment) Plan and solve
-    # METHOD = Method.PS.value
-    # METHOD_NAME_FILE = METHOD
+    # args.METHOD = Method.PS.value
+    # args.METHOD_NAME_FILE = args.METHOD
     # llm_runner.iterate_through_folders()
 
     # # TODO (not comment) Plan and solve plus
-    # METHOD = Method.PS_PLUS.value
-    # METHOD_NAME_FILE = METHOD
+    # args.METHOD = Method.PS_PLUS.value
+    # args.METHOD_NAME_FILE = args.METHOD
     # llm_runner.iterate_through_folders()
 
     # # TODO (not comment) Zero shot chain of thought
-    # METHOD = Method.ZS_COT.value
-    # METHOD_NAME_FILE = METHOD
+    # args.METHOD = Method.ZS_COT.value
+    # args.METHOD_NAME_FILE = args.METHOD
     # llm_runner.iterate_through_folders()
 
     # TODO (not comment) MUTATION majority
@@ -613,8 +689,8 @@ if __name__ == "__main__":
     # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
 
     # TODO (not comment) Mutation correct
-    # METHOD = str(Method.STRUCT_MUT_C.value)
-    # METHOD_NAME_FILE = METHOD
+    # args.METHOD = str(Method.STRUCT_MUT_C.value)
+    # args.METHOD_NAME_FILE = args.METHOD
     # # best task prompt
     # llm_runner.custom_name_str = 'BEST_JUST_TASK'
     # start_prompt = 'Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).'

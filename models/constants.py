@@ -16,7 +16,7 @@ system_prompts_task = {
 
 system_prompts_output = {
     AnswerType.BOOL.value: "Answer with 'yes', 'no'.",
-    AnswerType.MULTIPLE_CHOICE.value: "Answer with (A),(B),(C),(D),(E).",
+    AnswerType.MULTIPLE_CHOICE.value: "Answer with (A),(B),(C),(D).", # TODO , (E)
     AnswerType.NUMBER.value: "Answer with only the final number.",
     AnswerType.TEXT.value: "Answer with required letters.",
 }
@@ -456,6 +456,15 @@ mutated_task_prompts_MMLU = [
     "Imagine you're a detective solving a mystery; pick the correct answer from options (A), (B), (C), or (D) after cracking the case."
 
 ]
+
+best_task_prompts_MMLU = [
+    "Solve task below. Answer with (A),(B),(C),(D)",  # best task only and 2 prompts
+    "Classify (A),(B),(C),(D)",  # best task +
+    "Solve and Choose Answer (A),(B),(C),(D)",  # best structured cot and structured answer only
+    "Determine the solution and select the correct option from (A), (B), (C), or (D).",  # 2nd best struct cot
+    "Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D)."  # best avg
+]
+
 created_my_prompts_NUM = [
     # original start
     'Solve the math word problem, giving your answer as an arabic numeral.',

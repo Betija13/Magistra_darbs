@@ -36,7 +36,6 @@ if FACT_RANKING_MODEL is None or RERANK_URL is None:
     logger.critical(f"Missing variable in .env file. {FACT_RANKING_MODEL=}\t{RERANK_URL=}")
 
 
-
 class RewardMethods:
 
     def __init__(self, ai_llm: ControllerAiLLM | None = None, reward_name: RewardModelNames | None = None) -> None:

@@ -27,7 +27,9 @@ class AnswerMethods:
     def __init__(self, reward_name: RewardModelNames | None = None):
         self.controller_ai = ControllerAiLLM()
         self.controller_mutation = Mutation(controller_ai=self.controller_ai)
-        self.reward_methods = RewardMethods(ai_llm=self.controller_ai, reward_name=reward_name)
+        self.reward_methods = None
+        if reward_name:
+            self.reward_methods = RewardMethods(ai_llm=self.controller_ai, reward_name=reward_name)
         self.last_mutation_prompt_idx: int = 0
         self.last_thinking_style_idx: int = 0
         self.max_mutation_prompt_idx: int = len(my_mutation_prompts) - 1
@@ -63,7 +65,7 @@ class AnswerMethods:
             answer_llm = self.controller_ai.get_llm_api_response_with_backup_special(
                 system_prompt=system_prompt, prompt=human_prompt, response_count=1, temperature=temperature,
                 get_multiple_answers=False, model_name=model_name
-            )
+            )[0]
             answer_results.llm_answer_unedited = answer_llm
             answer_llm = ResultUtils.preprocess_answer(answer_llm, answer_type)
             correct = ResultUtils.check_corrct_answer(
@@ -137,7 +139,10 @@ class AnswerMethods:
                             answer_type=answer_type, answer_llm_structure=answer_n
                         )
                         answer_strs.append(answer_str)
-                        answers_for_voting.append(cot_part)
+                        if reward_method == RewardMethod.MAJOR:
+                            answers_for_voting.append(final_answer)
+                        else:
+                            answers_for_voting.append(cot_part)
                     answers_llm_all = '\n------\n'.join(answer_strs)
                     answer_results.llm_answer_unedited = answers_llm_all
 
@@ -149,6 +154,7 @@ class AnswerMethods:
                 )
                 chosen_answer = chosen_answer_obj.chosen_answer
                 score_answer = chosen_answer_obj.answer_score
+                answer_results.score_chosen = score_answer
             if output_format != OutputFormat.NO_FORMAT:
                 idx_chosen = answers_for_voting.index(chosen_answer)
                 str_chosen = answer_strs[idx_chosen]
@@ -772,7 +778,7 @@ class AnswerMethods:
             answer_llm_plan = self.controller_ai.get_llm_api_response_with_backup_special(
                 system_prompt=system_prompt, prompt=plan_prompt_full, response_count=1, temperature=temperature,
                 get_multiple_answers=False, model_name=model_name
-            )
+            )[0]
             if answer_type == AnswerType.MULTIPLE_CHOICE:
                 answer_final_str = 'ANSWER_AS_LETTER'
                 answer_prompt = 'Therefore, among A through D, the answer is' # TODO
@@ -793,7 +799,7 @@ class AnswerMethods:
             final_answer = self.controller_ai.get_llm_api_response_with_backup_special(
                 system_prompt=system_prompt, prompt=final_answer_prompt_full, response_count=1, temperature=temperature,
                 get_multiple_answers=False, model_name=model_name
-            )
+            )[0]
 
             answer_results.llm_answer_unedited = f"{plan_str_answer}: {answer_llm_plan}\n" \
                                                  f"{answer_final_str}: {final_answer}"
