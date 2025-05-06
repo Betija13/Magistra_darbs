@@ -465,6 +465,20 @@ best_task_prompts_MMLU = [
     "Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D)."  # best avg
 ]
 
+best_task_prompts_AQUA = [
+    "Solve task below. Answer with (A),(B),(C),(D),(E)",  # best task only
+    "Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.",  # best task +
+    # "Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).",  # best cot (Already DONE)
+    "To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).",  # Best strcuture only answer
+    "Pick a letter and pray that math agrees with you.",  # Best 2 prompts
+    "Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).",  # best struct extra
+    "Please perform a basic calculation.",  # Best struct ans2
+    "Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).",  # Best struct cot 2
+    "Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).",  # Best struct cot 2
+    "Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E)."  # Best average
+
+]
+
 created_my_prompts_NUM = [
     # original start
     'Solve the math word problem, giving your answer as an arabic numeral.',
