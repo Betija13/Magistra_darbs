@@ -21,9 +21,9 @@ from models.constants import human_prompts, system_prompts, mutated_task_prompts
 from models.DataClass.AnswerResults import AnswerResults
 from tqdm import tqdm
 from datetime import datetime
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 import random
-
+import argparse
 
 @dataclass
 class Args:
@@ -45,6 +45,24 @@ class Args:
 
 
 args = Args()
+# TODO
+# parser = argparse.ArgumentParser()
+# parser.add_argument('--TASK', type=str, required=True)
+# parser.add_argument('--CUSTOM_NAME', type=str)
+# parser.add_argument('--TOTAL_COUNT', type=int)
+# parser.add_argument('--TEMPERATURE', type=float)
+# parser.add_argument('--ANSWER_COUNT', type=int)
+#
+# parser.add_argument(
+#     '--output-format',
+#     type=output_format_type,
+#     choices=[e.value for e in OutputFormat],
+#     default=OutputFormat.JSON.value
+# )
+#
+# cli_args = parser.parse_args()
+#
+# args = replace(args, **{k: v for k, v in vars(cli_args).items() if v is not None})
 
 
 class LLMRunner:
@@ -577,6 +595,16 @@ class LLMRunner:
 
     def go_through_dynamic_n_shot(self):
         pass  # TODO
+
+    def get_n_samples_different_scores(self, original_file_path: str):
+        """
+        Goes through existing N-sample file and rates answers by different method.
+        """
+        # checks if original file exists, otherwise error
+        if not os.path.exists(original_file_path):
+            logger.error(f"Path {original_file_path} does not exist")
+        else:
+            pass
 
 
 if __name__ == "__main__":
