@@ -1,4 +1,5 @@
 from models.Enums.AnswerType import AnswerType
+from models.Enums.RewardModelNames import RewardModelNames
 
 system_prompts = {
     AnswerType.BOOL.value: "Work out an answer to the commonsense reasoning question above, and then answer yes or no.",
@@ -495,4 +496,24 @@ a=[
     "Imagine you're planning a surprise party and need to calculate the total cost; solve the math problem and share the final amount.",
     "Imagine you're a detective on a mathematical adventure; uncover the solution to the math word problem and report your findings using an Arabic numeral.",
     "Determine the solution to the mathematical word problem and present your answer as a standard numeral."
+]
+
+reward_names_shorten = [
+    (RewardModelNames.QRM_8B_P, "QRM_8B_P"),
+    (RewardModelNames.PAIRRM_B, "PAIRRM_B"),
+    (RewardModelNames.EURUS, "EURUS"),
+    (RewardModelNames.GRM_3B, "GRM_3B"),
+    (RewardModelNames.GRM_2B, "GRM_2B"),
+    (RewardModelNames.INTERNLM_1_8_B, "INTERNLM_1_8_B"),
+    (RewardModelNames.INTERNLM_7_B, "INTERNLM_7_B"),
+    (RewardModelNames.SKYWORK, "SKYWORK"),
+    (RewardModelNames.ARMORM, "ARMORM"),
+    (RewardModelNames.QRM_8B_V2, "QRM_8B_V2"),
+    (RewardModelNames.SAFAIRXC, "SAFAIRXC"),
+    (RewardModelNames.BLENDER_PRM, "BLENDER_PRM"),
+    (RewardModelNames.DEBERTA_V3_2, "DEBERTA_V3_2"),
+    (RewardModelNames.GRM, "GRM")
+
+
+
 ]

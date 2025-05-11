@@ -2,6 +2,10 @@ import csv
 import os
 from loguru import logger
 from typing import List, Set
+import sys
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
+)
 from controllers.AiLLM import ControllerAiLLM
 from controllers.RewardMethods import RewardMethods
 from controllers.AnswerMethods import AnswerMethods
@@ -15,13 +19,14 @@ from models.Enums.RewardMethod import RewardMethod
 from models.Enums.Datasets import Datasets
 from models.Enums.OutputFormat import OutputFormat
 from models.Enums.RewardModelNames import RewardModelNames
+from models.Enums.Tasks import Tasks
 from models.constants import human_prompts, system_prompts, mutated_task_prompts_AQuA_RAT, system_prompts_output, \
     system_prompts_static, system_prompts_task, created_my_prompts_MC, created_my_prompts_NUM, \
-    mutated_task_prompts_MMLU, best_task_prompts_MMLU
+    mutated_task_prompts_MMLU, best_task_prompts_MMLU, reward_names_shorten
 from models.DataClass.AnswerResults import AnswerResults
 from tqdm import tqdm
 from datetime import datetime
-from dataclasses import asdict, dataclass, field, replace
+from dataclasses import asdict, dataclass, field, replace, fields
 import random
 import argparse
 
@@ -42,27 +47,34 @@ class Args:
     USE_SYSTEM_PROMPT_STRUCTURE: bool = False
     MUTATION_UNTIL_SATISFIED: bool = False
     OUTPUT_FORMAT: OutputFormat = OutputFormat.STRUCTURED_COT
+    TASK: Tasks = Tasks.NOT_CHOSEN
+    ORIGINAL_FILE: str | None = None
 
 
 args = Args()
 # TODO
-# parser = argparse.ArgumentParser()
-# parser.add_argument('--TASK', type=str, required=True)
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '--REWARD_NAME_VALUE',
+    choices=[e.value for e in RewardModelNames]
+)
+parser.add_argument('--TASK_VALUE', type=str, required=True, choices=[e.value for e in Tasks])
+parser.add_argument('--ORIGINAL_FILE', type=str)
 # parser.add_argument('--CUSTOM_NAME', type=str)
 # parser.add_argument('--TOTAL_COUNT', type=int)
 # parser.add_argument('--TEMPERATURE', type=float)
 # parser.add_argument('--ANSWER_COUNT', type=int)
+
+cli_args = parser.parse_args()
+if cli_args.REWARD_NAME_VALUE is not None:
+    cli_args.REWARD_NAME = RewardModelNames(cli_args.REWARD_NAME_VALUE)
+if cli_args.TASK_VALUE is not None:
+    cli_args.TASK = Tasks(cli_args.TASK_VALUE)
 #
-# parser.add_argument(
-#     '--output-format',
-#     type=output_format_type,
-#     choices=[e.value for e in OutputFormat],
-#     default=OutputFormat.JSON.value
-# )
-#
-# cli_args = parser.parse_args()
-#
-# args = replace(args, **{k: v for k, v in vars(cli_args).items() if v is not None})
+valid_fields = {f.name for f in fields(Args)}
+filtered_args = {k: v for k, v in vars(cli_args).items() if v is not None and k in valid_fields}
+
+args = replace(args, **filtered_args)
 
 
 class LLMRunner:
@@ -74,7 +86,7 @@ class LLMRunner:
         self.folder = '../datasets'
         self.filename_all_results = 'info_results.csv'
         self.file_path_info_all_results = os.path.join(self.folder, self.filename_all_results)
-        self.fieldnames = [field.name for field in DataResults.__dataclass_fields__.values()]
+        self.fieldnames = [field_n.name for field_n in DataResults.__dataclass_fields__.values()]
         self.current_date = datetime.now().strftime('%d-%m-%Y')
         self.custom_name_str = f'_{args.CUSTOM_NAME}' if args.CUSTOM_NAME else ''
 
@@ -596,7 +608,12 @@ class LLMRunner:
     def go_through_dynamic_n_shot(self):
         pass  # TODO
 
-    def get_n_samples_different_scores(self, original_file_path: str):
+    def get_n_samples_different_scores(
+            self,
+            original_file_path: str,
+            reward_methods: List[RewardMethod],
+            reward_name: RewardModelNames | None = None
+    ):
         """
         Goes through existing N-sample file and rates answers by different method.
         """
@@ -604,13 +621,191 @@ class LLMRunner:
         if not os.path.exists(original_file_path):
             logger.error(f"Path {original_file_path} does not exist")
         else:
-            pass
+            all_reward_methods = [m.value for m in RewardMethod]
+            reward_name_str = None
+            for reward_method in reward_methods:
+                try:
+                    reward_method_str = f"_{reward_method.value}"
+                    if reward_method == RewardMethod.REWARD_M and reward_name is not None:
+                        self.controller_answers.initialize_reward_model(reward_name)
+                    if reward_method == RewardMethod.REWARD_M and reward_name is None:
+                        if args.REWARD_NAME is None:
+                            logger.error("Chosen reward method without a reward name")
+                        else:
+                            reward_name = args.REWARD_NAME
+                    if reward_name is not None:
+                        reward_name_str = reward_name.value
+                    if reward_method == RewardMethod.RERANK:
+                        reward_name = RewardModelNames.RERANK_MODEL
+                    if reward_method == RewardMethod.LLM_O_R or reward_method == RewardMethod.LLM_O_B_I:
+                        reward_name = RewardModelNames.LLM_GEMINI
+                    original_reward_method = [existing_meth for existing_meth in all_reward_methods if existing_meth in  original_file_path]
+                    if len(original_reward_method) == 1:
+                        original_reward_method = original_reward_method[0]
+                    else:
+                        raise Exception(f"Weird original reward method. {original_reward_method}")
+                    output_file = original_file_path
+                    output_file = output_file.replace(original_reward_method, reward_method_str)
+                    if reward_name_str is not None and reward_method == RewardMethod.REWARD_M:
+                        if output_file.endswith('.csv'):
+                            custom_rn = [cname for r, cname in reward_names_shorten if r == reward_name][0]
+                            output_file = f"{output_file[:-4]}__RM-{custom_rn}{output_file[-4:]}"
+                        else:
+                            raise Exception(f"Weird output file: {output_file}")
+
+                    info_results_object = None
+                    with open(self.file_path_info_all_results, 'r', encoding='utf-8') as csv_file:
+                        reader = csv.DictReader(csv_file)
+                        for row in reader:
+                            if row['result_file_name'] == original_file_path:
+                                if info_results_object is not None:
+                                    logger.error("Info row is already something")
+                                info_results_object = InfoResults(**row)
+                            if row['result_file_name'] == output_file:
+                                raise Exception(f"File {output_file} already in info file")
+                    info_results_object.date = self.current_date
+                    info_results_object.reward_method = str(reward_method.value)
+                    info_results_object.reward_name = reward_name.value if reward_name is not None else None
+                    info_results_object.result_file_name = output_file
+                    existing_ids = set()
+                    fieldnames = [field_n.name for field_n in DataResults.__dataclass_fields__.values()]
+                    try:
+                        with open(output_file, 'r', encoding='utf-8') as resultsfile:
+                            logger.warning(f"File {output_file} already exists")
+                            reader = csv.DictReader(resultsfile)
+                            for row in reader:
+                                existing_ids.add(int(row['id']))
+                    except FileNotFoundError:
+                        with open(output_file, 'w', newline='', encoding='utf-8') as resultsfile:
+                            writer = csv.DictWriter(resultsfile, fieldnames=fieldnames)
+                            writer.writeheader()
+                    updated_rows = []
+                    with open(output_file, 'a', newline='', encoding='utf-8') as resultsfile:
+                        writer = csv.DictWriter(resultsfile, fieldnames=fieldnames)
+                        with open(original_file_path, 'r', encoding='utf-8') as csv_file:
+                            reader = csv.DictReader(csv_file)
+                            fieldnames = reader.fieldnames
+                            for row in tqdm(reader, total=info_results_object.count):
+                                if int(row['id']) in existing_ids:
+                                    continue
+                                # Access data using header names
+                                llm_answer = row['llm_answer']
+                                answers_list = llm_answer.split('\n------\n')
+                                cot_parts = []
+                                final_answer_parts = []
+                                for ans_n in answers_list:
+                                    cot, answer_f = ans_n.split('ANSWER_AS_LETTER:')
+                                    cot = cot.replace('SOLUTION_EXPLANATION:', '').strip()
+                                    answer_f = answer_f.strip()
+                                    cot_parts.append(cot)
+                                    final_answer_parts.append(answer_f)
+                                question = row['question']
+                                if reward_method == RewardMethod.LLM_O_R:
+                                    answer_obj = self.controller_answers.reward_methods.get_llm_best_answer_reranker(
+                                        question=question, answer_options=cot_parts
+                                    )
+                                    if answer_obj is not None:
+                                        try:
+                                            score = answer_obj.answer_score
+                                            chosen_answer = answer_obj.chosen_answer
+                                            chosen_idx = cot_parts.index(
+                                                chosen_answer) if chosen_answer is not None else None
+                                        except Exception as e:
+                                            logger.error(e)
+                                            logger.exception(e)
+                                            score = None
+                                            chosen_answer = None
+                                            chosen_idx = None
+                                elif reward_method == RewardMethod.LLM_O_B_I:
+                                    answer_obj = self.controller_answers.reward_methods.get_llm_best_answer_best_idx(
+                                        question=question, answer_options=cot_parts
+                                    )
+                                    if answer_obj is not None:
+                                        try:
+                                            score = answer_obj.answer_score
+                                            chosen_answer = answer_obj.chosen_answer
+                                            chosen_idx = cot_parts.index(
+                                                chosen_answer) if chosen_answer is not None else None
+                                        except Exception as e:
+                                            logger.error(e)
+                                            logger.exception(e)
+                                            score = None
+                                            chosen_answer = None
+                                            chosen_idx = None
+                                elif reward_method == RewardMethod.REWARD_M:
+                                    answer_obj = self.controller_answers.reward_methods.get_reward_model_best_answer(
+                                        question=question, answer_options=cot_parts
+                                    )
+                                    if answer_obj is not None:
+                                        try:
+                                            score = answer_obj.answer_score
+                                            chosen_answer = answer_obj.chosen_answer
+                                            chosen_idx = cot_parts.index(
+                                                chosen_answer) if chosen_answer is not None else None
+                                        except Exception as e:
+                                            logger.error(e)
+                                            logger.exception(e)
+                                            score = None
+                                            chosen_answer = None
+                                            chosen_idx = None
+                                elif reward_method == RewardMethod.MAJOR:
+                                    score = None
+                                    chosen_answer_letter = RewardMethods.majority_element(final_answer_parts)
+                                    chosen_idx = final_answer_parts.index(
+                                        chosen_answer_letter) if chosen_answer_letter is not None else None
+                                elif reward_method == RewardMethod.RERANK:
+                                    answer_obj = self.controller_answers.reward_methods.get_reranking_model_best_answer(
+                                        question=question, answer_options=cot_parts
+                                    )
+                                    score = answer_obj.answer_score
+                                    chosen_answer = answer_obj.chosen_answer
+                                    chosen_idx = cot_parts.index(chosen_answer)
+                                else:
+                                    raise Exception(f"method {reward_method} not implemented!!!")
+                                final_str = answers_list[chosen_idx] if chosen_idx is not None else None
+                                final_letter_answer = final_answer_parts[chosen_idx] if chosen_idx is not None else None
+                                # chosen_answer = row['llm_answer_chosen']
+                                true_answer = row['true_answer']
+                                correct_answer = False
+                                if final_letter_answer == true_answer:
+                                    correct_answer = True
+                                row['llm_answer_chosen'] = final_str
+                                # row['llm_answer_chosen'] = final_letter_answer
+                                row['reward_score'] = score if chosen_idx is not None else None
+                                row['reward_method'] = reward_method.value
+                                row['correct'] = correct_answer
+                                updated_rows.append(row)
+                                writer.writerow(row)
+                    current_result_id = FileUtils.get_highest_id_from_csv(self.file_path_info_all_results) + 1
+                    info_results_object.id = current_result_id
+                    numeric_results = ResultUtils.count_correct_values(output_file)
+                    info_results_object.accuracy = numeric_results.accuracy_score
+                    info_results_object.percentage_of_short_answers = numeric_results.percentage_of_short_answers
+
+                    data_to_append = asdict(info_results_object)
+
+                    with open(self.file_path_info_all_results, 'a', newline='', encoding='utf-8') as csvfile:
+                        writer_info = csv.DictWriter(csvfile, fieldnames=data_to_append.keys())
+                        writer_info.writerow(data_to_append)
+                    logger.success(f"Successful {reward_method} \t {reward_name}")
+
+                except Exception as e:
+                    logger.error(e)
 
 
 if __name__ == "__main__":
 
     llm_runner = LLMRunner()
-    llm_runner.go_through_static_n_shot(prompts_for_iteration=best_task_prompts_MMLU)
+    if args.TASK == Tasks.N_SAMPLE_DIFF_SCORE_RM:
+        llm_runner.get_n_samples_different_scores(
+            original_file_path=args.ORIGINAL_FILE,
+            reward_methods=[RewardMethod.REWARD_M], reward_name=None)
+    elif args.TASK == Tasks.N_SAMPLE_DIFF_SCORE_OTHER:
+        llm_runner.get_n_samples_different_scores(
+            original_file_path=args.ORIGINAL_FILE,
+            reward_methods=[RewardMethod.RERANK, RewardMethod.LLM_O_R, RewardMethod.LLM_O_B_I, RewardMethod.MAJOR],
+            reward_name=None)
+    # llm_runner.go_through_static_n_shot(prompts_for_iteration=best_task_prompts_MMLU)
     # llm_runner.iterate_through_prompts()
     # llm_runner.iterate_through_folders(system_prompt_task='Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).')
 

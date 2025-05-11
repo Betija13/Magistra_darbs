@@ -27,13 +27,21 @@ class AnswerMethods:
     def __init__(self, reward_name: RewardModelNames | None = None):
         self.controller_ai = ControllerAiLLM()
         self.controller_mutation = Mutation(controller_ai=self.controller_ai)
-        self.reward_methods = None
+        self.reward_methods = RewardMethods(ai_llm=self.controller_ai)
         if reward_name:
-            self.reward_methods = RewardMethods(ai_llm=self.controller_ai, reward_name=reward_name)
+            self.initialize_reward_model(reward_name=reward_name)
         self.last_mutation_prompt_idx: int = 0
         self.last_thinking_style_idx: int = 0
         self.max_mutation_prompt_idx: int = len(my_mutation_prompts) - 1
         self.max_thinking_style_idx: int = len(my_thinking_styles) - 1
+
+    def initialize_reward_model(self, reward_name: RewardModelNames) -> None:
+        """
+        Initializes the reward model.
+        Args:
+            reward_name: Name of reward model.
+        """
+        self.reward_methods.init_reward_model(reward_model_name=reward_name)
 
     def get_zero_shot_answer(
             self,
