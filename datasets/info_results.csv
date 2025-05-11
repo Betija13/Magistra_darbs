@@ -4403,7 +4403,52 @@ Choices:
 {choices}
 ```
 ",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
-503,05-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING_MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+503,03-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-S__03-05-2025_F-data_normalized_test__QRM_8B_P.csv,A_N_SAMPLING,True,254,83.46456692913385,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3-8B
+504,03-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-S__03-05-2025_F-data_normalized_test__EURUS.csv,A_N_SAMPLING,True,254,84.64566929133859,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,openbmb/Eurus-RM-7b
+505,03-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-S__03-05-2025_F-data_normalized_test__PAIRRM_B.csv,A_N_SAMPLING,True,254,84.25196850393701,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+506,03-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-S__03-05-2025_F-data_normalized_test__GRM_3B.csv,A_N_SAMPLING,True,254,85.8267716535433,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+507,03-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-S__03-05-2025_F-data_normalized_test__GRM_2B.csv,A_N_SAMPLING,True,254,83.46456692913385,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+508,05-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING_MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
 ```
 {question}
 ```
@@ -4412,7 +4457,7 @@ Choices:
 {choices}
 ```
 ",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
-504,05-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING_MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4.csv,A_N_SAMPLING,True,95,85.26315789473684,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+509,05-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING_MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4.csv,A_N_SAMPLING,True,95,85.26315789473684,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
 ```
 {question}
 ```
