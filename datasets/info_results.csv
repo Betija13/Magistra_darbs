@@ -4403,3 +4403,21 @@ Choices:
 {choices}
 ```
 ",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+503,05-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING_MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+504,05-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING_MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4.csv,A_N_SAMPLING,True,95,85.26315789473684,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
