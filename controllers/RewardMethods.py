@@ -6,6 +6,7 @@ import os
 import requests
 import json
 import torch
+import shutil
 import llm_blender
 from llm_blender.pair_ranker.pairrm import DebertaV2PairRM
 import psutil
@@ -32,6 +33,7 @@ FACT_RANKING_MODEL = config.get('FACT_RANKING_MODEL')
 RERANK_URL = config.get('RERANK_URL')
 GPU_MEM = config.get('GPU_MEM')
 CPU_MEM = config.get('CPU_MEM')
+PATH_HF_MODELS = config.get('PATH_HF_MODELS')
 if FACT_RANKING_MODEL is None or RERANK_URL is None:
     logger.critical(f"Missing variable in .env file. {FACT_RANKING_MODEL=}\t{RERANK_URL=}")
 
@@ -190,8 +192,19 @@ class RewardMethods:
         except Exception as e:
             logger.error(e)
 
-
-
+    def delete_rm_file(self):
+        """
+        Deletes the folder where reward model is saved.
+        """
+        if self.reward_model is not None:
+            username, modelname = self.reward_name.split('/')
+            model_str = f'models--{username}--{modelname}'
+            path_model = f"{PATH_HF_MODELS}/{model_str}"
+            if os.path.exists(path_model):
+                shutil.rmtree(path_model)
+                logger.debug(f"Deleted {path_model}")
+            else:
+                logger.error(f"Path {path_model} does not exist")
 
     @staticmethod
     def majority_element(answer_options: List[str]) -> str | None:

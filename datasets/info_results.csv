@@ -4619,3 +4619,408 @@ Choices:
 {choices}
 ```
 ",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+527,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+528,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,gemini-2.0-flash
+529,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,95,84.21052631578947,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+530,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-GRM_3B.csv,A_N_SAMPLING,True,95,85.26315789473684,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+531,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-SKYWORK.csv,A_N_SAMPLING,True,95,88.42105263157895,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+532,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-ARMORM.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+533,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+534,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-SAFAIRXC.csv,A_N_SAMPLING,True,95,87.36842105263159,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+535,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-PAIRRM_B.csv,A_N_SAMPLING,True,95,86.31578947368422,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+536,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,95,84.21052631578947,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+537,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,95,84.21052631578947,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+538,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-GRM_2B.csv,A_N_SAMPLING,True,95,85.26315789473684,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+539,11-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-GRM.csv,A_N_SAMPLING,True,95,88.42105263157895,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+540,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_3__RM-INTERNLM_7_B.csv,A_N_SAMPLING,True,95,84.21052631578947,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
+541,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4.csv,A_N_SAMPLING,True,95,84.21052631578947,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+542,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4.csv,A_N_SAMPLING,True,95,88.42105263157895,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+543,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4.csv,A_N_SAMPLING,True,95,89.47368421052632,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+544,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4.csv,A_N_SAMPLING,True,95,85.26315789473684,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,gemini-2.0-flash
+545,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,95,85.26315789473684,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+546,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-GRM_3B.csv,A_N_SAMPLING,True,95,84.21052631578947,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+547,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-SKYWORK.csv,A_N_SAMPLING,True,95,86.31578947368422,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+548,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-ARMORM.csv,A_N_SAMPLING,True,95,80.61224489795919,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+549,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,95,84.21052631578947,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+550,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-SAFAIRXC.csv,A_N_SAMPLING,True,95,82.10526315789474,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+551,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-PAIRRM_B.csv,A_N_SAMPLING,True,95,85.26315789473684,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+552,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,95,90.52631578947368,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+553,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,95,85.26315789473684,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+554,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-GRM_2B.csv,A_N_SAMPLING,True,95,82.10526315789474,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+555,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-GRM.csv,A_N_SAMPLING,True,95,84.21052631578947,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+556,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_4__RM-INTERNLM_7_B.csv,A_N_SAMPLING,True,95,84.21052631578947,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
+557,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1.csv,A_N_SAMPLING,True,95,86.31578947368422,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+558,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1.csv,A_N_SAMPLING,True,95,89.47368421052632,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+559,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1.csv,A_N_SAMPLING,True,95,89.47368421052632,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+560,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1.csv,A_N_SAMPLING,True,95,86.31578947368422,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,gemini-2.0-flash
+561,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,95,88.42105263157895,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+562,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-GRM_3B.csv,A_N_SAMPLING,True,95,86.31578947368422,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+563,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-SKYWORK.csv,A_N_SAMPLING,True,95,83.15789473684211,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+564,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-ARMORM.csv,A_N_SAMPLING,True,95,84.21052631578947,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+565,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,95,85.26315789473684,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+566,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-SAFAIRXC.csv,A_N_SAMPLING,True,95,83.15789473684211,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+567,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-PAIRRM_B.csv,A_N_SAMPLING,True,95,86.31578947368422,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+568,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,95,84.21052631578947,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+569,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,95,86.31578947368422,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+570,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-GRM_2B.csv,A_N_SAMPLING,True,95,81.05263157894737,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+571,12-05-2025,MMLU,../datasets/MMLU/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_05-05-2025_F-data_normalized_STEM_dev_1__RM-GRM.csv,A_N_SAMPLING,True,95,84.21052631578947,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft

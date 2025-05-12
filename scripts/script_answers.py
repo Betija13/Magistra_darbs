@@ -800,11 +800,13 @@ if __name__ == "__main__":
         llm_runner.get_n_samples_different_scores(
             original_file_path=args.ORIGINAL_FILE,
             reward_methods=[RewardMethod.REWARD_M], reward_name=None)
+        llm_runner.controller_answers.reward_methods.delete_rm_file()
     elif args.TASK == Tasks.N_SAMPLE_DIFF_SCORE_OTHER:
         llm_runner.get_n_samples_different_scores(
             original_file_path=args.ORIGINAL_FILE,
             reward_methods=[RewardMethod.RERANK, RewardMethod.LLM_O_R, RewardMethod.LLM_O_B_I, RewardMethod.MAJOR],
             reward_name=None)
+
     # llm_runner.go_through_static_n_shot(prompts_for_iteration=best_task_prompts_MMLU)
     # llm_runner.iterate_through_prompts()
     # llm_runner.iterate_through_folders(system_prompt_task='Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).')
