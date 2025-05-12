@@ -319,8 +319,8 @@ class LLMRunner:
 
             print(question_file)
             question_filename = question_file.split('/')[-1].split('\\')[-1].split('.')[0]
-            reward_str = f"_{args.REWARD_METHOD.value}" if args.REWARD_METHOD else ''
-            until_satisfied_mut_str = f"_CONT-US_" if args.MUTATION_UNTIL_SATISFIED else ''
+            reward_str = f"__{args.REWARD_METHOD.value}" if args.REWARD_METHOD else ''
+            until_satisfied_mut_str = f"__CONT-US_" if args.MUTATION_UNTIL_SATISFIED else ''
             input_format = '_I-S_' if args.USE_SYSTEM_PROMPT_STRUCTURE else '_I-N_'
             result_file = (f'../datasets/{folder}/results/{args.METHOD_NAME_FILE}{until_satisfied_mut_str}{reward_str}__'
                            f'O-{args.OUTPUT_FORMAT.value}__{input_format}{self.current_date}_F-{question_filename}'
