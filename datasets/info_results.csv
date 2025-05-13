@@ -5195,21 +5195,3 @@ Choices:
 {choices}
 ```
 ",0.0,1,CORRECT_ANSWER,gpt-4o,0.0,
-591,13-05-2025,MMLU,../datasets/MMLU/results/MUTATION__MM__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_13-05-2025__F-data_normalized_STEM_dev_0.csv,MUTATION,True,95,87.36842105263159,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
-```
-{question}
-```
-Choices:
-```
-{choices}
-```
-",1.0,1,MAJOR_ANSWER,gpt-4o,0.0,
-592,13-05-2025,MMLU,../datasets/MMLU/results/MUTATION__MM__RERANK__O-STRUCTURED_COT___I-N_13-05-2025__F-data_normalized_STEM_dev_0.csv,MUTATION,True,95,84.21052631578947,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
-```
-{question}
-```
-Choices:
-```
-{choices}
-```
-",1.0,1,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
