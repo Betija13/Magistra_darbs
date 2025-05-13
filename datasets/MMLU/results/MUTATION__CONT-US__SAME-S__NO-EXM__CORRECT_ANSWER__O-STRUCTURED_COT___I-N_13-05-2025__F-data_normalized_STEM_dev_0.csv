@@ -1,0 +1,1746 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score,task_prompt_all,task_prompts_majority
+0,,"Find all c in Z_3 such that Z_3[x]/(x^2 + c) is a field.
+A) 0
+B) 1
+C) 2
+D) 3",B,"SOLUTION_EXPLANATION: To determine when Z_3[x]/(x^2 + c) is a field, we need x^2 + c to be irreducible over Z_3. This means x^2 + c should not have any roots in Z_3. We check for each c in Z_3 = {0, 1, 2}:
+
+1. For c = 0, x^2 + 0 = x^2, which is reducible as it has a root at x = 0.
+2. For c = 1, x^2 + 1 is irreducible because it has no roots in Z_3. Checking x = 0, 1, 2:
+   - x = 0: 0^2 + 1 = 1 (not 0)
+   - x = 1: 1^2 + 1 = 2 (not 0)
+   - x = 2: 2^2 + 1 = 4 mod 3 = 1 (not 0)
+3. For c = 2, x^2 + 2 is irreducible because it has no roots in Z_3. Checking x = 0, 1, 2:
+   - x = 0: 0^2 + 2 = 2 (not 0)
+   - x = 1: 1^2 + 2 = 3 mod 3 = 0 (root found)
+   - x = 2: 2^2 + 2 = 6 mod 3 = 0 (root found)
+
+Thus, x^2 + 1 is the only irreducible polynomial, so c = 1 is the only value for which Z_3[x]/(x^2 + c) is a field.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+1,,"Statement 1 | If aH is an element of a factor group, then |aH| divides |a|. Statement 2 | If H and K are subgroups of G then HK is a subgroup of G.
+A) True, True
+B) False, False
+C) True, False
+D) False, True",B,"SOLUTION_EXPLANATION: Statement 1 is false because the order of a coset aH in a factor group G/H is not necessarily related to the order of the element a in G. The order of aH is determined by the index of H in G, not by the order of a. Statement 2 is false because the product of two subgroups HK is not necessarily a subgroup unless certain conditions are met, such as one of the subgroups being normal in G.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+2,,"Statement 1 | Every element of a group generates a cyclic subgroup of the group. Statement 2 | The symmetric group S_10 has 10 elements.
+A) True, True
+B) False, False
+C) True, False
+D) False, True",C,"SOLUTION_EXPLANATION: Statement 1 is true because in group theory, every element of a group indeed generates a cyclic subgroup, which is the set of all powers of that element. Statement 2 is false because the symmetric group S_10, which is the group of all permutations of 10 elements, has 10! (10 factorial) elements, not just 10. Therefore, the correct choice is C) True, False.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+3,,"Statement 1| Every function from a finite set onto itself must be one to one. Statement 2 | Every subgroup of an abelian group is abelian.
+A) True, True
+B) False, False
+C) True, False
+D) False, True",A,"SOLUTION_EXPLANATION: Statement 1 is true because if a function is onto (surjective) from a finite set to itself, it must also be one-to-one (injective). This is due to the pigeonhole principle, which states that if there are n elements in the domain and n elements in the codomain, and every element in the codomain is mapped to by some element in the domain, then each element in the domain must map to a unique element in the codomain. Statement 2 is also true because a subgroup of an abelian group inherits the commutative property of the group operation, making it abelian as well.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+4,,"Find the characteristic of the ring 2Z.
+A) 0
+B) 3
+C) 12
+D) 30",A,"SOLUTION_EXPLANATION: The ring 2Z consists of all integers that are multiples of 2. The characteristic of a ring is the smallest positive integer n such that n times the multiplicative identity (which is 1 in the ring of integers) is equal to the additive identity (which is 0). In the ring 2Z, the multiplicative identity is 2, because 2 is the smallest positive integer in 2Z that acts like 1 in the integers. Therefore, we need to find the smallest n such that n * 2 = 0 in 2Z. However, since 2Z is an infinite ring and there is no such n that makes n * 2 = 0, the characteristic of 2Z is 0.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+5,,"What is the embryological origin of the hyoid bone?
+A) The first pharyngeal arch
+B) The first and second pharyngeal arches
+C) The second pharyngeal arch
+D) The second and third pharyngeal arches",D,"SOLUTION_EXPLANATION: The hyoid bone is derived from the second and third pharyngeal arches. The lesser horn and the upper part of the body of the hyoid bone develop from the second pharyngeal arch, while the greater horn and the lower part of the body develop from the third pharyngeal arch.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+6,,"Which of these branches of the trigeminal nerve contain somatic motor processes?
+A) The supraorbital nerve
+B) The infraorbital nerve
+C) The mental nerve
+D) None of the above",D,"SOLUTION_EXPLANATION: The trigeminal nerve (cranial nerve V) has three main branches: the ophthalmic (V1), maxillary (V2), and mandibular (V3) nerves. The ophthalmic and maxillary branches are purely sensory, while the mandibular branch contains both sensory and motor fibers. The motor fibers of the mandibular branch innervate the muscles of mastication. The supraorbital nerve is a branch of the ophthalmic nerve (V1), the infraorbital nerve is a branch of the maxillary nerve (V2), and the mental nerve is a branch of the mandibular nerve (V3). However, the mental nerve itself is purely sensory. Therefore, none of the listed nerves contain somatic motor processes.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+7,,"The pleura
+A) have no sensory innervation.
+B) are separated by a 2 mm space.
+C) extend into the neck.
+D) are composed of respiratory epithelium.",C,"SOLUTION_EXPLANATION: The pleura are the membranes surrounding the lungs and lining the chest cavity. They consist of two layers: the visceral pleura, which covers the lungs, and the parietal pleura, which lines the chest wall. The pleura do extend into the neck as the apex of the lung and the pleura reach above the level of the first rib into the neck region. Therefore, the correct answer is (C) extend into the neck.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+8,,"In Angle's Class II Div 2 occlusion there is
+A) excess overbite of the upper lateral incisors.
+B) negative overjet of the upper central incisors.
+C) excess overjet of the upper lateral incisors.
+D) excess overjet of the upper central incisors.",C,"SOLUTION_EXPLANATION: Angle's Class II Division 2 occlusion is characterized by retroclined (tilted towards the lingual/palatal side) upper central incisors, leading to a deep overbite without a significant overjet. This is not associated with a negative overjet (which suggests a reversal in normal anteroposterior relationships) or excess overjet. Therefore, the defining feature is the deep overbite of the upper incisors as a group, particularly linked to the retroclined upper anterior teeth in Class II Div 2.
+ANSWER_AS_LETTER: A",False,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), or (D).
+------
+Choose the correct option from (A), (B), (C), or (D) to complete the task.
+------
+Select the right choice from (A), (B), (C), or (D) to accomplish the task.
+------
+Imagine you're a detective solving a mystery; choose the correct option from (A), (B), (C), or (D) to crack the case.
+------
+Picture yourself as a detective unraveling a mystery; select the right choice from (A), (B), (C), or (D) to solve the case.
+------
+Imagine you're a detective piecing together clues; choose the correct option from (A), (B), (C), or (D) to crack the case.
+------
+Picture yourself as a detective unraveling a mystery; select the right choice from (A), (B), (C), or (D) to solve the puzzle.
+------
+Imagine you're a sleuth piecing together clues; choose the correct option from (A), (B), (C), or (D) to crack the case.
+------
+Envision yourself as a detective unraveling mysteries; select the right answer from (A), (B), (C), or (D) to solve the puzzle.
+------
+Imagine yourself as an explorer uncovering secrets; choose the correct option from (A), (B), (C), or (D) to crack the code.
+------
+Visualize yourself as a discoverer revealing mysteries; select the right choice from (A), (B), (C), or (D) to solve the puzzle.
+------
+Imagine yourself as an explorer uncovering secrets; choose the correct option from (A), (B), (C), or (D) to crack the enigma.
+------
+Picture yourself as a detective solving mysteries; select the right choice from (A), (B), (C), or (D) to unlock the puzzle.
+------
+Imagine being a detective unraveling mysteries; choose the correct option from (A), (B), (C), or (D) to solve the puzzle.
+------
+Picture yourself as a treasure hunter deciphering clues; select the right answer from (A), (B), (C), or (D) to unlock the treasure.
+------
+Imagine you're a treasure hunter solving riddles; choose the correct option from (A), (B), (C), or (D) to find the treasure.
+------
+Pretend you're a treasure seeker deciphering clues; select the right answer from (A), (B), (C), or (D) to locate the treasure.
+------
+Imagine you're an adventurer solving riddles; choose the correct option from (A), (B), (C), or (D) to find the treasure.
+------
+Pretend you're an explorer deciphering puzzles; select the right answer from (A), (B), (C), or (D) to discover the treasure.
+------
+Imagine you're an adventurer solving riddles; choose the correct option from (A), (B), (C), or (D) to find the hidden treasure.
+------
+Pretend you're a detective cracking codes; select the right answer from (A), (B), (C), or (D) to uncover the secret location.
+------
+Imagine you're a code-breaking detective; choose the correct option from (A), (B), (C), or (D) to reveal the hidden location.
+------
+Assume the role of a code-breaking detective and select the right option from (A), (B), (C), or (D) to uncover the secret location.
+------
+Imagine you're a detective deciphering codes and choose the correct option from (A), (B), (C), or (D) to reveal the hidden location.
+------
+Pretend you're a detective solving codes and select the right choice from (A), (B), (C), or (D) to uncover the secret location.
+------
+Imagine you're a treasure hunter deciphering ancient maps and choose the correct option from (A), (B), (C), or (D) to find the hidden treasure.
+------
+Pretend you're an explorer interpreting old maps and select the right choice from (A), (B), (C), or (D) to locate the secret treasure.
+------
+Imagine you're an archaeologist deciphering ancient scrolls and choose the correct option from (A), (B), (C), or (D) to find the hidden artifact.
+------
+Pretend you are an archaeologist interpreting ancient manuscripts and select the right choice from (A), (B), (C), or (D) to discover the concealed artifact.
+------
+Imagine you are an archaeologist deciphering ancient texts and choose the correct option from (A), (B), (C), or (D) to uncover the hidden artifact.
+------
+Pretend to be an archaeologist interpreting old manuscripts and select the right choice from (A), (B), (C), or (D) to reveal the concealed relic.
+------
+Imagine you're an archaeologist deciphering ancient texts and choose the correct option from (A), (B), (C), or (D) to uncover the hidden artifact.
+------
+Pretend to be an archaeologist interpreting ancient writings and select the right choice from (A), (B), (C), or (D) to reveal the concealed artifact.
+------
+Imagine you are an archaeologist deciphering ancient texts and choose the correct option from (A), (B), (C), or (D) to uncover the hidden artifact.
+------
+Pretend to be an archaeologist interpreting old manuscripts and select the right choice from (A), (B), (C), or (D) to reveal the concealed artifact.
+------
+Imagine you are an archaeologist deciphering ancient texts and choose the correct option from (A), (B), (C), or (D) to uncover the hidden artifact.
+------
+Picture yourself as a detective solving a mystery, and select the right option from (A), (B), (C), or (D) to crack the case and reveal the secret.
+------
+Imagine you are a detective unraveling a mystery, and choose the correct option from (A), (B), (C), or (D) to solve the case and uncover the secret.
+------
+Pretend you are an investigator piecing together clues, and select the right choice from (A), (B), (C), or (D) to crack the case and reveal the truth.
+------
+Imagine you are a detective gathering evidence, and choose the correct option from (A), (B), (C), or (D) to solve the mystery and uncover the truth.
+------
+Pretend you are a detective collecting clues, and select the right choice from (A), (B), (C), or (D) to crack the case and reveal the truth.
+------
+Imagine you are a detective gathering evidence, and choose the correct option from (A), (B), (C), or (D) to solve the mystery and uncover the truth.
+------
+Pretend you are an investigator collecting clues, and select the right choice from (A), (B), (C), or (D) to crack the case and reveal the facts.
+------
+Imagine you are a detective gathering evidence, and choose the correct option from (A), (B), (C), or (D) to solve the mystery and uncover the truth.
+------
+Pretend you are a detective collecting clues, and select the right choice from (A), (B), (C), or (D) to crack the case and reveal the truth.
+------
+Imagine you're a detective gathering evidence, and choose the correct option from (A), (B), (C), or (D) to solve the mystery and uncover the truth.
+------
+Pretend you are a detective collecting clues, and select the right choice from (A), (B), (C), or (D) to crack the case and reveal the truth.
+------
+Imagine you're a treasure hunter on an epic quest, and choose the correct option from (A), (B), (C), or (D) to unlock the hidden treasure.
+------
+Picture yourself as a treasure hunter on a grand adventure, and select the right choice from (A), (B), (C), or (D) to reveal the secret treasure.
+------
+Imagine you're an explorer on a thrilling quest, and choose the correct option from (A), (B), (C), or (D) to uncover the hidden treasure.
+------
+Picture yourself as an adventurer on an exciting journey, and select the right choice from (A), (B), (C), or (D) to discover the secret treasure.
+------
+Imagine you are an explorer on a thrilling quest, and choose the correct option from (A), (B), (C), or (D) to uncover the hidden treasure.
+------
+Pretend you are an adventurer on an exciting mission, and select the right choice from (A), (B), (C), or (D) to discover the secret treasure.
+------
+Imagine you're a daring explorer on a thrilling quest, and choose the correct option from (A), (B), (C), or (D) to uncover the hidden treasure.
+------
+Picture yourself as an adventurous explorer on an exciting mission, and select the right choice from (A), (B), (C), or (D) to discover the secret treasure.
+------
+Imagine you are a daring adventurer on a thrilling quest, and choose the correct option from (A), (B), (C), or (D) to uncover the hidden treasure.
+------
+Picture yourself as a bold explorer on an exciting mission, and select the right choice from (A), (B), (C), or (D) to discover the secret treasure.
+------
+Imagine you are a daring adventurer on a thrilling quest, and choose the correct option from (A), (B), (C), or (D) to uncover the hidden treasure.
+------
+Embark on an epic journey as a fearless explorer and select the right option from (A), (B), (C), or (D) to unlock the secrets of the ancient treasure.
+------
+Begin an adventurous quest as a brave explorer and choose the correct option from (A), (B), (C), or (D) to reveal the mysteries of the ancient treasure.
+------
+Embark on a daring journey as a fearless adventurer and select the right choice from (A), (B), (C), or (D) to uncover the secrets of the lost relic.
+------
+Set out on a bold expedition as a brave explorer and choose the correct option from (A), (B), (C), or (D) to reveal the mysteries of the hidden artifact.
+------
+Embark on an adventurous journey as a daring adventurer and select the right choice from (A), (B), (C), or (D) to uncover the secrets of the concealed relic.
+------
+Set off on a thrilling quest as a bold explorer and choose the correct option from (A), (B), (C), or (D) to reveal the mysteries of the hidden artifact.
+------
+Embark on an adventurous journey as a daring adventurer and select the right choice from (A), (B), (C), or (D) to uncover the secrets of the ancient relic.
+------
+Set out on a thrilling quest as a bold explorer and choose the correct option from (A), (B), (C), or (D) to reveal the mysteries of the ancient artifact.
+------
+Embark on an exciting adventure as a daring explorer and select the right choice from (A), (B), (C), or (D) to uncover the secrets of the ancient artifact.
+------
+Set off on a thrilling quest as a bold adventurer and choose the correct option from (A), (B), (C), or (D) to reveal the mysteries of the ancient relic.
+------
+Embark on an exciting journey as a daring explorer and select the right choice from (A), (B), (C), or (D) to uncover the secrets of the ancient artifact.
+------
+Join a thrilling adventure as a treasure hunter and choose the correct option from (A), (B), (C), or (D) to unlock the mysteries of the hidden treasure.
+------
+Embark on an exciting quest as a treasure hunter and select the right choice from (A), (B), (C), or (D) to unravel the secrets of the hidden treasure.
+------
+Set off on a thrilling adventure as a treasure seeker and choose the correct option from (A), (B), (C), or (D) to discover the mysteries of the concealed treasure.
+------
+Embark on an exciting quest as a treasure hunter and select the right choice from (A), (B), (C), or (D) to unveil the secrets of the hidden treasure.
+------
+Choose the correct option from (A), (B), (C), or (D) to discover the mysteries of the hidden treasure as a daring treasure hunter.
+------
+Select the right answer from (A), (B), (C), or (D) to unveil the secrets of the concealed treasure as an adventurous treasure seeker.
+------
+Choose the correct option from (A), (B), (C), or (D) to unlock the mysteries of the hidden treasure as a daring explorer.
+------
+Select the right answer from (A), (B), (C), or (D) to unravel the secrets of the concealed treasure as an adventurous explorer.
+------
+Choose the correct option from (A), (B), (C), or (D) to discover the hidden treasure as a daring explorer.
+------
+Select the right answer from (A), (B), (C), or (D) to uncover the secret treasure as an adventurous explorer.
+------
+Choose the correct option from (A), (B), (C), or (D) to discover the hidden treasure as a daring explorer.
+------
+Embark on a thrilling quest by selecting the right option from (A), (B), (C), or (D) to unlock the secrets of the ancient map.
+------
+Choose the correct answer from (A), (B), (C), or (D) to reveal the mysteries of the ancient map in an exciting adventure.
+------
+Select the right option from (A), (B), (C), or (D) to unlock the secrets of the ancient map in a thrilling quest.
+------
+Choose the correct answer from (A), (B), (C), or (D) to reveal the mysteries of the ancient map in an exciting adventure.
+------
+Select the right option from (A), (B), (C), or (D) to unlock the secrets of the ancient map in a thrilling quest.
+------
+Choose the correct answer from (A), (B), (C), or (D) to reveal the mysteries of the ancient map in an exciting adventure.
+------
+Select the right option from (A), (B), (C), or (D) to unlock the secrets of the ancient map in a thrilling quest.
+------
+Choose the correct choice from (A), (B), (C), or (D) to reveal the mysteries of the ancient map in an exciting adventure.
+------
+Select the right option from (A), (B), (C), or (D) to uncover the secrets of the ancient map in a thrilling quest.
+------
+Choose the correct answer from (A), (B), (C), or (D) to reveal the mysteries of the ancient map in an exciting adventure.
+------
+Select the right option from (A), (B), (C), or (D) to uncover the secrets of the ancient map in a thrilling quest.
+------
+Choose the correct answer from (A), (B), (C), or (D) to help the detective solve the mystery and crack the case.
+------
+Select the right option from (A), (B), (C), or (D) to assist the detective in unraveling the mystery and solving the case.
+------
+Choose the correct answer from (A), (B), (C), or (D) to help the detective crack the mystery and resolve the case.
+------
+Select the right option from (A), (B), (C), or (D) to assist the detective in solving the mystery and closing the case.
+------
+Choose the correct answer from options (A), (B), (C), or (D) to help the detective solve the mystery and conclude the investigation.
+------
+Select the right option from (A), (B), (C), or (D) to assist the detective in unraveling the mystery and finalizing the case.
+------
+Choose the correct answer from options (A), (B), (C), or (D) to help the detective solve the mystery and close the case.
+------
+Select the right option from (A), (B), (C), or (D) to assist the detective in resolving the mystery and concluding the case.
+------
+Choose the correct answer from (A), (B), (C), or (D) to help the detective solve the mystery and close the case.
+------
+Select the right option from (A), (B), (C), or (D) to assist the detective in unraveling the mystery and concluding the investigation.
+------
+Choose the correct answer from (A), (B), (C), or (D) to help the detective solve the mystery and finish the investigation.
+------
+Help the detective crack the case by selecting the right answer from (A), (B), (C), or (D) to uncover the next clue.
+------
+Assist the detective in solving the case by choosing the correct option from (A), (B), (C), or (D) to reveal the next clue.
+------
+Help the detective crack the case by selecting the right choice from (A), (B), (C), or (D) to uncover the subsequent clue.
+------
+Assist the detective in solving the mystery by choosing the correct option from (A), (B), (C), or (D) to reveal the next clue.
+------
+Help the detective crack the case by selecting the right answer from options (A), (B), (C), or (D) to uncover the next hint.
+------
+Assist the investigator in solving the mystery by choosing the correct option from (A), (B), (C), or (D) to reveal the subsequent clue.
+------
+Help the detective unravel the enigma by selecting the right choice from (A), (B), (C), or (D) to uncover the next hint.
+------
+Assist the detective in solving the mystery by choosing the correct option from (A), (B), (C), or (D) to reveal the next clue.
+------
+Help the detective unravel the mystery by selecting the right choice from (A), (B), (C), or (D) to uncover the next clue.
+------
+Assist the detective in solving the mystery by choosing the correct option from (A), (B), (C), or (D) to reveal the next clue.
+------
+Help the detective unravel the mystery by selecting the right choice from (A), (B), (C), or (D) to uncover the next clue.
+------
+Join the treasure hunt by choosing the correct option from (A), (B), (C), or (D) to reveal the next piece of the map.
+------
+Select the right choice from (A), (B), (C), or (D) to uncover the next segment of the treasure map and continue the hunt.
+------
+Choose the correct option from (A), (B), (C), or (D) to reveal the next clue and advance in the treasure quest.
+------
+Select the right answer from (A), (B), (C), or (D) to unlock the next hint and progress in the treasure hunt.
+------
+Choose the correct option from (A), (B), (C), or (D) to reveal the next clue and advance in the treasure hunt.
+------
+Select the right answer from options (A), (B), (C), or (D) to unlock the next hint and progress in the treasure quest.
+------
+Choose the correct option from (A), (B), (C), or (D) to reveal the next clue and advance in the treasure hunt.
+------
+Select the right answer from options (A), (B), (C), or (D) to unlock the next hint and progress in the treasure hunt.
+------
+Choose the correct option from (A), (B), (C), or (D) to reveal the next clue and advance in the treasure hunt.
+------
+Select the right answer from (A), (B), (C), or (D) to unlock the next clue and progress in the treasure hunt.
+------
+Choose the correct option from (A), (B), (C), or (D) to reveal the next clue and continue the treasure hunt.
+------
+Imagine you're on a thrilling treasure hunt; pick the right answer from (A), (B), (C), or (D) to unlock the next exciting clue!
+------
+Picture yourself on an exciting treasure quest; choose the correct option from (A), (B), (C), or (D) to reveal the next thrilling clue!
+------
+Imagine you're on a thrilling treasure hunt; select the right option from (A), (B), (C), or (D) to uncover the next exciting clue!
+------
+Picture yourself on an exciting treasure quest; choose the correct option from (A), (B), (C), or (D) to reveal the next thrilling clue!
+------
+Imagine you're on a thrilling treasure hunt; select the right option from (A), (B), (C), or (D) to uncover the next exciting clue!
+------
+Pretend you're on an exciting treasure hunt; choose the correct option from (A), (B), (C), or (D) to find the next clue!
+------
+Imagine you're on a thrilling quest for treasure; select the right choice from (A), (B), (C), or (D) to uncover the next hint!
+------
+Picture yourself on an exciting treasure hunt; choose the correct option from (A), (B), (C), or (D) to find the next clue!
+------
+Imagine you're on a thrilling treasure hunt; select the right option from (A), (B), (C), or (D) to discover the next clue!
+------
+Picture yourself on an exciting treasure quest; choose the correct answer from (A), (B), (C), or (D) to find the next hint!
+------
+Imagine you're on a thrilling treasure hunt; select the right option from (A), (B), (C), or (D) to uncover the next clue!
+------
+Picture yourself as a detective solving a mystery; choose the correct answer from (A), (B), (C), or (D) to crack the case!
+------
+Imagine you're a detective unraveling a mystery; select the right option from (A), (B), (C), or (D) to solve the case!
+------
+Picture yourself as a detective piecing together a mystery; choose the correct option from (A), (B), (C), or (D) to crack the case!
+------
+Imagine you're a detective solving a mystery; select the right choice from (A), (B), (C), or (D) to unravel the case!
+------
+Pretend you're a detective cracking a case; choose the correct option from (A), (B), (C), or (D) to solve the mystery!
+------
+Imagine you're a detective solving a mystery; select the right choice from (A), (B), (C), or (D) to crack the case!
+------
+Pretend you're a detective unraveling a mystery; choose the correct option from (A), (B), (C), or (D) to solve the case!
+------
+Imagine you're a detective solving a mystery; select the right option from (A), (B), (C), or (D) to crack the case!
+------
+Envision yourself as a detective unraveling a mystery; choose the correct option from (A), (B), (C), or (D) to solve the case!
+------
+Imagine you're a detective piecing together clues; select the right choice from (A), (B), (C), or (D) to crack the case!
+------
+Envision yourself as a detective assembling evidence; choose the correct option from (A), (B), (C), or (D) to solve the mystery!
+------
+Imagine you're a treasure hunter deciphering clues; select the right answer from (A), (B), (C), or (D) to unlock the hidden treasure!
+------
+Picture yourself as a treasure hunter solving riddles; choose the correct option from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Imagine you're an adventurer deciphering clues; select the right answer from (A), (B), (C), or (D) to unveil the secret treasure!
+------
+Picture yourself as an explorer solving riddles; choose the correct option from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Imagine you're an adventurer deciphering puzzles; select the right answer from (A), (B), (C), or (D) to unveil the secret treasure!
+------
+Envision yourself as an explorer solving riddles; choose the correct option from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Imagine yourself as a detective unraveling mysteries; select the right answer from (A), (B), (C), or (D) to unlock the secret prize!
+------
+Picture yourself as a sleuth solving puzzles; choose the correct option from (A), (B), (C), or (D) to discover the hidden reward!
+------
+Imagine you're a detective unraveling mysteries; select the right answer from (A), (B), (C), or (D) to unveil the secret prize!
+------
+Picture yourself as a detective solving puzzles; choose the correct option from (A), (B), (C), or (D) to discover the hidden reward!
+------
+Imagine you're a detective unraveling mysteries; select the right choice from (A), (B), (C), or (D) to uncover the secret prize!
+------
+Picture yourself as a treasure hunter on a quest; choose the correct option from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Imagine you're a treasure hunter on an adventure; select the right choice from (A), (B), (C), or (D) to find the hidden treasure!
+------
+Picture yourself as an explorer on a quest; choose the correct option from (A), (B), (C), or (D) to uncover the secret treasure!
+------
+Imagine you're an adventurer on a mission; select the right choice from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Picture yourself as an explorer on a quest; choose the correct option from (A), (B), (C), or (D) to uncover the secret treasure!
+------
+Imagine you're an adventurer on a mission; select the right choice from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Picture yourself as an explorer on a quest; choose the correct option from (A), (B), (C), or (D) to uncover the secret treasure!
+------
+Imagine you're an adventurer on a mission; select the right choice from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Pretend you're on a quest; choose the correct option from (A), (B), (C), or (D) to uncover the secret treasure!
+------
+Imagine you're on an adventure; select the right choice from (A), (B), (C), or (D) to discover the hidden treasure!
+------
+Picture yourself on a quest; choose the correct option from (A), (B), (C), or (D) to uncover the secret treasure!
+------
+Imagine you're a detective solving a mystery; select the right clue from (A), (B), (C), or (D) to crack the case!
+------
+Picture yourself as a detective unraveling a mystery; choose the correct clue from options (A), (B), (C), or (D) to solve the case!
+------
+Imagine you're a sleuth piecing together a puzzle; select the right hint from choices (A), (B), (C), or (D) to crack the enigma!
+------
+Picture yourself as a detective solving a mystery; choose the correct clue from options (A), (B), (C), or (D) to unravel the riddle!
+------
+Imagine you're an investigator piecing together a puzzle; select the right hint from choices (A), (B), (C), or (D) to crack the enigma!
+------
+Visualize yourself as a detective unraveling a mystery; choose the correct clue from options (A), (B), (C), or (D) to solve the riddle!
+------
+Imagine you're a sleuth piecing together a puzzle; select the right hint from choices (A), (B), (C), or (D) to crack the enigma!
+------
+Picture yourself as a detective solving a mystery; choose the correct clue from options (A), (B), (C), or (D) to unravel the secret!
+------
+Imagine you're a detective piecing together a mystery; select the right clue from options (A), (B), (C), or (D) to uncover the truth!
+------
+Think like a detective solving a case; choose the correct clue from options (A), (B), (C), or (D) to reveal the truth!
+------
+Imagine you're a detective piecing together a mystery; select the right clue from options (A), (B), (C), or (D) to uncover the truth!
+------
+Imagine you're a treasure hunter deciphering a map; choose the correct path from options (A), (B), (C), or (D) to find the hidden treasure!
+------
+Envision yourself as an explorer interpreting a map; select the right route from choices (A), (B), (C), or (D) to discover the concealed treasure!
+------
+Imagine you are a navigator deciphering a chart; choose the correct path from options (A), (B), (C), or (D) to uncover the hidden treasure!
+------
+Envision yourself as an explorer interpreting a map; select the right route from choices (A), (B), (C), or (D) to discover the concealed treasure!
+------
+Imagine you are a navigator analyzing a chart; choose the correct path from options (A), (B), (C), or (D) to uncover the hidden treasure!
+------
+Pretend you are an explorer studying a map; select the right route from choices (A), (B), (C), or (D) to discover the secret treasure!
+------
+Imagine you are a navigator charting a course; choose the optimal path from options (A), (B), (C), or (D) to uncover the hidden treasure!
+------
+Visualize yourself as an explorer plotting a journey; select the best route from choices (A), (B), (C), or (D) to discover the concealed treasure!
+------
+Imagine you're an adventurer planning a quest; choose the optimal path from options (A), (B), (C), or (D) to uncover the hidden treasure!
+------
+Picture yourself as an explorer on a mission; select the best route from choices (A), (B), (C), or (D) to discover the secret treasure!
+------
+Imagine you're an adventurer on a quest; choose the optimal path from options (A), (B), (C), or (D) to uncover the hidden treasure!
+------
+Picture yourself as a detective solving a mystery; select the best clue from options (A), (B), (C), or (D) to crack the case!
+------
+Imagine you're a detective unraveling a mystery; choose the most compelling clue from options (A), (B), (C), or (D) to solve the case!
+------
+Picture yourself as a detective piecing together a mystery; select the most intriguing clue from options (A), (B), (C), or (D) to crack the case!
+------
+Imagine yourself as a detective unraveling a mystery; choose the most captivating clue from options (A), (B), (C), or (D) to solve the case!
+------
+Picture yourself as a detective on a thrilling case; select the most intriguing clue from choices (A), (B), (C), or (D) to crack the mystery!
+------
+Imagine you're a detective on an exciting case; choose the most captivating clue from options (A), (B), (C), or (D) to solve the mystery!
+------
+Pretend you're a detective on a thrilling investigation; select the most intriguing clue from choices (A), (B), (C), or (D) to crack the case!
+------
+Imagine you're a detective on an exciting case; choose the most compelling clue from options (A), (B), (C), or (D) to solve the mystery!",[]
+9,,"Which of the following is the body cavity that contains the pituitary gland?
+A) Abdominal
+B) Cranial
+C) Pleural
+D) Spinal",B,"SOLUTION_EXPLANATION: The pituitary gland is located at the base of the brain, within the cranial cavity. It is housed in a small bony structure called the sella turcica of the sphenoid bone, which is part of the cranial cavity. The other options do not contain the pituitary gland: the abdominal cavity contains organs like the stomach and liver, the pleural cavity surrounds the lungs, and the spinal cavity contains the spinal cord.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+10,,"You are pushing a truck along a road. Would it be easier to accelerate this truck on Mars? Why? (Assume there is no friction)
+A) It would be harder since the truck is heavier on Mars.
+B) It would be easier since the truck is lighter on Mars.
+C) It would be harder since the truck is lighter on Mars.
+D) It would be the same no matter where you are.",D,"SOLUTION_EXPLANATION: The ease of accelerating an object is determined by its mass, not its weight. Mass is a measure of the amount of matter in an object and does not change with location. Weight, on the other hand, is the force exerted by gravity on that mass and can change depending on the gravitational field strength of the location. On Mars, the gravitational field is weaker than on Earth, so the truck would weigh less, but its mass remains the same. Since the problem states there is no friction, the only factor affecting the ease of acceleration is the mass of the truck, which does not change. Therefore, it would be the same to accelerate the truck on Mars as it would be on Earth.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+11,,"Where do most short-period comets come from and how do we know?
+A) The Kuiper belt; short period comets tend to be in the plane of the solar system just like the Kuiper belt.
+B) The Kuiper belt; short period comets tend to come from random directions indicating a spherical distribution of comets called the Kuiper belt.
+C) The asteroid belt; short period comets have orbital periods similar to asteroids like Vesta and are found in the plane of the solar system just like the asteroid belt.
+D) The Oort cloud; short period comets tend to be in the plane of the solar system just like the Oort cloud.",A,"SOLUTION_EXPLANATION: Short-period comets are known to originate from the Kuiper belt. This is because they tend to have orbits that lie in the plane of the solar system, similar to the distribution of objects in the Kuiper belt. The Kuiper belt is a region of the solar system beyond the orbit of Neptune, populated with icy bodies and is the source of many short-period comets. This is in contrast to the Oort cloud, which is a distant, spherical shell of icy bodies that is thought to be the source of long-period comets. The asteroid belt, located between Mars and Jupiter, is not a source of comets but rather of asteroids. Therefore, the correct answer is A.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+12,,"Say the pupil of your eye has a diameter of 5 mm and you have a telescope with an aperture of 50 cm. How much more light can the telescope gather than your eye?
+A) 10000 times more
+B) 100 times more
+C) 1000 times more
+D) 10 times more",A,"SOLUTION_EXPLANATION: The amount of light gathered by an optical instrument is proportional to the area of its aperture. The area of a circle is given by the formula A = πr², where r is the radius. 
+
+For the eye, with a diameter of 5 mm, the radius is 2.5 mm. The area is π(2.5 mm)² = 6.25π mm².
+
+For the telescope, with a diameter of 50 cm (or 500 mm), the radius is 250 mm. The area is π(250 mm)² = 62500π mm².
+
+The ratio of the areas, which gives the ratio of the light-gathering power, is 62500π / 6.25π = 10000.
+
+Therefore, the telescope gathers 10000 times more light than the eye.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+13,,"Why isn't there a planet where the asteroid belt is located?
+A) A planet once formed here but it was broken apart by a catastrophic collision.
+B) There was not enough material in this part of the solar nebula to form a planet.
+C) There was too much rocky material to form a terrestrial planet but not enough gaseous material to form a jovian planet.
+D) Resonance with Jupiter prevented material from collecting together to form a planet.",D,"SOLUTION_EXPLANATION: The asteroid belt is located between Mars and Jupiter. The gravitational influence of Jupiter, particularly its orbital resonance, has a significant impact on the region. The strong gravitational pull and resonances from Jupiter prevented the material in the asteroid belt from coalescing into a planet. Instead, the material remained as smaller bodies, forming the asteroid belt. Therefore, the correct answer is (D) Resonance with Jupiter prevented material from collecting together to form a planet.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+14,,"Why is Mars red?
+A) Because the surface is covered with heavily oxidized (""rusted"") minerals.
+B) Because the atmosphere scatters more light at bluer wavelengths transmitting mostly red light.
+C) Because Mars is covered with ancient lava flows which are red in color.
+D) Because flowing water on Mars's surface altered the surface minerals several billion years ago.",A,"SOLUTION_EXPLANATION: Mars appears red because its surface is covered with iron-rich minerals that have oxidized, or rusted, giving it a reddish appearance. This is similar to how rust forms on iron on Earth, which is why the planet is often referred to as the 'Red Planet'.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+15,,"Which of the following represents an accurate statement concerning arthropods?
+A) They possess an exoskeleton composed primarily of peptidoglycan.
+B) They possess an open circulatory system with a dorsal heart.
+C) They are members of a biologically unsuccessful phylum incapable of exploiting diverse habitats and nutrition sources.
+D) They lack paired, jointed appendages.",B,"SOLUTION_EXPLANATION: Arthropods are characterized by having an exoskeleton made of chitin, not peptidoglycan, so option A is incorrect. They do have an open circulatory system with a dorsal heart, which makes option B correct. Arthropods are one of the most biologically successful phyla, capable of exploiting a wide range of habitats and nutrition sources, so option C is incorrect. They have paired, jointed appendages, so option D is incorrect.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+16,,"In a given population, 1 out of every 400 people has a cancer caused by a completely recessive allele, b. Assuming the population is in Hardy-Weinberg equilibrium, which of the following is the expected proportion of individuals who carry the b allele but are not expected to develop the cancer?
+A) 1/400
+B) 19/400
+C) 20/400
+D) 38/400",D,"SOLUTION_EXPLANATION: In a population in Hardy-Weinberg equilibrium, the frequency of the recessive allele (b) can be determined from the frequency of individuals with the recessive phenotype (bb). Given that 1 out of every 400 people has the cancer, the frequency of bb is 1/400. This means q^2 = 1/400, where q is the frequency of the recessive allele b. Solving for q, we get q = sqrt(1/400) = 1/20.
+
+The frequency of the dominant allele (B) is p, and since p + q = 1, we have p = 1 - 1/20 = 19/20.
+
+The proportion of individuals who are carriers (heterozygous, Bb) is given by 2pq. Therefore, 2pq = 2 * (19/20) * (1/20) = 38/400.
+
+Thus, the expected proportion of individuals who carry the b allele but do not develop cancer is 38/400.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+17,,"The presence of homologous structures in two different organisms, such as the humerus in the front limb of a human and a bird, indicates that
+A) the human and bird are polyphyletic species
+B) a human's and bird's evolution is convergent
+C) the human and bird belong to a clade
+D) the human and bird developed by analogy",C,"SOLUTION_EXPLANATION: Homologous structures are anatomical features that are similar in different species because they were inherited from a common ancestor. This indicates that the species with these structures belong to the same clade, which is a group of organisms that includes an ancestor and all its descendants. Therefore, the presence of homologous structures like the humerus in humans and birds suggests that they share a common evolutionary origin, placing them in the same clade.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+18,,"According to the pressure-flow model of movement of phloem contents, photosynthate movement from source to sink is driven by
+A) an ATP-dependent pressure-flow pump
+B) a water-pressure potential gradient
+C) transpiration
+D) apoplastic diffusion",B,"SOLUTION_EXPLANATION: The pressure-flow model, also known as the mass flow hypothesis, explains the movement of photosynthates (like sugars) in the phloem from source (where they are produced, e.g., leaves) to sink (where they are used or stored, e.g., roots, fruits). This movement is driven by a water-pressure potential gradient. Sugars are actively transported into the phloem sieve tubes at the source, which lowers the water potential inside the sieve tubes, causing water to enter by osmosis. This creates a high turgor pressure at the source end. At the sink, sugars are removed from the phloem, increasing the water potential and causing water to leave the sieve tubes, thus lowering the pressure. The difference in pressure between the source and sink drives the flow of phloem sap. Therefore, the correct answer is B) a water-pressure potential gradient.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+19,,"Which of the following contain DNA sequences required for the segregation of chromosomes in mitosis and meiosis?
+A) Telomeres
+B) Centromeres
+C) Nucleosomes
+D) Spliceosomes",B,"SOLUTION_EXPLANATION: Centromeres are the regions of chromosomes that are essential for the proper segregation of chromosomes during cell division processes such as mitosis and meiosis. They are the attachment points for spindle fibers, which pull the chromosomes apart to opposite poles of the cell. Telomeres, nucleosomes, and spliceosomes do not have this function. Telomeres protect the ends of chromosomes, nucleosomes are involved in DNA packaging, and spliceosomes are involved in RNA processing.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+20,,"Which of the following statements about the lanthanide elements is NOT true?
+A) The most common oxidation state for the lanthanide elements is +3.
+B) Lanthanide complexes often have high coordination numbers (> 6).
+C) All of the lanthanide elements react with aqueous acid to liberate hydrogen.
+D) The atomic radii of the lanthanide elements increase across the period from La to Lu.",D,"SOLUTION_EXPLANATION: The lanthanide contraction is a well-known phenomenon where the atomic radii of the lanthanide elements decrease across the period from La to Lu, not increase. This is due to the poor shielding effect of the f-electrons, which causes the outer electrons to be pulled closer to the nucleus as the atomic number increases. Therefore, statement D is NOT true.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+21,,"A 0.217 g sample of HgO (molar mass = 217 g) reacts with excess iodide ions according to the reaction shown above. Titration of the resulting solution requires how many mL of 0.10 M HCl to reach equivalence point?
+A) 1.0 mL
+B) 10 mL
+C) 20 mL
+D) 50 mL",C,"SOLUTION_EXPLANATION: The reaction of HgO with iodide ions can be represented as: HgO + 2I^- + 2H^+ -> HgI2 + H2O. The molar mass of HgO is 217 g/mol, so 0.217 g of HgO is 0.217 g / 217 g/mol = 0.001 mol of HgO. Since the reaction requires 2 moles of H+ for every mole of HgO, we need 0.002 mol of H+ to reach the equivalence point. The concentration of HCl is 0.10 M, so the volume of HCl needed is 0.002 mol / 0.10 mol/L = 0.020 L = 20 mL.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+22,,"Predict the number of lines in the EPR spectrum of a solution of 13C-labelled methyl radical (13CH3•), assuming the lines do not overlap.
+A) 4
+B) 3
+C) 6
+D) 24",A,"SOLUTION_EXPLANATION: The 13C-labelled methyl radical, 13CH3•, has one 13C nucleus (spin I = 1/2) and three equivalent protons (each with spin I = 1/2). The number of lines in the EPR spectrum can be determined by multiplying the number of lines generated by the carbon nucleus and the protons. For the 13C nucleus, the number of lines is 2*I + 1 = 2*1/2 + 1 = 2. For the three equivalent protons, the number of lines is 2nI + 1 = 2*3*1/2 + 1 = 4. Multiplying the number of lines: 2 (from 13C) * 4 (from 3 H) = 8. Therefore, none of the options provided (4, 3, 6, 24) correctly matches the calculated number of lines (8). However, since none of the presented options are correct, the expected scenario should ideally give a correct option and reevaluation should be sought.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using options (A), (B), (C), or (D).",[]
+23,,"3 Cl−(aq) + 4 CrO_4^2−(aq) + 23 H+(aq) → 3 HClO2(aq) + 4 Cr3+(aq) + 10 H2O(l). In the reaction shown above, Cl−(aq) behaves as
+A) an acid
+B) a base
+C) a catalyst
+D) a reducing agent",D,"SOLUTION_EXPLANATION: In the given reaction, Cl−(aq) is being converted to HClO2(aq). This indicates that Cl− is losing electrons (undergoing oxidation) as it is being transformed into a higher oxidation state in HClO2. Therefore, Cl− is acting as a reducing agent because it donates electrons to another species, which in this case is CrO_4^2−, which is being reduced to Cr3+. A reducing agent is a substance that loses electrons and is oxidized in a chemical reaction.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+24,,"Which of the following lists the hydrides of group-14 elements in order of thermal stability, from lowest to highest?
+A) PbH4 < SnH4 < GeH4 < SiH4 < CH4
+B) PbH4 < SnH4 < CH4 < GeH4 < SiH4
+C) CH4 < SiH4 < GeH4 < SnH4 < PbH4
+D) CH4 < PbH4 < GeH4 < SnH4 < SiH4",A,"SOLUTION_EXPLANATION: The thermal stability of hydrides of group-14 elements decreases as we move down the group. This is because the bond strength between the central atom and hydrogen decreases as the size of the central atom increases. Therefore, the order of thermal stability from lowest to highest is PbH4 < SnH4 < GeH4 < SiH4 < CH4. This corresponds to option A.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+25,,"Which of the following regular expressions is equivalent to (describes the same set of strings as) (a* + b)*(c + d)?
+A) a*(c + d)+ b(c + d)
+B) a*(c + d)* + b(c + d)*
+C) a*(c + d)+ b*(c + d)
+D) (a + b)*c +(a + b)*d",D,"SOLUTION_EXPLANATION: The original regular expression (a* + b)*(c + d) describes strings that consist of any combination of 'a's and 'b's (including the empty string) followed by either 'c' or 'd'.
+
+Let's analyze each option:
+
+A) a*(c + d)+ b(c + d): This describes strings that start with any number of 'a's followed by one or more 'c' or 'd', or start with a 'b' followed by a 'c' or 'd'. This is not equivalent because it requires at least one 'c' or 'd' after 'a's or 'b'.
+
+B) a*(c + d)* + b(c + d)*: This describes strings that start with any number of 'a's followed by any number of 'c' or 'd', or start with a 'b' followed by any number of 'c' or 'd'. This is not equivalent because it allows for multiple 'c's or 'd's, not just one.
+
+C) a*(c + d)+ b*(c + d): This describes strings that start with any number of 'a's followed by one or more 'c' or 'd', or any number of 'b's followed by a single 'c' or 'd'. This is not equivalent because it requires at least one 'c' or 'd' after 'a's or 'b's.
+
+D) (a + b)*c +(a + b)*d: This describes strings that consist of any combination of 'a's and 'b's followed by a single 'c' or 'd'. This is equivalent to the original expression because it allows for any combination of 'a's and 'b's followed by exactly one 'c' or 'd'.
+
+Therefore, the correct answer is D.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+26,,"A certain pipelined RISC machine has 8 general-purpose registers R0, R1, . . . , R7 and supports the following operations.
+ADD Rs1, Rs2, Rd Add Rs1 to Rs2 and put the sum in Rd
+MUL Rs1, Rs2, Rd Multiply Rs1 by Rs2 and put the product in Rd
+An operation normally takes one cycle; however, an operation takes two cycles if it produces a result required by the immediately following operation in an operation sequence. Consider the expression AB + ABC + BC, where variables A, B, C are located in registers R0, R1, R2. If the contents of these three registers must not be modified, what is the minimum number of clock cycles required for an operation sequence that computes the value of AB + ABC + BC?
+A) 5
+B) 6
+C) 7
+D) 8",B,"SOLUTION_EXPLANATION: To compute the expression AB + ABC + BC efficiently, we need to carefully sequence the instructions considering the pipeline delays.
+
+1. Calculate AB = R0 * R1 and store in R3: `MUL R0, R1, R3` (1 cycle since it does not delay the next different computation)
+2. Compute ABC = (R0 * R1) * R2: `MUL R3, R2, R4` (1 cycle as R3 is computed; no delay)
+3. Compute BC = R1 * R2 and store in R5: `MUL R1, R2, R5` (1 cycle as it uses fresh inputs R1, R2)
+4. Now sum the needed results, start with R3 (AB) and R4 (ABC): `ADD R3, R4, R6` (1 cycle)
+5. Finally, sum up with BC: `ADD R6, R5, R7` (2 cycles since R6 is used immediately after)
+
+Adding these cycles: 1 (step 1) + 1 (step 2) + 1 (step 3) + 1 (step 4) + 2 (step 5) = 6 cycles total because of the dependency stalls addressed.
+
+Thus, the minimum number of clock cycles required is 6.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), (D).
+------
+Finish the task and reply with one of the options: (A), (B), (C), or (D).
+------
+Imagine you're a detective solving a mystery; choose the most logical conclusion: (A), (B), (C), or (D).",[]
+27,,"The Singleton design pattern is used to guarantee that only a single instance of a class may be instantiated. Which of the following is (are) true of this design pattern?
+I. The Singleton class has a static factory method to provide its instance.
+II. The Singleton class can be a subclass of another class.
+III. The Singleton class has a private constructor.
+A) I only
+B) II only
+C) III only
+D) I, II, and III",D,"SOLUTION_EXPLANATION: The Singleton design pattern is characterized by having a private constructor to prevent direct instantiation of the class (III is true). It also typically provides a static factory method to return the single instance of the class (I is true). Additionally, a Singleton class can indeed be a subclass of another class, as long as it maintains the Singleton properties (II is true). Therefore, all statements I, II, and III are true.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+28,,"A compiler generates code for the following assignment statement.
+G := (A + B) * C - (D + E) * F
+The target machine has a single accumulator and a single-address instruction set consisting of instructions load, store, add, subtract, and multiply. For the arithmetic operations, the left operand is taken from the accumulator and the result appears in the accumulator. The smallest possible number of instructions in the resulting code is
+A) 5
+B) 6
+C) 7
+D) 9",D,"SOLUTION_EXPLANATION: To compute G := (A + B) * C - (D + E) * F using a single accumulator, we need to break down the expression into smaller parts and use the available instructions. The steps are as follows:
+
+1. Load A into the accumulator.
+2. Add B to the accumulator (accumulator now contains A + B).
+3. Multiply the accumulator by C (accumulator now contains (A + B) * C).
+4. Store the result in a temporary location (let's call it TEMP1).
+5. Load D into the accumulator.
+6. Add E to the accumulator (accumulator now contains D + E).
+7. Multiply the accumulator by F (accumulator now contains (D + E) * F).
+8. Subtract the value in TEMP1 from the accumulator (accumulator now contains (A + B) * C - (D + E) * F).
+9. Store the result in G.
+
+This sequence uses 9 instructions: load, add, multiply, store, load, add, multiply, subtract, store.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+29,,"Consider a computer design in which multiple processors, each with a private cache memory, share global memory using a single bus. This bus is the critical system resource. Each processor can execute one instruction every 500 nanoseconds as long as memory references are satisfied by its local cache. When a cache miss occurs, the processor is delayed for an additional 2,000 nanoseconds. During half of this additional delay, the bus is dedicated to serving the cache miss. During the other half, the processor cannot continue, but the bus is free to service requests from other processors. On average, each instruction requires 2 memory references. On average, cache misses occur on 1 percent of references. What proportion of the capacity of the bus would a single processor consume, ignoring delays due to competition from other processors?
+A) 1/50
+B) 1/27
+C) 1/25
+D) 2/27",B,"SOLUTION_EXPLANATION: To find the proportion of the bus capacity consumed by a single processor, we need to calculate the time the bus is occupied by the processor per instruction. 
+
+Each instruction requires 2 memory references. With a 1% cache miss rate, 0.01 * 2 = 0.02 memory references per instruction result in a cache miss.
+
+For each cache miss, the processor is delayed for 2000 nanoseconds, and during half of this time (1000 nanoseconds), the bus is occupied.
+
+Thus, the bus is occupied for 0.02 * 1000 = 20 nanoseconds per instruction due to cache misses.
+
+The total time to execute an instruction (including cache misses) is 500 nanoseconds (for the instruction itself) + 0.02 * 2000 nanoseconds (for cache misses) = 500 + 40 = 540 nanoseconds.
+
+Therefore, the proportion of the bus capacity consumed by a single processor is 20/540 = 1/27.
+
+Thus, the correct answer is (B) 1/27.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+30,,"Let V be the set of all real polynomials p(x). Let transformations T, S be defined on V by T:p(x) -> xp(x) and S:p(x) -> p'(x) = d/dx p(x), and interpret (ST)(p(x)) as S(T(p(x))). Which of the following is true?
+A) ST = 0
+B) ST = T
+C) ST = TS
+D) ST - TS is the identity map of V onto itself.",D,"SOLUTION_EXPLANATION: To solve this, we need to understand the operations of T and S on a polynomial p(x). The transformation T takes a polynomial p(x) and maps it to xp(x). The transformation S takes a polynomial p(x) and maps it to its derivative p'(x).
+
+Now, let's consider the operation ST, which means we first apply T and then S. Applying T to p(x) gives us xp(x). Then, applying S to xp(x) gives us the derivative of xp(x), which is (xp(x))' = p(x) + xp'(x) by the product rule.
+
+Next, consider the operation TS, which means we first apply S and then T. Applying S to p(x) gives us p'(x). Then, applying T to p'(x) gives us xp'(x).
+
+Now, let's compare ST and TS:
+- ST(p(x)) = p(x) + xp'(x)
+- TS(p(x)) = xp'(x)
+
+The difference ST(p(x)) - TS(p(x)) = p(x) + xp'(x) - xp'(x) = p(x).
+
+This shows that ST - TS is the identity map of V onto itself, as applying this difference to any polynomial p(x) results in p(x) itself.
+
+Therefore, the correct answer is D.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+31,,"A tank initially contains a salt solution of 3 grams of salt dissolved in 100 liters of water. A salt solution containing 0.02 grams of salt per liter of water is sprayed into the tank at a rate of 4 liters per minute. The sprayed solution is continually mixed with the salt solution in the tank, and the mixture flows out of the tank at a rate of 4 liters per minute. If the mixing is instantaneous, how many grams of salt are in the tank after 100 minutes have elapsed?
+A) 2
+B) 2 - e^-2
+C) 2 + e^-2
+D) 2 + e^-4",D,"SOLUTION_EXPLANATION: The problem describes a system where a salt solution is added to a tank at the same rate that a mixed solution leaves the tank, maintaining a constant volume of 100 liters throughout the process. We need to determine the amount of salt in the tank after 100 minutes.
+
+Let S(t) represent the amount of salt in grams at time t in minutes. Initially, S(0) = 3 grams. The rate of change of salt in the tank, dS/dt, can be expressed as the difference between the salt input rate and the salt output rate.
+
+Salt input rate: 0.02 grams/liter * 4 liters/minute = 0.08 grams/minute.
+Salt output rate: The concentration of salt in the tank at time t is S(t)/100, and since 4 liters are leaving the tank per minute, the salt leaving is 4 * (S(t)/100) = S(t)/25 grams/minute.
+
+Thus, the differential equation describing the system is:
+
+dS/dt = 0.08 - S(t)/25.
+
+This is a first-order linear differential equation and can be solved using the integrating factor method.
+
+The integrating factor is e^(t/25).
+Multiplying through by the integrating factor and solving, we find the general solution for S(t):
+
+S(t) = 2 + (3 - 2)e^(-t/25).
+
+Plugging in t = 100 minutes:
+
+S(100) = 2 + (3 - 2)e^{-100/25} = 2 + e^{-4}.
+
+Thus, after 100 minutes, the amount of salt in the tank is given by 2 + e^{-4} grams, which corresponds to option D.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), or (D).
+------
+Select the most appropriate option from (A), (B), (C), or (D) to complete the task.
+------
+Choose the best choice from (A), (B), (C), or (D) to accomplish the task.",[]
+32,,"Let A be a real 2x2 matrix. Which of the following statements must be true?
+I. All of the entries of A^2 are nonnegative.
+II. The determinant of A^2 is nonnegative.
+III. If A has two distinct eigenvalues, then A^2 has two distinct eigenvalues.
+A) I only
+B) II only
+C) III only
+D) II and III only",B,"SOLUTION_EXPLANATION: Statement I is not necessarily true, as squaring a matrix does not ensure all entries become nonnegative. Statement II is true: det(A^2) = det(A) * det(A) = (det(A))^2, which is always nonnegative because it is the square of a real number. Statement III is not necessarily true, because squaring the matrix could result in repeated eigenvalues even when A has distinct eigenvalues.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using the format: (A), (B), (C), (D).
+------
+Finish the task and reply using the structure: (1), (2), (3), (4).
+------
+Complete the task and respond using the format: (A), (B), (C), (D).
+------
+Finish the assignment and reply in the sequence: (A), (B), (C), (D).",[]
+33,,"Suppose that f(1 + x) = f(x) for all real x. If f is a polynomial and f(5) = 11, then f(15/2)
+A) -11
+B) 0
+C) 11
+D) 33/2",C,"SOLUTION_EXPLANATION: The function f(x) is periodic with period 1, meaning f(x) = f(x + 1) for all x. Since f is a polynomial, the only polynomial that is periodic is a constant function. Therefore, f(x) must be a constant function. Given that f(5) = 11, it follows that f(x) = 11 for all x. Thus, f(15/2) = 11.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+34,,"Let A be the set of all ordered pairs of integers (m, n) such that 7m + 12n = 22. What is the greatest negative number in the set B = {m + n : (m, n) \in A}?
+A) -5
+B) -4
+C) -3
+D) -2",B,"SOLUTION_EXPLANATION: To solve for the greatest negative number in set B, we first work on the linear Diophantine equation 7m + 12n = 22. We perform a trial to find a particular solution. Using the Euclidean algorithm, we find 7*2 + 12*(-1) = 2, indicating a gcd of 1. Therefore, the equation 7m + 12n = 22 has integer solutions. A particular solution is m = 10, n = -4 (as calculated from plugging integer values that satisfy the equation without remainder).
+
+General solutions are given by m = 10 + 12t, n = -4 - 7t, for integer t. We want to compute m + n:
+m + n = (10 + 12t) + (-4 - 7t) = 6 + 5t.
+
+To find the greatest negative value for m + n, we need the largest t such that 6 + 5t < 0:
+5t < -6
+t < -1.2
+Rounded down, the largest integer t that satisfies this is t = -2.
+For t = -2:
+6 + 5(-2) = 6 - 10 = -4.
+Hence, the greatest negative value is -4.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using options (A), (B), (C), or (D).",[]
+35,,"A refracting telescope consists of two converging lenses separated by 100 cm. The eye-piece lens has a focal length of 20 cm. The angular magnification of the telescope is
+A) 4
+B) 5
+C) 6
+D) 20",A,"SOLUTION_EXPLANATION: The angular magnification (M) of a refracting telescope is given by the formula M = f_o / f_e, where f_o is the focal length of the objective lens and f_e is the focal length of the eyepiece lens. We know the eyepiece lens has a focal length of 20 cm (f_e = 20 cm). The lenses are separated by 100 cm, which is the sum of the focal lengths of the objective and eyepiece lenses (f_o + f_e = 100 cm). Therefore, f_o = 100 cm - 20 cm = 80 cm. Substituting these values into the magnification formula gives M = 80 cm / 20 cm = 4.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+36,,"For which of the following thermodynamic processes is the increase in the internal energy of an ideal gas equal to the heat added to the gas?
+A) Constant temperature
+B) Constant volume
+C) Constant pressure
+D) Adiabatic",B,"SOLUTION_EXPLANATION: In thermodynamics, the first law states that the change in internal energy of a system is equal to the heat added to the system minus the work done by the system. For an ideal gas, the internal energy change is related to the temperature change. In a constant volume process, no work is done (since work is pressure times volume change, and volume change is zero), so the change in internal energy is equal to the heat added. Therefore, the correct answer is constant volume.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+37,,"One end of a Nichrome wire of length 2L and cross-sectional area A is attached to an end of another Nichrome wire of length L and cross- sectional area 2A. If the free end of the longer wire is at an electric potential of 8.0 volts, and the free end of the shorter wire is at an electric potential of 1.0 volt, the potential at the junction of the two wires is most nearly equal to
+A) 2.4 V
+B) 3.3 V
+C) 4.5 V
+D) 5.7 V",A,"SOLUTION_EXPLANATION: To find the potential at the junction, we need to consider the resistances of the two wires. The resistance R of a wire is given by R = ρL/A, where ρ is the resistivity, L is the length, and A is the cross-sectional area.
+
+For the longer wire (length 2L, area A), the resistance is R1 = ρ(2L)/A = 2ρL/A.
+For the shorter wire (length L, area 2A), the resistance is R2 = ρL/(2A) = ρL/(2A).
+
+The potential difference across the two wires is 8.0 V - 1.0 V = 7.0 V.
+
+The potential at the junction can be found using the voltage division rule:
+
+V_junction = V1 - (R1 / (R1 + R2)) * (V1 - V2)
+
+Substituting the values:
+R1 = 2ρL/A, R2 = ρL/(2A)
+
+V_junction = 8.0 V - ((2ρL/A) / ((2ρL/A) + (ρL/(2A)))) * (8.0 V - 1.0 V)
+
+Simplifying the expression:
+
+V_junction = 8.0 V - (4/5) * 7.0 V
+
+V_junction = 8.0 V - 5.6 V
+
+V_junction = 2.4 V
+
+Therefore, the potential at the junction is most nearly equal to 2.4 V.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+38,,"A refracting telescope consists of two converging lenses separated by 100 cm. The eye-piece lens has a focal length of 20 cm. The angular magnification of the telescope is
+A) 4
+B) 5
+C) 6
+D) 20",A,"SOLUTION_EXPLANATION: The angular magnification (M) of a refracting telescope is given by the formula M = f_o / f_e, where f_o is the focal length of the objective lens and f_e is the focal length of the eyepiece lens. We know the eyepiece lens has a focal length of 20 cm. The total length of the telescope is 100 cm, which is the sum of the focal lengths of the objective and eyepiece lenses. Therefore, f_o + f_e = 100 cm. Substituting f_e = 20 cm, we get f_o = 100 cm - 20 cm = 80 cm. Now, substituting into the magnification formula, M = 80 cm / 20 cm = 4. Thus, the angular magnification of the telescope is 4.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+39,,"The muon decays with a characteristic lifetime of about 10^-6 second into an electron, a muon neutrino, and an electron antineutrino. The muon is forbidden from decaying into an electron and just a single neutrino by the law of conservation of
+A) charge
+B) mass
+C) energy and momentum
+D) lepton number",D,"SOLUTION_EXPLANATION: The muon is a lepton, and in particle physics, the lepton number must be conserved in any interaction. The muon has a lepton number of +1, and when it decays, the total lepton number must remain the same. If the muon were to decay into just an electron and a single neutrino, the lepton number would not be conserved. In the actual decay, the muon decays into an electron (lepton number +1), a muon neutrino (lepton number +1), and an electron antineutrino (lepton number -1), keeping the total lepton number conserved. Therefore, the correct answer is D) lepton number.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+40,,"SHA-1 has a message digest of
+A) 160 bits
+B) 512 bits
+C) 628 bits
+D) 820 bits",A,"SOLUTION_EXPLANATION: SHA-1 is a cryptographic hash function that produces a message digest of 160 bits. This is a well-known characteristic of SHA-1, which is part of the SHA (Secure Hash Algorithm) family developed by the National Security Agency (NSA).
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+41,,"_____________ can modify data on your system – so that your system doesn’t run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access.
+A) IM – Trojans
+B) Backdoor Trojans
+C) Trojan-Downloader
+D) Ransom Trojan",D,"SOLUTION_EXPLANATION: The question describes a type of malware that modifies data on your system, potentially making it inaccessible, and may demand a ransom to restore access. This is characteristic of a Ransom Trojan, which is designed to encrypt or lock data and demand payment for decryption or unlocking. The other options, such as IM-Trojans, Backdoor Trojans, and Trojan-Downloaders, do not specifically focus on demanding ransom for data access.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+42,,"What is ethical hacking?
+A) ""Hacking"" ethics so they justify unintended selfish behavior
+B) Hacking systems (e.g., during penetration testing) to expose vulnerabilities so they can be fixed, rather than exploited
+C) Hacking into systems run by those whose ethics you disagree with
+D) A slang term for rapid software development, e.g., as part of hackathons",B,"SOLUTION_EXPLANATION: Ethical hacking involves intentionally probing systems for vulnerabilities with the goal of identifying and fixing them, rather than exploiting them. This is often done during penetration testing to improve security.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+43,,"Exploitation of the Heartbleed bug permits
+A) overwriting cryptographic keys in memory
+B) a kind of code injection
+C) a read outside bounds of a buffer
+D) a format string attack",C,"SOLUTION_EXPLANATION: The Heartbleed bug is a vulnerability in the OpenSSL cryptographic software library. It allows an attacker to read more data than intended from the memory of the system using the vulnerable version of OpenSSL. This is due to a missing bounds check in the handling of the Transport Layer Security (TLS) heartbeat extension, which can be exploited to read data beyond the intended buffer. Therefore, the correct answer is that it permits a read outside bounds of a buffer.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+44,,"The ____________ is anything which your search engine cannot search.
+A) Haunted web
+B) World Wide Web
+C) Surface web
+D) Deep Web",D,"SOLUTION_EXPLANATION: The term 'Deep Web' refers to parts of the internet that are not indexed by traditional search engines. This includes databases, private corporate sites, and other content that is not accessible through standard search engine queries. Therefore, the correct answer is 'Deep Web'.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+45,,"Compared with the mass of a uranium atom undergoing fission, the combined masses of the products after fission are
+A) less
+B) more
+C) the same
+D) zero",A,"SOLUTION_EXPLANATION: In nuclear fission, a uranium atom splits into smaller nuclei, and the combined mass of these products is less than the original uranium atom. This is because some of the mass is converted into energy, according to Einstein's mass-energy equivalence principle (E=mc^2).
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+46,,"Things that are equivalent according to the equivalence principle are
+A) space and time.
+B) a traveling twin and a stay-at-home twin.
+C) gravity and acceleration.
+D) mass and energy.",C,"SOLUTION_EXPLANATION: The equivalence principle, as proposed by Albert Einstein, states that the effects of gravity are indistinguishable from the effects of acceleration. This means that an observer in a closed room cannot tell whether the force they feel is due to gravity or due to the room accelerating. Therefore, the correct answer is C) gravity and acceleration.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+47,,"Colors in a soap bubble result from light
+A) converted to a different frequency
+B) deflection
+C) interference
+D) polarization",C,"SOLUTION_EXPLANATION: The colors in a soap bubble are due to the interference of light waves. When light hits the thin film of the soap bubble, some of it is reflected off the outer surface, and some enters the film and is reflected off the inner surface. The two reflected waves can interfere with each other, either constructively or destructively, depending on the thickness of the film and the wavelength of the light. This interference causes the appearance of different colors.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+48,,"A model airplane flies slower when flying into the wind and faster with wind at its back. When launched at right angles to the wind a cross wind its groundspeed compared with flying in still air is
+A) the same
+B) greater
+C) less
+D) either greater or less depending on wind speed",B,"SOLUTION_EXPLANATION: When a model airplane is flying at right angles to the wind, the wind affects its groundspeed perpendicular to its direction of travel. As a result, the steed in the direction of the wind is unaffected. If the plane maintains its airspeed regardless of wind, then its component speed orthogonal to the wind matches its still air speed for only that direction, while the wind adds a parallel component, boosting total ground speed. Therefore, the groundspeed will be greater than in still air due to the additional perpendicular component of wind speed.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), (D).
+------
+Finish the task below and reply with one of the options: (A), (B), (C), or (D).
+------
+Imagine you're a detective solving a mystery; choose the best option: (A), (B), (C), or (D).",[]
+49,,"Which of these three elements has the most mass per nucleon?
+A) Hydrogen
+B) Iron
+C) Uranium
+D) Same in each",A,"SOLUTION_EXPLANATION: Iron (Fe) is the element with the highest binding energy per nucleon, which means it is the most stable element in terms of nuclear binding. Hydrogen has a very small nucleus (just a single proton) and therefore doesn't have the same level of binding energy per nucleon relative to its mass. Uranium is much heavier and less stable than iron. Considering mass per nucleon, as stability increases (with iron at the peak), it can be considered that heavier elements have a smaller mass per nucleon in terms of how tightly they are bound due to the energy-mass equivalence in nuclear processes. Thus, hydrogen, being the lightest element, comparatively has more mass per nucleon. Therefore, hydrogen has the most mass per nucleon among the options, because it is the least tightly bound.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), or (D).
+------
+Select the most appropriate option from (A), (B), (C), or (D) to complete the task.",[]
+50,,"In an SR latch built from NOR gates, which condition is not allowed
+A) S=0, R=0
+B) S=0, R=1
+C) S=1, R=0
+D) S=1, R=1",D,"SOLUTION_EXPLANATION: In an SR latch built from NOR gates, the inputs S (Set) and R (Reset) control the state of the latch. The condition S=1, R=1 is not allowed because it leads to an indeterminate state where both outputs Q and Q' would be 0, which violates the requirement that Q and Q' should always be complements of each other. This condition is known as the ""invalid"" or ""forbidden"" state for an SR latch using NOR gates.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+51,,"In a 2 pole lap winding dc machine , the resistance of one conductor is 2Ω and total number of conductors is 100. Find the total resistance
+A) 200Ω
+B) 100Ω
+C) 50Ω
+D) 10Ω",C,"SOLUTION_EXPLANATION: In a lap winding, the number of parallel paths (A) is equal to the number of poles (P). For a 2-pole machine, A = 2. The total number of conductors is 100, so the number of conductors in each parallel path is 100/2 = 50. The resistance of one conductor is 2Ω, so the resistance of 50 conductors in series is 50 * 2Ω = 100Ω. Since there are 2 parallel paths, the total resistance is 100Ω / 2 = 50Ω.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+52,,"The coil of a moving coil meter has 100 turns, is 40 mm long and 30 mm wide. The control torque is 240*10-6 N-m on full scale. If magnetic flux density is 1Wb/m2 range of meter is
+A) 1 mA.
+B) 2 mA.
+C) 3 mA.
+D) 4 mA.",B,"SOLUTION_EXPLANATION: The torque on the coil of a moving coil meter is given by the formula: Torque = n * B * A * I, where n is the number of turns, B is the magnetic flux density, A is the area of the coil, and I is the current. The area A of the coil is given by the product of its length and width, A = 40 mm * 30 mm = 1200 mm² = 1200 * 10^-6 m². The control torque is given as 240 * 10^-6 N-m. Substituting the given values into the torque formula, we have: 240 * 10^-6 = 100 * 1 * 1200 * 10^-6 * I. Solving for I, we get I = 240 * 10^-6 / (100 * 1200 * 10^-6) = 0.002 A = 2 mA. Therefore, the range of the meter is 2 mA.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+53,,"Two long parallel conductors carry 100 A. If the conductors are separated by 20 mm, the force per meter of length of each conductor will be
+A) 100 N.
+B) 0.1 N.
+C) 1 N.
+D) 0.01 N.",B,"SOLUTION_EXPLANATION: The force per unit length between two parallel conductors carrying currents I1 and I2, separated by a distance d, is given by the formula: F/L = (μ₀/2π) * (I1 * I2 / d), where μ₀ is the permeability of free space (4π x 10⁻⁷ T·m/A). Here, I1 = I2 = 100 A and d = 20 mm = 0.02 m. Substituting these values into the formula, we get: F/L = (4π x 10⁻⁷ / 2π) * (100 * 100 / 0.02) = 2 x 10⁻⁷ * 500,000 = 0.1 N. Therefore, the force per meter of length of each conductor is 0.1 N.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+54,,"A point pole has a strength of 4π * 10^-4 weber. The force in newtons on a point pole of 4π * 1.5 * 10^-4 weber placed at a distance of 10 cm from it will be
+A) 15 N.
+B) 20 N.
+C) 7.5 N.
+D) 3.75 N.",A,"SOLUTION_EXPLANATION: The formula for the force between two magnetic poles is given by Coulomb's law for magnetism: F = (μ₀ / (4π)) * (m1 * m2) / r², where μ₀ is the permeability of free space (4π * 10^-7 T·m/A), m1 and m2 are the pole strengths, and r is the distance between them. Here, converting 10 cm to meters gives r = 0.1 m. Substituting m1 = 4π * 10^-4 Wb, m2 = 4π * 1.5 * 10^-4 Wb, and μ₀ = 4π * 10^-7 T·m/A, we get F = (4π * 10^-7 / 4π) * ((4π * 10^-4) * (4π * 1.5 * 10^-4)) / (0.1)² = (10^-7) * (4π)^2 * 1.5 * 10^-8 / 0.01 = 15 N, which matches choice A.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), (D).
+------
+Finish the task and reply with one of the options: (A), (B), (C), or (D).
+------
+Complete the task and respond by selecting one of the following choices: (1), (2), (3), or (4).",[]
+55,,"The population of the city where Michelle was born is 145,826. What is the value of the 5 in the number 145,826?
+A) 5 thousands
+B) 5 hundreds
+C) 5 tens
+D) 5 ones",A,"SOLUTION_EXPLANATION: In the number 145,826, the digit 5 is in the thousands place. Therefore, the value of the 5 is 5 thousands.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+56,,"Olivia used the rule ""Add 11"" to create the number pattern shown below. 10, 21, 32, 43, 54 Which statement about the number pattern is true?
+A) The 10th number in the pattern will be an even number.
+B) The number pattern will never have two even numbers next to each other.
+C) The next two numbers in the pattern will be an even number then an odd number.
+D) If the number pattern started with an odd number then the pattern would have only odd numbers in it.",B,"SOLUTION_EXPLANATION: The pattern starts with 10 and each subsequent number is obtained by adding 11 to the previous number. The sequence is: 10, 21, 32, 43, 54, ...
+
+- The 10th number in the pattern: Starting from 10, the sequence is 10, 21, 32, 43, 54, 65, 76, 87, 98, 109. The 10th number is 109, which is odd, not even. So, A is false.
+
+- The pattern alternates between even and odd numbers: 10 (even), 21 (odd), 32 (even), 43 (odd), 54 (even), ... Therefore, there will never be two even numbers next to each other. So, B is true.
+
+- The next two numbers after 54 are 65 (odd) and 76 (even), not an even number then an odd number. So, C is false.
+
+- If the pattern started with an odd number, the sequence would be odd, even, odd, even, ... So, D is false.
+
+Therefore, the correct answer is B.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+57,,"A total of 30 players will play basketball at a park. There will be exactly 5 players on each team. Which statement correctly explains how to find the number of teams needed?
+A) Add 5 to 30 to find 35 teams.
+B) Divide 30 by 5 to find 6 teams.
+C) Multiply 30 and 5 to find 150 teams.
+D) Subtract 5 from 30 to find 25 teams.",B,"SOLUTION_EXPLANATION: To find the number of teams needed, you divide the total number of players by the number of players per team. In this case, you divide 30 by 5, which gives you 6 teams.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+58,,"A store sells 107 different colors of paint. They have 25 cans of each color in storage. The number of cans of paint the store has in storage can be found using the expression below. 107 × 25. How many cans of paint does the store have in storage?
+A) 749
+B) 2,675
+C) 2,945
+D) 4,250",B,"SOLUTION_EXPLANATION: To find the total number of cans of paint in storage, we need to multiply the number of different colors of paint by the number of cans of each color. The store has 107 different colors and 25 cans of each color. Therefore, the total number of cans is 107 × 25. Calculating this gives 2,675. Thus, the correct answer is B) 2,675.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+59,,"Which expression is equivalent to 5 x 9?
+A) (5 x 4) x (6 x 5)
+B) (5 x 5) + (5 x 4)
+C) (5 x 5) + (5 x 9)
+D) (5 x 9) x (6 x 9)",B,"SOLUTION_EXPLANATION: The expression 5 x 9 can be rewritten using the distributive property as (5 x 5) + (5 x 4), which is option B. This is because 5 x 9 can be broken down into 5 x (5 + 4), which is equivalent to (5 x 5) + (5 x 4).
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+60,,"Which of the following is not a way to form recombinant DNA?
+A) Translation
+B) Conjugation
+C) Specialized transduction
+D) Transformation",A,"SOLUTION_EXPLANATION: Recombinant DNA is formed by combining DNA from different sources. Translation is the process of synthesizing proteins from mRNA and does not involve combining DNA from different sources. Conjugation, specialized transduction, and transformation are all processes that can result in the formation of recombinant DNA. Therefore, the correct answer is A) Translation.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+61,,"A mutation in a bacterial enzyme changed a previously polar amino acid into a nonpolar amino acid. This amino acid was located at a site distant from the enzyme’s active site. How might this mutation alter the enzyme’s substrate specificity?
+A) By changing the enzyme’s pH optimum
+B) By changing the enzyme’s location in the cell
+C) By changing the shape of the protein
+D) An amino acid change away from the active site cannot alter the enzyme’s substrate specificity.",C,"SOLUTION_EXPLANATION: A mutation that changes a polar amino acid to a nonpolar one, even if it is distant from the active site, can affect the enzyme's overall structure. Proteins are complex molecules that rely on their three-dimensional shape to function properly. The change in amino acid properties can lead to alterations in the folding and shape of the enzyme, which can indirectly affect the active site and thus the enzyme's substrate specificity. Therefore, the correct answer is that the mutation might change the shape of the protein, which can alter substrate specificity.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+62,,"In animal cells, which of the following represents the most likely pathway that a secretory protein takes as it is synthesized in a cell?
+A) Plasma membrane–Golgi apparatus–ribosome–secretory vesicle–rough ER
+B) Ribosome–Golgi apparatus–rough ER–secretory vesicle–plasma membrane
+C) Plasma membrane–Golgi apparatus–ribosome–secretory vesicle–rough ER
+D) Ribosome–rough ER–Golgi apparatus–secretory vesicle–plasma membrane",D,"SOLUTION_EXPLANATION: In animal cells, the synthesis and secretion of proteins follow a specific pathway. Secretory proteins are synthesized by ribosomes that are bound to the rough endoplasmic reticulum (ER). Once synthesized, these proteins are transported to the Golgi apparatus for further processing and modification. After processing in the Golgi apparatus, the proteins are packaged into secretory vesicles, which then transport them to the plasma membrane for secretion out of the cell. Therefore, the correct pathway is: Ribosome–rough ER–Golgi apparatus–secretory vesicle–plasma membrane.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+63,,"Which of the following is not known to be involved in the control of cell division?
+A) Cyclins
+B) Protein kinases
+C) Checkpoints
+D) Fibroblast cells",D,"SOLUTION_EXPLANATION: Cyclins, protein kinases, and checkpoints are all directly involved in the regulation of cell division. Cyclins are proteins that regulate the cell cycle by activating cyclin-dependent kinases (CDKs). Protein kinases, particularly CDKs, are crucial for the progression of the cell cycle. Checkpoints are control mechanisms in the cell cycle that ensure the proper progression of events. Fibroblast cells, on the other hand, are a type of cell found in connective tissue and are not directly involved in the control of cell division, although they do undergo cell division themselves.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+64,,"Homologous structures are often cited as evidence for the process of natural selection. All of the following are examples of homologous structures EXCEPT
+A) the wings of a bird and the wings of a bat
+B) the flippers of a whale and the arms of a man
+C) the pectoral fins of a porpoise and the flippers of a seal
+D) the forelegs of an insect and the forelimbs of a dog",D,"SOLUTION_EXPLANATION: Homologous structures are anatomical features in different species that have a similar origin but may serve different functions. They arise from a common ancestor. In this question, we are looking for the option that is NOT an example of homologous structures. 
+
+- Option A: The wings of a bird and the wings of a bat are homologous because they both evolved from the forelimbs of a common ancestor, even though they serve the function of flight.
+- Option B: The flippers of a whale and the arms of a man are homologous because they both evolved from the forelimbs of a common ancestor.
+- Option C: The pectoral fins of a porpoise and the flippers of a seal are homologous because they both evolved from the forelimbs of a common ancestor.
+- Option D: The forelegs of an insect and the forelimbs of a dog are NOT homologous because insects and dogs do not share a common ancestor with similar limb structures. Insects are arthropods, while dogs are vertebrates, and their limb structures evolved independently.
+
+Therefore, the correct answer is D.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+65,,"Which of the following is considered an acid anhydride?
+A) HCl
+B) H2SO3
+C) SO2
+D) Al(NO3)3",C,"SOLUTION_EXPLANATION: An acid anhydride is a non-metal oxide that reacts with water to form an acid. Among the given options, SO2 is a non-metal oxide that reacts with water to form sulfurous acid (H2SO3). Therefore, SO2 is considered an acid anhydride.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+66,,"Which of the following is expected to be a polar molecule?
+A) PCl4F
+B) BF3
+C) CO2
+D) Si(CH3)4",A,"SOLUTION_EXPLANATION: A polar molecule is one that has a net dipole moment due to the presence of polar bonds and an asymmetrical shape. 
+
+- A) PCl4F: Phosphorus pentachloride with one fluorine atom (PCl4F) is expected to be polar because the fluorine atom is more electronegative than chlorine, creating an asymmetrical distribution of charge.
+- B) BF3: Boron trifluoride is nonpolar because it has a symmetrical trigonal planar shape, which cancels out the dipole moments.
+- C) CO2: Carbon dioxide is nonpolar because it has a linear shape, which cancels out the dipole moments.
+- D) Si(CH3)4: Silicon tetramethyl is nonpolar because it has a symmetrical tetrahedral shape, which cancels out the dipole moments.
+
+Therefore, the expected polar molecule is PCl4F.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+67,,"From the solubility rules, which of the following is true?
+A) All chlorides, bromides, and iodides are soluble
+B) All sulfates are soluble
+C) All hydroxides are soluble
+D) All ammonium-containing compounds are soluble",D,"SOLUTION_EXPLANATION: According to solubility rules, most chlorides, bromides, and iodides are soluble, but there are exceptions such as those of silver, lead, and mercury. Most sulfates are soluble, but exceptions include barium sulfate, lead sulfate, and calcium sulfate. Hydroxides are generally insoluble, with exceptions like those of alkali metals and barium. However, all ammonium-containing compounds are soluble, making option D the correct choice.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+68,,"A new compound is synthesized and found to be a monoprotic acid with a molar mass of 248 g/mol. When 0.0050 mol of this acid are dissolved in 0.500 L of water, the pH is measured as 3.89. What is the pKa of this acid?
+A) 3.89
+B) 7.78
+C) 5.78
+D) 2.33",C,"SOLUTION_EXPLANATION: To find the pKa of the acid, we first need to determine the concentration of the acid in the solution. Since 0.0050 mol of the acid is dissolved in 0.500 L of water, the concentration is 0.0050 mol / 0.500 L = 0.010 M. 
+
+The pH of the solution is given as 3.89, which means the concentration of hydrogen ions [H+] is 10^(-3.89) M. 
+
+For a monoprotic acid HA, the dissociation in water is represented as: 
+HA ⇌ H+ + A-
+
+The equilibrium expression for the dissociation is:
+Ka = [H+][A-]/[HA]
+
+Since the acid is monoprotic and the initial concentration of the acid is 0.010 M, the concentration of [H+] at equilibrium is 10^(-3.89) M, which is also the concentration of [A-] at equilibrium. 
+
+The concentration of the undissociated acid [HA] at equilibrium is approximately the initial concentration minus the concentration of [H+], which is 0.010 M - 10^(-3.89) M. However, since 10^(-3.89) M is much smaller than 0.010 M, we can approximate [HA] as 0.010 M.
+
+Now, we can calculate the Ka:
+Ka = (10^(-3.89) * 10^(-3.89)) / 0.010
+
+Ka = (10^(-3.89))^2 / 0.010
+
+Ka = 10^(-7.78) / 0.010
+
+Ka = 10^(-7.78 + 2)
+
+Ka = 10^(-5.78)
+
+The pKa is the negative logarithm of the Ka:
+pKa = -log(Ka) = 5.78
+
+Therefore, the pKa of the acid is 5.78.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+69,,"A solution contains 2.00 mole of acetic acid, CH3COOH, and 1.00 mole of calcium acetate, Ca(CH3COO)2. The solution is able to resist the addition of a small amount of strong acid or strong base with only minor changes in the pH of the solution. Larger quantities of strong acid or strong base can cause a significant change in pH. How many moles of nitric acid, HNO3, may be added before the pH begins to change significantly?
+A) 0.500 mole
+B) 1.00 mole
+C) 2.00 mole
+D) 3.00 mole",C,"SOLUTION_EXPLANATION: This solution is a buffer composed of acetic acid (CH3COOH) and calcium acetate, which dissociates to provide acetate ions (CH3COO^-). The buffer capacity against the addition of a strong acid like HNO3 is determined by the number of moles of acetic acid available to react. Since the solution contains 2.00 moles of acetic acid, it can neutralize 2.00 moles of HNO3 before a significant change in pH occurs. Therefore, up to 2.00 moles of HNO3 may be added before the buffer is overwhelmed and the pH begins to change significantly.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using options (A), (B), (C), or (D).
+------
+Choose one of the options (A), (B), (C), or (D) to complete the task.",[]
+70,,"Which of the following is an example of the use of a device on the Internet of Things (IoT) ?
+A) A car alerts a driver that it is about to hit an object.
+B) A hiker uses a G P S watch to keep track of her position.
+C) A refrigerator orders milk from an online delivery service when the milk in the refrigerator is almost gone.
+D) A runner uses a watch with optical sensors to monitor his heart rate.",C,"SOLUTION_EXPLANATION: The Internet of Things (IoT) refers to the network of physical objects that are embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the internet. In this context, a refrigerator ordering milk from an online delivery service when the milk is almost gone is a classic example of IoT. This is because the refrigerator is connected to the internet and can communicate with an online service to perform an action (ordering milk) based on the data it collects (detecting low milk levels).
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+71,,"Many Web browsers allow users to open anonymous windows. During a browsing session in an anonymous window, the browser does not record a browsing history or a list of downloaded files. When the anonymous window is exited, cookies created during the session are deleted. Which of the following statements about browsing sessions in an anonymous window is true?
+A) The activities of a user browsing in an anonymous window will not be visible to people who monitor the user's network, such as the system administrator.
+B) Items placed in a Web store's shopping cart for future purchase during the anonymous browsing session will not be saved on the user's computer.
+C) A user will not be able to log in to e-mail or social media accounts during the anonymous browsing session.
+D) A user browsing in an anonymous window will be protected from viruses launched from any web sites visited or files downloaded.",B,"SOLUTION_EXPLANATION: The key feature of anonymous or incognito browsing is that it does not save browsing history, cookies, or site data on the user's computer after the session ends. However, it does not provide anonymity from network monitoring, nor does it prevent logging into accounts or protect against viruses. Therefore, the statement that is true is B, as items placed in a shopping cart during the session will not be saved on the user's computer after the session ends.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+72,,"What is the output of ""abc""[::-1] in Python 3?
+A) Error
+B) abc
+C) cba
+D) c",C,"SOLUTION_EXPLANATION: In Python, the slicing syntax [::-1] is used to reverse a string. Therefore, applying this to the string 'abc' will reverse the order of the characters, resulting in 'cba'.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+73,,"In the program below, the initial value of x is 5 and the initial value of y is 10.
+ IF (X < O)
+ {
+ DISPLAY (""Foxtrot"")
+ }
+ ELSE
+ {
+ IF (X > y)
+ {
+   DISPLAY (""Hotel"")
+ }
+ ELSE 
+ {
+   IF (y > O)
+   {
+   DISPLAY (""November"")
+   }
+   ELSE
+   {
+   DISPLAY (""Yankee"")
+   }
+ }
+ }
+ 
+ What is displayed as a result of running the program?
+A) Foxtrot
+B) Hotel
+C) November
+D) Yankee",C,"SOLUTION_EXPLANATION: The program starts by checking if X < 0. Since X is 5, which is not less than 0, it moves to the ELSE block. In the ELSE block, it checks if X > Y. Since X is 5 and Y is 10, X is not greater than Y, so it moves to the next ELSE block. Here, it checks if Y > 0. Since Y is 10, which is greater than 0, it displays 'November'.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+74,,"A list of numbers has n elements, indexed from 1 to n. The following algorithm is intended to display the number of elements in the list that have a value greater than 100. The algorithm uses the variables count and position. Steps 3 and 4 are missing.
+ Step 1: Set count to 0 and position to 1.
+ Step 2: If the value of the element at index position is greater
+ than 100, increase the value of count by 1.
+ Step 3: (missing step)
+ Step 4: (missing step)
+ Step 5: Display the value of count.
+ Which of the following could be used to replace steps 3 and 4 so that the algorithm works as intended?
+A) Step 3: Increase the value of position by 1.
+ Step 4: Repeat steps 2 and 3 until the value of count is greater than 100.
+B) Step 3: Increase the value of position by 1.
+ Step 4: Repeat steps 2 and 3 until t he value of position is greater than n.
+C) Step 3: Repeat step 2 until the value of count is greater than 100.
+ Step 4: Increase the value of position by 1.
+D) Step 3: Repeat step 2 until the value of position is greater than n.
+ Step 4: Increase the value of count by 1.",D,"SOLUTION_EXPLANATION: To achieve the intended function of counting elements greater than 100, the algorithm needs to iterate through all elements of the list from position 1 to n. This means that we must increment the position by 1 in each step until it exceeds n and check each element as the indices move forward, counting each element that is greater than 100. Thus, Step 3 should increment the position to move to the next element, and Step 4 should stop once the iteration reaches beyond the end of the list. Choice B follows this logic, incrementing position in step 3 and repeating steps 2 and 3 until position surpasses n in step 4.
+ANSWER_AS_LETTER: B",False,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), or (D).
+------
+Choose the correct option from (A), (B), (C), or (D) to complete the task.
+------
+Select the right choice from (A), (B), (C), or (D) to accomplish the task.
+------
+Imagine you're a detective solving a mystery; choose the correct option from (A), (B), (C), or (D) to crack the case.
+------
+Picture yourself as a detective unraveling a mystery; select the right choice from (A), (B), (C), or (D) to solve the case.
+------
+Imagine you're a detective piecing together clues; choose the correct option from (A), (B), (C), or (D) to crack the case.
+------
+Picture yourself as a detective unraveling a mystery; select the right choice from (A), (B), (C), or (D) to solve the puzzle.
+------
+Imagine you're a sleuth piecing together clues; choose the correct option from (A), (B), (C), or (D) to crack the case.
+------
+Envision yourself as a detective unraveling a mystery; select the right answer from (A), (B), (C), or (D) to solve the puzzle.
+------
+Imagine you are a detective piecing together clues; choose the correct option from (A), (B), (C), or (D) to crack the case.
+------
+Envision yourself as a detective solving a mystery; select the right choice from (A), (B), (C), or (D) to unravel the case.
+------
+Imagine you are a detective cracking a case; choose the correct option from (A), (B), (C), or (D) to solve the mystery.
+------
+Picture yourself as a detective solving a case; select the right answer from (A), (B), (C), or (D) to unravel the mystery.
+------
+Imagine you are a detective working on a case; choose the correct option from (A), (B), (C), or (D) to solve the mystery.
+------
+Put on your detective hat and crack the case by selecting the right clue from options (A), (B), (C), or (D).
+------
+Channel your inner detective and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Unleash your inner sleuth and crack the case by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Channel your detective skills and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Use your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Employ your detective skills to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Use your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Employ your detective skills to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Use your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Employ your detective skills to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Use your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Channel your inner detective to solve the puzzle by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Put on your detective hat and determine the solution to the puzzle by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Channel your inner sleuth and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Unleash your detective skills and unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Use your investigative abilities to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Apply your detective skills to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Use your investigative abilities to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Employ your detective skills to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Use your investigative abilities to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Employ your detective skills to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Use your investigative abilities to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Channel your inner detective to crack the case by selecting the right clue from options (A), (B), (C), or (D).
+------
+Use your detective skills to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Apply your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Use your detective skills to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Apply your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Use your detective skills to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Apply your investigative abilities to unravel the enigma by selecting the right hint from choices (A), (B), (C), or (D).
+------
+Use your detective skills to solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Apply your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Use your detective skills to solve the mystery by picking the correct clue from options (A), (B), (C), or (D).
+------
+Apply your investigative abilities to unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Channel your inner detective to solve the puzzle by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Act like a detective to crack the puzzle by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Put on your detective hat and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Assume the role of a detective and unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Imagine you are a detective and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Pretend to be a detective and unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Imagine you're a detective and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Pretend to be a detective and determine the solution to the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Assume the role of a detective and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Take on the role of a detective and unravel the mystery by selecting the right clue from choices (A), (B), (C), or (D).
+------
+Assume the role of a detective and solve the mystery by choosing the correct clue from options (A), (B), (C), or (D).
+------
+Imagine you're a treasure hunter on a quest to find hidden riches by selecting the right map from options (A), (B), (C), or (D).
+------
+Picture yourself as a treasure hunter on a mission to discover hidden wealth by choosing the correct map from options (A), (B), (C), or (D).
+------
+Imagine you are an adventurer seeking hidden riches by selecting the right map from choices (A), (B), (C), or (D).
+------
+Pretend you are a treasure hunter choosing the correct map from options (A), (B), (C), or (D) to find hidden wealth.
+------
+Imagine you are an explorer selecting the right map from choices (A), (B), (C), or (D) to discover buried riches.
+------
+Pretend you are an adventurer choosing the correct map from options (A), (B), (C), or (D) to find hidden treasures.
+------
+Imagine you are an explorer selecting the right map from choices (A), (B), (C), or (D) to discover lost artifacts.
+------
+Pretend you are an adventurer choosing the correct map from options (A), (B), (C), or (D) to find hidden treasures.
+------
+Imagine you're an explorer selecting the right map from choices (A), (B), (C), or (D) to discover hidden treasures.
+------
+Visualize yourself as an adventurer choosing the correct map from options (A), (B), (C), or (D) to uncover secret riches.
+------
+Imagine yourself as an explorer selecting the right map from choices (A), (B), (C), or (D) to discover hidden treasures.
+------
+Picture yourself as a detective piecing together clues from options (A), (B), (C), or (D) to solve a thrilling mystery.
+------
+Imagine being a detective unraveling a captivating mystery by analyzing clues from choices (A), (B), (C), or (D).
+------
+Envision yourself as a sleuth piecing together an intriguing enigma by examining hints from options (A), (B), (C), or (D).
+------
+Imagine yourself as a detective unraveling a captivating mystery by analyzing clues from choices (A), (B), (C), or (D).
+------
+Visualize yourself as a detective solving an intriguing mystery by examining evidence from options (A), (B), (C), or (D).
+------
+Imagine yourself as a detective unraveling a captivating mystery by analyzing clues from choices (A), (B), (C), or (D).
+------
+Envision yourself as a sleuth piecing together an intriguing enigma by examining evidence from options (A), (B), (C), or (D).
+------
+Imagine yourself as a detective unraveling a captivating mystery by analyzing clues from choices (A), (B), (C), or (D).
+------
+Envision yourself as a detective solving an intriguing mystery by examining clues from options (A), (B), (C), or (D).
+------
+Imagine you're a detective unraveling a captivating mystery by analyzing evidence from choices (A), (B), (C), or (D).
+------
+Picture yourself as a detective solving an intriguing mystery by examining evidence from options (A), (B), (C), or (D).
+------
+Imagine you're a chef creating a delicious recipe by carefully selecting ingredients from options (A), (B), (C), or (D).
+------
+Picture yourself as a chef crafting a tasty dish by thoughtfully choosing ingredients from choices (A), (B), (C), or (D).
+------
+Imagine yourself as an artist painting a masterpiece by carefully selecting colors from options (A), (B), (C), or (D).
+------
+Visualize yourself as a painter crafting a masterpiece by thoughtfully choosing hues from choices (A), (B), (C), or (D).
+------
+Imagine yourself as an artist selecting colors from options (A), (B), (C), or (D) to create a stunning painting.
+------
+Visualize yourself as a chef choosing ingredients from options (A), (B), (C), or (D) to craft a delicious dish.
+------
+Imagine yourself as an artist selecting colors from palettes (A), (B), (C), or (D) to create a masterpiece.
+------
+Visualize yourself as an artist choosing hues from palettes (A), (B), (C), or (D) to craft a work of art.
+------
+Imagine yourself as an artist selecting colors from palettes (A), (B), (C), or (D) to create a masterpiece.
+------
+Visualize yourself as an artist choosing hues from palettes (A), (B), (C), or (D) to craft a work of art.
+------
+Imagine yourself as an artist selecting colors from palettes (A), (B), (C), or (D) to create a masterpiece.
+------
+Picture yourself as a chef choosing ingredients from baskets (A), (B), (C), or (D) to craft a delicious dish.
+------
+Imagine you are a chef selecting ingredients from baskets (A), (B), (C), or (D) to create a tasty dish.
+------
+Envision yourself as a chef choosing ingredients from baskets (A), (B), (C), or (D) to craft a delicious meal.
+------
+Imagine you are a chef selecting ingredients from baskets (A), (B), (C), or (D) to create a delectable dish.
+------
+Picture yourself as a chef choosing ingredients from baskets (A), (B), (C), or (D) to craft a delicious meal.
+------
+Imagine you are a gardener selecting plants from plots (A), (B), (C), or (D) to create a beautiful garden.
+------
+Visualize yourself as a chef choosing ingredients from sections (A), (B), (C), or (D) to craft a delicious meal.
+------
+Imagine yourself as a chef selecting ingredients from categories (A), (B), (C), or (D) to create a delectable dish.
+------
+Visualize yourself as a chef choosing ingredients from groups (A), (B), (C), or (D) to craft a delicious meal.
+------
+Imagine yourself as a chef selecting ingredients from categories (A), (B), (C), or (D) to create a mouthwatering dish.
+------
+Picture yourself as a chef choosing ingredients from groups (A), (B), (C), or (D) to craft a delicious dish.
+------
+Imagine you're a detective piecing together clues from groups (A), (B), (C), or (D) to solve a thrilling mystery.
+------
+Picture yourself as a detective unraveling a captivating mystery by analyzing clues from groups (A), (B), (C), or (D).
+------
+Imagine yourself as an explorer piecing together an intriguing puzzle by examining hints from categories (A), (B), (C), or (D).
+------
+Visualize yourself as an adventurer unraveling a captivating mystery by analyzing clues from groups (A), (B), (C), or (D).
+------
+Imagine yourself as a detective piecing together a thrilling puzzle by examining hints from categories (A), (B), (C), or (D).
+------
+Visualize yourself as an investigator unraveling an exciting mystery by analyzing clues from sections (A), (B), (C), or (D).
+------
+Imagine yourself as a detective piecing together an intriguing puzzle by examining evidence from parts (1), (2), (3), or (4).
+------
+Visualize yourself as a detective unraveling a captivating mystery by analyzing clues from sections (1), (2), (3), or (4).
+------
+Imagine yourself as a detective piecing together a thrilling mystery by examining evidence from sections (1), (2), (3), or (4).
+------
+Visualize yourself as a detective unraveling an exciting mystery by analyzing clues from parts (1), (2), (3), or (4).
+------
+Imagine yourself as a detective solving an intriguing mystery by examining clues from sections (1), (2), (3), or (4).
+------
+Imagine yourself as a treasure hunter on an adventurous quest, piecing together clues from sections (1), (2), (3), or (4) to uncover hidden riches.
+------
+Picture yourself as a treasure hunter on an exciting journey, using clues from sections (1), (2), (3), or (4) to discover hidden treasures.
+------
+Imagine yourself as an adventurous explorer, deciphering hints from parts (A), (B), (C), or (D) to uncover secret riches.
+------
+Visualize yourself as a daring adventurer, interpreting clues from sections (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine yourself as a bold explorer, deciphering hints from parts (A), (B), (C), or (D) to uncover secret riches.
+------
+Visualize yourself as an intrepid adventurer, piecing together clues from sections (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine yourself as a daring explorer, unraveling mysteries from parts (A), (B), (C), or (D) to uncover secret riches.
+------
+Visualize yourself as an intrepid adventurer, deciphering enigmas from sections (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine yourself as a daring explorer, solving puzzles from parts (A), (B), (C), or (D) to uncover secret treasures.
+------
+Picture yourself as an adventurous explorer, tackling puzzles from sections (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine being an adventurous explorer, solving puzzles from sections (A), (B), (C), or (D) to uncover hidden treasures.
+------
+Picture yourself as a daring detective, cracking codes from sections (A), (B), (C), or (D) to unlock secret mysteries.
+------
+Imagine being a bold detective, deciphering codes from sections (A), (B), (C), or (D) to reveal hidden secrets.
+------
+Picture yourself as a daring detective, cracking codes from parts (A), (B), (C), or (D) to uncover concealed mysteries.
+------
+Imagine being a bold detective, deciphering clues from sections (A), (B), (C), or (D) to reveal hidden secrets.
+------
+Pretend you're a daring detective, uncovering secrets by analyzing clues from sections (A), (B), (C), or (D).
+------
+Imagine you're a bold detective, discovering secrets by examining clues from parts (A), (B), (C), or (D).
+------
+Picture yourself as a daring detective, uncovering mysteries by investigating hints from sections (A), (B), (C), or (D).
+------
+Imagine being a bold detective, solving mysteries by exploring clues from sections (A), (B), (C), or (D).
+------
+Visualize yourself as a daring detective, unraveling mysteries by investigating clues from sections (A), (B), (C), or (D).
+------
+Imagine yourself as an intrepid detective, solving enigmas by examining evidence from sections (A), (B), (C), or (D).
+------
+Picture yourself as a daring detective, unraveling mysteries by analyzing clues from sections (A), (B), (C), or (D).
+------
+Imagine you're a treasure hunter, piecing together ancient maps and riddles from sections (A), (B), (C), or (D) to uncover hidden riches.
+------
+Visualize yourself as a treasure hunter, assembling ancient maps and solving riddles from parts (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine yourself as an explorer, piecing together old maps and deciphering clues from sections (A), (B), (C), or (D) to uncover secret treasures.
+------
+Envision yourself as an adventurer, assembling ancient maps and interpreting hints from parts (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine you are an explorer piecing together old maps and deciphering clues from sections (A), (B), (C), or (D) to uncover secret treasures.
+------
+Pretend you are an adventurer assembling ancient maps and interpreting hints from parts (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine you are an explorer piecing together old maps and deciphering clues from sections (A), (B), (C), or (D) to uncover secret riches.
+------
+Visualize yourself as an adventurer assembling ancient maps and interpreting hints from parts (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine yourself as an explorer piecing together old maps and deciphering clues from sections (A), (B), (C), or (D) to uncover secret treasures.
+------
+Visualize yourself as an adventurer assembling ancient maps and interpreting hints from parts (A), (B), (C), or (D) to discover hidden treasures.
+------
+Imagine yourself as an explorer piecing together old maps and deciphering clues from sections (A), (B), (C), or (D) to uncover secret treasures.
+------
+Picture yourself as a detective solving a mystery by connecting clues from different sections (A), (B), (C), or (D) to reveal hidden truths.
+------
+Imagine yourself as a detective unraveling a mystery by linking clues from various sections (A), (B), (C), or (D) to uncover concealed truths.
+------
+Envision yourself as an investigator piecing together a puzzle by connecting hints from different parts (A), (B), (C), or (D) to reveal hidden realities.
+------
+Imagine yourself as a detective assembling a mystery by linking clues from sections (A), (B), (C), or (D) to uncover concealed truths.
+------
+Envision yourself as a detective piecing together a puzzle by connecting elements from sections (A), (B), (C), or (D) to reveal hidden insights.
+------
+Imagine yourself as an investigator assembling a mystery by linking components from parts (A), (B), (C), or (D) to uncover concealed truths.
+------
+Envision yourself as a detective piecing together a puzzle by connecting elements from sections (A), (B), (C), or (D) to reveal hidden insights.
+------
+Imagine yourself as a detective assembling a puzzle by linking components from sections (A), (B), (C), or (D) to uncover concealed insights.
+------
+Visualize yourself as a detective piecing together a puzzle by connecting elements from sections (A), (B), (C), or (D) to reveal hidden insights.
+------
+Imagine yourself as a detective assembling a puzzle by linking components from sections (A), (B), (C), or (D) to uncover concealed insights.
+------
+Visualize yourself as a detective piecing together a puzzle by connecting elements from sections (A), (B), (C), or (D) to reveal hidden insights.
+------
+Imagine you're a treasure hunter deciphering clues from different maps (A), (B), (C), or (D) to uncover the secret location of a hidden treasure.
+------
+Picture yourself as a treasure hunter interpreting clues from various maps (A), (B), (C), or (D) to discover the hidden treasure's secret location.
+------
+Imagine yourself as an explorer deciphering hints from different maps (A), (B), (C), or (D) to uncover the mystery of the treasure's hidden spot.
+------
+Visualize yourself as an adventurer interpreting clues from various maps (A), (B), (C), or (D) to solve the enigma of the treasure's secret location.
+------
+Imagine yourself as an explorer deciphering hints from different maps (A), (B), (C), or (D) to unlock the mystery of the treasure's hidden spot.
+------
+Envision yourself as an adventurer piecing together clues from various maps (A), (B), (C), or (D) to reveal the secret location of the treasure.
+------
+Imagine yourself as an explorer deciphering hints from different maps (A), (B), (C), or (D) to uncover the hidden treasure's location.
+------
+Picture yourself as an adventurer interpreting clues from various maps (A), (B), (C), or (D) to discover the secret treasure's whereabouts.
+------
+Imagine being an explorer deciphering hints from different maps (A), (B), (C), or (D) to locate the hidden treasure.
+------
+Visualize yourself as an adventurer piecing together clues from various charts (A), (B), (C), or (D) to uncover the secret bounty.
+------
+Imagine yourself as an explorer deciphering hints from different charts (A), (B), (C), or (D) to discover the hidden treasure.
+------
+Picture yourself as a detective piecing together clues from various maps (A), (B), (C), or (D) to uncover the secret location of a hidden gem.
+------
+Imagine you are a detective analyzing clues from different maps (A), (B), (C), or (D) to discover the secret spot of a hidden treasure.
+------
+Envision yourself as an investigator piecing together hints from various maps (A), (B), (C), or (D) to uncover the location of a concealed treasure.
+------
+Imagine yourself as a detective assembling clues from different maps (A), (B), (C), or (D) to discover the whereabouts of a hidden treasure.
+------
+Envision yourself as an investigator piecing together evidence from various maps (A), (B), (C), or (D) to locate a concealed treasure.
+------
+Imagine yourself as a detective assembling clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Visualize yourself as an explorer piecing together hints from various maps (A), (B), (C), or (D) to discover a secret artifact.
+------
+Imagine yourself as an adventurer assembling clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Envision yourself as an explorer piecing together hints from various maps (A), (B), (C), or (D) to discover a secret treasure.
+------
+Imagine being a detective gathering clues from different sources (A), (B), (C), or (D) to uncover a hidden mystery.
+------
+Envision yourself as a detective piecing together evidence from various sources (A), (B), (C), or (D) to solve a concealed mystery.
+------
+Imagine you're a treasure hunter deciphering clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Visualize yourself as an adventurer interpreting hints from various maps (A), (B), (C), or (D) to discover a concealed treasure.
+------
+Imagine yourself as an explorer deciphering clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Visualize yourself as an adventurer interpreting hints from various maps (A), (B), (C), or (D) to discover a secret treasure.
+------
+Imagine yourself as an explorer deciphering clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Visualize yourself as a detective piecing together evidence from various maps (A), (B), (C), or (D) to discover a secret location.
+------
+Imagine yourself as an explorer using clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Visualize yourself as an adventurer piecing together hints from various maps (A), (B), (C), or (D) to discover a concealed treasure.
+------
+Imagine yourself as an explorer gathering clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Visualize yourself as an adventurer piecing together hints from various maps (A), (B), (C), or (D) to discover a secret treasure.
+------
+Imagine yourself as an explorer gathering clues from different maps (A), (B), (C), or (D) to uncover a hidden treasure.
+------
+Picture yourself as a detective piecing together evidence from various case files (A), (B), (C), or (D) to solve a thrilling mystery.
+------
+Imagine you are a detective analyzing evidence from different case files (A), (B), (C), or (D) to unravel an exciting mystery.
+------
+Pretend you're a detective piecing together clues from various case files (A), (B), (C), or (D) to solve a thrilling mystery.
+------
+Imagine you're an investigator analyzing evidence from different case files (A), (B), (C), or (D) to unravel an exciting mystery.
+------
+Picture yourself as a detective piecing together clues from various case files (A), (B), (C), or (D) to solve a thrilling mystery.
+------
+Imagine yourself as an investigator unraveling a captivating mystery by analyzing clues from different case files (A), (B), (C), or (D).
+------
+Picture yourself as a detective piecing together an intriguing puzzle by examining evidence from various case files (A), (B), (C), or (D).
+------
+Imagine being a detective unraveling a captivating mystery by analyzing evidence from different case files (A), (B), (C), or (D).",[]
+75,,"Joe was in charge of lights for a dance. The red light blinks every two seconds, the yellow light every three seconds, and the blue light every five seconds. If we include the very beginning and very end of the dance, how many times during a seven minute dance will all the lights come on at the same time? (Assume that all three lights blink simultaneously at the very beginning of the dance.)
+A) 3
+B) 15
+C) 6
+D) 5",B,"SOLUTION_EXPLANATION: To find out how many times all the lights blink together, we need to find the least common multiple (LCM) of the blinking intervals of the lights. The red light blinks every 2 seconds, the yellow light every 3 seconds, and the blue light every 5 seconds. The LCM of 2, 3, and 5 is 30 seconds. This means that every 30 seconds, all the lights will blink together. 
+
+The dance lasts for 7 minutes, which is 7 * 60 = 420 seconds. We need to determine how many 30-second intervals fit into 420 seconds. 
+
+420 seconds / 30 seconds per interval = 14 intervals.
+
+Since the lights also blink together at the very beginning of the dance (time 0), we include this initial blink. Therefore, the lights will blink together 14 + 1 = 15 times during the dance.
+
+Thus, the correct answer is B) 15.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+76,,"Five thousand dollars compounded annually at an $x\%$ interest rate takes six years to double. At the same interest rate, how many years will it take $\$300$ to grow to $\$9600$?
+A) 12
+B) 1
+C) 30
+D) 5",C,"SOLUTION_EXPLANATION: To solve this problem, we first need to determine the interest rate that allows $5000 to double in 6 years. The formula for compound interest is A = P(1 + r)^t, where A is the amount of money accumulated after n years, including interest, P is the principal amount (the initial amount of money), r is the annual interest rate (decimal), and t is the time the money is invested for in years.
+
+Given that $5000 doubles in 6 years, we have:
+
+10000 = 5000(1 + r)^6
+
+Dividing both sides by 5000 gives:
+
+2 = (1 + r)^6
+
+Taking the sixth root of both sides, we find:
+
+1 + r = 2^(1/6)
+
+Now, we need to find how many years it takes for $300 to grow to $9600 at the same interest rate. Using the same formula:
+
+9600 = 300(1 + r)^t
+
+Dividing both sides by 300 gives:
+
+32 = (1 + r)^t
+
+We already know that 1 + r = 2^(1/6), so:
+
+32 = (2^(1/6))^t
+
+32 is 2^5, so:
+
+2^5 = 2^(t/6)
+
+Equating the exponents gives:
+
+5 = t/6
+
+Solving for t gives:
+
+t = 5 * 6 = 30
+
+Therefore, it will take 30 years for $300 to grow to $9600 at the same interest rate.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+77,,"The variable $x$ varies directly as the square of $y$, and $y$ varies directly as the cube of $z$. If $x$ equals $-16$ when $z$ equals 2, what is the value of $x$ when $z$ equals $\frac{1}{2}$?
+A) -1
+B) 16
+C) -\frac{1}{256}
+D) \frac{1}{16}",C,"SOLUTION_EXPLANATION: Since $x$ varies directly as the square of $y$, we have $x = k_1 y^2$ for some constant $k_1$. Also, since $y$ varies directly as the cube of $z$, we have $y = k_2 z^3$ for some constant $k_2$. Substituting $y = k_2 z^3$ into $x = k_1 y^2$, we get $x = k_1 (k_2 z^3)^2 = k_1 k_2^2 z^6$. Let $k = k_1 k_2^2$, then $x = k z^6$. We know $x = -16$ when $z = 2$, so $-16 = k (2)^6 = k (64)$, giving $k = -16/64 = -1/4$. Now, we need to find $x$ when $z = 1/2$. Using $x = k z^6$ with $k = -1/4$, we have $x = (-1/4) (1/2)^6 = (-1/4) (1/64) = -1/256$.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+78,,"Simplify and write the result with a rational denominator: $$\sqrt{\sqrt[3]{\sqrt{\frac{1}{729}}}}$$
+A) \frac{3\sqrt{3}}{3}
+B) \frac{1}{3}
+C) \sqrt{3}
+D) \frac{\sqrt{3}}{3}",D,"SOLUTION_EXPLANATION: First, simplify the innermost expression: \( \sqrt{\frac{1}{729}} = \frac{1}{\sqrt{729}} \). Since \( 729 = 3^6 \), we have \( \sqrt{729} = 3^3 = 27 \). Thus, \( \sqrt{\frac{1}{729}} = \frac{1}{27} \).
+
+Next, take the cube root: \( \sqrt[3]{\frac{1}{27}} = \frac{1}{\sqrt[3]{27}} = \frac{1}{3} \) because \( 27 = 3^3 \).
+
+Finally, take the square root: \( \sqrt{\frac{1}{3}} = \frac{1}{\sqrt{3}} \). To rationalize the denominator, multiply by \( \frac{\sqrt{3}}{\sqrt{3}} \) to get \( \frac{\sqrt{3}}{3} \).
+
+Therefore, the simplified expression is \( \frac{\sqrt{3}}{3} \), which corresponds to option D.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+79,,"Ten students take a biology test and receive the following scores: 45, 55, 50, 70, 65, 80, 40, 90, 70, 85. What is the mean of the students’ test scores?
+A) 55
+B) 60
+C) 62
+D) 65",D,"SOLUTION_EXPLANATION: To find the mean of the students' test scores, we need to add up all the scores and then divide by the number of students. The scores are: 45, 55, 50, 70, 65, 80, 40, 90, 70, 85. Adding these scores gives us a total of 650. There are 10 students, so we divide 650 by 10 to get the mean. 650 divided by 10 equals 65. Therefore, the mean of the students' test scores is 65.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+80,,"Which of the following conditions will ensure that angular momentum is conserved? I. Conservation of linear momentum II. Zero net external force III. Zero net external torque
+A) I and II only
+B) I and III only
+C) II and III only
+D) III only",D,"SOLUTION_EXPLANATION: Angular momentum is conserved when there is no net external torque acting on a system. This is because torque is the rotational equivalent of force, and just as force affects linear momentum, torque affects angular momentum. Therefore, the condition that ensures the conservation of angular momentum is zero net external torque, which is condition III. Conditions I and II relate to linear momentum and forces, not directly to angular momentum.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+81,,"A pipe full of air is closed at one end. A standing wave is produced in the pipe, causing the pipe to sound a note. Which of the following is a correct statement about the wave’s properties at the closed end of the pipe?
+A) The pressure is at a node, but the particle displacement is at an antinode.
+B) The pressure is at an antinode, but the particle displacement is at a node.
+C) The pressure and the particle displacement are both at nodes.
+D) The pressure and the particle displacement are both at antinodes.",B,"SOLUTION_EXPLANATION: In a pipe closed at one end, the closed end must be a displacement node because the air particles cannot move at the boundary. However, this closed end is a pressure antinode because the pressure variation is maximum where the displacement is minimum. Therefore, the correct statement about the wave’s properties at the closed end of the pipe is that the pressure is at an antinode, but the particle displacement is at a node.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+82,,"A photocell of work function ϕ = 2eV is connected to a resistor in series. Light of frequency f = 1 × 10^15 Hz hits a metal plate of the photocell. If the power of the light is P = 100 W, what is the current through the resistor?
+A) 2:00 AM
+B) 6:00 AM
+C) 12:00 AM
+D) 24 A",D,"SOLUTION_EXPLANATION: To find the current through the resistor, we need to determine the number of electrons emitted per second, which is equivalent to the current in amperes. The energy of each photon is given by E = hf, where h is Planck's constant (h = 6.626 × 10^-34 J·s). The energy of each photon is E = (6.626 × 10^-34 J·s) × (1 × 10^15 Hz) = 6.626 × 10^-19 J. The work function ϕ = 2 eV = 2 × 1.602 × 10^-19 J = 3.204 × 10^-19 J. The kinetic energy of the emitted electrons is given by KE = E - ϕ = 6.626 × 10^-19 J - 3.204 × 10^-19 J = 3.422 × 10^-19 J. The power of the light is P = 100 W, which means 100 J of energy is incident per second. The number of photons hitting the plate per second is given by the total power divided by the energy per photon: N = P / E = 100 J/s / 6.626 × 10^-19 J = 1.509 × 10^20 photons/s. Assuming each photon results in the emission of one electron, the current I is given by I = N × e, where e is the charge of an electron (e = 1.602 × 10^-19 C). Therefore, I = 1.509 × 10^20 × 1.602 × 10^-19 C/s = 24.1 A, which is approximately 24 A. Thus, the correct answer is D) 24 A.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+83,,"A microwave oven is connected to an outlet, 120 V, and draws a current of 2 amps. At what rate is energy being used by the microwave oven?
+A) 10 W
+B) 30 W
+C) 60 W
+D) 240 W",D,"SOLUTION_EXPLANATION: The power used by an electrical device can be calculated using the formula P = V * I, where P is the power in watts, V is the voltage in volts, and I is the current in amps. For the microwave oven, V = 120 V and I = 2 A. Therefore, the power P = 120 V * 2 A = 240 W. Thus, the rate at which energy is being used by the microwave oven is 240 watts.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+84,,"A point charge, Q = +1 mC, is fixed at the origin. How much work is required to move a charge, Q = +8 µC, from the point (0, 4 meters) to the point (3 meters, 0)?
+A) 3.5 J
+B) 6.0 J
+C) 22.5 J
+D) 40 J",B,"SOLUTION_EXPLANATION: The work done in moving a charge in an electric field is given by the change in electric potential energy, which is calculated as W = q(Vf - Vi), where q is the charge being moved, Vf is the final electric potential, and Vi is the initial electric potential. The electric potential V at a distance r from a point charge Q is given by V = kQ/r, where k is Coulomb's constant (approximately 8.99 x 10^9 N m²/C²). 
+
+First, calculate the initial potential energy at (0, 4 meters):
+Vi = k * Q / r1 = (8.99 x 10^9 N m²/C²) * (1 x 10^-3 C) / 4 m = 2.2475 x 10^6 V.
+
+Next, calculate the final potential energy at (3 meters, 0):
+Vf = k * Q / r2 = (8.99 x 10^9 N m²/C²) * (1 x 10^-3 C) / 3 m = 2.997 x 10^6 V.
+
+The work done is then:
+W = q * (Vf - Vi) = (8 x 10^-6 C) * (2.997 x 10^6 V - 2.2475 x 10^6 V) = 8 x 10^-6 C * 0.7495 x 10^6 V = 5.996 J.
+
+Rounding to one decimal place, the work done is approximately 6.0 J.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+85,,"Which of the following is a correct statement about correlation?
+A) If the slope of the regression line is exactly 1, then the correlation is exactly 1.
+B) If the correlation is 0, then the slope of the regression line is undefined.
+C) Switching which variable is called x and which is called y changes the sign of the correlation.
+D) The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.",D,"SOLUTION_EXPLANATION: The correct statement about correlation is that the correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable. This is because the correlation coefficient is a measure of the linear relationship between two variables, and when both variables are standardized (converted to z-scores), the slope of the regression line is equal to the correlation coefficient. The other statements are incorrect: A) The slope of the regression line being 1 does not imply the correlation is 1, as correlation also depends on the standard deviations of the variables. B) If the correlation is 0, the slope of the regression line is 0, not undefined. C) Switching x and y does not change the sign of the correlation, it remains the same.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+86,,"Suppose X and Y are random variables with E(X) = 37, var(X) = 5, E(Y) = 62, and var(Y) = 12. What are the expected value and variance of the random variable X + Y?
+A) E(X + Y) = 99, var(X + Y) = 8.5
+B) E(X + Y) = 99, var(X + Y) = 13
+C) E(X + Y) = 99, var(X + Y) = 17
+D) There is insufficient information to answer this question.",D,"SOLUTION_EXPLANATION: The expected value of the sum of two random variables is the sum of their expected values: E(X + Y) = E(X) + E(Y) = 37 + 62 = 99. The variance of the sum of two independent random variables is the sum of their variances. Assuming independence, var(X + Y) = var(X) + var(Y) = 5 + 12 = 17. However, if we are not given that X and Y are independent, we cannot determine the variance of X + Y. In this problem, it is not stated that X and Y are independent, so technically it should be choice D. However, in many cases, if the independence is not mentioned, it might be assumed implicitly as part of an exercise like this. Assuming independence, the variance should be 17.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)
+------
+Complete the following task and respond using (A), (B), (C), or (D).
+------
+Choose the correct option from (A), (B), (C), or (D) to complete the task.",[]
+87,,"After a frost warning was issued, the owner of a large orange grove asked his workers to spray all his trees with water. The water was supposed to freeze and form a protective covering of ice around the orange blossom. Nevertheless, the owner suspected that some trees suffered considerable damage due to the frost. To estimate the proportion of trees that suffered more than 50 percent damage due to the frost, he took a random sample of 100 trees from his grove. What is the response variable in this experiment?
+A) The proportion of trees that suffered more than 50 percent damage due to frost.
+B) The number of trees affected by the frost.
+C) The number of trees sampled from the grove.
+D) For each sampled tree, whether it suffered more than 50 percent damage or at most 50 percent damage.",D,"SOLUTION_EXPLANATION: The response variable in an experiment is the main variable of interest that is measured or observed to assess the effect of a treatment or condition. In this case, the owner is interested in estimating the proportion of trees that suffered more than 50 percent damage due to the frost. To do this, he takes a sample of trees and observes whether each tree suffered more than 50 percent damage or at most 50 percent damage. Therefore, the response variable is the outcome for each sampled tree, which is whether it suffered more than 50 percent damage or at most 50 percent damage.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+88,,"A new smartwatch is manufactured in one part of a factory, then secured for shipping in another, independent part of the factory. The weight of the smartwatch has a mean of 62 grams and a standard deviation of 1.0 grams. The weight of the packaging (box, user's guide, bubble wrap, etc.) has a mean of 456 grams and a standard deviation of 6 grams. Together, the distribution of the weight of the smartwatch and its packaging would have the following mean and standard deviation:
+A) Mean 518 grams; standard deviation 7.0 grams
+B) Mean 518 grams; standard deviation 3.5 grams
+C) Mean 518 grams; standard deviation 6.1 grams
+D) Mean 394 grams; standard deviation 6.1 grams",C,"SOLUTION_EXPLANATION: To find the mean of the total weight, we simply add the means of the smartwatch and the packaging: 62 grams + 456 grams = 518 grams. 
+
+To find the standard deviation of the total weight, we use the formula for the standard deviation of the sum of two independent random variables. Since the smartwatch and packaging are independent, the variances add: 
+
+Variance of smartwatch = (1.0 grams)^2 = 1.0 
+Variance of packaging = (6 grams)^2 = 36 
+
+Total variance = 1.0 + 36 = 37 
+
+Standard deviation = sqrt(37) ≈ 6.1 grams.
+
+Therefore, the mean is 518 grams and the standard deviation is approximately 6.1 grams.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+89,,"Which of the following sets has the smallest standard deviation? Which has the largest?
+I: {1,2,3}
+II: {-10,10}
+III: {100}
+
+A) I, II
+B) II, III
+C) III, I
+D) III, II",D,"SOLUTION_EXPLANATION: The standard deviation measures the amount of variation or dispersion in a set of values. A set with all identical values has a standard deviation of 0, which is the smallest possible. Therefore, set III, which contains only one value (100), has the smallest standard deviation. Set II has the largest standard deviation because the values -10 and 10 are farthest apart, resulting in the greatest dispersion. Set I has a moderate standard deviation as the values are closer together compared to set II.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+90,,"A 6-sided die is rolled 15 times and the results are: side 1 comes up 0 times; side 2: 1 time; side 3: 2 times; side 4: 3 times; side 5: 4 times; side 6: 5 times. Based on these results, what is the probability of side 3 coming up when using Add-1 Smoothing?
+A) 2.0/15
+B) 1.0/7
+C) 3.0/16
+D) 1.0/5",B,"SOLUTION_EXPLANATION: Add-1 Smoothing, also known as Laplace Smoothing, is used to handle zero probabilities in categorical data. It involves adding 1 to each count and adjusting the total count accordingly. In this case, the die has 6 sides, and each side's count is increased by 1. The original count for side 3 is 2. After smoothing, the count for side 3 becomes 2 + 1 = 3. The total number of rolls is 15, and after adding 1 to each side, the new total becomes 15 + 6 = 21. Therefore, the probability of side 3 coming up is 3/21, which simplifies to 1/7.
+ANSWER_AS_LETTER: B",True,B,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+91,,"Which image data augmentation is most common for natural images?
+A) random crop and horizontal flip
+B) random crop and vertical flip
+C) posterization
+D) dithering",A,"SOLUTION_EXPLANATION: For natural images, the most common data augmentations are those that help the model generalize better by simulating real-world variations. Random cropping and horizontal flipping are widely used because they effectively increase the diversity of the training dataset by altering the position and orientation of objects in the images. Vertical flipping is less common because it can create unrealistic scenarios for many natural images. Posterization and dithering are less common as they alter the color information in ways that are not typically beneficial for natural image datasets.
+ANSWER_AS_LETTER: A",True,A,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+92,,"You are reviewing papers for the World’s Fanciest Machine Learning Conference, and you see submissions with the following claims. Which ones would you consider accepting? 
+A) My method achieves a training error lower than all previous methods!
+B) My method achieves a test error lower than all previous methods! (Footnote: When regularisation parameter λ is chosen so as to minimise test error.)
+C) My method achieves a test error lower than all previous methods! (Footnote: When regularisation parameter λ is chosen so as to minimise cross-validaton error.)
+D) My method achieves a cross-validation error lower than all previous methods! (Footnote: When regularisation parameter λ is chosen so as to minimise cross-validaton error.)",C,"SOLUTION_EXPLANATION: In machine learning, the goal is to generalize well to unseen data, which is best measured by test error. However, directly minimizing test error by choosing hyperparameters based on test data (as in option B) is considered a form of data leakage and is not a valid approach. Cross-validation is a more appropriate method for hyperparameter tuning as it uses a separate validation set to estimate the model's performance, which is why option C is acceptable. Option D is also acceptable as it uses cross-validation to both tune the hyperparameter and evaluate the model's performance. Option A is not acceptable because training error does not reflect the model's ability to generalize to new data.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+93,,"To achieve an 0/1 loss estimate that is less than 1 percent of the true 0/1 loss (with probability 95%), according to Hoeffding's inequality the IID test set must have how many examples?
+A) around 10 examples
+B) around 100 examples
+C) between 100 and 500 examples
+D) more than 1000 examples",D,"SOLUTION_EXPLANATION: Hoeffding's inequality provides a way to bound the probability that the sum of random variables deviates from its expected value. In the context of estimating 0/1 loss, we want the empirical loss (from the test set) to be within 1% of the true loss with 95% confidence. The inequality is given by:
+
+P(|empirical loss - true loss| >= epsilon) <= 2 * exp(-2 * n * epsilon^2)
+
+where n is the number of examples, and epsilon is the desired accuracy (0.01 in this case). We want this probability to be at most 0.05 (for 95% confidence), so:
+
+2 * exp(-2 * n * 0.01^2) <= 0.05
+
+Solving for n, we get:
+
+exp(-2 * n * 0.0001) <= 0.025
+
+-2 * n * 0.0001 <= ln(0.025)
+
+n >= -ln(0.025) / (2 * 0.0001)
+
+Calculating this gives n >= 18436. Therefore, the number of examples needed is more than 1000, which corresponds to choice D.
+ANSWER_AS_LETTER: D",True,D,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]
+94,,"Traditionally, when we have a real-valued input attribute during decision-tree learning we consider a binary split according to whether the attribute is above or below some threshold. Pat suggests that instead we should just have a multiway split with one branch for each of the distinct values of the attribute. From the list below choose the single biggest problem with Pat’s suggestion:
+A) It is too computationally expensive.
+B) It would probably result in a decision tree that scores badly on the training set and a testset.
+C) It would probably result in a decision tree that scores well on the training set but badly on a testset.
+D) It would probably result in a decision tree that scores well on a testset but badly on a training set.",C,"SOLUTION_EXPLANATION: The biggest problem with Pat's suggestion of using a multiway split for each distinct value of a real-valued attribute is that it would likely lead to overfitting. This is because the decision tree would create a separate branch for each distinct value, capturing noise and specific details of the training data rather than general patterns. As a result, the tree would perform well on the training set but poorly on unseen data, such as a test set. This is a classic case of overfitting, where the model is too complex and tailored to the training data, leading to poor generalization. Therefore, the correct answer is C.
+ANSWER_AS_LETTER: C",True,C,CORRECT_ANSWER,,"Solve task below. Answer with (A),(B),(C),(D)",[]

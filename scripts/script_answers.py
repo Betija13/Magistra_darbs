@@ -570,7 +570,7 @@ class LLMRunner:
         if args.MUTATION_UNTIL_SATISFIED and args.METHOD != Method.MUT:
             logger.critical(f"MUTATION_UNTIL_SATISFIED chosen with non mutation method {args.METHOD.value}")
             has_error = True
-        if args.METHOD == Method.MUT and args.N_SAMPLES_MUT < 2:
+        if args.METHOD == Method.MUT and not args.MUTATION_UNTIL_SATISFIED and args.N_SAMPLES_MUT < 2:
             logger.critical(f"N_SAMPLES_MUT chosen {args.N_SAMPLES_MUT} for mutation method (should be at least 2, preferably 5).")
             has_error = True
         if has_error:
