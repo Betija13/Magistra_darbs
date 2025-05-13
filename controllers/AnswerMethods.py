@@ -28,7 +28,7 @@ class AnswerMethods:
         self.controller_ai = ControllerAiLLM()
         self.controller_mutation = Mutation(controller_ai=self.controller_ai)
         self.reward_methods = RewardMethods(ai_llm=self.controller_ai)
-        if reward_name:
+        if reward_name and reward_name not in [RewardModelNames.LLM_GEMINI, RewardModelNames.RERANK_MODEL]:
             self.initialize_reward_model(reward_name=reward_name)
         self.last_mutation_prompt_idx: int = 0
         self.last_thinking_style_idx: int = 0
@@ -218,7 +218,7 @@ class AnswerMethods:
             answer_llm_structure: Answer as StructuredOutput object.
 
         Returns:
-            Final answer as string from SturcturedOutput object.
+            Final answer as string from StructuredOutput object.
         """
         final_answer = None
         try:
@@ -243,11 +243,12 @@ class AnswerMethods:
             ground_truth_answer: str,
             ground_truth_answer_word: str | None = None,
             reward_method: RewardMethod = RewardMethod.MAJOR,
-            output_format: OutputFormat = OutputFormat.NO_FORMAT
+            output_format: OutputFormat = OutputFormat.NO_FORMAT,
+            use_example_mut: bool = False,
+            mutate_mutation: bool = False
     ) -> AnswerResults:
         """
         Gets n_samples of answers but each answer has different system prompt. The system prompt is mutated.
-        TODO boolean ether one mutation from 1st system prompt or mutates each new mutated system prompt
         Args:
             system_prompt: System prompt.
             human_prompt: Human prompt.
@@ -259,6 +260,8 @@ class AnswerMethods:
             ground_truth_answer_word: Word for ground truth answer (only if AnswerType.MULTIPLE_CHOICE.value).
             reward_method: Reward method to choose llm answer.
             output_format: Output type from llm.
+            use_example_mut: If true, uses question and answer example for task prompt mutation.
+            mutate_mutation: If true, mutates mutated task prompt, if False, mutates only task prompt.
 
         Returns:
             AnswerResults, which contains the LLM output and if the answer was correct or not.
@@ -269,16 +272,28 @@ class AnswerMethods:
             answer_for_voting = []
             final_answers = []
             task_prompts = [system_prompt.split('\n\n')[0]]
-            majority_task_prompts = []
-            correct_answer_task_prompts = []
-            example = f"{human_prompt}\nCorrect answer (desired output): ```{ground_truth_answer}```"
-            mutated_task_prompt = self.controller_mutation.mutate_source_prompt(
-                n_samples=n_samples-1, prompt_for_mutation=system_prompt.split('\n\n')[0], output_example=example,
-                use_my_mut_think=True
-            )
-            for task_prompt_n in mutated_task_prompt:
-                if task_prompt_n != "":
-                    task_prompts.append(task_prompt_n)
+            if use_example_mut:
+                example = f"{human_prompt}\nCorrect answer (desired output): ```{ground_truth_answer}```"
+            else:
+                example = None
+            if mutate_mutation:
+                prompt_for_mutation = system_prompt.split('\n\n')[0]
+                for i in range(n_samples-1):
+                    mutated_task_prompt = self.controller_mutation.mutate_current_prompt(
+                        n_mutations=1, prompt_for_mutation=prompt_for_mutation, output_example=example,
+                        use_my_mut_think=True
+                    )
+                    if mutated_task_prompt != "":
+                        task_prompts.append(mutated_task_prompt)
+                        prompt_for_mutation = mutated_task_prompt
+            else:
+                mutated_task_prompts = self.controller_mutation.mutate_source_prompt(
+                    n_samples=n_samples-1, prompt_for_mutation=system_prompt.split('\n\n')[0], output_example=example,
+                    use_my_mut_think=True
+                )
+                for task_prompt_n in mutated_task_prompts:
+                    if task_prompt_n != "":
+                        task_prompts.append(task_prompt_n)
             for task_prompt_n in task_prompts:
                 system_prompt = f"{task_prompt_n}\n\n{system_prompts_output[answer_type.value]}\n\n{system_prompts_static[answer_type.value]}"
                 if output_format != OutputFormat.NO_FORMAT:
@@ -314,7 +329,10 @@ class AnswerMethods:
                 #     system_prompt = f"{mutated_task_prompt}\n\n{system_prompts_output[answer_type]}\n\n{system_prompts_static[answer_type]}"
                 if output_format != OutputFormat.NO_FORMAT:
                     processed_answer = final_answer
-                    answer_for_voting.append(cot_part)
+                    if reward_method == RewardMethod.MAJOR:
+                        answer_for_voting.append(final_answer)
+                    else:
+                        answer_for_voting.append(cot_part)
                 else:
                     processed_answer = ResultUtils.preprocess_answer(answer_llm_unedited, answer_type)
                     answer_for_voting.append(processed_answer)
@@ -325,6 +343,7 @@ class AnswerMethods:
                 question_eval = ''.join([human_prompt.split('```')[1], human_prompt.split('```')[3]]).strip()
             else:
                 raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
+            score_answer = None
             if reward_method == RewardMethod.MAJOR:
                 answer_llm_chosen = RewardMethods.majority_element(answer_for_voting)
             elif reward_method == RewardMethod.RERANK:
@@ -353,22 +372,16 @@ class AnswerMethods:
                 score_answer = chosen_answer_obj.answer_score
             else:
                 raise Exception(f"Reward method {reward_method.value} not implemented.")
+            final_answer_chosen = None
             if answer_llm_chosen is not None:
-                if reward_method == RewardMethod.MAJOR:
-                    for idx in range(n_samples):
-                        if answer_for_voting[idx] == answer_llm_chosen:
-                            majority_task_prompts.append(task_prompts[idx])
-                        if answer_for_voting[idx].lower() == ground_truth_answer.lower():
-                            correct_answer_task_prompts.append(task_prompts[idx])
-                else:
-                    idx_chosen = answer_for_voting.index(answer_llm_chosen)
-                    final_answer_chosen = final_answers[idx_chosen]
-                    full_answer_chosen = answers_llm_unedited[idx_chosen]
-                    prompt_chosen = task_prompts[idx_chosen]
+                idx_chosen = answer_for_voting.index(answer_llm_chosen)
+                final_answer_chosen = final_answers[idx_chosen]
+                full_answer_chosen = answers_llm_unedited[idx_chosen]
+                prompt_chosen = task_prompts[idx_chosen]
 
-            answer_results.chosen_answer = full_answer_chosen
+            answer_results.chosen_answer = full_answer_chosen if answer_llm_chosen is not None else None
             answer_results.task_prompts_all = '\n------\n'.join(task_prompts)
-            answer_results.task_prompts_chosen = [prompt_chosen]
+            answer_results.task_prompts_chosen = [prompt_chosen] if answer_llm_chosen is not None else []
             # answer_results.task_prompts_correct = '\n------\n'.join(correct_answer_task_prompts)
             answer_results.score_chosen = score_answer
             if final_answer_chosen is not None:
@@ -393,7 +406,10 @@ class AnswerMethods:
             result_file: str | None,
             ground_truth_answer_word: str | None = None,
             temperature: float = 0.0,
-            get_structured_output: bool = True,
+            output_format: OutputFormat = OutputFormat.STRUCTURED_COT,
+            use_example_mut: bool = False,
+            use_system_prompt_structure: bool = False,
+            get_mut_scores: bool = False
 
     ) -> AnswerResults:
         """
@@ -408,8 +424,11 @@ class AnswerMethods:
             ground_truth_answer: Ground truth answer.
             result_file: File where the results are saved.
             ground_truth_answer_word: Word for ground truth answer (only if AnswerType.MULTIPLE_CHOICE.value).
-            get_structured_output: If True, get structured output from LLM. If False, get regular output.
-
+            output_format: Answer format time. OutputFormat.
+            use_example_mut: If True, when mutating task prompt, gives an example for question and desired answer.
+            use_system_prompt_structure: Whether to use system prompt structure or just plain system prompt.
+            get_mut_scores: If True, gets reranking and reward model scores for mutated task prompt and question or
+                            answer.
         Returns:
             AnswerResults, which contains the LLM output and if the answer was correct or not.
 
@@ -421,7 +440,7 @@ class AnswerMethods:
             start_mutation_idx = self.last_mutation_prompt_idx
             start_thinking_style_idx = self.last_thinking_style_idx
             extracted_answer = self.get_answer(
-                get_structured_output=get_structured_output, system_prompt=system_prompt, human_prompt=human_prompt,
+                output_format=output_format, system_prompt=system_prompt, human_prompt=human_prompt,
                 temperature=temperature, model_name=model_name, answer_type=answer_type,
                 ground_truth_answer=ground_truth_answer, ground_truth_answer_word=ground_truth_answer_word
             )
@@ -431,11 +450,13 @@ class AnswerMethods:
             # ja nav pareiza, mutē, kamēr iziet cauri visiem indexiem
             if not correct:
                 all_combinations_reached = False
-                # example = f"{human_prompt}\nCorrect answer (desired output): ```{ground_truth_answer}```"
+                if use_example_mut:
+                    example = f"{human_prompt}\nCorrect answer (desired output): ```{ground_truth_answer}```"
+                else:
+                    example = None
                 while not correct and not all_combinations_reached:
                 # indexi kaut kā jāsakārto
                     start_task_prompt = system_prompt.split('\n\n')[0]
-                    example = None  # TODO
                     mutated_task_prompt = self.controller_mutation.mutate_current_prompt(
                         n_mutations=1, prompt_for_mutation=start_task_prompt, output_example=example,
                         use_my_mut_think=True, mutation_prompt_idx=self.last_mutation_prompt_idx,
@@ -453,10 +474,14 @@ class AnswerMethods:
                         if self.last_thinking_style_idx == start_thinking_style_idx:
                             all_combinations_reached = True
                     task_prompts.append(mutated_task_prompt)
-                    system_prompt = f"{mutated_task_prompt}\n\n{system_prompts_output[answer_type.value]}\n\n{system_prompts_static[answer_type.value]}"
+                    if use_system_prompt_structure:
+                        system_prompt = (f"{mutated_task_prompt}\n\n{system_prompts_output[answer_type.value]}"
+                                         f"\n\n{system_prompts_static[answer_type.value]}")
+                    else:
+                        system_prompt = mutated_task_prompt
 
                     extracted_answer = self.get_answer(
-                        get_structured_output=get_structured_output, system_prompt=system_prompt, human_prompt=human_prompt,
+                        output_format=output_format, system_prompt=system_prompt, human_prompt=human_prompt,
                         temperature=1.0, model_name=model_name, answer_type=answer_type,
                         ground_truth_answer=ground_truth_answer, ground_truth_answer_word=ground_truth_answer_word
                     )
@@ -464,23 +489,28 @@ class AnswerMethods:
                     processed_answer = extracted_answer.processed_answer
                     correct = extracted_answer.correct
                     # TODO error handling
+                    reward_model_score_task_question = None
+                    reranking_score_task_question = None
+                    reward_model_score_answer_question = None
+                    reranking_score_answer_question = None
                     question_raw = re.findall(r'\n```\n(.*?)\n```\n', human_prompt, re.DOTALL)[0]
-                    reward_model_score_task_question = self.reward_methods.get_reward_model_score(
-                        answer_option=mutated_task_prompt, question=question_raw
-                    )
-                    reranking_score_task_question = self.reward_methods.get_reranking_model_score(
-                        answer_option=mutated_task_prompt, question=question_raw
-                    )
-                    if answer_llm_unedited is not None:
-                        reranking_score_answer_question = self.reward_methods.get_reranking_model_score(
-                            answer_option=answer_llm_unedited, question=question_raw
+                    if get_mut_scores:
+                        reward_model_score_task_question = self.reward_methods.get_reward_model_score(
+                            answer_option=mutated_task_prompt, question=question_raw
                         )
-                        reward_model_score_answer_question = self.reward_methods.get_reward_model_score(
-                            answer_option=answer_llm_unedited, question=question_raw
+                        reranking_score_task_question = self.reward_methods.get_reranking_model_score(
+                            answer_option=mutated_task_prompt, question=question_raw
                         )
-                    else:
-                        reranking_score_answer_question = None
-                        reward_model_score_answer_question = None
+                        if answer_llm_unedited is not None:
+                            reranking_score_answer_question = self.reward_methods.get_reranking_model_score(
+                                answer_option=answer_llm_unedited, question=question_raw
+                            )
+                            reward_model_score_answer_question = self.reward_methods.get_reward_model_score(
+                                answer_option=answer_llm_unedited, question=question_raw
+                            )
+                        else:
+                            reranking_score_answer_question = None
+                            reward_model_score_answer_question = None
 
                     mutation_file = DynamicMutationInfo(
                         id=0,
@@ -538,7 +568,7 @@ class AnswerMethods:
 
     def get_answer(
             self,
-            get_structured_output: bool,
+            output_format: OutputFormat,
             system_prompt: str,
             human_prompt: str,
             temperature: float,
@@ -550,8 +580,7 @@ class AnswerMethods:
         """
         Get the answer from llm and check if it is correct or not.
         Args:
-            get_structured_output: Boolean whether the answer should be structured.
-            TODO should remove ^ and replace with OutputFormat.
+            output_format: Answer output format.
             system_prompt: System prompt.
             human_prompt: Human prompt.
             temperature: Temperature (0-2).
@@ -566,10 +595,11 @@ class AnswerMethods:
         """
         answer_extraction = AnswerExtraction()
         try:
-            if get_structured_output:
+            if output_format != OutputFormat.NO_FORMAT:
                 answer_llm_structure = self.controller_ai.get_structured_output(
                     system_prompt=system_prompt, human_prompt=human_prompt, response_count=1,
-                    temperature=temperature, model_name=model_name, answer_type=answer_type
+                    temperature=temperature, model_name=model_name, answer_type=answer_type,
+                    output_format=output_format
                 )
                 if answer_type == AnswerType.MULTIPLE_CHOICE:
                     final_answer = answer_llm_structure[0].answer_as_letter
@@ -589,7 +619,7 @@ class AnswerMethods:
             if answer_llm_unedited is None or answer_llm_unedited == '':
                 raise Exception("No answer from LLM.")
             answer_extraction.answer_llm_unedited = answer_llm_unedited
-            if get_structured_output:
+            if output_format != OutputFormat.NO_FORMAT:
                 processed_answer = final_answer
             else:
                 processed_answer = ResultUtils.preprocess_answer(answer_llm_unedited, answer_type)

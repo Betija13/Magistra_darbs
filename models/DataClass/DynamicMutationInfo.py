@@ -10,7 +10,7 @@ class DynamicMutationInfo:
     mutated_task_prompt: str
     llm_answer: str
     correct_answer: bool
-    reward_model_name: str
+    reward_model_name: str | None
     reward_model_score_task_question: float | None
     reranking_score_task_question: float | None
     reward_model_score_answer_question: float | None

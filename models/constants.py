@@ -513,7 +513,13 @@ reward_names_shorten = [
     (RewardModelNames.BLENDER_PRM, "BLENDER_PRM"),
     (RewardModelNames.DEBERTA_V3_2, "DEBERTA_V3_2"),
     (RewardModelNames.GRM, "GRM")
-
-
-
 ]
+
+prompt_names_list = {
+    "created_my_prompts_NUM": created_my_prompts_NUM,
+    "best_task_prompts_AQUA": best_task_prompts_AQUA,
+    "best_task_prompts_MMLU": best_task_prompts_MMLU,
+    "mutated_task_prompts_MMLU": mutated_task_prompts_MMLU,
+    "created_my_prompts_MC": created_my_prompts_MC,
+    "mutated_task_prompts_AQuA_RAT": mutated_task_prompts_AQuA_RAT
+}
