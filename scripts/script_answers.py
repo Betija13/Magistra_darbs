@@ -356,8 +356,19 @@ class LLMRunner:
             mut_mut_str = ""
             if args.METHOD == Method.MUT and not args.MUTATION_UNTIL_SATISFIED:
                 mut_mut_str = "__MM" if args.MUTATE_MUT else "__MT"
+            reward_name_str = ""
+            if args.REWARD_METHOD == RewardMethod.REWARD_M:
+                custom_rn_list = [cname for r, cname in reward_names_shorten if r == args.REWARD_NAME]
+                if len(custom_rn_list) == 1:
+                    custom_rn = custom_rn_list[0]
+                    reward_name_str = f"__RN-{custom_rn}"
+                else:
+                    logger.error(f"{args.REWARD_NAME} not found in custom_rn_list")
 
-            result_file = (f'../datasets/{folder}/results/{args.METHOD_NAME_FILE}{until_satisfied_mut_str}{same_start_str}{use_example_mut}{mut_mut_str}{reward_str}__'
+
+
+            result_file = (f'../datasets/{folder}/results/{args.METHOD_NAME_FILE}{until_satisfied_mut_str}'
+                           f'{same_start_str}{use_example_mut}{mut_mut_str}{reward_str}{reward_name_str}__'
                            f'O-{args.OUTPUT_FORMAT.value}__{input_format}{self.current_date}__F-{question_filename}'
                            f'{self.custom_name_str}.csv')
             self.output_info(
