@@ -5267,3 +5267,21 @@ Choices:
 {choices}
 ```
 ",1.0,1,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
+599,13-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_13-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,73.62204724409449,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,MAJOR_ANSWER,gpt-4o,0.0,
+600,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,73.22834645669292,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
