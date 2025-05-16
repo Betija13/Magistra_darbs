@@ -24,7 +24,7 @@ system_prompts_output = {
 system_prompts_static = {
     AnswerType.BOOL.value: "",
     AnswerType.MULTIPLE_CHOICE.value: "Do not give extra instructions. Answer the question as it is. Always choose an answer option. Answer with only the final answer.",
-    AnswerType.NUMBER.value: "",
+    AnswerType.NUMBER.value: "Do not give extra instructions. Answer the question as it is. Answer with only the final answer number.",
     AnswerType.TEXT.value: "",
 }
 

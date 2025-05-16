@@ -6597,3 +6597,151 @@ Choices:
 {choices}
 ```
 ",1.0,1,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+749,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/PLAN_AND_SOLVE__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers.csv,PLAN_AND_SOLVE,True,250,47.599999999999994,,Q: {question},0.0,1,,gpt-4o,0.8,
+750,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/PLAN_AND_SOLVE_PLUS__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers.csv,PLAN_AND_SOLVE_PLUS,True,250,48.8,,Q: {question},0.0,1,,gpt-4o,0.0,
+751,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/ZS_COT__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers.csv,ZS_COT,True,250,48.0,,Q: {question},0.0,1,,gpt-4o,0.0,
+752,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers_0.csv,A_ZERO_SHOT,True,250,48.0,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,1.6,
+753,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers_1.csv,A_ZERO_SHOT,True,250,47.199999999999996,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.8,
+754,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers_2.csv,A_ZERO_SHOT,True,250,49.2,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,2.8000000000000003,
+755,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers_3.csv,A_ZERO_SHOT,True,250,46.800000000000004,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,1.2,
+756,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-N_15-05-2025__F-data_normalize_numbers_4.csv,A_ZERO_SHOT,True,250,46.800000000000004,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.4,
+757,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-S_15-05-2025__F-data_normalize_numbers_0.csv,A_ZERO_SHOT,True,250,26.400000000000002,"Solve the math word problem, giving your answer as an arabic numeral.
+
+Answer with only the final number.
+
+","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,89.60000000000001,
+758,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-S_15-05-2025__F-data_normalize_numbers_1.csv,A_ZERO_SHOT,True,250,27.200000000000003,"Calculate the solution to the math word problem and express your answer using an Arabic numeral.
+
+Answer with only the final number.
+
+","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,76.8,
+759,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-S_15-05-2025__F-data_normalize_numbers_2.csv,A_ZERO_SHOT,True,250,26.0,"Work out the math word problem and provide the solution in the form of a numeral.
+
+Answer with only the final number.
+
+","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,88.0,
+760,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-S_15-05-2025__F-data_normalize_numbers_3.csv,A_ZERO_SHOT,True,250,30.0,"Calculate the answer to the math word problem and express it as a numerical value.
+
+Answer with only the final number.
+
+","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,81.6,
+761,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-NO_FORMAT___I-S_15-05-2025__F-data_normalize_numbers_4.csv,A_ZERO_SHOT,True,250,27.200000000000003,"Understand and find the solution to the math word problem, expressing your answer using a number.
+
+Answer with only the final number.
+
+","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,90.0,
+762,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_COT___I-N_15-05-2025__F-data_normalize_numbers_0.csv,A_ZERO_SHOT,True,250,53.6,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+763,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_COT___I-N_15-05-2025__F-data_normalize_numbers_1.csv,A_ZERO_SHOT,True,250,56.8,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+764,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_COT___I-N_15-05-2025__F-data_normalize_numbers_2.csv,A_ZERO_SHOT,True,250,54.0,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+765,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_COT___I-N_15-05-2025__F-data_normalize_numbers_3.csv,A_ZERO_SHOT,True,250,55.60000000000001,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+766,15-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_COT___I-N_15-05-2025__F-data_normalize_numbers_4.csv,A_ZERO_SHOT,True,250,54.400000000000006,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+767,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_ANSWER___I-N_16-05-2025__F-data_normalize_numbers_0.csv,A_ZERO_SHOT,True,250,30.8,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,100.0,
+768,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_ANSWER___I-N_16-05-2025__F-data_normalize_numbers_1.csv,A_ZERO_SHOT,True,250,30.8,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,100.0,
+769,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_ANSWER___I-N_16-05-2025__F-data_normalize_numbers_2.csv,A_ZERO_SHOT,True,250,31.2,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,100.0,
+770,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_ANSWER___I-N_16-05-2025__F-data_normalize_numbers_3.csv,A_ZERO_SHOT,True,250,31.2,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,100.0,
+771,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_ZERO_SHOT__O-STRUCTURED_ANSWER___I-N_16-05-2025__F-data_normalize_numbers_4.csv,A_ZERO_SHOT,True,250,31.2,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,100.0,
+772,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/TWO_PROMPTS__O-NO_FORMAT___I-N_16-05-2025__F-data_normalize_numbers_0.csv,TWO_PROMPTS,True,250,54.800000000000004,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+773,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/TWO_PROMPTS__O-NO_FORMAT___I-N_16-05-2025__F-data_normalize_numbers_1.csv,TWO_PROMPTS,True,250,56.39999999999999,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.8,
+774,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/TWO_PROMPTS__O-NO_FORMAT___I-N_16-05-2025__F-data_normalize_numbers_2.csv,TWO_PROMPTS,True,250,54.0,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+775,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/TWO_PROMPTS__O-NO_FORMAT___I-N_16-05-2025__F-data_normalize_numbers_3.csv,TWO_PROMPTS,True,250,52.400000000000006,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,
+776,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/TWO_PROMPTS__O-NO_FORMAT___I-N_16-05-2025__F-data_normalize_numbers_4.csv,TWO_PROMPTS,True,250,53.6,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",0.0,1,,gpt-4o,0.0,

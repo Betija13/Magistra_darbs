@@ -1,0 +1,1739 @@
+id,quid,question,true_answer,llm_answer,correct,llm_answer_chosen,reward_method,reward_score,task_prompt_all,task_prompts_majority
+0,,How many ways are there to divide a set of 8 elements into 5 non-empty ordered subsets?,11760,34105,False,,,,,[]
+1,,what is the value of $\int_{-infty}^{+infty} sin(3*t)*sin(t/\pi)/t^2 dt$?,1.0,0,False,,,,,[]
+3,,Please solve the equation 2*x^3 + e^x = 10 using newton-raphson method.,1.42,2,False,,,,,[]
+4,,How many ways are there to divide a set of 7 elements into 4 non-empty ordered subsets?,4200,350,False,,,,,[]
+7,,"Compute $\int_{|z| = 1} z^2 sin(1/z) dz$. The answer is Ai with i denoting the imaginary unit, what is A?",-1.047,"The integral \(\int_{|z| = 1} z^2 \sin(1/z) \, dz\) is a contour integral over the unit circle \(|z| = 1\). We can expand \(\sin(1/z)\) as a power series:
+
+\[
+\sin(1/z) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} \left(\frac{1}{z}\right)^{2n+1} = \frac{1}{z} - \frac{1}{6z^3} + \frac{1}{120z^5} - \cdots
+\]
+
+Multiplying by \(z^2\), we have:
+
+\[
+z^2 \sin(1/z) = z^2 \left( \frac{1}{z} - \frac{1}{6z^3} + \frac{1}{120z^5} - \cdots \right) = z - \frac{1}{6z} + \frac{1}{120z^3} - \cdots
+\]
+
+The integral \(\int_{|z| = 1} z^2 \sin(1/z) \, dz\) can be evaluated term by term. The integral of each term is:
+
+- \(\int_{|z| = 1} z \, dz = 0\) because \(z\) is analytic inside and on the contour.
+- \(\int_{|z| = 1} \frac{1}{z} \, dz = 2\pi i\) by the Cauchy integral formula.
+- \(\int_{|z| = 1} \frac{1}{z^3} \, dz = 0\) because \(\frac{1}{z^3}\) is analytic inside and on the contour.
+
+Thus, the only non-zero contribution comes from the \(-\frac{1}{6z}\) term:
+
+\[
+\int_{|z| = 1} \left(z - \frac{1}{6z} + \frac{1}{120z^3} - \cdots \right) \, dz = -\frac{1}{6} \int_{|z| = 1} \frac{1}{z} \, dz = -\frac{1}{6} \cdot 2\pi i = -\frac{\pi i}{3}
+\]
+
+The integral evaluates to \(-\frac{\pi i}{3}\), which is of the form \(Ai\) where \(A = -\frac{\pi}{3}\).
+
+Therefore, the value of \(A\) is:
+
+\(-\frac{\pi}{3}\)",False,,,,,[]
+8,,A container weighs 3.22 lb force when empty. Filled with water at 60°F the mass of the container and its contents is 1.95 slugs. Find its volume in cubic feet. Assume density of water = 62.4 lb force/ft3.,0.955,0.0279,False,,,,,[]
+10,,"Find the x value of the solutions to the linear system: 7x - y = 15x, -6x + 8y = 15y.",0,0,True,,,,,[]
+11,,"In Jules Verne's 1865 story with this title, three men went to the moon in a shell fired from a giant cannon sunk in the earth in Florida. Find the minimum muzzle speed that would allow a shell to escape from the earth completely (the escape speed). Neglect air resistance, the earth's rotation, and the gravitational pull of the moon. The earth's radius and mass are $R_E}=$ $6.38 \times 10^6 m$ and $m_E=5.97 \times 10^{24} kg$. (Unit: 10 ^ 4 m/s)",1.12,11,False,,,,,[]
+16,,"What is the number of labelled forests on 10 vertices with 5 connected components, such that vertices 1, 2, 3, 4, 5 all belong to different connected components?",50000,30240,False,,,,,[]
+17,,Let g(x) be the inverse of f(x) = x + cos(x). What is g'(1)?,1,1,True,,,,,[]
+19,,"Let W(t) be the standard Brownian motion. Define X(t) = exp{W(t)}, for all t \in [0, \infty). Let 0 < s < t. Find Cov(X(s=1/2), X(t=1)).",1.3733,0,False,,,,,[]
+20,,Consider a random walk on a connected graph with 4 edges. What is the highest possible entropy rate? Use base 2 logarithm and return the entropy rate in bits.,1.094,2,False,,,,,[]
+22,,"The shock absorbers in an old car with mass 1000 kg are completely worn out. When a 980-N person climbs slowly into the car at its center of gravity, the car sinks 2.8 cm. The car (with the person aboard) hits a bump, and the car starts oscillating up and down in SHM. Model the car and person as a single body on a single spring, and find the frequency of the oscillation. (Unit: Hz)",0.9,0.88,False,,,,,[]
+23,,"Find the smallest positive integer that leaves a remainder of 1 when divided by 2, a remainder of 2 when divided by 3, a remainder of 3 when divided by 4, a remainder of 4 when divided by 5, and a remainder of 5 when divided by 6.",59,59,True,,,,,[]
+26,,"Aisha graduates college and starts a job. She saves $1000 each quarter, depositing it into a retirement savings account. Suppose that Aisha saves for 30 years and then retires. At retirement she wants to withdraw money as an annuity that pays a constant amount every month for 25 years. During the savings phase, the retirement account earns 6% interest compounded quarterly. During the annuity payout phase, the retirement account earns 4.8% interest compounded monthly. Calculate Aisha’s monthly retirement annuity payout.",1898.27,"To solve this problem, we need to calculate the future value of Aisha's savings at the end of the 30-year savings period and then determine the monthly annuity payment she can receive for 25 years.
+
+1. **Calculate the future value of the savings:**
+
+   Aisha saves $1000 each quarter for 30 years. The interest rate is 6% per annum, compounded quarterly. Therefore, the quarterly interest rate is 6% / 4 = 1.5% = 0.015.
+
+   The number of quarters in 30 years is 30 * 4 = 120.
+
+   The future value of a series of regular deposits (ordinary annuity) is given by the formula:
+
+   \[
+   FV = P \times \frac{(1 + r)^n - 1}{r}
+   \]
+
+   where:
+   - \( P = 1000 \) (quarterly deposit)
+   - \( r = 0.015 \) (quarterly interest rate)
+   - \( n = 120 \) (total number of deposits)
+
+   Plugging in the values:
+
+   \[
+   FV = 1000 \times \frac{(1 + 0.015)^{120} - 1}{0.015}
+   \]
+
+   \[
+   FV = 1000 \times \frac{(1.015)^{120} - 1}{0.015}
+   \]
+
+   \[
+   FV = 1000 \times \frac{4.454 - 1}{0.015}
+   \]
+
+   \[
+   FV = 1000 \times \frac{3.454}{0.015}
+   \]
+
+   \[
+   FV = 1000 \times 230.2667
+   \]
+
+   \[
+   FV = 230,266.7
+   \]
+
+   So, the future value of the savings at the end of 30 years is approximately $230,266.70.
+
+2. **Calculate the monthly annuity payment:**
+
+   Now, Aisha wants to withdraw this amount as a monthly annuity over 25 years. The interest rate during the annuity phase is 4.8% per annum, compounded monthly. Therefore, the monthly interest rate is 4.8% / 12 = 0.4% = 0.004.
+
+   The number of months in 25 years is 25 * 12 = 300.
+
+   The formula for the monthly annuity payment is:
+
+   \[
+   PMT = \frac{FV \times r}{1 - (1 + r)^{-n}}
+   \]
+
+   where:
+   - \( FV = 230,266.7 \)
+   - \( r = 0.004 \) (monthly interest rate)
+   - \( n = 300 \) (total number of payments)
+
+   Plugging in the values:
+
+   \[
+   PMT = \frac{230,266.7 \times 0.004}{1 - (1 + 0.004)^{-300}}
+   \]
+
+   \[
+   PMT = \frac{921.0668}{1 - (1.004)^{-300}}
+   \]
+
+   \[
+   PMT = \frac{921.0668}{1 - 0.301}
+   \]
+
+   \[
+   PMT = \frac{921.0668}{0.699}
+   \]
+
+   \[
+   PMT = 1,317.77
+   \]
+
+Therefore, Aisha’s monthly retirement annuity payout is approximately $1,317.77.",False,,,,,[]
+28,,"An auto magazine reports that a certain sports car has 53% of its weight on the front wheels and 47% on its rear wheels. (That is, the total normal forces on the front and rear wheels are 0.53w and 0.47w, respectively, where w is the car’s weight.) The distance between the axles is 2.46 m. How far in front of the rear axle is the car’s center of gravity?",1.3,1.304,True,,,,,[]
+29,,"A parachutist with mass m=80 kg is undergoing free fall. The drag force applied on him is $F_D = kv^2$, where v is the velocity measured relative to the air. The constant k=0.27 [Ns^2/m^2] is given. Find the distance traveled h in meters, until v=0.95$v_t$ is achieved, where $v_t$ is the terminal velocity. Return the numeric value.",345.0,"The terminal velocity \( v_t \) is achieved when the gravitational force equals the drag force. The gravitational force is given by \( F_g = mg \), where \( g = 9.81 \, \text{m/s}^2 \).
+
+At terminal velocity, \( F_g = F_D \), so:
+
+\[
+mg = kv_t^2
+\]
+
+Solving for \( v_t \):
+
+\[
+v_t = \sqrt{\frac{mg}{k}}
+\]
+
+Substitute the given values:
+
+\[
+v_t = \sqrt{\frac{80 \times 9.81}{0.27}}
+\]
+
+\[
+v_t = \sqrt{\frac{784.8}{0.27}}
+\]
+
+\[
+v_t = \sqrt{2907.4074}
+\]
+
+\[
+v_t \approx 53.92 \, \text{m/s}
+\]
+
+We need to find the distance \( h \) when \( v = 0.95v_t \).
+
+\[
+v = 0.95 \times 53.92 \approx 51.224 \, \text{m/s}
+\]
+
+The velocity as a function of time \( v(t) \) for an object in free fall with drag is given by:
+
+\[
+v(t) = v_t \tanh\left(\frac{gt}{v_t}\right)
+\]
+
+We set \( v(t) = 0.95v_t \):
+
+\[
+0.95v_t = v_t \tanh\left(\frac{gt}{v_t}\right)
+\]
+
+\[
+0.95 = \tanh\left(\frac{gt}{v_t}\right)
+\]
+
+Solving for \( t \):
+
+\[
+\tanh^{-1}(0.95) = \frac{gt}{v_t}
+\]
+
+\[
+t = \frac{v_t}{g} \tanh^{-1}(0.95)
+\]
+
+Calculate \( \tanh^{-1}(0.95) \):
+
+\[
+\tanh^{-1}(0.95) \approx 1.8318
+\]
+
+Substitute the values:
+
+\[
+t = \frac{53.92}{9.81} \times 1.8318
+\]
+
+\[
+t \approx 10.065 \, \text{s}
+\]
+
+The distance \( h \) traveled in time \( t \) is given by:
+
+\[
+h = \int_0^t v(t) \, dt = \int_0^t v_t \tanh\left(\frac{gt}{v_t}\right) \, dt
+\]
+
+The integral of velocity with respect to time is:
+
+\[
+h = v_t \left( \frac{v_t}{g} \ln\left(\cosh\left(\frac{gt}{v_t}\right)\right) \right) \bigg|_0^t
+\]
+
+\[
+h = \frac{v_t^2}{g} \ln\left(\cosh\left(\frac{gt}{v_t}\right)\right)
+\]
+
+Substitute the values:
+
+\[
+h = \frac{53.92^2}{9.81} \ln\left(\cosh\left(\frac{9.81 \times 10.065}{53.92}\right)\right)
+\]
+
+\[
+h = \frac{2907.4064}{9.81} \ln\left(\cosh(1.8318)\right)
+\]
+
+\[
+h \approx 296.32 \times \ln(3.129)
+\]
+
+\[
+h \approx 296.32 \times 1.141
+\]
+
+\[
+h \approx 338.1
+\]
+
+The distance traveled \( h \) is approximately:
+
+\[
+\boxed{338}
+\]",False,,,,,[]
+31,,In how many ways can a set of 6 distinct letters be partitioned into 3 non-empty groups if each group must contain at least 2 letters?,15,15,True,,,,,[]
+33,,"For a\geq 0, we define $S_a={x | dist(x, S) \leq a}$, where $dist(x,S)=inf_{y\in S}||x-y||$. Suppose S is convex. Is S_a convex? Return 1 for yes and 0 for no.",1.0,1,True,,,,,[]
+34,,"suppose the 10-by-10 matrix A has the form: if i \neq j, A_{i,j}=a_i*b_j; if i=j,  A_{i,j}=1+a_i*b_j for all 1<=i,j<=10. Here a_i = 1/i, b_i=1/(i+1). Find the determinant of A. return the numeric.",1.9,1,False,,,,,[]
+35,,"Find the area of the region between the graphs of the functions f(x) = x^2 - 4x + 10, g(x) = 4x - x^2, 1 <= x <= 3.",5.333,8,False,,,,,[]
+37,,How many ways are there to arrange 6 pairs of parentheses such that they are balanced?,132,132,True,,,,,[]
+38,,Find the fraction of 7.7-MeV alpha particles that is deflected at an angle of 90° or more from a gold foil of 10^-6 m thickness.,4e-05,0,False,,,,,[]
+39,,In how many ways can a group of 9 people be divided into 3 non-empty subsets?,3025,3025,True,,,,,[]
+40,,"Suppose there is a 50-50 chance that an individual with logarithmic utility from wealth and with a current wealth of $20,000 will suffer a loss of $10,000 from a car accident. Insurance is competitively provided at actuarially fair rates. Compute the utility if the individual buys full insurance.",9.616,9.903487553,False,,,,,[]
+41,,"The returns on a stock are 2.45% at 2018, 5.42% at 2019, -13.83% at 2020. What is the compound annual rate (between -1 and 1) of return over the three years.",-0.023669,-0.0221,False,,,,,[]
+43,,"Find integer $n \ge 1$, such that $n \cdot 2^{n+1}+1$ is a perfect square.",3,9,False,,,,,[]
+45,,Find $\int_{0}^{\sqrt{3}} \frac{dx}{1+x^2}$.,1.0472,"The integral \(\int \frac{dx}{1+x^2}\) is a standard integral that evaluates to \(\arctan(x) + C\), where \(C\) is the constant of integration. 
+
+To solve the definite integral \(\int_{0}^{\sqrt{3}} \frac{dx}{1+x^2}\), we evaluate the antiderivative at the bounds:
+
+\[
+\left[ \arctan(x) \right]_{0}^{\sqrt{3}} = \arctan(\sqrt{3}) - \arctan(0)
+\]
+
+We know that \(\arctan(\sqrt{3}) = \frac{\pi}{3}\) because \(\tan\left(\frac{\pi}{3}\right) = \sqrt{3}\), and \(\arctan(0) = 0\) because \(\tan(0) = 0\).
+
+Thus, the value of the integral is:
+
+\[
+\frac{\pi}{3} - 0 = \frac{\pi}{3}
+\]
+
+Therefore, the final answer is:
+
+\(\frac{\pi}{3}\)",False,,,,,[]
+46,,"A box contains 4 red, 3 green, and 2 blue balls. Balls are distinct even with the same color. In how many ways can we choose 4 balls, if at least 2 are red?",81,45,False,,,,,[]
+48,,Sum the series $\sum_{m=1}^{\infty} \sum_{n=1}^{\infty}\frac{m^2 n}{3^m(n3^m+m3^n)}$,0.28125,1,False,,,,,[]
+49,,"You want to move a 500-N crate across a level floor. To start thecrate moving, you have to pull with a 230-N horizontal force.Once the crate breaks loose and starts to move, you can keep itmoving at constant velocity with only 200 N. What are the coefficients of static and kinetic friction?",0.4,0.46,False,,,,,[]
+50,,"Let’s assume that the 10-year annual return for the S&P 500 (market portfolio) is 10%, while the average annual return on Treasury bills (a good proxy for the risk-free rate) is 5%. The standard deviation is 15% over a 10-year period. Whats the market Sharpe Ratio?",0.33,0.3333,True,,,,,[]
+51,,What is the value of the integral $\int_2^4 \frac{\sqrt{log(9-x)}}{\sqrt{log(9-x)}+\sqrt{log(x+3)}} dx$?,1.0,"The integral given is:
+
+\[
+\int_2^4 \frac{\sqrt{\log(9-x)}}{\sqrt{\log(9-x)} + \sqrt{\log(x+3)}} \, dx
+\]
+
+To solve this, we can use a symmetry argument. Consider the substitution \( x = 6 - t \). Then \( dx = -dt \), and the limits of integration change as follows: when \( x = 2 \), \( t = 4 \), and when \( x = 4 \), \( t = 2 \). Thus, the integral becomes:
+
+\[
+\int_4^2 \frac{\sqrt{\log(9-(6-t))}}{\sqrt{\log(9-(6-t))} + \sqrt{\log((6-t)+3)}} (-dt)
+\]
+
+Simplifying the expression inside the integral:
+
+\[
+9 - (6 - t) = 3 + t \quad \text{and} \quad (6 - t) + 3 = 9 - t
+\]
+
+Thus, the integral becomes:
+
+\[
+\int_2^4 \frac{\sqrt{\log(3+t)}}{\sqrt{\log(3+t)} + \sqrt{\log(9-t)}} \, dt
+\]
+
+Notice that this is the same form as the original integral, but with \( x \) replaced by \( t \). Therefore, the original integral can be rewritten as:
+
+\[
+\int_2^4 \frac{\sqrt{\log(9-x)}}{\sqrt{\log(9-x)} + \sqrt{\log(x+3)}} \, dx = \int_2^4 \frac{\sqrt{\log(x+3)}}{\sqrt{\log(x+3)} + \sqrt{\log(9-x)}} \, dx
+\]
+
+Adding these two integrals, we have:
+
+\[
+\int_2^4 \frac{\sqrt{\log(9-x)}}{\sqrt{\log(9-x)} + \sqrt{\log(x+3)}} \, dx + \int_2^4 \frac{\sqrt{\log(x+3)}}{\sqrt{\log(x+3)} + \sqrt{\log(9-x)}} \, dx
+\]
+
+The sum of the integrands is:
+
+\[
+\frac{\sqrt{\log(9-x)}}{\sqrt{\log(9-x)} + \sqrt{\log(x+3)}} + \frac{\sqrt{\log(x+3)}}{\sqrt{\log(x+3)} + \sqrt{\log(9-x)}} = 1
+\]
+
+Thus, the sum of the integrals is:
+
+\[
+\int_2^4 1 \, dx = 4 - 2 = 2
+\]
+
+Since the two integrals are equal, each must be half of 2:
+
+\[
+\int_2^4 \frac{\sqrt{\log(9-x)}}{\sqrt{\log(9-x)} + \sqrt{\log(x+3)}} \, dx = 1
+\]
+
+Therefore, the value of the integral is:
+
+\[
+\boxed{1}
+\]",True,,,,,[]
+52,,"Suppose there are 100 identical firms in a perfectly competitive industry. Each firm has a short-run total cost function of the form C(q) = rac{1}{300}q^3 + 0.2q^2 + 4q + 10. Suppose market demand is given by Q = -200P + 8,000. What will be the short-run equilibrium price?",25,20,False,,,,,[]
+53,,"A state issues a 15 year $1000 bond that pays $25 every six months. If the current market interest rate is 4%, what is the fair market value of the bond?",1111.97,1134,False,,,,,[]
+54,,In how many ways can we color a loop of 5 vertices with 3 colors such that no two adjacent vertices have the same color?,30,48,False,,,,,[]
+57,,What is the order of group Z_{18}?,18,18,True,,,,,[]
+61,,"dy/dt = \sqrt{t}, y(1) = 1. What is y(4)?",5.667,7,False,,,,,[]
+63,,In how many ways can 10 distinct balls be placed into 4 identical boxes if each box must have at least 1 balls?,26335,5040,False,,,,,[]
+65,,what is the limit of $2/\sqrt{\pi}*\sqrt{n}\int_0^1(1-x^2)^n dx$ as n goes to infinity?,1.0,1,True,,,,,[]
+68,,"Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a 4-clique in red or a 5-clique in blue?",25,14,False,,,,,[]
+69,,"Assume the Black-Scholes framework. For $t \ge 0$, let $S(t)$ be the time-$t$ price of a nondividend-paying stock. You are given:
+(i) $S(0)=0.5
+(ii) The stock price process is $\frac{dS(t)}{S(t)} = 0.05dt+0.2dZ(t)$ where $Z(t)$ is a standart Brownian motion.
+(iii) $E[S(1)^\alpha]=1.4$, where $\alpha$ is a negative constant.
+(iv) The continuously compounded risk-free interest rate is $3%$.
+Consider a contingent claim that pays $S(1)^\alpha$ at time 1. What is the time-0 price of the contigent claim?",1.372,1.2,False,,,,,[]
+70,,"Determine the multiplicity of the root ξ = 1, of the polynomial P(x) = x^5 - 2x^4 + 4x^3 - x^2 - 7x + 5 = 0 using synthetic division. What is P'(2) + P''(2)? Please return the decimal number.",163,12,False,,,,,[]
+72,,The cross section for neutrons of energy 10 eV being captured by silver is 17 barns. What is the probability of a neutron being captured as it passes through a layer of silver 2 mm thick?,0.2,0.034,False,,,,,[]
+73,,"What is the determinant of matrix [[0, 1, 2], [7, 8, 3], [6, 5, 4]]?",-36,99,False,,,,,[]
+75,,The two-digit integers from 19 to 92 are written consecutively to form the large integer N = 192021 · · · 909192. Suppose that 3^k is the highest power of 3 that is a factor of N. What is k?,1,"The two-digit integers from 19 to 92 are written consecutively to form the large integer \( N = 192021 \ldots 909192 \).
+
+To find the highest power of 3 that divides \( N \), we need to determine the sum of the digits of \( N \) because a number is divisible by 3 if the sum of its digits is divisible by 3.
+
+First, we calculate the sum of the digits of each two-digit number from 19 to 92.
+
+- For numbers from 19 to 29:
+  - 19: \( 1 + 9 = 10 \)
+  - 20: \( 2 + 0 = 2 \)
+  - 21: \( 2 + 1 = 3 \)
+  - 22: \( 2 + 2 = 4 \)
+  - 23: \( 2 + 3 = 5 \)
+  - 24: \( 2 + 4 = 6 \)
+  - 25: \( 2 + 5 = 7 \)
+  - 26: \( 2 + 6 = 8 \)
+  - 27: \( 2 + 7 = 9 \)
+  - 28: \( 2 + 8 = 10 \)
+  - 29: \( 2 + 9 = 11 \)
+
+The sum of the digits from 19 to 29 is:
+\[ 10 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 = 75 \]
+
+- For numbers from 30 to 39:
+  - 30: \( 3 + 0 = 3 \)
+  - 31: \( 3 + 1 = 4 \)
+  - 32: \( 3 + 2 = 5 \)
+  - 33: \( 3 + 3 = 6 \)
+  - 34: \( 3 + 4 = 7 \)
+  - 35: \( 3 + 5 = 8 \)
+  - 36: \( 3 + 6 = 9 \)
+  - 37: \( 3 + 7 = 10 \)
+  - 38: \( 3 + 8 = 11 \)
+  - 39: \( 3 + 9 = 12 \)
+
+The sum of the digits from 30 to 39 is:
+\[ 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 = 75 \]
+
+- For numbers from 40 to 49:
+  - 40: \( 4 + 0 = 4 \)
+  - 41: \( 4 + 1 = 5 \)
+  - 42: \( 4 + 2 = 6 \)
+  - 43: \( 4 + 3 = 7 \)
+  - 44: \( 4 + 4 = 8 \)
+  - 45: \( 4 + 5 = 9 \)
+  - 46: \( 4 + 6 = 10 \)
+  - 47: \( 4 + 7 = 11 \)
+  - 48: \( 4 + 8 = 12 \)
+  - 49: \( 4 + 9 = 13 \)
+
+The sum of the digits from 40 to 49 is:
+\[ 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 = 85 \]
+
+- For numbers from 50 to 59:
+  - 50: \( 5 + 0 = 5 \)
+  - 51: \( 5 + 1 = 6 \)
+  - 52: \( 5 + 2 = 7 \)
+  - 53: \( 5 + 3 = 8 \)
+  - 54: \( 5 + 4 = 9 \)
+  - 55: \( 5 + 5 = 10 \)
+  - 56: \( 5 + 6 = 11 \)
+  - 57: \( 5 + 7 = 12 \)
+  - 58: \( 5 + 8 = 13 \)
+  - 59: \( 5 + 9 = 14 \)
+
+The sum of the digits from 50 to 59 is:
+\[ 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 = 95 \]
+
+- For numbers from 60 to 69:
+  - 60: \( 6 + 0 = 6 \)
+  - 61: \( 6 + 1 = 7 \)
+  - 62: \( 6 + 2 = 8 \)
+  - 63: \( 6 + 3 = 9 \)
+  - 64: \( 6 + 4 = 10 \)
+  - 65: \( 6 + 5 = 11 \)
+  - 66: \( 6 + 6 = 12 \)
+  - 67: \( 6 + 7 = 13 \)
+  - 68: \( 6 + 8 = 14 \)
+  - 69: \( 6 + 9 = 15 \)
+
+The sum of the digits from 60 to 69 is:
+\[ 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 = 105 \]
+
+- For numbers from 70 to 79:
+  - 70: \( 7 + 0 = 7 \)
+  - 71: \( 7 + 1 = 8 \)
+  - 72: \( 7 + 2 = 9 \)
+  - 73: \( 7 + 3 = 10 \)
+  - 74: \( 7 + 4 = 11 \)
+  - 75: \( 7 + 5 = 12 \)
+  - 76: \( 7 + 6 = 13 \)
+  - 77: \( 7 + 7 = 14 \)
+  - 78: \( 7 + 8 = 15 \)
+  - 79: \( 7 + 9 = 16 \)
+
+The sum of the digits from 70 to 79 is:
+\[ 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 = 115 \]
+
+- For numbers from 80 to 89:
+  - 80: \( 8 + 0 = 8 \)
+  - 81: \( 8 + 1 = 9 \)
+  - 82: \( 8 + 2 = 10 \)
+  - 83: \( 8 + 3 = 11 \)
+  - 84: \( 8 + 4 = 12 \)
+  - 85: \( 8 + 5 = 13 \)
+  - 86: \( 8 + 6 = 14 \)
+  - 87: \( 8 + 7 = 15 \)
+  - 88: \( 8 + 8 = 16 \)
+  - 89: \( 8 + 9 = 17 \)
+
+The sum of the digits from 80 to 89 is:
+\[ 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 = 125 \]
+
+- For numbers from 90 to 92:
+  - 90: \( 9 + 0 = 9 \)
+  - 91: \( 9 + 1 = 10 \)
+  - 92: \( 9 + 2 = 11 \)
+
+The sum of the digits from 90 to 92 is:
+\[ 9 + 10 + 11 = 30 \]
+
+Now, we sum all these results:
+\[ 75 + 75 + 85 + 95 + 105 + 115 + 125 + 30 = 705 \]
+
+The sum of the digits of \( N \) is 705. We need to find the highest power of 3 that divides 705.
+
+First, check if 705 is divisible by 3:
+\[ 705 \div 3 = 235 \]
+
+Next, check if 235 is divisible by 3:
+\[ 235 \div 3 = 78.333\ldots \]
+
+Since 235 is not divisible by 3, the highest power of 3 that divides 705 is \( 3^1 \).
+
+Thus, the highest power of 3 that divides \( N \) is \( 3^1 \).
+
+Therefore, \( k = 1 \).
+
+The answer is:
+1",False,,,,,[]
+76,,Apply the Graeffe's root squaring method to find the roots of the following equation x^3 - 2x + 2 = 0 correct to two decimals. What's the sum of these roots?,1,2,False,,,,,[]
+77,,"A glider with mass m = 0.200 kg sits on a frictionless horizontalair track, connected to a spring with force constant k = 5.00 N/m.You pull on the glider, stretching the spring 0.100 m, and release itfrom rest. The glider moves back toward its equilibrium position (x = 0).What is its x-velocity when  x = 0.080 m? (Unit: m/s))",-0.3,0.632,False,,,,,[]
+78,,Toss a coin repeatedly until two consecutive heads appear. Assume that the probability of the coin landing on heads is 3/7. Calculate the average number of times the coin needs to be tossed before the experiment can end.,7.77778,"\[
+\text{Let } E \text{ be the expected number of tosses needed.}
+\]
+
+Define:
+- \( E_0 \): Expected number of tosses starting with no heads.
+- \( E_1 \): Expected number of tosses starting with one head.
+
+The goal is to find \( E_0 \).
+
+### State \( E_0 \):
+- Toss a coin:
+  - With probability \( \frac{3}{7} \), it lands on heads, moving to state \( E_1 \).
+  - With probability \( \frac{4}{7} \), it lands on tails, staying in state \( E_0 \).
+
+\[
+E_0 = 1 + \frac{3}{7}E_1 + \frac{4}{7}E_0
+\]
+
+### State \( E_1 \):
+- Toss a coin:
+  - With probability \( \frac{3}{7} \), it lands on heads, ending the experiment.
+  - With probability \( \frac{4}{7} \), it lands on tails, moving back to state \( E_0 \).
+
+\[
+E_1 = 1 + \frac{3}{7}(0) + \frac{4}{7}E_0 = 1 + \frac{4}{7}E_0
+\]
+
+### Solve the equations:
+1. \( E_0 = 1 + \frac{3}{7}E_1 + \frac{4}{7}E_0 \)
+2. \( E_1 = 1 + \frac{4}{7}E_0 \)
+
+Rearrange equation 1:
+\[
+E_0 - \frac{4}{7}E_0 = 1 + \frac{3}{7}E_1
+\]
+\[
+\frac{3}{7}E_0 = 1 + \frac{3}{7}E_1
+\]
+\[
+E_0 = \frac{7}{3} + E_1
+\]
+
+Substitute \( E_1 = 1 + \frac{4}{7}E_0 \) into \( E_0 = \frac{7}{3} + E_1 \):
+\[
+E_0 = \frac{7}{3} + 1 + \frac{4}{7}E_0
+\]
+\[
+E_0 = \frac{10}{3} + \frac{4}{7}E_0
+\]
+
+Rearrange:
+\[
+E_0 - \frac{4}{7}E_0 = \frac{10}{3}
+\]
+\[
+\frac{3}{7}E_0 = \frac{10}{3}
+\]
+\[
+E_0 = \frac{10}{3} \times \frac{7}{3}
+\]
+\[
+E_0 = \frac{70}{9}
+\]
+
+Thus, the average number of tosses needed is:
+\[
+\boxed{7.777777777777778}
+\]",True,,,,,[]
+79,,"Julian is jogging around a circular track of radius 50 m. In a coordinate system with its origin at the center of the track, Julian's x-coordinate is changing at a rate of -1.25 m/s when his coordinates are (40, 30). Find dy/dt at this moment.",1.667,1.5,False,,,,,[]
+80,,Calculate the momentum uncertainty of a tennis ball constrained to be in a fence enclosure of length 35 m surrounding the court in kg m/s.,3e-36,9.43e-35,False,,,,,[]
+81,,"Let {X_n: n \geq 1} be independent, identically distributed random variables taking integer values {1,-1}. Let S_0=0, S_n=\sum_{i=1}^n X_i. Let P(X_i=1)=0.8 and P(X_i=-1)=0.2. The range R_n of S_0,S_1,...,S_n is the number of distinct values taken by the sequence. Then what is the limit of n^{-1}E[R_n] as n goes to infinity? Here E[R_n] is the expectation over the random variable R_n.",0.6,"The problem involves a random walk where each step \( X_i \) is either \( +1 \) with probability 0.8 or \(-1\) with probability 0.2. The sum \( S_n = \sum_{i=1}^n X_i \) represents the position of the random walk after \( n \) steps. The range \( R_n \) is the number of distinct values taken by the sequence \( S_0, S_1, \ldots, S_n \).
+
+To find the limit of \( n^{-1}E[R_n] \) as \( n \to \infty \), we need to understand the behavior of the range of the random walk. The random walk is biased towards the positive direction because \( P(X_i = 1) = 0.8 \) is greater than \( P(X_i = -1) = 0.2 \).
+
+The expected value of \( S_n \) is \( E[S_n] = n \cdot (0.8 - 0.2) = 0.6n \), and the variance is \( \text{Var}(S_n) = n \cdot (0.8 \cdot (1-0.6)^2 + 0.2 \cdot (-1-0.6)^2) = n \cdot (0.8 \cdot 0.16 + 0.2 \cdot 2.56) = n \cdot (0.128 + 0.512) = 0.64n \).
+
+The standard deviation is \( \sqrt{0.64n} = 0.8\sqrt{n} \).
+
+The range \( R_n \) is approximately the difference between the maximum and minimum values of \( S_n \). Since the walk is biased, the maximum value of \( S_n \) is approximately \( 0.6n + 0.8\sqrt{n} \) and the minimum value is approximately \( 0.6n - 0.8\sqrt{n} \).
+
+Thus, the range \( R_n \approx (0.6n + 0.8\sqrt{n}) - (0.6n - 0.8\sqrt{n}) = 1.6\sqrt{n} \).
+
+The expected range \( E[R_n] \) is therefore approximately proportional to \( \sqrt{n} \).
+
+Thus, the limit of \( n^{-1}E[R_n] \) as \( n \to \infty \) is:
+
+\[
+\lim_{n \to \infty} n^{-1}E[R_n] = \lim_{n \to \infty} n^{-1} \cdot 1.6\sqrt{n} = \lim_{n \to \infty} 1.6n^{-1/2} = 0
+\]
+
+Therefore, the limit is:
+
+\[
+\boxed{0}
+\]",False,,,,,[]
+82,,"Find the arc length of y = x^{-1} over the interval [1,2] using the Simpson's Rule S_8.",1.132,1,False,,,,,[]
+84,,"compute the integral $\iint_V \frac{d x d y d z}{(1+x+y+z)^3}$, where V={(x, y, z): x, y, z \geq 0, x+y+z\leq 1}.",0.034,1,False,,,,,[]
+86,,What is the minimum number of people needed in a room to guarantee that there are 4 mutual friends or 4 mutual strangers?,18,18,True,,,,,[]
+87,,"If polygon ABCDE ~ polygon PQRST, AB = BC = 8, AE = CD = 4, ED = 6, QR = QP, and RS = PT = 3, find the perimeter of polygon PQRST.",22.5,15,False,,,,,[]
+88,,What is the effective rates (between 0 and 1) for 18% compounded quarterly? Return the numeric value.,0.1925,0.1914,True,,,,,[]
+89,,What is the effective rates for 3% compounded monthly?,0.0304,3.04,False,,,,,[]
+91,,"If a stock pays a $5 dividend this year, and the dividend has been growing 6% annually, what will be the stock’s intrinsic value, assuming a required rate of return of 12%?",88.33,88,True,,,,,[]
+92,,"Malus' law: $I=I_0*cos^2($\theta$)$. Where I is the intensity of polarized light that has passed through the polarizer, I_0 is the intensity of polarized light before the polarizer, and $\theta$ is the angle between the polarized light and the polarizer. Unpolarized light passes through a polarizer. It then passes through another polarizer at angle 40 degree to the first, and then another at angle 15 degree to the second. What percentage of the original intensity was the light coming out of the second polarizer?",54.8,"To solve this problem, we need to apply Malus' law twice, as the light passes through two polarizers after the initial polarizer.
+
+1. **First Polarizer:**
+   - Unpolarized light passing through a polarizer reduces its intensity to half. Therefore, after the first polarizer, the intensity \( I_1 \) is:
+     \[
+     I_1 = \frac{I_0}{2}
+     \]
+
+2. **Second Polarizer:**
+   - The angle between the first and second polarizer is 40 degrees. Using Malus' law:
+     \[
+     I_2 = I_1 \cdot \cos^2(40^\circ)
+     \]
+   - Substituting \( I_1 = \frac{I_0}{2} \):
+     \[
+     I_2 = \frac{I_0}{2} \cdot \cos^2(40^\circ)
+     \]
+
+3. **Third Polarizer:**
+   - The angle between the second and third polarizer is 15 degrees. Again, using Malus' law:
+     \[
+     I_3 = I_2 \cdot \cos^2(15^\circ)
+     \]
+   - Substituting \( I_2 = \frac{I_0}{2} \cdot \cos^2(40^\circ) \):
+     \[
+     I_3 = \left(\frac{I_0}{2} \cdot \cos^2(40^\circ)\right) \cdot \cos^2(15^\circ)
+     \]
+
+4. **Calculate the percentage of the original intensity:**
+   - The percentage of the original intensity \( I_0 \) is given by:
+     \[
+     \text{Percentage} = \left(\frac{I_3}{I_0}\right) \times 100\%
+     \]
+   - Substituting for \( I_3 \):
+     \[
+     \text{Percentage} = \left(\frac{\frac{I_0}{2} \cdot \cos^2(40^\circ) \cdot \cos^2(15^\circ)}{I_0}\right) \times 100\%
+     \]
+   - Simplifying:
+     \[
+     \text{Percentage} = \frac{1}{2} \cdot \cos^2(40^\circ) \cdot \cos^2(15^\circ) \times 100\%
+     \]
+
+5. **Calculate the values:**
+   - \(\cos(40^\circ) \approx 0.7660\)
+   - \(\cos^2(40^\circ) \approx 0.7660^2 = 0.5868\)
+   - \(\cos(15^\circ) \approx 0.9659\)
+   - \(\cos^2(15^\circ) \approx 0.9659^2 = 0.9330\)
+
+6. **Final Calculation:**
+   \[
+   \text{Percentage} = \frac{1}{2} \cdot 0.5868 \cdot 0.9330 \times 100\%
+   \]
+   \[
+   \text{Percentage} = 0.2738 \times 100\%
+   \]
+   \[
+   \text{Percentage} = 27.38\%
+   \]
+
+Therefore, the percentage of the original intensity that was the light coming out of the second polarizer is approximately:
+
+27.38",False,,,,,[]
+96,,Consider a file with a size of 350 Kbytes storing in a web server. Client A sends a request to the server to retrieve the file from a remote location. It is known that the link capacity between client A and the server is 10 Mbps and the round trip time (RTT) between the server and client is fixed at 20ms. Assume that the segment size is 20 Kbytes and the client has a receiver buffer of 200Kbytes. Assume that the window size (W) is adjusted according to the congestion control procedures of TCP-Reno. How long (in ms) does client A take to receive the whole file from the server after sending a request? Given that the initial slow-start threshold is 32.,344,80,False,,,,,[]
+101,,"A scuba diver is wearing a head lamp and looking up at the surface of the water. If the minimum angle to the vertical resulting in total internal reflection is 25∘, what is the index of refraction of the water? $\theta_{air} = 1.00$.",2.37,1.42,False,,,,,[]
+102,,"For every positive real number $x$, let $g(x)=\lim _{r \rightarrow 0}((x+1)^{r+1}-x^{r+1})^{1/r}$. What is the limit of $g(x)/x$ as $x$ goes to infinity?",2.7182818,"The problem involves evaluating the limit of a function \( g(x) \) defined as:
+
+\[
+g(x) = \lim_{r \to 0} \left( (x+1)^{r+1} - x^{r+1} \right)^{1/r}
+\]
+
+We need to find the limit of \( \frac{g(x)}{x} \) as \( x \to \infty \).
+
+First, let's simplify \( g(x) \):
+
+\[
+g(x) = \lim_{r \to 0} \left( (x+1)^{r+1} - x^{r+1} \right)^{1/r}
+\]
+
+Using the binomial expansion for small \( r \), we have:
+
+\[
+(x+1)^{r+1} = x^{r+1} \left(1 + \frac{1}{x}\right)^{r+1} \approx x^{r+1} \left(1 + \frac{r+1}{x}\right)
+\]
+
+Thus,
+
+\[
+(x+1)^{r+1} - x^{r+1} \approx x^{r+1} \left(1 + \frac{r+1}{x}\right) - x^{r+1} = x^{r+1} \cdot \frac{r+1}{x} = x^r (r+1)
+\]
+
+Therefore,
+
+\[
+g(x) = \lim_{r \to 0} \left( x^r (r+1) \right)^{1/r}
+\]
+
+This simplifies to:
+
+\[
+g(x) = \lim_{r \to 0} \left( x^r \right)^{1/r} \cdot (r+1)^{1/r}
+\]
+
+The term \( \left( x^r \right)^{1/r} = x \).
+
+For the term \( (r+1)^{1/r} \), we use the limit:
+
+\[
+\lim_{r \to 0} (r+1)^{1/r} = e
+\]
+
+Thus, we have:
+
+\[
+g(x) = x \cdot e
+\]
+
+Now, we need to find:
+
+\[
+\lim_{x \to \infty} \frac{g(x)}{x} = \lim_{x \to \infty} \frac{x \cdot e}{x} = e
+\]
+
+Therefore, the limit is:
+
+\[
+\boxed{e}
+\]",False,,,,,[]
+104,,"X rays scattered from rock salt (NaCl) are observed to have an intense maximum at an angle of 20° from the incident direction. Assuming n = 1 (from the intensity), what must be the Wavelength of the incident radiation in nm?",0.098,0.154,False,,,,,[]
+105,,Suppose that there are two firms in the market facing no costs of production and a demand curve given by Q = 150 - P for their identical products. Suppose the two firms choose prices simultaneously as in the Bertrand model. Compute the prices in the nash equilibrium.,0,75,False,,,,,[]
+106,,In how many ways can 10 people be seated at 1 identical round tables? Each table must have at least 1 person seated.,362880,3628800,False,,,,,[]
+109,,"Consider Convolutional Neural Network D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. Consider CNN D2 which takes input images of size 32x32 with 1 colour channels. The first layer of D2 uses 4 filters of size 5x5, a stride of 2, and zero-padding of width 1. What is the total number of weights defined for the entire activation output of this first layer? (ie. If you flattened all filters and channels into a single vector)",900,104,False,,,,,[]
+110,,How many ways are there to arrange 9 people in a line such that no one is standing in their correct position?,133496,133496,True,,,,,[]
+111,,"Ms. Fogg is planning an around-the-world trip on which she plans to spend $10,000. The utility from the trip is a function of how much she actually spends on it (Y), given by U(Y) = ln Y. If there is a 25 percent probability that Ms. Fogg will lose $1,000 of her cash on the trip, what is the trip’s expected utility?",9.184,9.21034,True,,,,,[]
+112,,In how many ways can 6 people be seated at 2 identical round tables? Each table must have at least 1 person seated.,225,10,False,,,,,[]
+116,,"suppose $u=\arctan \frac{y}{x}$, what is numeric of $\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}$?",0.0,0,True,,,,,[]
+117,,Use the Runge-Kutta method with $h=0.1$ to find approximate values of the solution of $(y-1)^2 * y' = 2x + 3$ with y(1) = 4. What is y(0)?,3.46621207,4,False,,,,,[]
+119,,"Evaluate $\int_c z^2 / (z - 5) dz$, where c is the circle that $|z| = 2$.",0,0,True,,,,,[]
+121,,The atomic mass of the 4He atom is 4.002603 u. Find the binding energy of the 4He nucleus in MeV.,28.3,28.3,True,,,,,[]
+122,,Find the ratio of forward-bias to reverse-bias currents when the same voltage 1.5 V is applied in both forward and reverse. Assume room temperature 293 K.,-6e+25,"The ratio of forward-bias to reverse-bias currents when the same voltage is applied can be determined using the diode equation:
+
+\[ I = I_s \left( e^{\frac{qV}{kT}} - 1 \right) \]
+
+where:
+- \( I \) is the current through the diode,
+- \( I_s \) is the reverse saturation current,
+- \( q \) is the charge of an electron (\(1.6 \times 10^{-19} \, \text{C}\)),
+- \( V \) is the voltage across the diode,
+- \( k \) is Boltzmann's constant (\(1.38 \times 10^{-23} \, \text{J/K}\)),
+- \( T \) is the temperature in Kelvin.
+
+For forward-bias (\( V = 1.5 \, \text{V} \)):
+\[ I_{\text{forward}} = I_s \left( e^{\frac{1.6 \times 10^{-19} \times 1.5}{1.38 \times 10^{-23} \times 293}} - 1 \right) \]
+
+For reverse-bias (\( V = -1.5 \, \text{V} \)):
+\[ I_{\text{reverse}} = I_s \left( e^{\frac{1.6 \times 10^{-19} \times (-1.5)}{1.38 \times 10^{-23} \times 293}} - 1 \right) \]
+
+The ratio of forward-bias to reverse-bias currents is:
+\[ \text{Ratio} = \frac{I_{\text{forward}}}{I_{\text{reverse}}} = \frac{e^{\frac{1.6 \times 10^{-19} \times 1.5}{1.38 \times 10^{-23} \times 293}} - 1}{e^{\frac{1.6 \times 10^{-19} \times (-1.5)}{1.38 \times 10^{-23} \times 293}} - 1} \]
+
+Calculate the exponent:
+\[ \frac{1.6 \times 10^{-19} \times 1.5}{1.38 \times 10^{-23} \times 293} \approx 59.67 \]
+
+Thus:
+\[ e^{59.67} \] is a very large number, and \( e^{-59.67} \) is a very small number.
+
+Therefore, the ratio simplifies to:
+\[ \text{Ratio} \approx \frac{e^{59.67}}{-1} \approx e^{59.67} \]
+
+Since \( e^{59.67} \) is extremely large, the ratio is approximately:
+\[ 1.2 \times 10^{26} \]
+
+So, the ratio of forward-bias to reverse-bias currents is approximately:
+
+\[ 1.2 \times 10^{26} \]",False,,,,,[]
+123,,In how many ways can a group of 7 people be divided into 2 non-empty subsets?,63,63,True,,,,,[]
+124,,"A debt of $25,000 is to be amortized over 7 years at 7% interest. What value of monthly payments will achieve this?",4638.83,376.53,False,,,,,[]
+125,,"Assume that half of the mass of a 62-kg person consists of protons. If the half-life of the proton is 10^33 years, calculate the number of proton decays per day from the body.",3.5e-08,0,False,,,,,[]
+126,,A ship uses a sonar system to locate underwater objects. Find the wavelength of a 262-Hz wave in water. (Unit: m),5.65,5.77,False,,,,,[]
+127,,"If polygon ABCDE ~ polygon PQRST, AB = BC = 8, AE = CD = 4, ED = 6, QR = QP, and RS = PT = 3, find the perimeter of polygon ABCDE.",30,40,False,,,,,[]
+130,,"Let M be the inverse of the group element ((3, 5), (4, 6)) in Z_7. What is M[0][1]?",6,1,False,,,,,[]
+131,,"In an IPv4 datagram, the value of the total-length field is $(00 \mathrm{~A} 0)_{16}$ and the value of the headerlength (HLEN) is (5) $1_{16}$. How many bytes of payload are being carried by the datagram?",140,240,False,,,,,[]
+132,,"How many distinct necklaces with 12 beads can be made with 10 beads of color R and 2 beads of color B, assuming rotations and reflections are considered equivalent?",6,7,False,,,,,[]
+133,,"Find the arc length of the curve, where x=t, y=t^2 and z=2*t^3/3.",7.333,1,False,,,,,[]
+134,,The planet Mercury travels around the Sun with a mean orbital radius of 5.8x10^10 m. The mass of the Sun is 1.99x10^30 kg. Use Newton's version of Kepler's third law to determine how long it takes Mercury to orbit the Sun. Give your answer in Earth days.,88.3,88,True,,,,,[]
+135,,"Consider $x(t)$ to be given as, $$ x(t)=10 \cos (20 \pi-\pi / 4)-5 \cos (50 \pi t) $$ What is minimum sampling rate (/Hz) such that $y(t)=x(t)$ ?",50,50,True,,,,,[]
+136,,"Consider an arbitrage-free securities market model, in which the risk-free interest rate is constant. There are two nondividend-paying stocks whose price processes are:
+$S_1(t)=S_1(0)e^{0.1t+0.2Z(t)}$
+$S_2(t)=S_2(0)e^{0.125t+0.3Z(t)}$
+where $Z(t)$ is a standard Brownian motion ant $t\ge0$. What is the continuously compounded risk-free interest rate?",0.02,0.125,False,,,,,[]
+137,,"Use the Birge-Vieta method to find a real root correct to three decimals of the following equation: x^5 - x + 1 = 0, p=-1.5.",-1,-1.347,False,,,,,[]
+140,,"compute the integral \int_{\Gamma} \frac{x*dy-y*dx}{x^2+y^2}, where $\Gamma$ is any piecewise smooth, closed curve that encloses the origin but does not pass through it.",6.2831852,2,False,,,,,[]
+141,,suppose the sequence a_n satisfies $lim_{n\rightarrow\infty}a_n\sum_{i=1}^n a_i^2=1$. What is the limit of  3n(a_n)^3?,1.0,1,True,,,,,[]
+143,,what is the value of $\prod_{n=0}^{\infty}(1+(\frac{1}{2})^{2^n})$?,2.0,2,True,,,,,[]
+144,,"The diagonals of kite WXYZ intersect at P. If XP = 8, PZ = 8, WP = 6, and PY = 24, find ZY.",25.3,30,False,,,,,[]
+145,,"Astrophysical theory suggests that a burned-out star whose mass is at least three solar masses will collapse under its own gravity to form a black hole. If it does, the radius of its event horizon is X * 10^3 m, what is X?",8.9,3,False,,,,,[]
+146,,"Light travel from water n=1.33 to diamond n=2.42. If the angle of incidence was 13 degree, determine the angle of refraction.",7.1,7,False,,,,,[]
+147,,"An investor has utility function $U(x) = x^{1/4}$ for salary. He has a new job offer which pays $80,000 with a bonus. The bonus will be $0, $10000, $20000, $30000, $40000, $50000, or $60000, each with equal probability. What is the certainty equivalent value of this job offer?",108610,80000,False,,,,,[]
+149,,"RS is the midsegment of trapezoid MNOP. If MN = 10x+3, RS=9x-1, and PO = 4x+7, what is the length of RS?",26,The length of RS is 38.,False,,,,,[]
+150,,The bandwidth of an analog signal is 4kHz. An A/D converter is used to convert the signal from analog to digital. What is the minimum sampling rate for eliminating the aliasing problem? (in kHz),8,8,True,,,,,[]
+151,,Is the cumulative distribution function of the standard gaussian distribution $F(x)=1/\sqrt{2 \pi} \int_{-\infty}^x e^{-t^2/2} dt$ is log-concave?  Return 1 for yes and 0 for no.,1.0,0,False,,,,,[]
+152,,Compute the mean translational kinetic energy of a single ideal gas molecule in eV.,0.038,0.038,True,,,,,[]
+154,,"If a cash flow of $100 has a discount rate of 5% and to be received in 5 years, what is the present value of the cash flow?",78.3526,78.35,True,,,,,[]
+155,,What is the value of the integral $\int_0^{\pi/2} 1/(1+(tan(x))^{\sqrt{2}}) dx$?,0.78539815,1,False,,,,,[]
+156,,"How many labeled graphs with a score of (6, 2, 2, 2, 2, 2, 2) are there?",15,0,False,,,,,[]
+157,,A hydraulic press contains $0.25 m^3$ (250 L) of oil. Find the decrease in the volume of the oil when it is subjected to a pressure increase  $\Delta p=1.6 \times 10^7 Pa$ (about 160 atm or 2300 psi). The bulk modulus of the oil is $B=5.0 \times 10^9 Pa$ (about $5.0 \times 10^4 atm$) and its compressibility is $k=1 / B=20 \times 10^{-6} atm^{-1}$. (Unit: 10^{-4} m^3),-0.8,8,False,,,,,[]
+160,,What is $\lim _{r \rightarrow \infty} (\int_0^{\pi/2} x^r sin(x) dx)/(r\int_0^{\pi/2} x^r cos(x) dx)$?,0.63662,0,False,,,,,[]
+161,,Find the interval in which the smallest positive root of the following equations lies: tan x + tanh x = 0. Determine the roots correct to two decimal places using the bisection method,2.37,1.57,False,,,,,[]
+163,,suppose $-\pi<x<\pi$. what is the value of $(\sum_{n=1}^{\infty}(-1)^{n-1} \frac{cos(nx)}{n})/log(2cos(x/2))$? Rounding it to the hundredths place and return the value.,1.0,1.00,True,,,,,[]
+164,,"Find the curvature for r(t) = 5cos(t)i + 4sin(t)j + 3tk, t=4\pi/3.",0.16,1/5,False,,,,,[]
+165,,What is 3^(3^(3^(...))) mod 100? There are 2012 3's in the expression.,87,87,True,,,,,[]
+166,,Compute the real integral $I=\int_{-\infty}^{\infty} 1/(x^2 + 1)^2 dx$.,1.57,"The integral \( I = \int_{-\infty}^{\infty} \frac{1}{(x^2 + 1)^2} \, dx \) can be solved using the method of residues from complex analysis.
+
+First, consider the complex function \( f(z) = \frac{1}{(z^2 + 1)^2} \). The poles of this function are the solutions to \( z^2 + 1 = 0 \), which are \( z = i \) and \( z = -i \). Both poles are simple poles.
+
+We will integrate \( f(z) \) over the upper half of the complex plane using a semicircular contour of radius \( R \) that closes in the upper half-plane. The only pole inside this contour is at \( z = i \).
+
+The residue of \( f(z) \) at \( z = i \) is calculated as follows. First, rewrite \( f(z) \) near \( z = i \):
+
+\[
+f(z) = \frac{1}{((z-i)(z+i))^2} = \frac{1}{(z-i)^2(z+i)^2}
+\]
+
+The residue at \( z = i \) is given by:
+
+\[
+\text{Residue} = \lim_{z \to i} \frac{d}{dz} \left( (z-i)^2 f(z) \right)
+\]
+
+Calculate \( (z-i)^2 f(z) \):
+
+\[
+(z-i)^2 f(z) = \frac{1}{(z+i)^2}
+\]
+
+Differentiate with respect to \( z \):
+
+\[
+\frac{d}{dz} \left( \frac{1}{(z+i)^2} \right) = \frac{d}{dz} \left( (z+i)^{-2} \right) = -2(z+i)^{-3}
+\]
+
+Evaluate at \( z = i \):
+
+\[
+-2(i+i)^{-3} = -2(2i)^{-3} = -2 \left( \frac{1}{8i^3} \right) = -2 \left( \frac{1}{-8i} \right) = \frac{1}{4i}
+\]
+
+The integral over the semicircular contour is given by \( 2\pi i \) times the sum of the residues inside the contour. Thus, the integral over the real line is:
+
+\[
+I = 2\pi i \cdot \frac{1}{4i} = \frac{\pi}{2}
+\]
+
+Therefore, the value of the integral is:
+
+\[
+\boxed{\pi}
+\]",False,,,,,[]
+167,,How many different 6-letter arrangements can be made from the letters in the word BANANA?,60,60,True,,,,,[]
+168,,"Consider a 26-key typewriter. Suppose that pushing a key results in printing that letter or the next (with equal probability). Thus A results in A or B, ..., Z results in Z or A. What is the capacity of this channel in bits?",3.7,1,False,,,,,[]
+169,,"Suppose H is a Banach space, and {x_n}\in H, x\in H. Then x_n weakly converges to x is equivalent to: ||x_n|| is bounded; for a dense set M* in H*, it holds \lim_{n\rightarrow\infty} f(x_n)=f(x) for all f\in M*. Is this correct? Answer 1 for yes and 0 for no.",1.0,1,True,,,,,[]
+172,,"Consider a 900 Kbytes file stored in a web server. Client A sends a request to the server to retrieve the file from a remote location. There are 3 links (2 intermediate nodes) between server and client and each has a transmission rate of 10Mbps. Given that the segment size is 15 Kbytes, the round trip time (RTT) between the server and client is 30ms, the initial slow-start threshold is 8 and the client's buffer has a storage space of 150 K bytes. Assume that TCP Reno is used, there is no loss during transmission and the headers of protocols are ignored. It is noted that the segments do experience a store-and-forward delay in intermediate routers. Determine how many ms client A takes to receive the whole file from the server after sending a request.",918,180,False,,,,,[]
+173,,Suppose a convex polygon has 26 faces and 39 edges. How many vertices does it have?,15,13,False,,,,,[]
+176,,"The earth and sun are 8.3 light-minutes apart. Ignore their relative motion for this problem and assume they live in a single inertial frame, the Earth-Sun frame. Events A and B occur at t = 0 on the earth and at 2 minutes on the sun respectively. Find the time difference in minutes between the events according to an observer moving at u = 0.8c from Earth to Sun. Repeat if observer is moving in the opposite direction at u = 0.8c.",14,4,False,,,,,[]
+177,,"suppose I=[0,1]\times[0,1], where exp is the exponential function. What is the numeric of the double integral of the function f(x,y)=x*y^3 exp^{x^2+y^2} over I?",0.4295,1,False,,,,,[]
+179,,"Carl the clothier owns a large garment factory on an isolated island. Carl's factory is the only source of employment for most of the islanders, and thus Carl acts as a monopsonist. The supply curve for garment workers is given by l = 80w, where l is the number of workers hired and w is their hourly wage. Assume also that Carl's labor demand (marginal revenue product) curve is given by l = 400 - 40MRP_l. How many workers will Carl hire to maximize his profits?",200,"To solve this problem, we need to find the number of workers Carl will hire to maximize his profits. As a monopsonist, Carl will hire workers where the marginal cost of labor (MCL) equals the marginal revenue product of labor (MRP_l).
+
+1. **Supply Curve**: \( l = 80w \)
+   - Rearrange to express wage as a function of labor: \( w = \frac{l}{80} \)
+
+2. **Marginal Cost of Labor (MCL)**: 
+   - The MCL is the derivative of the total cost of labor with respect to labor. The total cost of labor is \( w \times l = \frac{l}{80} \times l = \frac{l^2}{80} \).
+   - Differentiate with respect to \( l \): \( \frac{d}{dl} \left(\frac{l^2}{80}\right) = \frac{2l}{80} = \frac{l}{40} \).
+
+3. **Labor Demand (MRP_l) Curve**: \( l = 400 - 40MRP_l \)
+   - Rearrange to express MRP_l as a function of labor: \( MRP_l = \frac{400 - l}{40} \)
+
+4. **Equating MCL and MRP_l**:
+   - Set \( \frac{l}{40} = \frac{400 - l}{40} \)
+   - Simplify: \( l = 400 - l \)
+   - Solve for \( l \): \( 2l = 400 \) → \( l = 200 \)
+
+Therefore, Carl will hire 200 workers to maximize his profits.
+
+200",True,,,,,[]
+180,,"A glass contains 0.25 kg of Omni-Cola (mostly water) initially at 25°C. How much ice, initially at -20°C must you add to obtain a final temperature of 0°C with all the ice melted? Neglect the heat capacity of the glass. (Unit: g)",70,50,False,,,,,[]
+181,,"The diagonals of rhombus QRST intersect at P. If m∠QTS = 76, find m∠TSP.",52,38,False,,,,,[]
+182,,"What is the determinant of the matrix A = [[1, 0, 0, 0, 0, 0], [2, 7, 0, 0, 0, 0], [3, 8, 6, 0, 0, 0], [4, 9, 5, 2, 1, 4], [5, 8, 4, 0, 2, 5], [6, 7, 3, 0, 3, 6]]?",-252,252,False,,,,,[]
+183,,"Maximize the entropy $H(X)$ of a non-negative integer-valued random variable $X$, taking values from 0 to infinity, subject to the constraint $E(X)=1$. Use base 2 logarithm to evaluate $H(X)$.",2.0,1,False,,,,,[]
+185,,"Your firm is trying to decide whether to buy an e-commerce software company. The company has $100,000 in total capital assets: $60,000 in equity and $40,000 in debt. The cost of the company’s equity is 10%, while the cost of the company's debt is 5%. The corporate tax rate is 21%. What is the WACC of the company?",0.0758,7.74,False,,,,,[]
+187,,"In triangle ACD, B is located on the side AC, and E is located on the side AD. If AB = 3, AC = 5, CD = 3.5, ED = 3, and EB ∥ DC, what is the length of AD?",7.5,7,False,,,,,[]
+188,,"An ultrasonic transducer used for medical diagnosis oscillates at 6.7 Mhz.How long does each oscillation take, and what is the angular frequency? (Unit: 10^7 rad/s)",4.2,9,False,,,,,[]
+189,,"How many pairs of (a, b) can we substitute for a and b in 30a0b03 so that the resulting integer is divisible by 13?",3,12,False,,,,,[]
+190,,"A gun is designed that can launch a projectile of mass 10 kg at a speed of 200 m/s. The gun is placed close to a straight, horizontal railway line and aligned such that the projectile will land further down the line. A small rail car of mass 200 kg and travelling at a speed of 100 m/s passes the gun just as it is fired. Assuming the gun and the car are at the same level, at what angle upwards must the projectile be fired so that it lands in the rail car?",60.0,30,False,,,,,[]
+192,,"Consider a strategy of the form $(\gamma, 0, 0)$ for the investment wheel. Show that the overall factor multiplying your money after $n$ steps is likely to be $(1+2\gamma)^{n/2}(1-\gamma)^{n/2}$. Find the value of $\gamma$ that maximizes this factor.",0.25,0.5,False,,,,,[]
+194,,"A teacher wants to invest $30,000 into an account that compounds annually. The interest rate at this bank is 1.8%. How much money will be in the account after 6 years?",33389.35,33573,True,,,,,[]
+195,,Compute the mean molecular speed v in the heavy gas radon (Rn) in m/s,167.0,"To compute the mean molecular speed \( v \) of a gas, we use the formula:
+
+\[ v = \sqrt{\frac{8kT}{\pi m}} \]
+
+where:
+- \( k \) is the Boltzmann constant, \( 1.38 \times 10^{-23} \, \text{J/K} \),
+- \( T \) is the temperature in Kelvin,
+- \( m \) is the mass of one molecule of the gas in kilograms.
+
+For radon (Rn), the molar mass is approximately 222 g/mol. To find the mass of one molecule, we convert this to kilograms and divide by Avogadro's number (\( 6.022 \times 10^{23} \, \text{mol}^{-1} \)):
+
+\[ m = \frac{222 \, \text{g/mol}}{6.022 \times 10^{23} \, \text{mol}^{-1}} \times \frac{1 \, \text{kg}}{1000 \, \text{g}} \]
+
+\[ m \approx 3.69 \times 10^{-25} \, \text{kg} \]
+
+Assuming room temperature, \( T \approx 298 \, \text{K} \).
+
+Now, substitute the values into the formula:
+
+\[ v = \sqrt{\frac{8 \times 1.38 \times 10^{-23} \times 298}{\pi \times 3.69 \times 10^{-25}}} \]
+
+\[ v \approx \sqrt{\frac{3.29 \times 10^{-20}}{1.16 \times 10^{-24}}} \]
+
+\[ v \approx \sqrt{2.84 \times 10^{4}} \]
+
+\[ v \approx 168.5 \, \text{m/s} \]
+
+Thus, the mean molecular speed of radon at room temperature is approximately:
+
+169",True,,,,,[]
+196,,"In a set of 20 positive integers, at least how many pairs of numbers have a difference that is a multiple of 10?",10,11,False,,,,,[]
+197,,A symmetric random walk on the three-dimensional cubic lattice Z^3 is transient or persistent? Return 1 for persistent and 0 for transient.,0.0,0,True,,,,,[]
+198,,"Let C[0,1] be all the continuous function on in the interval [0,1]. For the integral equation $x(t)-\lambda \int_0^1 e^{t-s} x(s) ds=y(t)$, where $y(t)\in C[0,1]$ is a given function. \lambda is a constant and |\lambda|<1. Then there exists a unique solution x(t)\in C[0,1]. This conclusion can be proved by: 1. Implicit function theorem, 2. Riesz representation theorem, 3. Banach fixed point theorem, 4. None of the above. Return the number as the answer.",3.0,3,True,,,,,[]
+199,,A neutron at rest decays (breaks up) to a proton and an electron. Energy is released in the decay and appears as kinetic energy of the proton and electron. The mass of a proton is 1836 times the mass of an electron. What fraction of the total energy released goes into the kinetic energy of the proton?,0.000544,\(\frac{1}{1837}\),False,,,,,[]
+200,,"Use Green's Theorem to evaluate $\oint_{C} xy dx + x^2y^3dy$ where $C$ is the triangle with vertices (0,0), (1,0), (1,2) with positive orientation",0.6667,1,False,,,,,[]
+201,,"Find the fraction of the standard solar flux reaching the Earth (about 1000 W/m^22) available to a solar collector lying flat on the Earth’s surface at Regina, Saskatchewan (latitude 50°N) at noon on the summer solstice.",0.891,0.77,False,,,,,[]
+202,,"suppose $lim_{n \rightarrow \infty}a_n=1$, what is the limit of (a_1+2a_2+...+na_n)/n^2?",0.5,0,False,,,,,[]
+203,,How many ways are there to arrange the letters in the word *BANANA* up to the symmetries of the word?,30,10,False,,,,,[]
+204,,What's the maximum number of edges in a simple triangle free planar graph with 30 vertices?,56,87,False,,,,,[]
+205,,"consider a forward contract on a non-dividend paying stock that matures in 6 months. The current stock price is $50 and the 6-month interest rate is 4% per annum. What is the forward price, F.",51.0,51,True,,,,,[]
+207,,Find the largest integer for which (x+11)/(x+7) is an integer.,-3,-8,False,,,,,[]
+209,,"A camper pours 0.300 kg of coffee, initially in a pot at 70.0°C into a 0.120-kg aluminum cup initially at 20.0°C. What is the equilibrium temperature? Assume that coffee has the same specific heat as water and that no heat is exchanged with the surroundings. (Unit: °C)",66.0,62.0,False,,,,,[]
+211,,"Suppose that $X_1,X_2,...$ are real numbers between 0 and 1 that are chosen independently and uniformly at random. Let $S=\sum_{i=1}^k X_i/2^i$, where $k$ is the least positive integer such that $X_k<X_{k+1}$, or $k=\infty$ if there is no such integer. Find the expected value of S.",0.29744254,"The expected value of \( S \) can be calculated by considering the expected contribution of each term in the series \( \sum_{i=1}^k \frac{X_i}{2^i} \).
+
+First, note that the condition \( X_k < X_{k+1} \) implies that \( k \) is the first index where the sequence \( X_1, X_2, \ldots \) stops being non-decreasing. The probability that \( k = n \) is the probability that \( X_1 \leq X_2 \leq \cdots \leq X_{n-1} \) and \( X_n < X_{n+1} \).
+
+The probability that \( X_1 \leq X_2 \leq \cdots \leq X_{n-1} \) is \( \frac{1}{(n-1)!} \) because the \( X_i \) are uniformly distributed and independent, and this is the probability of a specific ordering among \( n-1 \) numbers.
+
+The probability that \( X_n < X_{n+1} \) is \( \frac{1}{2} \) because \( X_n \) and \( X_{n+1} \) are independent and uniformly distributed over \([0, 1]\).
+
+Thus, the probability that \( k = n \) is:
+\[
+\mathbb{P}(k = n) = \frac{1}{(n-1)!} \cdot \frac{1}{2} = \frac{1}{2(n-1)!}
+\]
+
+Now, we calculate the expected value of \( S \) given \( k = n \):
+\[
+\mathbb{E}\left[\sum_{i=1}^n \frac{X_i}{2^i} \right] = \sum_{i=1}^n \frac{1}{2^i} \cdot \mathbb{E}[X_i] = \sum_{i=1}^n \frac{1}{2^i} \cdot \frac{1}{2} = \frac{1}{2} \sum_{i=1}^n \frac{1}{2^i}
+\]
+
+The sum \( \sum_{i=1}^n \frac{1}{2^i} \) is a geometric series:
+\[
+\sum_{i=1}^n \frac{1}{2^i} = 1 - \frac{1}{2^n}
+\]
+
+Thus, the expected value of \( S \) given \( k = n \) is:
+\[
+\frac{1}{2} \left(1 - \frac{1}{2^n}\right)
+\]
+
+The expected value of \( S \) is then:
+\[
+\mathbb{E}[S] = \sum_{n=1}^{\infty} \mathbb{P}(k = n) \cdot \mathbb{E}\left[\sum_{i=1}^n \frac{X_i}{2^i} \right] = \sum_{n=1}^{\infty} \frac{1}{2(n-1)!} \cdot \frac{1}{2} \left(1 - \frac{1}{2^n}\right)
+\]
+
+Simplifying, we have:
+\[
+\mathbb{E}[S] = \frac{1}{4} \sum_{n=1}^{\infty} \frac{1}{(n-1)!} \left(1 - \frac{1}{2^n}\right)
+\]
+
+This can be split into two sums:
+\[
+\mathbb{E}[S] = \frac{1}{4} \left( \sum_{n=1}^{\infty} \frac{1}{(n-1)!} - \sum_{n=1}^{\infty} \frac{1}{(n-1)! \cdot 2^n} \right)
+\]
+
+The first sum is:
+\[
+\sum_{n=1}^{\infty} \frac{1}{(n-1)!} = e
+\]
+
+The second sum is:
+\[
+\sum_{n=1}^{\infty} \frac{1}{(n-1)! \cdot 2^n} = e/2
+\]
+
+Thus:
+\[
+\mathbb{E}[S] = \frac{1}{4} \left( e - \frac{e}{2} \right) = \frac{1}{4} \cdot \frac{e}{2} = \frac{e}{8}
+\]
+
+Therefore, the expected value of \( S \) is:
+\[
+\boxed{\frac{1}{2}}
+\]",False,,,,,[]
+212,,"Given a color image of size 28 x 28 x 3 pixels, how many convolutional filters in the first layer of a Convolutional Neural Network if the first layer's output tensor has size 26 x 26 x 64?",64,64,True,,,,,[]
+214,,30 students from 5 classes solved 40 math problems. Each student must answer at least one question. Every two students in the same class solved the same number of questions. The number of questions answered by any two students in different classes is also different. Question: What's maximum possible number of students who only answered one question?,26,5,False,,,,,[]
+215,,"The two-step Adams-Bashforth method of approximation uses the approximation scheme $y_{i+2}=y_{i+1} - 1/2 * hf(t_i,y_i)+ 3/2 * hf(t_{i+1},y_{i+1})$. Given that y(0)=1 and y(1)=2, use the Adams-Bashforth method to approximate y(3) for y=-y^2 with a step size of h=1.",-19.875,0,False,,,,,[]
+216,,"Let $P_5(x)$ be the fifth-degree Taylor polynomial approximation for f(x)=sin(x), centered at x=0. What is the Lagrange error of the polynomial approximation to sin(1)?.",0.000198,"\[
+\text{The Lagrange error formula for a Taylor polynomial is given by:} \quad R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}
+\]
+
+\[
+\text{For } f(x) = \sin(x), \text{ the derivatives are:}
+\]
+\[
+f(x) = \sin(x), \quad f'(x) = \cos(x), \quad f''(x) = -\sin(x), \quad f'''(x) = -\cos(x), \quad f^{(4)}(x) = \sin(x), \quad f^{(5)}(x) = \cos(x), \quad f^{(6)}(x) = -\sin(x)
+\]
+
+\[
+\text{The sixth derivative is } f^{(6)}(x) = -\sin(x).
+\]
+
+\[
+\text{The Lagrange error for the fifth-degree Taylor polynomial } P_5(x) \text{ is:}
+\]
+\[
+R_5(x) = \frac{f^{(6)}(c)}{6!} (x-0)^6
+\]
+
+\[
+\text{We need to evaluate this at } x = 1:
+\]
+\[
+R_5(1) = \frac{f^{(6)}(c)}{720} \cdot 1^6 = \frac{-\sin(c)}{720}
+\]
+
+\[
+\text{where } c \text{ is some value in the interval } (0, 1).
+\]
+
+\[
+\text{The maximum value of } |\sin(c)| \text{ in the interval } (0, 1) \text{ is } 1.
+\]
+
+\[
+\text{Thus, the maximum possible error is:}
+\]
+\[
+R_5(1) \leq \frac{1}{720}
+\]
+
+\[
+\text{Therefore, the Lagrange error of the polynomial approximation to } \sin(1) \text{ is:}
+\]
+
+\[
+\boxed{\frac{1}{720}}
+\]",False,,,,,[]
+217,,"suppose the sequence a_n satisfies 0<a_n<1, and $(1-a_n)a_{n+1}>1/4$ for all n, what is the limit of a_n as n goes to infinity?",0.5,1,False,,,,,[]
+219,,What is the number of equivalent parameter settings due to interchange symmetries in a mixture model with 10 components?,3628800,3628800,True,,,,,[]
+220,,What is $(\frac{1 + cos(2x) + i*sin(2x)}{1 + cos(2x) - i*sin(2x)})^30$ with $x = \pi / 60$?,-1.0,1,False,,,,,[]
+221,,"Suppose a European call option on a barrel of crude oil with a strike price of $50 and a maturity of one-month, trades for $5. What is the price of the put premium with identical strike price and time until expiration, if the one-month risk-free rate is 2% and the spot price of the underlying asset is $52?",2.92,3.02,False,,,,,[]
+222,,"The current price of gold is $412 per ounce. The storage cost is $2 per ounce per year, payable quaterly in advance. Assuming a constant intrest rate of 9% compounded quarterly, what is the theoretial forward price of gold for delivery in 9 months?",442.02,429,False,,,,,[]
+227,,Consider the discrete memoryless channel $Y=XZ$ where $X$ and $Z$ are independent binary random variables that take on values 0 and 1. Let $P(Z=1)=0.5$. Find the capacity of this channel in bits.,0.322,1,False,,,,,[]
+230,,"Assuming $x$ and $y$ are both 2-d random variable. The covariance matrix of $x=((1,2),(2,3),(3,5),(4,4))$, $y=((3,4),(1,5),(5,3),(3,3))$ is $Cov$. What is the trace of $Cov$?",-0.166,10,False,,,,,[]
+232,,"Let $X$ be uniformly distributed over $\{1, 2, \ldots, m\}$. Assume $m=2^n$ . We ask random questions: Is $X\in S_1$? Is $X\in S_2$? ... until only one integer remains. All $2^m$ subsets of $\{1, 2, \ldots, m\}$ are equally likely. Suppose we ask $n+\sqrt{n}$ random questions. Use Markov's inequality to find the probability of error (one or more wrong objects remaining) when $n$ goes to infinity?",0.0,0,True,,,,,[]
+233,,what is the value of \sum_{n=0}^{\infty}(-1)^n \frac{1}{3 n+1}? Round the answer to the thousands decimal.,0.8356488482647211,0.693,False,,,,,[]
+234,,"Let I=[0,1]\times[0,1]. Suppose $E={(x, y) \in I: sin(x)<\frac{1}{2}, cos(x+y) is irrational}$, what is the Lebesgue measure of E?",0.5235987667,1,False,,,,,[]
+235,,"A court is investigating the possible occurrence of an unlikely event T. The reliability of two independent witnesses called Alf and Bob is known to the court: Alf tells the truth with probability \alpha and Bob with probability \beta, and there is no collusion between the two of them. Let A and B be the events that Alf and Bob assert (respectively) that T occurred, and let \tau=P(T). What is the probability that T occurred given that both Alf and Bob declare that T occurred? Suppose \alpha=\beta=9/10 and \tau=1/1000. Return the answer up to the thousands decimal.",0.075,"To solve this problem, we need to use Bayes' theorem to find the probability that event T occurred given that both Alf and Bob assert that T occurred. 
+
+We are given:
+- \(\alpha = \beta = \frac{9}{10}\), which are the probabilities that Alf and Bob tell the truth, respectively.
+- \(\tau = P(T) = \frac{1}{1000}\), which is the prior probability that event T occurred.
+
+We need to find \(P(T \mid A \cap B)\), the probability that T occurred given that both Alf and Bob assert that T occurred.
+
+Using Bayes' theorem:
+\[
+P(T \mid A \cap B) = \frac{P(A \cap B \mid T) \cdot P(T)}{P(A \cap B)}
+\]
+
+First, calculate \(P(A \cap B \mid T)\):
+- If T occurred, both Alf and Bob will assert that T occurred with probability \(\alpha \cdot \beta\).
+\[
+P(A \cap B \mid T) = \alpha \cdot \beta = \frac{9}{10} \cdot \frac{9}{10} = \frac{81}{100}
+\]
+
+Next, calculate \(P(A \cap B)\) using the law of total probability:
+\[
+P(A \cap B) = P(A \cap B \mid T) \cdot P(T) + P(A \cap B \mid \neg T) \cdot P(\neg T)
+\]
+
+Where:
+- \(P(A \cap B \mid \neg T)\) is the probability that both Alf and Bob assert T occurred given that T did not occur. Since they are lying, this is \((1-\alpha) \cdot (1-\beta)\).
+\[
+P(A \cap B \mid \neg T) = (1-\alpha) \cdot (1-\beta) = \frac{1}{10} \cdot \frac{1}{10} = \frac{1}{100}
+\]
+
+- \(P(\neg T) = 1 - P(T) = 1 - \frac{1}{1000} = \frac{999}{1000}\)
+
+Now, substitute these into the equation for \(P(A \cap B)\):
+\[
+P(A \cap B) = \frac{81}{100} \cdot \frac{1}{1000} + \frac{1}{100} \cdot \frac{999}{1000}
+\]
+\[
+P(A \cap B) = \frac{81}{100000} + \frac{999}{100000} = \frac{1080}{100000} = \frac{108}{10000}
+\]
+
+Finally, substitute back into Bayes' theorem:
+\[
+P(T \mid A \cap B) = \frac{\frac{81}{100} \cdot \frac{1}{1000}}{\frac{108}{10000}}
+\]
+\[
+P(T \mid A \cap B) = \frac{\frac{81}{100000}}{\frac{108}{10000}} = \frac{81}{10800}
+\]
+\[
+P(T \mid A \cap B) = \frac{81}{10800} = \frac{3}{400} = 0.0075
+\]
+
+Thus, the probability that T occurred given that both Alf and Bob assert that T occurred is \(0.0075\).
+
+0.0075",False,,,,,[]
+237,,"Sir Lancelot, who weighs 800 N, is assaulting a castle by climbing a uniform ladder that is 5.0 m long and weighs 180 N. The bottom of the ladder rests on a ledge and leans across the moat in equilibrium against a frictionless, vertical castle wall. The ladder makes an angle of with the horizontal. Lancelot pauses onethird of the way up the ladder.  Find the magnitude of the contact force on the base of the ladder. (Unit: N)",1020,980,False,,,,,[]
+238,,Suppose g(x) is the horizontal asymptote of function f(x) = (3^x)/(1+3^{-x}). What are possible values of g(2023)?,0,3,False,,,,,[]
+239,,"Find the arc length of y = (1/4)x^4 over the interval [1,2] using the Trapezoidal Rule T_5.",3.958,1.,False,,,,,[]
+240,,"In how many ways can we form a 7-digit number using the digits 1, 2, 2, 3, 3, 3, 3?",105,420,False,,,,,[]
+241,,"In triangle RST, X is located on the side RS, Y is located on the side RT, Z is located on the side ST, and XY and XZ are midsegments of △RST. If the length of side XY is 7, the length of side RT is 13, and the measure of angle YXZ is 124°, what is the measure of ange RYX?",124,56,False,,,,,[]
+242,,"Let G_n(s) be the probability generating function of the size Z_n of the n-th generation of a branching process, where Z_0=1 and var(Z_1)>0. Let H_n be the inverse function of the function G_n, viewed as a function on the interval [0, 1].  Is M_n= {H_n(s)}^{Z_n} defines a martingale with respect to the sequence Z? Return 1 for yes and 0 for no.",1.0,0,False,,,,,[]
+244,,"suppose sequence x_n satisfies x_n*x_{n+1}=n for all n>=1, and $\lim_{n\rightarrow\infty}\frac{x_n}{x_{n+1}}=1$. What's the value of $\pi*x_1^2$?",2.0,1,False,,,,,[]
+245,,"For a two-period binomial model for stock prices, you are given: (i) Each period is 6 months. (ii) The current price for a nondividend-paying stock is $70.00. (iii) u =1.181, where u is one plus the rate of capital gain on the stock per period if the price goes up. (iv) d = 0.890 , where d is one plus the rate of capital loss on the stock per period if the price goes down. (v) The continuously compounded risk-free interest rate is 5%. What is the current price of a one-year American put option on the stock with a strike price of $80.00.",10.75,"To solve this problem, we need to calculate the price of a one-year American put option using a two-period binomial model. Here are the steps:
+
+1. **Calculate the stock prices at each node:**
+
+   - Initial stock price \( S_0 = 70 \).
+
+   - After one period (6 months):
+     - Up move: \( S_u = S_0 \times u = 70 \times 1.181 = 82.67 \).
+     - Down move: \( S_d = S_0 \times d = 70 \times 0.890 = 62.30 \).
+
+   - After two periods (1 year):
+     - Up-Up: \( S_{uu} = S_u \times u = 82.67 \times 1.181 = 97.60 \).
+     - Up-Down or Down-Up: \( S_{ud} = S_{du} = S_u \times d = 82.67 \times 0.890 = 73.57 \).
+     - Down-Down: \( S_{dd} = S_d \times d = 62.30 \times 0.890 = 55.45 \).
+
+2. **Calculate the option payoffs at expiration:**
+
+   - Put option payoff is \( \max(K - S, 0) \), where \( K = 80 \).
+
+   - At \( S_{uu} = 97.60 \), payoff = \( \max(80 - 97.60, 0) = 0 \).
+   - At \( S_{ud} = 73.57 \), payoff = \( \max(80 - 73.57, 0) = 6.43 \).
+   - At \( S_{dd} = 55.45 \), payoff = \( \max(80 - 55.45, 0) = 24.55 \).
+
+3. **Calculate the risk-neutral probabilities:**
+
+   - Risk-free rate \( r = 0.05 \) (continuously compounded), so \( e^{r \Delta t} = e^{0.05 \times 0.5} = e^{0.025} \approx 1.0253 \).
+
+   - Risk-neutral probability \( p = \frac{e^{r \Delta t} - d}{u - d} = \frac{1.0253 - 0.890}{1.181 - 0.890} = \frac{0.1353}{0.291} \approx 0.465 \).
+
+4. **Calculate the option price at each node:**
+
+   - At node \( (1, u) \): 
+     - Expected payoff = \( p \times 0 + (1-p) \times 6.43 = 0.535 \times 6.43 = 3.44 \).
+     - Discounted back: \( \frac{3.44}{1.0253} = 3.35 \).
+
+   - At node \( (1, d) \):
+     - Expected payoff = \( p \times 6.43 + (1-p) \times 24.55 = 0.465 \times 6.43 + 0.535 \times 24.55 = 15.92 \).
+     - Discounted back: \( \frac{15.92}{1.0253} = 15.53 \).
+
+5. **Calculate the option price at the initial node:**
+
+   - Expected payoff = \( p \times 3.35 + (1-p) \times 15.53 = 0.465 \times 3.35 + 0.535 \times 15.53 = 9.86 \).
+   - Discounted back: \( \frac{9.86}{1.0253} = 9.62 \).
+
+Therefore, the current price of the one-year American put option is approximately:
+
+10",False,,,,,[]
+249,,In how many ways can a committee of 2 men and 3 women be selected from a group of 6 men and 8 women?,840,560,False,,,,,[]
+250,,"Suppose the demand curve for oPads is given by $p=\frac{500-x}{10}, What is the elasticity value of this demand function.",-1.5,1,False,,,,,[]
+251,,"The perfectly competitive videotape-copying industry is composed of many firms that can copy five tapes per day at an average cost of $10 per tape. Each firm must also pay a royalty to film studios, and the per-film royalty rate (r) is an increasing function of total industry output (Q): r = 0.002Q. Demand is given by Q = D(P) = 1,050 - 50P. Assuming the industry is in long-run equilibrium, what will be the equilibrium price of copied tapes?",11,10,False,,,,,[]
+252,,A monopolist can produce at constant average and marginal costs of AC = MC = 5. The firm faces a market demand curve given by Q = 53 - P. Calculate the consumer surplus obtained by consumers under perfect competition (where price = marginal cost)?,1152,576,False,,,,,[]
+253,,"Your company has just written one million units of a one-year European asset-or-nothing put option on an equity index fund. The equity index fund is currently trading at 1000. It pays dividends continuously at a rate proportional to its price; the dividend yield is 2%. It has a volatility of 20%. The option’s payoff will be made only if the equity index fund is down by more than 40% at the end of one year. The continuously compounded risk-free interest rate is 2.5% Using the Black-Scholes model, determine the price of the asset-or-nothing put options. Give the answer in millions.",3.6,0.018,False,,,,,[]
+254,,"Consider a forward contract on a 4-year bond with maturity 1 year. The current value of the bond is $1018.86, it has a face value of $1000 and a coupon rate of 10% per annum. A coupon has just been paid on the bond and further coupons will be paid after 6 months and after 1 year, just prior to delivery. Interest rates for 1 year out are flat at 8%. Compute the forward price of the bond.",999.998976,1018.86,False,,,,,[]
+258,,Given the following equation: x^4 - x - 10 = 0. determine the initial approximations for finding the smallest positive root. Use these to find the root correct to three decimal places with Secant method.,1.856,1.727,False,,,,,[]
+259,,"While riding a multispeed bicycle, the rider can select the radius of the rear sprocket that is fixed to the rear axle. The front sprocket of a bicycle has radius 12.0 cm. If the angular speed of the front sprocket is 0.6 rev/s, what is the radius (in cm) of the rear sprocket for which the tangential speed of a point on the rim of the rear wheel will be 5 m/s? The rear wheel has radius 0.330 m.",2.99,5,False,,,,,[]
+260,,"Under some circumstances, a star can collapse into an extremely dense object made mostly of neutrons and called a neutron star. The density of a neutron star is roughly $10^14$ times as great as that of ordinary solid matter. Suppose we represent the star as a uniform, solid, rigid sphere, both before and after the collapse. The star's initial radius was $7 \tims 10^5$ km (comparable to our sun); its final radius is 16 km. If the original star rotated once in 30 days, find the angular speed (in rad/s) of the neutron star.",4600.0,"To solve this problem, we need to use the conservation of angular momentum. The angular momentum \( L \) of a rotating sphere is given by:
+
+\[ L = I \omega \]
+
+where \( I \) is the moment of inertia and \( \omega \) is the angular speed. For a solid sphere, the moment of inertia \( I \) is:
+
+\[ I = \frac{2}{5} m r^2 \]
+
+where \( m \) is the mass and \( r \) is the radius of the sphere.
+
+Since angular momentum is conserved, the initial angular momentum \( L_i \) is equal to the final angular momentum \( L_f \):
+
+\[ I_i \omega_i = I_f \omega_f \]
+
+Substituting the moment of inertia for a solid sphere, we have:
+
+\[ \frac{2}{5} m_i r_i^2 \omega_i = \frac{2}{5} m_f r_f^2 \omega_f \]
+
+The mass of the star remains constant during the collapse, so \( m_i = m_f = m \). Thus, the equation simplifies to:
+
+\[ r_i^2 \omega_i = r_f^2 \omega_f \]
+
+We need to find the final angular speed \( \omega_f \). We know:
+
+- Initial radius \( r_i = 7 \times 10^5 \) km = \( 7 \times 10^8 \) m
+- Final radius \( r_f = 16 \) km = \( 1.6 \times 10^4 \) m
+- Initial angular speed \( \omega_i \) is calculated from the rotation period of 30 days.
+
+The initial angular speed \( \omega_i \) is:
+
+\[ \omega_i = \frac{2\pi}{T} \]
+
+where \( T = 30 \) days. Converting days to seconds:
+
+\[ T = 30 \times 24 \times 60 \times 60 = 2,592,000 \text{ seconds} \]
+
+Thus:
+
+\[ \omega_i = \frac{2\pi}{2,592,000} \text{ rad/s} \]
+
+Now, substituting into the conservation of angular momentum equation:
+
+\[ (7 \times 10^8)^2 \times \frac{2\pi}{2,592,000} = (1.6 \times 10^4)^2 \times \omega_f \]
+
+Solving for \( \omega_f \):
+
+\[ \omega_f = \frac{(7 \times 10^8)^2 \times \frac{2\pi}{2,592,000}}{(1.6 \times 10^4)^2} \]
+
+Calculating each part:
+
+1. \( (7 \times 10^8)^2 = 4.9 \times 10^{17} \)
+2. \( (1.6 \times 10^4)^2 = 2.56 \times 10^8 \)
+3. \( \frac{2\pi}{2,592,000} \approx 2.424068 \times 10^{-6} \)
+
+Now, calculate \( \omega_f \):
+
+\[ \omega_f = \frac{4.9 \times 10^{17} \times 2.424068 \times 10^{-6}}{2.56 \times 10^8} \]
+
+\[ \omega_f = \frac{1.18779332 \times 10^{12}}{2.56 \times 10^8} \]
+
+\[ \omega_f \approx 4,640.6 \text{ rad/s} \]
+
+Therefore, the angular speed of the neutron star is approximately:
+
+\[ 4640.6 \]
+
+So, the final answer is:
+
+4640.6",True,,,,,[]
+261,,"CheckMate forecasts that its dividend will grow at 20% per year for the next four years before settling down at a constant 8% forever. Dividend (current year,2016) = $12; expected rate of return = 15%. What is the fair value of the stock now?",273.0,$246.40,False,,,,,[]
+262,,Light of wavelength 400 nm is incident upon lithium (phi = 2.93 eV). Calculate the stopping potential in V.,0.17,0.17,True,,,,,[]
+263,,"A spring is mounted horizontally, with its left end fixed. A spring balance attached to the free end and pulled toward the right indicates that the stretching force is proportional to the displacement, and a force of 6.0 N causes a displacement of 0.030 m. We replace the spring balance with a 0.50-kg glider, pull it 0.020 m to the right along a frictionless air track, and release it from rest. Find the period T of the resulting oscillation. (Unit: s)",0.31,"1. First, we need to find the spring constant \( k \) using Hooke's Law, which states that the force \( F \) is proportional to the displacement \( x \), i.e., \( F = kx \).
+
+   Given:
+   \[
+   F = 6.0 \, \text{N}, \quad x = 0.030 \, \text{m}
+   \]
+
+   Solving for \( k \):
+   \[
+   k = \frac{F}{x} = \frac{6.0 \, \text{N}}{0.030 \, \text{m}} = 200 \, \text{N/m}
+   \]
+
+2. Next, we use the formula for the period \( T \) of a mass-spring system:
+   \[
+   T = 2\pi \sqrt{\frac{m}{k}}
+   \]
+
+   Where:
+   - \( m = 0.50 \, \text{kg} \) (mass of the glider)
+   - \( k = 200 \, \text{N/m} \) (spring constant)
+
+3. Substitute the values into the formula:
+   \[
+   T = 2\pi \sqrt{\frac{0.50 \, \text{kg}}{200 \, \text{N/m}}}
+   \]
+
+4. Calculate the expression inside the square root:
+   \[
+   \frac{0.50}{200} = 0.0025
+   \]
+
+5. Calculate the square root:
+   \[
+   \sqrt{0.0025} = 0.05
+   \]
+
+6. Finally, calculate the period \( T \):
+   \[
+   T = 2\pi \times 0.05 = 0.1\pi
+   \]
+
+7. Approximating \( \pi \approx 3.14159 \):
+   \[
+   T \approx 0.1 \times 3.14159 = 0.314159
+   \]
+
+Thus, the period \( T \) of the oscillation is approximately:
+
+\[
+0.31
+\]",True,,,,,[]
+265,,"Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a triangle in red or a 6-clique in blue?",18,18,True,,,,,[]
+266,,determine the ratio of the radius of a uranium-238 nucleus to the radius of a helium-4 nucleus.,3.9,3,False,,,,,[]
+267,,Find the sum of $\sum_{n=1}^{\infty} (cost(1/n^2) - cost(1/(n+1)^2))$,-0.459,0,False,,,,,[]
+269,,"For a one-period binomial model for the price of a stock, you are given: (i) The period is one year. (ii) The stock pays no dividends. (iii) u =1.433, where u is one plus the rate of capital gain on the stock if the price goes up.  (iv) d = 0.756 , where d is one plus the rate of capital loss on the stock if the price goes down. (v) The continuously compounded annual expected return on the stock is 10%. What is the true probability of the stock price going up.",0.52,0.481,False,,,,,[]
+270,,"For $p(x)=f(x)g(x)$, if $f(2)=3$, $f'(2)=-4$, $g(2)=1$, and $g'(2)=6$, what is $p'(2)$?",14,18,False,,,,,[]
+272,,"An object 11cm tall is 9cm from a mirror. If the image distance is -3cm from the mirror, what is the image height in terms of cm?",3.67,-3.67,False,,,,,[]
+273,,"Find the volume of a solid bounded by the elliptical paraboloid $z=2x^2 + y^2 + 1$, the plane x+y=1, and the coordinate planes.",0.75,"1. To find the volume of the solid, we need to set up a triple integral. The solid is bounded by the elliptical paraboloid \( z = 2x^2 + y^2 + 1 \), the plane \( x + y = 1 \), and the coordinate planes \( x = 0 \), \( y = 0 \), and \( z = 0 \).
+
+2. First, determine the region of integration in the \( xy \)-plane. The plane \( x + y = 1 \) intersects the \( xy \)-plane along the line \( x + y = 1 \). The region of integration is bounded by \( x = 0 \), \( y = 0 \), and \( x + y = 1 \).
+
+3. The limits for \( x \) and \( y \) are:
+   - \( 0 \leq x \leq 1 \)
+   - \( 0 \leq y \leq 1 - x \)
+
+4. The volume is given by the integral:
+   \[
+   V = \int_{x=0}^{1} \int_{y=0}^{1-x} \int_{z=0}^{2x^2 + y^2 + 1} \, dz \, dy \, dx
+   \]
+
+5. Evaluate the innermost integral with respect to \( z \):
+   \[
+   \int_{z=0}^{2x^2 + y^2 + 1} \, dz = [z]_{0}^{2x^2 + y^2 + 1} = 2x^2 + y^2 + 1
+   \]
+
+6. Substitute back into the double integral:
+   \[
+   V = \int_{x=0}^{1} \int_{y=0}^{1-x} (2x^2 + y^2 + 1) \, dy \, dx
+   \]
+
+7. Evaluate the integral with respect to \( y \):
+   \[
+   \int_{y=0}^{1-x} (2x^2 + y^2 + 1) \, dy = \left[ 2x^2y + \frac{y^3}{3} + y \right]_{0}^{1-x}
+   \]
+   \[
+   = 2x^2(1-x) + \frac{(1-x)^3}{3} + (1-x)
+   \]
+   \[
+   = 2x^2 - 2x^3 + \frac{1 - 3x + 3x^2 - x^3}{3} + 1 - x
+   \]
+   \[
+   = 2x^2 - 2x^3 + \frac{1}{3} - x + x^2 - \frac{x^3}{3} + 1 - x
+   \]
+   \[
+   = \frac{1}{3} + 1 + 2x^2 + x^2 - 2x^3 - \frac{x^3}{3} - x - x
+   \]
+   \[
+   = \frac{4}{3} + 3x^2 - 2x - \frac{7x^3}{3}
+   \]
+
+8. Evaluate the integral with respect to \( x \):
+   \[
+   V = \int_{x=0}^{1} \left( \frac{4}{3} + 3x^2 - 2x - \frac{7x^3}{3} \right) \, dx
+   \]
+   \[
+   = \left[ \frac{4}{3}x + x^3 - x^2 - \frac{7x^4}{12} \right]_{0}^{1}
+   \]
+   \[
+   = \left( \frac{4}{3} \cdot 1 + 1^3 - 1^2 - \frac{7 \cdot 1^4}{12} \right) - \left( 0 \right)
+   \]
+   \[
+   = \frac{4}{3} + 1 - 1 - \frac{7}{12}
+   \]
+   \[
+   = \frac{4}{3} - \frac{7}{12}
+   \]
+   \[
+   = \frac{16}{12} - \frac{7}{12}
+   \]
+   \[
+   = \frac{9}{12}
+   \]
+   \[
+   = \frac{3}{4}
+   \]
+
+The volume of the solid is \(\frac{3}{4}\).
+
+The final answer is:
+\[
+\boxed{\frac{3}{4}}
+\]",False,,,,,[]
+275,,"Assuming we are underground, and the only thing we can observe is whether a person brings an umbrella or not. The weather could be either rain or sunny. Assuming the P(rain)=0.6 and P(sunny)=0.4. Assuming the weather on day $k$ is dependent on the weather on day $k-1$. We can write the transition probability as P(sunny $\mid$ sunny) = P(rain $\mid$ rain) = 0.7. The person has 60% chance to bring an umbrella when the weather is rain, and 40% chance to bring an umbrella when the weather is sunny, i.e. P(umbrella $\mid$ rain) = 0.6 and P(umbrella $\mid$ sunny) = 0.4. If we observe that the person (1) brought an umbrella on day 1, (2) did not bring an umbrella on day 2, (3) brought an umbrella on day 3.  What is the probability that day 2 is raining?",0.5167,0.5,False,,,,,[]
+276,,"Find the solutions to the second order boundary-value problem. y''-2y'+2y=0, y(0)=0, y(\pi/2) = 1. What is y(\pi/4)?",0.322,1,False,,,,,[]
+278,,Use divergence therem to evaluate $\iint_S \vec{F} \cdot d \vec{S}$ where $\vec{F} = yx^2 \vec{i} + (xy^2 - 3z^4)\vec{j} + (x^3+y^3)\vec{k}$ and the surface $S$ consists of the sphere of radius 4 with $z \le 0$ and $y \le 0$. Note all three surfaces of this solid are included in $S$.,0.0,"To solve this problem, we will use the divergence theorem, which states:
+
+\[
+\iint_S \vec{F} \cdot d\vec{S} = \iiint_V \nabla \cdot \vec{F} \, dV
+\]
+
+where \( V \) is the volume enclosed by the surface \( S \), and \( \nabla \cdot \vec{F} \) is the divergence of the vector field \( \vec{F} \).
+
+First, we calculate the divergence of \( \vec{F} \):
+
+\[
+\vec{F} = yx^2 \vec{i} + (xy^2 - 3z^4)\vec{j} + (x^3+y^3)\vec{k}
+\]
+
+The divergence is given by:
+
+\[
+\nabla \cdot \vec{F} = \frac{\partial}{\partial x}(yx^2) + \frac{\partial}{\partial y}(xy^2 - 3z^4) + \frac{\partial}{\partial z}(x^3 + y^3)
+\]
+
+Calculating each term:
+
+\[
+\frac{\partial}{\partial x}(yx^2) = 2yx
+\]
+
+\[
+\frac{\partial}{\partial y}(xy^2 - 3z^4) = 2xy
+\]
+
+\[
+\frac{\partial}{\partial z}(x^3 + y^3) = 0
+\]
+
+Thus, the divergence is:
+
+\[
+\nabla \cdot \vec{F} = 2yx + 2xy = 4xy
+\]
+
+Now, we need to evaluate the integral over the volume \( V \), which is the portion of the sphere \( x^2 + y^2 + z^2 \leq 16 \) with \( z \leq 0 \) and \( y \leq 0 \).
+
+In spherical coordinates, the volume element is \( dV = \rho^2 \sin \phi \, d\rho \, d\phi \, d\theta \), where \( \rho \) is the radial distance, \( \phi \) is the polar angle, and \( \theta \) is the azimuthal angle.
+
+The limits for \( \rho \) are from 0 to 4, for \( \phi \) from \( \pi/2 \) to \( \pi \) (since \( z \leq 0 \)), and for \( \theta \) from \( \pi \) to \( 3\pi/2 \) (since \( y \leq 0 \)).
+
+In spherical coordinates, \( x = \rho \sin \phi \cos \theta \) and \( y = \rho \sin \phi \sin \theta \). Therefore, \( xy = \rho^2 \sin^2 \phi \cos \theta \sin \theta \).
+
+The integral becomes:
+
+\[
+\iiint_V 4xy \, dV = \int_{\pi}^{3\pi/2} \int_{\pi/2}^{\pi} \int_0^4 4(\rho^2 \sin^2 \phi \cos \theta \sin \theta) \rho^2 \sin \phi \, d\rho \, d\phi \, d\theta
+\]
+
+Simplifying:
+
+\[
+= 4 \int_{\pi}^{3\pi/2} \int_{\pi/2}^{\pi} \int_0^4 \rho^4 \sin^3 \phi \cos \theta \sin \theta \, d\rho \, d\phi \, d\theta
+\]
+
+The integral over \( \rho \) is:
+
+\[
+\int_0^4 \rho^4 \, d\rho = \left[ \frac{\rho^5}{5} \right]_0^4 = \frac{4^5}{5} = \frac{1024}{5}
+\]
+
+The integral over \( \phi \) is:
+
+\[
+\int_{\pi/2}^{\pi} \sin^3 \phi \, d\phi
+\]
+
+Using the substitution \( u = \cos \phi \), \( du = -\sin \phi \, d\phi \), the limits change from 0 to -1:
+
+\[
+= \int_0^{-1} (1-u^2) \, (-du) = \int_{-1}^{0} (1-u^2) \, du = \left[ u - \frac{u^3}{3} \right]_{-1}^{0} = \left(0 - 0\right) - \left(-1 + \frac{1}{3}\right) = \frac{2}{3}
+\]
+
+The integral over \( \theta \) is:
+
+\[
+\int_{\pi}^{3\pi/2} \cos \theta \sin \theta \, d\theta = \frac{1}{2} \int_{\pi}^{3\pi/2} \sin 2\theta \, d\theta = \frac{1}{2} \left[ -\frac{1}{2} \cos 2\theta \right]_{\pi}^{3\pi/2}
+\]
+
+\[
+= -\frac{1}{4} \left( \cos(3\pi) - \cos(2\pi) \right) = -\frac{1}{4} \left( -1 - 1 \right) = \frac{1}{2}
+\]
+
+Putting it all together:
+
+\[
+4 \cdot \frac{1024}{5} \cdot \frac{2}{3} \cdot \frac{1}{2} = \frac{4096}{30} = \frac{2048}{15}
+\]
+
+Thus, the final answer is:
+
+\[
+\boxed{0}
+\]
+
+The integral evaluates to zero because the symmetry of the problem and the limits of integration over the sphere result in cancellation of positive and negative contributions.",True,,,,,[]
+279,,Consider a resistor made from a hollow cylinder of carbon as shown below. The inner radius of the cylinder is $R_i=0.2$mm and the outer radius is $R_o=0.3$mm. The length of the resistor is $L=0.9$mm. The resistivity of the carbon is $\rho=3.5 * 10^{-5} \Omega \cdot m$. What is the resistance in $\Omega \cdot m$?,2.5,0.0001667,False,,,,,[]
+280,,"Use the Birge-Vieta method to find a real root correct to three decimals of the following equation: x^3 - 11x^2 + 32x - 22 = 0, p = 0.5",1,2.146,False,,,,,[]
+281,,"A survey shows that a mayoral candidate is gaining votes at a rate of 2000t + 1000 votes per day, where t is the number of days since she announced her candidacy. How many supporters will the candidate have after 60 days, assuming that she had no supporters at t = 0?",3660000,3720000,False,,,,,[]
+283,,Use the Trapezoidal Rule with to approximate $\int_0^{\pi} sin^2(x)dx$. Return the approximated demical value.,1.570796,2.4674,False,,,,,[]
+284,,Let $a_0=5/2$ and $a_k=(a_{k-1})^2-2$ for $k\geq 1$. Compute $\prod_{k=0}^{\infty}(1-1/a_k)$ in closed form.,0.42857,"The sequence \( a_k \) is defined by \( a_0 = \frac{5}{2} \) and \( a_k = (a_{k-1})^2 - 2 \) for \( k \geq 1 \). We need to compute the infinite product \( \prod_{k=0}^{\infty} \left( 1 - \frac{1}{a_k} \right) \).
+
+First, observe the recurrence relation:
+\[
+a_k = (a_{k-1})^2 - 2.
+\]
+This is a form of the recurrence relation for the Chebyshev polynomials of the first kind, which are related to the cosine function. Specifically, if we let \( a_k = 2 \cos \theta_k \), then:
+\[
+a_k = 2 \cos(2^k \theta_0).
+\]
+
+Given \( a_0 = \frac{5}{2} \), we have:
+\[
+2 \cos \theta_0 = \frac{5}{2} \implies \cos \theta_0 = \frac{5}{4}.
+\]
+However, this is not possible since the cosine function is bounded by \([-1, 1]\). Therefore, we need to reconsider the sequence in terms of its properties.
+
+Notice that:
+\[
+a_0 = \frac{5}{2}, \quad a_1 = \left( \frac{5}{2} \right)^2 - 2 = \frac{25}{4} - 2 = \frac{17}{4}.
+\]
+Continuing this process:
+\[
+a_2 = \left( \frac{17}{4} \right)^2 - 2 = \frac{289}{16} - 2 = \frac{257}{16}.
+\]
+
+The sequence \( a_k \) is related to the solutions of the equation \( x^2 - 2 = x \), which are the roots of the equation \( x^2 - x - 2 = 0 \). Solving this quadratic equation:
+\[
+x^2 - x - 2 = 0 \implies (x-2)(x+1) = 0.
+\]
+Thus, the roots are \( x = 2 \) and \( x = -1 \).
+
+The sequence \( a_k \) converges to 2, as it is a fixed point of the transformation \( x \mapsto x^2 - 2 \).
+
+Now, consider the product:
+\[
+\prod_{k=0}^{\infty} \left( 1 - \frac{1}{a_k} \right).
+\]
+Since \( a_k \to 2 \), for large \( k \), \( 1 - \frac{1}{a_k} \approx 1 - \frac{1}{2} = \frac{1}{2} \).
+
+The product telescopes:
+\[
+\prod_{k=0}^{\infty} \left( 1 - \frac{1}{a_k} \right) = \frac{1}{2}.
+\]
+
+Thus, the closed form of the product is:
+\[
+\boxed{0}.
+\]",False,,,,,[]
+286,,Assume a temperature of 300 K and find the wavelength of the photon necessary to cause an electron to jump from the valence to the conduction band in silicon in nm.,1130.0,1127,True,,,,,[]
+287,,What is the order of the group S_3 * Z_2?,12,12,True,,,,,[]
+288,,"Let's assume that the 10-year annual return for the S&P 500 (market portfolio) is 10%, while the average annual return on Treasury bills (a good proxy for the risk-free rate) is 5%. Whats the market Treynor Ratio? Return the numeric value between 0 and 1.",0.05,0.5,False,,,,,[]
+290,,"Both A, B are n-by-n matrices with rank(A)=n, rank(A*B)=0. What is rank(B)?",0.0,0,True,,,,,[]
+292,,"A door 1.00 m wide, of mass 15 kg, can rotate freely about a vertical axis through its hinges. A bullet with a mass of 10 g and a speed of 400 m/s strikes the center of the door, in a direction perpendicular to the plane of the door, and embeds itself there. Find the door's angular speed. (Unit: rad/s)",0.4,1.33,False,,,,,[]
+293,,"Estimate the PE ratio for a firm that has the following characteristics:
+Length of high growth = five years
+Growth rate in first five years = 25%
+Payout ratio in first five years = 20%
+Growth rate after five years = 8%
+Payout ratio after five years = 50%
+Beta = 1.0 
+Risk-free rate = T-bond rate = 6%
+Cost of equity = 6% + 1(5.5%) = 11.5%
+Risk premium = 5.5%
+What is the estimated PE ratio for this firm?",28.75,The estimated PE ratio for the firm is 20.,False,,,,,[]
+295,,"Mr. Jackson bought his house in 1995, and financed the loan for 30 years at an interest rate of 7.8%. His monthly payment was $1260. In 2015, Mr. Jackson decides to pay off the loan. Find the balance of the loan he still owes.",104761.48,113400,False,,,,,[]
+296,,"Given 3 Colors whose RGB representations are given as follows: Color 1: (0.5, 0.5, 0.5), Color 2: (0.4, 0.6, 0.5), Color 3: (0.3, 0.7, 0.5), Which Color does not carry chrominance (Color) Information? Answer with 1 or 2 or 3.",1,1,True,,,,,[]
+297,,"Calculate the interest rate (between 0 and 1) for an account that started with $5,000 and now has $13,000 and has been compounded annually for the past 12 years. Answer with the numeric value.",0.0828,0.091,False,,,,,[]
+299,,In how many ways can a group of 10 people be divided into 3 non-empty subsets?,9330,9330,True,,,,,[]
+300,,"Suppose Host A wants to send a large file to Host B. The path from Host A to Host B has three links, of rates R1 = 500 kbps, R2 = 2 Mbps, and R3 = Mbps. Assuming no other traffic in the network, what is the throughput for the file transfer? (in kbps)",500,500,True,,,,,[]
+301,,The asteroid Pallas has an orbital period of 4.62 years and an orbital eccentricity of 0.233. Find the semi-major axis of its orbit. (Unit: 10^11 m),4.15,27.7,False,,,,,[]
+302,,A cylindrical tank of height 4 m and radius 1 m is filled with water. Water drains through a square hole of side 2 cm in the bottom. How long does it take for the tank to go from full to empty?,7142,11309,False,,,,,[]
+303,,"For a simple random walk S_n with S_0=0 and P(S_n-S_{n-1}=1)=1/4, P(S_n-S_{n-1}=-1)=3/4. Let M=\max{S_n:n\geq 0}. What is the probability of the event {M\geq 5}? Round the answer to the thousands decimal.",0.01234567,0.015,False,,,,,[]
+304,,"In year N, the 300th day of the year is a Tuesday. In year N + 1, the 200th day is also a Tuesday. Suppose Monday is the 1-th day of the week, on which day of the week did the 100th day of the year N - 1 occur? Return a numeric between 1 and 7.",4,5,False,,,,,[]
+305,,Use the Runge-Kutta method with $h=0.1$ to find approximate values for the solution of the initial value problem $y' + 2y = x^3e^{-2x}$ with y(0)=1 at $x=0.2$.,0.6705,1.,False,,,,,[]
+307,,"Consider a periodic signal $x(t)$ with period $(T)$ equals to ten. Over one period (i.e., $-5 \leq t<5)$, it is defined as $$ x(t)=\left\{\begin{array}{cc} 2 & -5 \leq t<0 \\ -2 & 0 \leq t<5 \end{array}\right. $$ In Fourier series, the signal $x(t)$ is written in the form of $$ x(t)=\sum_{k=-\infty}^{\infty} c_k e^{\frac{j 2 \pi k t}{T}} $$ where the Fourier series coefficient $c_k$ is obtained as, $$ c_k=\frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} x(t) e^{-\frac{j 2 \pi k t}{T}} d t $$ Determine the value of $c_0$ (i.e., $\left.k=0\right)$",0,0,True,,,,,[]
+308,,Does the following series $\sum_{i=0}^{\infty} \frac{n^2 ln(n)}{n!}$ converge?,1.0,0,False,,,,,[]
+311,,What is \int_{-3}^1 (7x^2 + x +1)dx?,65.333,52,False,,,,,[]
+312,,"Find the mass and weight of the air at $20^{\circ} C$ in a living room with a $4.0 m \times 5.0 m$ floor and a ceiling 3.0 m high, and the mass and weight of an equal volume of water. (Unit: 10 ^ 5 N)",5.9,1,False,,,,,[]
+313,,"Compute the mean translational kinetic energy of a mole of ideal gas in J, both at room temperature 293 K.",3650.0,3640,True,,,,,[]
+314,,"Let $F_0(x)=log(x)$. For $n\geq 0$ and $x>0$, let $F_{n+1}(x)=\int_0^x F_n(t)dt$. Evaluate $\lim _{n \rightarrow \infty} (n! F_n(1))/(log(n))$.",-1.0,"The problem involves a sequence of functions defined recursively, starting with \( F_0(x) = \log(x) \). For \( n \geq 0 \), the function \( F_{n+1}(x) \) is defined as the integral of \( F_n(t) \) from 0 to \( x \):
+
+\[
+F_{n+1}(x) = \int_0^x F_n(t) \, dt
+\]
+
+We need to evaluate the limit:
+
+\[
+\lim_{n \to \infty} \frac{n! F_n(1)}{\log(n)}
+\]
+
+First, let's compute the initial functions:
+
+- \( F_0(x) = \log(x) \)
+- \( F_1(x) = \int_0^x \log(t) \, dt = x \log(x) - x \)
+- \( F_2(x) = \int_0^x (t \log(t) - t) \, dt = \frac{x^2}{2} \log(x) - \frac{x^2}{4} \)
+
+Continuing this process, we observe a pattern. Each \( F_n(x) \) is a polynomial in \( x \) with a leading term of the form \( \frac{x^n}{n!} \log(x) \).
+
+To find \( F_n(1) \), we evaluate the leading term at \( x = 1 \):
+
+\[
+F_n(1) = \frac{1^n}{n!} \log(1) + \text{lower order terms}
+\]
+
+Since \( \log(1) = 0 \), the leading term vanishes, and we need to consider the next term in the expansion. The next term is a constant, which we denote as \( c_n \). Thus, \( F_n(1) \approx c_n \).
+
+The recursive relation for \( F_n(x) \) suggests that \( c_n \) is related to the integral of the previous function's constant term. Specifically, \( c_n = -\frac{1}{n+1} \) for large \( n \).
+
+Now, we evaluate the limit:
+
+\[
+\lim_{n \to \infty} \frac{n! F_n(1)}{\log(n)} = \lim_{n \to \infty} \frac{n! \cdot \left(-\frac{1}{n+1}\right)}{\log(n)}
+\]
+
+Simplifying, we have:
+
+\[
+= \lim_{n \to \infty} \frac{-n!}{(n+1) \log(n)}
+\]
+
+Using Stirling's approximation \( n! \approx \sqrt{2 \pi n} \left(\frac{n}{e}\right)^n \), we find:
+
+\[
+\frac{n!}{(n+1) \log(n)} \approx \frac{\sqrt{2 \pi n} \left(\frac{n}{e}\right)^n}{(n+1) \log(n)}
+\]
+
+The dominant term in the numerator is \( \left(\frac{n}{e}\right)^n \), and in the denominator, it is \( \log(n) \). As \( n \to \infty \), the factorial grows much faster than the logarithm, leading to:
+
+\[
+\lim_{n \to \infty} \frac{n!}{(n+1) \log(n)} = 0
+\]
+
+Thus, the original limit evaluates to:
+
+\[
+\boxed{0}
+\]",False,,,,,[]
+315,,How many trees are there on n (n > 1) labeled vertices with no vertices of degree 1 or 2?,0,1,False,,,,,[]
+316,,What is the order of the element 5 in U_8?,2,2,True,,,,,[]
+317,,Roughly how many bits are required on the average to describe to 3 digit accuracy the decay time (in years) of a radium atom if the half-life of radium is 80 years? Note that half-life is the median of the distribution.,19,10,False,,,,,[]
+321,,The spontaneous fission activity rate of U-238 is 6.7 fissions/kg s. A sample of shale contains 0.055% U-238 by weight. Calculate the number of spontaneous fissions in one day in a 106-kg pile of the shale by determining the mass of U-238 present in kg.,550.0,"5,051,712",False,,,,,[]
+322,,Calculate the Fermi temperature for copper in eV.,81600.0,7,False,,,,,[]
+323,,"Use Stoke's Theorem to evaluate $\int_C \vec{F} \cdot d \vec{r}$ where $\vec{F} = z^2 \vec{i} + y^2 \vec{j} + x \vec{k}$ and $C$ is the triangle with vertices (1,0,0), (0,1,0) and (0,0,1) with counter-clockwise rotation.",-0.166,1,False,,,,,[]
+325,,"Malus' law: $I=I_0*cos^2($\theta$)$. Where I is the intensity of polarized light that has passed through the polarizer, I_0 is the intensity of polarized light before the polarizer, and $\theta$ is the angle between the polarized light and the polarizer. Unpolarized light passes through a polarizer. It then passes through another polarizer at angle 30 degree to the first, and then another at angle 50 degree to the second. What percentage of the original intensity was the light coming out of the third polarizer?",31.0,"To solve this problem, we need to apply Malus' law twice, as the light passes through two polarizers after the initial one.
+
+1. **First Polarizer:**
+   - Unpolarized light passing through a polarizer reduces its intensity to half. So, after the first polarizer, the intensity \( I_1 = \frac{I_0}{2} \).
+
+2. **Second Polarizer:**
+   - The angle between the first and second polarizer is 30 degrees.
+   - Using Malus' law: \( I_2 = I_1 \cdot \cos^2(30^\circ) \).
+   - \( \cos(30^\circ) = \frac{\sqrt{3}}{2} \).
+   - So, \( I_2 = \frac{I_0}{2} \cdot \left(\frac{\sqrt{3}}{2}\right)^2 = \frac{I_0}{2} \cdot \frac{3}{4} = \frac{3I_0}{8} \).
+
+3. **Third Polarizer:**
+   - The angle between the second and third polarizer is 50 degrees.
+   - Using Malus' law again: \( I_3 = I_2 \cdot \cos^2(50^\circ) \).
+   - \( \cos(50^\circ) \approx 0.6428 \).
+   - So, \( I_3 = \frac{3I_0}{8} \cdot (0.6428)^2 \approx \frac{3I_0}{8} \cdot 0.4132 \approx \frac{3I_0 \cdot 0.4132}{8} \approx 0.15495I_0 \).
+
+Finally, to find the percentage of the original intensity, we calculate:
+
+\[ \text{Percentage} = \left(\frac{I_3}{I_0}\right) \times 100\% = 0.15495 \times 100\% \approx 15.495\% \]
+
+Rounding to the nearest whole number, the percentage of the original intensity is:
+
+15",False,,,,,[]
+326,,"An airplane is flying at Mach 1.75 at an altitude of 8000 m, where the speed of sound is How long after the plane passes directly overhead will you hear the sonic boom? (Unit: m/s)",560,23,False,,,,,[]
+328,,"If the spot rates for 1 and 2 years are $s_1=6.3%$ and $s_2=6.9%, what is the forward rate $f_{1,2}$?",0.075,7.5,False,,,,,[]
+329,,"For a parametric family $\{p_\theta(x)\}$ we know that $\lim_{\theta'\to\theta}\frac{1}{(\theta-\theta')^2}D(p_\theta||p_{\theta'}) = \alpha J(\theta)$, where $J(\theta)$ is the Fisher information. Use natural logarithm for KL divergence to compute $\alpha$.",0.5,1,False,,,,,[]
+330,,A muon has a lifetime of 2 x 10^{-6} s in its rest frame. It is created 100 km above the earth and moves towards it at a speed of 2.97 x 10^8 m/s. At what altitude in km does it decay? Return a numeric number.,4.2,66.1,False,,,,,[]
+331,,"Suppose C[0,1] denotes the space of all the continuous functions on the interval [0,1]. Is (C[0,1],\|\cdot\|_1 ) a Banach space? Here $\|f(x)\|_1=\int_0^1 |f(t)|dt$ with $f\in C[0,1]$. Answer 1 for yes and 0 for no.",0.0,0,True,,,,,[]
+332,,"An athlete whirls a discus in a circle of radius 80.0 cm. At a certain instant, the athlete is rotating at 10.0 rad / s and the angular speed is increasing at 50.0 rad / s^2. At this instant, find the magnitude (Unit: m / s^2) of the acceleration. Return the numeric value.",89.4,81.0,False,,,,,[]
+333,,"The positive integers N and N^2 both end in the same sequence of four digits abcd when written in base 10, where digit a is nonzero. Find the three-digit number abc.",937,376,False,,,,,[]
+334,,Calculate the required memory size in Mebibytes (MiB) (in 3 sig.fig.)  for storing a frame in 1080p if the sampling scheme R'G'B' 4:4:4 is used. Note that there are 1920 × 1080 pixels in one 1080p frame. Each pixel contains three primary-colour components. Each primary-colour component requires 1 byte of memory for storage. 1 Mebibyte has 1024^2 bytes.,5.93,6.18,False,,,,,[]
+335,,What is the value of the series $\sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k} \sum_{n=0}^{\infty} \frac{1}{k 2^n+1}$?,1.0,"The given problem involves evaluating the series:
+
+\[
+\sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k} \sum_{n=0}^{\infty} \frac{1}{k 2^n + 1}
+\]
+
+First, consider the inner series:
+
+\[
+\sum_{n=0}^{\infty} \frac{1}{k 2^n + 1}
+\]
+
+For large \( n \), \( k 2^n \) becomes very large, and the terms \(\frac{1}{k 2^n + 1}\) approach zero. However, for small \( n \), the terms are significant. Let's evaluate the first few terms:
+
+- For \( n = 0 \), the term is \(\frac{1}{k \cdot 1 + 1} = \frac{1}{k + 1}\).
+- For \( n = 1 \), the term is \(\frac{1}{k \cdot 2 + 1} = \frac{1}{2k + 1}\).
+- For \( n = 2 \), the term is \(\frac{1}{k \cdot 4 + 1} = \frac{1}{4k + 1}\).
+
+The series converges, but the exact sum is complex to express in a simple closed form. However, we can analyze the behavior of the series by considering the outer series:
+
+\[
+\sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k} \sum_{n=0}^{\infty} \frac{1}{k 2^n + 1}
+\]
+
+The outer series is an alternating series:
+
+\[
+\sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k} a_k
+\]
+
+where \( a_k = \sum_{n=0}^{\infty} \frac{1}{k 2^n + 1} \).
+
+The alternating series test tells us that if \( a_k \) is decreasing and approaches zero, the series converges to a value. The series \(\sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k}\) is known to converge to \(\ln(2)\).
+
+The inner series \(\sum_{n=0}^{\infty} \frac{1}{k 2^n + 1}\) is a decreasing function of \( k \) and approaches zero as \( k \to \infty \). Therefore, the entire series converges.
+
+The series \(\sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k}\) is the alternating harmonic series, which converges to \(\ln(2)\). The additional terms from the inner series modify the convergence, but the alternating nature and the behavior of the terms suggest that the series converges to a value related to \(\ln(2)\).
+
+After evaluating the behavior and convergence properties, the series converges to:
+
+\[
+\boxed{1}
+\]",True,,,,,[]
+336,,"The equation of a digital filter is given by $y(n)=1 / 3(x(n)+x(n-1)+x(n-2))$, where $y(n)$ and $x(n)$ are, respectively, the nth samples of the output and input signals. Determine the pole(s) of the filter.",0,0,True,,,,,[]
+337,,"Given the following spot rates:
+1-year spot rate: 5%;
+2-year spot rate: 6%.
+ Determine the one-year forward rate (between 0 and 1) one year from today.",0.070095,7,False,,,,,[]
+338,,An object of height 5cm is placed 10 cm in front of a convex mirror that has a radius of curvature of 45.0 cm. Determine the magnification of the image.,1.8,0.18,False,,,,,[]
+339,,"For the 3 payments of $1000 each end-of-year, with 7% rate of return, what is the present value if the first payment is made at the end of fifth year?",2002.0781,"$2,455.58",False,,,,,[]
+340,,Does the following series $\sum_{i=0}^{\infty} \frac{n!}{n^2 cos(n)}$ converge?,0.0,0,True,,,,,[]
+343,,\lim_{x \to c} |f(x)| = 0. What is \lim_{x \to c} f(x)?,0,0,True,,,,,[]
+344,,"In how many ways can we form a 7-digit number using the digits 1, 2, 2, 3, 3, 3, 4?",420,420,True,,,,,[]
+345,,"Let {N(t), t=[0, \infty]} be a Poisson process with rate $\lambda = 5$. Find the probability of no arrivals in [3, 5)",0.37,0.1353352832,False,,,,,[]
+346,,The Relativistic Heavy Ion Collider (RHIC) at the Brookhaven National Laboratory collides gold ions onto other gold ions head on. The energy of the gold ions is 100 GeV per nucleon. What is the speed of the gold ions as a fraction of the speed of light?,0.99996,1,True,,,,,[]
+348,,In how many ways can 7 people be seated at 5 identical round tables? Each table must have at least 1 person seated.,175,16,False,,,,,[]
+349,,What is the minimum kinetic energy in MeV of a proton in a medium-sized nucleus having a diameter of 8.0 x 10^-15 m?,0.08,20,False,,,,,[]
+350,,"Given that each cone can contain two ice cream balls, how many different ice cream cones can you make if you have 6 flavors of ice cream and 5 types of cones?",180,225,False,,,,,[]
+352,,Calculate the de Broglie Wavelength of a tennis ball of mass 57 g traveling 25 m/s in meters.,4.7e-34,4.63e-34,False,,,,,[]
+353,,"If the peak voltage value of a signal is 20 times the peak voltage value of the noise, what is the SNR? What is the $\mathrm{SNR}_{\mathrm{dB}}$ (in 3 sig.fig.)?",26.0,26.0,True,,,,,[]
+354,,Using n=6 approximate the value of $\int_{-1}^2 \sqrt{e^{-x^2} + 1} dx$ using the Simpson's rule.,3.70358145,6.048,False,,,,,[]
+355,,What is the smallest number of vertices in a graph that guarantees the existence of a clique of size 3 or an independent set of size 2?,3,3,True,,,,,[]
+356,,"Find the number of integers n, 1 ≤ n ≤ 25 such that n^2 + 3n + 2 is divisible by 6.",13,12,False,,,,,[]
+357,,"Suppose Host A wants to send a large file to Host B. The path from Host A to Host B has three links, of rates R1 = 500 kbps, R2 = 2 Mbps, and R3 = Mbps. Suppose the file is 4 million bytes. Dividing the file size by the throughput, roughly how many seconds will it take to transfer the file to Host B?",64,64,True,,,,,[]
+358,,"Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a 4-clique in red or a 4-clique in blue?",18,6,False,,,,,[]
+359,,"All walking animals, including humans, have a natural walking pace—a number of steps per minute that is more comfortable than a faster or slower pace. Suppose that this pace corresponds to the oscillation of the leg as a physical pendulum.  Fossil evidence shows that T. rex, a two-legged dinosaur that lived about 65 million years ago, had a leg length L = 3.1 m and a stride length S = 4.0 m (the distance from one footprint to the next print of the same foot).  Estimate the walking speed of T. rex. (Unit: m/s)",1.4,2,False,,,,,[]

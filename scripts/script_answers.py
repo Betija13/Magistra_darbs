@@ -465,7 +465,7 @@ class LLMRunner:
                                 quid=qid,
                                 question=question_and_choices,
                                 true_answer=answer,
-                                llm_answer=answer_results.llm_answer_unedited,
+                                llm_answer=str(answer_results.llm_answer_unedited),
                                 correct=answer_results.correct,
                                 llm_answer_chosen=answer_results.chosen_answer,
                                 reward_method=args.REWARD_METHOD.value if args.REWARD_METHOD else None,
