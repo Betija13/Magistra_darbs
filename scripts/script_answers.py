@@ -75,6 +75,10 @@ parser.add_argument(
     '--REWARD_METHOD_VALUE', type=str,
     choices=[e.value for e in RewardMethod]
 )
+parser.add_argument(
+    '--DATASETS', nargs='*',
+    choices=[e.value for e in Datasets]
+)
 parser.add_argument('--ORIGINAL_FILE', type=str)
 parser.add_argument('--PROMPTS_ITERATION', nargs='*')
 parser.add_argument(
@@ -82,7 +86,7 @@ parser.add_argument(
     choices=prompt_names_list.keys()
 )
 # parser.add_argument('--CUSTOM_NAME', type=str)
-# parser.add_argument('--TOTAL_COUNT', type=int)
+parser.add_argument('--TOTAL_COUNT', type=int)
 # parser.add_argument('--TEMPERATURE', type=float)
 # parser.add_argument('--ANSWER_COUNT', type=int)
 
@@ -99,7 +103,8 @@ if cli_args.PROMPT_LIST_EXISTING is not None:
         cli_args.PROMPTS_ITERATION = prompt_iteration_choice
     else:
         cli_args.PROMPTS_ITERATION.extend(prompt_iteration_choice)
-#
+if cli_args.DATASETS is not None:
+    cli_args.PREDEFINED_DATASETS = [Datasets(ds_n).value for ds_n in cli_args.DATASETS]
 valid_fields = {f.name for f in fields(Args)}
 filtered_args = {k: v for k, v in vars(cli_args).items() if v is not None and k in valid_fields}
 
@@ -990,7 +995,7 @@ if __name__ == "__main__":
     elif args.TASK == Tasks.N_SAMPLE_DIFF_SCORE_OTHER:
         llm_runner.get_n_samples_different_scores(
             original_file_path=args.ORIGINAL_FILE,
-            reward_methods=[RewardMethod.RERANK, RewardMethod.LLM_O_R, RewardMethod.LLM_O_B_I, RewardMethod.MAJOR],
+            reward_methods=[RewardMethod.MAJOR, RewardMethod.RERANK, RewardMethod.LLM_O_R, RewardMethod.LLM_O_B_I],
             reward_name=None)
     elif args.TASK == Tasks.STATIC_METHODS:
          llm_runner.go_through_all_static_zero_shot(prompts_for_iteration=args.PROMPTS_ITERATION)

@@ -174,7 +174,7 @@ class AnswerMethods:
             answer_results.chosen_answer = str_chosen
             if final_chosen_answer is not None:
                 correct = ResultUtils.check_corrct_answer(
-                    llm_answer=final_chosen_answer, true_answer=ground_truth_answer,
+                    llm_answer=str(final_chosen_answer), true_answer=ground_truth_answer,
                     other_true_answer=ground_truth_answer_word, answer_type=answer_type
                 )
             else:

@@ -421,9 +421,14 @@ class RewardMethods:
         try:
             scores = []
             for answer in answer_options:
+                if len(answer) > 8192:
+                    logger.warning(f"Answer size {len(answer)}")
+                answer = answer[:8192]
                 inputs = self.tokenizer(question, answer, return_tensors='pt')
                 score = self.reward_model(**inputs).logits[0].cpu().detach()
+                del inputs
                 scores.append(float(score))
+                del score
             max_score = max(scores)
             result_answer.answer_score = max_score
             result_answer.chosen_answer = answer_options[scores.index(max_score)]
@@ -466,6 +471,9 @@ class RewardMethods:
         try:
             chats = []
             for answer_option in answer_options:
+                # if len(answer_option) > 1500 and sum([len(ans) for ans in answer_options]) > 8192:
+                #     logger.warning(f"Answer size {len(answer_option)}")
+                #     answer_option = answer_option[:1500]
                 chat_n = [
                     {"role": "user", "content": question},
                     {"role": "assistant",

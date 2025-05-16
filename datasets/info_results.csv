@@ -5267,7 +5267,1319 @@ Choices:
 {choices}
 ```
 ",1.0,1,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
-599,13-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_13-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,73.62204724409449,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+599,13-05-2025,MMLU,../datasets/MMLU/results/MUTATION__MM__REWARD_MODEL__RN-INTERNLM_1_8_B__O-STRUCTURED_COT___I-N_13-05-2025__F-data_normalized_STEM_dev_0.csv,MUTATION,True,95,90.52631578947368,"Classify (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+600,13-05-2025,MMLU,../datasets/MMLU/results/MUTATION__MM__REWARD_MODEL__RN-BLENDER_PRM__O-STRUCTURED_COT___I-N_13-05-2025__F-data_normalized_STEM_dev_0.csv,MUTATION,True,95,87.36842105263159,"Complete the task and respond by selecting one of the following choices: (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+601,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0.csv,A_N_SAMPLING,True,254,72.83464566929135,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+602,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1.csv,A_N_SAMPLING,True,254,73.62204724409449,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+603,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2.csv,A_N_SAMPLING,True,254,73.62204724409449,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+604,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3.csv,A_N_SAMPLING,True,254,75.19685039370079,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+605,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4.csv,A_N_SAMPLING,True,254,73.62204724409449,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+606,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5.csv,A_N_SAMPLING,True,254,72.04724409448819,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+607,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6.csv,A_N_SAMPLING,True,254,75.19685039370079,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+608,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7.csv,A_N_SAMPLING,True,254,74.80314960629921,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+609,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8.csv,A_N_SAMPLING,True,254,72.04724409448819,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+610,14-05-2025,MMLU,../datasets/MMLU/results/MUTATION__MM__REWARD_MODEL__RN-INTERNLM_1_8_B__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_STEM_dev_0.csv,MUTATION,True,95,88.42105263157895,"Solve and Choose Answer (A),(B),(C),(D)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+611,14-05-2025,MMLU,../datasets/MMLU/results/MUTATION__MM__REWARD_MODEL__RN-GRM__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_STEM_dev_0.csv,MUTATION,True,95,86.31578947368422,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+612,14-05-2025,MMLU,../datasets/MMLU/results/MUTATION__MM__REWARD_MODEL__RN-SKYWORK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_STEM_dev_0.csv,MUTATION,True,95,88.42105263157895,"Determine the solution and select the correct option from (A), (B), (C), or (D).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+613,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0.csv,A_N_SAMPLING,True,254,73.22834645669292,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+614,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0.csv,A_N_SAMPLING,True,254,74.01574803149606,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+615,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0.csv,A_N_SAMPLING,True,254,71.25984251968504,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+616,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,73.22834645669292,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+617,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-GRM_3B.csv,A_N_SAMPLING,True,254,76.37795275590551,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+618,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-SKYWORK.csv,A_N_SAMPLING,True,254,75.98425196850394,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+619,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-ARMORM.csv,A_N_SAMPLING,True,254,75.98425196850394,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+620,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,76.37795275590551,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+621,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,76.37795275590551,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+622,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,74.01574803149606,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+623,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,72.44094488188976,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+624,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-GRM_2B.csv,A_N_SAMPLING,True,254,73.22834645669292,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+625,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-GRM.csv,A_N_SAMPLING,True,254,75.98425196850394,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+626,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1.csv,A_N_SAMPLING,True,254,74.40944881889764,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+627,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1.csv,A_N_SAMPLING,True,254,76.77165354330708,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+628,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1.csv,A_N_SAMPLING,True,254,75.98425196850394,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+629,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2.csv,A_N_SAMPLING,True,254,74.01574803149606,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+630,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2.csv,A_N_SAMPLING,True,254,74.80314960629921,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+631,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2.csv,A_N_SAMPLING,True,254,74.40944881889764,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+632,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3.csv,A_N_SAMPLING,True,254,75.98425196850394,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+633,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3.csv,A_N_SAMPLING,True,254,76.77165354330708,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+634,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3.csv,A_N_SAMPLING,True,254,75.59055118110236,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+635,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4.csv,A_N_SAMPLING,True,254,72.44094488188976,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+636,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4.csv,A_N_SAMPLING,True,254,76.77165354330708,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+637,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4.csv,A_N_SAMPLING,True,254,76.77165354330708,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+638,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5.csv,A_N_SAMPLING,True,254,72.44094488188976,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+639,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5.csv,A_N_SAMPLING,True,254,76.77165354330708,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+640,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5.csv,A_N_SAMPLING,True,254,75.59055118110236,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+641,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6.csv,A_N_SAMPLING,True,254,74.40944881889764,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+642,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6.csv,A_N_SAMPLING,True,254,77.16535433070865,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+643,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6.csv,A_N_SAMPLING,True,254,74.80314960629921,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+644,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7.csv,A_N_SAMPLING,True,254,72.44094488188976,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+645,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7.csv,A_N_SAMPLING,True,254,76.37795275590551,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+646,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7.csv,A_N_SAMPLING,True,254,74.80314960629921,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+647,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8.csv,A_N_SAMPLING,True,254,71.25984251968504,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+648,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8.csv,A_N_SAMPLING,True,254,74.40944881889764,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+649,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8.csv,A_N_SAMPLING,True,254,74.80314960629921,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+650,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,75.59055118110236,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+651,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,75.98425196850394,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+652,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,74.01574803149606,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+653,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,76.37795275590551,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+654,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,73.62204724409449,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+655,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,75.98425196850394,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+656,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,74.80314960629921,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+657,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,254,75.19685039370079,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+658,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-GRM_3B.csv,A_N_SAMPLING,True,254,75.59055118110236,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+659,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-GRM_3B.csv,A_N_SAMPLING,True,254,75.59055118110236,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+660,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-GRM_3B.csv,A_N_SAMPLING,True,254,76.77165354330708,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+661,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-GRM_3B.csv,A_N_SAMPLING,True,254,77.16535433070865,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+662,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-GRM_3B.csv,A_N_SAMPLING,True,254,75.59055118110236,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+663,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-GRM_3B.csv,A_N_SAMPLING,True,254,77.16535433070865,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+664,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-GRM_3B.csv,A_N_SAMPLING,True,254,74.40944881889764,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+665,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-GRM_3B.csv,A_N_SAMPLING,True,254,75.98425196850394,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+666,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-SKYWORK.csv,A_N_SAMPLING,True,254,75.98425196850394,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+667,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-SKYWORK.csv,A_N_SAMPLING,True,254,75.98425196850394,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+668,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-SKYWORK.csv,A_N_SAMPLING,True,254,76.37795275590551,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+669,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-SKYWORK.csv,A_N_SAMPLING,True,254,75.98425196850394,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+670,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-SKYWORK.csv,A_N_SAMPLING,True,254,74.80314960629921,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+671,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-SKYWORK.csv,A_N_SAMPLING,True,254,75.59055118110236,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+672,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-SKYWORK.csv,A_N_SAMPLING,True,254,74.80314960629921,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+673,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-SKYWORK.csv,A_N_SAMPLING,True,254,75.59055118110236,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+674,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-ARMORM.csv,A_N_SAMPLING,True,254,75.59055118110236,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+675,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-ARMORM.csv,A_N_SAMPLING,True,254,75.59055118110236,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+676,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-ARMORM.csv,A_N_SAMPLING,True,254,75.19685039370079,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+677,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-ARMORM.csv,A_N_SAMPLING,True,254,75.59055118110236,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+678,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-ARMORM.csv,A_N_SAMPLING,True,254,74.40944881889764,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+679,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-ARMORM.csv,A_N_SAMPLING,True,254,76.37795275590551,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+680,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-ARMORM.csv,A_N_SAMPLING,True,254,74.80314960629921,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+681,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-ARMORM.csv,A_N_SAMPLING,True,254,75.19685039370079,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+682,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,74.40944881889764,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+683,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,75.59055118110236,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+684,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,76.37795275590551,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+685,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,77.16535433070865,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+686,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,75.19685039370079,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+687,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,75.59055118110236,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+688,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,74.80314960629921,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+689,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,254,74.01574803149606,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+690,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,75.59055118110236,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+691,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,74.80314960629921,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+692,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,73.62204724409449,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+693,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,77.16535433070865,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+694,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,74.40944881889764,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+695,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,77.16535433070865,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+696,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,74.80314960629921,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+697,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-SAFAIRXC.csv,A_N_SAMPLING,True,254,74.01574803149606,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+698,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,74.01574803149606,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+699,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,72.83464566929135,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+700,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,74.80314960629921,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+701,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,73.62204724409449,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+702,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,73.62204724409449,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+703,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,72.44094488188976,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+704,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,73.22834645669292,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+705,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-PAIRRM_B.csv,A_N_SAMPLING,True,254,74.40944881889764,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+706,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,75.59055118110236,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+707,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,72.04724409448819,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+708,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,74.01574803149606,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+709,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,74.40944881889764,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+710,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,72.83464566929135,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+711,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,71.25984251968504,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+712,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,72.04724409448819,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+713,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,254,75.19685039370079,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+714,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-GRM_2B.csv,A_N_SAMPLING,True,254,75.19685039370079,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+715,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-GRM_2B.csv,A_N_SAMPLING,True,254,76.77165354330708,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+716,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-GRM_2B.csv,A_N_SAMPLING,True,254,75.19685039370079,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+717,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-GRM_2B.csv,A_N_SAMPLING,True,254,76.37795275590551,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+718,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-GRM_2B.csv,A_N_SAMPLING,True,254,74.01574803149606,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+719,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-GRM_2B.csv,A_N_SAMPLING,True,254,76.77165354330708,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+720,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-GRM_2B.csv,A_N_SAMPLING,True,254,75.19685039370079,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+721,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-GRM_2B.csv,A_N_SAMPLING,True,254,75.19685039370079,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+722,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-GRM.csv,A_N_SAMPLING,True,254,74.01574803149606,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+723,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-GRM.csv,A_N_SAMPLING,True,254,77.16535433070865,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+724,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-GRM.csv,A_N_SAMPLING,True,254,76.37795275590551,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+725,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-GRM.csv,A_N_SAMPLING,True,254,75.59055118110236,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+726,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-GRM.csv,A_N_SAMPLING,True,254,74.40944881889764,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+727,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-GRM.csv,A_N_SAMPLING,True,254,75.98425196850394,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+728,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-GRM.csv,A_N_SAMPLING,True,254,75.19685039370079,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+729,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-GRM.csv,A_N_SAMPLING,True,254,75.19685039370079,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+730,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-INTERNLM_7_B.csv,A_N_SAMPLING,True,254,73.62204724409449,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
+731,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,69.29133858267717,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+732,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,75.59055118110236,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+733,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,72.44094488188976,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+734,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_3__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,73.62204724409449,Pick a letter and pray that math agrees with you.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+735,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_4__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,74.01574803149606,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+736,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_5__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,72.04724409448819,Please perform a basic calculation.,"Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+737,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_6__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,74.80314960629921,"Please solve the following multiple-choice math word problem and provide an explanation for why the chosen answer is correct, addressing the implications of the solution for understanding similar types of problems. Choose from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+738,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_7__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,73.22834645669292,"Explain the solution to the math problem thoroughly, clearly selecting the correct option from (A) to (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+739,15-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_8__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,254,74.80314960629921,"Break down and solve the math word problem step-by-step, clarifying your reasoning, and select the correct option from (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+740,16-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_1__RM-INTERNLM_7_B.csv,A_N_SAMPLING,True,254,75.19685039370079,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
+741,16-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_2__RM-INTERNLM_7_B.csv,A_N_SAMPLING,True,254,76.77165354330708,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-7b-reward
+742,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0.csv,A_N_SAMPLING,True,250,39.6,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+743,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1.csv,A_N_SAMPLING,True,250,42.8,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+744,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2.csv,A_N_SAMPLING,True,250,42.0,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+745,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3.csv,A_N_SAMPLING,True,250,42.8,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+746,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4.csv,A_N_SAMPLING,True,250,40.400000000000006,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,MAJOR_ANSWER,gpt-4o,0.0,
+747,13-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_13-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,73.62204724409449,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
 ```
 {question}
 ```
@@ -5276,7 +6588,7 @@ Choices:
 {choices}
 ```
 ",1.0,1,MAJOR_ANSWER,gpt-4o,0.0,
-600,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,73.22834645669292,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
+748,14-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__RERANK__O-STRUCTURED_COT___I-N_14-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,73.22834645669292,"Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).","Problem:
 ```
 {question}
 ```
