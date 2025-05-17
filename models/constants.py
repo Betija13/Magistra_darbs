@@ -351,8 +351,6 @@ my_thinking_styles = [
     'Decompose and reconstruct logically.',
     'Break it down into components.',
     'Consider the context carefully.',
-    'Thinking in Layers.',
-    'Proportional Puzzle-Solving.',
     'Consider alternative approaches.',
     "Embrace flexibility and creativity in problem-solving.",
     "Think dynamically, modifying strategies with new insights.",

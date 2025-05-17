@@ -341,6 +341,8 @@ class AnswerMethods:
             answer_results.llm_answer_unedited = answers_before_processing
             if answer_type == AnswerType.MULTIPLE_CHOICE:
                 question_eval = ''.join([human_prompt.split('```')[1], human_prompt.split('```')[3]]).strip()
+            elif answer_type == AnswerType.NUMBER:
+                question_eval = human_prompt.split('```')[1].strip()
             else:
                 raise Exception(f"Answer extraction not yet implemented for {answer_type.value}")
             score_answer = None
@@ -386,7 +388,7 @@ class AnswerMethods:
             answer_results.score_chosen = score_answer
             if final_answer_chosen is not None:
                 correct = ResultUtils.check_corrct_answer(
-                    llm_answer=final_answer_chosen, true_answer=ground_truth_answer, other_true_answer=ground_truth_answer_word,
+                    llm_answer=str(final_answer_chosen), true_answer=ground_truth_answer, other_true_answer=ground_truth_answer_word,
                     answer_type=answer_type
                 )
             else:
@@ -450,11 +452,13 @@ class AnswerMethods:
             # ja nav pareiza, mutē, kamēr iziet cauri visiem indexiem
             if not correct:
                 all_combinations_reached = False
+                iteration_count = 0
+                max_iteration_count = 50
                 if use_example_mut:
                     example = f"{human_prompt}\nCorrect answer (desired output): ```{ground_truth_answer}```"
                 else:
                     example = None
-                while not correct and not all_combinations_reached:
+                while not correct and not all_combinations_reached and iteration_count <= max_iteration_count:
                 # indexi kaut kā jāsakārto
                     start_task_prompt = system_prompt.split('\n\n')[0]
                     mutated_task_prompt = self.controller_mutation.mutate_current_prompt(
@@ -462,6 +466,7 @@ class AnswerMethods:
                         use_my_mut_think=True, mutation_prompt_idx=self.last_mutation_prompt_idx,
                         thinking_style_idx=self.last_thinking_style_idx
                     )
+                    iteration_count += 1
                     used_mutation_prompt = my_mutation_prompts[self.last_mutation_prompt_idx]
                     used_thinking_style = my_thinking_styles[self.last_thinking_style_idx]
                     self.last_mutation_prompt_idx += 1
@@ -511,24 +516,27 @@ class AnswerMethods:
                         else:
                             reranking_score_answer_question = None
                             reward_model_score_answer_question = None
+                    try:
 
-                    mutation_file = DynamicMutationInfo(
-                        id=0,
-                        start_task_prompt=start_task_prompt,
-                        mutated_task_prompt=mutated_task_prompt,
-                        llm_answer=answer_llm_unedited,
-                        correct_answer=correct,
-                        reward_model_name=self.reward_methods.reward_name,
-                        reward_model_score_task_question=reward_model_score_task_question,
-                        reranking_score_task_question=reranking_score_task_question,
-                        reward_model_score_answer_question=reward_model_score_answer_question,
-                        reranking_score_answer_question=reranking_score_answer_question,
-                        mutation_prompt=used_mutation_prompt,
-                        thinking_style=used_thinking_style,
-                        question=question_raw,
-                        llm_temperature=1.0,
-                    )
-                    self.save_mutation_file(mutation_info=mutation_file, result_file=result_file)
+                        mutation_file = DynamicMutationInfo(
+                            id=0,
+                            start_task_prompt=start_task_prompt,
+                            mutated_task_prompt=mutated_task_prompt,
+                            llm_answer=answer_llm_unedited,
+                            correct_answer=correct,
+                            reward_model_name=self.reward_methods.reward_name,
+                            reward_model_score_task_question=reward_model_score_task_question,
+                            reranking_score_task_question=reranking_score_task_question,
+                            reward_model_score_answer_question=reward_model_score_answer_question,
+                            reranking_score_answer_question=reranking_score_answer_question,
+                            mutation_prompt=used_mutation_prompt,
+                            thinking_style=used_thinking_style,
+                            question=question_raw,
+                            llm_temperature=1.0,
+                        )
+                        self.save_mutation_file(mutation_info=mutation_file, result_file=result_file)
+                    except Exception as e:
+                        logger.error(e)
                 if correct:
                     task_prompts_chosen.append(system_prompt.split('\n\n')[0])
             else:
@@ -626,7 +634,7 @@ class AnswerMethods:
             answer_extraction.processed_answer = processed_answer
             if processed_answer is not None:
                 correct = ResultUtils.check_corrct_answer(
-                    llm_answer=processed_answer, true_answer=ground_truth_answer,
+                    llm_answer=str(processed_answer), true_answer=ground_truth_answer,
                     other_true_answer=ground_truth_answer_word,
                     answer_type=answer_type
                 )

@@ -7095,3 +7095,13 @@ Answer with only the final number.
 {question}
 ```
 ",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+847,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__CONT-US__DIF-S__NO-EXM__CORRECT_ANSWER__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,81.6,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,CORRECT_ANSWER,gpt-4o,0.0,
+848,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__CONT-US__SAME-S__NO-EXM__CORRECT_ANSWER__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,81.6,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",0.0,1,CORRECT_ANSWER,gpt-4o,0.0,

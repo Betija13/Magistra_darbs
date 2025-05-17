@@ -411,12 +411,16 @@ class LLMRunner:
                         if args.METHOD == Method.MUT:
                             system_prompt_task = random.choice(task_system_prompts) if len(task_system_prompts) > 0 else system_prompt_task_initial
                             if args.USE_SYSTEM_PROMPT_STRUCTURE:
-                                system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
+                                if answer_type == AnswerType.MULTIPLE_CHOICE:
+                                    system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.MULTIPLE_CHOICE.value]}\n\n{system_prompts_static[AnswerType.MULTIPLE_CHOICE.value]}"
+                                elif answer_type == AnswerType.NUMBER:
+                                    system_prompt = f"{system_prompt_task}\n\n{system_prompts_output[AnswerType.NUMBER.value]}\n\n{system_prompts_static[AnswerType.NUMBER.value]}"
+                                else:
+                                    raise Exception(
+                                        f"Answer type {answer_type.value} is not currently supported for mutation "
+                                        f"method. Only MULTIPLE_CHOICE and NUMBER is supported.")
                             else:
                                 system_prompt = system_prompt_task
-                            if answer_type != AnswerType.MULTIPLE_CHOICE:
-                                raise Exception(f"Answer type {answer_type.value} is not currently supported for mutation "
-                                                f"method. Only MULTIPLE_CHOICE is supported.")
                             task_system_prompts = []
 
                         choices_str_info = "Choices:\n```\n{choices}\n```\n" if row['choices'] else ''
@@ -467,7 +471,7 @@ class LLMRunner:
                                 true_answer=answer,
                                 llm_answer=str(answer_results.llm_answer_unedited),
                                 correct=answer_results.correct,
-                                llm_answer_chosen=answer_results.chosen_answer,
+                                llm_answer_chosen=str(answer_results.chosen_answer),
                                 reward_method=args.REWARD_METHOD.value if args.REWARD_METHOD else None,
                                 reward_score=answer_results.score_chosen,
                                 task_prompt_all=answer_results.task_prompts_all,
