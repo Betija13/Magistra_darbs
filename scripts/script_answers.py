@@ -884,8 +884,15 @@ class LLMRunner:
                                 answers_list = llm_answer.split('\n------\n')
                                 cot_parts = []
                                 final_answer_parts = []
+                                number_answer = False
                                 for ans_n in answers_list:
-                                    cot, answer_f = ans_n.split('ANSWER_AS_LETTER:')
+                                    split_ans = ans_n.split('ANSWER_AS_LETTER:')
+                                    if len(split_ans) != 2:
+                                        split_ans = ans_n.split('ANSWER_AS_NUMBER:')
+                                        number_answer = True
+                                        if len(split_ans) != 2:
+                                            raise Exception(f"Answer cannot be split correctly {ans_n}")
+                                    cot, answer_f = split_ans
                                     cot = cot.replace('SOLUTION_EXPLANATION:', '').strip()
                                     answer_f = answer_f.strip()
                                     cot_parts.append(cot)
@@ -948,9 +955,18 @@ class LLMRunner:
                                     answer_obj = self.controller_answers.reward_methods.get_reranking_model_best_answer(
                                         question=question, answer_options=cot_parts
                                     )
-                                    score = answer_obj.answer_score
-                                    chosen_answer = answer_obj.chosen_answer
-                                    chosen_idx = cot_parts.index(chosen_answer)
+                                    try:
+                                        score = answer_obj.answer_score
+                                        chosen_answer = answer_obj.chosen_answer
+                                        chosen_idx = cot_parts.index(
+                                            chosen_answer) if chosen_answer is not None else None
+                                    except Exception as e:
+                                        logger.error(e)
+                                        logger.exception(e)
+                                        score = None
+                                        chosen_answer = None
+                                        chosen_idx = None
+
                                 else:
                                     raise Exception(f"method {reward_method} not implemented!!!")
                                 final_str = answers_list[chosen_idx] if chosen_idx is not None else None
@@ -960,6 +976,14 @@ class LLMRunner:
                                 correct_answer = False
                                 if final_letter_answer == true_answer:
                                     correct_answer = True
+                                if number_answer and not correct_answer:
+                                    try:
+                                        if float(final_letter_answer) == float(true_answer):
+                                            correct_answer = True
+                                        elif abs(float(final_letter_answer) - float(true_answer)) < float(true_answer) / 100:
+                                            correct_answer = True
+                                    except Exception as e:
+                                        logger.error(e)
                                 row['llm_answer_chosen'] = final_str
                                 # row['llm_answer_chosen'] = final_letter_answer
                                 row['reward_score'] = score if chosen_idx is not None else None

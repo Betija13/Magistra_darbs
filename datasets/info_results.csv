@@ -6745,3 +6745,353 @@ Answer with only the final number.
 {question}
 ```
 ",0.0,1,,gpt-4o,0.0,
+777,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0.csv,A_N_SAMPLING,True,250,48.8,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+778,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0.csv,A_N_SAMPLING,True,250,56.8,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+779,16-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0.csv,A_N_SAMPLING,True,250,59.199999999999996,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+780,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1.csv,A_N_SAMPLING,True,250,50.8,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+781,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1.csv,A_N_SAMPLING,True,250,57.199999999999996,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+782,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1.csv,A_N_SAMPLING,True,250,59.199999999999996,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+783,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2.csv,A_N_SAMPLING,True,250,61.199999999999996,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+784,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2.csv,A_N_SAMPLING,True,250,57.99999999999999,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+785,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3.csv,A_N_SAMPLING,True,250,59.599999999999994,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+786,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3.csv,A_N_SAMPLING,True,250,58.8,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+787,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4.csv,A_N_SAMPLING,True,250,56.39999999999999,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
+788,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4.csv,A_N_SAMPLING,True,250,55.60000000000001,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+789,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,250,51.2,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+790,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,250,50.8,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+791,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,250,55.2,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+792,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,250,55.2,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+793,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-INTERNLM_1_8_B.csv,A_N_SAMPLING,True,250,53.2,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+794,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-GRM_3B.csv,A_N_SAMPLING,True,250,48.0,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+795,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-GRM_3B.csv,A_N_SAMPLING,True,250,53.6,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+796,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-GRM_3B.csv,A_N_SAMPLING,True,250,54.800000000000004,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+797,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-GRM_3B.csv,A_N_SAMPLING,True,250,56.00000000000001,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+798,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-GRM_3B.csv,A_N_SAMPLING,True,250,52.800000000000004,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+799,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-SKYWORK.csv,A_N_SAMPLING,True,250,49.6,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+800,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-SKYWORK.csv,A_N_SAMPLING,True,250,52.0,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+801,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-SKYWORK.csv,A_N_SAMPLING,True,250,56.39999999999999,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+802,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-SKYWORK.csv,A_N_SAMPLING,True,250,58.8,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+803,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-SKYWORK.csv,A_N_SAMPLING,True,250,52.0,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+804,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-ARMORM.csv,A_N_SAMPLING,True,250,51.2,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+805,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-ARMORM.csv,A_N_SAMPLING,True,250,53.6,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+806,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-ARMORM.csv,A_N_SAMPLING,True,250,53.6,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+807,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-ARMORM.csv,A_N_SAMPLING,True,250,57.99999999999999,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+808,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-ARMORM.csv,A_N_SAMPLING,True,250,54.0,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+809,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-SAFAIRXC.csv,A_N_SAMPLING,True,250,50.4,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+810,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-SAFAIRXC.csv,A_N_SAMPLING,True,250,52.400000000000006,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+811,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-SAFAIRXC.csv,A_N_SAMPLING,True,250,55.60000000000001,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+812,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-SAFAIRXC.csv,A_N_SAMPLING,True,250,58.4,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+813,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-SAFAIRXC.csv,A_N_SAMPLING,True,250,52.400000000000006,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+814,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-PAIRRM_B.csv,A_N_SAMPLING,True,250,49.2,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+815,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-PAIRRM_B.csv,A_N_SAMPLING,True,250,49.6,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+816,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-PAIRRM_B.csv,A_N_SAMPLING,True,250,54.400000000000006,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+817,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-PAIRRM_B.csv,A_N_SAMPLING,True,250,52.400000000000006,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+818,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-PAIRRM_B.csv,A_N_SAMPLING,True,250,51.2,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,maywell/Better-PairRM
+819,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,250,52.400000000000006,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+820,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,250,48.4,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+821,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,250,53.2,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+822,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,250,54.400000000000006,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+823,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-BLENDER_PRM.csv,A_N_SAMPLING,True,250,49.2,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+824,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-GRM_2B.csv,A_N_SAMPLING,True,250,50.8,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+825,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-GRM_2B.csv,A_N_SAMPLING,True,250,50.8,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+826,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-GRM_2B.csv,A_N_SAMPLING,True,250,55.2,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+827,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-GRM_2B.csv,A_N_SAMPLING,True,250,53.6,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+828,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-GRM_2B.csv,A_N_SAMPLING,True,250,52.0,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-gemma2-2B-rewardmodel-ft
+829,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-GRM.csv,A_N_SAMPLING,True,250,51.6,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+830,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-GRM.csv,A_N_SAMPLING,True,250,52.0,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+831,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-GRM.csv,A_N_SAMPLING,True,250,55.60000000000001,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+832,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-GRM.csv,A_N_SAMPLING,True,250,57.599999999999994,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+833,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-GRM.csv,A_N_SAMPLING,True,250,51.2,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+834,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,250,49.2,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+835,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,250,49.2,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+836,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,250,50.8,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+837,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,250,52.400000000000006,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+838,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-DEBERTA_V3_2.csv,A_N_SAMPLING,True,250,50.4,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,OpenAssistant/reward-model-deberta-v3-large-v2
+839,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2.csv,A_N_SAMPLING,True,250,50.4,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+840,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3.csv,A_N_SAMPLING,True,250,50.4,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+841,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__RERANK__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4.csv,A_N_SAMPLING,True,250,51.2,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+842,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_0__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,250,49.6,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+843,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_1__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,250,52.400000000000006,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+844,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_2__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,250,53.6,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+845,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_3__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,250,57.199999999999996,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+846,17-05-2025,TheoremaQA,../datasets/TheoremaQA/results/A_N_SAMPLING__REWARD_MODEL__O-STRUCTURED_COT___I-N_16-05-2025__F-data_normalize_numbers_4__RM-QRM_8B_V2.csv,A_N_SAMPLING,True,250,52.0,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,5,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
