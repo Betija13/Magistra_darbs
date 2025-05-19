@@ -7189,3 +7189,23 @@ Choices:
 {question}
 ```
 ",1.0,1,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+861,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__MAJOR_ANSWER__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,40.8,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,1,MAJOR_ANSWER,gpt-4o,0.0,
+862,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__RERANK__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,50.8,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,1,RERANK,gpt-4o,0.0,nvidia/nv-rerankqa-mistral-4b-v3
+863,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__ANOTHER_LLM_BEST_IDX__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,57.199999999999996,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,1,ANOTHER_LLM_BEST_IDX,gpt-4o,0.0,gemini-2.0-flash
+864,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__ANOTHER_LLM_RERANKING__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,56.39999999999999,Work out the math word problem and provide the solution in the form of a numeral.,"Problem:
+```
+{question}
+```
+",1.0,1,ANOTHER_LLM_RERANKING,gpt-4o,0.0,gemini-2.0-flash
