@@ -7105,3 +7105,87 @@ Answer with only the final number.
 {question}
 ```
 ",0.0,1,CORRECT_ANSWER,gpt-4o,0.0,
+849,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__REWARD_MODEL__RN-ARMORM__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,50.0,"Understand and find the solution to the math word problem, expressing your answer using a number.","Problem:
+```
+{question}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+850,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__REWARD_MODEL__RN-GRM_3B__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,53.2,Calculate the solution to the math word problem and express your answer using an Arabic numeral.,"Problem:
+```
+{question}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+851,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__REWARD_MODEL__RN-INTERNLM_1_8_B__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,48.8,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,internlm/internlm2-1_8b-reward
+852,18-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__REWARD_MODEL__RN-ARMORM__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,74.01574803149606,"Solve task below. Answer with (A),(B),(C),(D),(E)","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,RLHFlow/ArmoRM-Llama3-8B-v0.1
+853,18-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__REWARD_MODEL__RN-SKYWORK__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,75.59055118110236,"Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2
+854,18-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__REWARD_MODEL__RN-GRM__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,75.59055118110236,"To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3-8B-rewardmodel-ft
+855,18-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__REWARD_MODEL__RN-SAFAIRXC__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,73.22834645669292,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+856,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__REWARD_MODEL__RN-SAFAIRXC__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,54.0,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,sfairXC/FsfairX-LLaMA3-RM-v0.1
+857,18-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__REWARD_MODEL__RN-GRM_3B__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,75.98425196850394,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,Ray2333/GRM-Llama3.2-3B-rewardmodel-ft
+858,18-05-2025,AQuA-RAT,../datasets/AQuA-RAT/results/MUTATION__MM__REWARD_MODEL__RN-QRM_8B_V2__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalized_test_0.csv,MUTATION,True,254,74.80314960629921,"Elaborate on your reasoning process to determine the correct answer for the math word problem from options (A), (B), (C), (D), or (E).","Problem:
+```
+{question}
+```
+Choices:
+```
+{choices}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,nicolinho/QRM-Llama3.1-8B-v2
+859,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__REWARD_MODEL__RN-BLENDER_PRM__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,51.6,"Solve the math word problem, giving your answer as an arabic numeral.","Problem:
+```
+{question}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,llm-blender/PairRM
+860,18-05-2025,TheoremaQA,../datasets/TheoremaQA/results/MUTATION__MM__REWARD_MODEL__RN-SKYWORK__O-STRUCTURED_COT___I-N_18-05-2025__F-data_normalize_numbers_0.csv,MUTATION,True,250,53.2,Calculate the answer to the math word problem and express it as a numerical value.,"Problem:
+```
+{question}
+```
+",1.0,1,REWARD_MODEL,gpt-4o,0.0,Skywork/Skywork-Reward-Llama-3.1-8B-v0.2

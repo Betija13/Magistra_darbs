@@ -1043,6 +1043,7 @@ if __name__ == "__main__":
         llm_runner.go_through_dynamic_n_shot_mut_task(prompts_for_iteration=args.PROMPTS_ITERATION)
     elif args.TASK == Tasks.DYNAMIC_REWARD_MM:
         llm_runner.go_through_dynamic_n_shot_mut_mut(prompts_for_iteration=args.PROMPTS_ITERATION)
+        llm_runner.controller_answers.reward_methods.delete_rm_file()
         # TODO implement by each method
     elif args.TASK == Tasks.MANUAL_ITERATE:
         logger.error(f"Method not yet implemented in script")
