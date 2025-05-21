@@ -150,7 +150,7 @@ class Mutation:
             system_prompt_for_mutation = prompt_for_mutation.system_prompt
             new_prompt = self.controller_ai.get_llm_api_response_with_backup_special(
                 prompt=human_prompt_for_mutation, system_prompt=system_prompt_for_mutation, response_count=1,
-                temperature=0.0, model_name='gpt-4o', get_multiple_answers=False
+                temperature=1.0, model_name='gpt-4o', get_multiple_answers=False
             )
             new_prompt = new_prompt[0].replace('INSTRUCTION MUTANT:', '').replace('INSTRUCTION:', '').replace('```', '').strip()
             if output_results:
