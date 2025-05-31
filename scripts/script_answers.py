@@ -42,14 +42,14 @@ class Args:
     REWARD_METHOD: RewardMethod | None = None# RewardMethod.LLM_O_R #None  # RewardMethod.MAJOR.value
     REWARD_NAME: RewardModelNames | None = None #RewardModelNames.LLM_GEMINI
     MODEL_NAME: str = 'gpt-4o'  # 'o3-mini', 'gpt-4o-mini', 'gpt-4o'
-    PREDEFINED_DATASETS: List[str] | None = field(default_factory=lambda: [str(Datasets.MMLU.value)])
-    PREDEFINED_FILES: List[str] | None = field(default_factory=lambda:['data_normalized_STEM_dev.csv']) #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
+    PREDEFINED_DATASETS: List[str] | None = None  #field(default_factory=lambda: [str(Datasets.MMLU.value)])
+    PREDEFINED_FILES: List[str] | None = None #field(default_factory=lambda:['data_normalized_STEM_dev.csv']) #['data_normalized_STEM_dev.csv', 'data_normalized_STEM_val.csv']
     USE_SYSTEM_PROMPT_STRUCTURE: bool = False
     MUTATION_UNTIL_SATISFIED: bool = False
     OUTPUT_FORMAT: OutputFormat = OutputFormat.STRUCTURED_COT
     TASK: Tasks = Tasks.NOT_CHOSEN
     ORIGINAL_FILE: str | None = None
-    SAME_START: bool = False # Mutation always start from the same point
+    SAME_START: bool = False  # Mutation always start from the same point
     # SAME_MID_START: bool = False # Mutation in the middle always starts from same
     USE_EXAMPLE_MUT: bool = False
     PROMPTS_ITERATION: List[str] | None = None
@@ -57,10 +57,8 @@ class Args:
     MUTATE_MUT: bool = False
 
 
-
 args = Args()
 
-# TODO finish
 # TODO add help everywhere
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -76,6 +74,10 @@ parser.add_argument(
     choices=[e.value for e in RewardMethod]
 )
 parser.add_argument(
+    '--METHOD_VALUE', type=str,
+    choices=[e.value for e in Method]
+)
+parser.add_argument(
     '--DATASETS', nargs='*',
     choices=[e.value for e in Datasets]
 )
@@ -85,10 +87,24 @@ parser.add_argument(
     '--PROMPT_LIST_EXISTING',
     choices=prompt_names_list.keys()
 )
-# parser.add_argument('--CUSTOM_NAME', type=str)
+parser.add_argument(
+    '--OUTPUT_FORMAT', type=str,
+    choices=[e.value for e in OutputFormat]
+)
+parser.add_argument('--CUSTOM_NAME', type=str)
 parser.add_argument('--TOTAL_COUNT', type=int)
-# parser.add_argument('--TEMPERATURE', type=float)
-# parser.add_argument('--ANSWER_COUNT', type=int)
+parser.add_argument('--TEMPERATURE', type=float)
+parser.add_argument('--ANSWER_COUNT', type=int)
+parser.add_argument('--N_SAMPLES_MUT', type=int)
+parser.add_argument('--METHOD_NAME_FILE', type=str)
+parser.add_argument('--MODEL_NAME', type=str) # TODO Enum?
+parser.add_argument('--PREDEFINED_FILES', nargs='*')
+parser.add_argument('--USE_SYSTEM_PROMPT_STRUCTURE', type=bool)
+parser.add_argument('--MUTATION_UNTIL_SATISFIED', type=bool)
+parser.add_argument('--SAME_START', type=bool)
+parser.add_argument('--USE_EXAMPLE_MUT', type=bool)
+parser.add_argument('--GET_DYNAMIC_SCORES_Q_T', type=bool)
+parser.add_argument('--MUTATE_MUT', type=bool)
 
 cli_args = parser.parse_args()
 if cli_args.REWARD_NAME_VALUE is not None:
@@ -97,6 +113,8 @@ if cli_args.TASK_VALUE is not None:
     cli_args.TASK = Tasks(cli_args.TASK_VALUE)
 if cli_args.REWARD_METHOD_VALUE is not None:
     cli_args.REWARD_METHOD = RewardMethod(cli_args.REWARD_METHOD_VALUE)
+if cli_args.METHOD_VALUE is not None:
+    cli_args.REWARD_METHOD = Method(cli_args.METHOD_VALUE)
 if cli_args.PROMPT_LIST_EXISTING is not None:
     prompt_iteration_choice = prompt_names_list[cli_args.PROMPT_LIST_EXISTING]
     if cli_args.PROMPTS_ITERATION is None:
@@ -1046,7 +1064,9 @@ if __name__ == "__main__":
         llm_runner.controller_answers.reward_methods.delete_rm_file()
         # TODO implement by each method
     elif args.TASK == Tasks.MANUAL_ITERATE:
-        logger.error(f"Method not yet implemented in script")
+        llm_runner.iterate_through_prompts(prompts_for_iteration=args.PROMPTS_ITERATION)
+    else:
+        logger.error(f"Method {args.TASK.value} not implemented yet.")
 
 
 
@@ -1054,129 +1074,3 @@ if __name__ == "__main__":
     # llm_runner.iterate_through_prompts()
     # llm_runner.iterate_through_folders(system_prompt_task='Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).')
 
-
-
-    # TODO ########################################################################################################
-
-    # TODO (not comment) going through all dataset
-    # # TODO (not comment) Task prompt only
-    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
-    # args.TEMPERATURE = 0.0
-    # args.ANSWER_COUNT = 1
-    # args.REWARD_METHOD = None
-    # args.METHOD = Method.A_1.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
-
-    # TODO (not comment) Task prompt +
-    # args.USE_SYSTEM_PROMPT_STRUCTURE = True
-    # args.TEMPERATURE = 0.0
-    # args.ANSWER_COUNT = 1
-    # args.REWARD_METHOD = None
-    # CUSTOM_NAME = 'TASK_PROMPT_PLUS'
-    # args.METHOD = Method.A_1.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_NUM)
-
-    # # TODO (not comment) STRUCT = 'STRUCTURED_OUTPUT'  # Structured output with explanation
-    # args.METHOD = Method.STRUCT.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # logger.info(f"Method: {args.METHOD}")
-    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
-    # args.TEMPERATURE = 0.0
-    # args.ANSWER_COUNT = 1
-    # args.REWARD_METHOD = None
-    # prompts_for_iteration = mutated_task_prompts_AQuA_RAT + created_my_prompts_MC
-    # llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
-    #
-    # # # TODO (not comment) STRUCT_EXTRA = 'STRUCTURED_EXTRA'  # Structured output with explanation and extra
-    # args.METHOD = Method.STRUCT_EXTRA.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # logger.info(f"Method: {args.METHOD}")
-    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
-    # args.TEMPERATURE = 0.0
-    # args.ANSWER_COUNT = 1
-    # args.REWARD_METHOD = None
-    # args.OUTPUT_FORMAT = OutputFormat.STRUCTURED_EXTRA
-    # CUSTOM_NAME = 'RETRY_F'
-    # llm_runner.iterate_through_prompts(prompts_for_iteration=created_my_prompts_MC)
-    #
-    # # # TODO (not comment) STRUCT_ANS = 'STRUCTURED_ONLY_ANSWER'
-    # args.METHOD = Method.STRUCT_ANS.value
-    # CUSTOM_NAME = None
-    # args.METHOD_NAME_FILE = args.METHOD
-    # logger.info(f"Method: {args.METHOD}")
-    # args.USE_SYSTEM_PROMPT_STRUCTURE = False
-    # args.TEMPERATURE = 0.0
-    # args.ANSWER_COUNT = 1
-    # args.REWARD_METHOD = None
-    # args.OUTPUT_FORMAT = OutputFormat.STRUCTURED_ANSWER
-    # prompts_for_iteration = mutated_task_prompts_AQuA_RAT + created_my_prompts_MC
-    # llm_runner.iterate_through_prompts(prompts_for_iteration=prompts_for_iteration)
-
-    # # TODO (not comment) Two prompts
-    # args.METHOD = Method.TWO_PROMPTS.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # llm_runner.iterate_through_folders()
-
-    # # TODO (not comment) Plan and solve
-    # args.METHOD = Method.PS.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # llm_runner.iterate_through_folders()
-
-    # # TODO (not comment) Plan and solve plus
-    # args.METHOD = Method.PS_PLUS.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # llm_runner.iterate_through_folders()
-
-    # # TODO (not comment) Zero shot chain of thought
-    # args.METHOD = Method.ZS_COT.value
-    # args.METHOD_NAME_FILE = args.METHOD
-    # llm_runner.iterate_through_folders()
-
-    # TODO (not comment) MUTATION majority
-    # # best task prompt
-    # start_prompt = 'Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).'
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-    #
-    # # best task + prompt
-    # start_prompt = 'Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.'
-    # llm_runner.custom_name_str = 'BEST_TASK_PLUS'
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-    #
-    # # best structured cot prompt (skipping - same as best task only prompt)
-    #
-    # # best structured just answer prompt
-    # llm_runner.custom_name_str = 'BEST_STR_ANSW'
-    # start_prompt = "To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E)."
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-    #
-    # # best two prompts prompt
-    # llm_runner.custom_name_str = 'BEST_TWO_PROMPTS'
-    # start_prompt = 'Pick a letter and pray that math agrees with you.'
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-
-    # TODO (not comment) Mutation correct
-    # args.METHOD = str(Method.STRUCT_MUT_C.value)
-    # args.METHOD_NAME_FILE = args.METHOD
-    # # best task prompt
-    # llm_runner.custom_name_str = 'BEST_JUST_TASK'
-    # start_prompt = 'Break down the math word problem step-by-step and select the correct option: (A), (B), (C), (D), or (E).'
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-    #
-    # # best task + prompt
-    # start_prompt = 'Solve the multiple choice math word problem. Clearly explain each step of your solution process before choosing (A), (B), (C), (D), or (E) as the final answer.'
-    # llm_runner.custom_name_str = 'BEST_TASK_PLUS'
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-    #
-    # # best structured cot prompt (skipping - same as best task only prompt)
-    #
-    # # best structured just answer prompt
-    # llm_runner.custom_name_str = 'BEST_STR_ANSW'
-    # start_prompt = "To dissect the mystery and make it as obvious as a neon sign in the dark, pretend you're explaining the issue to a bewildered squirrel from another dimension. This interdimensional viewpoint can shed light on the obscure details or universal energies involved. Now, let's solve the multiple-choice math puzzle by selecting one of the intergalactic runes: (A), (B), (C), (D), or (E)."
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)
-    #
-    # # best two prompts prompt
-    # start_prompt = 'Pick a letter and pray that math agrees with you.'
-    # llm_runner.custom_name_str = 'BEST_TWO_PROMPTS'
-    # llm_runner.iterate_through_folders(system_prompt_task=start_prompt)

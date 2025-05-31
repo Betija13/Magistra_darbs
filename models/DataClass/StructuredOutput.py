@@ -11,7 +11,8 @@ class LetterChoice(str, Enum):
     B = "B"
     C = "C"
     D = "D"
-    # E = "E" # TODO remove
+    E = "E"
+    # TODO remove
 
 
 class StructuredOutputModelMultipleChoice(BaseModel):
